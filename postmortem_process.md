@@ -19,13 +19,12 @@ Note: This template is still under development & discussion and is not ready for
 
  - [ ]  **6. Modifications to Look & Feel** 
  - Identify modifications to the PhET Look-&-Feel Guidelines. If applicable, based on what we learned during development of this sim, suggest revisions to the guidelines. HTML5 Look and Feel doc found here:
-  * HTML5 Look and Feel  
-https://docs.google.com/document/d/1Tv-VyI24g70ZixH99jujN2Sdm7DfoVFiPUo5P1bFWrY/edit#heading=h.97ziwh4gfhga
+  * [HTML5 Look and Feel](https://docs.google.com/document/d/1Tv-VyI24g70ZixH99jujN2Sdm7DfoVFiPUo5P1bFWrY/edit#heading=h.97ziwh4gfhga)
   * HTML5 Sim Design Elements  
 https://docs.google.com/document/d/1SWgrtr1ZUrylYspOP57wo1SVVlYn8mjQNNR-XdmMa6Y/edit#heading=h.efdoz189j1ov
 
 - [ ]  **7. Sim checklist** 
-Review the "Sim checklist" (under development). Will be a "living" issue for each sim reposiory
+- Review the "Sim checklist" (under development). Will be a "living" issue for each sim reposiory
 
 - [ ]  **8. Action items** 
 - Note important items in the postmortem github issue, and create issues for any tasks the require action (such as updating documents, leftover "todo's", etc. 
