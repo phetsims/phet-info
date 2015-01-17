@@ -4,9 +4,9 @@ Note: This template is still under development & discussion and is not ready for
  - Require the entire sim team to participate, and optionally anyone else who had a significant involvement. Have the meeting as soon as possible after the sim is released, so that experiences are still fresh in everyone's mind. Allow sufficient time for the meeting, 1.5-2 hours.
 
  - [ ]  **2. Enlist a meeting moderator**
- - This should be someone who was not on the team and has no vested interest in the sim. The moderator's job is to make sure the meeting runs efficiently, stays on point, and doesn't become overly negative. The moderator also documents the meeting, or you can enlist an additional person (not one of the participants) to be the secretary. Do not record the meeting.
+ - The moderator's job is to make sure the meeting runs efficiently, stays on point, and focuses on constructive (but not overly negative) critcism. The moderator can be someone not on the sim team, or in many cases the Development Coordinator. The moderator also documents the important points of the meeting.
 
- - [ ]  **3. Create github issue**
+ - [ ]  **3. Create github postmortem issue**
  - Create a github issue in the repository of the sim for which the postmortem is occuring. The main takeaways will be recorded in this issue.
 
  - [ ]  **4. Two successes and two improvements**
@@ -25,10 +25,13 @@ https://docs.google.com/document/d/1Tv-VyI24g70ZixH99jujN2Sdm7DfoVFiPUo5P1bFWrY/
 - HTML5 Sim Design Elements
 https://docs.google.com/document/d/1SWgrtr1ZUrylYspOP57wo1SVVlYn8mjQNNR-XdmMa6Y/edit#heading=h.efdoz189j1ov
 
-Review the "Sim completing checklist" here: https://phet.unfuddle.com/a#/projects/9404/notebooks/17977/pages/105244/latest
+ - [ ]  **7. Sim checklist** 
+Review the "Sim checklist" (under development). Will be a "living" issue for each sim reposiory
 
-    Create a postmortem report, capturing all of the above. Modify any other documents (design, implementation, etc.) to reflect decisions made.
+ - [ ]  **8. Action items** 
+- Note important items in the postmortem github issue, and create issues for any tasks the require action (such as updating documents, leftover "todo's", etc. 
 
-    From the top 5 successes/improvements, decide what are the "take home messages" that would be useful to note in the future, and add these to the "Postmortem Take Home Messages" notebook: https://phet.unfuddle.com/a#/projects/9404/notebooks/17977/pages/105330/latest
+ - [ ]  **9. Take home messages** 
+From the top 5 successes/improvements, decide what are the "take home messages" that would be useful to note in the future, and add these to...(place to add TBD...perhaps a in this phet-info repository?
 
-    Create Unfuddle tickets for action items.
+
