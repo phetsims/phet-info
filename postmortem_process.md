@@ -1,14 +1,16 @@
 Note: This template is still under development & discussion and is not ready for general usage.
 
- - [ ]  1. Schedule a postmortem review meeting. 
+ - [ ]  1. *Schedule the meeting.*
  - Require the entire sim team to participate, and optionally anyone else who had a significant involvement. Have the meeting as soon as possible after the sim is released, so that experiences are still fresh in everyone's mind. Allow sufficient time for the meeting, 1.5-2 hours.
 
  - [ ]  2. Enlist a meeting moderator. 
  - This should be someone who was not on the team and has no vested interest in the sim. The moderator's job is to make sure the meeting runs efficiently, stays on point, and doesn't become overly negative. The moderator also documents the meeting, or you can enlist an additional person (not one of the participants) to be the secretary. Do not record the meeting.
 
-    Require participants to bring a list of no more than 2 items that were done well during the project and no more than 2 items that could be improved upon. Limiting to 2 requires people to think critically about their experience.
+ - [ ]  3. Two successes and iwo improvements
+ - Require participants to bring a list of no more than 2 items that were done well during the project and no more than 2 items that could be improved upon. Limiting to 2 requires people to think critically about their experience.
 
-    At the meeting, start by going around the room and having each person present their items (successes, then improvements). Make a list of these items, and note duplicates. Based on popularity, identify the top 5 success items and the top 5 items that need improvement.
+ - [ ]  4. Identifying the top five 
+ - At the meeting, start by going around the room and having each person present their items (successes, then improvements). Make a list of these items, and note duplicates. Based on popularity, identify the top 5 success items and the top 5 items that need improvement.
 
     Discuss the 5 success items first. Identify specific things that can be applied to future sims. Celebrate, pat each other on the back. Then move on to the harder part.
 
