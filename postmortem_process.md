@@ -18,10 +18,9 @@ Note: This template is still under development & discussion and is not ready for
   * Discuss the 5 improvement items. Try to avoid getting personal. Discuss what was learned, and identify specific things that can be done to prevent these problems in the future. If anything needs more investigation, assign to specific individuals.
 
  - [ ]  **6. Modifications to Look & Feel** 
- - Identify modifications to the PhET Look-&-Feel Guidelines. If applicable, based on what we learned during development of this sim, suggest revisions to the guidelines. HTML5 Look and Feel doc found here:
+ - Identify modifications to the PhET Look-&-Feel Guidelines. If applicable, based on what we learned during development of this sim, suggest revisions to the guidelines.
   * [HTML5 Look and Feel](https://docs.google.com/document/d/1Tv-VyI24g70ZixH99jujN2Sdm7DfoVFiPUo5P1bFWrY/edit#heading=h.97ziwh4gfhga)
-  * HTML5 Sim Design Elements  
-https://docs.google.com/document/d/1SWgrtr1ZUrylYspOP57wo1SVVlYn8mjQNNR-XdmMa6Y/edit#heading=h.efdoz189j1ov
+  * [HTML5 Sim Design Elements] (https://docs.google.com/document/d/1SWgrtr1ZUrylYspOP57wo1SVVlYn8mjQNNR-XdmMa6Y/edit#heading=h.efdoz189j1ov)
 
 - [ ]  **7. Sim checklist** 
 - Review the "Sim checklist" (under development). Will be a "living" issue for each sim reposiory
