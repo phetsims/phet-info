@@ -29,6 +29,6 @@ Note: This template is still under development & discussion and is not ready for
 - Note important items in the postmortem github issue, and create issues for any tasks the require action (such as updating documents, leftover "todo's", etc. 
 
 - [ ]  **9. Take home messages** 
-- From the top 5 successes/improvements, decide what are the "take home messages" that would be useful to note in the future, and add these to...(place to add TBD...perhaps a in this phet-info repository?
-
+- From the top 5 successes/improvements, decide what are the "take home messages" that would be useful to note in the future, and add these to...(probalby HTML5 Postmortem Take Aways)?
+- Report out at status meeting
 
