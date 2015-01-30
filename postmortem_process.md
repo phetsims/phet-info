@@ -6,7 +6,7 @@
 
  - [ ]  **3. Create github postmortem issue and postmortem google doc**
  - Create a github issue in the repository of the sim for which the postmortem is occuring. This checklist will should be copied into the issue.
- - Create a postmortem google doc and set phethelp as the owner. This google doc should live within the appropriate sim folder on google drive. 
+ - Create a postmortem google doc for the sim and set phethelp as the owner. This google doc should live within the appropriate sim folder on google drive. 
 
  - [ ]  **4. Two successes and two improvements**
  - Require participants to bring a list of no more than 2 items that were done well during the project and no more than 2 items that could be improved upon. Limiting to 2 requires people to think critically about their experience.
