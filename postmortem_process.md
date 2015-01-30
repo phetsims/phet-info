@@ -6,7 +6,7 @@
 
  - [ ]  **3. Create github postmortem issue and postmortem google doc**
  - Create a github issue in the repository of the sim for which the postmortem is occuring. This checklist will should be copied into the issue.
- - Create a postmortem google doc and set phethelp as the owner. This google doc should live within the appropriate sim folder on google drive.
+ - Create a postmortem google doc and set phethelp as the owner. This google doc should live within the appropriate sim folder on google drive. 
 
  - [ ]  **4. Two successes and two improvements**
  - Require participants to bring a list of no more than 2 items that were done well during the project and no more than 2 items that could be improved upon. Limiting to 2 requires people to think critically about their experience.
@@ -14,7 +14,7 @@
  - [ ]  **5. Identifying the top five**
  - At the meeting, start by going around the room and having each person present their items (successes, then improvements). Make a list of these items, and note duplicates. Based on popularity, identify the top 5 success items and the top 5 items that need improvement.
   * Discuss the 5 success items first. Identify specific things that can be applied to future sims. Celebrate, pat each other on the back. Then move on to the harder part.
-  * Discuss the 5 improvement items. Try to avoid getting personal. Discuss what was learned, and identify specific things that can be done to prevent these problems in the future. If anything needs more investigation, assign to specific individuals.
+  * Discuss the 5 improvement items. Try to avoid getting personal. Discuss what was learned, and identify specific things that can be done to prevent these problems in the future. If anything needs more investigation, assign to specific individuals. 
 
  - [ ]  **6. Modifications to Look & Feel** 
  - Identify modifications to the PhET Look-&-Feel Guidelines. If applicable, based on what we learned during development of this sim, suggest revisions to the guidelines.
