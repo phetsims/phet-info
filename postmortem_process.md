@@ -28,6 +28,6 @@
 - Note important items in the postmortem github issue, and create issues for any tasks the require action (such as updating documents, leftover "todo's", etc. 
 
 - [ ]  **9. Take home messages** 
-- From the top 5 successes/improvements, decide what are the "take home messages" that would be useful to note in the future, and add these to.
+- From the top 5 successes/improvements, decide what are the "take home messages" that would be useful to note in the future, and add these to the [HTML5 Postmortem Take Home Messages](https://docs.google.com/document/d/1hayLX0FbhYqGao-5xizAFU9kVBzqrW_RVX88Wk_C_Lc/edit#heading=h.krbf2d24bpav)
 - Report out at status meeting
 
