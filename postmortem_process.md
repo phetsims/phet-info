@@ -1,13 +1,12 @@
-Note: This template is still under development & discussion and is not ready for general usage.
-
  - [ ]  **1. Schedule the meeting**
  - Require the entire sim team to participate, and optionally anyone else who had a significant involvement. Have the meeting as soon as possible after the sim is released, so that experiences are still fresh in everyone's mind. Allow sufficient time for the meeting, 1.5-2 hours.
 
  - [ ]  **2. Enlist a meeting moderator**
  - The moderator's job is to make sure the meeting runs efficiently, stays on point, and focuses on constructive (but not overly negative) critcism. The moderator can be someone not on the sim team, or in many cases the Development Coordinator. The moderator also documents the important points of the meeting.
 
- - [ ]  **3. Create github postmortem issue**
- - Create a github issue in the repository of the sim for which the postmortem is occuring. The main takeaways will be recorded in this issue.
+ - [ ]  **3. Create github postmortem issue and postmortem google doc**
+ - Create a github issue in the repository of the sim for which the postmortem is occuring. This checklist will should be copied into the issue.
+ - Create a postmortem google doc and set phethelp as the owner. This google doc should live within the appropriate sim folder on google drive.
 
  - [ ]  **4. Two successes and two improvements**
  - Require participants to bring a list of no more than 2 items that were done well during the project and no more than 2 items that could be improved upon. Limiting to 2 requires people to think critically about their experience.
@@ -29,6 +28,6 @@ Note: This template is still under development & discussion and is not ready for
 - Note important items in the postmortem github issue, and create issues for any tasks the require action (such as updating documents, leftover "todo's", etc. 
 
 - [ ]  **9. Take home messages** 
-- From the top 5 successes/improvements, decide what are the "take home messages" that would be useful to note in the future, and add these to...(probalby HTML5 Postmortem Take Aways)?
+- From the top 5 successes/improvements, decide what are the "take home messages" that would be useful to note in the future, and add these to.
 - Report out at status meeting
 
