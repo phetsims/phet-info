@@ -2,17 +2,23 @@ Note: This template is still under development & discussion and is not ready for
 
 - [ ] **Design doc created** (Date:       )
 - [ ] **Learning goals and standards identified** (Date:       )
-  - [ ] 
-- [ ] Design Concept Complete (Date:       )
-- [ ] Wireframes Complete (Date:       )
-- [ ] Mockups Complete (Date:       )
-- [ ] Feature Complete (Date:       )
-- [ ] Interviews Complete (Date:       )
-- [ ] Dev Testing Complete (Date:       )
-- [ ] Code Review (Date:       )
-- [ ] First RC (Date:       )
-  - [ ] 
+- [ ] **Design Concept Complete** (Date:       )
+- [ ] **Wireframes Complete** (Date:       )
+- [ ] **Mockups Complete** (Date:       )
+- [ ] **Feature Complete** (Date:       )
+- [ ] **Interviews Complete** (Date:       )
+- [ ] **Dev Testing Complete** (Date:       )
+- [ ] **Code Review Complete** (Date:       )
+  - [ ] All assets in github
+  - [ ] Credits correct
+- [ ] **First release candidate** (Date:       )
+- [ ] Pre-publication 
+  - [ ] Screenshot
+  - [ ] Check compatible activities
 - [ ] Published (Date:       )
+  - [ ] Blog entry
+  - [ ] Accessories
+
 - 
 1) Post 1.0 to website
 a. Make sure screenshot is ready
@@ -77,8 +83,5 @@ At the Feb 2, 2012 meeting we decided that postmortems are not required for all 
     send to translators that have translated original flavor
     wait a month and then send a reminder
 
-16) Identify other sims that should be "related to" the new sim, and update their web information.
-Note: This will be unnecessary when JO implements what we discussed at an early October 2011 status meeting,
-see https://phet.unfuddle.com/a#/projects/9404/tickets/by_number/3093
 
 17) If the new sim is a revision of an existing sim, materials on website need to be reviewed.
