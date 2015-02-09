@@ -11,7 +11,7 @@ Note: This template is still under development & discussion and is not ready for
 - [ ] Dev Testing Complete (Date:       )
 - [ ] Code Review (Date:       )
 - [ ] First RC (Date:       )
-  - [ ]
+  - [ ] 
 - [ ] Published (Date:       )
 - 
 1) Post 1.0 to website
