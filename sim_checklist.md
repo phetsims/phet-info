@@ -1,6 +1,6 @@
 Note: This template is still under development & discussion and is not ready for general usage.
 
-- [ ] **Design doc created** (Date:       )
+- [ ] **Design doc created** (Date:&nbsp;&nbsp;&nbsp;&nbsp;)
 - [ ] **Learning goals and standards identified** (Date:       )
 - [ ] **Design concept complete** (Date:       )
 - [ ] **Wireframes complete** (Date:       )
@@ -67,10 +67,3 @@ For all images, audio, etc. created by PhET, do we have the original files used 
 
 18) Activity update, gooru spreadsheet, etc
 
- <form>
-First name:<br>
-<input type="text" name="firstname">
-<br>
-Last name:<br>
-<input type="text" name="lastname">
-</form> 
