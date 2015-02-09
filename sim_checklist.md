@@ -1,20 +1,18 @@
 Note: This template is still under development & discussion and is not ready for general usage.
 
- - [ ]  **1. Schedule the meeting**
- - Require the entire sim team to participate, and optionally anyone else who had a significant involvement. Have the meeting as soon as possible after the sim is released, so that experiences are still fresh in everyone's mind. Allow sufficient time for the meeting, 1.5-2 hours.
-
-- [ ] Design Doc Created (Date: )
-- [ ] Learning Goals Standards (Date: )
+- [ ] **Design doc created** (Date:       )
+- [ ] **Learning goals and standards identified** (Date:       )
   - [ ]
-- [ ] Design Concept Complete (Date: )
-- [ ] Wireframes Complete (Date: )
-- [ ] Mockups Complete (Date: )
-- [ ] Feature Complete (Date: )
-- [ ] Interviews Complete (Date: )
-- [ ] Dev Testing Complete (Date: )
-- [ ] Code Review (Date: )
-- [ ] First RC (Date: )
-- [ ] Published (Date: )
+- [ ] Design Concept Complete (Date:       )
+- [ ] Wireframes Complete (Date:       )
+- [ ] Mockups Complete (Date:       )
+- [ ] Feature Complete (Date:       )
+- [ ] Interviews Complete (Date:       )
+- [ ] Dev Testing Complete (Date:       )
+- [ ] Code Review (Date:       )
+- [ ] First RC (Date:       )
+  - [ ]
+- [ ] Published (Date:       )
 - 
 1) Post 1.0 to website
 a. Make sure screenshot is ready
