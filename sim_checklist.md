@@ -2,7 +2,7 @@ Note: This template is still under development & discussion and is not ready for
 
 - [ ] **Design doc created** (Date:       )
 - [ ] **Learning goals and standards identified** (Date:       )
-  - [ ]
+  - [ ] 
 - [ ] Design Concept Complete (Date:       )
 - [ ] Wireframes Complete (Date:       )
 - [ ] Mockups Complete (Date:       )
