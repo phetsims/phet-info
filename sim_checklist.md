@@ -66,3 +66,5 @@ For all images, audio, etc. created by PhET, do we have the original files used 
 17) If the new sim is a revision of an existing sim, materials on website need to be reviewed.
 
 18) Activity update, gooru spreadsheet, etc
+
+19) Compatibility list (ipad/chromebook)
