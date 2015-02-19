@@ -68,3 +68,7 @@ For all images, audio, etc. created by PhET, do we have the original files used 
 18) Activity update, gooru spreadsheet, etc
 
 19) Compatibility list (ipad/chromebook)
+
+20) Designer has done "sign off" testing
+
+21) performance testing
