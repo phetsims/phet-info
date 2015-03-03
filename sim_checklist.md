@@ -1,8 +1,8 @@
 Note: This template is still under development & discussion and is not ready for general usage.
 
-- [ ] **Design doc created** (Date:  / / / ) 
-- [ ] **Learning goals and standards identified** (Date:       )
-- [ ] **Design concept complete** (Date:       )
+- [ ] **Design doc created** (Date: / / / ) 
+- [ ] **Learning goals and standards identified** (Date: / / / )
+- [ ] **Design concept complete**  (Date: / / / )
 - [ ] **Wireframes complete** (Date:       )
 - [ ] **Sim repo created** (Date: )
 - [ ] **Mockups complete** (Date:       )
