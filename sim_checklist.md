@@ -10,18 +10,19 @@ Note: This template is still under development & discussion and is not ready for
 - [ ] **Mockups complete** (Date:       )
   - [ ] Mockups checked for colorblind and greyscale
 - [ ] **Sim feature complete** (Date:       )
-- [ ] **Dev Testing complete** (Date:       )
-- [ ] **Interviews Complete** (Date:       )
+- [ ] **Dev testing complete** (Date:       )
+- [ ] **Interviews complete** (Date:       )
   - [ ] Results reported to team
   - [ ] Notes pasted into design doc
   - [ ] Back-up of interviews
-- [ ] **Lead Designer "sign off"** (Date:      )
+- [ ] **Lead designer "sign off"** (Date:      )
   - [ ] Performance acceptable
   - [ ] No new feature requests
-- [ ] **Code Review complete** (Date:       )
+- [ ] **Code review complete** (Date:       )
   - [ ] All assets in github (images, audio, etc)
   - [ ] Credits correct
-  - [ ] Licensing
+  - [ ] Licensing verified & documented (images, audio, source code)
+  - [ ] Code review checklist
 - [ ] **First release candidate** (Date:       )
 - [ ] **Pre-publication items** 
   - [ ] Screenshot
@@ -30,29 +31,12 @@ Note: This template is still under development & discussion and is not ready for
 - [ ] **Published** (Date:       )
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Teacher Guide
+  - [ ] Activities and gooru spreadsheet
+  - [ ] Notify translators?
 - [ ] Hold postmortem if applicable (Date:       )
 
 
 
 
-
-12) Licensing
-Sources and compatible licensing has been verified and documented for:
-
-    images
-    sounds
-    source code
-
-
-15) (Optional) Send email to translators if this is a "flavor" of an existing sim.
-
-    send to translators that have translated original flavor
-    wait a month and then send a reminder
-
-
 17) If the new sim is a revision of an existing sim, materials on website need to be reviewed.
-
-18) Activity update, gooru spreadsheet, etc
-
-19) Compatibility list (ipad/chromebook)
 
