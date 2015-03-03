@@ -1,6 +1,6 @@
 Note: This template is still under development & discussion and is not ready for general usage.
 
-- [ ] **Design doc created** (date:&nbsp / / / ) 
+- [ ] **Design doc created** (date: / / / ) 
 - [ ] **Learning goals and standards identified** (Date: / / / )
 - [ ] **Design concept complete**  (Date: / / / )
 - [ ] **Wireframes complete** (Date:       )
@@ -52,6 +52,5 @@ Sources and compatible licensing has been verified and documented for:
 
 19) Compatibility list (ipad/chromebook)
 
-20) Designer has done "sign off" testing
 
 21) performance testing
