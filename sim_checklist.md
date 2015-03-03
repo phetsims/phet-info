@@ -1,19 +1,23 @@
 Note: This template is still under development & discussion and is not ready for general usage.
 
 - [ ] **Design doc created** (date: / / / ) 
+- [ ] **Sim repo created** (Date: )
+  - [ ] If a port, unfuddle tickets reviewed
+  - [ ] If a port, existing sim tested for bugs
 - [ ] **Learning goals and standards identified** (Date: / / / )
 - [ ] **Design concept complete**  (Date: / / / )
 - [ ] **Wireframes complete** (Date:       )
-- [ ] **Sim repo created** (Date: )
 - [ ] **Mockups complete** (Date:       )
   - [ ] Mockups checked for colorblind and greyscale
 - [ ] **Sim feature complete** (Date:       )
+- [ ] **Dev Testing complete** (Date:       )
 - [ ] **Interviews Complete** (Date:       )
   - [ ] Results reported to team
   - [ ] Notes pasted into design doc
   - [ ] Back-up of interviews
-- [ ] **Dev Testing complete** (Date:       )
 - [ ] **Lead Designer "sign off"** (Date:      )
+  - [ ] Performance acceptable
+  - [ ] No new feature requests
 - [ ] **Code Review complete** (Date:       )
   - [ ] All assets in github (images, audio, etc)
   - [ ] Credits correct
@@ -52,5 +56,3 @@ Sources and compatible licensing has been verified and documented for:
 
 19) Compatibility list (ipad/chromebook)
 
-
-21) performance testing
