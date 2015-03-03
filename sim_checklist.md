@@ -1,6 +1,6 @@
 Note: This template is still under development & discussion and is not ready for general usage.
 
-- [ ] **Design doc created** (Date: / / / ) 
+- [ ] **Design doc created** (date:&nbsp / / / ) 
 - [ ] **Learning goals and standards identified** (Date: / / / )
 - [ ] **Design concept complete**  (Date: / / / )
 - [ ] **Wireframes complete** (Date:       )
