@@ -19,9 +19,6 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Performance acceptable
   - [ ] No new feature requests
 - [ ] **Code review complete** (Date:       )
-  - [ ] All assets in github (images, audio, etc)
-  - [ ] Credits correct
-  - [ ] Licensing verified & documented (images, audio, source code)
   - [ ] Code review checklist
 - [ ] **First release candidate** (Date:       )
 - [ ] **Pre-publication items** 
