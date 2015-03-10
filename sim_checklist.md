@@ -37,3 +37,4 @@ Note: This template is still under development & discussion and is not ready for
 
 17) If the new sim is a revision of an existing sim, materials on website need to be reviewed.
 
+Consider parsing by responsiblity (Design, Implementation, QA...)
