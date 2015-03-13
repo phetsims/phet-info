@@ -3,47 +3,15 @@ For further info and examples on each check item see the [PhET Code Review Guidl
 **Build and Run Checks**
 
 - [ ] Does the sim pass jshint?
+- [ ] Does the sim build without errors?
+- [ ] Does the sim start up? (requirejs and built versions)
+- [ ] Does the sim experience any assertion failures? (run with query parameter ‘ea’)
+- [ ] Does the sim pass a scenery fuzzer test? (run with query parameter “fuzzMouse”)
 
-Does the sim build without errors?
+**Repository structure**
 
-Does the sim start up? (requirejs and built versions)
-
-Does the sim experience any assertion failures? (run with query parameter ‘ea’)
-
-Does the sim pass a scenery fuzzer test? (run with query parameter “fuzzMouse”)
-
-Repository structure
-
-Are all required files and directories present?
-
-For a sim repository named “my-repo”, the general structure should look like this (where audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
-
-my-repo/
-	assets/
-		my-repo-screenshot.png
-	audio/
-		license.txt
-	doc/
-		model.md
-		implementation-notes.md
-	images/
-		license.txt
-	js/
-		my-repo-config.js
-		my-repo-main.js
-		version.js
-	strings/
-		my-repo-strings_en.json
-	.gitignore
-	my-repo_en.html
-	Gruntfile.js
-	LICENSE
-	package.json
-	README.md
-
-For a common-code repository, the structure is similar, but some of the files and directories may not be present if the repo doesn’t have audio, images, strings, or a demo application. 
-
-Is the js/ directory properly structured? 
+- [ ] Are all required files and directories present?
+- [ ] Is the js/ directory properly structured? 
 
 All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Custom”, the general directory structure should look like this:
 
