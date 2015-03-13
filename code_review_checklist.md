@@ -1,4 +1,4 @@
-For further info and examples on each check item see the PhET Code Review Guidlines https://docs.google.com/document/d/16dnSetfnsQAyJpTWm7xocchlL47NcZ3e3qAaOpQtxds/edit#
+For further info and examples on each check item see the [PhET Code Review Guidlines] (https://docs.google.com/document/d/16dnSetfnsQAyJpTWm7xocchlL47NcZ3e3qAaOpQtxds/edit#)
 
 **Build and Run Checks**
 
