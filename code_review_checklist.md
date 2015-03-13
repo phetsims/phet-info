@@ -29,7 +29,7 @@ For further info and examples on each checklist item see the [PhET Code Review G
 
 - [ ] Is the code formatted according to PhET-style conventions? 
  - See “Coding Style Guidelines” in [PhET Development Overview](https://docs.google.com/document/d/1odXkliRagq0zuf1_NdOtQ2BrkC9hwlISnPi2y-dKdrk/edit#heading=h.otez332l59q9). 
--  See also phet-idea-code-style.xml for IntelliJ IDEA.
+ -  See also phet-idea-code-style.xml for IntelliJ IDEA.
 - [ ] Do all source files use requirejs?
 - [ ] Are all imports and constants grouped at the top of js source files, similar to this? (Order of audio, images, strings and constants may be different. But they should not be interleaved.)
 - [ ] For all requirejs imports, does the name of the var match the name of the source file?  
@@ -70,26 +70,18 @@ For further info and examples on each checklist item see the [PhET Code Review G
 
 **Performance, Usability**
 
-Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms) 
+- [ ] Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms) 
+- [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter ‘webgl=false’)
+- [ ] Are UI components sufficiently responsive? (especially continuous UI components, such as sliders)
+- [ ] Are point areas optimized, especially for touch? (run with query parameter “showPointerAreas”)
+- [ ] Do pointer areas overlap? (run with query parameter “showPointerAreas”)
 
-If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter ‘webgl=false’)
+**Memory Leaks**
 
-Are UI components sufficiently responsive? (especially continuous UI components, such as sliders)
-
-Are point areas optimized, especially for touch? (run with query parameter “showPointerAreas”)
-
-Do pointer areas overlap? (run with query parameter “showPointerAreas”)
-
-Memory Leaks
-
-Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.)
-
-Are there any leaks due to registration of AXON observers? 
-
-For each call to Property.link or PropertySet.link, is there a corresponding unlink, or documentation about why an unlink is unnecessary?
-For each DerivedProperty or Multilink created, is there a corresponding detach, or documentation about why a detach is unnecessary?
-For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers an AXON observer, is there a call to that component’s dispose function, or documentation about why dispose is unnecessary?
-
-Are there any leaks due to registration of components with TOGETHER? 
-(TBD how to evaluate this)
+- [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.)
+- [ ] Are there any leaks due to registration of AXON observers? 
+- [ ] For each call to Property.link or PropertySet.link, is there a corresponding unlink, or documentation about why an unlink is unnecessary?
+- [ ] For each DerivedProperty or Multilink created, is there a corresponding detach, or documentation about why a detach is unnecessary?
+- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers an AXON observer, is there a call to that component’s dispose function, or documentation about why dispose is unnecessary?
+- [ ] Are there any leaks due to registration of components with TOGETHER? (TBD how to evaluate this)
 
