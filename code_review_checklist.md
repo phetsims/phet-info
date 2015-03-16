@@ -5,8 +5,8 @@ For further info and examples on each checklist item see the [PhET Code Review G
 - [ ] Does the sim pass jshint?
 - [ ] Does the sim build without errors?
 - [ ] Does the sim start up? (requirejs and built versions)
-- [ ] Does the sim experience any assertion failures? (run with query parameter ‘ea’)
-- [ ] Does the sim pass a scenery fuzzer test? (run with query parameter “fuzzMouse”)
+- [ ] Does the sim experience any assertion failures? (run with query parameter 'ea')
+- [ ] Does the sim pass a scenery fuzzer test? (run with query parameter 'fuzzMouse')
 - [ ] Are there any strings that are not being internationalized? (run with query parameter 'stringTest=x')
 - [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter 'stringTest=double') 
 
@@ -73,10 +73,10 @@ For further info and examples on each checklist item see the [PhET Code Review G
 **Performance, Usability**
 
 - [ ] Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms) 
-- [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter ‘webgl=false’)
+- [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter 'webgl=false')
 - [ ] Are UI components sufficiently responsive? (especially continuous UI components, such as sliders)
-- [ ] Are point areas optimized, especially for touch? (run with query parameter “showPointerAreas”)
-- [ ] Do pointer areas overlap? (run with query parameter “showPointerAreas”)
+- [ ] Are point areas optimized, especially for touch? (run with query parameter 'showPointerAreas')
+- [ ] Do pointer areas overlap? (run with query parameter 'showPointerAreas')
 
 **Memory Leaks**
 
