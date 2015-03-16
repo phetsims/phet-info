@@ -31,7 +31,7 @@ For further info and examples on each checklist item see the [PhET Code Review G
 **Coding conventions**
 
 - [ ] Is the code formatted according to PhET-style conventions? 
- - See “Coding Style Guidelines” in [PhET Development Overview](https://docs.google.com/document/d/1odXkliRagq0zuf1_NdOtQ2BrkC9hwlISnPi2y-dKdrk/edit#heading=h.otez332l59q9). 
+ - See [“Coding Style Guidelines” in PhET Development Overview](https://docs.google.com/document/d/1odXkliRagq0zuf1_NdOtQ2BrkC9hwlISnPi2y-dKdrk/edit#heading=h.1oxr3ptyo50w). 
  -  See also phet-idea-code-style.xml for IntelliJ IDEA.
 - [ ] Do all source files use requirejs?
 - [ ] Are all imports and constants grouped at the top of js source files, similar to this? (Order of audio, images, strings and constants may be different. But they should not be interleaved.)
