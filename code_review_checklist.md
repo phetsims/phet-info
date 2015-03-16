@@ -26,6 +26,7 @@ For further info and examples on each checklist item see the [PhET Code Review G
 - [ ] Does .gitignore match other repositories?
 - [ ] Does *-main.js follow PhET conventions? Is it well documented? Does it contain correct credits?
 - [ ] Is the format of assets/*-screenshot.png correct? (2048x1344, PNG, 32-bit color) Has the browser chrome been stripped off of the screenshot?
+- [ ] Are there git repository branches that are no longer used and should be pruned?
 
 **Coding conventions**
 
