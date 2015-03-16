@@ -7,6 +7,8 @@ For further info and examples on each checklist item see the [PhET Code Review G
 - [ ] Does the sim start up? (requirejs and built versions)
 - [ ] Does the sim experience any assertion failures? (run with query parameter ‘ea’)
 - [ ] Does the sim pass a scenery fuzzer test? (run with query parameter “fuzzMouse”)
+- [ ] Are there any strings that are not being internationalized? (run with query parameter 'stringTest=x')
+- [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter 'stringTest=double') 
 
 **Repository structure**
 
