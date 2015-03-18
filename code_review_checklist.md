@@ -14,9 +14,9 @@ For further info and examples on each checklist item see the [PhET Code Review G
 
 - [ ] Are all required files and directories present?
 
-For a sim repository named “my-repo”, the general structure should look like this (where audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
+      For a sim repository named “my-repo”, the general structure should look like this (where audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
 
-```js
+   ```js
 my-repo/
 	assets/
 		my-repo-screenshot.png
@@ -41,13 +41,13 @@ my-repo/
 	README.md
 ```
 
-For a common-code repository, the structure is similar, but some of the files and directories may not be present if the repo doesn’t have audio, images, strings, or a demo application.
+   For a common-code repository, the structure is similar, but some of the files and directories may not be present if the repo doesn’t have audio, images, strings, or a demo application.
 
 - [ ] Is the js/ directory properly structured? 
 
-All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Custom”, the general directory structure should look like this:
+      All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Custom”, the general directory structure should look like this:
 
-```js
+   ```js
 my-repo/js/
 	common/
 		model/
@@ -84,7 +84,7 @@ my-repo-config.js
  -  See also [phet-idea-code-style.xml](https://github.com/phetsims/joist/blob/master/util/phet-idea-codestyle.xml) for IntelliJ IDEA.
 - [ ] Do all source files use requirejs?
 - [ ] Are all imports and constants grouped at the top of js source files, similar to this? (Order of audio, images, strings and constants may be different. But they should not be interleaved.)
-```js
+      ```js
 	// modules
 	var Shape = requirejs( ‘KITE/Shape’ );
 
@@ -101,7 +101,7 @@ my-repo-config.js
 	var MAX_PARTICLES = 1000
 ```
 - [ ] For all requirejs imports, does the name of the var match the name of the source file? Eg:
-```js
+      ```js
 	// correct
 	var ThermometerNode = require( ‘SCENERY_PHET/ThermometerNode’ );
 	// wrong
@@ -115,7 +115,7 @@ my-repo-config.js
 - [ ] Are single quotes used for all string literals? (Search for double-quote character, it should appear only in comments.)
 - [ ] Do all variables and fields names of type axon.Property have a ‘Property’ suffix? Eg:
 
-```js
+      ```js
   var visibleProperty = new Property( true ); // correct
   var visible = new Property( true ); // wrong
 
@@ -129,7 +129,7 @@ my-repo-config.js
 - [ ] Does model.md adequately describe the model, in terms appropriate for teachers?
 - [ ] Does implementation-notes.md adequately describe the implementation, with an overview that will be useful to future maintainers?
 - [ ] Do all source files have a copyright comment on line 1? Eg:
-```js
+      ```js
 // Copyright 2002-2015, University of Colorado Boulder
 ```
 - [ ] Are JSdoc conventions followed?
@@ -147,7 +147,7 @@ my-repo-config.js
   - [ ] Do the model and view contain types that you would expect (or guess!) by looking at the sim?
   - [ ] Do the names of things correspond to the names that you see in the user interface?
 - [ ] Are names (types, variables, properties,...) sufficiently descriptive and specific, avoiding non-standard abbreviations? Eg:
-```js
+      ```js
   var numPart  // incorrect
   var numberOfParticles  // correct
 
