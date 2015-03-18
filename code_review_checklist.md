@@ -13,7 +13,56 @@ For further info and examples on each checklist item see the [PhET Code Review G
 **Repository structure**
 
 - [ ] Are all required files and directories present?
+
+For a sim repository named “my-repo”, the general structure should look like this (where audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
+
+```js
+my-repo/
+	assets/
+		my-repo-screenshot.png
+	audio/
+		license.txt
+	doc/
+		model.md
+		implementation-notes.md
+	images/
+		license.txt
+	js/
+		my-repo-config.js
+		my-repo-main.js
+		version.js
+	strings/
+		my-repo-strings_en.json
+	.gitignore
+	my-repo_en.html
+	Gruntfile.js
+	LICENSE
+	package.json
+	README.md
+```
+
+For a common-code repository, the structure is similar, but some of the files and directories may not be present if the repo doesn’t have audio, images, strings, or a demo application.
+
 - [ ] Is the js/ directory properly structured? 
+
+All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Custom”, the general directory structure should look like this:
+
+```js
+my-repo/js/
+	common/
+		model/
+		view/
+custom
+		model/
+		view/
+	introduction
+		model/
+		view/
+my-repo-config.js
+	my-repo-main.js
+	version.js
+ ```
+
 - [ ] Is there a file in assets/ for every file in audio/ and images/?
 - [ ] Are all license.txt files populated? audio/license.txt and images/license.txt should enumerate all files in those directories. 
  - For the format of license.txt files, go [here](https://github.com/phetsims/simula-rasa/blob/master/images/README.txt)
@@ -32,30 +81,64 @@ For further info and examples on each checklist item see the [PhET Code Review G
 
 - [ ] Is the code formatted according to PhET-style conventions? 
  - See [“Coding Style Guidelines” in PhET Development Overview](https://docs.google.com/document/d/1odXkliRagq0zuf1_NdOtQ2BrkC9hwlISnPi2y-dKdrk/edit#heading=h.1oxr3ptyo50w). 
- -  See also phet-idea-code-style.xml for IntelliJ IDEA.
+ -  See also [phet-idea-code-style.xml](https://github.com/phetsims/joist/blob/master/util/phet-idea-codestyle.xml) for IntelliJ IDEA.
 - [ ] Do all source files use requirejs?
 - [ ] Are all imports and constants grouped at the top of js source files, similar to this? (Order of audio, images, strings and constants may be different. But they should not be interleaved.)
-- [ ] For all requirejs imports, does the name of the var match the name of the source file?  
+```js
+	// modules
+	var Shape = requirejs( ‘KITE/Shape’ );
+
+	// audio
+	var dingAudio = require( ‘audio!...’ );
+
+  	// images
+	var pizzaImage = require( ‘image!...’ );
+
+	// strings
+	var titleString = require( ‘string!...’ );
+
+	// constants
+	var MAX_PARTICLES = 1000
+```
+- [ ] For all requirejs imports, does the name of the var match the name of the source file? Eg:
+```js
+	// correct
+	var ThermometerNode = require( ‘SCENERY_PHET/ThermometerNode’ );
+	// wrong
+	var Thermometer = require( ‘SCENERY_PHET/ThermometerNode’ );
+```
+
 - [ ] For source files that use inheritance…
 	- [ ] Is ‘return inherit( SuperType, SubType,...)’ used?
 	- [ ] Are prototype functions added via inherit(...)?
 	- [ ] Are static functions added via inherit(...)?
 - [ ] Are single quotes used for all string literals? (Search for double-quote character, it should appear only in comments.)
-- [ ] Do all variables and fields names of type axon.Property have a ‘Property’ suffix? 
+- [ ] Do all variables and fields names of type axon.Property have a ‘Property’ suffix? Eg:
+
+```js
+  var visibleProperty = new Property( true ); // correct
+  var visible = new Property( true ); // wrong
+
+  @param {Property.<number>} temperatureProperty // correct
+  @param {Property.<number>} temperature // wrong	
+```
 
 **Documentation**
 
-- [ ] Are documentation conventions followed, as described in the “Coding Style Guidelines” section of “PhET Development Overview”?
+- [ ] Are documentation conventions followed, as described in the [“Coding Style Guidelines” section of the PhET Development Overview](https://docs.google.com/document/d/1odXkliRagq0zuf1_NdOtQ2BrkC9hwlISnPi2y-dKdrk/edit#heading=h.1oxr3ptyo50w)?
 - [ ] Does model.md adequately describe the model, in terms appropriate for teachers?
 - [ ] Does implementation-notes.md adequately describe the implementation, with an overview that will be useful to future maintainers?
-- [ ] Do all source files have a copyright comment on line 1? 
+- [ ] Do all source files have a copyright comment on line 1? Eg:
+```js
+// Copyright 2002-2015, University of Colorado Boulder
+```
 - [ ] Are JSdoc conventions followed?
-- [ ] Do all source files have an @author annotation?
-- [ ] Are all non-trivial public functions documented using JSdoc? 
-- [ ] Are function parameters annotated with @param and proper type expressions?
-- [ ] Are return values documented using @returns and proper type expressions?
-- [ ] Are parameters and return values of type axon.Property fully qualified with their value type? E.g. {Property.< number>} 
-- [ ] Is @private used to indicate functions and properties that are not part of the public interface?
+	- [ ] Do all source files have an @author annotation?
+	- [ ] Are all non-trivial public functions documented using JSdoc? 
+	- [ ] Are function parameters annotated with @param and proper type expressions?
+	- [ ] Are return values documented using @returns and proper type expressions?
+	- [ ] Are parameters and return values of type axon.Property fully qualified with their value type? E.g. {Property.< number>} 
+	- [ ] Is @private used to indicate functions and properties that are not part of the public interface?
 - [ ] Are sim-specific query parameters (if any) identified and documented in one location?
 
 **Organization, Readability, Maintainability**
@@ -63,7 +146,15 @@ For further info and examples on each checklist item see the [PhET Code Review G
 - [ ] Does the organization and structure of the code make sense? 
   - [ ] Do the model and view contain types that you would expect (or guess!) by looking at the sim?
   - [ ] Do the names of things correspond to the names that you see in the user interface?
-- [ ] Are names (types, variables, properties,...) sufficiently descriptive and specific, avoiding non-standard abbreviations? 
+- [ ] Are names (types, variables, properties,...) sufficiently descriptive and specific, avoiding non-standard abbreviations? Eg:
+```js
+  var numPart  // incorrect
+  var numberOfParticles  // correct
+
+  var width  // incorrect
+  var beakerWidth  // correct
+```
+
 - [ ] Are appropriate design patterns used?
 - [ ] Is inheritance used where appropriate? Does the type hierarchy make sense?
 - [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary properties)
@@ -83,8 +174,8 @@ For further info and examples on each checklist item see the [PhET Code Review G
 
 - [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.)
 - [ ] Are there any leaks due to registration of AXON observers? 
-- [ ] For each call to Property.link or PropertySet.link, is there a corresponding unlink, or documentation about why an unlink is unnecessary?
-- [ ] For each DerivedProperty or Multilink created, is there a corresponding detach, or documentation about why a detach is unnecessary?
-- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers an AXON observer, is there a call to that component’s dispose function, or documentation about why dispose is unnecessary?
+	- [ ] For each call to Property.link or PropertySet.link, is there a corresponding unlink, or documentation about why an unlink is unnecessary?
+	- [ ] For each DerivedProperty or Multilink created, is there a corresponding detach, or documentation about why a detach is unnecessary?
+	- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers an AXON observer, is there a call to that component’s dispose function, or documentation about why dispose is unnecessary?
 - [ ] Are there any leaks due to registration of components with TOGETHER? `together.addComponent` should be accompanied by `together.removeComponent` or documented why removeComponent is unnecessary.
 
