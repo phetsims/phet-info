@@ -1,4 +1,3 @@
-For further info and examples on each checklist item see the [PhET Code Review Guidlines] (https://docs.google.com/document/d/16dnSetfnsQAyJpTWm7xocchlL47NcZ3e3qAaOpQtxds/edit#)
 
 **Build and Run Checks**
 
@@ -129,6 +128,7 @@ my-repo-config.js
 - [ ] Does model.md adequately describe the model, in terms appropriate for teachers?
 - [ ] Does implementation-notes.md adequately describe the implementation, with an overview that will be useful to future maintainers?
 - [ ] Do all source files have a copyright comment on line 1? Eg:
+
       ```js
 // Copyright 2002-2015, University of Colorado Boulder
 ```
