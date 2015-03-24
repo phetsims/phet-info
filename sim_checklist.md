@@ -2,6 +2,7 @@ Note: This template is still under development & discussion and is not ready for
 
 - [ ] **Design doc created** (date: / / / ) 
 - [ ] **Sim repo created** (Date: )
+  - [ ] Collaborators added (such as QA team) 
   - [ ] If a port, unfuddle tickets reviewed
   - [ ] If a port, existing sim tested for bugs
 - [ ] **Learning goals and standards identified** (Date: / / / )
