@@ -23,7 +23,7 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Code review checklist
 - [ ] **First release candidate** (Date:       )
 - [ ] **Pre-publication items** 
-  - [ ] Screenshot
+  - [ ] Screenshot 2048x1344
   - [ ] Check compatible activities
   - [ ] Model description 
 - [ ] **Published** (Date:       )
