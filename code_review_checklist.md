@@ -1,3 +1,8 @@
+**Process**
+
+Prior to doing a code review, copy this checklist to a GitHub issue for the repository being reviewed.
+If a code review is part of a third-party contract, create that GitHub issue when the repository is created, so that the issue
+matches the checklist agreed upon in the contract.
 
 **Build and Run Checks**
 
@@ -78,67 +83,14 @@ my-repo-config.js
 
 **Coding conventions**
 
-- [ ] Is the code formatted according to PhET-style conventions? 
- - See [“Coding Style Guidelines” in PhET Development Overview](https://docs.google.com/document/d/1odXkliRagq0zuf1_NdOtQ2BrkC9hwlISnPi2y-dKdrk/edit#heading=h.1oxr3ptyo50w). 
- -  See also [phet-idea-code-style.xml](https://github.com/phetsims/joist/blob/master/util/phet-idea-codestyle.xml) for IntelliJ IDEA.
-- [ ] Do all source files use requirejs?
-- [ ] Are all imports and constants grouped at the top of js source files, similar to this? (Order of audio, images, strings and constants may be different. But they should not be interleaved.)
-      ```js
-	// modules
-	var Shape = requirejs( ‘KITE/Shape’ );
-
-	// audio
-	var dingAudio = require( ‘audio!...’ );
-
-  	// images
-	var pizzaImage = require( ‘image!...’ );
-
-	// strings
-	var titleString = require( ‘string!...’ );
-
-	// constants
-	var MAX_PARTICLES = 1000
-```
-- [ ] For all requirejs imports, does the name of the var match the name of the source file? Eg:
-      ```js
-	// correct
-	var ThermometerNode = require( ‘SCENERY_PHET/ThermometerNode’ );
-	// wrong
-	var Thermometer = require( ‘SCENERY_PHET/ThermometerNode’ );
-```
-
-- [ ] For source files that use inheritance…
-	- [ ] Is ‘return inherit( SuperType, SubType,...)’ used?
-	- [ ] Are prototype functions added via inherit(...)?
-	- [ ] Are static functions added via inherit(...)?
-- [ ] Are single quotes used for all string literals? (Search for double-quote character, it should appear only in comments.)
-- [ ] Do all variables and fields names of type axon.Property have a ‘Property’ suffix? Eg:
-
-      ```js
-  var visibleProperty = new Property( true ); // correct
-  var visible = new Property( true ); // wrong
-
-  @param {Property.<number>} temperatureProperty // correct
-  @param {Property.<number>} temperature // wrong	
-```
+- [ ] Does the code style meet PhET's code-style guidelines, as described in the [“Coding Style Guidelines” section of "PhET Development Overview"](https://docs.google.com/document/d/1odXkliRagq0zuf1_NdOtQ2BrkC9hwlISnPi2y-dKdrk/edit#heading=h.1oxr3ptyo50w)?
+- [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/joist/blob/master/util/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
 
 **Documentation**
 
 - [ ] Are documentation conventions followed, as described in the [“Coding Style Guidelines” section of the PhET Development Overview](https://docs.google.com/document/d/1odXkliRagq0zuf1_NdOtQ2BrkC9hwlISnPi2y-dKdrk/edit#heading=h.1oxr3ptyo50w)?
 - [ ] Does model.md adequately describe the model, in terms appropriate for teachers?
 - [ ] Does implementation-notes.md adequately describe the implementation, with an overview that will be useful to future maintainers?
-- [ ] Do all source files have a copyright comment on line 1? Eg:
-
-      ```js
-// Copyright 2002-2015, University of Colorado Boulder
-```
-- [ ] Are JSdoc conventions followed?
-	- [ ] Do all source files have an @author annotation?
-	- [ ] Are all non-trivial public functions documented using JSdoc? 
-	- [ ] Are function parameters annotated with @param and proper type expressions?
-	- [ ] Are return values documented using @returns and proper type expressions?
-	- [ ] Are parameters and return values of type axon.Property fully qualified with their value type? E.g. {Property.< number>} 
-	- [ ] Is @private used to indicate functions and properties that are not part of the public interface?
 - [ ] Are sim-specific query parameters (if any) identified and documented in one location?
 
 **Organization, Readability, Maintainability**
@@ -146,15 +98,6 @@ my-repo-config.js
 - [ ] Does the organization and structure of the code make sense? 
   - [ ] Do the model and view contain types that you would expect (or guess!) by looking at the sim?
   - [ ] Do the names of things correspond to the names that you see in the user interface?
-- [ ] Are names (types, variables, properties,...) sufficiently descriptive and specific, avoiding non-standard abbreviations? Eg:
-      ```js
-  var numPart  // incorrect
-  var numberOfParticles  // correct
-
-  var width  // incorrect
-  var beakerWidth  // correct
-```
-
 - [ ] Are appropriate design patterns used?
 - [ ] Is inheritance used where appropriate? Does the type hierarchy make sense?
 - [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary properties)
