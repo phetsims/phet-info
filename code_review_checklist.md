@@ -11,7 +11,7 @@ matches the checklist agreed upon in the contract.*
 - [ ] Does the sim start up? (requirejs and built versions)
 - [ ] Does the sim experience any assertion failures? (run with query parameter 'ea')
 - [ ] Does the sim pass a scenery fuzzer test? (run with query parameter 'fuzzMouse')
-- [ ] Are there any strings that are not being internationalized? (run with query parameter 'stringTest=x')
+- [ ] Are there any strings that are not being internationalized? (run with query parameter 'stringTest=x', you should see nothing but 'x' strings)
 - [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter 'stringTest=double') 
 
 **Repository structure**
@@ -75,7 +75,7 @@ my-repo-config.js
 - [ ] Is the version identifier in package.json the same as js/version.js?
 - [ ] Is the LICENSE file correct? (Generally GPL v3 for sims, MIT for common code, but there are exceptions to this.)
 - [ ] Does .gitignore match other repositories?
-- [ ] Does *-main.js follow PhET conventions? Is it well documented? Does it contain correct credits?
+- [ ] Does *-main.js follow PhET conventions? Does it contain correct credits (options.credits passed to Sim constructor)?
 - [ ] Is the format of assets/*-screenshot.png correct? (2048x1344, PNG, 32-bit color) Has the browser chrome been stripped off of the screenshot?
 - [ ] Are there git repository branches that are no longer used and should be pruned?
 
@@ -96,7 +96,7 @@ my-repo-config.js
 - [ ] Does the organization and structure of the code make sense? Do the model and view contain types that you would expect (or guess!) by looking at the sim? Do the names of things correspond to the names that you see in the user interface?
 - [ ] Are appropriate design patterns used?
 - [ ] Is inheritance used where appropriate? Does the type hierarchy make sense?
-- [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary properties)
+- [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary properties/functions)
 - [ ] Are the source files reasonable in size? Scrutinize large files with too many responsibilities - can responsibilities be broken into smaller delegates?
 - [ ] Are any significant chunks of code duplicated?
 - [ ] Is there anything that should be generalized and migrated to common code?
