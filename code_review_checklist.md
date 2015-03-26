@@ -2,6 +2,7 @@
 If a code review is part of a third-party contract, create that GitHub issue when the repository is created, so that the issue
 matches the checklist agreed upon in the contract.*
 
+PhET code-review checklist
 =============
 
 **Build and Run Checks**
