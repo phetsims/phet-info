@@ -5,6 +5,7 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Collaborators added (such as QA team) 
   - [ ] If a port, unfuddle tickets reviewed
   - [ ] If a port, existing sim tested for bugs
+  - [ ] If a port, implementation details 
 - [ ] **Learning goals and standards identified** (Date: / / / )
 - [ ] **Design concept complete**  (Date: / / / )
 - [ ] **Wireframes complete** (Date:       )
