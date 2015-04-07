@@ -33,9 +33,9 @@ mkdir /htdocs/UCB/AcademicAffairs/ArtsSciences/physics/phet/dev/html/$SIM
    color (to 2048x1344) and save as /assets/$SIM-screenshot.png.
 2. Publish a 'dev' version, as described above.
 3. If this is the first time you've deployed a public version of this sim, log in to figaro and do this:
-+ mkdir /data/web/htdocs/phetsims/sims/html/$SIM
-+ copy a .htaccess file to /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess
-+ edit /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess to have the correct sim
+++ mkdir /data/web/htdocs/phetsims/sims/html/$SIM
+++ copy a .htaccess file to /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess
+++ edit /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess to have the correct sim
 4. Create the deploy directory on figaro:
 mkdir /data/web/htdocs/phetsims/sims/html/$SIM/$VERSION
 5. Create 600x394 and 128x84 resized copies of the screenshot by running ```grunt generate-thumbnails```.  The images
