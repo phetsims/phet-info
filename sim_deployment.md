@@ -29,7 +29,7 @@ mkdir /htdocs/UCB/AcademicAffairs/ArtsSciences/physics/phet/dev/html/$SIM
 
 *Steps to publish a public version:*
 
-1. Create a screenshot on an iPad 3. Crop the chrome off of it (to 2048x1342), pad the top with 2 pixels of background
+1. Create a screenshot on an iPad 3. Crop the chrome off of it (to 2048x1344), pad the top with 2 pixels of background
    color (to 2048x1344) and save as /assets/$SIM-screenshot.png.
 2. Publish a 'dev' version, as described above.
 3. If this is the first time you've deployed a public version of this sim, log in to figaro and do this:
