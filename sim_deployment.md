@@ -39,15 +39,21 @@ mkdir /htdocs/UCB/AcademicAffairs/ArtsSciences/physics/phet/dev/html/$SIM
 4. Create the deploy directory on figaro:
 mkdir /data/web/htdocs/phetsims/sims/html/$SIM/$VERSION
 5. Create 600x394 and 128x84 resized copies of the screenshot by running ```grunt generate-thumbnails```.  The images
-will be placed into the build directory.
-6. On your local machine, move the files to figaro by entering the command:
+will be placed into the build directory.  Open the images to verify that they were correctly generated.
+6. If this is an HTML5 only sim you'll need to include a screenshot with a width of 300 (the height doesn't matter).
+ You can create this by scaling the screenshot in the assets directly.  This should be placed into the build directory
+ and named $SIM-screenshot.png.
+7. On your local machine, move the files to figaro by entering the command:
 ```cd build; scp -r * $USERNAME@figaro:/data/web/htdocs/phetsims/sims/html/$SIM/$VERSION```
-7. edit /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess to have the correct version number (this makes the sim 'live')
-8. If this is an HTML5 only sim and you are publishing a new version (i.e. area-builder or ph-scale-basics), you'll need
-   to copy 2 other files from an older version folder to the new version folder: $SIM-screenshot.png and .htaccess.
-   The screenshot is what appears on the website sim page. The .htaccess allows the download link to work on Safari
-   (note this is a different .htaccess file that lives in the versioned directory, not in the sim root). To do this, you
-   can ssh into figaro and use cp -p. This is probably going to be a temporary step until we figure out our build system
-   and how we want to do html sim pages. Contact @aaronsamuel137 with any questions.
-9. test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
-10. If this was a first public deploy, ask JO or Aaron how to make it appear on the website.
+8. Edit /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess to have the correct version number (this makes the sim
+'live').
+9. You'll need to add a .htaccess file to the version directory with the following contents:
+   ```
+   RewriteEngine On
+   RewriteCond %{QUERY_STRING} =download
+   RewriteRule ([^/]*)$ - [L,E=download:$1]
+   Header onsuccess set Content-disposition "attachment; filename=%{download}e" env=download
+   ```
+   Note this is a different .htaccess file that lives in the versioned directory, not in the sim root.
+10. Test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
+11. If this was a first public deploy, ask @jonathanolson or @aaronsamuel137 to make it appear on the website.
