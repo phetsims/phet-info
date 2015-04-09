@@ -29,8 +29,11 @@ mkdir /htdocs/UCB/AcademicAffairs/ArtsSciences/physics/phet/dev/html/$SIM
 
 *Steps to publish a public version:*
 
-1. Create a screenshot on an iPad 3. Crop the chrome off of it (to 2048x1342), pad the top with 2 pixels of background
-   color (to 2048x1344) and save as /assets/$SIM-screenshot.png.
+1. Create a screenshot that is 2048x1344.  Generally this is done by taking a screenshot on an iPad 3 or higher (since
+it has the retina display) with multiple tabs open, then crop the chrome off of it to 2048x1342, then pad the top with 2
+pixels of the sim's background color (to 2048x1344) and save as /assets/$SIM-screenshot.png.  Eventually, quick and easy
+creation of this screen shot will be supported through the screenshot feature from the PhET menu, but as of this writing
+this support doesn't exist.
 2. Publish a 'dev' version, as described above.
 3. If this is the first time you've deployed a public version of this sim, log in to figaro and do this:
    + mkdir /data/web/htdocs/phetsims/sims/html/$SIM
