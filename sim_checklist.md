@@ -3,6 +3,7 @@ Note: This template is still under development & discussion and is not ready for
 - [ ] **Design doc created** (Date: / / / ) 
 - [ ] **Sim repo created** (Date: / / / ) 
   - [ ] Collaborators added (such as QA team) 
+  - [ ] Sim suggestions doc reviewed
   - [ ] If a port, unfuddle tickets reviewed
   - [ ] If a port, existing sim tested for bugs
   - [ ] If a port, implementation details 
