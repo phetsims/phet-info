@@ -21,29 +21,29 @@ PhET code-review checklist
 
       For a sim repository named “my-repo”, the general structure should look like this (where audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
 
-   ```js
-my-repo/
-	assets/
-		my-repo-screenshot.png
-	audio/
-		license.txt
-	doc/
-		model.md
-		implementation-notes.md
-	images/
-		license.txt
-	js/
-		my-repo-config.js
-		my-repo-main.js
-		version.js
-	strings/
-		my-repo-strings_en.json
-	.gitignore
-	my-repo_en.html
-	Gruntfile.js
-	LICENSE
-	package.json
-	README.md
+```js
+   my-repo/
+      assets/
+         my-repo-screenshot.png
+      audio/
+         license.txt
+      doc/
+         model.md
+         implementation-notes.md
+      images/
+         license.txt
+      js/
+         my-repo-config.js
+         my-repo-main.js
+         version.js
+      strings/
+         my-repo-strings_en.json
+      .gitignore
+      my-repo_en.html
+      Gruntfile.js
+      LICENSE
+      package.json
+      README.md
 ```
 
    For a common-code repository, the structure is similar, but some of the files and directories may not be present if the repo doesn’t have audio, images, strings, or a demo application.
@@ -52,20 +52,21 @@ my-repo/
 
       All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Custom”, the general directory structure should look like this:
 
-   ```js
-my-repo/js/
-	common/
-		model/
-		view/
-custom
-		model/
-		view/
-	introduction
-		model/
-		view/
-my-repo-config.js
-	my-repo-main.js
-	version.js
+```js
+   my-repo/
+      js/
+         common/
+            model/
+            view/
+         custom
+            model/
+            view/
+         introduction
+            model/
+            view/
+         my-repo-config.js
+         my-repo-main.js
+         version.js
  ```
 
 - [ ] Is there a file in assets/ for every file in audio/ and images/?
