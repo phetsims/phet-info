@@ -7,6 +7,7 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] If a port, unfuddle tickets reviewed
   - [ ] If a port, existing sim tested for bugs
   - [ ] If a port, implementation details 
+  - [ ] Paste snapshot of code review checklist into repo issue
 - [ ] **Learning goals and standards identified** (Date: / / / )
 - [ ] **Design concept complete**  (Date: / / / )
 - [ ] **Wireframes complete** (Date: / / / ) 
