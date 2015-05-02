@@ -118,5 +118,5 @@ PhET code-review checklist
 	- [ ] For each call to Property.link or PropertySet.link, is there a corresponding unlink, or documentation about why an unlink is unnecessary?
 	- [ ] For each DerivedProperty or Multilink created, is there a corresponding detach, or documentation about why a detach is unnecessary?
 	- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers an AXON observer, is there a call to that component’s dispose function, or documentation about why dispose is unnecessary?
-- [ ] Are there any leaks due to registration of components with TOGETHER? `together.addComponent` should be accompanied by `together.removeComponent` or documented why removeComponent is unnecessary.
+- [ ] Are there any leaks due to registration of components with TANDEM? `tandem.addInstance` should be accompanied by `tandem.removeInstance` or documented why removeInstance is unnecessary.
 
