@@ -3,24 +3,19 @@ Note: This template is still under development & discussion and is not ready for
 ## Implementation
 
 - [ ] **Sim repo created** (Date: / / / ) 
-  - [ ] Collaborators added (such as QA team) 
+  - [ ] Collaborators added (such as QA team, designers, etc) 
+  - [ ] Sim added to active repos list in chipper
   - [ ] Sim suggestions doc reviewed
   - [ ] If a port, unfuddle tickets reviewed
   - [ ] If a port, existing sim tested for bugs
   - [ ] If a port, implementation details 
   - [ ] Paste snapshot of code review checklist into repo issue
 - [ ] **Sim feature complete** (Date: / / / ) 
-
 - [ ] **Code review complete** (Date: / / / ) 
   - [ ] Code review checklist
   - [ ] Model description 
 - [ ] **Published** (Date: / / / ) 
-  - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
-  - [ ] Teacher Guide
-  - [ ] Activities and gooru spreadsheet
-  - [ ] Notify translators?
   - [ ] Update repo README to published template
-- [ ] Hold postmortem if applicable (Date: / / / ) 
 
 ## Design
 - [ ] **Design doc created** (Date: / / / ) 
@@ -38,8 +33,13 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] No new feature requests
 - [ ] **Pre-publication items** 
   - [ ] Screenshot 2048x1344
-  - [ ] Check compatible activities
-17) If the new sim is a revision of an existing sim, materials on website need to be reviewed.
+  - [ ] If a port check compatible activities  
+  - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
+  - [ ] Teacher Guide
+  - [ ] Activities and gooru spreadsheet
+  - [ ] Notify translators?
+  - [ ] Verify credits
+- [ ] **Hold postmortem if applicable** (Date: / / / ) 
 
 ## QA
 - [ ] **Dev testing complete** (Date: / / / ) 
