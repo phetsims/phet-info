@@ -30,7 +30,6 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] No new feature requests
 - [ ] **Pre-publication items** 
   - [ ] Screenshot 2048x1344
-  - [ ] If a port check compatible activities  
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Teacher Guide
   - [ ] Activities and gooru spreadsheet
