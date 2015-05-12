@@ -27,6 +27,7 @@ Note: This template is still under development & discussion and is not ready for
 - [ ] **Mockups complete** (Date: / / / ) 
   - [ ] Mockups checked for colorblind and greyscale
 - [ ] **Design doc sent for quote** (Date: / / / )  
+- [ ] **Visual an interaction review of first deliverable**
 - [ ] **Interviews complete** (Date: / / / ) 
   - [ ] Results reported to team
   - [ ] Notes pasted into design doc
