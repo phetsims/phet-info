@@ -10,12 +10,9 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] If a port, implementation details 
   - [ ] Paste snapshot of code review checklist into repo issue
 - [ ] **Sim feature complete** (Date: / / / ) 
-- [ ] **Dev testing complete** (Date: / / / ) 
 
 - [ ] **Code review complete** (Date: / / / ) 
   - [ ] Code review checklist
-- [ ] **First release candidate** (Date: / / / ) 
-
   - [ ] Model description 
 - [ ] **Published** (Date: / / / ) 
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
@@ -45,3 +42,6 @@ Note: This template is still under development & discussion and is not ready for
 17) If the new sim is a revision of an existing sim, materials on website need to be reviewed.
 
 ## QA
+- [ ] **Dev testing complete** (Date: / / / ) 
+- [ ] **First release candidate** (Date: / / / ) 
+ - [ ] Test matrix deemed complete
