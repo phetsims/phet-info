@@ -6,10 +6,9 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Collaborators added (such as QA team, designers, etc) 
   - [ ] Sim added to active repos list in chipper
   - [ ] Sim suggestions doc reviewed
-  - [ ] If a port, unfuddle tickets reviewed
-  - [ ] If a port, existing sim tested for bugs
-  - [ ] If a port, implementation details 
-  - [ ] Paste snapshot of code review checklist into repo issue
+  - [ ] Unfuddle tickets reviewed
+  - [ ] Existing sim tested for bugs, issues reported in repo
+- [ ] **Initial development started** (Date: / / / )
 - [ ] **Sim feature complete** (Date: / / / ) 
 - [ ] **Code review complete** (Date: / / / ) 
   - [ ] Code review checklist
@@ -38,6 +37,7 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Teacher Guide
   - [ ] Activities and gooru spreadsheet
   - [ ] Notify translators?
+  - [ ] Sim primer
   - [ ] Verify credits
 - [ ] **Hold postmortem if applicable** (Date: / / / ) 
 
