@@ -1,6 +1,7 @@
 Note: This template is still under development & discussion and is not ready for general usage.
 
-- [ ] **Design doc created** (Date: / / / ) 
+***Developer Responsiblities***
+
 - [ ] **Sim repo created** (Date: / / / ) 
   - [ ] Collaborators added (such as QA team) 
   - [ ] Sim suggestions doc reviewed
@@ -8,26 +9,13 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] If a port, existing sim tested for bugs
   - [ ] If a port, implementation details 
   - [ ] Paste snapshot of code review checklist into repo issue
-- [ ] **Learning goals and standards identified** (Date: / / / )
-- [ ] **Design concept complete**  (Date: / / / )
-- [ ] **Wireframes complete** (Date: / / / ) 
-- [ ] **Mockups complete** (Date: / / / ) 
-  - [ ] Mockups checked for colorblind and greyscale
 - [ ] **Sim feature complete** (Date: / / / ) 
 - [ ] **Dev testing complete** (Date: / / / ) 
-- [ ] **Interviews complete** (Date: / / / ) 
-  - [ ] Results reported to team
-  - [ ] Notes pasted into design doc
-  - [ ] Back-up of interviews
-- [ ] **Lead designer "sign off"** (Date: / / / ) 
-  - [ ] Performance acceptable
-  - [ ] No new feature requests
+
 - [ ] **Code review complete** (Date: / / / ) 
   - [ ] Code review checklist
 - [ ] **First release candidate** (Date: / / / ) 
-- [ ] **Pre-publication items** 
-  - [ ] Screenshot 2048x1344
-  - [ ] Check compatible activities
+
   - [ ] Model description 
 - [ ] **Published** (Date: / / / ) 
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
@@ -37,9 +25,23 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Update repo README to published template
 - [ ] Hold postmortem if applicable (Date: / / / ) 
 
-
-
-
+***Designer Responsiblities***
+- [ ] **Design doc created** (Date: / / / ) 
+- [ ] **Learning goals and standards identified** (Date: / / / )
+- [ ] **Design concept complete**  (Date: / / / )
+- [ ] **Wireframes complete** (Date: / / / ) 
+- [ ] **Mockups complete** (Date: / / / ) 
+  - [ ] Mockups checked for colorblind and greyscale
+- [ ] **Interviews complete** (Date: / / / ) 
+  - [ ] Results reported to team
+  - [ ] Notes pasted into design doc
+  - [ ] Back-up of interviews
+- [ ] **Lead designer "sign off"** (Date: / / / ) 
+  - [ ] Performance acceptable
+  - [ ] No new feature requests
+- [ ] **Pre-publication items** 
+  - [ ] Screenshot 2048x1344
+  - [ ] Check compatible activities
 17) If the new sim is a revision of an existing sim, materials on website need to be reviewed.
 
 Consider parsing by responsiblity (Design, Implementation, QA...)
