@@ -1,19 +1,5 @@
 Note: This template is still under development & discussion and is not ready for general usage.
 
-## Implementation
-
-- [ ] **Sim repo created** (Date: / / / ) 
-  - [ ] Collaborators added (such as QA team, designers, etc) 
-  - [ ] Sim added to active repos list in chipper
-  - [ ] Sim suggestions doc reviewed
-- [ ] **Initial development started** (Date: / / / 
-- [ ] **Sim feature complete** (Date: / / / ) 
-- [ ] **Code review complete** (Date: / / / ) 
-  - [ ] Code review checklist
-  - [ ] Model description 
-- [ ] **Published** (Date: / / / ) 
-  - [ ] Update repo README to published template
-
 ## Design
 - [ ] **Design doc created** (Date: / / / ) 
 - [ ] **Learning goals and standards identified** (Date: / / / )
@@ -37,6 +23,20 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Sim primer
   - [ ] Verify credits
 - [ ] **Hold postmortem if applicable** (Date: / / / ) 
+
+## Implementation
+- [ ] **Sim repo created** (Date: / / / ) 
+  - [ ] Collaborators added (such as QA team, designers, etc) 
+  - [ ] Sim added to active repos list in chipper
+  - [ ] Sim suggestions doc reviewed
+- [ ] **Initial development started** (Date: / / / 
+- [ ] **Sim feature complete** (Date: / / / ) 
+- [ ] **Code review complete** (Date: / / / ) 
+  - [ ] Code review checklist
+  - [ ] Model description 
+- [ ] **Published** (Date: / / / ) 
+  - [ ] Update repo README to published template
+
 
 ## QA
 - [ ] **Dev testing complete** (Date: / / / ) 
