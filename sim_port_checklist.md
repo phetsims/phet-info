@@ -32,8 +32,8 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Performance acceptable
   - [ ] No new feature requests
 - [ ] **Pre-publication items** 
-  - [ ] Screenshot 2048x1344
-  - [ ] If a port check compatible activities  
+  - [ ] Screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
+  - [ ] Check compatible activities  
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Teacher Guide
   - [ ] Activities and gooru spreadsheet
