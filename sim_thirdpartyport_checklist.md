@@ -15,6 +15,7 @@ Note: This template is still under development & discussion and is not ready for
 - [ ] **Code review complete** (Date: / / / ) 
   - [ ] Code review checklist
   - [ ] Model description 
+- [ ] **PhET tweaks after sim acceptance** (Date: / / / ) 
 - [ ] **Published** (Date: / / / ) 
   - [ ] Update repo README to published template
 
@@ -47,4 +48,5 @@ Note: This template is still under development & discussion and is not ready for
 ## QA
 - [ ] **Dev testing complete** (Date: / / / ) 
 - [ ] **First release candidate** (Date: / / / ) 
- - [ ] Test matrix deemed complete
+- [ ] **Sim accepted from third party** (Date: / / / )
+- [ ] Test matrix deemed complete
