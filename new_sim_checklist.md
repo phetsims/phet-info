@@ -1,6 +1,6 @@
 Note: This template is still under development & discussion and is not ready for general usage.
 
-## Developer Responsiblities
+## Implementation
 
 - [ ] **Sim repo created** (Date: / / / ) 
   - [ ] Collaborators added (such as QA team) 
@@ -25,7 +25,7 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Update repo README to published template
 - [ ] Hold postmortem if applicable (Date: / / / ) 
 
-## Designer Responsiblities
+## Design
 - [ ] **Design doc created** (Date: / / / ) 
 - [ ] **Learning goals and standards identified** (Date: / / / )
 - [ ] **Design concept complete**  (Date: / / / )
@@ -44,4 +44,4 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Check compatible activities
 17) If the new sim is a revision of an existing sim, materials on website need to be reviewed.
 
-Consider parsing by responsiblity (Design, Implementation, QA...)
+## QA
