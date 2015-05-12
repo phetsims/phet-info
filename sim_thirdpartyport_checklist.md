@@ -51,4 +51,4 @@ Note: This template is still under development & discussion and is not ready for
 - [ ] **Dev testing complete** (Date: / / / ) 
 - [ ] **First release candidate** (Date: / / / ) 
 - [ ] **Sim accepted from third party** (Date: / / / )
-- [ ] Test matrix deemed complete
+- [ ] **Test matrix deemed complete**
