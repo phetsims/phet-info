@@ -10,7 +10,7 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Existing sim tested for bugs, issues reported in repo
   - [ ] Implementation details added to design spec
   - [ ] Paste snapshot of code review checklist into repo issue
-- [ ] **Initial Development** (Date: / / / ) 
+- [ ] **Initial development started** (Date: / / / ) 
 - [ ] **Sim feature complete** (Date: / / / ) 
 - [ ] **Code review complete** (Date: / / / ) 
   - [ ] Code review checklist
