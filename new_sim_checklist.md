@@ -1,6 +1,6 @@
 Note: This template is still under development & discussion and is not ready for general usage.
 
-***Developer Responsiblities***
+## Developer Responsiblities
 
 - [ ] **Sim repo created** (Date: / / / ) 
   - [ ] Collaborators added (such as QA team) 
@@ -25,7 +25,7 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Update repo README to published template
 - [ ] Hold postmortem if applicable (Date: / / / ) 
 
-***Designer Responsiblities***
+## Designer Responsiblities
 - [ ] **Design doc created** (Date: / / / ) 
 - [ ] **Learning goals and standards identified** (Date: / / / )
 - [ ] **Design concept complete**  (Date: / / / )
