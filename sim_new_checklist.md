@@ -35,6 +35,7 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Teacher Guide
   - [ ] Activities and gooru spreadsheet
   - [ ] Notify translators?
+  - [ ] Sim primer
   - [ ] Verify credits
 - [ ] **Hold postmortem if applicable** (Date: / / / ) 
 
