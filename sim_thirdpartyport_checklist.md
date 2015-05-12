@@ -20,7 +20,8 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Update repo README to published template
 
 ## Design
-- [ ] **Design doc created** (Date: / / / ) 
+- [ ] **Design doc created** (Date: / / / )
+- [ ] **Legacy sim docs/info gathered**
 - [ ] **Learning goals and standards identified** (Date: / / / )
 - [ ] **Design concept complete**  (Date: / / / )
 - [ ] **Wireframes complete** (Date: / / / ) 
