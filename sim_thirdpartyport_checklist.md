@@ -35,6 +35,7 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Sim suggestions doc reviewed
   - [ ] Unfuddle tickets reviewed
   - [ ] Existing sim tested for bugs, issues reported in repo
+  - [ ] Port existing strings (IF ANY) and commit to the GitHub repo
   - [ ] Implementation details added to design spec
   - [ ] Paste snapshot of code review checklist into repo issue
 - [ ] **Initial development started** (Date: / / / ) 
