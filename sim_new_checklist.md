@@ -29,7 +29,8 @@ Note: This template is still under development & discussion and is not ready for
   - [ ] Collaborators added (such as QA team, designers, etc) 
   - [ ] Sim added to active repos list in chipper
   - [ ] Sim suggestions doc reviewed
-- [ ] **Initial development started** (Date: / / / 
+  - [ ] Port existing strings (IF ANY) and commit to the GitHub repo
+- [ ] **Initial development started** (Date: / / /)
 - [ ] **Sim feature complete** (Date: / / / ) 
 - [ ] **Code review complete** (Date: / / / ) 
   - [ ] Code review checklist
