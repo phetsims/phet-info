@@ -1,4 +1,4 @@
-Note: This template is still under development & discussion and is not ready for general usage.
+#Third-Party Sim Port Checklist
 
 ## Design
 - [ ] **Design doc created** (Date: / / / )
