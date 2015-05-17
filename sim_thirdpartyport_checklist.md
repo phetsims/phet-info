@@ -1,4 +1,4 @@
-#Third-Party Sim Port Checklist
+#Third-Party Sim Port Checklist Template
 
 ## Design
 - [ ] **Design doc created** (Date: / / / )
