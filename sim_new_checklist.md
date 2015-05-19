@@ -1,4 +1,4 @@
-Note: This template is still under development & discussion and is not ready for general usage.
+#New Sim Checklist Template
 
 ## Design
 - [ ] **Design doc created** (Date: / / ) 
