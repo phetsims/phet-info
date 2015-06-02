@@ -20,3 +20,4 @@
 - [ ] Subscribe to phet@lists.colorado.edu
 - [ ] [Register](https://phet.colorado.edu/en/register?dest=%2F) for PhET website account
  - [ ] Grant admin access on website
+ - [ ] Input job title (for About>People page)
