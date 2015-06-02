@@ -17,7 +17,8 @@
  - [ ] Add to appropriate github team
  - [ ] Access to appropriate repos
 - [ ] Unfuddle account
-- [ ] Subscribe to phet@lists.colorado.edu [(Instructions)](http://www.colorado.edu/oit/tutorial/email-list-manager-subscribe-list)
+- [ ] Subscribe to phet@lists.colorado.edu
+- [(Instructions)](http://www.colorado.edu/oit/tutorial/email-list-manager-subscribe-list)
 - [ ] [Register](https://phet.colorado.edu/en/register?dest=%2F) for PhET website account
  - [ ] Grant admin access on website
  - [ ] Input job title (for About>People page)
