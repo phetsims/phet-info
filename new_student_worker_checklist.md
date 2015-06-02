@@ -17,5 +17,5 @@
  - [ ] Access to appropriate repos
 - [ ] Unfuddle account
 - [ ] Subscribe to phet@lists.colorado.edu
-- [ ] Create PhET website account
+- [ ] [Register](https://phet.colorado.edu/en/register?dest=%2F) for PhET website account
  - [ ] Grant admin access on website
