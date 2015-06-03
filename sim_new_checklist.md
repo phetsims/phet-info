@@ -2,6 +2,7 @@
 
 ## Design
 - [ ] **Design doc created** (Date: //) 
+ - [ ] Make phethelp@gmail.com owner, share with phet-team
 - [ ] **Learning goals and standards identified** (Date: //)
 - [ ] **Design concept complete**  (Date: //)
 - [ ] **Wireframes complete** (Date: //) 
