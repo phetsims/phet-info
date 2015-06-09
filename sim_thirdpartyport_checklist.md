@@ -3,6 +3,7 @@
 ## Design
 - [ ] **Design doc created** (Date: //)
  - [ ] Make phethelp@gmail.com owner, share with phet-team
+ - [ ] Add to [Master Doc List](https://docs.google.com/document/d/1yjT1oE95JG_evwob9LB_De-brD7JpfFM6iIL6pF812k/edit#)
 - [ ] **Legacy sim docs/info gathered**
 - [ ] **Learning goals and standards identified** (Date: //)
 - [ ] **Design concept complete**  (Date: //)
