@@ -89,6 +89,11 @@ PhET code-review checklist
 - [ ] Does implementation-notes.md adequately describe the implementation, with an overview that will be useful to future maintainers?
 - [ ] Are sim-specific query parameters (if any) identified and documented in one location?
 
+**Common Errors**
+
+- [ ] Is `Math.random` used where `dot.Util.randomSymmetric` should be used?  Math.random does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879
+- [ ] Is `toFixed` used where `dot.Util.toFixed` or `dot.Util.toFixedNumber` should be used? JavaScript's `toFixed` is notoriously buggy, behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
+
 **Organization, Readability, Maintainability**
 
 - [ ] Does the organization and structure of the code make sense? Do the model and view contain types that you would expect (or guess!) by looking at the sim? Do the names of things correspond to the names that you see in the user interface?
