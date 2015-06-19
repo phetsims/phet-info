@@ -1,7 +1,8 @@
 #New Student Worker Checklist
 
 ## Admin
-- [ ] Payroll forms [New Student Employee] (https://docs.google.com/document/d/1At37GOZ83luHGKOOQzjnJH2gu1E-sb-91OsdAmjYIIs/edit)
+- [ ] Complete Payroll forms (Personal data and Emergency contact), email to oliver.nix@colorado.edu [New Student Employee] (https://docs.google.com/document/d/1At37GOZ83luHGKOOQzjnJH2gu1E-sb-91OsdAmjYIIs/edit)
+- [ ] Enter/update W4 and Direct Deposit [New Student Employee] (https://docs.google.com/document/d/1At37GOZ83luHGKOOQzjnJH2gu1E-sb-91OsdAmjYIIs/edit)
 - [ ] Add contact info to [PhET Planning doc](https://docs.google.com/document/d/1hONYWo1R8gf24gaAd-5B1xmD_UrwbOG6BfB01WvrfiQ/edit)
 - [ ] Keys/card access if needed
 - [ ] Peripherals/computer if needed
