@@ -1,31 +1,44 @@
 
 ** Simulation Deployment Guidelines **
 
-Constants to replace:
+Variables to replace:
 SIM = the name of your sim's repo
 VERSION = the identifier of your sim, eg "1.0.0-rc.2"
 USERNAME = your username on spot and figaro
 
 *Steps to publish a 'dev' version:*
 
-1. Set version number to $VERSION in package.json. $VERSION should have "dev" in the identifier, eg "1.0.0-dev.2" (commit & push)
-2. grunt
-3. If this is the first time you've deployed a "dev" version of this sim, log in to spot and do this:
-mkdir /htdocs/UCB/AcademicAffairs/ArtsSciences/physics/phet/dev/html/$SIM
-4. deploy-dev.sh $USERNAME
+1. Update the version identifier in package.json. The identifier should contain "dev", eg "1.0.0-dev.2".
+2. Commit & push.
+3. Run the build process: `grunt`
+4. If this is the first time you've deployed a "dev" version of this sim, log in to spot and do this:
+```
+    cd /htdocs/UCB/AcademicAffairs/ArtsSciences/physics/phet/dev/html
+    mkdir $SIM
+    cp example-sim/.htaccess $SIM
+```
+5. Deploy to the server: `deploy-dev.sh $USERNAME`
 
 *Steps to publish a 'rc' (release candidate) version:*
 
-1. Create and checkout a new branch. The first rc version will be on a branch called "1.0"
-2. Update the version number in package.json. The first rc version should be "1.0.0-rc.1"
-3. Commit and push to the new branch.
-4. Run grunt. Make sure that the correct libraries are listed under the key "phetLibs" in package.json. This should list
-   all of the common libraries as well as the sim being published.
-5. If this is getting a full test matrix, copy build/dependencies.json to the sim root. Commit and push to the new branch.
-   Otherwise, if this sim is only getting spot testing or if this release candidate is getting promoted to production,
-   /dependencies.json should remain as it was from the last well tested release candidate. In this case, to ensure that
-   you are using the exact same dependency's shas, you can run grunt checkout-shas.
-6. Run ../chipper/bin/deploy-dev $USERNAME from the sim root. The rc version should now be published!
+If this is the first release candidate on a release branch:
+
+1. Create a release branch. Release branches are named using major and minor version numbers, eg "1.0".
+2. Check out the release branch, eg `git checkout 1.0`
+3. Update the version identifier in package.json. The first rc version should have suffix "rc.1", eg "1.0.0-rc.1".
+4. Commit & push.
+5. Run the build process: `grunt`
+6. Deploy to the server: `deploy-dev $USERNAME`
+
+If this is not the first release candidate on a release branch:
+
+1. Check out the release branch, eg `git checkout 1.0`
+2. Check out the correct shas for dependencies: `grunt checkout-shas`
+3. Update the version identifier in package.json. The identifier should contain "rc", eg "1.0.0-rc.2".
+4. Commit & push.
+5. Run the build process: `grunt`
+6. Deploy to the server: `deploy-dev $USERNAME`
+7. (optional) Check out master for dependencies: `grunt checkout-master`
 
 *Steps to publish a public version:*
 
