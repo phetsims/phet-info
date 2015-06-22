@@ -3,9 +3,11 @@
 
 Variables to replace:
 
+```
 SIM = the name of your sim's repo
 VERSION = the identifier of your sim, eg "1.0.0-rc.2"
 USERNAME = your username on spot and figaro
+```
 
 **Steps to publish a 'dev' version:**
 
