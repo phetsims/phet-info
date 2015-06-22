@@ -1,5 +1,5 @@
-
-** Simulation Deployment Guidelines **
+**Simulation Deployment Guidelines**
+=============
 
 Variables to replace:
 SIM = the name of your sim's repo
