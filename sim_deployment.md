@@ -3,14 +3,14 @@
 
 Constants to replace:
 SIM = the name of your sim's repo
-VERSION = the version of your release candiate, eg "1.0.0-rc.2"
+VERSION = the identifier of your sim, eg "1.0.0-rc.2"
 USERNAME = your username on spot and figaro
 
 *Steps to publish a 'dev' version:*
 
-1. Set version number to $VERSION in package.json (commit & push)
+1. Set version number to $VERSION in package.json. $VERSION should have "dev" in the identifier, eg "1.0.0-dev.2" (commit & push)
 2. grunt
-3. If this is the first time you've deployed a 'dev' version of this sim, log in to spot and do this:
+3. If this is the first time you've deployed a "dev" version of this sim, log in to spot and do this:
 mkdir /htdocs/UCB/AcademicAffairs/ArtsSciences/physics/phet/dev/html/$SIM
 4. deploy-dev.sh $USERNAME
 
