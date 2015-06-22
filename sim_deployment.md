@@ -8,7 +8,7 @@ USERNAME = your username on spot and figaro
 
 *Steps to publish a 'dev' version:*
 
-1. Set version number to $VERSION in package.json and versions.js (commit & push)
+1. Set version number to $VERSION in package.json (commit & push)
 2. grunt
 3. If this is the first time you've deployed a 'dev' version of this sim, log in to spot and do this:
 mkdir /htdocs/UCB/AcademicAffairs/ArtsSciences/physics/phet/dev/html/$SIM
@@ -17,7 +17,7 @@ mkdir /htdocs/UCB/AcademicAffairs/ArtsSciences/physics/phet/dev/html/$SIM
 *Steps to publish a 'rc' (release candidate) version:*
 
 1. Create and checkout a new branch. The first rc version will be on a branch called "1.0"
-2. Update the version number in package.json and js/version.js. The first rc version should be "1.0.0-rc.1"
+2. Update the version number in package.json. The first rc version should be "1.0.0-rc.1"
 3. Commit and push to the new branch.
 4. Run grunt. Make sure that the correct libraries are listed under the key "phetLibs" in package.json. This should list
    all of the common libraries as well as the sim being published.
