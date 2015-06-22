@@ -30,12 +30,11 @@ Then:
 
 If this is the first release candidate on a release branch:
 
-1. Create a release branch. Release branches are named using major and minor version numbers, eg "1.0".
-2. Check out the release branch, e.g.: `git checkout 1.0`
-3. Update the version identifier in package.json. The first rc version should have suffix "rc.1", eg "1.0.0-rc.1".
-4. Commit & push.
-5. Run the build process: `grunt`
-6. Deploy to the server: `deploy-dev $USERNAME`
+1. Create a release branch and switch to it, e.g.: `git checkout -b 1.0`. Release branches are named using major and minor version numbers, eg "1.0".
+2. Update the version identifier in package.json. The first rc version should have suffix "rc.1", eg "1.0.0-rc.1".
+3. Commit & push.
+4. Run the build process: `grunt`
+5. Deploy to the server: `deploy-dev $USERNAME`
 
 If this is not the first release candidate on a release branch:
 
