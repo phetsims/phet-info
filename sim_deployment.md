@@ -53,7 +53,9 @@ it has the retina display) with multiple tabs open, then crop the chrome off of 
 pixels of the sim's background color (to 2048x1344) and save as /assets/$SIM-screenshot.png.  Eventually, quick and easy
 creation of this screen shot will be supported through the screenshot feature from the PhET menu, but as of this writing
 this support doesn't exist.
-2. Publish a 'dev' version, as described above, with a version number that is of the form "major.minor.maintenance", e.g.: "1.1.2".
+2. A public version is general based on some rc version, with an updated version identifier. Follow the steps above for
+publishing an rc version, but use a version identifier of the form "major.minor.maintenance". For example, if the published
+version is based on "1.1.0-rc.4", then the published version will be "1.1.0".
 3. If this is the first time you've deployed a public version of this sim, log in to figaro and do this:
    + `mkdir /data/web/htdocs/phetsims/sims/html/$SIM`
    + `copy a .htaccess file from another sim to /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess`
