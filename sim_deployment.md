@@ -54,20 +54,20 @@ it has the retina display) with multiple tabs open, then crop the chrome off of 
 pixels of the sim's background color (to 2048x1344) and save as /assets/$SIM-screenshot.png.  Eventually, quick and easy
 creation of this screen shot will be supported through the screenshot feature from the PhET menu, but as of this writing
 this support doesn't exist.
-2. Publish a 'dev' version, as described above.
+2. Publish a 'dev' version, as described above, with a version number that is of the form "major.minor.maintenance", e.g.: "1.1.2".
 3. If this is the first time you've deployed a public version of this sim, log in to figaro and do this:
-   + mkdir /data/web/htdocs/phetsims/sims/html/$SIM
-   + copy a .htaccess file to /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess
-   + edit /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess to have the correct sim
+   + `mkdir /data/web/htdocs/phetsims/sims/html/$SIM`
+   + `copy a .htaccess file from another sim to /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess`
+   + `edit /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess to have the correct sim`
 4. Create the deploy directory on figaro:
-mkdir /data/web/htdocs/phetsims/sims/html/$SIM/$VERSION
-5. Create 600x394 and 128x84 resized copies of the screenshot by running ```grunt generate-thumbnails```.  The images
+   + `mkdir /data/web/htdocs/phetsims/sims/html/$SIM/$VERSION`
+5. Create 600x394 and 128x84 resized copies of the screenshot by running `grunt generate-thumbnails`.  The images
 will be placed into the build directory.  Open the images to verify that they were correctly generated.
 6. If this is an HTML5-only sim you'll need to include a screenshot with a width of 300 (the height doesn't matter).
  You can create this by scaling the screenshot in the assets directly.  This should be placed into the build directory
  and named $SIM-screenshot.png.
 7. On your local machine, move the files to figaro by entering the command:
-```cd build; scp -r * $USERNAME@figaro:/data/web/htdocs/phetsims/sims/html/$SIM/$VERSION```
+`cd build; scp -r * $USERNAME@figaro:/data/web/htdocs/phetsims/sims/html/$SIM/$VERSION`
 8. Edit /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess to have the correct version number (this makes the sim
 'live').
 9. You'll need to add a .htaccess file to the version directory in order to make the download link actually do a download rather than open in the browser. You can copy this from a previously deployed HTML5-only sim, such as from ```/data/web/htdocs/phetsims/sims/html/area-builder/1.0.0/.htaccess```.  Note that this is a different .htaccess file that lives in the versioned directory, not in the sim root.
