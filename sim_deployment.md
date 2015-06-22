@@ -64,14 +64,11 @@ version is based on "1.1.0-rc.4", then the published version will be "1.1.0".
    + `mkdir /data/web/htdocs/phetsims/sims/html/$SIM/$VERSION`
 5. Create 600x394 and 128x84 resized copies of the screenshot by running `grunt generate-thumbnails`.  The images
 will be placed into the build directory.  Open the images to verify that they were correctly generated.
-6. If this is an HTML5-only sim you'll need to include a screenshot with a width of 300 (the height doesn't matter).
- You can create this by scaling the screenshot in the assets directly.  This should be placed into the build directory
- and named $SIM-screenshot.png.
-7. On your local machine, move the files to figaro by entering the command:
+6. On your local machine, move the files to figaro by entering the command:
 `cd build; scp -r * $USERNAME@figaro:/data/web/htdocs/phetsims/sims/html/$SIM/$VERSION`
-8. Edit /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess to have the correct version number (this makes the sim
+7. Edit /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess to have the correct version number (this makes the sim
 'live').
-9. You'll need to add a .htaccess file to the version directory in order to make the download link actually do a download rather than open in the browser. You can copy this from a previously deployed HTML5-only sim, such as from ```/data/web/htdocs/phetsims/sims/html/area-builder/1.0.0/.htaccess```.  Note that this is a different .htaccess file that lives in the versioned directory, not in the sim root.
-10. Test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
-11. If this was a first public deploy, ask @jonathanolson or @aaronsamuel137 to make it appear on the website.
-12. If this is the initial publication, generate and check in (on the master branch) the auto-generated readme file for a published sim.  The README.md file can be created using ```grunt generate-published-README```.
+8. You'll need to add a .htaccess file to the version directory in order to make the download link actually do a download rather than open in the browser. You can copy this from a previously deployed HTML5-only sim, such as from ```/data/web/htdocs/phetsims/sims/html/area-builder/1.0.0/.htaccess```.  Note that this is a different .htaccess file that lives in the versioned directory, not in the sim root.
+9. Test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
+10. If this was a first public deploy, ask @jonathanolson or @aaronsamuel137 to make it appear on the website.
+11. If this is the initial publication, generate and check in (on the master branch) the auto-generated readme file for a published sim.  The README.md file can be created using ```grunt generate-published-README```.
