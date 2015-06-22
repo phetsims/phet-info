@@ -6,7 +6,7 @@ SIM = the name of your sim's repo
 VERSION = the identifier of your sim, eg "1.0.0-rc.2"
 USERNAME = your username on spot and figaro
 
-*Steps to publish a 'dev' version:*
+**Steps to publish a 'dev' version:**
 
 1. Update the version identifier in package.json. The identifier should contain "dev", eg "1.0.0-dev.2".
 2. Commit & push.
@@ -19,7 +19,7 @@ USERNAME = your username on spot and figaro
 ```
 5. Deploy to the server: `deploy-dev.sh $USERNAME`
 
-*Steps to publish a 'rc' (release candidate) version:*
+**Steps to publish a 'rc' (release candidate) version:**
 
 If this is the first release candidate on a release branch:
 
@@ -40,7 +40,7 @@ If this is not the first release candidate on a release branch:
 6. Deploy to the server: `deploy-dev $USERNAME`
 7. (optional) Check out master for dependencies: `grunt checkout-master`
 
-*Steps to publish a public version:*
+**Steps to publish a public version:**
 
 1. Create a screenshot that is 2048x1344.  Generally this is done by taking a screenshot on an iPad 3 or higher (since
 it has the retina display) with multiple tabs open, then crop the chrome off of it to 2048x1342, then pad the top with 2
