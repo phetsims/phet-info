@@ -102,7 +102,7 @@ PhET code-review checklist
 - [ ] Is inheritance used where appropriate? Does the type hierarchy make sense?
 - [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary properties/functions)
 - [ ] Are the source files reasonable in size? Scrutinize large files with too many responsibilities - can responsibilities be broken into smaller delegates?
-- [ ] Are any significant chunks of code duplicated?
+- [ ] Are any significant chunks of code duplicated? This will be checked manually as well as with https://github.com/danielstjules/jsinspect
 - [ ] Is there anything that should be generalized and migrated to common code?
 
 **Performance, Usability**
