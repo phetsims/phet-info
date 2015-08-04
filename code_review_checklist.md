@@ -13,14 +13,14 @@ PhET code-review checklist
 - [ ] Does the sim experience any assertion failures? (run with query parameter 'ea')
 - [ ] Does the sim pass a scenery fuzzer test? (run with query parameter 'fuzzMouse')
 - [ ] Are there any strings that are not being internationalized? (run with query parameter 'stringTest=x', you should see nothing but 'x' strings)
-- [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter 'stringTest=double') 
+- [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter 'stringTest=double')
 - [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter 'stringTest=X')
 
 **Repository structure**
 
 - [ ] Are all required files and directories present?
 
-      For a sim repository named “my-repo”, the general structure should look like this (where audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
+      For a sim repository named “my-repo”, the general structure should look like this (where assets/, audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
 
 ```js
    my-repo/
@@ -47,7 +47,7 @@ PhET code-review checklist
 
    For a common-code repository, the structure is similar, but some of the files and directories may not be present if the repo doesn’t have audio, images, strings, or a demo application.
 
-- [ ] Is the js/ directory properly structured? 
+- [ ] Is the js/ directory properly structured?
 
       All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Custom”, the general directory structure should look like this:
 
@@ -107,7 +107,7 @@ PhET code-review checklist
 
 **Performance, Usability**
 
-- [ ] Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms) 
+- [ ] Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms)
 - [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter 'webgl=false')
 - [ ] Are UI components sufficiently responsive? (especially continuous UI components, such as sliders)
 - [ ] Are pointer areas optimized, especially for touch? (run with query parameter 'showPointerAreas')
@@ -116,7 +116,7 @@ PhET code-review checklist
 **Memory Leaks**
 
 - [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.)
-- [ ] Are there any leaks due to registration of AXON observers? 
+- [ ] Are there any leaks due to registration of AXON observers?
 	- [ ] For each call to Property.link or PropertySet.link, is there a corresponding unlink, or documentation about why an unlink is unnecessary?
 	- [ ] For each DerivedProperty or Multilink created, is there a corresponding detach, or documentation about why a detach is unnecessary?
 	- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers an AXON observer, is there a call to that component’s dispose function, or documentation about why dispose is unnecessary?
