@@ -9,7 +9,20 @@ VERSION = the identifier of your sim, eg "1.0.0-rc.2"
 USERNAME = your username on spot and figaro
 ```
 
-**Steps to publish a 'dev' version:**
+**Steps to publish a 'dev' version with grunt deploy-dev:**
+
+If this is the first time you've deployed a dev version with grunt deploy-dev, you'll
+need to create a file `$HOME/.phet/build-local.json` with a field "devUsername": [spot user name].
+Optionally, you can add fields for "devDeployServer" and "devDeployPath"
+if you want to deploy to another server and path besides spot.
+
+1. Update the version identifier in package.json. The identifier should contain "dev", e.g. "1.0.0-dev.2".
+2. Commit & push.
+3. Run the build process: `grunt`
+4. If this is the first time you've deployed anything for this sim, deploy with `grunt deploy-dev --mkdir`
+5. Otherwise just use `grunt deploy-dev`
+
+**Steps to publish a 'dev' version with deploy-dev.sh (depricated):**
 
 If this is the first time you've deployed anything for this sim, log in to spot and do this:
 
@@ -18,27 +31,12 @@ cd /htdocs/UCB/AcademicAffairs/ArtsSciences/physics/phet/dev/html
 mkdir $SIM
 cp example-sim/.htaccess $SIM
 ```
-
 Then:
 
 1. Update the version identifier in package.json. The identifier should contain "dev", e.g. "1.0.0-dev.2".
 2. Commit & push.
 3. Run the build process: `grunt`
-5. Deploy to the server: `deploy-dev.sh $USERNAME`
-
-**Steps to publish a 'dev' version (new method using grunt - does not work well on Windows)**
-
-If this is the first time you've deployed a dev version with grunt deploy-dev, you'll
-need to create a file `$HOME/.phet/build-local.json` with fields for "devUsername" and "devPassword"
-that hold your spot credentials. Optionally, you can add fields for "devDeployServer" and "devDeployPath"
-if you want to deploy to another server and path beside spot.
-
-Then:
-
-1. Update the version identifier in package.json. The identifier should contain "dev", e.g. "1.0.0-dev.2".
-2. Commit & push.
-3. Run the build process: `grunt`
-5. Deploy to the server: `grunt deploy-dev`
+4. Deploy to the server: deploy-dev.sh $USERNAME
 
 **Steps to publish a 'rc' (release candidate) version:**
 
@@ -48,7 +46,7 @@ If this is the first release candidate on a release branch:
 2. Update the version identifier in package.json. The first rc version should have suffix "rc.1", eg "1.0.0-rc.1".
 3. Commit & push.
 4. Run the build process: `grunt`
-5. Deploy to the server: `deploy-dev.sh $USERNAME` (or `grunt deploy-dev` if it works on your system)
+5. Deploy to the server: `grunt deploy-dev` (or ``deploy-dev.sh $USERNAME```)
 
 If this is not the first release candidate on a release branch:
 
@@ -57,7 +55,7 @@ If this is not the first release candidate on a release branch:
 3. Update the version identifier in package.json. The identifier should contain "rc", e.g. "1.0.0-rc.2".
 4. Commit & push.
 5. Run the build process: `grunt`
-6. Deploy to the server: `deploy-dev.sh $USERNAME` (or `grunt deploy-dev` if it works on your system)
+6. Deploy to the server: (or ``deploy-dev.sh $USERNAME```)
 7. (optional) Check out master for dependencies: `grunt checkout-master`
 
 **Steps to publish a public version:**
