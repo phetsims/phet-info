@@ -16,10 +16,26 @@ need to create a file `$HOME/.phet/build-local.json` with a field "devUsername":
 Optionally, you can add fields for "devDeployServer" and "devDeployPath"
 if you want to deploy to another server and path besides spot.
 
+Optionally, create an ssh key to avoid entering your password:
+
+- create an rsa key in ~/.ssh (run "ssh-keygen -t rsa" to generate a key if you don't already have one).
+- add an entry for spot in ~/.ssh/authorized_keys like so (you may need to create this file):
+
+```
+Host spot
+   HostName spot.colorado.edu
+   User [identikey]
+   Port 22
+   IdentityFile ~/.ssh/id_rsa
+```
+- On spot, you'll need to add your public key (found in ~/.ssh/id_rsa.pub) to a file ~/.ssh/authorized_keys
+
+To deploy to spot:
+
 1. Update the version identifier in package.json. The identifier should contain "dev", e.g. "1.0.0-dev.2".
 2. Commit & push.
 3. Run the build process: `grunt`
-4. If this is the first time you've deployed anything for this sim, deploy with `grunt deploy-dev --mkdir`
+4. If this is the first time you've deployed anything for this sim, deploy with `grunt deploy-dev --mkdir` (requires 2 password inputs if ssh key is not set up)
 5. Otherwise just use `grunt deploy-dev`
 
 **Steps to publish a 'dev' version with deploy-dev.sh (depricated):**
@@ -46,7 +62,7 @@ If this is the first release candidate on a release branch:
 2. Update the version identifier in package.json. The first rc version should have suffix "rc.1", eg "1.0.0-rc.1".
 3. Commit & push.
 4. Run the build process: `grunt`
-5. Deploy to the server: `grunt deploy-dev` (or ``deploy-dev.sh $USERNAME```)
+5. Deploy to the server: `grunt deploy-dev` (or `deploy-dev.sh $USERNAME`)
 
 If this is not the first release candidate on a release branch:
 
@@ -55,7 +71,7 @@ If this is not the first release candidate on a release branch:
 3. Update the version identifier in package.json. The identifier should contain "rc", e.g. "1.0.0-rc.2".
 4. Commit & push.
 5. Run the build process: `grunt`
-6. Deploy to the server: (or ``deploy-dev.sh $USERNAME```)
+6. Deploy to the server: (or `deploy-dev.sh $USERNAME`)
 7. (optional) Check out master for dependencies: `grunt checkout-master`
 
 **Steps to publish a public version:**
