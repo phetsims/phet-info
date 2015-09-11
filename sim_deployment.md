@@ -100,3 +100,8 @@ will be placed into the build directory.  Open the images to verify that they we
 9. Test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
 10. If this was a first public deploy, ask @jonathanolson or @aaronsamuel137 to make it appear on the website.
 11. If this is the initial publication, generate and check in (on the master branch) the auto-generated readme file for a published sim.  The README.md file can be created using ```grunt generate-published-README```.
+12. The 3rd party contributions page must be updated.  Directions for how to do this are in reportThirdParty.js.  
+Brace yourself-- this will take >30 minutes since you will need to build all of the simulations in order to access 
+their 3rd party encumbrances.  After running this, the updated third-party-licenses.md file should be checked in to GitHub,
+which will make it publicly available to people who click on "3rd party contributions" from the sim.  If this process
+is too cumbersome, in the future we can discuss ways to just generate a report for the new sim and integrate it into the existing report.
