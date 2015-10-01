@@ -71,7 +71,7 @@ If this is not the first release candidate on a release branch:
 3. Update the version identifier in package.json. The identifier should contain "rc", e.g. "1.0.0-rc.2".
 4. Commit & push.
 5. Run the build process: `grunt`
-6. Deploy to the server: (or `deploy-dev.sh $USERNAME`)
+6. Deploy to the server: `grunt deploy-dev` (or `deploy-dev.sh $USERNAME`) OR to deploy the rc version using the build-server use `grunt deploy-rc`.
 7. (optional) Check out master for dependencies: `grunt checkout-master`
 
 **Steps to publish a public version:**
