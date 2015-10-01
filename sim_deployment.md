@@ -83,24 +83,12 @@ creation of this screen shot will be supported through the screenshot feature fr
 this support doesn't exist.
 2. A public version is generally based on some rc version, with an updated version identifier. Follow the steps above for
 publishing an rc version, but use a version identifier of the form "major.minor.maintenance". For example, if the published
-version is based on "1.1.0-rc.4", then the published version identier will be "1.1.0".
-3. If this is the first time you've deployed a public version of this sim, log in to figaro and do this:
-   + `mkdir /data/web/htdocs/phetsims/sims/html/$SIM`
-   + `copy a .htaccess file from another sim to /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess`
-   + `edit /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess to have the correct sim`
-4. Create the deploy directory on figaro:
-   + `mkdir /data/web/htdocs/phetsims/sims/html/$SIM/$VERSION`
-5. Create 600x394 and 128x84 resized copies of the screenshot by running `grunt generate-thumbnails`.  The images
-will be placed into the build directory.  Open the images to verify that they were correctly generated.
-6. On your local machine, move the files to figaro by entering the command:
-`cd build; scp -r * $USERNAME@figaro:/data/web/htdocs/phetsims/sims/html/$SIM/$VERSION`
-7. Edit /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess to have the correct version number (this makes the sim
-'live').
-8. You'll need to add a .htaccess file to the version directory in order to make the download link actually do a download rather than open in the browser. You can copy this from a previously deployed HTML5-only sim, such as from ```/data/web/htdocs/phetsims/sims/html/area-builder/1.0.0/.htaccess```.  Note that this is a different .htaccess file that lives in the versioned directory, not in the sim root.
-9. Test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
-10. If this was a first public deploy, ask @jonathanolson or @aaronsamuel137 to make it appear on the website.
-11. If this is the initial publication, generate and check in (on the master branch) the auto-generated readme file for a published sim.  The README.md file can be created using ```grunt generate-published-README```.
-12. The 3rd party contributions page must be updated.  Directions for how to do this are in reportThirdParty.js.  
+version is based on "1.1.0-rc.4", then the published version identier will be "1.1.0". You do not need to run deploy-dev since it happens as part of `grunt deploy-production`. However, you still must checkout the correct shas and run `grunt` to build the sim locally before deploying.
+3. Run `grunt deploy-production` (after `grunt`). This will deploy to spot, and then use the build server to deploy to production.
+4. Wait a few minutes, and then test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
+5. Make sure the sim pages has appeared on the website if this is a new sim. Browse with https to bypass varnish caching. Talk to @aaronsamuel137 if it hasn't appeared after a few mintues.
+6. If this is the initial publication, generate and check in (on the master branch) the auto-generated readme file for a published sim.  The README.md file can be created using ```grunt generate-published-README```.
+7. The 3rd party contributions page must be updated.  Directions for how to do this are in reportThirdParty.js.  
 Brace yourself-- this will take >30 minutes since you will need to build all of the simulations in order to access 
 their 3rd party encumbrances.  After running this, the updated third-party-licenses.md file should be checked in to GitHub,
 which will make it publicly available to people who click on "3rd party contributions" from the sim.  If this process
