@@ -93,3 +93,29 @@ Brace yourself-- this will take >30 minutes since you will need to build all of 
 their 3rd party encumbrances.  After running this, the updated third-party-licenses.md file should be checked in to GitHub,
 which will make it publicly available to people who click on "3rd party contributions" from the sim.  If this process
 is too cumbersome, in the future we can discuss ways to just generate a report for the new sim and integrate it into the existing report.
+
+**Old steps to publish a public version (deprecated)**
+
+There may be cases, such as updating a maintenance release for a sim that has not been republished, where the old
+style of deploying is necessary.
+
+To do this, follow the steps above, but replace 2-5 with:
+
+2. A public version is generally based on some rc version, with an updated version identifier. Follow the steps above for
+publishing an rc version, but use a version identifier of the form "major.minor.maintenance". For example, if the published
+version is based on "1.1.0-rc.4", then the published version identifier will be "1.1.0".
+3. If this is the first time you've deployed a public version of this sim, log in to figaro and do this:
+   + `mkdir /data/web/htdocs/phetsims/sims/html/$SIM`
+   + `copy a .htaccess file from another sim to /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess`
+   + `edit /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess to have the correct sim`
+4. Create the deploy directory on figaro:
+   + `mkdir /data/web/htdocs/phetsims/sims/html/$SIM/$VERSION`
+5. Create 600x394 and 128x84 resized copies of the screenshot by running `grunt generate-thumbnails`.  The images
+will be placed into the build directory.  Open the images to verify that they were correctly generated.
+6. On your local machine, move the files to figaro by entering the command:
+`cd build; scp -r * $USERNAME@figaro:/data/web/htdocs/phetsims/sims/html/$SIM/$VERSION`
+7. Edit /data/web/htdocs/phetsims/sims/html/$SIM/.htaccess to have the correct version number (this makes the sim
+'live').
+8. You'll need to add a .htaccess file to the version directory in order to make the download link actually do a download rather than open in the browser. You can copy this from a previously deployed HTML5-only sim, such as from ```/data/web/htdocs/phetsims/sims/html/area-builder/1.0.0/.htaccess```.  Note that this is a different .htaccess file that lives in the versioned directory, not in the sim root.
+9. Test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
+10. If this was a first public deploy, ask @jonathanolson or @aaronsamuel137 to make it appear on the website.
