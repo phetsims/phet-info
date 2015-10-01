@@ -19,7 +19,7 @@ if you want to deploy to another server and path besides spot.
 Optionally, create an ssh key to avoid entering your password:
 
 - create an rsa key in ~/.ssh (run "ssh-keygen -t rsa" to generate a key if you don't already have one).
-- add an entry for spot in ~/.ssh/authorized_keys like so (you may need to create this file):
+- add an entry for spot in ~/.ssh/config like so (you may need to create this file):
 
 ```
 Host spot
@@ -62,7 +62,7 @@ If this is the first release candidate on a release branch:
 2. Update the version identifier in package.json. The first rc version should have suffix "rc.1", eg "1.0.0-rc.1".
 3. Commit & push.
 4. Run the build process: `grunt`
-5. Deploy to the server: `grunt deploy-dev` (or `deploy-dev.sh $USERNAME`)
+5. Deploy to the server: `grunt deploy-dev` (or `deploy-dev.sh $USERNAME`) OR to deploy the rc version using the build-server use `grunt deploy-rc`.
 
 If this is not the first release candidate on a release branch:
 
