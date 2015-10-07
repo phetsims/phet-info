@@ -7,7 +7,7 @@ PhET code-review checklist
 
 **Build and Run Checks**
 
-- [ ] Does the sim pass jshint?
+- [ ] Does the sim pass lint?
 - [ ] Does the sim build without errors?
 - [ ] Does the sim start up? (requirejs and built versions)
 - [ ] Does the sim experience any assertion failures? (run with query parameter 'ea')
