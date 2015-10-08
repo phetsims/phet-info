@@ -1,3 +1,5 @@
+Checklist for S2015R milestone (GitHub issues labeled "Summer 2015 redeploy")
+
 **Developer**
 - [ ] Review outstanding issues, mark what will be addressed for redeploy (@ariel-phet and original developer). Then mark these issues with a milestone.
 - [ ] Look over @pixelzoom's revamped code review checklist, decide if code review should be redone
