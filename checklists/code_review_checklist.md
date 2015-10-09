@@ -93,7 +93,7 @@ PhET code-review checklist
 
 **Common Errors**
 
-- [ ] Is `Math.random` used where `dot.Util.randomSymmetric` should be used?  Math.random does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879
+- [ ] Is `Math.round` used where `dot.Util.roundSymmetric` should be used?  Math.round does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879
 - [ ] Is `toFixed` used where `dot.Util.toFixed` or `dot.Util.toFixedNumber` should be used? JavaScript's `toFixed` is notoriously buggy, behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
 
 **Organization, Readability, Maintainability**
