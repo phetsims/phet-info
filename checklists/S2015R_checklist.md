@@ -10,7 +10,9 @@ Checklist for S2015R milestone (GitHub issues labeled "Summer 2015 redeploy")
 - [ ] Identify any strings in sims that should move to another repository, move them now
 
 **QA**
-- [ ] stringTest=SomeExtremelyLongStringThatWouldLikelyBreakAnythingThatDoubleDidNotExpose
+- [ ] stringTest=double
+- [ ] stringTest=long
+- [ ] stringTest=X
 - [ ] RTL language test
 - [ ] Perform RC testing
  - [ ] Include full screen test
