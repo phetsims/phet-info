@@ -13,8 +13,8 @@ Checklist for S2015R milestone (GitHub issues labeled "Summer 2015 redeploy")
 **QA**
 - [ ] stringTest=double
 - [ ] stringTest=long
-- [ ] stringTest=X
-- [ ] RTL language test
+- [ ] stringTest=X (short strings)
+- [ ] stringTest=rtl (right-to-left)
 - [ ] Perform RC testing
  - [ ] Include full screen test
 
