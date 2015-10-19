@@ -72,7 +72,7 @@ In the phet/git directory, run this command:
 
 ####Setup IntelliJ Idea	
 ######Initial Setup
-1. Sign up for a jetbrains account at this url: ***REMOVED***
+1. Sign up for a jetbrains account at this url the provided link.
 2. Download the IntelliJ Idea Ultimate edition https://www.jetbrains.com/idea/download/
 3. On initial launch, sign in with your Jetbrains username and password.
 	
