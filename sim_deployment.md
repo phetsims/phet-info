@@ -85,8 +85,8 @@ this support doesn't exist.
 publishing an rc version, but use a version identifier of the form "major.minor.maintenance". For example, if the published
 version is based on "1.1.0-rc.4", then the published version identier will be "1.1.0". You do not need to run deploy-dev since it happens as part of `grunt deploy-production`. However, you still must checkout the correct shas and run `grunt` to build the sim locally before deploying.
 3. Run `grunt deploy-production` (after `grunt`). This will deploy to spot, and then use the build server to deploy to production.
-4. Wait a few minutes, and then test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
-5. Make sure the sim page has appeared on the website if this is a new sim. Browse with https to bypass varnish caching. Talk to @aaronsamuel137 if it hasn't appeared after a few mintues.
+4. Otherwise, wait a few minutes, and then test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
+5. If this is a new sim, both the simulation and project will need to marked "visible" in the website admin interface. Usually the person in charge of uploading all of the meta information will be responsible for doing this. After that, make sure the sim page appears correctly on the website. Talk to @aaronsamuel137 if it hasn't appeared after marking the sim and project visible (browse logged in to bypass the varnish cache).
 6. If this is the initial publication, generate and check in (on the master branch) the auto-generated readme file for a published sim.  The README.md file can be created using ```grunt generate-published-README```.
 7. The 3rd party contributions page must be updated.  Directions for how to do this are in reportThirdParty.js.  
 Brace yourself-- this will take >30 minutes since you will need to build all of the simulations in order to access 
