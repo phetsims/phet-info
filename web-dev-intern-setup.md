@@ -51,7 +51,7 @@ In the phet/git directory, run this command:
 	2. Make sure the VM is in "Powered Off" state
 	3. Go to Settings > Network > Adapter 1
 	4. Make sure the checkbox for "Enable Network Adapter" is checked
-	5. Change "Attached to:" to "Bridged Adapter".  This allows the VM to access the internet via the host.
+	5. Change "Attached to:" to "NAT".  This allows the VM to access the internet via the host.
 	6. Go to the Adapter 2 tab
 	7. Make sure the checkbox for "Enable Network Adapter" is checked
 	8. Change "Attached to:" to "Host-Only Network".  This sets up a network internal to your host so that the VM IP address remains static.
@@ -72,7 +72,7 @@ In the phet/git directory, run this command:
 
 ####Setup IntelliJ Idea	
 ######Initial Setup
-1. Sign up for a jetbrains account at this url the provided link.
+1. Sign up for a jetbrains account at the link provided by PhET (Ask Aaron).
 2. Download the IntelliJ Idea Ultimate edition https://www.jetbrains.com/idea/download/
 3. On initial launch, sign in with your Jetbrains username and password.
 	
@@ -98,3 +98,18 @@ In the phet/git directory, run this command:
   4. Click the "Manage" button next to "Scheme" and select "phet-idea-codestyle".
 
 ####Build-tools setup
+1. Update lines 62-71 in phet/svn/trunk/build-tools/build-local.properties.template with the following:
+    ```
+    # Local website development credentials
+    local-server.username=phet
+    local-server.password=phet
+
+    # Local website Tomcat Manager credentials
+    local-server.tomcatmanager.username=phet
+    local-server.tomcatmanager.password=phet
+
+    Local website IP address
+    local-server.ip={IP of the "host-only" network adapter for the VM}
+    ```
+2. Update the SSH credentials for SSH figaro and simian to be your IdentiKey username/password
+3. the file in the same directory as "build-local.properties" 
