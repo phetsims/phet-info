@@ -111,5 +111,7 @@ In the phet/git directory, run this command:
     Local website IP address
     local-server.ip={IP of the "host-only" network adapter for the VM}
     ```
-2. Update the SSH credentials for SSH figaro and simian to be your IdentiKey username/password
+3. Update the tomcatmanager credentials for the figaro and simian.  These are provided by the PhET web developer.
+4. Update git.root to be the absolute file path of the phet/git directory you created on your machine.
+2. Update the ssh credentials for figaro and simian to be your IdentiKey username/password.
 3. the file in the same directory as "build-local.properties" 
