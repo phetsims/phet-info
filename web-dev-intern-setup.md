@@ -58,8 +58,25 @@ In the phet/git directory, run this command:
 4. Launch the VM:
 	> Username: phet
 	>	Password: phet
-5. Upload a recent copy of the DB:
-	* TBD - see Aaron
+
+######Setup SSH and sync the DB with figaro
+*Requires access to figaro*
+
+1. Add this text to a new file ~/.ssh/config
+    '''
+    host figaro
+    hostname figaro.colorado.edu
+    user [YOUR Identikey here]
+    port 22
+    identityfile ~/.ssh/id_rsa
+    ''''
+2. Create an RSA key
+    '''
+    Enter this command in the terminal ssh-keygen -t rsa
+    Press enter 4 times, leave the file path as default and the password blank.
+    '''
+3. Copy the contents of ~/.ssh/id_rsa.pub from the VM to ~/.ssh/authorized_keys on figaro.
+4. You should now be able to sync the local VM database with figaro by running ~/Desktop/sync.sh (or get the script from Aaron)
 	
 ######Common commands on the VM:
 * logs = displays the last 10 lines of the Tomcat logfile and appends it to the console in real time.
@@ -115,3 +132,5 @@ In the phet/git directory, run this command:
 4. Update git.root to be the absolute file path of the phet/git directory you created on your machine.
 2. Update the ssh credentials for figaro and simian to be your IdentiKey username/password.
 3. the file in the same directory as "build-local.properties" 
+
+
