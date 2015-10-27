@@ -63,18 +63,19 @@ In the phet/git directory, run this command:
 *Requires access to figaro*
 
 1. Add this text to a new file ~/.ssh/config
-    '''
+    ```
     host figaro
     hostname figaro.colorado.edu
     user [YOUR Identikey here]
     port 22
     identityfile ~/.ssh/id_rsa
-    ''''
+    ```
+    
 2. Create an RSA key
-    '''
+    ```
     Enter this command in the terminal ssh-keygen -t rsa
     Press enter 4 times, leave the file path as default and the password blank.
-    '''
+    ```
 3. Copy the contents of ~/.ssh/id_rsa.pub from the VM to ~/.ssh/authorized_keys on figaro.
 4. You should now be able to sync the local VM database with figaro by running ~/Desktop/sync.sh (or get the script from Aaron)
 	
