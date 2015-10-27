@@ -72,10 +72,10 @@ In the phet/git directory, run this command:
     ```
     
 2. Create an RSA key
-    ```
-    Enter this command in the terminal ssh-keygen -t rsa
+    Enter this command in the terminal: ```ssh-keygen -t rsa```
+
     Press enter 4 times, leave the file path as default and the password blank.
-    ```
+    
 3. Copy the contents of ~/.ssh/id_rsa.pub from the VM to ~/.ssh/authorized_keys on figaro.
 4. You should now be able to sync the local VM database with figaro by running ~/Desktop/sync.sh (or get the script from Aaron)
 	
@@ -132,6 +132,6 @@ In the phet/git directory, run this command:
 3. Update the tomcatmanager credentials for the figaro and simian.  These are provided by the PhET web developer.
 4. Update git.root to be the absolute file path of the phet/git directory you created on your machine.
 2. Update the ssh credentials for figaro and simian to be your IdentiKey username/password.
-3. the file in the same directory as "build-local.properties" 
+3. The file in the same directory as "build-local.properties" 
 
 
