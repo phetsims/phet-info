@@ -22,4 +22,4 @@ Checklist for S2015R milestone (GitHub issues labeled "Summer 2015 redeploy")
 - [ ] Rosetta test (Opening sim to trusted translators for beta)
 - [ ] Check teacher tips are up to date
 - [ ] Check sim primer is up to date
-- [ ] Review process with QA team.
+
