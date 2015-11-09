@@ -26,7 +26,6 @@ PhET code-review checklist
 ```js
    my-repo/
       assets/
-         my-repo-screenshot.png
       audio/
          license.json
       doc/
@@ -76,7 +75,6 @@ PhET code-review checklist
 - [ ] Is the LICENSE file correct? (Generally GPL v3 for sims, MIT for common code, but there are exceptions to this.)
 - [ ] Does .gitignore match other repositories?
 - [ ] Does *-main.js follow PhET conventions? Does it contain correct credits (options.credits passed to Sim constructor)?
-- [ ] Is the format of assets/*-screenshot.png correct? (2048x1344, PNG, 32-bit color) Has the browser chrome been stripped off of the screenshot?
 - [ ] Are there git repository branches that are no longer used and should be pruned?
 
 **Coding conventions**
