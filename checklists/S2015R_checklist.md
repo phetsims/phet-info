@@ -8,15 +8,15 @@ Checklist for S2015R milestone (GitHub issues labeled "Summer 2015 redeploy")
 - [ ] Standardize the string keys, since they will be difficult to change later
 - [ ] Identify any strings in sims that should move to another repository, move them now
 - [ ] Publish RC version and test matrix
-- [ ] Address RC issues and publish
+- [ ] Address RC issues
 
 **QA**
 - [ ] stringTest=double
 - [ ] stringTest=long
 - [ ] stringTest=X (short strings)
 - [ ] stringTest=rtl (right-to-left)
+- [ ] Full screen test
 - [ ] Perform RC testing
- - [ ] Include full screen test
 
 **Design/Admin**
 - [ ] Rosetta test (Opening sim to trusted translators for beta)
