@@ -15,6 +15,7 @@ Checklist for S2015R milestone (GitHub issues labeled "Summer 2015 redeploy")
 - [ ] stringTest=long
 - [ ] stringTest=X (short strings)
 - [ ] stringTest=rtl (right-to-left)
+- [ ] showPointerAreas (touchArea=red, mouseArea=blue)
 - [ ] Full screen test
 - [ ] Perform RC testing
 
