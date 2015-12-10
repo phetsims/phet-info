@@ -68,8 +68,8 @@ If this is not the first release candidate on a release branch:
 
 1. Check out the release branch, e.g.: `git checkout 1.0`
 2. Check out the correct shas for dependencies: `grunt checkout-shas`
-3. Update the version identifier in package.json. The identifier should contain "rc", e.g. "1.0.0-rc.2".
-4. Commit & push.
+3. If you've branched (for the purposes of patching) any of the dependency repositories since the last rc version was published, you'll need to explicitly checkout those branches. For example, if you branched vegas for the 1.1 release of graphing-lines, do `cd ../vegas ; git checkout graphing-lines-1.1`.
+4. Update the version identifier in package.json. The identifier should contain "rc", e.g. "1.0.0-rc.2". Commit & push.
 5. Run the build process: `grunt`
 6. Deploy to the server: `grunt deploy-dev` (or `deploy-dev.sh $USERNAME`) OR to deploy the rc version using the build-server use `grunt deploy-rc`.
 7. (optional) Check out master for dependencies: `grunt checkout-master`
