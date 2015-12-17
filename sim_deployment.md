@@ -62,7 +62,7 @@ If this is the first release candidate on a release branch:
 2. Update the version identifier in package.json. The first rc version should have suffix "rc.1", eg "1.0.0-rc.1".
 3. Commit & push.
 4. Run the build process: `grunt`
-5. Deploy to the server: `grunt deploy-dev` (or `deploy-dev.sh $USERNAME`) OR to deploy the rc version using the build-server use `grunt deploy-rc`.
+5. Deploy to the server: `grunt deploy-rc` to deploy the rc using the build server.
 
 If this is not the first release candidate on a release branch:
 
@@ -71,7 +71,7 @@ If this is not the first release candidate on a release branch:
 3. If you've branched (for the purposes of patching) any of the dependency repositories since the last rc version was published, you'll need to explicitly checkout those branches. For example, if you branched vegas for the 1.1 release of graphing-lines, do `cd ../vegas ; git checkout graphing-lines-1.1`.
 4. Update the version identifier in package.json. The identifier should contain "rc", e.g. "1.0.0-rc.2". Commit & push.
 5. Run the build process: `grunt`
-6. Deploy to the server: `grunt deploy-dev` (or `deploy-dev.sh $USERNAME`) OR to deploy the rc version using the build-server use `grunt deploy-rc`.
+6. Deploy to the server: `grunt deploy-rc` to deploy the rc version using the build-server.
 7. (optional) Check out master for dependencies: `grunt checkout-master`
 
 **Steps to publish a public version:**
