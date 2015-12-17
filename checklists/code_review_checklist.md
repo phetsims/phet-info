@@ -115,9 +115,16 @@ PhET code-review checklist
 **Memory Leaks**
 
 - [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.)
-- [ ] Are there any leaks due to registration of AXON observers?
-	- [ ] For each call to Property.link or PropertySet.link, is there a corresponding unlink, or documentation about why an unlink is unnecessary?
-	- [ ] For each DerivedProperty or Multilink created, is there a corresponding detach, or documentation about why a detach is unnecessary?
-	- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers an AXON observer, is there a call to that component’s dispose function, or documentation about why dispose is unnecessary?
-- [ ] Are there any leaks due to registration of components with TANDEM? `tandem.addInstance` should be accompanied by `tandem.removeInstance` or documented why removeInstance is unnecessary.
+- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is there a call to that component’s dispose function, or documentation about why dispose is unnecessary?
+- Are there leaks due to registering observers or listeners? These guidelines should be followed, or documentation added about why following them is not necessary:
+	- [ ] AXON: `Property.link` must be accompanied by `Property.unlink`.
+	- [ ] AXON: `PropertySet.link` must be accompanied by `PropertySet.unlink`.
+	- [ ] AXON: Creation of `DerivedProperty` must be accompanied by `detach`.
+	- [ ] AXON: Creation of `Multilink` must be accompanied by `detach`.
+	- [ ] AXON: `Events.on` must be accompanied by `Events.off`.
+	- [ ] AXON: `Emitter.addListener` must be accompanied by `Emitter.removeListener`.
+	- [ ] SCENERY: `Node.addEventListener` must be accompanied by `Node.removeEventListener`
+	- [ ] SCENERY: `Node.on` must be accompanied by `Node.off`
+	- [ ] TANDEM: `tandem.addInstance` must be accompanied by `tandem.removeInstance`.
+- Do all types that require a `dispose` function have one?
 
