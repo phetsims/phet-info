@@ -39,6 +39,7 @@
   - [ ] Model description 
 - [ ] **Published** (Date: //) 
   - [ ] Update repo README to published template
+  - [ ] Add to Edmodo 
 
 
 ## QA
