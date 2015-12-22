@@ -47,6 +47,7 @@
 - [ ] **PhET tweaks after sim acceptance** (Date: //) 
 - [ ] **Published** (Date: //) 
   - [ ] Update repo README to published template
+  - [ ] Add to Edmodo 
 
 ## QA
 - [ ] **Dev testing complete** (Date: //)
