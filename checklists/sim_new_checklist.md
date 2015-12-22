@@ -20,8 +20,8 @@
   - [ ] Screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Teacher Guide
-  - [ ] Activities and gooru spreadsheet
-  - [ ] Notify translators?
+  - [ ] Add an activity
+  - [ ] Upadate [Gooru spreadsheet] (https://docs.google.com/spreadsheets/d/13qvc7e71zTTjaJ2VcYhhU0rNxvH4kYFnoScVCOvvf7U/edit#gid=1717560774)
   - [ ] Sim primer
   - [ ] Verify credits
 - [ ] **Hold postmortem if applicable** (Date: //) 
