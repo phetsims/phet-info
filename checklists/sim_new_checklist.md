@@ -21,7 +21,7 @@
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Teacher Guide
   - [ ] Add an activity
-  - [ ] Upadate [Gooru spreadsheet] (https://docs.google.com/spreadsheets/d/13qvc7e71zTTjaJ2VcYhhU0rNxvH4kYFnoScVCOvvf7U/edit#gid=1717560774)
+  - [ ] Update [Gooru spreadsheet] (https://docs.google.com/spreadsheets/d/13qvc7e71zTTjaJ2VcYhhU0rNxvH4kYFnoScVCOvvf7U/edit#gid=1717560774)
   - [ ] Sim primer
   - [ ] Verify credits
 - [ ] **Hold postmortem if applicable** (Date: //) 
