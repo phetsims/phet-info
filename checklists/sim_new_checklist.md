@@ -24,6 +24,7 @@
   - [ ] Update [Gooru spreadsheet] (https://docs.google.com/spreadsheets/d/13qvc7e71zTTjaJ2VcYhhU0rNxvH4kYFnoScVCOvvf7U/edit#gid=1717560774)
   - [ ] Sim primer
   - [ ] Verify credits
+- [ ] Add to Edmodo
 - [ ] **Hold postmortem if applicable** (Date: //) 
 
 ## Implementation
@@ -39,7 +40,7 @@
   - [ ] Model description 
 - [ ] **Published** (Date: //) 
   - [ ] Update repo README to published template
-  - [ ] Add to Edmodo 
+ 
 
 
 ## QA
