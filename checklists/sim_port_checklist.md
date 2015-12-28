@@ -21,7 +21,7 @@
   - [ ] Screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Teacher Guide
-  - [ ] Compatible activities
+  - [ ] Compatible activities ([author spreadsheet] (https://docs.google.com/spreadsheets/d/1AOc1vy0HfEeJQ9sT0Vs_sr6dqmsEHfq7HWUBGQV_VQA/edit#gid=0))
   - [ ] Update [Gooru spreadsheet] (https://docs.google.com/spreadsheets/d/13qvc7e71zTTjaJ2VcYhhU0rNxvH4kYFnoScVCOvvf7U/edit#gid=1717560774)
   - [ ] Sim primer
   - [ ] Verify credits
