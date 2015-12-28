@@ -12,6 +12,9 @@ PhET code-review checklist
 - [ ] Does the sim start up? (requirejs and built versions)
 - [ ] Does the sim experience any assertion failures? (run with query parameter 'ea')
 - [ ] Does the sim pass a scenery fuzzer test? (run with query parameter 'fuzzMouse')
+
+**Strings**
+- [ ] Are there any unused strings? (Strings that appear in the JSON file but are unused in the simulation should be removed).
 - [ ] Are there any strings that are not being internationalized? (run with query parameter 'stringTest=x', you should see nothing but 'x' strings)
 - [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter 'stringTest=double')
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter 'stringTest=long')
