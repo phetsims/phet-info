@@ -16,6 +16,7 @@
   - [ ] Back-up of interviews
 - [ ] **Lead designer "sign off"** (Date: //) 
   - [ ] Performance acceptable
+  - [ ] Carefully review ?showPointerAreas
   - [ ] No new feature requests
 - [ ] **Pre-publication items** 
   - [ ] Screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
