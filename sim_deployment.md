@@ -10,7 +10,7 @@ USERNAME = your username on spot and figaro
 HOME = your home directory
 ```
 
-**Build process configuration***
+**Build process configuration**
 
 Before building or deploying a simulation, familiarize yourself with configuration options for PhET's build process.
 
