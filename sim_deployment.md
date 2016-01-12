@@ -44,22 +44,6 @@ To deploy to dev version:
 4. If this is the first time you've deployed anything for this sim, deploy with `grunt deploy-dev --mkdir` (requires 2 password inputs if ssh key is not set up)
 5. Otherwise just use `grunt deploy-dev`
 
-**Steps to publish a 'dev' version with deploy-dev.sh (depricated):**
-
-If this is the first time you've deployed anything for this sim, log in to spot and do this:
-
-```
-cd /htdocs/UCB/AcademicAffairs/ArtsSciences/physics/phet/dev/html
-mkdir $SIM
-cp example-sim/.htaccess $SIM
-```
-Then:
-
-1. Update the version identifier in package.json. The identifier should contain "dev", e.g. "1.0.0-dev.2".
-2. Commit & push.
-3. Run the build process: `grunt`
-4. Deploy to the server: deploy-dev.sh $USERNAME
-
 **Steps to publish a 'rc' (release candidate) version:**
 
 RC versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/.
