@@ -7,16 +7,18 @@ Variables to replace in the instructions below:
 SIM = the name of your sim's repo
 VERSION = the identifier of your sim, eg "1.0.0-rc.2"
 USERNAME = your username on spot and figaro
+HOME = your home directory
 ```
 
-**Steps to publish a 'dev' version with grunt deploy-dev:**
+**Build process configuration***
 
-If this is the first time you've deployed a dev version with grunt deploy-dev, you'll
-need to create a file `$HOME/.phet/build-local.json` with a field "devUsername": [spot user name].
-Optionally, you can add fields for "devDeployServer" and "devDeployPath"
-if you want to deploy to another server and path besides spot.
+Before building or deploying a simulation, familiarize yourself with configuration options for PhET's build process.
 
-Optionally, create an ssh key to avoid entering your password:
+Your default build configuration is specified in `$HOME/.phet/build-local.json`. Describing or identifying the entries in `build-local.json` is beyond the scope of this document; ask a PhET developer for help in setting up this file. At a minimum you will need `devUsername` and `buildServerAuthorizationCode`.
+
+Run `grunt --help` for a list of build tasks and their options. Values specified on the `grunt` command line typically override values specified in `build-local.json`.
+
+(Optional) Create an ssh key if you'd like to avoid entering your password for dev-related build tasks:
 
 - create an rsa key in ~/.ssh (run "ssh-keygen -t rsa" to generate a key if you don't already have one).
 - add an entry for spot in ~/.ssh/config like so (you may need to create this file):
@@ -30,7 +32,11 @@ Host spot
 ```
 - On spot, you'll need to add your public key (found in ~/.ssh/id_rsa.pub) to a file ~/.ssh/authorized_keys
 
-To deploy to spot:
+**Steps to publish a 'dev' (development) version**
+
+Dev versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/.
+
+To deploy to dev version:
 
 1. Update the version identifier in package.json. The identifier should contain "dev", e.g. "1.0.0-dev.2".
 2. Commit & push.
@@ -56,6 +62,8 @@ Then:
 
 **Steps to publish a 'rc' (release candidate) version:**
 
+RC versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/.
+
 If this is the first release candidate on a release branch:
 
 1. Create a release branch and switch to it, e.g.: `git checkout -b 1.0`. Release branches are named using major and minor version numbers, eg "1.0".
@@ -75,6 +83,11 @@ If this is not the first release candidate on a release branch:
 7. (optional) Check out master for dependencies: `grunt checkout-master`
 
 **Steps to publish a public version:**
+
+Public versions are deployed to figaro.colorado.edu at http://http://phet.colorado.edu.
+By default, publishing a public version also deploys a dev version.
+
+To pubish a public version:
 
 1. Create a screenshot that is 2048x1344.  Generally this is done by taking a screenshot on an iPad 3 or higher (since
 it has the retina display) with multiple tabs open, then crop the chrome off of it to 2048x1342, then pad the top with 2
