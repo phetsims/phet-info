@@ -44,7 +44,7 @@ To deploy to dev version:
 4. If this is the first time you've deployed anything for this sim, deploy with `grunt deploy-dev --mkdir` (requires 2 password inputs if ssh key is not set up)
 5. Otherwise just use `grunt deploy-dev`
 
-**Steps to publish a 'rc' (release candidate) version:**
+**Steps to publish a 'rc' (release candidate) version**
 
 RC versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/.
 
