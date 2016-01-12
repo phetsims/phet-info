@@ -66,7 +66,7 @@ If this is not the first release candidate on a release branch:
 6. Deploy to the server: `grunt deploy-rc` to deploy the rc version using the build-server.
 7. (optional) Check out master for dependencies: `grunt checkout-master`
 
-**Steps to publish a public version:**
+**Steps to publish a public version**
 
 Public versions are deployed to figaro.colorado.edu at http://http://phet.colorado.edu.
 By default, publishing a public version also deploys a dev version.
