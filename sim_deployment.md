@@ -80,8 +80,14 @@ creation of this screen shot will be supported through the screenshot feature fr
 this support doesn't exist.
 2. A public version is generally based on some rc version, with an updated version identifier. Follow the steps above for
 publishing an rc version, but use a version identifier of the form "major.minor.maintenance". For example, if the published
-version is based on "1.1.0-rc.4", then the published version identier will be "1.1.0". You do not need to run deploy-dev since it happens as part of `grunt deploy-production`. However, you still must checkout the correct shas and run `grunt` to build the sim locally before deploying.
-3. Run `grunt deploy-production` (after `grunt`). This will deploy to spot, and then use the build server to deploy to production.
+version is based on "1.1.0-rc.4", then the published version identier will be "1.1.0". You do not need to run deploy-dev 
+since it happens as part of `grunt deploy-production`. However, you still must checkout the correct shas and run `grunt`
+to build the sim locally before deploying.
+3. First, run `grunt`.  Next, if the version of chipper used by this simulation is from after November 10, 2015, run
+`grunt deploy-production`. If the chipper version is from prior to November 10, 2015, run  `grunt deploy-production 
+--locales=*`.  Either of these commands will deploy to spot, and then use the build server to deploy to production.
+(Note: In order to determine the commit date for the chipper SHA, grab the SHA out of the dependencies.json file, and
+from a gitbash command line enter `git log --pretty=format:"%H %cd" | grep <SHA>`.)
 4. Otherwise, wait a few minutes, and then test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
 5. If this is a new sim, both the simulation and project will need to marked "visible" in the website admin interface. Usually the person in charge of uploading all of the meta information will be responsible for doing this. After that, make sure the sim page appears correctly on the website. Talk to @aaronsamuel137 if it hasn't appeared after marking the sim and project visible (browse logged in to bypass the varnish cache).
 6. If this is the initial publication, generate and check in (on the master branch) the auto-generated readme file for a published sim.  The README.md file can be created using ```grunt published-README```.
