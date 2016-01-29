@@ -18,7 +18,7 @@ There are developers at PhET using Windows and MacOS, if you use a different hos
 ####Setup SVN:		
 ######Install SVN:
 * Windows:  You will need access to the command line tools.  
-  * SilkSVN is known to be compatible https://sliksvn.com/download
+  * SlikSVN is known to be compatible https://sliksvn.com/download
   
 ######Checkout the svn trunk:
 * You will need a good network connection and time as this repository is very large.
@@ -44,17 +44,8 @@ In the phet/git directory, run this command:
 
 ####Setup the VM:
 1. Install VirtualBox: https://www.virtualbox.org/wiki/Downloads
-1. Get the OVA file. (From Aaron)
-2. Import the OVA file in VirtualBox.
-3. Setup networking:
-	1. Select the VM
-	2. Make sure the VM is in "Powered Off" state
-	3. Go to Settings > Network > Adapter 1
-	4. Make sure the checkbox for "Enable Network Adapter" is checked
-	5. Change "Attached to:" to "NAT".  This allows the VM to access the internet via the host.
-	6. Go to the Adapter 2 tab
-	7. Make sure the checkbox for "Enable Network Adapter" is checked
-	8. Change "Attached to:" to "Host-Only Network".  This sets up a network internal to your host so that the VM IP address remains static.
+1. Download the OVA file from figaro-dev:/data2/phet-vm/PhET_VM.ova. The .ova file is ~13GB and the disk file it creates will be ~30GB.
+2. Launch VirtualBox.  Go to File > Import Appliance and select the .ova file.
 4. Launch the VM:
 	> Username: phet
 	>	Password: phet
@@ -77,20 +68,20 @@ In the phet/git directory, run this command:
     Press enter 4 times, leave the file path as default and the password blank.
     
 3. Copy the contents of ~/.ssh/id_rsa.pub from the VM to ~/.ssh/authorized_keys on figaro.
-4. You should now be able to sync the local VM database with figaro by running ~/Desktop/sync.sh (or get the script from Aaron)
+4. You should now be able to sync the local VM database and document root with figaro by running ~/Desktop/sync.sh.
 	
 ######Common commands on the VM:
 * logs = displays the last 10 lines of the Tomcat logfile and appends it to the console in real time.
 * apps = cd to the tomcat7 directory
 * restart = restarts the varnish service (clears static cache)
 * /var/lib/tomcat7/webapps/restart.sh = Delete unpacked files from war and restart tomcat service
-* deploy = Rebuilds application from war.  Needs to be run after restart.sh
+* deploy = Rebuilds application from war.  Needs to be run after apps/restart.sh
 		
 	
 
 ####Setup IntelliJ Idea	
 ######Initial Setup
-1. Sign up for a jetbrains account at the link provided by PhET (Ask Aaron).
+1. Sign up for a jetbrains account at the link provided by PhET (Ask the PhET operations manager).
 2. Download the IntelliJ Idea Ultimate edition https://www.jetbrains.com/idea/download/
 3. On initial launch, sign in with your Jetbrains username and password.
 	
