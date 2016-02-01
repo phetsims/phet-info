@@ -37,7 +37,6 @@
   - [ ] Sim added to active repos list in chipper
   - [ ] Sim suggestions doc reviewed
   - [ ] Unfuddle tickets reviewed
-  - [ ] Existing sim tested for bugs, issues reported in repo
   - [ ] Port existing strings (IF ANY) and commit to the GitHub repo
   - [ ] Implementation details added to design spec
   - [ ] Paste snapshot of code review checklist into repo issue
@@ -52,6 +51,7 @@
 
 
 ## QA
+- [ ] Existing sim tested for bugs, issues reported in repo
 - [ ] **Dev testing complete** (Date: //)
 - [ ] **First release candidate** (Date: //)
  - [ ] phethelp@gmail.com owner of test matrix, share with phet-team, add to [Master Doc List](https://docs.google.com/document/d/1yjT1oE95JG_evwob9LB_De-brD7JpfFM6iIL6pF812k/edit#)
