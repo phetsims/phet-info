@@ -35,7 +35,6 @@
   - [ ] Sim added to active repos list in chipper
   - [ ] Sim suggestions doc reviewed
   - [ ] Unfuddle tickets reviewed
-  - [ ] Existing sim tested for bugs, issues reported in repo
   - [ ] Port existing strings (IF ANY) and commit to the GitHub repo
 - [ ] **Initial development started** (Date: //)
 - [ ] **Sim feature complete** (Date: //) 
