@@ -1,6 +1,6 @@
-##Examples of Useful Github Searches
+##Examples of Useful Github Issue Searches
 
-#####Tips
+#####Tips for issue searches
 - pressing ("g + d") and then ("g" + "i") brings you to the issues view
 - useful searches can be saved as a url
   - Ex., opened developer meeting issues
