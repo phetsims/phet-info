@@ -7,7 +7,6 @@
   - https://github.com/issues?q=is%3Aissue+label%3Adeveloper-meeting+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen
 
 ####All PhET repos, opened issues for assignee
-
 #####In issues search bar
 - is:issue user:phetsims is:open assignee:username sort:created-desc
 - example is:issue user:phetsims is:open assignee:ariel-phet sort:created-desc 
@@ -15,6 +14,7 @@
 
 ####All PhET repos, opened issues by label
 #####In issues search bar
-- is:issue user:phetsims is:open assignee:username sort:created-desc
-- example is:issue user:phetsims is:open assignee:ariel-phet sort:created-desc 
+- is:issue label:label-name user:phetsims sort:created-asc is:open 
+- example is:issue label:developer-meeting user:phetsims sort:created-asc is:open 
+- the sort here is in alphabetical order
 
