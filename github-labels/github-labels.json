@@ -1,0 +1,152 @@
+[
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/type:bug",
+    "name": "type:bug",
+    "color": "FF00AA"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/type:duplicate",
+    "name": "type:duplicate",
+    "color": "EEEED1"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/dev:enhancement",
+    "name": "dev:enhancement",
+    "color": "0276FD"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/dev:help-wanted",
+    "name": "dev:help-wanted",
+    "color": "63D1F4"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/type:question",
+    "name": "type:question",
+    "color": "EDCB62"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/type:wontfix",
+    "name": "type:wontfix",
+    "color": "ffffff"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/type:multitouch",
+    "name": "type:multitouch",
+    "color": "72587F"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/priority:2-high",
+    "name": "priority:2-high",
+    "color": "e11d21"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/status:fixed-pending-testing",
+    "name": "status:fixed-pending-testing",
+    "color": "00FFCC"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/priority:1-top",
+    "name": "priority:1-top",
+    "color": "FF007F"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/priority:3-medium",
+    "name": "priority:3-medium",
+    "color": "FFE600"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/priority:4-low",
+    "name": "priority:4-low",
+    "color": "c7def8"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/project:master-checklist",
+    "name": "project:master-checklist",
+    "color": "42426F"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/project:requires-kathy",
+    "name": "project:requires-kathy",
+    "color": "0000FF"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/design:artwork",
+    "name": "design:artwork",
+    "color": "d4c5f9"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/type:i18n",
+    "name": "type:i18n",
+    "color": "B452CD"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/type:misc",
+    "name": "type:misc",
+    "color": "B87333"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/type:%20licensing",
+    "name": "type: licensing",
+    "color": "4B0082"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/priority:5-deferred",
+    "name": "priority:5-deferred",
+    "color": "FFFAFA"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/dev:a11y",
+    "name": "dev:a11y",
+    "color": "008080"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/type:performance",
+    "name": "type:performance",
+    "color": "8B1C62"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/dev:code-review",
+    "name": "dev:code-review",
+    "color": "104E8B"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/design:teaching-resources",
+    "name": "design:teaching-resources",
+    "color": "F7B3DA"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/meeting:developer",
+    "name": "meeting:developer",
+    "color": "000000"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/dev:phet-io",
+    "name": "dev:phet-io",
+    "color": "1FFFFF"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/meeting:phet-io",
+    "name": "meeting:phet-io",
+    "color": "000000"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/design:general",
+    "name": "design:general",
+    "color": "F6CCDA"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/meeting:status",
+    "name": "meeting:status",
+    "color": "000000"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/meeting:design",
+    "name": "meeting:design",
+    "color": "000000"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/status:in-progress",
+    "name": "status:in-progress",
+    "color": "CCFFCC"
+  }
+]
