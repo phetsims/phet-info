@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# .credentials is a file with your github creds in the format username:password
+# This should probably be replaced with oAuth
 CREDS=`cat .credentials`
-REPO="mattpen/route-finder"
+
+#REPO should be in the format "organization/repo"
+REPO="phetsims/masses-and-springs"
 URL=https://api.github.com/repos/$REPO/labels
 
 
