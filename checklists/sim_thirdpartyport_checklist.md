@@ -52,7 +52,7 @@
 
 
 ## QA
-- [ ] **Legacy sim tested for bugs, issues reported in repo**
+- [ ] **Legacy sim tested for bugs;** issues reported in repo
 - [ ] **Dev testing complete** (Date: //)
 - [ ] **First release candidate** (Date: //)
  - [ ] phethelp@gmail.com owner of test matrix, share with phet-team, add to [Master Doc List](https://docs.google.com/document/d/1yjT1oE95JG_evwob9LB_De-brD7JpfFM6iIL6pF812k/edit#)
