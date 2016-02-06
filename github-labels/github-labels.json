@@ -85,7 +85,7 @@
     "User-Agent": "PhET"
   },
   {
-    "name": "type: licensing",
+    "name": "type:licensing",
     "color": "4B0082",
     "User-Agent": "PhET"
   },
@@ -148,5 +148,15 @@
     "name": "status:in-progress",
     "color": "CCFFCC",
     "User-Agent": "PhET"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/status:ready-to-test",
+    "name": "status:ready-to-test",
+    "color": "006400"
+  },
+  {
+    "url": "https://api.github.com/repos/phetsims/expression-exchange/labels/status:ready-for-review",
+    "name": "status:ready-for-review",
+    "color": "3E766D"
   }
 ]
