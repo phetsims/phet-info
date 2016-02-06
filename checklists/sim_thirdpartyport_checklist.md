@@ -33,7 +33,8 @@
 
 ## Implementation
 - [ ] **Sim repo created** (Date: //)
-  - [ ] Collaborators added (such as 3rd party, QA team, designers, etc) 
+  - [ ] Collaborators added (such as 3rd party, QA team, designers, etc)
+  - [ ] Standard label set applied
   - [ ] Sim added to active repos list in chipper
   - [ ] Sim suggestions doc reviewed
   - [ ] Unfuddle tickets reviewed
