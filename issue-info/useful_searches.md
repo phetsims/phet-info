@@ -18,7 +18,7 @@
 - example is:issue label:developer-meeting user:phetsims sort:created-asc is:open 
 - the sort here is in alphabetical order
 
-master-checklist search
+[master-checklist search](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Aproject%3Amaster-checklist+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen+)
 is:issue label:project:master-checklist user:phetsims sort:created-asc is:open 
-https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Aproject%3Amaster-checklist+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen+
+
 
