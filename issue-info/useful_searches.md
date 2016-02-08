@@ -3,8 +3,7 @@
 #####Tips for issue searches
 - pressing ("g + d") and then ("g" + "i") brings you to the issues view
 - useful searches can be saved as a url
-  - Ex., opened developer meeting issues
-  - https://github.com/issues?q=is%3Aissue+label%3Adeveloper-meeting+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen
+  - Ex., opened [developer meeting](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Ameeting%3Adeveloper+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen+)
 
 ####All PhET repos, opened issues for assignee
 #####In issues search bar
