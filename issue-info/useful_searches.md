@@ -3,7 +3,7 @@
 #####Tips for issue searches
 - pressing ("g + d") and then ("g" + "i") brings you to the issues view
 - useful searches can be saved as a url
-  - Ex., opened [developer meeting](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Ameeting%3Adeveloper+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen+)
+  - Ex., opened [developer meeting issues](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Ameeting%3Adeveloper+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen+)
 
 ####All PhET repos, opened issues for assignee
 #####In issues search bar
@@ -17,7 +17,6 @@
 - example is:issue label:developer-meeting user:phetsims sort:created-asc is:open 
 - the sort here is in alphabetical order
 
-[master-checklist search](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Aproject%3Amaster-checklist+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen+)
-(is:issue label:project:master-checklist user:phetsims sort:created-asc is:open)
-
-
+[open master-checklists](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Aproject%3Amaster-checklist+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen+)
+[project wide high-priority issues](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Apriority%3A2-high+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen+)
+[project wide phet-io issues](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Apriority%3A2-high+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen+)
