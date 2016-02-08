@@ -19,6 +19,7 @@
 
 ####Useful searches
 - [marked for developer meeting](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Ameeting%3Adeveloper+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen+)
+- [marked for status meeting](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Ameeting%3Astatus+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen+)
 - [open master-checklists](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Aproject%3Amaster-checklist+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen+)
 - [open high-priority issues](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Apriority%3A2-high+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen+)
 - [open phet-io issues](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Adev%3Aphet-io+user%3Aphetsims+sort%3Acreated-asc+is%3Aopen+)
