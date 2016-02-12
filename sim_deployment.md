@@ -79,17 +79,17 @@ pixels of the sim's background color (to 2048x1344) and save as /assets/$SIM-scr
 creation of this screen shot will be supported through the screenshot feature from the PhET menu, but as of this writing
 this support doesn't exist.
 2. A public version is generally based on some rc version, which generally comes from an rc branch.  Make sure you're
-working from that branch, and then update the version identifier to the form "major.minor.maintenance", removing any 
+working from that branch, and then update the version identifier to the form "major.minor.maintenance", removing any
 "-rc.x" portion if present. For example, if the published version is based on "1.1.0-rc.4", then the published version
 identifier will be "1.1.0".  Make sure this is committed and pushed.
-3. Check out the correct SHAs using `grunt checkout-shas`.  
+3. Check out the correct SHAs using `grunt checkout-shas`.
 4. Run `grunt` to build a local version and sanity test it.
-5. Run `grunt deploy-production --locales=*`.  This will instruct the build server to build the English version of the
+5. Run `grunt deploy-production --locales=*` (or just `grunt deploy-production` for ph-scale and ph-scale-basics, see https://github.com/phetsims/phet-info/issues/10).  This will instruct the build server to build the English version of the
 simulation as well as all currently deployed translated versions and deploy them on the web site.  This will also deploy
 the locally built version to the dev server.  (Note: If you're sure that the version of chipper that is being used is
 from Nov 10 2015 or later, the `--locales=*` flag can be omitted.)
 6. Wait a few minutes for the build server to do its thing, and then test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
-7. If this is a new sim, both the simulation and project will need to marked "visible" in the website admin interface. 
+7. If this is a new sim, both the simulation and project will need to marked "visible" in the website admin interface.
 Usually the person in charge of uploading all of the meta information will be responsible for doing this. After that,
 make sure the sim page appears correctly on the website. Talk to @aaronsamuel137 if it hasn't appeared after marking the
 sim and project visible (browse logged in to bypass the varnish cache).
@@ -97,8 +97,8 @@ sim and project visible (browse logged in to bypass the varnish cache).
 published sim.  The README.md file can be created using ```grunt published-README```.
 9. If this is *not* a new simulation, verify that any previously existing translations are still available and that
 their version numbers are correct.
-10. The 3rd party contributions page must be updated.  Directions for how to do this are in reportThirdParty.js.  
-Brace yourself-- this will take >30 minutes since you will need to build all of the simulations in order to access 
+10. The 3rd party contributions page must be updated.  Directions for how to do this are in reportThirdParty.js.
+Brace yourself-- this will take >30 minutes since you will need to build all of the simulations in order to access
 their 3rd party encumbrances.  After running this, the updated third-party-licenses.md file should be checked in to GitHub,
 which will make it publicly available to people who click on "3rd party contributions" from the sim.  If this process
 is too cumbersome, in the future we can discuss ways to just generate a report for the new sim and integrate it into the existing report.
