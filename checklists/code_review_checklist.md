@@ -18,6 +18,7 @@ PhET code-review checklist
 - [ ] Are there any strings that are not being internationalized? (run with query parameter 'stringTest=x', you should see nothing but 'x' strings)
 - [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter 'stringTest=double')
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter 'stringTest=long')
+- [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter 'stringTest=xss'
 - [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter 'stringTest=X')
 
 **Repository structure**
