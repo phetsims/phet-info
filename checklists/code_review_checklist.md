@@ -18,6 +18,7 @@ PhET code-review checklist
 - [ ] Are there any strings that are not being internationalized? (run with query parameter 'stringTest=x', you should see nothing but 'x' strings)
 - [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter 'stringTest=double')
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter 'stringTest=long')
+- [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter 'stringTest=xss'. Only test on one desktop platform.
 - [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter 'stringTest=X')
 
 **Repository structure**
@@ -96,6 +97,7 @@ PhET code-review checklist
 
 - [ ] Is `Math.round` used where `dot.Util.roundSymmetric` should be used?  Math.round does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879
 - [ ] Is `toFixed` used where `dot.Util.toFixed` or `dot.Util.toFixedNumber` should be used? JavaScript's `toFixed` is notoriously buggy, behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
+- [ ] User interface components with `enabled:false` should also have `pickable:false`
 
 **Organization, Readability, Maintainability**
 
