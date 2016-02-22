@@ -10,6 +10,6 @@
 1. Add the new repo name to [phetsims-repos.json](phetsims-repos.json)
 2. Run `./add-labels phetsims/newRepoName`
 
-####To add a new label to all the organizations repos
+####To add a new label to all the organization's repos
 1. Following the [labeling-scheme](labeling-scheme.md), add the new label to [github-labels.json](github-labels.json).
 2. Run `./update_all.sh '{"name":"newLabelName","color":"newLabelColor"}`
