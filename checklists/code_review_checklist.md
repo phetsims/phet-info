@@ -109,6 +109,7 @@ PhET code-review checklist
 - [ ] Are the source files reasonable in size? Scrutinize large files with too many responsibilities - can responsibilities be broken into smaller delegates?
 - [ ] Are any significant chunks of code duplicated? This will be checked manually as well as with https://github.com/danielstjules/jsinspect
 - [ ] Is there anything that should be generalized and migrated to common code?
+- [ ] Are there any TODO or FIXME comments in the code?  They should be addressed or promoted to GitHub issues.
 
 **Performance, Usability**
 
