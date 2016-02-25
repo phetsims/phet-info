@@ -30,6 +30,8 @@
 
 ## Implementation
 - [ ] **Sim repo created** (Date: //) 
+  - [ ] Simula-rasa used to create basic project structure
+  - [ ] Grunt unpublished-readme run to create the initial readme file
   - [ ] Collaborators added (such as QA team, designers, etc)
   - [ ] Standard label set applied
   - [ ] Sim added to active repos list in chipper
