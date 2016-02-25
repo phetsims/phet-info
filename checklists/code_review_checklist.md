@@ -109,6 +109,7 @@ PhET code-review checklist
 - [ ] Are the source files reasonable in size? Scrutinize large files with too many responsibilities - can responsibilities be broken into smaller delegates?
 - [ ] Are any significant chunks of code duplicated? This will be checked manually as well as with https://github.com/danielstjules/jsinspect
 - [ ] Is there anything that should be generalized and migrated to common code?
+- [ ] Are there any TODO or FIXME comments in the code?  They should be addressed or promoted to GitHub issues.
 
 **Performance, Usability**
 
@@ -117,6 +118,7 @@ PhET code-review checklist
 - [ ] Are UI components sufficiently responsive? (especially continuous UI components, such as sliders)
 - [ ] Are pointer areas optimized, especially for touch? (run with query parameter 'showPointerAreas')
 - [ ] Do pointer areas overlap? (run with query parameter 'showPointerAreas')
+- [ ] Is DT capped appropriately?  Try switching applications or browser tabs, then switch back.  Did the model take one big/long/awkward step forward?  If so, dt may need to be capped.
 
 **Memory Leaks**
 
