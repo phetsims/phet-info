@@ -38,7 +38,9 @@
   - [ ] Sim added to active repos list in chipper
   - [ ] Sim suggestions doc reviewed
   - [ ] Unfuddle tickets reviewed
-  - [ ] Port existing strings (IF ANY) and commit to the GitHub repo (auto-ported strings from Java and Flash sims can be found in babel/autoport)
+  - [ ] Port existing strings (IF ANY) and commit to the GitHub repo (auto-ported strings from Java and Flash sims can
+  be found in babel/autoport). The strings should be deleted from babel/autoport and @jbphet should immediately be asked
+  to pull from rosetta to avoid conflicts.
 - [ ] **Initial development started** (Date: //)
 - [ ] **Sim feature complete** (Date: //) 
 - [ ] **Code review complete** (Date: //) 
