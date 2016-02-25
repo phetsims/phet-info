@@ -34,7 +34,6 @@
   - [ ] Standard label set applied
   - [ ] Sim added to active repos list in chipper
   - [ ] Sim suggestions doc reviewed
-  - [ ] Port existing strings (IF ANY) and commit to the GitHub repo
 - [ ] **Initial development started** (Date: //)
 - [ ] **Sim feature complete** (Date: //) 
 - [ ] **Code review complete** (Date: //) 
