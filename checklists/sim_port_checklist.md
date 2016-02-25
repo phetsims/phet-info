@@ -36,7 +36,7 @@
   - [ ] Sim added to active repos list in chipper
   - [ ] Sim suggestions doc reviewed
   - [ ] Unfuddle tickets reviewed
-  - [ ] Port existing strings (IF ANY) and commit to the GitHub repo
+  - [ ] Port existing strings (IF ANY) and commit to the GitHub repo (auto-ported strings from Java and Flash sims can be found in babel/autoport)
 - [ ] **Initial development started** (Date: //)
 - [ ] **Sim feature complete** (Date: //) 
 - [ ] **Code review complete** (Date: //) 
