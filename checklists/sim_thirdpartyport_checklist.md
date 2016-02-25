@@ -33,12 +33,16 @@
 
 ## Implementation
 - [ ] **Sim repo created** (Date: //)
+  - [ ] Simula-rasa used to create basic project structure
+  - [ ] Grunt unpublished-readme run to create the initial readme file
   - [ ] Collaborators added (such as 3rd party, QA team, designers, etc)
   - [ ] Standard label set applied
   - [ ] Sim added to active repos list in chipper
   - [ ] Sim suggestions doc reviewed
   - [ ] Unfuddle tickets reviewed
-  - [ ] Port existing strings (IF ANY) and commit to the GitHub repo
+  - [ ] Port existing strings (IF ANY) and commit to the GitHub repo (auto-ported strings from Java and Flash sims can
+  be found in babel/autoport). The strings should be deleted from babel/autoport and @jbphet should immediately be asked
+  to pull from rosetta to avoid conflicts.
   - [ ] Implementation details added to design spec
   - [ ] Paste snapshot of code review checklist into repo issue
 - [ ] **Initial development started** (Date: //) 
