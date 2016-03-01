@@ -20,6 +20,7 @@ PhET code-review checklist
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter 'stringTest=long')
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter 'stringTest=xss'. Only test on one desktop platform.
 - [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter 'stringTest=X')
+- [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 published.
 
 **Repository structure**
 
