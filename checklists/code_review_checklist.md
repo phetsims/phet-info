@@ -99,6 +99,7 @@ PhET code-review checklist
 - [ ] Is `Math.round` used where `dot.Util.roundSymmetric` should be used?  Math.round does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879
 - [ ] Is `toFixed` used where `dot.Util.toFixed` or `dot.Util.toFixedNumber` should be used? JavaScript's `toFixed` is notoriously buggy, behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
 - [ ] User interface components with `enabled:false` should also have `pickable:false`
+- [ ] Are random numbers using DOT/Random or seedable sources?
 
 **Organization, Readability, Maintainability**
 
