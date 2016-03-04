@@ -19,7 +19,7 @@ Checklist for S2015R milestone (GitHub issues labeled "Summer 2015 redeploy")
 - [ ] showPointerAreas (touchArea=red, mouseArea=blue)
 - [ ] Full screen test
 - [ ] Perform RC testing
-- [ ] Reference issues to RC test task
+ - [ ] Reference issues to RC test task
 
 **Design/Admin**
 - [ ] Rosetta test (Opening sim to trusted translators for beta)
