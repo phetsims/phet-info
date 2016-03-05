@@ -9,17 +9,20 @@ then
   exit 1
 fi
 
-if [[ $1 -eq '' ]] 
+if [[ $1 = '' ]] 
 then
   echo "Usage: $0 '{\"name\":\"labelName\",\"color\":\"hexcode\"}'"
+  exit 1
 else
+  LABEL=$1
+fi
 
-  REPO=$1
-
-for r in `~/jq-win64.exe -c .[].name github-labels.json`
+for r in `~/jq-win64.exe -c .[].name phetsims-repos.json`
 do
-  REPO="phetsims/$r"
-
+  REPO=`echo phetsims/$r | tr -d '"'`
+  echo "$REPO"
   URL=https://api.github.com/repos/$REPO/labels
-  curl -iH 'User-Agent: "phet"' -u "mattpen:M13t4hKurtz" -d "$1" "$URL"
+  echo "$URL"
+  curl -iH 'User-Agent: "phet"' -u "$CREDS" -d "$LABEL" "$URL"
 done
+
