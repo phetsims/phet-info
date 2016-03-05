@@ -136,5 +136,5 @@ PhET code-review checklist
 	- [ ] SCENERY: `Node.addEventListener` is accompanied by `Node.removeEventListener`
 	- [ ] SCENERY: `Node.on` is accompanied by `Node.off`
 	- [ ] TANDEM: `tandem.addInstance` is accompanied by `tandem.removeInstance`.
-- Do all types that require a `dispose` function have one?
+- [ ] Do all types that require a `dispose` function have one?
 
