@@ -211,6 +211,7 @@ NOTE: The actual commit message will be ```'Bumping version to ' + newVersionStr
 ## Dealing with problems
 
 Generally, see where the problem occurred in the maintenance release task that was run. The most general "routine" for this is:
+
 1. Check what's currently checked out. May have detached HEADs checked out. ```grunt checkout-master-all``` in perennial can help here.
 2. Check what has been committed to the repositories (Do the sim-specific branches on common repos exist, and are they correct? Do the release branches on the sim repos contain correct dependencies.json entries?)
 3. Correct the above, and continue, or contact @jonathanolson if you have concerns.
