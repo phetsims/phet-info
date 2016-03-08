@@ -182,6 +182,12 @@ NOTE: The actual commit message will be ```'Bumping dependencies.json for ' + me
 
 ### 3. Deploying RCs (release candidates)
 
+NOTE: Please set up SSHs to spot so that interactive password/passphrase/etc. is not needed. This has been tested with:
+```sh
+exec ssh-agent bash
+```
+to ensure interactive credential input isn't needed.
+
 Once all of the patches are applied (or even some), you can kick off an RC deployment, for example:
 ```sh
 grunt --debug maintenance-deploy-rc --sim=acid-base-solutions --message="https://github.com/phetsims/chipper/issues/429"
@@ -196,6 +202,12 @@ NOTE: Some older chippers don't flag "deployment failure" as something that prin
 NOTE: The actual commit message will be ```'Bumping version to ' + newVersionString + ' for ' + message```
 
 ### 4. Deploying to production
+
+NOTE: Please set up SSHs to spot so that interactive password/passphrase/etc. is not needed. This has been tested with:
+```sh
+exec ssh-agent bash
+```
+to ensure interactive credential input isn't needed.
 
 Once the brief testing is complete, sims can be pushed to production. It's similar to the RC deployment, for example:
 ```sh
