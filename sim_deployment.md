@@ -68,7 +68,7 @@ If this is not the first release candidate on a release branch:
 
 **Steps to publish a public version**
 
-Public versions are deployed to figaro.colorado.edu at http://http://phet.colorado.edu.
+Public versions are deployed to figaro.colorado.edu at http://phet.colorado.edu.
 By default, publishing a public version also deploys a dev version.
 
 To publish a public version:
