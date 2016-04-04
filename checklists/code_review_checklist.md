@@ -20,6 +20,7 @@ PhET code-review checklist
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter 'stringTest=long')
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter 'stringTest=xss'. Only test on one desktop platform.
 - [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter 'stringTest=X')
+- [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 published.
 
 **Repository structure**
 
@@ -98,6 +99,7 @@ PhET code-review checklist
 - [ ] Is `Math.round` used where `dot.Util.roundSymmetric` should be used?  Math.round does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879
 - [ ] Is `toFixed` used where `dot.Util.toFixed` or `dot.Util.toFixedNumber` should be used? JavaScript's `toFixed` is notoriously buggy, behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
 - [ ] User interface components with `enabled:false` should also have `pickable:false`
+- [ ] Are random numbers using DOT/Random or seedable sources?
 
 **Organization, Readability, Maintainability**
 
@@ -134,5 +136,5 @@ PhET code-review checklist
 	- [ ] SCENERY: `Node.addEventListener` is accompanied by `Node.removeEventListener`
 	- [ ] SCENERY: `Node.on` is accompanied by `Node.off`
 	- [ ] TANDEM: `tandem.addInstance` is accompanied by `tandem.removeInstance`.
-- Do all types that require a `dispose` function have one?
+- [ ] Do all types that require a `dispose` function have one?
 
