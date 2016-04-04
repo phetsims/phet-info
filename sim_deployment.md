@@ -106,10 +106,8 @@ is too cumbersome, in the future we can discuss ways to just generate a report f
 
 **PhET-iO Deployment Guidelines**
 
-Deploy root is /data/web/htdocs/phet-io/0.1/sims/
-We should put copies on spot as well.
-
-Deploy process is:
+This process will deploy a PhET simulation that is instrumented (even partially) for PhET-iO.
+It places a copy on spot's dev site and a copy on figaro (not figaro-dev)
 
 1. Update the version number in package.json
 2. Run `grunt build-phet-io`
