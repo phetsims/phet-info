@@ -40,7 +40,7 @@ else
       "name": "dev:help-wanted",
       "color": "63D1F4"
     }'
-  curl -iH 'User-Agent: "PhET"' -u "$CREDS" -d "$REPLACE" "$URL/help%20wanted"
+  curl -iH 'User-Agent: "PhET"' -u "$CREDS" -d "$REPLACE" "$URL/help-wanted"
 
   REPLACE='{
       "name": "dev:enhancement",

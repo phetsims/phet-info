@@ -9,12 +9,13 @@ then
   exit 1
 fi
 
-if [[ $1 = '' ]] 
+if [[ $1 = '' ]] || [[ $2 = '' ]]
 then
-  echo "Usage: $0 '{\"name\":\"labelName\",\"color\":\"hexcode\"}'"
+  echo "Usage: $0 \"labelName\" \"color(hexcode with no # symbol)\""
   exit 1
 else
-  LABEL=$1
+  LABEL={\"name\":\"$1\",\"color\":\"$2\"}
+  echo "$LABEL"
 fi
 
 for r in `~/jq-win64.exe -c .[].name phetsims-repos.json`
@@ -25,4 +26,3 @@ do
   echo "$URL"
   curl -iH 'User-Agent: "phet"' -u "$CREDS" -d "$LABEL" "$URL"
 done
-
