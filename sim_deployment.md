@@ -109,7 +109,7 @@ is too cumbersome, in the future we can discuss ways to just generate a report f
 This process will deploy a PhET simulation that is instrumented (even partially) for PhET-iO.
 It places a copy on spot's dev site and a copy on figaro (not figaro-dev)
 
-1. Update the version number in package.json
+1. Update the version number in SIMULATION/package.json and commit
 2. Run `grunt build-phet-io`
 3. Run `grunt deploy-dev` to deploy the simulation to spot
 4. Copy the simulation from spot to figaro:
