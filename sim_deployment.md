@@ -117,7 +117,7 @@ It places a copy on spot's dev site and a copy on figaro (not figaro-dev)
 
     1. ssh into spot
     2. scp -r /htdocs/physics/phet/dev/html/SIMULATION/VERSION USERNAME(at)figaro.colorado.edu:/data/web/htdocs/phet-io/0.1/sims/SIMULATION/VERSION
-    
-6. The .htaccess that are deployed are only suitable for spot, you must copy a working .htaccess file from figaro to the new directory:
+
+6. The .htaccess that are deployed are only suitable for spot, you must copy a working .htaccess file from concentration/1.3.0-dev.3 on figaro to the new directory:
 
     1. cp /data/web/htdocs/phet-io/0.1/sims/concentration/1.3.0-dev.3/phet-io/protected/.htaccess /data/web/htdocs/phet-io/0.1/sims/SIMULATION/VERSION/phet-io/protected/.htaccess
