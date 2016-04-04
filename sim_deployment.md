@@ -112,11 +112,12 @@ It places a copy on spot's dev site and a copy on figaro (not figaro-dev)
 1. Update the version number in SIMULATION/package.json and commit
 2. Run `grunt build-phet-io`
 3. Run `grunt deploy-dev` to deploy the simulation to spot
-4. Copy the simulation from spot to figaro:
+4. Check that the `protected` directory is password protected (by .htaccess) by visiting http://www.colorado.edu/physics/phet/dev/html/SIMULATION/VERSION/phet-io/protected/
+5. Copy the simulation from spot to figaro:
 
     1. ssh into spot
     2. scp -r /htdocs/physics/phet/dev/html/SIMULATION/VERSION USERNAME(at)figaro.colorado.edu:/data/web/htdocs/phet-io/0.1/sims/SIMULATION/VERSION
     
-5. The .htaccess that are deployed are only suitable for spot, you must copy a working .htaccess file from figaro to the new directory:
+6. The .htaccess that are deployed are only suitable for spot, you must copy a working .htaccess file from figaro to the new directory:
 
     1. cp /data/web/htdocs/phet-io/0.1/sims/concentration/1.3.0-dev.3/phet-io/protected/.htaccess /data/web/htdocs/phet-io/0.1/sims/SIMULATION/VERSION/phet-io/protected/.htaccess
