@@ -92,7 +92,7 @@ PhET code-review checklist
 - [ ] Are documentation conventions followed, as described in the [“Coding Style Guidelines” section of the PhET Development Overview](https://docs.google.com/document/d/1odXkliRagq0zuf1_NdOtQ2BrkC9hwlISnPi2y-dKdrk/edit#heading=h.1oxr3ptyo50w)?
 - [ ] Does model.md adequately describe the model, in terms appropriate for teachers?
 - [ ] Does implementation-notes.md adequately describe the implementation, with an overview that will be useful to future maintainers?
-- [ ] Are sim-specific query parameters (if any) identified and documented in one location?
+- [ ] Are sim-specific query parameters (if any) identified and documented in one .js file? The .js file should be named <REPO>QueryParameters, for example ArithmeticQueryParameters for the aritmetic repository.
 
 **Common Errors**
 
