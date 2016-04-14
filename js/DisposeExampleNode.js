@@ -25,50 +25,54 @@ define( function( require ) {
    * @param {Object} options
    * @constructor
    */
-  function DisposeExampleNode( valueProperty, changedEmitter, stateEvents, options ) {
+  function ExampleNode( valueProperty, changedEmitter, stateEvents, options ) {
 
     options = _.extend( {
       enabledProperty: new Property( true ), // optionally provided by client
       tandem: null
     }, options );
 
-    // @private
-    this.disposeDisposeExampleNodeEmitter = new Emitter();
+    // @private - Use a  class-specific name so it doesn't get shadowed by one in a subclass
+    this.disposeExampleNodeEmitter = new Emitter();
+
+    // nickname var for ease of readability for usages in the constructor
+    var disposeEmitter = this.disposeExampleNodeEmitter;
 
     // Add observers to observables provided by the client.
-    valueProperty.linkWithDisposal( this.disposeDisposeExampleNodeEmitter, function( value ) {
+    valueProperty.linkWithDisposal( disposeEmitter, function( value ) {
       /* ... */
     } );
 
-    options.enabledProperty.linkWithDisposal( this.disposeDisposeExampleNodeEmitter, function( enabled ) { /* ... */ } );
+    options.enabledProperty.linkWithDisposal( disposeEmitter, function( enabled ) { /* ... */ } );
 
-    changedEmitter.addListenerWithDisposal( this.disposeDisposeExampleNodeEmitter, function() { /* ... */ } );
+    changedEmitter.addListenerWithDisposal( disposeEmitter, function() { /* ... */ } );
 
-    stateEvents.onWithDisposal( this.disposeDisposeExampleNodeEmitter, 'someState', function() { /* ... */ } );
+    stateEvents.onWithDisposal( disposeEmitter, 'someState', function() { /* ... */ } );
 
     // @public Properties owned by this instance
-    this.myPublicProperty = new Property( 0, { disposeExitter: this.disposeDisposeExampleNodeEmitter } );
-    this.myEmitter = new Emitter( { disposeExitter: this.disposeDisposeExampleNodeEmitter } );
-    this.myEvents = new Events( { disposeExitter: this.disposeDisposeExampleNodeEmitter } );
+    this.myPublicProperty = new Property( 0, { disposeEmitter: disposeEmitter } );
+    this.myEmitter = new Emitter( { disposeEmitter: disposeEmitter } );
+    this.myEvents = new Events( { disposeEmitter: disposeEmitter } );
 
     // @private
     var myDerivedProperty = new DerivedProperty( [ valueProperty ], function( value ) { /*...*/ }, {
-      disposeDisposeExampleNodeEmitter: this.disposeDisposeExampleNodeEmitter
+      disposeExampleNodeEmitter: disposeEmitter
     } );
+    console.log( myDerivedProperty );
 
     Node.call( this );
 
     // register with tandem
-    options.tandem && options.tandem.addInstanceWithDisposal( this.disposeDisposeExampleNodeEmitter, this );
+    options.tandem && options.tandem.addInstanceWithDisposal( disposeEmitter, this );
   }
 
-  return inherit( Node, DisposeExampleNode, {
+  return inherit( Node, ExampleNode, {
 
     // @public
     dispose: function() {
-      this.disposeDisposeExampleNodeEmitter.emit();
-      this.disposeDisposeExampleNodeEmitter.dispose();
-      this.disposeDisposeExampleNodeEmitter = null; // so it would fail if dispose() called twice
+      this.disposeExampleNodeEmitter.emit();
+      this.disposeExampleNodeEmitter.dispose();
+      this.disposeExampleNodeEmitter = null; // so it would fail if dispose() called twice
       Node.prototype.dispose.call( this );
     }
   } );
