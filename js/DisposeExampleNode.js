@@ -47,9 +47,9 @@ define( function( require ) {
     stateEvents.onWithDisposal( this.disposeDisposeExampleNodeEmitter, 'someState', function() { /* ... */ } );
 
     // @public Properties owned by this instance
-    this.myPublicProperty = new Property( 0, { disposeDisposeExampleNodeEmitter: this.disposeDisposeExampleNodeEmitter } );
-    this.myEmitter = new Emitter( { disposeDisposeExampleNodeEmitter: this.disposeDisposeExampleNodeEmitter } );
-    this.myEvents = new Events( { disposeDisposeExampleNodeEmitter: this.disposeDisposeExampleNodeEmitter } );
+    this.myPublicProperty = new Property( 0, { disposeExitter: this.disposeDisposeExampleNodeEmitter } );
+    this.myEmitter = new Emitter( { disposeExitter: this.disposeDisposeExampleNodeEmitter } );
+    this.myEvents = new Events( { disposeExitter: this.disposeDisposeExampleNodeEmitter } );
 
     // @private
     var myDerivedProperty = new DerivedProperty( [ valueProperty ], function( value ) { /*...*/ }, {
