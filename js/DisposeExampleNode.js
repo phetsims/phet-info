@@ -32,61 +32,43 @@ define( function( require ) {
       tandem: null
     }, options );
 
-    var thisNode = this;
+    // @private
+    this.disposeDisposeExampleNodeEmitter = new Emitter();
 
     // Add observers to observables provided by the client.
-    var valueObserver = function( value ) { /* ... */ };
-    valueProperty.link( valueObserver );
+    valueProperty.linkWithDisposal( this.disposeDisposeExampleNodeEmitter, function( value ) {
+      /* ... */
+    } );
 
-    var enabledObserver = function( enabled ) { /* ... */ };
-    options.enabledProperty.link( enabledObserver );
+    options.enabledProperty.linkWithDisposal( this.disposeDisposeExampleNodeEmitter, function( enabled ) { /* ... */ } );
 
-    var changedListener = function() { /* ... */ };
-    changedEmitter.addListener( changedListener );
+    changedEmitter.addListenerWithDisposal( this.disposeDisposeExampleNodeEmitter, function() { /* ... */ } );
 
-    var someStateListener = function() { /* ... */ };
-    stateEvents.on( 'someState', someStateListener );
+    stateEvents.onWithDisposal( this.disposeDisposeExampleNodeEmitter, 'someState', function() { /* ... */ } );
 
     // @public Properties owned by this instance
-    this.myPublicProperty = new Property( 0 );
-    this.myEmitter = new Emitter();
-    this.myEvents = new Events();
+    this.myPublicProperty = new Property( 0, { disposeDisposeExampleNodeEmitter: this.disposeDisposeExampleNodeEmitter } );
+    this.myEmitter = new Emitter( { disposeDisposeExampleNodeEmitter: this.disposeDisposeExampleNodeEmitter } );
+    this.myEvents = new Events( { disposeDisposeExampleNodeEmitter: this.disposeDisposeExampleNodeEmitter } );
 
     // @private
-    var myDerivedProperty = new DerivedProperty( [ valueProperty ], function( value ) { /*...*/ } );
+    var myDerivedProperty = new DerivedProperty( [ valueProperty ], function( value ) { /*...*/ }, {
+      disposeDisposeExampleNodeEmitter: this.disposeDisposeExampleNodeEmitter
+    } );
 
     Node.call( this );
 
     // register with tandem
-    options.tandem && options.tandem.addInstance( this );
-
-    // @private
-    this.disposeDisposeExampleNode = function() {
-
-      // observables provided by the client
-      valueProperty.unlink( valueObserver );
-      options.enabledProperty.unlink( enabledObserver );
-      changedEmitter.removeListener( changedListener );
-      stateEvents.off( 'someState', someStateListener );
-      
-      // observables owned by this instance that are part of the public interface
-      thisNode.myPublicProperty.dispose();
-      thisNode.myEmitter.dispose();
-      thisNode.myEvents.dispose();
-
-      // observables owned by this instance that are private
-      myDerivedProperty.dispose();
-
-      // de-register with tandem
-      options.tandem && options.tandem.removeInstance( this );
-    };
+    options.tandem && options.tandem.addInstanceWithDisposal( this.disposeDisposeExampleNodeEmitter, this );
   }
 
   return inherit( Node, DisposeExampleNode, {
 
     // @public
     dispose: function() {
-      this.disposeDisposeExampleNode();
+      this.disposeDisposeExampleNodeEmitter.emit();
+      this.disposeDisposeExampleNodeEmitter.dispose();
+      this.disposeDisposeExampleNodeEmitter = null; // so it would fail if dispose() called twice
       Node.prototype.dispose.call( this );
     }
   } );
