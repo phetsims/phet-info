@@ -26,12 +26,12 @@ define( function( require ) {
    * @constructor
    */
   function DisposeExampleNode( valueProperty, changedEmitter, stateEvents, options ) {
-    
+
     options = _.extend( {
       enabledProperty: new Property( true ), // optionally provided by client
       tandem: null
     }, options );
-    
+
     var thisNode = this;
 
     // Add observers to observables provided by the client.
@@ -40,10 +40,10 @@ define( function( require ) {
 
     var enabledObserver = function( enabled ) { /* ... */ };
     options.enabledProperty.link( enabledObserver );
-    
+
     var changedListener = function() { /* ... */ };
     changedEmitter.addListener( changedListener );
-    
+
     var someStateListener = function() { /* ... */ };
     stateEvents.on( 'someState', someStateListener );
 
@@ -59,10 +59,10 @@ define( function( require ) {
 
     // register with tandem
     options.tandem && options.tandem.addInstance( this );
-    
+
     // @private
     this.disposeDisposeExampleNode = function() {
-      
+
       // observables provided by the client
       valueProperty.unlink( valueObserver );
       options.enabledProperty.unlink( enabledObserver );
@@ -83,7 +83,7 @@ define( function( require ) {
   }
 
   return inherit( Node, DisposeExampleNode, {
-    
+
     // @public
     dispose: function() {
       this.disposeDisposeExampleNode();
