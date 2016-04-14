@@ -129,8 +129,8 @@ PhET code-review checklist
 - Are there leaks due to registering observers or listeners? These guidelines should be followed, or documentation added about why following them is not necessary:
 	- [ ] AXON: `Property.link` is accompanied by `Property.unlink`.
 	- [ ] AXON: `PropertySet.link` is accompanied by `PropertySet.unlink`.
-	- [ ] AXON: Creation of `DerivedProperty` is accompanied by `detach`.
-	- [ ] AXON: Creation of `Multilink` is accompanied by `detach`.
+	- [ ] AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
+	- [ ] AXON: Creation of `Multilink` is accompanied by `dispose`.
 	- [ ] AXON: `Events.on` is accompanied by `Events.off`.
 	- [ ] AXON: `Emitter.addListener` is accompanied by `Emitter.removeListener`.
 	- [ ] SCENERY: `Node.addEventListener` is accompanied by `Node.removeEventListener`
