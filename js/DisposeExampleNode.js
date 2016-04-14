@@ -50,20 +50,18 @@ define( function( require ) {
     stateEvents.onWithDisposal( disposeEmitter, 'someState', function() { /* ... */ } );
 
     // @public Properties owned by this instance
-    this.myPublicProperty = new Property( 0, { disposeEmitter: disposeEmitter } );
-    this.myEmitter = new Emitter( { disposeEmitter: disposeEmitter } );
-    this.myEvents = new Events( { disposeEmitter: disposeEmitter } );
+    this.myPublicProperty = Property.withDisposal( 0, disposeEmitter );
+    this.myEmitter = Emitter.withDisposal( disposeEmitter );
+    this.myEvents = Events.withDisposal( disposeEmitter );
 
     // @private
-    var myDerivedProperty = new DerivedProperty( [ valueProperty ], function( value ) { /*...*/ }, {
-      disposeExampleNodeEmitter: disposeEmitter
-    } );
+    var myDerivedProperty = DerivedProperty.withDisposal( [ valueProperty ], function( value ) { /*...*/ } );
     console.log( myDerivedProperty );
 
     Node.call( this );
 
     // register with tandem
-    options.tandem && options.tandem.addInstanceWithDisposal( disposeEmitter, this );
+    options.tandem && options.tandem.addInstanceWithDisposal( this, disposeEmitter );
   }
 
   return inherit( Node, ExampleNode, {
