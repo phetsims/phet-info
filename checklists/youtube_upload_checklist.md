@@ -1,3 +1,5 @@
+**Youtube Uploading Checklist**
+
 - [ ] Put in relevant keywords
 - [ ] Choose a quality keyframe (the image shown for the video)
 - [ ] Use a title and description that will make sense out of context, since YouTube videos can get shared broadly.  
