@@ -32,46 +32,30 @@ define( function( require ) {
       tandem: null
     }, options );
 
-    // @private - Use a  class-specific name so it doesn't get shadowed by one in a subclass
-    this.disposeExampleNodeEmitter = new Emitter();
-
-    // nickname var for ease of readability for usages in the constructor
-    var disposeEmitter = this.disposeExampleNodeEmitter;
+    Node.call( this ); // Node would be a Disposable, so this sets things up.
 
     // Add observers to observables provided by the client.
-    valueProperty.linkWithDisposal( disposeEmitter, function( value ) {
-      /* ... */
-    } );
+    valueProperty.link( function( value ) {}, { disposable: this } ); // Disposable as second argument
 
-    options.enabledProperty.linkWithDisposal( disposeEmitter, function( enabled ) { /* ... */ } );
+    changedEmitter.addListener( function() { /* ... */ }, { disposable: this } );
 
-    changedEmitter.addListenerWithDisposal( disposeEmitter, function() { /* ... */ } );
-
-    stateEvents.onWithDisposal( disposeEmitter, 'someState', function() { /* ... */ } );
+    stateEvents.on( 'someState', function() {}, { disposable: this } );
 
     // @public Properties owned by this instance
-    this.myPublicProperty = Property.withDisposal( 0, disposeEmitter );
-    this.myEmitter = Emitter.withDisposal( disposeEmitter );
-    this.myEvents = Events.withDisposal( disposeEmitter );
+    this.myPublicProperty = new Property( 0, { disposable: this } );
+    this.myEmitter = new Emitter( { disposable: this } );
+    this.myEvents = new Events( { disposable: this } );
 
     // @private
-    var myDerivedProperty = DerivedProperty.withDisposal( [ valueProperty ], function( value ) { /*...*/ } );
-    console.log( myDerivedProperty );
+    var myDerivedProperty = new DerivedProperty( [ valueProperty ], function( value ) { /* ... */ }, {
+      disposable: this
+    } );
 
-    Node.call( this );
+    this.mutate( options );
 
     // register with tandem
-    options.tandem && options.tandem.addInstanceWithDisposal( this, disposeEmitter );
+    tandem.addInstance( this, { disposable: this } );
   }
 
-  return inherit( Node, ExampleNode, {
-
-    // @public
-    dispose: function() {
-      this.disposeExampleNodeEmitter.emit();
-      this.disposeExampleNodeEmitter.dispose();
-      this.disposeExampleNodeEmitter = null; // so it would fail if dispose() called twice
-      Node.prototype.dispose.call( this );
-    }
-  } );
+  return inherit( Node, ExampleNode );
 } );
