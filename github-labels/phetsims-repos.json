@@ -1,1 +1,362 @@
-[{"name":"phet-io-website"},{"name":"twixt"},{"name":"phetcommon"},{"name":"energy-skate-park-basics"},{"name":"scenery"},{"name":"build-an-atom"},{"name":"ohms-law"},{"name":"example-sim"},{"name":"beers-law-lab"},{"name":"faraday"},{"name":"resistance-in-a-wire"},{"name":"forces-and-motion-basics"},{"name":"dot"},{"name":"molecule-shapes"},{"name":"assert"},{"name":"build-a-molecule"},{"name":"nitroglycerin"},{"name":"kite"},{"name":"scenery-phet"},{"name":"phet-core"},{"name":"balloons-and-static-electricity"},{"name":"sun"},{"name":"joist"},{"name":"john-travoltage"},{"name":"chipper"},{"name":"tween.js"},{"name":"molarity"},{"name":"axon"},{"name":"gravity-force-lab"},{"name":"phetmarks"},{"name":"wave-on-a-string"},{"name":"phet-info"},{"name":"gravity-and-orbits"},{"name":"graphing-lines"},{"name":"blast"},{"name":"fraction-matcher"},{"name":"build-a-fraction-deprecated"},{"name":"fractions-intro-deprecated"},{"name":"vibe"},{"name":"sherpa"},{"name":"concentration"},{"name":"mobius"},{"name":"friction"},{"name":"balancing-act"},{"name":"vegas"},{"name":"ph-scale"},{"name":"slater"},{"name":"ph-scale-basics"},{"name":"under-pressure"},{"name":"fraction-comparison"},{"name":"acid-base-solutions"},{"name":"fraction-common-deprecated"},{"name":"phet-io"},{"name":"molecule-polarity"},{"name":"estimation"},{"name":"all-sims"},{"name":"arithmetic"},{"name":"griddle"},{"name":"balancing-chemical-equations"},{"name":"seasons"},{"name":"area-builder"},{"name":"color-vision"},{"name":"circuit-construction-kit-basics"},{"name":"fluid-pressure-and-flow"},{"name":"optics-lab"},{"name":"tasks"},{"name":"graphing-quadratics"},{"name":"plinko-probability"},{"name":"states-of-matter-basics"},{"name":"reactants-products-and-leftovers"},{"name":"brand"},{"name":"chronicle"},{"name":"preface"},{"name":"datamite"},{"name":"molecules-and-light"},{"name":"faradays-law"},{"name":"protein-synthesis"},{"name":"simula-rasa"},{"name":"energy-forms-and-changes"},{"name":"neuron"},{"name":"litmus"},{"name":"website"},{"name":"pendulum-lab"},{"name":"molecule-shapes-basics"},{"name":"atomic-interactions"},{"name":"isotopes-and-atomic-mass"},{"name":"charges-and-fields"},{"name":"least-squares-regression"},{"name":"capacitor-lab-basics"},{"name":"sugar-and-salt-solutions"},{"name":"states-of-matter"},{"name":"shred"},{"name":"installer-builder"},{"name":"blackbody-spectrum"},{"name":"bending-light"},{"name":"curve-fitting"},{"name":"babel"},{"name":"function-builder"},{"name":"projectile-motion"},{"name":"chains"},{"name":"rosetta"},{"name":"simulation-picker"},{"name":"rutherford-scattering"},{"name":"special-ops"},{"name":"tandem"},{"name":"phet-metacog"},{"name":"hookes-law"},{"name":"beaker"},{"name":"gene-expression-basics"},{"name":"making-tens"},{"name":"calculus-grapher"},{"name":"trig-tour"},{"name":"yotta"},{"name":"phet-cafepress"},{"name":"perennial"},{"name":"phet-app"},{"name":"expression-exchange"},{"name":"models-of-the-hydrogen-atom"},{"name":"masses-and-springs"},{"name":"unit-rates"}]
+[
+  {
+    "name": "phet-io-website"
+  },
+  {
+    "name": "twixt"
+  },
+  {
+    "name": "phetcommon"
+  },
+  {
+    "name": "energy-skate-park-basics"
+  },
+  {
+    "name": "scenery"
+  },
+  {
+    "name": "build-an-atom"
+  },
+  {
+    "name": "ohms-law"
+  },
+  {
+    "name": "example-sim"
+  },
+  {
+    "name": "beers-law-lab"
+  },
+  {
+    "name": "faraday"
+  },
+  {
+    "name": "resistance-in-a-wire"
+  },
+  {
+    "name": "forces-and-motion-basics"
+  },
+  {
+    "name": "dot"
+  },
+  {
+    "name": "molecule-shapes"
+  },
+  {
+    "name": "assert"
+  },
+  {
+    "name": "build-a-molecule"
+  },
+  {
+    "name": "nitroglycerin"
+  },
+  {
+    "name": "kite"
+  },
+  {
+    "name": "scenery-phet"
+  },
+  {
+    "name": "phet-core"
+  },
+  {
+    "name": "balloons-and-static-electricity"
+  },
+  {
+    "name": "sun"
+  },
+  {
+    "name": "joist"
+  },
+  {
+    "name": "john-travoltage"
+  },
+  {
+    "name": "chipper"
+  },
+  {
+    "name": "tween.js"
+  },
+  {
+    "name": "molarity"
+  },
+  {
+    "name": "axon"
+  },
+  {
+    "name": "gravity-force-lab"
+  },
+  {
+    "name": "phetmarks"
+  },
+  {
+    "name": "wave-on-a-string"
+  },
+  {
+    "name": "phet-info"
+  },
+  {
+    "name": "gravity-and-orbits"
+  },
+  {
+    "name": "graphing-lines"
+  },
+  {
+    "name": "blast"
+  },
+  {
+    "name": "fraction-matcher"
+  },
+  {
+    "name": "build-a-fraction-deprecated"
+  },
+  {
+    "name": "fractions-intro-deprecated"
+  },
+  {
+    "name": "vibe"
+  },
+  {
+    "name": "sherpa"
+  },
+  {
+    "name": "concentration"
+  },
+  {
+    "name": "mobius"
+  },
+  {
+    "name": "friction"
+  },
+  {
+    "name": "balancing-act"
+  },
+  {
+    "name": "vegas"
+  },
+  {
+    "name": "ph-scale"
+  },
+  {
+    "name": "slater"
+  },
+  {
+    "name": "ph-scale-basics"
+  },
+  {
+    "name": "under-pressure"
+  },
+  {
+    "name": "fraction-comparison"
+  },
+  {
+    "name": "acid-base-solutions"
+  },
+  {
+    "name": "fraction-common-deprecated"
+  },
+  {
+    "name": "phet-io"
+  },
+  {
+    "name": "molecule-polarity"
+  },
+  {
+    "name": "estimation"
+  },
+  {
+    "name": "all-sims"
+  },
+  {
+    "name": "arithmetic"
+  },
+  {
+    "name": "griddle"
+  },
+  {
+    "name": "balancing-chemical-equations"
+  },
+  {
+    "name": "seasons"
+  },
+  {
+    "name": "area-builder"
+  },
+  {
+    "name": "color-vision"
+  },
+  {
+    "name": "circuit-construction-kit"
+  },
+  {
+    "name": "fluid-pressure-and-flow"
+  },
+  {
+    "name": "optics-lab"
+  },
+  {
+    "name": "tasks"
+  },
+  {
+    "name": "graphing-quadratics"
+  },
+  {
+    "name": "plinko-probability"
+  },
+  {
+    "name": "states-of-matter-basics"
+  },
+  {
+    "name": "reactants-products-and-leftovers"
+  },
+  {
+    "name": "brand"
+  },
+  {
+    "name": "chronicle"
+  },
+  {
+    "name": "preface"
+  },
+  {
+    "name": "datamite"
+  },
+  {
+    "name": "molecules-and-light"
+  },
+  {
+    "name": "faradays-law"
+  },
+  {
+    "name": "protein-synthesis"
+  },
+  {
+    "name": "simula-rasa"
+  },
+  {
+    "name": "energy-forms-and-changes"
+  },
+  {
+    "name": "neuron"
+  },
+  {
+    "name": "litmus"
+  },
+  {
+    "name": "website"
+  },
+  {
+    "name": "pendulum-lab"
+  },
+  {
+    "name": "molecule-shapes-basics"
+  },
+  {
+    "name": "atomic-interactions"
+  },
+  {
+    "name": "isotopes-and-atomic-mass"
+  },
+  {
+    "name": "charges-and-fields"
+  },
+  {
+    "name": "least-squares-regression"
+  },
+  {
+    "name": "capacitor-lab-basics"
+  },
+  {
+    "name": "sugar-and-salt-solutions"
+  },
+  {
+    "name": "states-of-matter"
+  },
+  {
+    "name": "shred"
+  },
+  {
+    "name": "installer-builder"
+  },
+  {
+    "name": "blackbody-spectrum"
+  },
+  {
+    "name": "bending-light"
+  },
+  {
+    "name": "curve-fitting"
+  },
+  {
+    "name": "babel"
+  },
+  {
+    "name": "function-builder"
+  },
+  {
+    "name": "projectile-motion"
+  },
+  {
+    "name": "chains"
+  },
+  {
+    "name": "rosetta"
+  },
+  {
+    "name": "simulation-picker"
+  },
+  {
+    "name": "rutherford-scattering"
+  },
+  {
+    "name": "special-ops"
+  },
+  {
+    "name": "tandem"
+  },
+  {
+    "name": "phet-metacog"
+  },
+  {
+    "name": "hookes-law"
+  },
+  {
+    "name": "beaker"
+  },
+  {
+    "name": "gene-expression-basics"
+  },
+  {
+    "name": "making-tens"
+  },
+  {
+    "name": "calculus-grapher"
+  },
+  {
+    "name": "trig-tour"
+  },
+  {
+    "name": "yotta"
+  },
+  {
+    "name": "phet-cafepress"
+  },
+  {
+    "name": "perennial"
+  },
+  {
+    "name": "phet-app"
+  },
+  {
+    "name": "expression-exchange"
+  },
+  {
+    "name": "models-of-the-hydrogen-atom"
+  },
+  {
+    "name": "masses-and-springs"
+  },
+  {
+    "name": "unit-rates"
+  }
+]
