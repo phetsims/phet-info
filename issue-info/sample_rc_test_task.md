@@ -1,4 +1,4 @@
-[Sim Name] 1.0.0-rc.1 is ready for RC testing.
+[Sim Name] 1.X.X-rc.X is ready for RC testing.
 
 **Link to sim:** http://www.colorado.edu/physics/phet/dev/html/sim-name/1.0.0-rc.1/sim-name.html
 
@@ -7,6 +7,7 @@
 **Test Matrix:** https://docs.google.com/spreadsheets/d/1nrGez8Z4HXelhgDXNkfVAd_qxWiC5z0nnG3a8Dzxwlc/edit?ts=573a195e#gid=2
 
 **Issues to Verify**
+(all should be marked "status:fixed-pending-testing")
 Please verify the following issues are resolved and, if so, close them.  If not, they should be updated.
 
 - [ ] https://github.com/phetsims/repo-name/issues/##
