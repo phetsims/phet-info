@@ -8,7 +8,7 @@
 
 **Issues to Verify**
 (*all should be marked "status:fixed-pending-testing"*)  
-Please verify the following issues are resolved and, if so, close them.  If not, they should be updated.
+Please test the following issues and check them off after addressing. If they are resolved, close them.  If not, they should be updated.
 
 - [ ] https://github.com/phetsims/repo-name/issues/##
 - [ ] https://github.com/phetsims/repo-name/issues/##
@@ -25,4 +25,4 @@ Please verify the following issues are resolved and, if so, close them.  If not,
 - [ ] showPointerAreas (touchArea=red, mouseArea=blue)
 - [ ] Full screen test
 
-If any new issues are found, please note them in the issues and reference this issue
+If any new issues are found, please note them in https://github.com/phetsims/repo-name/issues and reference this issue.
