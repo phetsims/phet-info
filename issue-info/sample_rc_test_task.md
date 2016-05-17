@@ -16,7 +16,7 @@ Please verify the following issues are resolved and, if so, close them.  If not,
 
 
 **Please also verify**
-- [x] stringTest=double
+- [ ] stringTest=double
 - [ ] stringTest=long
 - [ ] stringTest=X (short strings)
 - [ ] stringTest=rtl (right-to-left)
