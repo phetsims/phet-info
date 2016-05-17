@@ -9,12 +9,11 @@
 **Issues to Verify**
 Please verify the following issues are resolved and, if so, close them.  If not, they should be updated.
 
-- [x] https://github.com/phetsims/isotopes-and-atomic-mass/issues/53
-- [x] https://github.com/phetsims/isotopes-and-atomic-mass/issues/51
-- [x] https://github.com/phetsims/isotopes-and-atomic-mass/issues/49
-- [ ] https://github.com/phetsims/isotopes-and-atomic-mass/issues/40
-- [x] https://github.com/phetsims/isotopes-and-atomic-mass/issues/39
-- [x] https://github.com/phetsims/isotopes-and-atomic-mass/issues/33
+- [x] https://github.com/phetsims/repo-name/issues/##
+- [x] https://github.com/phetsims/repo-name/issues/##
+- [x] https://github.com/phetsims/repo-name/issues/##
+- [ ] https://github.com/phetsims/repo-name/issues/##
+
 
 **Please also verify**
 - [x] stringTest=double
