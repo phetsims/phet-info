@@ -7,7 +7,7 @@
 **Test Matrix:** https://docs.google.com/spreadsheets/d/1nrGez8Z4HXelhgDXNkfVAd_qxWiC5z0nnG3a8Dzxwlc/edit?ts=573a195e#gid=2
 
 **Issues to Verify**
-(all should be marked "status:fixed-pending-testing")
+(all should be marked "status:fixed-pending-testing")  
 Please verify the following issues are resolved and, if so, close them.  If not, they should be updated.
 
 - [ ] https://github.com/phetsims/repo-name/issues/##
