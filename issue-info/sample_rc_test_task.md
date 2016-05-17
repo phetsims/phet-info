@@ -9,9 +9,9 @@
 **Issues to Verify**
 Please verify the following issues are resolved and, if so, close them.  If not, they should be updated.
 
-- [x] https://github.com/phetsims/repo-name/issues/##
-- [x] https://github.com/phetsims/repo-name/issues/##
-- [x] https://github.com/phetsims/repo-name/issues/##
+- [ ] https://github.com/phetsims/repo-name/issues/##
+- [ ] https://github.com/phetsims/repo-name/issues/##
+- [ ] https://github.com/phetsims/repo-name/issues/##
 - [ ] https://github.com/phetsims/repo-name/issues/##
 
 
