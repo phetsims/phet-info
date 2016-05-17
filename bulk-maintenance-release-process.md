@@ -1,9 +1,12 @@
 
-# Maintenance Release Process
+# Maintenance Release Process for Multiple Simulations
+
+This document describes the process for performing maintenance releases that affect multiple simulations.  For the
+single simulation process, please see sim_deployment.md.
 
 ## Branches, dependencies.json and releases
 
-The goal of this proess is to efficiently create commits on common repositories in simulation-specific branches (e.g. acid-base-solutions-1.1), sharing SHAs where possible, then update dependencies.json in the sim's branch (e.g. 1.1 branch in acid-base-solutions contains the new commit to where acid-base-solutions-1.1 points), and when ready do RC and production deployments.
+The goal of this process is to efficiently create commits on common repositories in simulation-specific branches (e.g. acid-base-solutions-1.1), sharing SHAs where possible, then update dependencies.json in the sim's branch (e.g. 1.1 branch in acid-base-solutions contains the new commit to where acid-base-solutions-1.1 points), and when ready do RC and production deployments.
 
 ## Overview of process
 
