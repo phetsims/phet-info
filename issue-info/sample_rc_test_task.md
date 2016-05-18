@@ -2,9 +2,9 @@
 
 **[Link to sim](http://www.colorado.edu/physics/phet/dev/html/sim-name/1.0.0-rc.1/sim-name.html)**
 
-**Link to iFrame:** http://www.colorado.edu/physics/phet/dev/html/sim-name/1.0.0-rc.1/sim-name-iframe.html
+**[Link to iFrame](http://www.colorado.edu/physics/phet/dev/html/sim-name/1.0.0-rc.1/sim-name-iframe.html)**
 
-**Test Matrix:** https://docs.google.com/spreadsheets/d/1nrGez8Z4HXelhgDXNkfVAd_qxWiC5z0nnG3a8Dzxwlc/edit?ts=573a195e#gid=2
+**[Test Matrix](https://docs.google.com/spreadsheets/d/1nrGez8Z4HXelhgDXNkfVAd_qxWiC5z0nnG3a8Dzxwlc/edit?ts=573a195e#gid=2)**
 
 **Issues to Verify**
 (*all should be marked "status:fixed-pending-testing"*)  
