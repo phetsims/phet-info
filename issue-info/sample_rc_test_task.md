@@ -1,6 +1,6 @@
 [Sim Name] 1.X.X-rc.X is ready for RC testing.
 
-**Link to sim:** http://www.colorado.edu/physics/phet/dev/html/sim-name/1.0.0-rc.1/sim-name.html
+**[Link to sim](http://www.colorado.edu/physics/phet/dev/html/sim-name/1.0.0-rc.1/sim-name.html)**
 
 **Link to iFrame:** http://www.colorado.edu/physics/phet/dev/html/sim-name/1.0.0-rc.1/sim-name-iframe.html
 
