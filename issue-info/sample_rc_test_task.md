@@ -35,3 +35,8 @@ Sim-specific query parameters useful for testing:
 • `?populateOutput` - puts 1 of each card in the output carousel  
 • `?slow` - reduces animation speed to 25% of normal, useful for testing multitouch  
 
+Sim-specific terminology:  
+(*examples from function builder*) 
+• builder - the apparatus in the center of the screen  
+• slots - places where you can drop functions in the builder  
+• input carousel - vertical carousel on the left  
