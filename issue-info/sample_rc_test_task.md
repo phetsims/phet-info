@@ -27,8 +27,8 @@ Please test the following issues and check them off after addressing. If they ar
 
 If any new issues are found, please note them in https://github.com/phetsims/repo-name/issues and reference this issue.
 
+ 
 **(Other potentially useful items)**  
-
 Sim-specific query parameters useful for testing:  
 (examples from function builder)  
 • `?populateOutput` - puts 1 of each card in the output carousel  
