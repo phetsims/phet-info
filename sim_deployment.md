@@ -38,11 +38,12 @@ Dev versions are deployed to spot.colorado.edu at http://www.colorado.edu/physic
 
 To deploy to dev version:
 
-1. Update the version identifier in package.json. The identifier should contain "dev", e.g. "1.0.0-dev.2".
-2. Commit & push.
-3. Run the build process: `grunt`
-4. If this is the first time you've deployed anything for this sim, deploy with `grunt deploy-dev --mkdir` (requires 2 password inputs if ssh key is not set up)
-5. Otherwise just use `grunt deploy-dev`
+1. Are your PhET repos up to date? Run pull-all.sh in chipper/bin if not.
+2. Update the version identifier in package.json. The identifier should contain "dev", e.g. "1.0.0-dev.2".
+3. Commit & push.
+4. Run the build process: `grunt`
+5. Open the generated HTML file locally and interact with it to check that all is well.
+6. If this is the first time you've deployed anything for this sim, deploy with `grunt deploy-dev --mkdir` (requires 2 password inputs if ssh key is not set up). Otherwise just use `grunt deploy-dev`
 
 **Steps to publish a 'rc' (release candidate) version**
 
