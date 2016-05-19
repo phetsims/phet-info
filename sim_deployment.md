@@ -91,7 +91,7 @@ from Nov 10 2015 or later, the `--locales=*` flag can be omitted.)
 6. Wait a few minutes for the build server to do its thing, and then test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
 7. If this is a new sim, both the simulation and project will need to marked "visible" in the website admin interface.
 Usually the person in charge of uploading all of the meta information will be responsible for doing this. After that,
-make sure the sim page appears correctly on the website. Talk to @aaronsamuel137 if it hasn't appeared after marking the
+make sure the sim page appears correctly on the website. Talk to @jonathanolson or @jbphet if it hasn't appeared after marking the
 sim and project visible (browse logged in to bypass the varnish cache).
 8. If this is the initial publication, generate and check in (on the master branch) the auto-generated readme file for a
 published sim.  The README.md file can be created using ```grunt published-README```.
