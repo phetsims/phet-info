@@ -120,7 +120,12 @@ PhET code-review checklist
 - [ ] Are UI components sufficiently responsive? (especially continuous UI components, such as sliders)
 - [ ] Are pointer areas optimized, especially for touch? (run with query parameter 'showPointerAreas')
 - [ ] Do pointer areas overlap? (run with query parameter 'showPointerAreas')
-- [ ] Is the timestep `dt` capped appropriately?  Try switching applications or browser tabs, then switch back.  Did the model take one big/long/awkward step forward?  If so, `dt` may need to be capped.
+- [ ] Is the timestep `dt` capped appropriately?  Try switching applications or browser tabs, then switch back.  Did the model take one big/long/awkward step forward?  If so, `dt` may need to be capped.  Example from faradays-law:
+
+```js
+// Cap large dt values, which can occur when the tab containing the sim had been hidden and then re-shown
+dt = Math.min( 0.1, dt );
+```
 
 **Memory Leaks**
 
