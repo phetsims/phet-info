@@ -112,6 +112,7 @@ PhET code-review checklist
 - [ ] Are any significant chunks of code duplicated? This will be checked manually as well as with https://github.com/danielstjules/jsinspect
 - [ ] Is there anything that should be generalized and migrated to common code?
 - [ ] Are there any TODO or FIXME comments in the code?  They should be addressed or promoted to GitHub issues.
+- [ ] Does each new common code user interface component that was developed for this sim call `Tandem.validateOptions` immediately after the options are extended in the constructor?  See https://github.com/phetsims/phet-io/issues/77
 
 **Performance, Usability**
 
