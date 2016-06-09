@@ -51,7 +51,7 @@ for each ( simulation that is fully patched ) {
 ### 0. Be Prepared
 
 The following processes rely on `git status` to make sure everything is going smoothly, and can be sabotaged if you have
-files in your repos that are committed or ignored.  Please iterate through all your repos and clean them before beginning.
+files in your repos that are uncommitted or ignored.  Please iterate through all your repos and clean them before beginning.
 
 ### 1. maintenance-start
 
