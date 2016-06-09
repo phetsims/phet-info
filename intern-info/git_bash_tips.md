@@ -1,5 +1,7 @@
 More in here later, but for the moment..
 
+Unix info tutorial http://www.ee.surrey.ac.uk/Teaching/Unix/
+
 For windows users:
  when you install git bash in "Adujusting your PATH environment" choose "use GIt from the Windows Command Prompt" this should allow you to use Git from Git Bash
 
