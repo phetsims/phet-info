@@ -48,16 +48,16 @@ for each ( simulation that is fully patched ) {
 
 ## Steps
 
-### 0. Be Prepared
+### 1. Prepare your working repos
 
 The following processes rely on `git status` to make sure everything is going smoothly, and can be sabotaged if you have
-files in your repos that are uncommitted or ignored.  Please iterate through all your repos and clean them before beginning.
+files in your repos that are uncommitted or ignored.  Please iterate through all your repos and clean them before beginning. `chipper/bin/status.sh` is useful for scanning your repos.
 
-### 1. maintenance-start
+### 2. maintenance-start
 
 Given a list of simulations, you'll want to run the maintenance-start task. This will check current production versions of the simulations, and will store this information for future tasks.
 
-For example:
+For example, from the perennial repo, run:
 ```sh
 grunt --debug maintenance-start --sims=acid-base-solutions,arithmetic,balancing-chemical-equations,balloons-and-static-electricity,beers-law-lab,bending-light,color-vision,concentration,faradays-law,friction,graphing-lines,hookes-law,molarity,molecule-shapes,molecule-shapes-basics,molecules-and-light,neuron,ohms-law,ph-scale,ph-scale-basics,reactants-products-and-leftovers,trig-tour,wave-on-a-string
 ```
@@ -92,11 +92,11 @@ wave-on-a-string/1.1.0
 NOTE: Do not re-run this when partially through the process! It overwrites metadata for the maintenance release, and
 should just be used for starting it off.
 
-### 2. For each fix
+### 3. For each fix
 
 A series of steps should be done for every standalone patch.
 
-#### 2a. maintenance-patch-info
+#### 3a. maintenance-patch-info
 
 For the given repository (or repositories) that need to be included with the patch, running ```grunt maintenance-patch-info```  will print out SHA information for all of the simulations (and store it for future use).
 
@@ -146,11 +146,11 @@ It's important to store this list, as we'll want to patch each SHA independently
 
 NOTE: It is recommended to avoid re-running this halfway-through patching, as it will show the new SHAs for the sims you have already patched, and will prevent maintenance-patch-checkout on older SHAs.
 
-#### 2b. For each SHA (combination)
+#### 3b. For each SHA (combination)
 
 We'll want to apply patches to each SHA (or SHA combination) separately. For example, we'll tackle the 85b70897a659e03af24c5ef6293b263e78205e27 sha from above, which is used by 4 simulations.
 
-##### 2b(i). maintenance-patch-checkout
+##### 3b(i). maintenance-patch-checkout
 
 This command will check out testable SHAs for one of the simulations (pass a ```--sim=simName``` if you want to test a particular one). Pass in the SHA combination from the list above.
 
@@ -160,7 +160,7 @@ grunt --debug maintenance-patch-checkout --repos=phetcommon --shas=85b70897a659e
 
 This requires that maintenance-patch-info was run with the repository list provided AND that the SHA combination was from that list.
 
-##### 2b(ii). Create commits on the common repositories
+##### 3b(ii). Create commits on the common repositories
 
 Now, time to apply our patch. We will commit on top of detached HEAD(s), and this is fine (the maintenance release scripts will add our orphaned commit to the relevant branches).
 
@@ -173,7 +173,7 @@ and it applies the fix I need directly to the code. Make sure you aren't left in
 
 However you patch things, there should now be new commit(s) on the common repositories that you're patching.
 
-##### 2b(iii) maintenance-patch-apply
+##### 3b(iii) maintenance-patch-apply
 
 This will read the current SHA(s) in the common repositories, and for each simulation in that SHA's group it will merge it into its branch (or create a new branch). This will ensure that for (in our example phetcommon), it will have an acid-base-solutions-1.2 branch pointed to the correct commit.
 
@@ -188,7 +188,7 @@ In the example, it creates or updates (merges) the branches in phetcommon (acid-
 
 NOTE: The actual commit message will be ```'Bumping dependencies.json for ' + message```
 
-### 3. Deploying RCs (release candidates)
+### 4. Deploying RCs (release candidates)
 
 NOTE: Please set up SSHs to spot so that interactive password/passphrase/etc. is not needed. This has been tested with:
 ```sh
@@ -209,7 +209,7 @@ NOTE: Some older chippers don't flag "deployment failure" as something that prin
 
 NOTE: The actual commit message will be ```'Bumping version to ' + newVersionString + ' for ' + message```
 
-### 4. Deploying to production
+### 5. Deploying to production
 
 NOTE: Please set up SSHs to spot so that interactive password/passphrase/etc. is not needed. This has been tested with:
 ```sh
