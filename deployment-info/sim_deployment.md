@@ -121,4 +121,5 @@ It places a copy on spot's dev site and a copy on figaro (not figaro-dev)
 
 6. The .htaccess that are deployed are only suitable for spot, you must copy a working .htaccess file from concentration/1.3.0-dev.3 on figaro to the new directory:
 
-    1. cp /data/web/htdocs/phet-io/0.1/sims/concentration/1.3.0-dev.3/phet-io/protected/.htaccess /data/web/htdocs/phet-io/0.1/sims/SIMULATION/VERSION/phet-io/protected/.htaccess
+    1. ssh into figaro
+    2. cp /data/web/htdocs/phet-io/0.1/sims/concentration/1.3.0-dev.3/phet-io/protected/.htaccess /data/web/htdocs/phet-io/0.1/sims/SIMULATION/VERSION/phet-io/protected/.htaccess
