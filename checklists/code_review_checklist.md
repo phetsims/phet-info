@@ -14,7 +14,7 @@ PhET code-review checklist
 - [ ] Does the sim pass a scenery fuzzer test? (run with query parameter 'fuzzMouse')
 
 **Strings**
-- [ ] Are there any unused strings? (Strings that appear in the JSON file but are unused in the simulation should be removed). Note that this is detected automatically by `grunt build`, you don't need to manually check.
+- [ ] Are there any unused strings in the English strings file? Note that this is detected automatically by `grunt build`, you don't need to manually check.
 - [ ] Are there any strings that are not being internationalized? (run with query parameter 'stringTest=x', you should see nothing but 'x' strings)
 - [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter 'stringTest=double')
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter 'stringTest=long')
@@ -22,6 +22,9 @@ PhET code-review checklist
 - [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter 'stringTest=X')
 - [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 published.
 
+**Images**
+- [ ] Are there any unused images? Note that this is detected automatically by `grunt build`, you don't need to manually check.
+ 
 **Repository structure**
 
 - [ ] Are all required files and directories present?
