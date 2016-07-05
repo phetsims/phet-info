@@ -20,7 +20,7 @@ PhET code-review checklist
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter 'stringTest=long')
 - - [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter 'stringTest=X')
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter 'stringTest=xss'. Only test on one desktop platform.
-- [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 published.
+- [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 is published.
 
 **Images**
 - [ ] Are there any unused images? Note that this is detected automatically by `grunt build`, you don't need to manually check.
