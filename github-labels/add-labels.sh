@@ -2,7 +2,7 @@
 
 # .credentials is a file with your github creds in the format username:password
 # This should probably be replaced with oAuth
-CREDS=`cat .credentials`
+CREDS=`cat ~/.credentials`
 if [[ "$CREDS" = "" ]]
 then
   echo "Requires .credential file"
@@ -13,7 +13,7 @@ fi
 #REPO="phetsims/friction"
 if [[ $1 -eq '' ]] 
 then
-  echo "Usage: $0 \"organization/repo\""
+  echo "Usage: $0 organization/repo"
 else
 
   REPO=$1
@@ -23,7 +23,7 @@ else
   #delete the "invalid" label
   curl -iH 'User-Agent: "PhET"' -u "$CREDS" -X "DELETE" "$URL/invalid"
 
-  # Replace standard-issue labels if they exist
+  # Replace standard-issue labels with phet-specific labels if they exist
   REPLACE='{
       "name": "type:wontfix",
       "color": "ffffff"
@@ -61,7 +61,7 @@ else
   curl -iH 'User-Agent: "PhET"' -u "$CREDS" -d "$REPLACE" "$URL/bug"
 
   #Add labels from JSON file
-  for label in `~/jq-win64.exe -c .[] github-labels.json`
+  for label in `jq -c .[] github-labels.json`
   do
     curl -iH 'User-Agent: "PhET"' -u "$CREDS" -d "$label" "$URL"
   done
