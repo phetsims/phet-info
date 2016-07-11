@@ -5,7 +5,7 @@ The standard label set is documented [in this json file](https://github.com/phet
 + labels follow the format `<label-category:label-name>`  
 + sim specific labels follow the  format `<sim:label-name>`  
   + just the word "sim" not the sim name 
-+ repo specific lables follow the format `<repo-name:label-name>`
++ repo specific labels follow the format `<repo-name:label-name>`
   + example: `<chipper:branding>`  
 + All label names are separated by dashes for multiple words
   + example `<status:fixed-pending-testing>`
