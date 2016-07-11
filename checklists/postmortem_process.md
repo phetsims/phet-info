@@ -5,7 +5,7 @@
  - The moderator's job is to make sure the meeting runs efficiently, stays on point, and focuses on constructive (but not overly negative) critcism. The moderator can be someone not on the sim team, or in many cases the Development Coordinator. The moderator also documents the important points of the meeting.
 
  - [ ]  **3. Create github postmortem issue and postmortem google doc**
- - Create a github issue in the repository of the sim for which the postmortem is occuring. This checklist will should be copied into the issue. 
+ - Create a github issue in the repository of the sim for which the postmortem is occurring. This checklist will should be copied into the issue.
  - Create a postmortem google doc for the sim and set phethelp as the owner. This google doc should live within the appropriate sim folder on google drive.
 
  - [ ]  **4. Two successes and two improvements**
