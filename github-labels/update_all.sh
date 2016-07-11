@@ -2,7 +2,7 @@
 
 # .credentials is a file with your github creds in the format username:password
 # This should probably be replaced with oAuth
-CREDS=`cat .credentials`
+CREDS=`cat ~/.credentials`
 if [[ "$CREDS" = "" ]]
 then
   echo "Requires .credential file"
@@ -11,14 +11,14 @@ fi
 
 if [[ $1 = '' ]] || [[ $2 = '' ]]
 then
-  echo "Usage: $0 \"labelName\" \"color(hexcode with no # symbol)\""
+  echo "Usage: $0 label-name color"
   exit 1
 else
   LABEL={\"name\":\"$1\",\"color\":\"$2\"}
   echo "$LABEL"
 fi
 
-for r in `~/jq-win64.exe -c .[].name phetsims-repos.json`
+for r in `jq -c .[].name phetsims-repos.json`
 do
   REPO=`echo phetsims/$r | tr -d '"'`
   echo "$REPO"

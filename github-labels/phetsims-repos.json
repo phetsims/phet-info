@@ -1,362 +1,335 @@
 [
   {
-    "name": "phet-io-website"
+    "name":"phetcommon"
   },
   {
-    "name": "twixt"
+    "name":"energy-skate-park-basics"
   },
   {
-    "name": "phetcommon"
+    "name":"scenery"
   },
   {
-    "name": "energy-skate-park-basics"
+    "name":"build-an-atom"
   },
   {
-    "name": "scenery"
+    "name":"ohms-law"
   },
   {
-    "name": "build-an-atom"
+    "name":"example-sim"
   },
   {
-    "name": "ohms-law"
+    "name":"beers-law-lab"
   },
   {
-    "name": "example-sim"
+    "name":"resistance-in-a-wire"
   },
   {
-    "name": "beers-law-lab"
+    "name":"forces-and-motion-basics"
   },
   {
-    "name": "faraday"
+    "name":"dot"
   },
   {
-    "name": "resistance-in-a-wire"
+    "name":"molecule-shapes"
   },
   {
-    "name": "forces-and-motion-basics"
+    "name":"assert"
   },
   {
-    "name": "dot"
+    "name":"build-a-molecule"
   },
   {
-    "name": "molecule-shapes"
+    "name":"nitroglycerin"
   },
   {
-    "name": "assert"
+    "name":"kite"
   },
   {
-    "name": "build-a-molecule"
+    "name":"scenery-phet"
   },
   {
-    "name": "nitroglycerin"
+    "name":"phet-core"
   },
   {
-    "name": "kite"
+    "name":"balloons-and-static-electricity"
   },
   {
-    "name": "scenery-phet"
+    "name":"sun"
   },
   {
-    "name": "phet-core"
+    "name":"joist"
   },
   {
-    "name": "balloons-and-static-electricity"
+    "name":"john-travoltage"
   },
   {
-    "name": "sun"
+    "name":"chipper"
   },
   {
-    "name": "joist"
+    "name":"tween.js"
   },
   {
-    "name": "john-travoltage"
+    "name":"molarity"
   },
   {
-    "name": "chipper"
+    "name":"axon"
   },
   {
-    "name": "tween.js"
+    "name":"gravity-force-lab"
   },
   {
-    "name": "molarity"
+    "name":"phetmarks"
   },
   {
-    "name": "axon"
+    "name":"wave-on-a-string"
   },
   {
-    "name": "gravity-force-lab"
+    "name":"phet-info"
   },
   {
-    "name": "phetmarks"
+    "name":"gravity-and-orbits"
   },
   {
-    "name": "wave-on-a-string"
+    "name":"graphing-lines"
   },
   {
-    "name": "phet-info"
+    "name":"blast"
   },
   {
-    "name": "gravity-and-orbits"
+    "name":"fraction-matcher"
   },
   {
-    "name": "graphing-lines"
+    "name":"build-a-fraction-deprecated"
   },
   {
-    "name": "blast"
+    "name":"fractions-intro-deprecated"
   },
   {
-    "name": "fraction-matcher"
+    "name":"vibe"
   },
   {
-    "name": "build-a-fraction-deprecated"
+    "name":"sherpa"
   },
   {
-    "name": "fractions-intro-deprecated"
+    "name":"concentration"
   },
   {
-    "name": "vibe"
+    "name":"mobius"
   },
   {
-    "name": "sherpa"
+    "name":"friction"
   },
   {
-    "name": "concentration"
+    "name":"balancing-act"
   },
   {
-    "name": "mobius"
+    "name":"vegas"
   },
   {
-    "name": "friction"
+    "name":"ph-scale"
   },
   {
-    "name": "balancing-act"
+    "name":"slater"
   },
   {
-    "name": "vegas"
+    "name":"ph-scale-basics"
   },
   {
-    "name": "ph-scale"
+    "name":"under-pressure"
   },
   {
-    "name": "slater"
+    "name":"fraction-comparison"
   },
   {
-    "name": "ph-scale-basics"
+    "name":"acid-base-solutions"
   },
   {
-    "name": "under-pressure"
+    "name":"fraction-common-deprecated"
   },
   {
-    "name": "fraction-comparison"
+    "name":"molecule-polarity"
   },
   {
-    "name": "acid-base-solutions"
+    "name":"estimation"
   },
   {
-    "name": "fraction-common-deprecated"
+    "name":"all-sims"
   },
   {
-    "name": "phet-io"
+    "name":"arithmetic"
   },
   {
-    "name": "molecule-polarity"
+    "name":"griddle"
   },
   {
-    "name": "estimation"
+    "name":"balancing-chemical-equations"
   },
   {
-    "name": "all-sims"
+    "name":"seasons"
   },
   {
-    "name": "arithmetic"
+    "name":"area-builder"
   },
   {
-    "name": "griddle"
+    "name":"color-vision"
   },
   {
-    "name": "balancing-chemical-equations"
+    "name":"circuit-construction-kit-common"
   },
   {
-    "name": "seasons"
+    "name":"fluid-pressure-and-flow"
   },
   {
-    "name": "area-builder"
+    "name":"optics-lab"
   },
   {
-    "name": "color-vision"
+    "name":"tasks"
   },
   {
-    "name": "circuit-construction-kit"
+    "name":"graphing-quadratics"
   },
   {
-    "name": "fluid-pressure-and-flow"
+    "name":"plinko-probability"
   },
   {
-    "name": "optics-lab"
+    "name":"states-of-matter-basics"
   },
   {
-    "name": "tasks"
+    "name":"reactants-products-and-leftovers"
   },
   {
-    "name": "graphing-quadratics"
+    "name":"brand"
   },
   {
-    "name": "plinko-probability"
+    "name":"molecules-and-light"
   },
   {
-    "name": "states-of-matter-basics"
+    "name":"faradays-law"
   },
   {
-    "name": "reactants-products-and-leftovers"
+    "name":"protein-synthesis"
   },
   {
-    "name": "brand"
+    "name":"simula-rasa"
   },
   {
-    "name": "chronicle"
+    "name":"energy-forms-and-changes"
   },
   {
-    "name": "preface"
+    "name":"neuron"
   },
   {
-    "name": "datamite"
+    "name":"website"
   },
   {
-    "name": "molecules-and-light"
+    "name":"pendulum-lab"
   },
   {
-    "name": "faradays-law"
+    "name":"molecule-shapes-basics"
   },
   {
-    "name": "protein-synthesis"
+    "name":"atomic-interactions"
   },
   {
-    "name": "simula-rasa"
+    "name":"isotopes-and-atomic-mass"
   },
   {
-    "name": "energy-forms-and-changes"
+    "name":"charges-and-fields"
   },
   {
-    "name": "neuron"
+    "name":"least-squares-regression"
   },
   {
-    "name": "litmus"
+    "name":"capacitor-lab-basics"
   },
   {
-    "name": "website"
+    "name":"sugar-and-salt-solutions"
   },
   {
-    "name": "pendulum-lab"
+    "name":"states-of-matter"
   },
   {
-    "name": "molecule-shapes-basics"
+    "name":"shred"
   },
   {
-    "name": "atomic-interactions"
+    "name":"blackbody-spectrum"
   },
   {
-    "name": "isotopes-and-atomic-mass"
+    "name":"bending-light"
   },
   {
-    "name": "charges-and-fields"
+    "name":"curve-fitting"
   },
   {
-    "name": "least-squares-regression"
+    "name":"babel"
   },
   {
-    "name": "capacitor-lab-basics"
+    "name":"function-builder"
   },
   {
-    "name": "sugar-and-salt-solutions"
+    "name":"projectile-motion"
   },
   {
-    "name": "states-of-matter"
+    "name":"chains"
   },
   {
-    "name": "shred"
+    "name":"rosetta"
   },
   {
-    "name": "installer-builder"
+    "name":"simulation-picker"
   },
   {
-    "name": "blackbody-spectrum"
+    "name":"rutherford-scattering"
   },
   {
-    "name": "bending-light"
+    "name":"tandem"
   },
   {
-    "name": "curve-fitting"
+    "name":"phet-metacog"
   },
   {
-    "name": "babel"
+    "name":"hookes-law"
   },
   {
-    "name": "function-builder"
+    "name":"gene-expression-basics"
   },
   {
-    "name": "projectile-motion"
+    "name":"making-tens"
   },
   {
-    "name": "chains"
+    "name":"calculus-grapher"
   },
   {
-    "name": "rosetta"
+    "name":"trig-tour"
   },
   {
-    "name": "simulation-picker"
+    "name":"phet-cafepress"
   },
   {
-    "name": "rutherford-scattering"
+    "name":"perennial"
   },
   {
-    "name": "special-ops"
+    "name":"expression-exchange"
   },
   {
-    "name": "tandem"
+    "name":"models-of-the-hydrogen-atom"
   },
   {
-    "name": "phet-metacog"
+    "name":"masses-and-springs"
   },
   {
-    "name": "hookes-law"
+    "name":"unit-rates"
   },
   {
-    "name": "beaker"
+    "name":"twixt"
   },
   {
-    "name": "gene-expression-basics"
+    "name":"circuit-construction-kit-black-box-study"
   },
   {
-    "name": "making-tens"
+    "name":"circuit-construction-kit-basics"
   },
   {
-    "name": "calculus-grapher"
-  },
-  {
-    "name": "trig-tour"
-  },
-  {
-    "name": "yotta"
-  },
-  {
-    "name": "phet-cafepress"
-  },
-  {
-    "name": "perennial"
-  },
-  {
-    "name": "phet-app"
-  },
-  {
-    "name": "expression-exchange"
-  },
-  {
-    "name": "models-of-the-hydrogen-atom"
-  },
-  {
-    "name": "masses-and-springs"
-  },
-  {
-    "name": "unit-rates"
+    "name":"proportion-playground"
   }
 ]
