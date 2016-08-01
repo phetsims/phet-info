@@ -331,5 +331,32 @@
   },
   {
     "name":"proportion-playground"
+  },
+  {
+    "name":"phet-io"
+  },
+  {
+    "name":"phet-app"
+  },
+  {
+    "name":"beaker"
+  },
+  {
+    "name":"phet-io-website"
+  },
+  {
+    "name":"litmus"
+  },
+  {
+    "name":"yotta"
+  },
+  {
+    "name":"special-ops"
+  },
+  {
+    "name":"installer-builder"
+  },
+  {
+    "name":"faraday"
   }
 ]
