@@ -98,12 +98,8 @@ sim and project visible (browse logged in to bypass the varnish cache).
 published sim.  The README.md file can be created using ```grunt published-README```.
 9. If this is *not* a new simulation, verify that any previously existing translations are still available and that
 their version numbers are correct.
-10. The 3rd party contributions page must be updated.  Directions for how to do this are in reportThirdParty.js.
-Brace yourself-- this will take >30 minutes since you will need to build all of the simulations in order to access
-their 3rd party encumbrances.  After running this, the updated third-party-licenses.md file should be checked in to GitHub,
-which will make it publicly available to people who click on "3rd party contributions" from the sim.  If this process
-is too cumbersome, in the future we can discuss ways to just generate a report for the new sim and integrate it into the existing report.
-
+10. After the new simulation is available from the website, the 3rd party contributions page must be updated.  Directions
+for how to do this are in reportThirdParty.js.
 
 **PhET-iO Deployment Guidelines**
 
