@@ -93,7 +93,10 @@ from Nov 10 2015 or later, the `--locales=*` flag can be omitted.)
 7. If this is a new sim, both the simulation and project will need to marked "visible" in the website admin interface.
 Usually the person in charge of uploading all of the meta information will be responsible for doing this. After that,
 make sure the sim page appears correctly on the website. Talk to @jonathanolson or @jbphet if it hasn't appeared after marking the
-sim and project visible (browse logged in to bypass the varnish cache).
+sim and project visible.
+  - When viewing the website you may encounter stale content due to the varnish cache.  There are two ways to avoid this.  
+    - To check a small number of issues, add a unique parameter to the end of every query. You must change it every time you refresh the url. Example: `http://phet.colorado.edu/sims/html/example-sim/latest/example-sim_en.html?test-parameter1`
+    - To avoid the cache permanently, you need to add a cookie with the name `NO-CACHE` and with an arbitrary or empty value.   Cookie usage cannot be covered in entirety here.  To use cookies with `curl` see [this answer](http://stackoverflow.com/a/7186160/2496827).  To add custom cookies in Chrome [see this solution](http://superuser.com/a/636697/493443)
 8. If this is the initial publication, generate and check in (on the master branch) the auto-generated readme file for a
 published sim.  The README.md file can be created using ```grunt published-README```.
 9. If this is *not* a new simulation, verify that any previously existing translations are still available and that
