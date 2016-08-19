@@ -101,7 +101,12 @@ PhET code-review checklist
 
 - [ ] Is `Math.round` used where `dot.Util.roundSymmetric` should be used?  Math.round does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879
 - [ ] Is `toFixed` used where `dot.Util.toFixed` or `dot.Util.toFixedNumber` should be used? JavaScript's `toFixed` is notoriously buggy, behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
-- [ ] Are random numbers using DOT/Random or seedable sources?
+- [ ] Are random numbers using `phet.joist.random`, and all doing so after modules are declared (non-statically)?  For
+instance, the following methods (and perhaps others) should not be used:
+* `Math.random`
+* `_.shuffle`
+* `_.sample`
+* `_.random`
 
 **Organization, Readability, Maintainability**
 
