@@ -228,6 +228,10 @@ NOTE: Some older chippers don't flag "deployment failure" as something that prin
 
 NOTE: The actual commit message will be ```'Bumping version to ' + newVersionString + ' for ' + message```
 
+### 5. Testing
+
+After deploying, the English and at least one non-English simulation should be tested from the website.  You should be logged in to the website to ensure that you do not receive a stale cached version of the simulation.
+
 ## Dealing with problems
 
 Generally, see where the problem occurred in the maintenance release task that was run. The most general "routine" for this is:
