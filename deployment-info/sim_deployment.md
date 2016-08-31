@@ -6,7 +6,7 @@ Variables to replace in the instructions below:
 ```
 $SIM = the name of your sim's repo
 $VERSION = the identifier of your sim, eg "1.0.0-rc.2"
-$USERNAME = your username on spot and figaro
+$USERNAME = your username on spot, figaro, and phet-server
 $HOME = your home directory
 ```
 
@@ -69,7 +69,7 @@ If this is not the first release candidate on a release branch:
 
 **Steps to publish a public version**
 
-Public versions are deployed to figaro.colorado.edu at http://phet.colorado.edu.
+Public versions are deployed to phet-server.int.colorado.edu at http://phet.colorado.edu.
 By default, publishing a public version also deploys a dev version.
 
 To publish a public version:
@@ -107,7 +107,7 @@ for how to do this are in reportThirdParty.js.
 **PhET-iO Deployment Guidelines**
 
 This process will deploy a PhET simulation that is instrumented (even partially) for PhET-iO.
-It places a copy on spot's dev site and a copy on figaro (not figaro-dev)
+It places a copy on spot's dev site and a copy on phet-server (not figaro or figaro-dev)
 
 1. Update the version number in SIMULATION/package.json and commit
 2. Run `grunt build-phet-io`
@@ -118,7 +118,7 @@ It places a copy on spot's dev site and a copy on figaro (not figaro-dev)
     1. ssh into phet-server.int (requires VPN)
     2. scp -r spot:/htdocs/physics/phet/dev/html/SIMULATION/VERSION  /data/web/static/phet-io/0.1/sims/SIMULATION/VERSION
 
-6. The .htaccess that are deployed are only suitable for spot, you must copy a working .htaccess file from concentration/1.3.0-dev.3 on figaro to the new directory:
+6. The .htaccess that are deployed are only suitable for spot, you must copy a working .htaccess file from concentration/1.3.0-dev.3 on phet-server to the new directory:
 
     1. ssh into phet-server.int (requires VPN)
     2. cp /data/web/static/phet-io/0.1/sims/concentration/1.3.0-dev.3/phet-io/protected/.htaccess /data/web/static/phet-io/0.1/sims/SIMULATION/VERSION/phet-io/protected/.htaccess
