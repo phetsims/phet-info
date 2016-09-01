@@ -358,5 +358,11 @@
   },
   {
     "name":"faraday"
+  },
+  {
+    "name":"tambo"
+  },
+  {
+    "name":"area-model-multiplication"
   }
 ]
