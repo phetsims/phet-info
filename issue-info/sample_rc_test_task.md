@@ -24,6 +24,7 @@ Please test the following issues and check them off after addressing. If they ar
 - [ ] stringTest=xss (should not redirect, OK to look bad, test on one desktop platform)
 - [ ] showPointerAreas (touchArea=red, mouseArea=blue)
 - [ ] Full screen test
+- [ ] Screenshot test
 
 If any new issues are found, please note them in https://github.com/phetsims/repo-name/issues and reference this issue.  
 
