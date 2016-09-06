@@ -84,7 +84,7 @@ working from that branch, and then update the version identifier to the form "ma
 "-rc.x" portion if present. For example, if the published version is based on "1.1.0-rc.4", then the published version
 identifier will be "1.1.0".  Make sure this is committed and pushed.
 3. Check out the correct SHAs using `grunt checkout-shas`.
-4. Run `grunt` to build a local version and sanity test it.
+4. Run `grunt` to build a local version and sanity test it. (Note that for version numbers 1.0.0 and higher without suffixes, an update check failure message appears in the console. This is expected for local viewing, and will not appear when the sim goes online.)
 5. Run `grunt deploy-production --locales=*` (or just `grunt deploy-production` for ph-scale and ph-scale-basics, see https://github.com/phetsims/phet-info/issues/10).  This will instruct the build server to build the English version of the
 simulation as well as all currently deployed translated versions and deploy them on the web site.  This will also deploy
 the locally built version to the dev server.  (Note: If you're sure that the version of chipper that is being used is
