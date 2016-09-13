@@ -364,5 +364,11 @@
   },
   {
     "name":"area-model-multiplication"
+  },
+  {
+    "name":"query-string-machine"
+  },
+  {
+    "name":"phet-office-mix"
   }
 ]
