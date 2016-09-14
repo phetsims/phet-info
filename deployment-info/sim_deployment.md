@@ -74,8 +74,7 @@ By default, publishing a public version also deploys a dev version.
 
 To publish a public version:
 
-1. Create a screenshot that is 2048x1344.  Generally this is done by taking a screenshot on an iPad 3 or higher (since
-it has the retina display) with multiple tabs open, then crop the chrome off of it to 2048x1342, then pad the top with 2
+1. Update (if needed) or create a screenshot that is 2048x1344.  Generally this is done by taking a screenshot on an iPad 3 or higher (since it has the retina display) with multiple tabs open, then crop the chrome off of it to 2048x1342, then pad the top with 2
 pixels of the sim's background color (to 2048x1344) and save as /assets/$SIM-screenshot.png.  Eventually, quick and easy
 creation of this screen shot will be supported through the screenshot feature from the PhET menu, but as of this writing
 this support doesn't exist.
