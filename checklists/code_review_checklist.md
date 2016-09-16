@@ -119,7 +119,7 @@ instance, the following methods (and perhaps others) should not be used:
 - [ ] Are any significant chunks of code duplicated? This will be checked manually as well as with https://github.com/danielstjules/jsinspect
 - [ ] Is there anything that should be generalized and migrated to common code?
 - [ ] Are there any TODO or FIXME comments in the code?  They should be addressed or promoted to GitHub issues.
-- [ ] Does the implementation rely on any specific constants that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.)
+- [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.)
 Does changing the values of these constants break the sim? For example, see https://github.com/phetsims/plinko-probability/issues/84.
 
 **Performance, Usability**
