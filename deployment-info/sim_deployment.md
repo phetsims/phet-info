@@ -108,13 +108,17 @@ for how to do this are in reportThirdParty.js.
 This process will deploy a PhET simulation that is instrumented (even partially) for PhET-iO.
 It places a copy on spot's dev site and a copy on phet-server (not figaro or figaro-dev)
 
-1. Update the version number in SIMULATION/package.json and commit
-2. Run `grunt build-phet-io`
-3. Run `grunt deploy-dev` to deploy the simulation to spot
-4. Check that the `protected` directory is password protected (by .htaccess) by visiting your version of this link: `http://www.colorado.edu/physics/phet/dev/html/SIMULATION/VERSION/phet-io/protected/`
-5. Copy the simulation from spot to phet-server and copy a working .htaccess file:
+1. Update the version number in SIMULATION/package.json and commit, the version should have "-phetio.X" in the version name
+2. Run `grunt --brand=phet-io`
+3. Use Chrome to launch https://phet-io.colorado.edu/devguide/ and click "save as", then save it to build/doc
+4. Run `grunt deploy-dev` to deploy the simulation to spot
+5. Check that the `protected` directory is password protected (by .htaccess) by visiting your version of this link: `http://www.colorado.edu/physics/phet/dev/html/SIMULATION/VERSION/phet-io/protected/`
+6. Copy the simulation from spot to phet-server and copy a working .htaccess file:
 
     1. ssh into phet-server.int (requires VPN)
     2. scp -r spot:/htdocs/physics/phet/dev/html/SIMULATION/VERSION /data/web/static/phet-io/0.1/sims/SIMULATION/VERSION
     3. cp /data/web/static/phet-io/0.1/sims/concentration/1.3.0-dev.3/phet-io/protected/.htaccess /data/web/static/phet-io/0.1/sims/SIMULATION/VERSION/phet-io/protected/.htaccess
-6. Test a wrapper to make sure everything deployed properly and that permissions are set properly.
+7. Test a wrapper to make sure everything deployed properly and that permissions are set properly.
+
+### (Optional) Deploy the phet branded version:
+Do the steps above but without --brand=phet-io.  The version number should not contain "-phetio.X"
