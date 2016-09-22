@@ -60,6 +60,7 @@ If this is the first release candidate on a release branch:
 3. Commit & push.
 4. Run the build process: `grunt`
 5. Deploy to the server: `grunt deploy-rc` to deploy the rc using the build server.
+6. After following these steps, please update the "Latest fully tested SHAs" above, if appropriate.
 
 If this is not the first release candidate on a release branch:
 
@@ -70,6 +71,7 @@ If this is not the first release candidate on a release branch:
 5. Run the build process: `grunt`
 6. Deploy to the server: `grunt deploy-rc` to deploy the rc version using the build-server.
 7. (optional) Check out master for dependencies: `grunt checkout-master`
+8. After following these steps, please update the "Latest fully tested SHAs" above, if appropriate.
 
 **Steps to publish a public version**
 
