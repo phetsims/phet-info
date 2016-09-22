@@ -49,7 +49,7 @@ To deploy to dev version:
 
 The latest fully-tested SHAs (use these if appropriate):
 
-Other SHAs under testing:
+The latest SHAs under testing (use these if appropriate):
 
 RC versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/.
 
@@ -60,7 +60,7 @@ If this is the first release candidate on a release branch:
 3. Commit & push.
 4. Run the build process: `grunt`
 5. Deploy to the server: `grunt deploy-rc` to deploy the rc using the build server.
-6. After following these steps, please update the "Latest fully tested SHAs" above, if appropriate.
+6. After following these steps, please update the "Other SHAs under testing" above, if appropriate.
 
 If this is not the first release candidate on a release branch:
 
@@ -71,7 +71,7 @@ If this is not the first release candidate on a release branch:
 5. Run the build process: `grunt`
 6. Deploy to the server: `grunt deploy-rc` to deploy the rc version using the build-server.
 7. (optional) Check out master for dependencies: `grunt checkout-master`
-8. After following these steps, please update the "Latest fully tested SHAs" above, if appropriate.
+8. After following these steps, please update the "Other SHAs under testing" above, if appropriate.
 
 **Steps to publish a public version**
 
@@ -106,7 +106,8 @@ sim and project visible.
 published sim.  The README.md file can be created using ```grunt published-README```.
 9. If this is *not* a new simulation, verify that any previously existing translations are still available and that
 their version numbers are correct.
-10. After the new simulation is available from the website, the 3rd party contributions page must be updated.  Directions
+10. Update the "Latest fully tested SHAs" above.
+11. After the new simulation is available from the website, the 3rd party contributions page must be updated.  Directions
 for how to do this are in reportThirdParty.js.
 
 **PhET-iO Deployment Guidelines**
