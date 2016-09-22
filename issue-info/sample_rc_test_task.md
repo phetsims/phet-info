@@ -21,7 +21,7 @@ Please test the following issues and check them off after addressing. If they ar
 - [ ] stringTest=long (exceptionally long strings)
 - [ ] stringTest=X (short strings)
 - [ ] stringTest=rtl (right-to-left)
-- [ ] stringTest=xss (should not redirect, OK to look bad, test on one desktop platform)
+- [ ] stringTest=xss (test passes if sim does not redirect, OK if sim crashes or fails to fully start)
 - [ ] showPointerAreas (touchArea=red, mouseArea=blue)
 - [ ] Full screen test
 - [ ] Screenshot test
