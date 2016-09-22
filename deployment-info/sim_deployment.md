@@ -47,6 +47,10 @@ To deploy to dev version:
 
 **Steps to publish a 'rc' (release candidate) version**
 
+The latest fully-tested SHAs (use these if appropriate):
+
+Other SHAs under testing:
+
 RC versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/.
 
 If this is the first release candidate on a release branch:
