@@ -115,7 +115,10 @@ It places a copy on spot's dev site and a copy on phet-server (not figaro or fig
 4. Check that all files were deployed properly to spot for rc or spot and phet-server for production. At a minimum check:
     1. Try launching the wrappers page `protected/index.html`.  This should be password protected.  Verify that your password works.
     2. Test the screenshot and instance-proxies wrappers.
-    3. Try launching the phet-io sim, for example: `sim-name_en-phetio.html?phet-io.standalone=true`
+    3. Try launching the phet-io sim, for example: `sim-name_en-phetio.html?phet-io.standalone=true`.
+    
+### PROPOSED UPDATE: Deploying a dev version:
+Deploy an rc version with a dev version number in package.json.
 
 ### (Optional) Deploy the phet branded version:
 Do the steps above but without --brand=phet-io.  The version number should not contain "-phetio.X"
