@@ -25,7 +25,7 @@ define( function( require ) {
    * @param {Object} options
    * @constructor
    */
-  function ExampleNode( valueProperty, changedEmitter, stateEvents, options ) {
+  function DisposeExampleNode( valueProperty, changedEmitter, stateEvents, options ) {
 
     options = _.extend( {
       enabledProperty: new Property( true ), // optionally provided by client
@@ -57,5 +57,5 @@ define( function( require ) {
     tandem.addInstance( this, { disposable: this } );
   }
 
-  return inherit( Node, ExampleNode );
+  return inherit( Node, DisposeExampleNode );
 } );
