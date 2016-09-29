@@ -47,7 +47,7 @@ To deploy to dev version:
 
 **Steps to publish a 'rc' (release candidate) version**
 
-The latest fully-tested SHAs (use these if appropriate): https://github.com/phetsims/charges-and-fields/blob/1.0/dependencies.json
+The latest fully-tested SHAs (use these if appropriate): https://github.com/phetsims/atomic-interactions/blob/1.0/dependencies.json
 
 The latest SHAs under testing (use these if appropriate): https://github.com/phetsims/forces-and-motion-basics/blob/2.1/dependencies.json
 
