@@ -70,7 +70,7 @@ If this is not the first release candidate on a release branch:
 - [ ] Update the version identifier in package.json. The identifier should contain "rc", e.g. "1.0.0-rc.2". Commit & push.
 - [ ] Run the build process: `grunt`
 - [ ] Deploy to the server: `grunt deploy-rc` to deploy the rc version using the build-server.
-- [ ] (optional) Check out master for dependencies: `grunt checkout-master`
+- [ ] Check out master for dependencies: `grunt checkout-master` (optional)
 - [ ] After following these steps, please update the "Other SHAs under testing" above, if appropriate.
 
 **Steps to publish a public version**
