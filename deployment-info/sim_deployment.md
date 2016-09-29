@@ -71,7 +71,7 @@ If this is not the first release candidate on a release branch:
 - [ ] Run the build process: `grunt`
 - [ ] Deploy to the server: `grunt deploy-rc` to deploy the rc version using the build-server.
 - [ ] Check out master for dependencies: `grunt checkout-master` (optional)
-- [ ] After following these steps, please update the "Other SHAs under testing" above, if appropriate.
+- [ ] After following these steps, please update the "latest SHAs under testing" link above, if appropriate.
 
 **Steps to publish a public version**
 
