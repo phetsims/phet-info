@@ -106,7 +106,7 @@ identifier will be "1.1.0".  Make sure this is committed and pushed.
 simulation as well as all currently deployed translated versions and deploy them on the web site.  This will also deploy
 the locally built version to the dev server.  (Note: If you're sure that the version of chipper that is being used is
 from Nov 10 2015 or later, the `--locales=*` flag can be omitted.)
-* Following steps are for PhET brand only (not PhET-iO).  Instead for PhET-iO please test the deployed version.
+* Following steps are for PhET brand only (not PhET-iO).  Instead for PhET-iO please test the deployed version, see below
 - [ ] Wait a few minutes for the build server to do its thing, and then test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
 - [ ] If this is a new sim, both the simulation and project will need to marked "visible" in the website admin interface.
 Usually the person in charge of uploading all of the meta information will be responsible for doing this. After that,
@@ -126,7 +126,6 @@ for how to do this are in reportThirdParty.js.
 ## PhET-iO Testing after deployment
 
 These instructions above show how to deploy PhET or PhET-iO branded simulations.  To test PhET-iO branded simulations:
-- [ ] Check that all files were deployed properly to spot for rc or spot and phet-server for production. At a minimum check:
-    - Try launching the wrappers page `protected/index.html`.  This should be password protected.  Verify that your password works.
-    - Test the screenshot and instance-proxies wrappers.  If it is a dev or rc version, use ?launchLocalVersion
-    - Try launching the phet-io sim, for example: `sim-name_en-phetio.html?phet-io.standalone=true`.
+- [ ] Try launching the wrappers page `protected/index.html`.  This should be password protected.  Verify that your password works.
+- [ ] Test the screenshot and instance-proxies wrappers.  If it is a dev or rc version, use ?launchLocalVersion
+- [ ] Try launching the phet-io sim, for example: `sim-name_en-phetio.html?phet-io.standalone=true`.
