@@ -44,6 +44,7 @@ To deploy to dev version:
  * For PhET-iO Brand, the identifier should contain "phetiodev", e.g. "1.1.0-phetiodev.3".
 - [ ] Commit & push.
 - [ ] Run the build process: `grunt`
+ * For PhET-iO Brand, use `grunt --brand=phet-io`
 - [ ] Open the generated HTML file locally and interact with it to check that all is well.
 - [ ] If this is the first time you've deployed anything for this sim, deploy with `grunt deploy-dev --mkdir` (requires 2 password inputs if ssh key is not set up). Otherwise just use `grunt deploy-dev`
 
