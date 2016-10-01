@@ -39,8 +39,9 @@ Dev versions are deployed to spot.colorado.edu at http://www.colorado.edu/physic
 To deploy to dev version:
 
 - [ ] Are your PhET repos up to date? Run pull-all.sh in chipper/bin if not.
-- [ ] Update the version identifier in package.json. The identifier should contain "dev", e.g. "1.0.0-dev.2".  For
-PhET-iO, the identifier should contain "phetiodev", e.g. "1.1.0-phetiodev.3"
+- [ ] Update the version identifier in package.json.
+  For PhET Brand, the identifier should contain "dev", e.g. "1.0.0-dev.2".  For
+  For PhET-iO Brand, the identifier should contain "phetiodev", e.g. "1.1.0-phetiodev.3"
 - [ ] Commit & push.
 - [ ] Run the build process: `grunt`
 - [ ] Open the generated HTML file locally and interact with it to check that all is well.
