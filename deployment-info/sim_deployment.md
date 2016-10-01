@@ -93,16 +93,20 @@ To publish a public version:
 pixels of the sim's background color (to 2048x1344) and save as /assets/$SIM-screenshot.png.  Eventually, quick and easy
 creation of this screen shot will be supported through the screenshot feature from the PhET menu, but as of this writing
 this support doesn't exist.
+ * for PhET-iO this step is not necessary
 - [ ] A public version is generally based on some rc version, which generally comes from an rc branch.  Make sure you're
 working from that branch, and then update the version identifier to the form "major.minor.maintenance", removing any
 "-rc.x" portion if present. For example, if the published version is based on "1.1.0-rc.4", then the published version
 identifier will be "1.1.0".  Make sure this is committed and pushed.
+ * for PhET-iO the version should include "-phetio", such as "1.1.0-phetio"
 - [ ] Check out the correct SHAs using `grunt checkout-shas`.
 - [ ] Run `grunt` to build a local version and sanity test it. (Note that for version numbers 1.0.0 and higher without suffixes, an update check failure message appears in the console. This is expected for local viewing, and will not appear when the sim goes online.)
+ * for PhET-iO use `grunt --brand=phet-io`
 - [ ] Run `grunt deploy-production --locales=*` (or just `grunt deploy-production` for ph-scale and ph-scale-basics, see https://github.com/phetsims/phet-info/issues/10).  This will instruct the build server to build the English version of the
 simulation as well as all currently deployed translated versions and deploy them on the web site.  This will also deploy
 the locally built version to the dev server.  (Note: If you're sure that the version of chipper that is being used is
 from Nov 10 2015 or later, the `--locales=*` flag can be omitted.)
+* Following steps are for PhET brand only (not PhET-iO).  Instead for PhET-iO please test the deployed version.
 - [ ] Wait a few minutes for the build server to do its thing, and then test: http://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
 - [ ] If this is a new sim, both the simulation and project will need to marked "visible" in the website admin interface.
 Usually the person in charge of uploading all of the meta information will be responsible for doing this. After that,
