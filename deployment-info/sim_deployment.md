@@ -123,22 +123,10 @@ their version numbers are correct.
 - [ ] After the new simulation is available from the website, the 3rd party contributions page must be updated.  Directions
 for how to do this are in reportThirdParty.js.
 
-**PhET-iO Deployment Guidelines**
+## PhET-iO Testing after deployment
 
-These instructions are for release candidates and production versions.
-This process will deploy a PhET simulation that is instrumented (even partially) for PhET-iO.
-It places a copy on spot's dev site and a copy on phet-server (not figaro or figaro-dev)
-
-- [ ] Update the version number in SIMULATION/package.json and commit, the version should have "-phetio.X" in the version name.
-- [ ] Run `grunt --brand=phet-io`
-- [ ] Run `grunt deploy-rc` or `grunt deploy-production`
+These instructions above show how to deploy PhET or PhET-iO branded simulations.  To test PhET-iO branded simulations:
 - [ ] Check that all files were deployed properly to spot for rc or spot and phet-server for production. At a minimum check:
     - Try launching the wrappers page `protected/index.html`.  This should be password protected.  Verify that your password works.
-    - Test the screenshot and instance-proxies wrappers.
+    - Test the screenshot and instance-proxies wrappers.  If it is a dev or rc version, use ?launchLocalVersion
     - Try launching the phet-io sim, for example: `sim-name_en-phetio.html?phet-io.standalone=true`.
-    
-### PROPOSED UPDATE: Deploying a dev version:
-Deploy an rc version with a dev version number in package.json.
-
-### (Optional) Deploy the phet branded version:
-Do the steps above but without --brand=phet-io.  The version number should not contain "-phetio.X"
