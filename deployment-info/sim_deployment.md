@@ -60,9 +60,12 @@ RC versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics
 If this is the first release candidate on a release branch:
 
 - [ ] Create a release branch and switch to it, e.g.: `git checkout -b 1.0`. Release branches are named using major and minor version numbers, eg "1.0".
+ * for PhET-iO the branch name should include "phetio", such as "1.1-phetio"
 - [ ] Update the version identifier in package.json. The first rc version should have suffix "rc.1", eg "1.0.0-rc.1".
+ * for PhET-iO, the version name should include "phetiorc" instead of "rc"
 - [ ] Commit & push.
 - [ ] Run the build process: `grunt`
+ * for PhET-iO instead use `grunt --brand=phet-io`
 - [ ] Deploy to the server: `grunt deploy-rc` to deploy the rc using the build server.
 - [ ] After following these steps, please update the "Other SHAs under testing" above, if appropriate.
 
@@ -72,7 +75,9 @@ If this is not the first release candidate on a release branch:
 - [ ] Check out the correct shas for dependencies: `grunt checkout-shas`
 - [ ] If you've branched (for the purposes of patching) any of the dependency repositories since the last rc version was published, you'll need to explicitly checkout those branches. For example, if you branched vegas for the 1.1 release of graphing-lines, do `cd ../vegas ; git checkout graphing-lines-1.1`.
 - [ ] Update the version identifier in package.json. The identifier should contain "rc", e.g. "1.0.0-rc.2". Commit & push.
+ * for PhET-iO the identifier should include "phetiorc"
 - [ ] Run the build process: `grunt`
+ * for PhET-iO use instead `grunt --brand=phet-io`
 - [ ] Deploy to the server: `grunt deploy-rc` to deploy the rc version using the build-server.
 - [ ] Check out master for dependencies: `grunt checkout-master` (optional)
 - [ ] After following these steps, please update the "latest SHAs under testing" link above, if appropriate.
