@@ -41,11 +41,12 @@ To deploy to dev version:
 - [ ] Are your PhET repos up to date? Run pull-all.sh in chipper/bin if not.
 - [ ] Update the version identifier in package.json.
  * For PhET Brand, the identifier should contain "dev", e.g. "1.0.0-dev.2".
- * For PhET-iO Brand, the identifier should contain "phetiodev", e.g. "1.1.0-phetiodev.3".
+ * For PhET-iO, the identifier should contain "phetiodev", e.g. "1.1.0-phetiodev.3".
 - [ ] Commit & push.
 - [ ] Run the build process: `grunt`
- * For PhET-iO Brand, instead use `grunt --brand=phet-io`
+ * For PhET-iO, instead use `grunt --brand=phet-io`
 - [ ] Open the generated HTML file locally and interact with it to check that all is well.
+ * For PhET-iO, test wrappers such as the instance-proxies wrapper, and use ?launchLocalVersion so it will use relative path instead of looking on phet-io.colorado.edu
 - [ ] If this is the first time you've deployed anything for this sim, deploy with `grunt deploy-dev --mkdir` (requires 2 password inputs if ssh key is not set up). Otherwise just use `grunt deploy-dev`
 
 **Steps to publish a 'rc' (release candidate) version**
