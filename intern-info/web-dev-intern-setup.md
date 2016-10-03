@@ -48,7 +48,7 @@ In the phet/git directory, run this command:
 2. Launch VirtualBox.  Go to File > Import Appliance and select the .ova file.
 4. Launch the VM:
 	> Username: phet
-	>	Password: phet
+	>	Password: phet (or ph3t)
 
 ######Setup SSH and sync the DB with phet-server
 *Requires access to phet-server*
@@ -92,7 +92,7 @@ In the phet/git directory, run this command:
 3. Click OK
 4. Setup Java SDK
   1. Go to File > Project Structure > Project Settings:Project 
-  5. Select the your locally installed Java SDK under "Project SDK"
+  5. Select the your locally installed Java SDK under "Project SDK" (Needs to be Java 1.7 not 1.8)
   6. Click OK
 5. Import Website
   6. Go to Project Settings:Modules
