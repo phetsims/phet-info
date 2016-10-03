@@ -14,8 +14,8 @@ assuming the folder for your files is "phetsims" the .bashrc file should look so
 this will allow chipper scripts (such as 'pull-all.sh') to be run from anywhere in git-bash
 
 For full capabilities need to install node.js
-in the chipper directory run `npm install`
-run `npm install -g grunt`
-run `npm install -g eslint`
+in the chipper directory 
+run `npm update`
+run `npm install -g grunt-cli`
 
 To get Git Bash to open in a certain directory right click on the tool bar icon, and then right click on "Git Bash" and click "Properties" a dialog window will appear that allows you to change the "Start in" field
