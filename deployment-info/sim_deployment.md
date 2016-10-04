@@ -69,6 +69,7 @@ If this is the first release candidate on a release branch:
 - [ ] Deploy to the server: `grunt deploy-rc` to deploy the rc using the build server.
 - [ ] Launch the sim on SPOT and make sure it is working correctly.
   + If it is not you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`
+  + for PhET-io look below for notes on testing
 - [ ] After following these steps, please update the "Other SHAs under testing" above, if appropriate.
 
 If this is not the first release candidate on a release branch:
@@ -130,4 +131,5 @@ for how to do this are in reportThirdParty.js.
 These instructions above show how to deploy PhET or PhET-iO branded simulations.  To test PhET-iO branded simulations:
 - [ ] Try launching the wrappers page `protected/index.html`.  This should be password protected.  Verify that your password works.
 - [ ] Test the screenshot and instance-proxies wrappers.  If it is a dev or rc version, use ?launchLocalVersion
-- [ ] Try launching the phet-io sim, for example: `sim-name_en-phetio.html?phet-io.standalone=true`.
+- [ ] Try launching the phet-io sim, for example: `sim-name_en-phetio.html?phet-io.standalone`.
+- [ ] When testing on phet-server the location of the sim will be: https://phet-io.colorado.edu/sims/$SIM/$VERSION/protected/
