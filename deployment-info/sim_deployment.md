@@ -69,7 +69,6 @@ If this is the first release candidate on a release branch:
 - [ ] Deploy to the server: `grunt deploy-rc` to deploy the rc using the build server.
 - [ ] Launch the sim on SPOT and make sure it is working correctly.
   + If it is not you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`
-  + NOTE: this requires sudo permissions on phet-server.
 - [ ] After following these steps, please update the "Other SHAs under testing" above, if appropriate.
 
 If this is not the first release candidate on a release branch:
