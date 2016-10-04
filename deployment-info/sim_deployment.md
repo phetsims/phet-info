@@ -67,6 +67,7 @@ If this is the first release candidate on a release branch:
 - [ ] Run the build process: `grunt`
  * for PhET-iO instead use `grunt --brand=phet-io`
 - [ ] Deploy to the server: `grunt deploy-rc` to deploy the rc using the build server.
+- [ ] Launch the sim on SPOT and make sure it is working correctly.
 - [ ] After following these steps, please update the "Other SHAs under testing" above, if appropriate.
 
 If this is not the first release candidate on a release branch:
