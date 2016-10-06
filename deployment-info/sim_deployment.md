@@ -1,4 +1,4 @@
- **Simulation Deployment Guidelines**
+**Simulation Deployment Guidelines**
 =====================================
 
 Variables to replace in the instructions below:
@@ -34,20 +34,23 @@ Host spot
 
 **Steps to publish a 'dev' (development) version**
 
-Dev versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/.
+Dev versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/
 
-To deploy to dev version:
-
-- [ ] Are your PhET repos up to date? Run pull-all.sh in chipper/bin if not.
+- [ ] Run `pull-all.sh` in chipper/bin
 - [ ] Update the version identifier in package.json.
- * For PhET Brand, the identifier should contain "dev", e.g. "1.0.0-dev.2".
- * For PhET-iO, the identifier should contain "phetiodev", e.g. "1.1.0-phetiodev.3".
+ * PhET Brand: the identifier should contain "dev", e.g. "1.0.0-dev.2".
+ * PhET-iO Brand: the identifier should contain "phetiodev", e.g. "1.1.0-phetiodev.3".
 - [ ] Commit & push.
-- [ ] Run the build process: `grunt`
- * For PhET-iO, instead use `grunt --brand=phet-io`
-- [ ] Open the generated HTML file locally and interact with it to check that all is well.
- * For PhET-iO, test wrappers such as the instance-proxies wrapper, and use ?launchLocalVersion so it will use relative path instead of looking on phet-io.colorado.edu
-- [ ] If this is the first time you've deployed anything for this sim, deploy with `grunt deploy-dev --mkdir` (requires 2 password inputs if ssh key is not set up). Otherwise just use `grunt deploy-dev`
+- [ ] Run the build process
+ * PhET Brand: `grunt`
+ * PhET-iO Brand: `grunt --brand=phet-io`
+- [ ] Test locally before transferring the file to spot
+ * PhET Brand: Open the generated HTML file locally and interact with it to check that all is well.
+ * PhET-iO Brand: Test wrappers such as the instance-proxies wrapper, and use ?launchLocalVersion so it will use
+ relative path instead of looking on phet-io.colorado.edu
+- [ ] Deploy to spot
+ * First time this sim is deployed: `grunt deploy-dev --mkdir` (requires 2 password inputs if ssh key is not set up)
+ * Second or later deployment: `grunt deploy-dev`
 
 **Steps to publish a 'rc' (release candidate) version**
 
