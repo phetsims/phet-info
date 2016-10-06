@@ -49,7 +49,7 @@ Dev versions are deployed to spot.colorado.edu at http://www.colorado.edu/physic
  * PhET-iO Brand: Test wrappers such as the instance-proxies wrapper, and use ?launchLocalVersion so it will use
  relative path instead of looking on phet-io.colorado.edu
 - [ ] Deploy to spot
- * First time this sim is deployed: `grunt deploy-dev --mkdir` (requires 2 password inputs if ssh key is not set up)
+ * First time this sim is deployed: `grunt deploy-dev --mkdir` (requires 2 password inputs or ssh key)
  * Second or later deployment: `grunt deploy-dev`
 
 **Steps to publish a 'rc' (release candidate) version**
