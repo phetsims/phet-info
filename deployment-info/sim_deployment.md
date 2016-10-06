@@ -77,12 +77,12 @@ graphing-lines, do `cd ../vegas ; git checkout graphing-lines-1.1`.
 After setting up the release-candidate branches, continue the build and deploy:
 
 - [ ] Update the version identifier in package.json, commit and push.
- * PhET Brand: The first rc version should have suffix "rc.1", eg "1.0.0-rc.1".
- * PhET-iO Brand: The first rc version should have suffix "phetiorc.1", eg "1.0.0-phetiorc.1".
+ * PhET Brand: The version should be something like "1.0.0-rc.2".
+ * PhET-iO Brand: The version should be something like "1.0.0-phetiorc.2".
 - [ ] Run the build process
  * PhET Brand: `grunt`
  * PhET-iO Brand: `grunt --brand=phet-io`
-- [ ] Deploy to the server: `grunt deploy-rc` to deploy the rc using the build server.
+- [ ] Deploy to spot using the build server: `grunt deploy-rc`
 - [ ] Test the deployed RC on spot to make sure it is working properly. If the build server is having issues,
 you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`
  * PhET Brand: Launch the sim and make sure it is working correctly.
