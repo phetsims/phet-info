@@ -77,17 +77,21 @@ If this is the first release candidate on a release branch:
 you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`
  * PhET Brand: Launch the sim and make sure it is working correctly.
  * PhET-iO Brand: please see the "PhET-iO Testing after deployment" section below
-- [ ] After following these steps, please update the "Other SHAs under testing" above, if appropriate.
+- [ ] After following these steps, please update the "latest SHAs under testing" above, if appropriate.
 
 If this is not the first release candidate on a release branch:
 
-- [ ] Check out the release branch, e.g.: `git checkout 1.0`
+- [ ] Check out the release branch, e.g.: `git checkout 1.0` or `git checkout 1.1-phetio`
 - [ ] Check out the correct shas for dependencies: `grunt checkout-shas`
-- [ ] If you've branched (for the purposes of patching) any of the dependency repositories since the last rc version was published, you'll need to explicitly checkout those branches. For example, if you branched vegas for the 1.1 release of graphing-lines, do `cd ../vegas ; git checkout graphing-lines-1.1`.
-- [ ] Update the version identifier in package.json. The identifier should contain "rc", e.g. "1.0.0-rc.2". Commit & push.
- * for PhET-iO the identifier should include "phetiorc"
-- [ ] Run the build process: `grunt`
- * for PhET-iO use instead `grunt --brand=phet-io`
+- [ ] If you've branched (for the purposes of patching) any of the dependency repositories since the last rc version was
+published, you'll need to explicitly checkout those branches. For example, if you branched vegas for the 1.1 release of
+graphing-lines, do `cd ../vegas ; git checkout graphing-lines-1.1`.
+- [ ] Update the version identifier in package.json, then commit + push.
+ * PhET Brand: The identifier should contain "rc", e.g. "1.0.0-rc.2".
+ * PhET-iO Brand: The identifier should include "phetiorc", e.g. "1.0.0-phetiorc.2"
+- [ ] Run the build process
+ * PhET Brand: `grunt`
+ * PhET-iO Brand: `grunt --brand=phet-io`
 - [ ] Deploy to the server: `grunt deploy-rc` to deploy the rc version using the build-server.
 - [ ] Check out master for dependencies: `grunt checkout-master` (optional)
 - [ ] After following these steps, please update the "latest SHAs under testing" link above, if appropriate.
