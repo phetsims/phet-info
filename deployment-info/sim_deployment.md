@@ -58,21 +58,25 @@ The latest fully-tested SHAs (use these if appropriate): https://github.com/phet
 
 The latest SHAs under testing (use these if appropriate): https://github.com/phetsims/forces-and-motion-basics/blob/2.1/dependencies.json
 
-RC versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/.
+RC versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/
 
 If this is the first release candidate on a release branch:
 
-- [ ] Create a release branch and switch to it, e.g.: `git checkout -b 1.0`. Release branches are named using major and minor version numbers, eg "1.0".
- * for PhET-iO the branch name should include "phetio", such as "1.1-phetio"
-- [ ] Update the version identifier in package.json. The first rc version should have suffix "rc.1", eg "1.0.0-rc.1".
- * for PhET-iO, the version name should include "phetiorc" instead of "rc"
+- [ ] Create a release branch and switch to it, e.g.: `git checkout -b 1.0`.
+ * PhET Brand: The branches are named using major and minor version numbers, eg "1.0".
+ * PhET-iO Brand: The branch name should include "phetio", such as "1.1-phetio"
+- [ ] Update the version identifier in package.json.
+ * PhET Brand: The first rc version should have suffix "rc.1", eg "1.0.0-rc.1".
+ * PhET-iO Brand: The first rc version should have suffix "phetiorc.1", eg "1.0.0-phetiorc.1".
 - [ ] Commit & push.
-- [ ] Run the build process: `grunt`
- * for PhET-iO instead use `grunt --brand=phet-io`
+- [ ] Run the build process
+ * PhET Brand: `grunt`
+ * PhET-iO Brand: `grunt --brand=phet-io`
 - [ ] Deploy to the server: `grunt deploy-rc` to deploy the rc using the build server.
-- [ ] Launch the sim on SPOT and make sure it is working correctly.
-  + If it is not you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`
-  + for PhET-io look below for notes on testing
+- [ ] Test the deployed RC on spot to make sure it is working properly. If the build server is having issues,
+you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`
+ * PhET Brand: Launch the sim and make sure it is working correctly.
+ * PhET-iO Brand: please see the "PhET-iO Testing after deployment" section below
 - [ ] After following these steps, please update the "Other SHAs under testing" above, if appropriate.
 
 If this is not the first release candidate on a release branch:
