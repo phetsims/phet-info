@@ -108,6 +108,7 @@ working from that branch, and then update the version identifier to the form "ma
 identifier will be "1.1.0".  Make sure this is committed and pushed.
  * for PhET-iO the version should include "-phetio", such as "1.1.0-phetio"
 - [ ] Check out the correct SHAs using `grunt checkout-shas`.
+ * for PhET-iO this will be a different set of trusted shas.
 - [ ] Run `grunt` to build a local version and sanity test it. (Note that for version numbers 1.0.0 and higher without suffixes, an update check failure message appears in the console. This is expected for local viewing, and will not appear when the sim goes online.)
  * for PhET-iO use `grunt --brand=phet-io`
 - [ ] Run `grunt deploy-production --locales=*` (or just `grunt deploy-production` for ph-scale and ph-scale-basics, see https://github.com/phetsims/phet-info/issues/10).  This will instruct the build server to build the English version of the
