@@ -1,5 +1,5 @@
 
-# Steps to publish a 'dev' (development) version (PhET brand)
+## Publishing a 'dev' (development) version (PhET brand)
 
 Dev versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/
 

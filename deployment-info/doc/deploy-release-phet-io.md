@@ -8,7 +8,7 @@ $HOME = your home directory
 ```
 
 
-# Build process configuration
+## Build process configuration
 
 Before building or deploying a simulation, familiarize yourself with configuration options for PhET's build process.
 
@@ -30,7 +30,7 @@ Host spot
 ```
 - On spot, you'll need to add your public key (found in ~/.ssh/id_rsa.pub) to a file ~/.ssh/authorized_keys
 
-# Steps to publish a public PhET-iO version
+## Publishing a public PhET-iO version
 
 Public versions are deployed to phet-server.int.colorado.edu at http://phet.colorado.edu.
 By default, publishing a public version also deploys a dev version.

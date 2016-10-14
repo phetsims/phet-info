@@ -8,7 +8,7 @@ $HOME = your home directory
 ```
 
 
-# Build process configuration
+## Build process configuration
 
 Before building or deploying a simulation, familiarize yourself with configuration options for PhET's build process.
 
@@ -30,7 +30,7 @@ Host spot
 ```
 - On spot, you'll need to add your public key (found in ~/.ssh/id_rsa.pub) to a file ~/.ssh/authorized_keys
 
-# Steps to publish a 'rc' (release candidate) version (PhET brand)
+## Publishing an 'rc' (release candidate) version (PhET brand)
 
 The latest fully-tested SHAs (use these if appropriate): https://github.com/phetsims/atomic-interactions/blob/1.0/dependencies.json
 

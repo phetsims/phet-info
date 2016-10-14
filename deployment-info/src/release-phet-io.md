@@ -1,5 +1,5 @@
 
-# Steps to publish a public PhET-iO version
+## Publishing a public PhET-iO version
 
 Public versions are deployed to phet-server.int.colorado.edu at http://phet.colorado.edu.
 By default, publishing a public version also deploys a dev version.

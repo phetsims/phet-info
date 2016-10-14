@@ -1,5 +1,5 @@
 
-# Steps to publish a public version (PhET brand)
+## Publishing a public version (PhET brand)
 
 Public versions are deployed to phet-server.int.colorado.edu at http://phet.colorado.edu.
 By default, publishing a public version also deploys a dev version.
