@@ -1,5 +1,5 @@
 
-# Steps to publish a 'rc' (release candidate) version (PhET brand)
+## Publishing an 'rc' (release candidate) version (PhET brand)
 
 The latest fully-tested SHAs (use these if appropriate): https://github.com/phetsims/atomic-interactions/blob/1.0/dependencies.json
 
