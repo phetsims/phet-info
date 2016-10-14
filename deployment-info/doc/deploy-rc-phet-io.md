@@ -1,6 +1,3 @@
-**Simulation Deployment Guidelines**
-=====================================
-
 Variables to replace in the instructions below:
 
 ```
@@ -10,7 +7,8 @@ $USERNAME = your username on spot, figaro, and phet-server
 $HOME = your home directory
 ```
 
-**Build process configuration**
+
+# Build process configuration
 
 Before building or deploying a simulation, familiarize yourself with configuration options for PhET's build process.
 
@@ -31,7 +29,8 @@ Host spot
    IdentityFile ~/.ssh/id_rsa
 ```
 - On spot, you'll need to add your public key (found in ~/.ssh/id_rsa.pub) to a file ~/.ssh/authorized_keys
-**Steps to publish a 'rc' (release candidate) version**
+
+# Steps to publish a 'rc' (release candidate) version (PhET-iO brand)
 
 The latest fully-tested SHAs (use these if appropriate): https://github.com/phetsims/atomic-interactions/blob/1.0/dependencies.json
 
@@ -62,9 +61,10 @@ you can ssh into phet and look at the build-server logs with: `sudo journalctl -
  * PhET-iO Brand: please see the "PhET-iO Testing after deployment" section below
 - [ ] After following these steps, please update the "latest SHAs under testing" above, if appropriate.
 - [ ] Check out master for dependencies: `grunt checkout-master` (optional)
+
 ## PhET-iO Testing after deployment
 
-These instructions above show how to deploy PhET or PhET-iO branded simulations.  To test PhET-iO branded simulations:
+To test PhET-iO branded simulations:
 - [ ] Try launching the wrappers page `protected/index.html`.  This should be password protected.  Verify that your password works.
 - [ ] Test the screenshot and instance-proxies wrappers.  If it is a dev or rc version, use ?launchLocalVersion
 - [ ] Try launching the phet-io sim, for example: `sim-name_en-phetio.html?phet-io.standalone`.
