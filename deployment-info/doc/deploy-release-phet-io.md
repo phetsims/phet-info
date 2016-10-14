@@ -1,6 +1,3 @@
-**Simulation Deployment Guidelines**
-=====================================
-
 Variables to replace in the instructions below:
 
 ```
@@ -10,7 +7,8 @@ $USERNAME = your username on spot, figaro, and phet-server
 $HOME = your home directory
 ```
 
-**Build process configuration**
+
+# Build process configuration
 
 Before building or deploying a simulation, familiarize yourself with configuration options for PhET's build process.
 
@@ -31,7 +29,8 @@ Host spot
    IdentityFile ~/.ssh/id_rsa
 ```
 - On spot, you'll need to add your public key (found in ~/.ssh/id_rsa.pub) to a file ~/.ssh/authorized_keys
-**Steps to publish a public PhET-iO version**
+
+# Steps to publish a public PhET-iO version
 
 Public versions are deployed to phet-server.int.colorado.edu at http://phet.colorado.edu.
 By default, publishing a public version also deploys a dev version.
@@ -45,9 +44,10 @@ To publish a public version:
 simulation as well as all currently deployed translated versions and deploy them on the web site.  This will also deploy
 the locally built version to the dev server.  (Note: If you're sure that the version of chipper that is being used is
 from Nov 10 2015 or later, the `--locales=*` flag can be omitted.)
+
 ## PhET-iO Testing after deployment
 
-These instructions above show how to deploy PhET or PhET-iO branded simulations.  To test PhET-iO branded simulations:
+To test PhET-iO branded simulations:
 - [ ] Try launching the wrappers page `protected/index.html`.  This should be password protected.  Verify that your password works.
 - [ ] Test the screenshot and instance-proxies wrappers.  If it is a dev or rc version, use ?launchLocalVersion
 - [ ] Try launching the phet-io sim, for example: `sim-name_en-phetio.html?phet-io.standalone`.
