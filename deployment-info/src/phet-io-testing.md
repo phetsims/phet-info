@@ -1,6 +1,7 @@
+
 ## PhET-iO Testing after deployment
 
-These instructions above show how to deploy PhET or PhET-iO branded simulations.  To test PhET-iO branded simulations:
+To test PhET-iO branded simulations:
 - [ ] Try launching the wrappers page `protected/index.html`.  This should be password protected.  Verify that your password works.
 - [ ] Test the screenshot and instance-proxies wrappers.  If it is a dev or rc version, use ?launchLocalVersion
 - [ ] Try launching the phet-io sim, for example: `sim-name_en-phetio.html?phet-io.standalone`.

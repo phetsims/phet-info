@@ -1,6 +1,3 @@
-**Simulation Deployment Guidelines**
-=====================================
-
 Variables to replace in the instructions below:
 
 ```
