@@ -1,18 +1,12 @@
 
 # Sim Deployment Info
+Sim deployment instructions can be found in[sim_deployment.md](sim_deployment.md)
 
-## Structure
-Currently all sim deployment info is broken up into chunks located in `src/`.
-Using the Makefile these chunks are built into usable Markdown files and put in `doc/`
-`sim_deployment.md` points to each option in the doc folder. 
+## Modifying and rebuilding the deployment docs
+The sim deployment instructions are assembled from Markdown components in src/. If the instructions require changes, edit the relevant components in src/ (this may require edits to multiple files), then rebuild. Don't edit anything in doc/ --- it will be over-written at build time. Be sure to commit any updated files in both src/ and doc/.
 
-## To Edit
-- Only edit files in the `src/` folder, because all files in `doc/` will be overwritten the next 
-time that the Makefile builds.
-- Make sure that when you edit a chunk in the `src/` that you are editing all possible places. If your
-change applies both to rc-phet and rc-phet-io, then you must make the change in both places.
-- Once done editing, run the Makefile again to recompile the complete docs. Then push those changes to github.
+To rebuild the docs, simply type `make` in this directory. Markdown files are generated in doc/ for each case (dev, rc, public) x (phet, phet-io) brand.
 
-
-
+## Dependencies
+Building requires the `cat` and `make` utilities.
 
