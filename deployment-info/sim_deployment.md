@@ -7,4 +7,6 @@
 |**Release candidate**| [phet-rc](doc/deploy-rc-phet.md)  | [phet-io-rc](doc/deploy-rc-phet-io.md) |
 |**Public release**| [phet-release](doc/deploy-release-phet.md)  | [phet-io-release](doc/deploy-release-phet-io.md) |
 
-These docs were auto-generated, and should not be edited directly. See [README.md](README.md) for details.
+The elements in the table were auto-generated, and should not be edited directly. See [README.md](README.md) for details.
+
+For instructions on how to perform a batch maintenance release, please see [bulk-maintenance-release-process.md](bulk-maintenance-release-process.md).
