@@ -23,7 +23,7 @@ After setting up the release-candidate branches, continue the build and deploy:
 
 - [ ] Update the version identifier in package.json, commit and push. The version should be something like "1.0.0-phetiorc.2".
 - [ ] Run the build process: `grunt --brand=phet-io`
-- [ ] Deploy to spot using the build server: `grunt deploy-rc`
+- [ ] Deploy to spot using the build server: `grunt deploy-rc --brand=phet-io`
 - [ ] Test the deployed RC on spot to make sure it is working properly. If the build server is having issues,
 you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`
  * PhET Brand: Launch the sim and make sure it is working correctly.
