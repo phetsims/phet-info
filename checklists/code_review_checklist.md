@@ -107,6 +107,7 @@ instance, the following methods (and perhaps others) should not be used:
 * `_.shuffle`
 * `_.sample`
 * `_.random`
+* `new Random()`
 
 **Organization, Readability, Maintainability**
 
