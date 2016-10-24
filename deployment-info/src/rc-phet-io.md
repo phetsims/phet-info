@@ -22,7 +22,7 @@ graphing-lines, do `cd ../vegas ; git checkout graphing-lines-1.1`.
 After setting up the release-candidate branches, continue the build and deploy:
 
 - [ ] Update the version identifier in package.json, commit and push. The version should be something like "1.0.0-rc.2".
-The substring `phetio` will be inserted after the hyphen, so it will be deployed e.g., as 1.0.0-phetiorc.2
+The build process will automatically insert the substring `phetio` after the hyphen, so it will be deployed e.g., as 1.0.0-phetiorc.2
 - [ ] Run the build process: `grunt --brand=phet-io`
 - [ ] Deploy to spot using the build server: `grunt deploy-rc --brand=phet-io`
 - [ ] Test the deployed RC on spot to make sure it is working properly. If the build server is having issues,
