@@ -9,7 +9,7 @@ RC versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics
 
 If this is the first release candidate on a release branch:
 
-- [ ] Create a release branch and switch to it, e.g.: `git checkout -b 1.0`. The branch name should include "phetio", such as "1.1-phetio"
+- [ ] Create a release branch and switch to it, e.g.: `git checkout -b 1.0-phetio`. The branch name should include "phetio", such as "1.1-phetio"
 
 If this is not the first release candidate on a release branch:
 
