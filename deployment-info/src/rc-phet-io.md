@@ -9,7 +9,7 @@ RC versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics
 
 If this is the first release candidate on a release branch:
 
-- [ ] Create a release branch and switch to it, e.g.: `git checkout -b 1.0`. The branch name should include "phetio", such as "1.1-phetio"
+- [ ] Create a release branch and switch to it, e.g.: `git checkout -b 1.0-phetio`. The branch name should include "phetio", such as "1.1-phetio"
 
 If this is not the first release candidate on a release branch:
 
@@ -21,9 +21,10 @@ graphing-lines, do `cd ../vegas ; git checkout graphing-lines-1.1`.
 
 After setting up the release-candidate branches, continue the build and deploy:
 
-- [ ] Update the version identifier in package.json, commit and push. The version should be something like "1.0.0-phetiorc.2".
+- [ ] Update the version identifier in package.json, commit and push. The version should be something like "1.0.0-rc.2".
+The build process will automatically insert the substring `phetio` after the hyphen, so it will be deployed e.g., as 1.0.0-phetiorc.2
 - [ ] Run the build process: `grunt --brand=phet-io`
-- [ ] Deploy to spot using the build server: `grunt deploy-rc`
+- [ ] Deploy to spot using the build server: `grunt deploy-rc --brand=phet-io`
 - [ ] Test the deployed RC on spot to make sure it is working properly. If the build server is having issues,
 you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`
  * PhET Brand: Launch the sim and make sure it is working correctly.
