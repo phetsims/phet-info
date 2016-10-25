@@ -2,7 +2,7 @@
 
 # .credentials is a file with your github creds in the format username:password
 # This should probably be replaced with oAuth
-CREDS=`cat ~/.credentials`
+CREDS=`cat ~/.phet/.credentials`
 if [[ "$CREDS" = "" ]]
 then
   echo "Requires .credential file"
