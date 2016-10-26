@@ -4,6 +4,7 @@
 The latest fully-tested SHAs (use these if appropriate): (doesn't exist yet)
 
 The latest SHAs under testing (use these if appropriate): https://github.com/phetsims/faradays-law/blob/8f2f22de09af5ae1ee7fcfac5734a870e21e1fe1/dependencies.json
+Keep in mind these SHAs may not include all of the repos for your sim.
 
 RC versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/
 
@@ -29,5 +30,6 @@ The build process will automatically insert the substring `phetio` after the hyp
 you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`
  * PhET Brand: Launch the sim and make sure it is working correctly.
  * PhET-iO Brand: please see the "PhET-iO Testing after deployment" section below
-- [ ] After following these steps, please update the "latest SHAs under testing" above, if appropriate.
+- [ ] After following these steps, please update the "latest SHAs under testing" above, if appropriate.  Keep in mind
+that not all sims use all repos.
 - [ ] Check out master for dependencies: `grunt checkout-master` (optional)
