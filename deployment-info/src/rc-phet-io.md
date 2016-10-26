@@ -3,7 +3,7 @@
 
 The latest fully-tested SHAs (use these if appropriate): (doesn't exist yet)
 
-The latest SHAs under testing (use these if appropriate): (doesn't exist yet)
+The latest SHAs under testing (use these if appropriate): https://github.com/phetsims/faradays-law/blob/8f2f22de09af5ae1ee7fcfac5734a870e21e1fe1/dependencies.json
 
 RC versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/
 
