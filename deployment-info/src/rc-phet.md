@@ -22,6 +22,7 @@ graphing-lines, do `cd ../vegas ; git checkout graphing-lines-1.1`.
 After setting up the release-candidate branches, continue the build and deploy:
 
 - [ ] Update the version identifier in package.json, commit and push. The version should be something like "1.0.0-rc.2".
+- [ ] Push your changes to github.
 - [ ] Run the build process: `grunt`
 - [ ] Deploy to spot using the build server: `grunt deploy-rc`
 - [ ] Test the deployed RC on spot to make sure it is working properly. If the build server is having issues,

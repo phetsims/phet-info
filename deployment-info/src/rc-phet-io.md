@@ -4,7 +4,9 @@
 The latest fully-tested SHAs (use these if appropriate): (doesn't exist yet)
 
 The latest SHAs under testing (use these if appropriate): https://github.com/phetsims/faradays-law/blob/8f2f22de09af5ae1ee7fcfac5734a870e21e1fe1/dependencies.json
-Keep in mind these SHAs may not include all of the repos for your sim.
+TODO: should the following sentance go in rc-phet.md also?
+Keep in mind these SHAs may not include all of the repos for your sim, 
+but you can still overwrite your dependencies with them, and the rest will be flled in with master during the build.
 
 RC versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/
 
@@ -24,6 +26,7 @@ After setting up the release-candidate branches, continue the build and deploy:
 
 - [ ] Update the version identifier in package.json, commit and push. The version should be something like "1.0.0-rc.2".
 The build process will automatically insert the substring `phetio` after the hyphen, so it will be deployed e.g., as 1.0.0-phetiorc.2
+- [ ] Push your changes to github.
 - [ ] Run the build process: `grunt --brand=phet-io`
 - [ ] Deploy to spot using the build server: `grunt deploy-rc --brand=phet-io`
 - [ ] Test the deployed RC on spot to make sure it is working properly. If the build server is having issues,
