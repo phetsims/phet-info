@@ -1,7 +1,9 @@
 
 ## Publishing an 'rc' (release candidate) version (PhET-iO brand)
 
-The latest fully-tested SHAs (use these if appropriate): (doesn't exist yet)
+The latest fully-tested SHAs (use these if appropriate): https://raw.githubusercontent.com/phetsims/faradays-law/86b01c46b5c43ec25a803cf07ca2e46d8c196861/dependencies.json
+
+The latest SHAs under testing (use these if appropriate):
 
 The latest SHAs under testing (use these if appropriate): https://github.com/phetsims/faradays-law/blob/8f2f22de09af5ae1ee7fcfac5734a870e21e1fe1/dependencies.json
 TODO: should the following sentance go in rc-phet.md also?
