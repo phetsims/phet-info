@@ -153,3 +153,8 @@ dt = Math.min( 0.1, dt );
 	- [ ] SCENERY: `Node.on` is accompanied by `Node.off`
 	- [ ] TANDEM: `tandem.addInstance` is accompanied by `tandem.removeInstance`.
 - [ ] Do all types that require a `dispose` function have one?
+
+
+**Phet-io**
+
+- [ ] Please see [Hot to Instrument a PhET Simulation for PhET-io](https://github.com/phetsims/phet-io/blob/master/doc/how-to-instrument-a-phet-simulation-for-phet-io.md) for phet-io process.
