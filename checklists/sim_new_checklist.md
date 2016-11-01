@@ -22,10 +22,10 @@
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Teacher Guide
   - [ ] Add an activity
-  - [ ] Update [Gooru spreadsheet] (https://docs.google.com/spreadsheets/d/13qvc7e71zTTjaJ2VcYhhU0rNxvH4kYFnoScVCOvvf7U/edit#gid=1717560774)
   - [ ] Sim primer
   - [ ] Verify credits
 - [ ] **Add to Edmodo**
+- [ ] **Add to [Gooru]** (http://gooru.org/PhET/content/resources) (signed in as phethelp)
 - [ ] **Hold postmortem if applicable** (Date: //) 
 
 ## Implementation
