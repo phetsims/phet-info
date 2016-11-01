@@ -23,9 +23,9 @@
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Teacher Guide
   - [ ] Compatible activities ([author spreadsheet] (https://docs.google.com/spreadsheets/d/1AOc1vy0HfEeJQ9sT0Vs_sr6dqmsEHfq7HWUBGQV_VQA/edit#gid=0))
-  - [ ] Update [Gooru spreadsheet] (https://docs.google.com/spreadsheets/d/13qvc7e71zTTjaJ2VcYhhU0rNxvH4kYFnoScVCOvvf7U/edit#gid=1717560774)
   - [ ] Sim primer
   - [ ] Verify credits
+- [ ] **Update [Gooru PhET URL tracker] (https://docs.google.com/spreadsheets/d/19sffdKj9NdMuFdp3NcFeJmPyDY-3KsoM7Pbu84gUVtw/edit#gid=636879231)**
 - [ ] **Add to Edmodo**
 - [ ] **Hold postmortem if applicable** (Date: //) 
 
