@@ -25,7 +25,7 @@
   - [ ] Sim primer
   - [ ] Verify credits
 - [ ] **Add to Edmodo**
-- [ ] **Add to [Gooru]** (http://gooru.org/PhET/content/resources) (signed in as phethelp)
+- [ ] **Add to [Gooru](http://gooru.org/PhET/content/resources)** (signed in as phethelp)
 - [ ] **Hold postmortem if applicable** (Date: //) 
 
 ## Implementation
