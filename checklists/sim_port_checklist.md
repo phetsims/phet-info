@@ -22,10 +22,10 @@
   - [ ] Screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Teacher Guide
-  - [ ] Compatible activities ([author spreadsheet] (https://docs.google.com/spreadsheets/d/1AOc1vy0HfEeJQ9sT0Vs_sr6dqmsEHfq7HWUBGQV_VQA/edit#gid=0))
+  - [ ] Compatible activities ([author spreadsheet](https://docs.google.com/spreadsheets/d/1AOc1vy0HfEeJQ9sT0Vs_sr6dqmsEHfq7HWUBGQV_VQA/edit#gid=0))
   - [ ] Sim primer
   - [ ] Verify credits
-- [ ] **Update [Gooru PhET URL tracker] (https://docs.google.com/spreadsheets/d/19sffdKj9NdMuFdp3NcFeJmPyDY-3KsoM7Pbu84gUVtw/edit#gid=636879231)**
+- [ ] **Update [Gooru PhET URL tracker](https://docs.google.com/spreadsheets/d/19sffdKj9NdMuFdp3NcFeJmPyDY-3KsoM7Pbu84gUVtw/edit#gid=636879231)**
 - [ ] **Add to Edmodo**
 - [ ] **Hold postmortem if applicable** (Date: //) 
 
