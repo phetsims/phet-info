@@ -34,7 +34,7 @@ Host spot
 Dev versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/
 
 - [ ] Run `pull-all.sh` in chipper/bin
-- [ ] Update the version identifier in package.json. The identifier should contain "dev", e.g. "1.1.0-dev.3".
+- [ ] Update the version identifier in package.json. The identifier should contain "phetiodev", e.g. "1.1.0-phetiodev.3".
 - [ ] Commit & push.
 - [ ] Run the build process: `grunt --brand=phet-io`
 - [ ] Test locally before transferring the file to spot. Test wrappers such as the instance-proxies wrapper, and use ?launchLocalVersion so it will use

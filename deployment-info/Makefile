@@ -13,12 +13,12 @@ all: phet phet-io
 phet: \
 	doc/deploy-dev-phet.md \
 	doc/deploy-rc-phet.md \
-	doc/deploy-release-phet.md
+	doc/deploy-production-phet.md
 
 phet-io: \
 	doc/deploy-dev-phet-io.md \
 	doc/deploy-rc-phet-io.md \
-	doc/deploy-release-phet-io.md
+	doc/deploy-production-phet-io.md
 
 # These targets do not have corresponding file names
 PHONY: all clean phet phet-io
@@ -30,8 +30,8 @@ doc/deploy-dev-phet.md: $(DEPS) src/dev-phet.md
 doc/deploy-rc-phet.md: $(DEPS) src/rc-phet.md
 	cat $(INTRO) src/rc-phet.md > $@
 
-doc/deploy-release-phet.md: $(DEPS) src/release-phet.md
-	cat $(INTRO) src/release-phet.md > $@
+doc/deploy-production-phet.md: $(DEPS) src/production-phet.md
+	cat $(INTRO) src/production-phet.md > $@
 
 doc/deploy-dev-phet-io.md: $(DEPS) $(TEST_IO) src/dev-phet-io.md
 	cat $(INTRO) src/dev-phet-io.md $(TEST_IO) > $@
@@ -39,8 +39,8 @@ doc/deploy-dev-phet-io.md: $(DEPS) $(TEST_IO) src/dev-phet-io.md
 doc/deploy-rc-phet-io.md: $(DEPS) $(TEST_IO) src/rc-phet-io.md
 	cat $(INTRO) src/rc-phet-io.md $(TEST_IO) > $@
 
-doc/deploy-release-phet-io.md: $(DEPS) $(TEST_IO) src/release-phet-io.md
-	cat $(INTRO) src/release-phet-io.md $(TEST_IO) > $@
+doc/deploy-production-phet-io.md: $(DEPS) $(TEST_IO) src/production-phet-io.md
+	cat $(INTRO) src/production-phet-io.md $(TEST_IO) > $@
 
 clean:
 	rm doc/*.md
