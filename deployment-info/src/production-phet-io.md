@@ -17,18 +17,19 @@ Steps to roll out a batch of PhET-iO sims to master
 (a) pull-all.sh, we will use same master (without pulling) to deploy all.  Do not pull between the other steps.
 
 (b)
-checkout branch for sim
-merge master to it
-update version number + commit + push
-make sure version is not already published on phet-io site
+* checkout branch for sim
+* merge master to it
+* update version number + commit + push
+* make sure version is not already published on phet-io site
 
+```
 grunt --brand=phet-io
 cp build/dependencies.json dependencies.json
 git commit -am "updated dependencies.json"
 git push
 grunt deploy-production --brand=phet-io
-
+```
 
 (c)
-review dependencies.json and make sure they match
-update version in master
+* review dependencies.json and make sure they match
+* update version in master
