@@ -1,6 +1,4 @@
-*NOTE! Prior to doing a code review, copy this checklist to a GitHub issue for the repository being reviewed.
-If a code review is part of a third-party contract, create that GitHub issue when the repository is created, so that the issue
-matches the checklist agreed upon in the contract.*
+*NOTE! Prior to doing a code review, copy this checklist to a GitHub issue for the repository being reviewed.*
 
 PhET code-review checklist
 =============
