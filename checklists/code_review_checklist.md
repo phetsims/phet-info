@@ -5,22 +5,20 @@ PhET code-review checklist
 
 **Build and Run Checks**
 
-- [ ] Does the sim build without errors?
+- [ ] Does the sim build without warnings or errors?
 - [ ] Does the sim start up? (requirejs and built versions)
 - [ ] Does the sim experience any assertion failures? (run with query parameter 'ea')
 - [ ] Does the sim pass a scenery fuzzer test? (run with query parameter 'fuzzMouse&ea')
 
-**Strings**
-- [ ] Are there any unused strings in the English strings file? Note that this is detected automatically by `grunt build`, you don't need to manually check.
+**Internationalization**
 - [ ] Are there any strings that are not being internationalized? (run with query parameter 'stringTest=x', you should see nothing but 'x' strings)
 - [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter 'stringTest=double')
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter 'stringTest=long')
 - [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter 'stringTest=X')
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter 'stringTest=xss' (test passes if sim does not redirect, OK if sim crashes or fails to fully start). Only test on one desktop platform.
-- [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 is published.
-
-**Images**
-- [ ] Are there any unused images? Note that this is detected automatically by `grunt build`, you don't need to manually check.
+- [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 is published.  Strings keys should
+generally match the values, such as `{binaryProbability: "Binary Probability"}`. Sim title and screen sames should use
+"." instead of camelcase.  Message patterns and long paragraphs will also use a different pattern.
 
 **Repository structure**
 
