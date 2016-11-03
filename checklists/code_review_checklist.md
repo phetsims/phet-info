@@ -122,6 +122,7 @@ instance, the following methods (and perhaps others) should not be used:
 - [ ] Are there any TODO or FIXME comments in the code?  They should be addressed or promoted to GitHub issues.
 - [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.)
 Does changing the values of these constants break the sim? For example, see https://github.com/phetsims/plinko-probability/issues/84.
+- [ ] The simulation should use Property instead of PropertySet
 
 **Performance, Usability**
 
