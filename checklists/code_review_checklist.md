@@ -8,7 +8,7 @@ PhET code-review checklist
 - [ ] Does the sim build without errors?
 - [ ] Does the sim start up? (requirejs and built versions)
 - [ ] Does the sim experience any assertion failures? (run with query parameter 'ea')
-- [ ] Does the sim pass a scenery fuzzer test? (run with query parameter 'fuzzMouse')
+- [ ] Does the sim pass a scenery fuzzer test? (run with query parameter 'fuzzMouse&ea')
 
 **Strings**
 - [ ] Are there any unused strings in the English strings file? Note that this is detected automatically by `grunt build`, you don't need to manually check.
