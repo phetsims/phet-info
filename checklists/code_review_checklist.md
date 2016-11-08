@@ -1,29 +1,24 @@
-*NOTE! Prior to doing a code review, copy this checklist to a GitHub issue for the repository being reviewed.
-If a code review is part of a third-party contract, create that GitHub issue when the repository is created, so that the issue
-matches the checklist agreed upon in the contract.*
+*NOTE! Prior to doing a code review, copy this checklist to a GitHub issue for the repository being reviewed.*
 
 PhET code-review checklist
 =============
 
 **Build and Run Checks**
 
-- [ ] Does the sim pass lint?
-- [ ] Does the sim build without errors?
+- [ ] Does the sim build without warnings or errors?
 - [ ] Does the sim start up? (requirejs and built versions)
 - [ ] Does the sim experience any assertion failures? (run with query parameter 'ea')
-- [ ] Does the sim pass a scenery fuzzer test? (run with query parameter 'fuzzMouse')
+- [ ] Does the sim pass a scenery fuzzer test? (run with query parameter 'fuzzMouse&ea')
 
-**Strings**
-- [ ] Are there any unused strings in the English strings file? Note that this is detected automatically by `grunt build`, you don't need to manually check.
+**Internationalization**
 - [ ] Are there any strings that are not being internationalized? (run with query parameter 'stringTest=x', you should see nothing but 'x' strings)
 - [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter 'stringTest=double')
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter 'stringTest=long')
 - [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter 'stringTest=X')
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter 'stringTest=xss' (test passes if sim does not redirect, OK if sim crashes or fails to fully start). Only test on one desktop platform.
-- [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 is published.
-
-**Images**
-- [ ] Are there any unused images? Note that this is detected automatically by `grunt build`, you don't need to manually check.
+- [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 is published.  Strings keys should
+generally match the values, such as `{binaryProbability: "Binary Probability"}`. Screen names should use `screen.screenName` instead of
+camelcase.  Message patterns and long paragraphs will also use a different pattern.
 
 **Repository structure**
 
@@ -122,6 +117,7 @@ instance, the following methods (and perhaps others) should not be used:
 - [ ] Are there any TODO or FIXME comments in the code?  They should be addressed or promoted to GitHub issues.
 - [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.)
 Does changing the values of these constants break the sim? For example, see https://github.com/phetsims/plinko-probability/issues/84.
+- [ ] The simulation should use Property instead of PropertySet
 
 **Performance, Usability**
 

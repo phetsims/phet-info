@@ -28,6 +28,7 @@ Host spot
    IdentityFile ~/.ssh/id_rsa
 ```
 - On spot, you'll need to add your public key (found in ~/.ssh/id_rsa.pub) to a file ~/.ssh/authorized_keys
+- Change the permissions of the file so it is not group writable: `chmod g-w authorized_keys`
 
 ## Publishing an 'rc' (release candidate) version (PhET brand)
 
@@ -55,7 +56,8 @@ After setting up the release-candidate branches, continue the build and deploy:
 - [ ] Push your changes to github.
 - [ ] Run the build process: `grunt`
 - [ ] Deploy to spot using the build server: `grunt deploy-rc`
-- [ ] Test the deployed RC on spot to make sure it is working properly. If the build server is having issues,
-you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`. Launch the sim and make sure it is working correctly.
+- [ ] Test the deployed RC on spot to make sure it is working properly. 
+    * If the build server is having issues, you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`. 
+    * Launch the sim and make sure it is working correctly.
 - [ ] After following these steps, please update the "latest SHAs under testing" above, if appropriate.
 - [ ] Check out master for dependencies: `grunt checkout-master` (optional)

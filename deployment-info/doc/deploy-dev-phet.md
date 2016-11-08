@@ -28,6 +28,7 @@ Host spot
    IdentityFile ~/.ssh/id_rsa
 ```
 - On spot, you'll need to add your public key (found in ~/.ssh/id_rsa.pub) to a file ~/.ssh/authorized_keys
+- Change the permissions of the file so it is not group writable: `chmod g-w authorized_keys`
 
 ## Publishing a 'dev' (development) version (PhET brand)
 
