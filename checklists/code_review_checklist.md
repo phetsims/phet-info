@@ -152,6 +152,6 @@ dt = Math.min( 0.1, dt );
 
 **PhET-iO**
 
-- [ ] Please see [How to Instrument a PhET Simulation for PhET-iO]
+- [ ] If the simulation is supposed to be instrumented for PhET-iO, please see [How to Instrument a PhET Simulation for PhET-iO]
 (https://github.com/phetsims/phet-io/blob/master/doc/how-to-instrument-a-phet-simulation-for-phet-io.md)
 for the PhET-iO development process.
