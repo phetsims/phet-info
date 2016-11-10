@@ -68,6 +68,7 @@ camelcase.  Message patterns and long paragraphs will also use a different patte
             view/
          my-repo-config.js
          my-repo-main.js
+         myRepo.js
  ```
 
 - [ ] Is there a file in assets/ for every resource file in audio/ and images/? Note that there is *not* a 1:1 correspondence between asset and resource files; for example, several images may be in the same .ai file.
