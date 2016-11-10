@@ -145,7 +145,6 @@ dt = Math.min( 0.1, dt );
 	- [ ] AXON: Creation of `Multilink` is accompanied by `dispose`.
 	- [ ] AXON: `Events.on` is accompanied by `Events.off`.
 	- [ ] AXON: `Emitter.addListener` is accompanied by `Emitter.removeListener`.
-	- [ ] SCENERY: `Node.addEventListener` is accompanied by `Node.removeEventListener`
 	- [ ] SCENERY: `Node.on` is accompanied by `Node.off`
 	- [ ] TANDEM: `tandem.addInstance` is accompanied by `tandem.removeInstance`.
 - [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls
