@@ -37,8 +37,7 @@ camelcase.  Message patterns and long paragraphs will also use a different patte
       images/
          license.json
       js/
-         my-repo-config.js
-         my-repo-main.js
+         (see section below)
       .gitignore
       my-repo_en.html
       my-repo-strings_en.json
