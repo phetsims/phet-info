@@ -148,7 +148,9 @@ dt = Math.min( 0.1, dt );
 	- [ ] SCENERY: `Node.addEventListener` is accompanied by `Node.removeEventListener`
 	- [ ] SCENERY: `Node.on` is accompanied by `Node.off`
 	- [ ] TANDEM: `tandem.addInstance` is accompanied by `tandem.removeInstance`.
-- [ ] Do all types that require a `dispose` function have one?
+- [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls
+`this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly
+match the filename.
 
 **PhET-iO**
 
