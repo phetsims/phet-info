@@ -52,7 +52,7 @@ camelcase.  Message patterns and long paragraphs will also use a different patte
 
 - [ ] Is the js/ directory properly structured?
 
-      All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims, where the subdirectory matches the repo name).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Custom”, the general directory structure should look like this:
+      All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims, where the subdirectory matches the repo name).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Lab”, the general directory structure should look like this:
 
 ```js
    my-repo/
@@ -60,10 +60,10 @@ camelcase.  Message patterns and long paragraphs will also use a different patte
          common/
             model/
             view/
-         custom
+         introduction/
             model/
             view/
-         introduction
+         lab/
             model/
             view/
          my-repo-config.js
