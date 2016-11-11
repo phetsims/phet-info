@@ -1,7 +1,7 @@
 ##Updating Github Repo Labels
 
 ######Requirements
-+ Create a .credentials file to your home directory.  The contents should be gitHubUsername:gitHubPassword
++ Create a .phet/.credentials file to your home directory.  The contents should be gitHubUsername:gitHubPassword
 + (Do not add this file to the git repo)
 + Download the jq executable from https://stedolan.github.io/jq/ and configure it to run from your path with the command `jq`.
   + On windows for example, I renamed the downloaded file to jq.exe, put it in this folder: C:\Users\username\phet, and added that folder to my PATH environment variable in System Properties.
