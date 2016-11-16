@@ -64,6 +64,7 @@ grunt deploy-production --brand=phet-io
 (c)
 * review dependencies.json and make sure they match
 * update version in master
+
 ### PhET-iO Testing after deployment
 
 To test PhET-iO branded simulations:
