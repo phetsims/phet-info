@@ -64,7 +64,7 @@ grunt deploy-production --brand=phet-io
 (c)
 * review dependencies.json and make sure they match
 * update version in master
-## PhET-iO Testing after deployment
+### PhET-iO Testing after deployment
 
 To test PhET-iO branded simulations:
 - [ ] Try launching the wrappers page `wrappers/index`.  This should be password protected.  Verify that your password works.
