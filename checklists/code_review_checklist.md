@@ -82,7 +82,7 @@ camelcase.  Message patterns and long paragraphs will also use a different patte
 
 **Coding conventions**
 
-- [ ] Does the code style meet PhET's code-style guidelines, as described in the [“Coding Style Guidelines” section of "PhET Development Overview"](https://docs.google.com/document/d/1odXkliRagq0zuf1_NdOtQ2BrkC9hwlISnPi2y-dKdrk/edit#heading=h.1oxr3ptyo50w)?
+- [ ] Does the code meet PhET's code-style guidelines, as described in the [“Coding Style Guidelines” section of "PhET Development Overview"](https://docs.google.com/document/d/1odXkliRagq0zuf1_NdOtQ2BrkC9hwlISnPi2y-dKdrk/edit#heading=h.1oxr3ptyo50w)?
 - [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/joist/blob/master/util/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
 
 **Documentation**
@@ -90,14 +90,13 @@ camelcase.  Message patterns and long paragraphs will also use a different patte
 - [ ] Are documentation conventions followed, as described in the [“Coding Style Guidelines” section of the PhET Development Overview](https://docs.google.com/document/d/1odXkliRagq0zuf1_NdOtQ2BrkC9hwlISnPi2y-dKdrk/edit#heading=h.1oxr3ptyo50w)?
 - [ ] Does model.md adequately describe the model, in terms appropriate for teachers?
 - [ ] Does implementation-notes.md adequately describe the implementation, with an overview that will be useful to future maintainers?
-- [ ] Are sim-specific query parameters (if any) identified and documented in one .js file? The .js file should be named <REPO>QueryParameters, for example ArithmeticQueryParameters for the aritmetic repository.
+- [ ] Are sim-specific query parameters (if any) identified and documented in one .js file in js/common/ or js/ (if there is no common/)? The .js file should be named `{{REPO}}QueryParameters`, for example ArithmeticQueryParameters for the aritmetic repository.
 
-**Common Errors**
+**Math Libraries**
 
-- [ ] Is `Math.round` used where `dot.Util.roundSymmetric` should be used?  Math.round does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879
-- [ ] Is `toFixed` used where `dot.Util.toFixed` or `dot.Util.toFixedNumber` should be used? JavaScript's `toFixed` is notoriously buggy, behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
-- [ ] Are random numbers using `phet.joist.random`, and all doing so after modules are declared (non-statically)?  For
-instance, the following methods (and perhaps others) should not be used:
+- [ ] Check that `dot.Util.roundSymmetric` is used instead of `Math.round`. `Math.round` does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879.
+- [ ] `dot.Util.toFixed` or `dot.Util.toFixedNumber` should be used instead of `toFixed`. JavaScript's `toFixed` is notoriously buggy. Behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
+- [ ] Check that random numbers are generated using `phet.joist.random`, and are doing so after modules are declared (non-statically).  For instance, the following methods (and perhaps others) should not be used:
 * `Math.random`
 * `_.shuffle`
 * `_.sample`
