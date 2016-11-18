@@ -44,7 +44,8 @@ Dev versions are deployed to spot.colorado.edu at http://www.colorado.edu/physic
  * First time this sim is deployed: `grunt deploy-dev --brand=phet-io --mkdir` (requires 2 password inputs or ssh key)
  * Second or later deployment: `grunt --brand=phet-io deploy-dev`
 
-## PhET-iO Testing after deployment
+
+### PhET-iO Testing after deployment
 
 To test PhET-iO branded simulations:
 - [ ] Try launching the wrappers page `wrappers/index`.  This should be password protected.  Verify that your password works.
