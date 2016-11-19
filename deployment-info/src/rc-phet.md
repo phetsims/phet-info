@@ -3,7 +3,7 @@
 
 The latest fully-tested SHAs (use these if appropriate): https://github.com/phetsims/atomic-interactions/blob/1.0/dependencies.json
 
-The latest SHAs under testing (use these if appropriate): https://github.com/phetsims/forces-and-motion-basics/blob/2.1/dependencies.json
+The latest SHAs under testing (use these if appropriate): https://github.com/phetsims/gravity-and-orbits/blob/1.0/dependencies.json
 
 RC versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/
 

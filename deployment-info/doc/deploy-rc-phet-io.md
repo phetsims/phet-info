@@ -76,7 +76,8 @@ If you don't do this step deploying to spot will not work, as there will already
 that not all sims use all repos.
 - [ ] Check out master for dependencies: `grunt checkout-master` (optional)
 
-## PhET-iO Testing after deployment
+
+### PhET-iO Testing after deployment
 
 To test PhET-iO branded simulations:
 - [ ] Try launching the wrappers page `wrappers/index`.  This should be password protected.  Verify that your password works.
