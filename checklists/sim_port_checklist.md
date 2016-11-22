@@ -1,8 +1,9 @@
 #Sim Port Checklist Template
 
 ## Design
-- [ ] **Design doc created** (Date: //) 
-  - [ ] Place in appropriate [PhET Sim Design](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) folder
+- [ ] **Sim folder and design doc created** (Date: //) 
+ - [ ] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) 
+ - [ ] Place design doc in the sim folder
  - [ ] Share with phet-team
 - [ ] **Legacy sim docs/info gathered**
 - [ ] **Learning goals and standards identified** (Date: //)
