@@ -2,9 +2,8 @@
 
 ## Design
 - [ ] **Design doc created** (Date: //) 
- - [ ] Place within phet-docs folder structure
+  - [ ] Place in appropriate [PhET Sim Design](https://docs.google.com/spreadsheets/d/1AOc1vy0HfEeJQ9sT0Vs_sr6dqmsEHfq7HWUBGQV_VQA/edit#gid=0) folder
  - [ ] Share with phet-team
- - [ ] Add to [Master Doc List](https://docs.google.com/document/d/1yjT1oE95JG_evwob9LB_De-brD7JpfFM6iIL6pF812k/edit#)
 - [ ] **Legacy sim docs/info gathered**
 - [ ] **Learning goals and standards identified** (Date: //)
 - [ ] **Design concept complete**  (Date: //)
