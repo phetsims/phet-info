@@ -2,7 +2,7 @@
 
 ## Design
 - [ ] **Design doc created** (Date: //) 
-  - [ ] Place in appropriate [PhET Sim Design](https://docs.google.com/spreadsheets/d/1AOc1vy0HfEeJQ9sT0Vs_sr6dqmsEHfq7HWUBGQV_VQA/edit#gid=0) folder
+  - [ ] Place in appropriate [PhET Sim Design](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) folder
  - [ ] Share with phet-team
 - [ ] **Legacy sim docs/info gathered**
 - [ ] **Learning goals and standards identified** (Date: //)
