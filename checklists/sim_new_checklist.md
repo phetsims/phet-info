@@ -1,9 +1,10 @@
 # New Sim master checklist
 
 ## Design
-- [ ] **Design doc created** (Date: //) 
- - [ ] Make phethelp@gmail.com owner, share with phet-team
- - [ ] Add to [Master Doc List](https://docs.google.com/document/d/1yjT1oE95JG_evwob9LB_De-brD7JpfFM6iIL6pF812k/edit#)
+- [ ] **Sim folder and design doc created** (Date: //) 
+ - [ ] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) 
+ - [ ] Place design doc in the sim folder
+ - [ ] Share with phet-team
 - [ ] **Learning goals and standards identified** (Date: //)
 - [ ] **Design concept complete**  (Date: //)
 - [ ] **Wireframes complete** (Date: //) 
@@ -49,5 +50,5 @@
 ## QA
 - [ ] **Dev testing complete** (Date: //) 
 - [ ] **First release candidate** (Date: //)
- - [ ] phethelp@gmail.com owner of test matrix, share with phet-team, add to [Master Doc List](https://docs.google.com/document/d/1yjT1oE95JG_evwob9LB_De-brD7JpfFM6iIL6pF812k/edit#)
+ - [ ] Place in matrix in [Testing Matrices Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYbW9fTGNCODdYVjQ) share with phet-team
  - [ ] Test matrix deemed complete
