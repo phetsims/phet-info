@@ -2,9 +2,8 @@
 
 ## Design
 - [ ] **Sim folder and design doc created** (Date: //) 
- - [ ] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) 
+ - [ ] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) using phet-docs account
  - [ ] Place design doc in the sim folder
- - [ ] Share with phet-team
 - [ ] **Legacy sim docs/info gathered**
 - [ ] **Learning goals and standards identified** (Date: //)
 - [ ] **Design concept complete**  (Date: //)
@@ -54,5 +53,5 @@
 - [ ] **Legacy sim tested for bugs**; issues reported in repo
 - [ ] **Dev testing complete** (Date: //) 
 - [ ] **First release candidate** (Date: //)
- - [ ] Place in matrix in [Testing Matrices Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYbW9fTGNCODdYVjQ) share with phet-team
+ - [ ] Place in matrix in [Testing Matrices Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYbW9fTGNCODdYVjQ)
  - [ ] Test matrix deemed complete
