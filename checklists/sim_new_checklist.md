@@ -1,4 +1,4 @@
-# New Sim master checklist
+# New Sim Master Checklist Template
 
 ## Design
 - [ ] **Sim folder and design doc created** (Date: //) 
