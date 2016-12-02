@@ -55,9 +55,9 @@ Now if this is is not the first release, or you are using trusted shas above:
 
 - [ ] Check out the correct shas for dependencies: `grunt checkout-shas`
 
-- [ ] If you've branched (for the purposes of patching) any of the dependency repositories since the last rc version was
-published, you'll need to explicitly checkout those branches. For example, if you branched vegas for the 1.1 release of
-graphing-lines, do `cd ../vegas ; git checkout graphing-lines-1.1`.
+- [ ] If you are making a maintenance release, then you will have to branch that repo to perform the fix. To do so, name the branch
+ after the sim and version you are performing the maintenance release on. For example, if you branched vegas for the 1.1-phetio 
+ release of graphing-lines, the branch name in vegas will be graphing-lines-1.1-phetio.
 
 After setting up the release-candidate branches, continue the build and deploy:
 
