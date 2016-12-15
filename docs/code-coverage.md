@@ -1,7 +1,7 @@
 
 # Code Coverage
 
-Code coverage generation can currently be used with anything built with chipper's ```grunt``` or ```grunt build-js```. The code coverage is currently added into the require.js-processed code, so it will not be added to preloads (which is generally desired). We use [Istanbul](https://github.com/gotwarlost/istanbul) as the third-party library that handles the actual instrumentation and report generation.
+Code coverage generation can currently be used with anything built with chipper's ```grunt```. The code coverage is currently added into the require.js-processed code, so it will not be added to preloads (which is generally desired). We use [Istanbul](https://github.com/gotwarlost/istanbul) as the third-party library that handles the actual instrumentation and report generation.
 
 First, ```grunt``` needs to be run with a flag that 'instruments' the code. This adds lines into the code that records what is executed, and significantly increases the size of the code.
 
