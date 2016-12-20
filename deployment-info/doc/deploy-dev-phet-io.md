@@ -38,7 +38,7 @@ Dev versions are deployed to spot.colorado.edu at http://www.colorado.edu/physic
 - [ ] Update the version identifier in package.json. The identifier should contain "dev", e.g. "1.1.0-dev.3".
 - [ ] Commit & push.
 - [ ] Run the build process: `grunt --brand=phet-io`
-- [ ] Test locally before transferring the file to spot. Test wrappers such as the instance-proxies wrapper, and use ?launchLocalVersion so it will use
+- [ ] Test locally before transferring the file to spot. Test wrappers such as the instance-proxies wrapper, and use ?relativeSimPath so it will use
  relative path instead of looking on phet-io.colorado.edu
 - [ ] Deploy to spot
  * First time this sim is deployed: `grunt deploy-dev --brand=phet-io --mkdir` (requires 2 password inputs or ssh key)
@@ -49,6 +49,6 @@ Dev versions are deployed to spot.colorado.edu at http://www.colorado.edu/physic
 
 To test PhET-iO branded simulations:
 - [ ] Try launching the wrappers page `wrappers/index`.  This should be password protected.  Verify that your password works.
-- [ ] Test the screenshot and instance-proxies wrappers.  If it is a dev or rc version, use ?launchLocalVersion
+- [ ] Test the screenshot and instance-proxies wrappers.  If it is a dev or rc version, use ?relativeSimPath
 - [ ] Try launching the phet-io sim, for example: `sim-name_en-phetio.html?phetioStandalone`.
 - [ ] When testing on phet-server the location of the sim will be: https://phet-io.colorado.edu/sims/$SIM/$VERSION/wrappers/index/
