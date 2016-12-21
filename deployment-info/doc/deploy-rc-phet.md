@@ -32,7 +32,7 @@ Host spot
 
 ## Publishing an 'rc' (release candidate) version (PhET brand)
 
-The latest fully-tested SHAs (use these if appropriate): https://github.com/phetsims/gravity-and-orbits/blob/1.0/dependencies.json
+The latest fully-tested SHAs (use these if appropriate): https://github.com/phetsims/states-of-matter/blob/1.0/dependencies.json
 
 The latest SHAs under testing (use these if appropriate): https://github.com/phetsims/states-of-matter/blob/1.0/dependencies.json
 
