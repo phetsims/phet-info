@@ -82,7 +82,7 @@ camelcase.  Message patterns and long paragraphs will also use a different patte
 
 **Coding conventions**
 
-- [ ] Does the code meet PhET's code-style guidelines, as described in the [“Coding Style Guidelines” section of "PhET Development Overview"](https://docs.google.com/document/d/1odXkliRagq0zuf1_NdOtQ2BrkC9hwlISnPi2y-dKdrk/edit#heading=h.1oxr3ptyo50w)?
+- [ ] Does the code meet PhET's code-style guidelines, as described in the [“Coding Style Guidelines” section of "PhET Development Overview"](http://bit.ly/phet-html5-development-overview#bookmark=id.ltflelig4smk)?
 - [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/joist/blob/master/util/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
 
 **Documentation**
