@@ -36,3 +36,10 @@ grunt deploy-production --brand=phet-io
 (c)
 * review dependencies.json and make sure they match
 * update version in master
+
+Restore your working copy (optional)
+- [ ] Check out master for dependencies: `grunt checkout-master`
+- [ ] Check out master for the sim repo: `git checkout master`
+- [ ] Update node_modules for the sim: `npm update`
+- [ ] Navigate to chipper: `cd ../chipper`
+- [ ] Update node_modules for chipper: `npm update`

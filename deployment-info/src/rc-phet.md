@@ -30,4 +30,10 @@ After setting up the release-candidate branches, continue the build and deploy:
     * If the build server is having issues, you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`. 
     * Launch the sim and make sure it is working correctly.
 - [ ] After following these steps, please update the "latest SHAs under testing" above, if appropriate.
-- [ ] Check out master for dependencies: `grunt checkout-master` (optional)
+
+Restore your working copy (optional)
+- [ ] Check out master for dependencies: `grunt checkout-master`
+- [ ] Check out master for the sim repo: `git checkout master`
+- [ ] Update node_modules for the sim: `npm update`
+- [ ] Navigate to chipper: `cd ../chipper`
+- [ ] Update node_modules for chipper: `npm update`
