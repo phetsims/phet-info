@@ -15,6 +15,7 @@ If this is not the first release candidate on a release branch:
 
 - [ ] Check out the release branch, e.g.: `git checkout 1.0`
 - [ ] Check out the correct shas for dependencies: `grunt checkout-shas`
+- [ ] Run `npm update` in the sim repo and in chipper
 - [ ] If you are making a maintenance release, then you will have to branch that repo to perform the fix. To do so, name the branch
  after the sim and version you are performing the maintenance release on. For example, if you branched vegas for the 1.1 
  release of graphing-lines, the branch name in vegas will be graphing-lines-1.1.

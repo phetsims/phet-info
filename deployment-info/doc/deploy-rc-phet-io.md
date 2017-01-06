@@ -55,6 +55,8 @@ Now if this is is not the first release, or you are using trusted shas above:
 
 - [ ] Check out the correct shas for dependencies: `grunt checkout-shas`
 
+- [ ] Run `npm update` in the sim repo and in chipper
+
 - [ ] If you are making a maintenance release, then you will have to branch that repo to perform the fix. To do so, name the branch
  after the sim and version you are performing the maintenance release on. For example, if you branched vegas for the 1.1-phetio 
  release of graphing-lines, the branch name in vegas will be graphing-lines-1.1-phetio.
