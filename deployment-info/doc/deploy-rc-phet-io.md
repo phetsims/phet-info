@@ -76,7 +76,13 @@ If you don't do this step deploying to spot will not work, as there will already
     * Please see [PhET-iO Testing after deployment](#phet-io-testing-after-deployment) for phet-io specific testing instructions.
 - [ ] After following these steps, please update the "latest SHAs under testing" above, if appropriate.  Keep in mind
 that not all sims use all repos.
-- [ ] Check out master for dependencies: `grunt checkout-master` (optional)
+
+Restore your working copy (optional)
+- [ ] Check out master for dependencies: `grunt checkout-master`
+- [ ] Check out master for the sim repo: `git checkout master`
+- [ ] Update node_modules for the sim: `npm update`
+- [ ] Navigate to chipper: `cd ../chipper`
+- [ ] Update node_modules for chipper: `npm update`
 
 
 ### PhET-iO Testing after deployment

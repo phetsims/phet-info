@@ -24,3 +24,10 @@ make sure the sim page appears correctly on the website. Talk to @jonathanolson 
 their version numbers are correct.
 - [ ] Update the "Latest fully tested SHAs" in the PhET brand RC version of this document.
 - [ ] After the new simulation is available from the website, the 3rd party contributions page must be updated.  Directions for how to do this are in reportThirdParty.js.
+
+Restore your working copy (optional)
+- [ ] Check out master for dependencies: `grunt checkout-master`
+- [ ] Check out master for the sim repo: `git checkout master`
+- [ ] Update node_modules for the sim: `npm update`
+- [ ] Navigate to chipper: `cd ../chipper`
+- [ ] Update node_modules for chipper: `npm update`
