@@ -25,9 +25,9 @@ Use version names of the following form:
 ## Step 5. Deploy the tested version
 * FIRST DEV RELEASE FOR A SIM: `grunt deploy-dev --mkdir` (requires 2 password inputs or ssh key)
 * SECOND OR LATER DEV RELEASE: `grunt deploy-dev`
-* RC: `grunt deploy-rc`
+* RC for PHET_BRAND: `grunt deploy-rc`
 * RC for PHET_IO: `grunt deploy-rc --brand=phet-io`
-* PRODUCTION: `grunt deploy-production --locales=*` (or just `grunt deploy-production` for ph-scale and ph-scale-basics, see https://github.com/phetsims/phet-info/issues/10).  This will instruct the build server to build the English version of the simulation as well as all currently deployed translated versions and deploy them on the web site.  This will also deploy the locally built version to the dev server.  (Note: If you're sure that the version of chipper that is being used is from Nov 10 2015 or later, the `--locales=*` flag can be omitted.)
+* PRODUCTION for PHET_BRAND: `grunt deploy-production --locales=*` (or just `grunt deploy-production` for ph-scale and ph-scale-basics, see https://github.com/phetsims/phet-info/issues/10).  This will instruct the build server to build the English version of the simulation as well as all currently deployed translated versions and deploy them on the web site.  This will also deploy the locally built version to the dev server.  (Note: If you're sure that the version of chipper that is being used is from Nov 10 2015 or later, the `--locales=*` flag can be omitted.)
 * PRODUCTION for PHET_IO: `grunt deploy-production --brand=phet-io --locales=*` (or just `grunt deploy-production --brand=phet-io` for ph-scale and ph-scale-basics, see https://github.com/phetsims/phet-info/issues/10).  This will instruct the build server to build the English version of the simulation as well as all currently deployed translated versions and deploy them on the web site.  This will also deploy the locally built version to the dev server.  (Note: If you're sure that the version of chipper that is being used is from Nov 10 2015 or later, the `--locales=*` flag can be omitted.)
 
 ## Step 6. Test the deployed version
