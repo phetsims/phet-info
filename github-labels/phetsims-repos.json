@@ -376,5 +376,8 @@
   },
   {
     "name":"circuit-constructor-kit-dc"
+  },
+  {
+    "name":"gas-properties"
   }
 ]
