@@ -127,8 +127,8 @@ the locally built version to the dev server.
 
 ## Step 8. Restore your working copy
 * Check out master for dependencies: `grunt checkout-master`
+* Run again to prune and update node modules: `grunt checkout-master`, **Skip This Step** if you are using a chipper sha that is newer than Jan 24th, 2017.
 * Check out master for the sim repo: `git checkout master`
-* Update node_modules: `npm prune` and `npm update` in the sim repo and in chipper.  **Skip This Step** if you are using a chipper sha that is newer than Jan 24th, 2017.
   
   
 ## Deploy a batch of production sims.
