@@ -126,8 +126,8 @@ the locally built version to the dev server.
 * **RC | PRODUCTION**: Update the "latest SHAs under testing" above, if appropriate.  **NOTE**: Keep in mind that not all sims use all repos.
 
 ## Step 8. Restore your working copy
-* Check out master for the sim repo: `git checkout master`
 * Check out master for dependencies: `grunt checkout-master`
+* Check out master for the sim repo: `git checkout master`
 * Update node_modules: `npm prune` and `npm update` in the sim repo and in chipper.  **Skip This Step** if you are using a chipper sha that is newer than Jan 24th, 2017.
   
   
