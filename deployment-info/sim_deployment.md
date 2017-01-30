@@ -40,7 +40,7 @@ dependencies with them, and the rest will be filled in with master during the bu
 
 The latest fully-tested SHAs (use these if appropriate): https://github.com/phetsims/states-of-matter/blob/1.0/dependencies.json
 
-The latest SHAs under testing (use these if appropriate): https://github.com/phetsims/states-of-matter/blob/1.0/dependencies.json
+The latest SHAs under testing (use these if appropriate): http://www.colorado.edu/physics/phet/dev/html/gravity-force-lab/2.1.0-rc.1/dependencies.json
 
 
 ## Step 1. Set up the codebase
