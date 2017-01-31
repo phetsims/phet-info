@@ -116,13 +116,13 @@ the locally built version to the dev server.
           empty value. Cookie usage cannot be covered in entirety here. To use cookies with `curl` 
           see [this answer](http://stackoverflow.com/a/7186160/2496827). To add custom cookies in 
           Chrome [see this solution](http://superuser.com/a/636697/493443).
-    + **INITIAL_PUBLICATION**: Generate and check in (on the master branch) the auto-generated readme file for a published sim.  The README.md file can be created using ```grunt published-README```.
-    + **NOT_A_NEW_SIMULATION**: Verify that any previously existing translations are still available and that
+   + **INITIAL_PUBLICATION**: Generate and check in (on the master branch) the auto-generated readme file for a published sim.  The README.md file can be created using ```grunt published-README```.
+   + **NOT_A_NEW_SIMULATION**: Verify that any previously existing translations are still available and that
         their version numbers are correct.
-    + After the new simulation is available from the website, the 3rd party contributions page must be updated.
+   + After the new simulation is available from the website, the 3rd party contributions page must be updated.
     Directions for how to do this are in `chipper/js/grunt/reportThirdParty.js`. 
-    * **PRODUCTION FOR PHET_IO_BRAND**:
-      + If this is a version that will be used with students, then make sure to remove the password protection. See https://github.com/phetsims/phet-io/blob/master/doc/phetio-security.md for details.
+* **PRODUCTION FOR PHET_IO_BRAND**:
+   + If this is a version that will be used with students, then make sure to remove the password protection. See https://github.com/phetsims/phet-io/blob/master/doc/phetio-security.md for details.
 * **RC | PRODUCTION**: Update the "latest SHAs under testing" above, if appropriate.  **NOTE**: Keep in mind that not all sims use all repos.
 
 ## Step 8. Restore your working copy
