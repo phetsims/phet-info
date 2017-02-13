@@ -53,7 +53,7 @@ The latest SHAs under testing (use these if appropriate): http://www.colorado.ed
     version, make, following the step above, like you are publishing the first rc.
     + If you are using the trusted SHAs from above, copy them into the top level `dependencies.json`
     + `grunt checkout-shas` to checkout any supporting branches from other repos. 
-    + `npm update` in the sim repo and in chipper. If there are failures during this step then you must 
+    + `npm prune` and `npm update` in the sim repo and in chipper. If there are failures during this step then you must 
     `rm -rf node_modules` and `npm install` in that directory instead.
     + **Maintenance Release**:  If you needed to branch any dependency repositories for the purposes of patching, name the branches
        after the sim and version you are performing the maintenance release on. For example, if you branched vegas for the 1.1 
