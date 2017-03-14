@@ -17,14 +17,13 @@ PhET code-review checklist
 - [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter 'stringTest=X')
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter 'stringTest=xss' (test passes if sim does not redirect, OK if sim crashes or fails to fully start). Only test on one desktop platform.
 - [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 is published.  Strings keys should
-generally match the values, such as `{binaryProbability: "Binary Probability"}`. Screen names should use `screen.screenName` instead of
-camelcase.  Message patterns and long paragraphs will also use a different pattern.
+generally match the values, such as `{binaryProbability: "Binary Probability"}`. Screen names should use camelcase, like so  `screen.screenName`. Message patterns and long paragraphs will also use a different pattern. 
 
 **Repository structure**
 
 - [ ] Are all required files and directories present?
 
-      For a sim repository named “my-repo”, the general structure should look like this (where assets/, audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
+      For a sim repository named “my-repo”, the general structure should look like this (where assets/, audio/, images/, or dependencies.json may be omitted if the sim doesn’t have those types of assets).
 
 ```js
    my-repo/
@@ -38,6 +37,7 @@ camelcase.  Message patterns and long paragraphs will also use a different patte
          license.json
       js/
          (see section below)
+      dependencies.json
       .gitignore
       my-repo_en.html
       my-repo-strings_en.json
