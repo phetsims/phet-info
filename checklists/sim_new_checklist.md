@@ -2,8 +2,8 @@
 
 ## Design
 - [ ] **Sim folder and design doc created** (Date: //) 
- - [ ] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) using phet-docs account
- - [ ] Place design doc in the sim folder
+  - [ ] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) using phet-docs account
+  - [ ] Place design doc in the sim folder
 - [ ] **Learning goals and standards identified** (Date: //)
 - [ ] **Design concept complete**  (Date: //)
 - [ ] **Wireframes complete** (Date: //) 
