@@ -49,5 +49,5 @@
 ## QA
 - [ ] **Dev testing complete** (Date: //) 
 - [ ] **First release candidate** (Date: //)
- - [ ] Place in matrix in [Testing Matrices Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYbW9fTGNCODdYVjQ)
- - [ ] Test matrix deemed complete
+  - [ ] Place in matrix in [Testing Matrices Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYbW9fTGNCODdYVjQ)
+  - [ ] Test matrix deemed complete
