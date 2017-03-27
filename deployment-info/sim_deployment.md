@@ -75,12 +75,7 @@ Use version names of the following form:
 * For version numbers 1.0.0 and higher without suffixes, an update check failure message appears in the console. This is 
 expected for local viewing, and should not appear when the sim is published on the PhET Website
 * **PHET_BRAND**: Launch the simulation and make sure it behaves properly
-* **PHET_IO**: 
-    + Try launching the wrappers page `wrappers/index`.  This should be password protected if on a server.  Verify that your password works.
-    + Test the screenshot and instance-proxies wrappers.  If it is a dev version, rc version, or you are testing locally, 
-    use ?relativeSimPath so it will use relative path instead of looking on phet-io.colorado.edu
-    + Try launching the phet-io sim without a wrapper, for example: `sim-name_en-phetio.html?phetioStandalone`.
-
+* **PHET_IO**: Launch the wrappers page `wrappers/index` and test all the links
 
 ## Step 5. Deploy the tested version
 * **PHET_IO**: add `--brand=phet-io` to the end of the command. 
@@ -100,9 +95,9 @@ the locally built version to the dev server.
 ## Step 6. Test the deployed version
 * If the build server is having issues, you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`. 
 * **DEV | RC**: Versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/
-* **PHET_IO**: Versions are deployed to phet-io.colorado.edu at: https://phet-io.colorado.edu/sims/$SIM/$VERSION/wrappers/index/.
+* **PHET_IO**: Versions are deployed to phet-io.colorado.edu at: https://phet-io.colorado.edu/sims/$SIM/$VERSION/wrappers/index/ 
+  and should be password protected.  Verify that your password works.
 * Run Step 4, but for the published version
-
 
 ## Step 7. Post-publication steps
 * **PRODUCTION FOR PHET_BRAND**: 
