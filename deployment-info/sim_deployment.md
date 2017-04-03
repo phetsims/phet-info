@@ -38,9 +38,11 @@
 Keep in mind these SHAs may not include all of the repos for your sim, but you can still overwrite your 
 dependencies with them, and the rest will be filled in with master during the build.
 
-The latest fully-tested SHAs (use these if appropriate): https://github.com/phetsims/states-of-matter/blob/1.0/dependencies.json
+The latest fully-tested SHAs (use these if appropriate): 
+https://github.com/phetsims/states-of-matter/blob/1.0/dependencies.json
 
-The latest SHAs under testing (use these if appropriate): http://www.colorado.edu/physics/phet/dev/html/unit-rates/1.0.0-rc.1/dependencies.json
+The latest SHAs under testing (use these if appropriate): 
+http://www.colorado.edu/physics/phet/dev/html/unit-rates/1.0.0-rc.1/dependencies.json
 
 
 ## Step 1. Set up the codebase
