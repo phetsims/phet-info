@@ -42,7 +42,7 @@
   - [ ] Code review checklist
   - [ ] Model description 
 - [ ] **Published** (Date: //) 
-  - [ ] Update repo README to published template
+  - [ ] Update repo README to published template (in master and release branch)
  
 
 
