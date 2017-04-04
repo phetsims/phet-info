@@ -97,6 +97,7 @@ the locally built version to the dev server.
 ## Step 6. Test the deployed version
 * If the build server is having issues, you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`. 
 * **DEV | RC**: Versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/
+* **PRODUCTION**: Versions are deployed to https://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
 * **PHET_IO**: Versions are deployed to phet-io.colorado.edu at: https://phet-io.colorado.edu/sims/$SIM/$VERSION/wrappers/index/ 
   and should be password protected.  Verify that your password works.
 * Run Step 4, but for the published version
