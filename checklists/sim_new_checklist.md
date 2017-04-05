@@ -18,15 +18,18 @@
   - [ ] Carefully review ?showPointerAreas
   - [ ] No new feature requests
 - [ ] **Pre-publication items** 
-  - [ ] Screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
+  - [ ] Main screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
+  - [ ] Auxilary screenshots (up to 3 additional)
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Teacher Guide
   - [ ] Add an activity
-  - [ ] Sim primer
+  - [ ] Sim primer draft
   - [ ] Verify credits
-- [ ] **Add to Edmodo**
-- [ ] **Add to [Gooru](http://gooru.org/PhET/content/resources)** (signed in as phethelp)
-- [ ] **Hold postmortem if applicable** (Date: //) 
+ - [ ] **Post-publication items** 
+  - [ ] Add to Edmodo
+  - [ ] Add to [Gooru](http://gooru.org/PhET/content/resources) (signed in as phethelp)
+  - [ ] Sim primer (ideally within 1 month of publication)
+  - [ ] Hold postmortem if applicable (Date: //) 
 
 ## Implementation
 - [ ] **Sim repo created** (Date: //) 
