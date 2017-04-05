@@ -25,7 +25,7 @@
   - [ ] Add an activity
   - [ ] Sim primer draft
   - [ ] Verify credits
- - [ ] **Post-publication items** 
+- [ ] **Post-publication items** 
   - [ ] Add to Edmodo
   - [ ] Add to [Gooru](http://gooru.org/PhET/content/resources) (signed in as phethelp)
   - [ ] Sim primer (ideally within 1 month of publication)
