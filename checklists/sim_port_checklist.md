@@ -2,8 +2,8 @@
 
 ## Design
 - [ ] **Sim folder and design doc created** (Date: //) 
- - [ ] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) using phet-docs account
- - [ ] Place design doc in the sim folder
+  - [ ] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) using phet-docs account
+  - [ ] Place design doc in the sim folder
 - [ ] **Legacy sim docs/info gathered**
 - [ ] **Learning goals and standards identified** (Date: //)
 - [ ] **Design concept complete**  (Date: //)
@@ -19,15 +19,18 @@
   - [ ] Carefully review ?showPointerAreas
   - [ ] No new feature requests
 - [ ] **Pre-publication items** 
-  - [ ] Screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
+  - [ ] Main screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
+  - [ ] Auxilary screenshots (up to 3 additional)
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Teacher Guide
-  - [ ] Compatible activities ([author spreadsheet](https://docs.google.com/spreadsheets/d/1AOc1vy0HfEeJQ9sT0Vs_sr6dqmsEHfq7HWUBGQV_VQA/edit#gid=0))
-  - [ ] Sim primer
+  - [ ] Add an activity
+  - [ ] Sim primer draft
   - [ ] Verify credits
-- [ ] **Update [Gooru PhET URL tracker](https://docs.google.com/spreadsheets/d/19sffdKj9NdMuFdp3NcFeJmPyDY-3KsoM7Pbu84gUVtw/edit#gid=636879231)**
-- [ ] **Add to Edmodo**
-- [ ] **Hold postmortem if applicable** (Date: //) 
+- [ ] **Post-publication items** 
+  - [ ] Add to Edmodo
+  - [ ] Add to [Gooru](http://gooru.org/PhET/content/resources) (signed in as phethelp)
+  - [ ] Sim primer (create issue, publish ideally within 1 month of live sim)
+  - [ ] Hold postmortem if applicable (Date: //) 
 
 ## Implementation
 - [ ] **Sim repo created** (Date: //) 
