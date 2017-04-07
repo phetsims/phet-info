@@ -388,5 +388,8 @@
   },
   {
     "name":"coulombs-law"
+  },
+  {
+    "name":"inverse-square-law-common"
   }
 ]
