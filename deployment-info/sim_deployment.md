@@ -1,7 +1,7 @@
 # Deploying a PhET Simulation
 
 ## Before Beginning.  
-####Build process configuration
+#### Build process configuration
                      
  Before building or deploying a simulation, familiarize yourself with configuration options for PhET's build process.
  
