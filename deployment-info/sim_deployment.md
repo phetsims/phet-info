@@ -66,7 +66,8 @@ Use version names of the following form:
 * **DEV**: The version number should contain -dev, such as "1.0.0-dev.2". 
 * **RC**: The version number should contain -rc, such as "1.0.0-rc.2" 
 * **PRODUCTION**: "1.0.1"
-* **PHET_IO**: use the patterns above and the build process will automatically append "-phetio" into the version name
+* **PHET_IO**: use the patterns above and the build process will automatically insert "phetio" into the version name.  
+For instance, 2.1.7-phetiodev.3, 2.1.6-phetiorc.4 or 2.2.3-phetio.
 * Commit & push to Github.
 
 ## Step 3. Build the simulation with chipper
