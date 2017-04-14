@@ -10,7 +10,7 @@
 - [ ] **Wireframes complete** (Date: //) 
 - [ ] **Mockups complete** (Date: //) 
   - [ ] Mockups checked for colorblind and greyscale
-- [ ] **iO discussoin"**
+- [ ] **Features for PhET-iO discussion** 
 - [ ] **Interviews complete** (Date: //) 
   - [ ] Results reported to team
   - [ ] Notes pasted into design doc
