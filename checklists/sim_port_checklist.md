@@ -28,7 +28,7 @@
   - [ ] Verify credits
 - [ ] **Post-publication items** 
   - [ ] Add to Edmodo
-  - [ ] Add to [Gooru](http://gooru.org/PhET/content/resources) (signed in as phethelp)
+  - [ ] Add to [Gooru](http://gooru.org/PhET/content/resources), remove legacy version (signed in as phethelp)
   - [ ] Sim primer (create issue, publish ideally within 1 month of live sim)
   - [ ] Hold postmortem if applicable (Date: //) 
 
