@@ -101,7 +101,8 @@ the locally built version to the dev server.
 * **PRODUCTION**: Versions are deployed to https://phet.colorado.edu/sims/html/{{SIM}}/latest/{{SIM}}_en.html
 * **PHET_IO**: Versions are deployed to phet-io.colorado.edu at: https://phet-io.colorado.edu/sims/{{SIM}}/{{VERSION}}/wrappers/index/ 
   and should be password protected.  Verify that your password works.
-* Run Step 4, but for the published version
+* Run Step 4, but for the published version. NOTE: A username and password are required to test deployed wrappers 
+for phet-io versions. Ask a PhET developer for credentials.
 
 ## Step 7. Post-publication steps
 * **PRODUCTION FOR PHET_BRAND**: 
