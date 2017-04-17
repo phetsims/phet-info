@@ -1,11 +1,19 @@
 # Deploying a PhET Simulation
 
+#### Variables to replace in the instructions below:
+ 
+ ```
+ {{SIM}} = the name of your sim's repo
+ {{VERSION}} = the identifier of your sim, eg "1.0.0-rc.2"
+ {{HOME}} = your home directory
+ ```
+ 
 ## Before Beginning.  
 #### Build process configuration
                      
  Before building or deploying a simulation, familiarize yourself with configuration options for PhET's build process.
  
- Your default build configuration is specified in `$HOME/.phet/build-local.json`. Describing or identifying the entries 
+ Your default build configuration is specified in `{{HOME}}/.phet/build-local.json`. Describing or identifying the entries 
  in `build-local.json` is beyond the scope of this document; ask a PhET developer for help in setting up this file. At 
  a minimum you will need `devUsername` and `buildServerAuthorizationCode`.
  
@@ -25,14 +33,6 @@
  ```
  - On spot, you'll need to add your public key (found in ~/.ssh/id_rsa.pub) to a file ~/.ssh/authorized_keys
  - Change the permissions of the file so it is not group writable: `chmod g-w authorized_keys`
- 
- #### Variables to replace in the instructions below:
- 
- ```
- $SIM = the name of your sim's repo
- $VERSION = the identifier of your sim, eg "1.0.0-rc.2"
- $HOME = your home directory
- ```
  
 #### Latest SHAs: 
 Keep in mind these SHAs may not include all of the repos for your sim, but you can still overwrite your 
@@ -77,8 +77,8 @@ For instance, 2.1.7-phetiodev.3, 2.1.6-phetiorc.4 or 2.2.3-phetio.
 ## Step 4. Test the built version locally
 * For version numbers 1.0.0 and higher without suffixes, an update check failure message appears in the console. This is 
 expected for local viewing, and should not appear when the sim is published on the PhET Website
-* **PHET_BRAND**: Test $SIM/build/$SIM_en.html.
-* **PHET_IO**: Navigate to $SIM/build/wrappers and test all of the links.
+* **PHET_BRAND**: Test {{SIM}}/build/{{SIM}}_en.html.
+* **PHET_IO**: Navigate to {{SIM}}/build/wrappers and test all of the links.
 
 ## Step 5. Deploy the tested version
 * **PHET_IO**: add `--brand=phet-io` to the end of the command. 
@@ -98,8 +98,8 @@ the locally built version to the dev server.
 ## Step 6. Test the deployed version
 * If the build server is having issues, you can ssh into phet and look at the build-server logs with: `sudo journalctl -fu build-server`. 
 * **DEV | RC**: Versions are deployed to spot.colorado.edu at http://www.colorado.edu/physics/phet/dev/html/
-* **PRODUCTION**: Versions are deployed to https://phet.colorado.edu/sims/html/$SIM/latest/$SIM_en.html
-* **PHET_IO**: Versions are deployed to phet-io.colorado.edu at: https://phet-io.colorado.edu/sims/$SIM/$VERSION/wrappers/index/ 
+* **PRODUCTION**: Versions are deployed to https://phet.colorado.edu/sims/html/{{SIM}}/latest/{{SIM}}_en.html
+* **PHET_IO**: Versions are deployed to phet-io.colorado.edu at: https://phet-io.colorado.edu/sims/{{SIM}}/{{VERSION}}/wrappers/index/ 
   and should be password protected.  Verify that your password works.
 * Run Step 4, but for the published version
 
