@@ -78,7 +78,7 @@ For instance, 2.1.7-phetiodev.3, 2.1.6-phetiorc.4 or 2.2.3-phetio.
 * For version numbers 1.0.0 and higher without suffixes, an update check failure message appears in the console. This is 
 expected for local viewing, and should not appear when the sim is published on the PhET Website
 * **PHET_BRAND**: Launch the simulation and make sure it behaves properly
-* **PHET_IO**: Launch the wrappers page `wrappers/index` and test all the links
+* **PHET_IO**: Navigate to $SIM/build/wrappers and test all of the links.
 
 ## Step 5. Deploy the tested version
 * **PHET_IO**: add `--brand=phet-io` to the end of the command. 
