@@ -19,9 +19,9 @@
  
  Run `grunt --help` for a list of build tasks and their options. Values specified on the `grunt` command line typically override values specified in `build-local.json`.
  
- (Optional) Create an ssh key if you'd like to avoid entering your password for dev-related build tasks:
+ (Optional) Create an RSA key if you'd like to avoid entering your password for dev-related build tasks:
  
- - Create an rsa key in `localhost@~/.ssh/`. (Run `ssh-keygen -t rsa` to generate a key if you don't already have one).
+ - Create an RSA key in `localhost@~/.ssh/`. (Run `ssh-keygen -t rsa` to generate a key if you don't already have one).
  - Add an entry for spot in `localhost@~/.ssh/config` like so (you may need to create this file):
  
  ```
