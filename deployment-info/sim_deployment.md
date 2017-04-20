@@ -23,7 +23,7 @@
 
 Create an RSA key if you'd like to avoid entering your password for dev-related build tasks:
  
- - Create an RSA key in `localhost@~/.ssh/`. (Run `ssh-keygen -t rsa` to generate a key if you don't already have one).
+ - If you don't already have an RSA key, generate one by running `ssh-keygen -t rsa`.
  - Add an entry for spot in `localhost@~/.ssh/config` like so (you may need to create this file):
  
  ```
