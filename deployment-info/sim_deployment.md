@@ -21,8 +21,8 @@
  
  (Optional) Create an ssh key if you'd like to avoid entering your password for dev-related build tasks:
  
- - create an rsa key in ~/.ssh (run "ssh-keygen -t rsa" to generate a key if you don't already have one).
- - add an entry for spot in ~/.ssh/config like so (you may need to create this file):
+ - Create an rsa key in `localhost@~/.ssh`. (Run `ssh-keygen -t rsa` to generate a key if you don't already have one).
+ - Add an entry for spot in `localhost@~/.ssh/config` like so (you may need to create this file):
  
  ```
  Host spot
@@ -31,8 +31,8 @@
     Port 22
     IdentityFile ~/.ssh/id_rsa
  ```
- - On spot, you'll need to add your public key (found in ~/.ssh/id_rsa.pub) to a file ~/.ssh/authorized_keys
- - Change the permissions of the file so it is not group writable: `chmod g-w authorized_keys`
+ - Add your public key (found in `localhost@~/.ssh/id_rsa.pub`) to `spot@~/.ssh/authorized_keys`
+ - Change the permissions of `authorized_keys` so it is not group writable: `chmod g-w authorized_keys`
  
 #### Latest SHAs: 
 Keep in mind these SHAs may not include all of the repos for your sim, but you can still overwrite your 
