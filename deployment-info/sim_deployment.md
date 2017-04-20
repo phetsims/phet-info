@@ -5,7 +5,6 @@
  ```
  {{SIM}} = the name of your sim's repo
  {{VERSION}} = the version identifier of your sim, eg "1.0.0-rc.2"
- {{HOME}} = your home directory
  {{IDENTIKEY}} = your CU IdentiKey login name
  ```
  
@@ -14,7 +13,7 @@
                      
  Before building or deploying a simulation, familiarize yourself with configuration options for PhET's build process.
  
- Your default build configuration is specified in `{{HOME}}/.phet/build-local.json`. Describing or identifying the entries 
+ Your default build configuration is specified in `~/.phet/build-local.json`. Describing or identifying the entries 
  in `build-local.json` is beyond the scope of this document; ask a PhET developer for help in setting up this file. At 
  a minimum you will need `devUsername` and `buildServerAuthorizationCode`.
  
