@@ -9,7 +9,7 @@
  ```
  
 ## Before Beginning.  
-#### Build process configuration
+#### Configure the build process
                      
  Before building or deploying a simulation, familiarize yourself with configuration options for PhET's build process.
  
@@ -19,7 +19,9 @@
  
  Run `grunt --help` for a list of build tasks and their options. Values specified on the `grunt` command line typically override values specified in `build-local.json`.
  
- (Optional) Create an RSA key if you'd like to avoid entering your password for dev-related build tasks:
+#### Create an RSA key (optional) 
+
+Create an RSA key if you'd like to avoid entering your password for dev-related build tasks:
  
  - Create an RSA key in `localhost@~/.ssh/`. (Run `ssh-keygen -t rsa` to generate a key if you don't already have one).
  - Add an entry for spot in `localhost@~/.ssh/config` like so (you may need to create this file):
