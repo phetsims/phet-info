@@ -37,7 +37,7 @@ generally match the values, such as `{binaryProbability: "Binary Probability"}`.
          license.json
       js/
          (see section below)
-      dependencies.json
+      dependencies.json (@samreid thinks this is only necessary in a branch)
       .gitignore
       my-repo_en.html
       my-repo-strings_en.json
