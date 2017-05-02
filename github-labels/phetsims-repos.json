@@ -391,5 +391,8 @@
   },
   {
     "name":"inverse-square-law-common"
+  },
+  {
+    "name":"equality-explorer"
   }
 ]
