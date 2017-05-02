@@ -5,34 +5,36 @@
  ```
  {{SIM}} = the name of your sim's repo
  {{VERSION}} = the version identifier of your sim, eg "1.0.0-rc.2"
- {{HOME}} = your home directory
+ {{IDENTIKEY}} = your CU IdentiKey login name
  ```
  
 ## Before Beginning.  
-#### Build process configuration
+#### Configure the build process
                      
  Before building or deploying a simulation, familiarize yourself with configuration options for PhET's build process.
  
- Your default build configuration is specified in `{{HOME}}/.phet/build-local.json`. Describing or identifying the entries 
+ Your default build configuration is specified in `~/.phet/build-local.json`. Describing or identifying the entries 
  in `build-local.json` is beyond the scope of this document; ask a PhET developer for help in setting up this file. At 
  a minimum you will need `devUsername` and `buildServerAuthorizationCode`.
  
  Run `grunt --help` for a list of build tasks and their options. Values specified on the `grunt` command line typically override values specified in `build-local.json`.
  
- (Optional) Create an ssh key if you'd like to avoid entering your password for dev-related build tasks:
+#### Configure an RSA key 
+
+Configure an RSA key, or you will be prompted multiple times for a password during dev-related build tasks.
  
- - create an rsa key in ~/.ssh (run "ssh-keygen -t rsa" to generate a key if you don't already have one).
- - add an entry for spot in ~/.ssh/config like so (you may need to create this file):
+ - If you don't already have an RSA key, generate one by running `ssh-keygen -t rsa`.
+ - Add an entry for spot in `localhost@~/.ssh/config` using this template:
  
  ```
  Host spot
     HostName spot.colorado.edu
-    User [identikey]
+    User {{IDENTIKEY}}
     Port 22
     IdentityFile ~/.ssh/id_rsa
  ```
- - On spot, you'll need to add your public key (found in ~/.ssh/id_rsa.pub) to a file ~/.ssh/authorized_keys
- - Change the permissions of the file so it is not group writable: `chmod g-w authorized_keys`
+ - Add your public key (found in `localhost@~/.ssh/id_rsa.pub`) to `spot@~/.ssh/authorized_keys`
+ - Change the permissions of `authorized_keys` so it is not group writable: `chmod g-w authorized_keys`
  
 #### Latest SHAs: 
 Keep in mind these SHAs may not include all of the repos for your sim, but you can still overwrite your 
@@ -101,7 +103,8 @@ the locally built version to the dev server.
 * **PRODUCTION**: Versions are deployed to https://phet.colorado.edu/sims/html/{{SIM}}/latest/{{SIM}}_en.html
 * **PHET_IO**: Versions are deployed to phet-io.colorado.edu at: https://phet-io.colorado.edu/sims/{{SIM}}/{{VERSION}}/wrappers/index/ 
   and should be password protected.  Verify that your password works.
-* Run Step 4, but for the published version
+* Run Step 4, but for the published version. NOTE: A username and password are required to test deployed wrappers 
+for phet-io versions. Ask a PhET developer for credentials.
 
 ## Step 7. Post-publication steps
 * **PRODUCTION FOR PHET_BRAND**: 

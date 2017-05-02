@@ -17,13 +17,13 @@ PhET code-review checklist
 - [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter 'stringTest=X')
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter 'stringTest=xss' (test passes if sim does not redirect, OK if sim crashes or fails to fully start). Only test on one desktop platform.
 - [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 is published.  Strings keys should
-generally match the values, such as `{binaryProbability: "Binary Probability"}`. Screen names should use camelcase, like so  `screen.screenName`. Message patterns and long paragraphs will also use a different pattern. 
+generally match the values, such as `{binaryProbability: "Binary Probability"}`. Screen names should use camelcase, like so  `screen.screenName`. For patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) choose keys that are unlikley to conflict with strings that might be needed in the future.  For example, for `"{{price}}"` consider using key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
 
 **Repository structure**
 
 - [ ] Are all required files and directories present?
 
-      For a sim repository named “my-repo”, the general structure should look like this (where assets/, audio/, images/, or dependencies.json may be omitted if the sim doesn’t have those types of assets).
+  For a sim repository named “my-repo”, the general structure should look like this (where assets/, audio/, images/, or dependencies.json may be omitted if the sim doesn’t have those types of assets).
 
 ```js
    my-repo/
@@ -37,7 +37,7 @@ generally match the values, such as `{binaryProbability: "Binary Probability"}`.
          license.json
       js/
          (see section below)
-      dependencies.json
+      dependencies.json (@samreid thinks this is only necessary in a branch)
       .gitignore
       my-repo_en.html
       my-repo-strings_en.json
@@ -51,7 +51,7 @@ generally match the values, such as `{binaryProbability: "Binary Probability"}`.
 
 - [ ] Is the js/ directory properly structured?
 
-      All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims, where the subdirectory matches the repo name).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Lab”, the general directory structure should look like this:
+   All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims, where the subdirectory matches the repo name).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Lab”, the general directory structure should look like this:
 
 ```js
    my-repo/
@@ -82,12 +82,12 @@ generally match the values, such as `{binaryProbability: "Binary Probability"}`.
 
 **Coding conventions**
 
-- [ ] Does the code meet PhET's code-style guidelines, as described in the [“Coding Style Guidelines” section of "PhET Development Overview"](http://bit.ly/phet-html5-development-overview#bookmark=id.ltflelig4smk)?
+- [ ] Does the code meet PhET's code-style guidelines, as described in the [“Coding Style Guidelines” section of the "PhET Development Overview"](http://bit.ly/phet-html5-development-overview#bookmark=id.ltflelig4smk)?
 - [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/joist/blob/master/util/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
 
 **Documentation**
 
-- [ ] Are documentation conventions followed, as described in the [“Coding Style Guidelines” section of the PhET Development Overview](https://docs.google.com/document/d/1odXkliRagq0zuf1_NdOtQ2BrkC9hwlISnPi2y-dKdrk/edit#heading=h.1oxr3ptyo50w)?
+- [ ] Are documentation conventions followed, as described in the [“Coding Style Guidelines” section of the PhET Development Overview](http://bit.ly/phet-html5-development-overview#bookmark=id.ltflelig4smk)?
 - [ ] Does model.md adequately describe the model, in terms appropriate for teachers?
 - [ ] Does implementation-notes.md adequately describe the implementation, with an overview that will be useful to future maintainers?
 - [ ] Are sim-specific query parameters (if any) identified and documented in one .js file in js/common/ or js/ (if there is no common/)? The .js file should be named `{{REPO}}QueryParameters`, for example ArithmeticQueryParameters for the aritmetic repository.
