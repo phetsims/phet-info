@@ -22,8 +22,7 @@ generally match the values, such as `{binaryProbability: "Binary Probability"}`.
 **Repository structure**
 
 - [ ] Are all required files and directories present?
-
-  For a sim repository named “my-repo”, the general structure should look like this (where assets/, audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
+For a sim repository named “my-repo”, the general structure should look like this (where assets/, audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
 
 ```js
    my-repo/
@@ -50,8 +49,7 @@ generally match the values, such as `{binaryProbability: "Binary Probability"}`.
    For a common-code repository, the structure is similar, but some of the files and directories may not be present if the repo doesn’t have audio, images, strings, or a demo application.
 
 - [ ] Is the js/ directory properly structured?
-
-   All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims, where the subdirectory matches the repo name).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Lab”, the general directory structure should look like this:
+All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims, where the subdirectory matches the repo name).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Lab”, the general directory structure should look like this:
 
 ```js
    my-repo/
@@ -77,7 +75,7 @@ generally match the values, such as `{binaryProbability: "Binary Probability"}`.
 - [ ] Does sim-config.js refer to any dependencies that are not used by the sim?
 - [ ] Is the LICENSE file correct? (GPL v3 for sims, MIT for common code)
 - [ ] Does .gitignore match the one in simula-rasa?
-- [ ] Are the credits in sim-main.js correct?
+- [ ] Does a GitHub issue exist for tracking credits, to ensure that they are correct before publication?
 - [ ] Are there git repository branches that are no longer used and should be pruned?
 
 **Coding conventions**
