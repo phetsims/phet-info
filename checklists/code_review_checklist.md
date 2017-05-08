@@ -23,7 +23,7 @@ generally match the values, such as `{binaryProbability: "Binary Probability"}`.
 
 - [ ] Are all required files and directories present?
 
-  For a sim repository named “my-repo”, the general structure should look like this (where assets/, audio/, images/, or dependencies.json may be omitted if the sim doesn’t have those types of assets).
+  For a sim repository named “my-repo”, the general structure should look like this (where assets/, audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
 
 ```js
    my-repo/
