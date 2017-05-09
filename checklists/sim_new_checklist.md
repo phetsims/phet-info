@@ -41,7 +41,7 @@
   - [ ] repository added to chipper/data/ files
 - [ ] Sim suggestions doc reviewed
 - [ ] Initial development started (Date: //)
-- [ ] Feature completed (Date: //) 
+- [ ] Sim is "feature complete" (Date: //) 
 - [ ] Code review completed (Date: //) 
 - [ ] Published (Date: //) 
 - [ ] README.md updated using `grunt published-readme` (in master and release branch)
