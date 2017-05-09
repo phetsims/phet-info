@@ -40,7 +40,7 @@
   - [ ] standard GitHub label set applied
   - [ ] repository added to chipper/data/ files
 - [ ] Sim suggestions doc reviewed
-- [ ] Initial development started (Date: //)
+- [ ] Development started (Date: //)
 - [ ] Sim is "feature complete" (Date: //) 
 - [ ] Code review completed (Date: //) 
 - [ ] Published (Date: //) 
