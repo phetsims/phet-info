@@ -1,4 +1,4 @@
-# New Sim Master Checklist Template
+# {{SIM_NAME}} master checklist
 
 ## Design
 - [ ] **Sim folder and design doc created** (Date: //) 
@@ -33,25 +33,22 @@
   - [ ] Hold postmortem if applicable (Date: //) 
 
 ## Implementation
-- [ ] **Sim repo created** (Date: //) 
-  - [ ] Simula-rasa used to create basic project structure
-  - [ ] Grunt unpublished-readme run to create the initial readme file
+- [ ] **Repository created** (Date: //) 
+  - [ ] simula-rasa used to create project skeleton
+  - [ ] README.md created using `grunt unpublished-readme`
   - [ ] Collaborators added (such as QA team, designers, etc)
-  - [ ] Standard label set applied
-  - [ ] Sim added to active repos list in chipper
-  - [ ] Sim suggestions doc reviewed
-- [ ] **Initial development started** (Date: //)
-- [ ] **Sim feature complete** (Date: //) 
-- [ ] **Code review complete** (Date: //) 
-  - [ ] Code review checklist
-  - [ ] Model description 
-- [ ] **Published** (Date: //) 
-  - [ ] Update repo README to published template (in master and release branch)
+  - [ ] standard GitHub label set applied
+  - [ ] repository added to chipper/data/ files
+- [ ] Sim suggestions doc reviewed
+- [ ] Initial development started (Date: //)
+- [ ] Feature completed (Date: //) 
+- [ ] Code review completed (Date: //) 
+- [ ] Published (Date: //) 
+- [ ] README.md updated using `grunt published-readme` (in master and release branch)
  
-
-
 ## QA
-- [ ] **Dev testing complete** (Date: //) 
-- [ ] **First release candidate** (Date: //)
-  - [ ] Place matrix in [Testing Matrices Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYbW9fTGNCODdYVjQ)
-  - [ ] Test matrix deemed complete
+- [ ] Dev testing started (Date: //) 
+- [ ] Dev testing completed (Date: //) 
+- [ ] RC testing started (Date: //)
+- [ ] RC testing completed (Date: //)
+- [ ] Test matricies in [Testing Matrices Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYbW9fTGNCODdYVjQ)
