@@ -44,7 +44,7 @@ The latest fully-tested SHAs (use these if appropriate):
 http://www.colorado.edu/physics/phet/dev/html/unit-rates/1.0.0/dependencies.json
 
 The latest SHAs under testing (use these if appropriate): 
-http://www.colorado.edu/physics/phet/dev/html/graphing-slope-intercept/1.0.0-rc.1/dependencies.json
+http://www.colorado.edu/physics/phet/dev/html/john-travoltage/1.3.0-rc.1/dependencies.json
 
 
 ## Step 1. Set up the codebase
