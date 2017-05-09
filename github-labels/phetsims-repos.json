@@ -394,5 +394,8 @@
   },
   {
     "name":"equality-explorer"
+  },
+  {
+    "name":"area-model-common"
   }
 ]
