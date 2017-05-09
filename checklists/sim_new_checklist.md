@@ -4,6 +4,7 @@
 - [ ] **Sim folder and design doc created** (Date: //) 
   - [ ] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) using phet-docs account
   - [ ] Place design doc in the sim folder
+- [ ] **Sim suggestions doc reviewed**
 - [ ] **Learning goals and standards identified** (Date: //)
 - [ ] **Design concept complete**  (Date: //)
 - [ ] **Wireframes complete** (Date: //) 
@@ -39,7 +40,6 @@
   - [ ] Collaborators added (such as QA team, designers, etc)
   - [ ] standard GitHub label set applied
   - [ ] repository added to chipper/data/ files
-- [ ] Sim suggestions doc reviewed
 - [ ] Development started (Date: //)
 - [ ] Sim is "feature complete" (Date: //) 
 - [ ] Code review completed (Date: //) 
