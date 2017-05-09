@@ -34,7 +34,7 @@
   - [ ] Hold postmortem if applicable (Date: //) 
 
 ## Implementation
-- [ ] **Repository created** (Date: //) 
+- [ ] Repository created (Date: //) 
   - [ ] simula-rasa used to create project skeleton
   - [ ] README.md created using `grunt unpublished-readme`
   - [ ] Collaborators added (such as QA team, designers, etc)
