@@ -397,5 +397,17 @@
   },
   {
     "name":"area-model-common"
+  },
+  {
+    "name":"phet-io-wrappers"
+  },
+  {
+    "name":"phet-io-wrapper-sonification"
+  },
+  {
+    "name":"phet-io-wrapper-classroom-activity"
+  },
+  {
+    "name":"phet-io-wrapper-lab-book"
   }
 ]
