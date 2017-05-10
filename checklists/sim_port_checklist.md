@@ -1,4 +1,4 @@
-# Sim Port Checklist Template
+# {{SIM_NAME}} Port Master Checklist
 
 ## Design
 - [ ] **Sim folder and design doc created** (Date: //) 
