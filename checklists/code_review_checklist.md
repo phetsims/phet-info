@@ -90,6 +90,7 @@ All JavaScript source should be in the js/ directory. There should be a subdirec
 - [ ] Does model.md adequately describe the model, in terms appropriate for teachers?
 - [ ] Does implementation-notes.md adequately describe the implementation, with an overview that will be useful to future maintainers?
 - [ ] Are sim-specific query parameters (if any) identified and documented in one .js file in js/common/ or js/ (if there is no common/)? The .js file should be named `{{REPO}}QueryParameters`, for example ArithmeticQueryParameters for the aritmetic repository.
+- [ ] Do the `@author` annotations seem correct? 
 
 **Math Libraries**
 
