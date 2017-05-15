@@ -1,10 +1,12 @@
-# Sim Port Checklist Template
+# {{SIM_NAME}} Port Master Checklist
 
 ## Design
 - [ ] **Sim folder and design doc created** (Date: //) 
   - [ ] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) using phet-docs account
   - [ ] Place design doc in the sim folder
 - [ ] **Legacy sim docs/info gathered**
+  - [ ] Sim suggestions doc reviewed
+  - [ ] Unfuddle tickets reviewed
 - [ ] **Learning goals and standards identified** (Date: //)
 - [ ] **Design concept complete**  (Date: //)
 - [ ] **Wireframes complete** (Date: //) 
@@ -34,24 +36,20 @@
   - [ ] Hold postmortem if applicable (Date: //) 
 
 ## Implementation
-- [ ] **Sim repo created** (Date: //) 
-  - [ ] Simula-rasa used to create basic project structure
-  - [ ] Grunt unpublished-readme run to create the initial readme file
+- [ ] **Repository created** (Date: //)
+  - [ ] simula-rasa used to create project skeleton
+  - [ ] README.md created using `grunt unpublished-readme`
   - [ ] Collaborators added (such as QA team, designers, etc)
-  - [ ] Standard label set applied
-  - [ ] Sim added to active repos list in chipper
-  - [ ] Sim suggestions doc reviewed
-  - [ ] Unfuddle tickets reviewed
+  - [ ] standard GitHub label set applied
+  - [ ] repository added to chipper/data/ filesr
   - [ ] Port existing strings (IF ANY) and commit to the GitHub repo (auto-ported strings from Java and Flash sims can
   be found in babel/autoport). The strings should be deleted from babel/autoport and @jbphet should immediately be asked
   to pull from rosetta to avoid conflicts.
-- [ ] **Initial development started** (Date: //)
-- [ ] **Sim feature complete** (Date: //) 
-- [ ] **Code review complete** (Date: //) 
-  - [ ] Code review checklist
-  - [ ] Model description 
-- [ ] **Published** (Date: //)
-  - [ ] Update repo README to published template
+- [ ] **Development started** (Date: //)
+- [ ] **Sim is "feature complete"** (Date: //) 
+- [ ] **Code review completed** (Date: //) 
+- [ ] **Published** (Date: //) 
+  - [ ] README.md updated using `grunt published-readme` (in master and release branch)
 
 ## QA
 - [ ] **Legacy sim tested for bugs**; issues reported in repo
