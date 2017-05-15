@@ -34,21 +34,22 @@
   - [ ] Hold postmortem if applicable (Date: //) 
 
 ## Implementation
-- [ ] Repository created (Date: //) 
+- [ ] **Repository created** (Date: //)
   - [ ] simula-rasa used to create project skeleton
   - [ ] README.md created using `grunt unpublished-readme`
   - [ ] Collaborators added (such as QA team, designers, etc)
   - [ ] standard GitHub label set applied
   - [ ] repository added to chipper/data/ files
-- [ ] Development started (Date: //)
-- [ ] Sim is "feature complete" (Date: //) 
-- [ ] Code review completed (Date: //) 
-- [ ] Published (Date: //) 
-- [ ] README.md updated using `grunt published-readme` (in master and release branch)
+- [ ] **Development started** (Date: //)
+- [ ] **Sim is "feature complete"** (Date: //) 
+- [ ] **Code review completed** (Date: //) 
+- [ ] **Published** (Date: //) 
+  - [ ] README.md updated using `grunt published-readme` (in master and release branch)
  
 ## QA
-- [ ] Dev testing started (Date: //) 
-- [ ] Dev testing completed (Date: //) 
-- [ ] RC testing started (Date: //)
-- [ ] RC testing completed (Date: //)
-- [ ] Test matricies put in [Testing Matrices Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYbW9fTGNCODdYVjQ)
+- [ ] **Dev testing started** (Date: //) 
+- [ ] **Dev testing completed** (Date: //) 
+- [ ] **RC testing started** (Date: //)
+  - [ ] Test matricies put in [Testing Matrices Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYbW9fTGNCODdYVjQ)
+- [ ] **RC testing completed** (Date: //)
+
