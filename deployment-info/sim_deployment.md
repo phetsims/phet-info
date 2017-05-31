@@ -41,7 +41,7 @@ Keep in mind these SHAs may not include all of the repos for your sim, but you c
 dependencies with them, and the rest will be filled in with master during the build.
 
 The latest fully-tested SHAs (use these if appropriate): 
-http://www.colorado.edu/physics/phet/dev/html/unit-rates/1.0.0/dependencies.json
+http://www.colorado.edu/physics/phet/dev/html/unit-rates/1.0.0/dependencies.json (or possibly http://phet.colorado.edu/sims/html/proportion-playground/1.0.0/dependencies.json)
 
 The latest SHAs under testing (use these if appropriate): 
 http://www.colorado.edu/physics/phet/dev/html/john-travoltage/1.3.0-rc.1/dependencies.json
