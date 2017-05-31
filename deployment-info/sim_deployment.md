@@ -46,6 +46,9 @@ http://www.colorado.edu/physics/phet/dev/html/unit-rates/1.0.0/dependencies.json
 The latest SHAs under testing (use these if appropriate): 
 http://www.colorado.edu/physics/phet/dev/html/john-travoltage/1.3.0-rc.1/dependencies.json
 
+#### Other relevant checklists:
+* **PRODUCTION_FIRST**: Complete the simulation master checklist. Notably, this includes adding a screenshot so that thumbnails and the twitter card are properly generated in the initial deployment.
+
 ## Shortcut for dev deployment:
 If you are working in master, would like to release a dev version by updating the dev number, and your working copy is clean then you can use `grunt next-dev`. This will run a trial build and if there are any lint or build errors the process will halt. If there are no lint or build errors, package.json will be updated with the next version number and the simulation will be built and deployed.
 
