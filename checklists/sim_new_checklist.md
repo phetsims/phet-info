@@ -23,7 +23,7 @@
   - [ ] Main screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
   - [ ] Auxilary screenshots (up to 3 additional)
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
-  - [ ] Teacher Guide created, uploaded, and added to design folder
+  - [ ] Teacher Guide created, uploaded, and added to sim design folder
   - [ ] Add an activity
   - [ ] Sim primer draft
   - [ ] Verify credits
