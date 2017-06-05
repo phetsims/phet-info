@@ -50,6 +50,6 @@
 - [ ] **Dev testing started** (Date: //) 
 - [ ] **Dev testing completed** (Date: //) 
 - [ ] **First RC published** (Date: //)
-  - [ ] Test matricies put in [Testing Matrices Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYbW9fTGNCODdYVjQ)
+  - [ ] Test matrices put in [Testing Matrices Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYbW9fTGNCODdYVjQ)
 - [ ] **RC testing completed** (Date: //)
 
