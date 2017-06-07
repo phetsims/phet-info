@@ -131,6 +131,7 @@ for phet-io versions. Ask a PhET developer for credentials.
 * **PRODUCTION FOR PHET_IO_BRAND**:
    + If this is a version that will be used with students, then make sure to remove the password protection. See https://github.com/phetsims/phet-io/blob/master/doc/phetio-security.md for details.
    + Make sure that the current level of instrumentation is represented here in the [Instrumentation Status Spreadsheet](https://docs.google.com/spreadsheets/d/1pU9izdNQkd9vr8TvLAfXe_v68yh-7potH-y712FBPr8/edit#gid=0). MAKE SURE TO UPDATE THE "Latest Published Version" COLUMN.
+   + If you are delivering this to a partner, update [partners.md](https://github.com/phetsims/phet-io/blob/master/doc/partners.md) to show this delivery. Read the intro of the document to make sure that you format the entry correctly.
 * **RC | PRODUCTION**: Update the "latest SHAs under testing" above, if appropriate.  **NOTE**: Keep in mind that not all sims use all repos.
 
 ## Step 8. Restore your working copy
