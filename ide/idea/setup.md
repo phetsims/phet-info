@@ -20,6 +20,6 @@ detected. See https://www.jetbrains.com/help/idea/2017.1/using-git-integration.h
     * Fill out ESLint package location (unless global, `chipper/node_modules/eslint`, you may have to `npm install` in chipper)
     * Configuration file should be `chipper/eslint/.eslintrc ` 
     * Additional Rules Dir should be `chipper/eslint/rules`
-    * [Here is a picure for a mac](https://cloud.githubusercontent.com/assets/6856943/26806694/876bdad6-4a0f-11e7-9096-e734bf70be6e.png)
+    * [Here is a picture for a mac](https://cloud.githubusercontent.com/assets/6856943/26806694/876bdad6-4a0f-11e7-9096-e734bf70be6e.png)
    
    
