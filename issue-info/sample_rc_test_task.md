@@ -25,6 +25,7 @@ Please test the following issues and check them off after addressing. If they ar
 - [ ] showPointerAreas (touchArea=red, mouseArea=blue)
 - [ ] Full screen test
 - [ ] Screenshot test
+- [ ] Legends of Learning harness test
 
 If any new issues are found, please note them in https://github.com/phetsims/repo-name/issues and reference this issue.  
 
