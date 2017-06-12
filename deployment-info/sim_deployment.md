@@ -15,8 +15,10 @@
  
  Your default build configuration is specified in `~/.phet/build-local.json`. Describing or identifying the entries 
  in `build-local.json` is beyond the scope of this document; ask a PhET developer for help in setting up this file. At 
- a minimum you will need `devUsername` and `buildServerAuthorizationCode`.
- 
+ a minimum you will need `devUsername` and `buildServerAuthorizationCode`. A few handy keys:
+* `buildServerNotifyEmail`: add your email to be notified on the success or failure of your builds to the build server.
+* `brand:phet` to automatically build the phet brand instead of the adapted-from-phet brand.
+
  Run `grunt --help` for a list of build tasks and their options. Values specified on the `grunt` command line typically override values specified in `build-local.json`.
  
 #### Configure an RSA key 
