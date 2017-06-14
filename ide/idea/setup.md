@@ -6,15 +6,19 @@ Note: links may be outdated for the current version of Intellij, but they can ge
 1. Make sure that you have cloned all of the repos into a directory. First clone `chipper/`, and then use 
 `chipper/bin/clone-missing-repos.js`.
 2. Make a new project at the same level as you parent dir to all git repos.
+3. Add you github credentials in `File > Settings > Version Control > Github`, and test your credentials with the `Test` 
+    button.
 3. Set up version control by adding each repo to git. This can be more automatic, because `.git` dirs are found by the system
-and you just have to 'Add Roots' in the event log. See https://www.jetbrains.com/help/idea/2017.1/using-git-integration.html.
+    and you just have to 'Add Roots' in the event log. See https://www.jetbrains.com/help/idea/2017.1/using-git-integration.html.
 4. `File > Project Structure > Modules` lets you exclude directories from your search path. You typically want to exclude 
 `build/` and `node_modules/` for each repository, and all of `sherpa/`.
+5. Set the right margin to appear after 120 characters. `File> Settings> Editor > CodeStyle` Set Default Options to 120.
 5. Import the PhET code style (located in `phet-info/ide/idea/phet-idea-codestyle.xml`). 
     * On a Mac, phet-idea-codestyle.xml must be manually copied to `$HOME/Library/Preferences/IntelliJIdea[**version**]/codestyles/`. 
     Restart IDEA, then you can choose it from `Preferences > Editor > Code Style`.
     * See https://www.jetbrains.com/help/idea/2017.1/copying-code-style-settings.html.
-6. Configure node. `File > Settings > Language & Frameworks > Javascript` Make sure you are using ECMA script 5. 
+6. Configure node. `File > Settings > Language & Frameworks > Javascript` Make sure `   ECMAScript 5.1` is selected, and 
+    check `Prefer Strict mode. 
 7. Configure eslint. `File > Settings > Language & Frameworks > Javascript > Code Quality Tools > Eslint`.
     * Then navigate to `Language & Frameworks > JavaScript > Code Quality Tools > ESLint`. 
     * Find your node.exe file (probably set up through the project).
