@@ -37,16 +37,6 @@ Configure an RSA key, or you will be prompted multiple times for a password duri
  ```
  - Add your public key (found in `localhost@~/.ssh/id_rsa.pub`) to `spot@~/.ssh/authorized_keys`
  - Change the permissions of `authorized_keys` so it is not group writable: `chmod g-w authorized_keys`
- 
-#### Latest SHAs: 
-Keep in mind these SHAs may not include all of the repos for your sim, but you can still overwrite your 
-dependencies with them, and the rest will be filled in with master during the build.
-
-The latest fully-tested SHAs (use these if appropriate): 
-http://www.colorado.edu/physics/phet/dev/html/unit-rates/1.0.0/dependencies.json (or possibly http://phet.colorado.edu/sims/html/proportion-playground/1.0.0/dependencies.json)
-
-The latest SHAs under testing (use these if appropriate): 
-http://www.colorado.edu/physics/phet/dev/html/john-travoltage/1.3.0-rc.1/dependencies.json
 
 #### Other relevant checklists:
 * **PRODUCTION_FIRST**: Complete the simulation master checklist. Notably, this includes adding a screenshot so that thumbnails and the twitter card are properly generated in the initial deployment.
@@ -62,7 +52,6 @@ If you are working in master, would like to release a dev version by updating th
 * **RC_SUBSEQUENT | PRODUCTION**: 
     + Checkout the branch with MAJOR.MINOR (**PHET_IO** branches will end with `-phetio`). If a branch does not exist for your 
     version, make, following the step above, like you are publishing the first rc.
-    + If you are using the trusted SHAs from above, copy them into the top level `dependencies.json`
     + `grunt checkout-shas` to checkout any supporting branches from other repos. 
     + If checkout-shas didn't already do so: `npm prune` and `npm update` in the sim repo and in chipper.
     `rm -rf node_modules` and `npm install` in that directory instead.
@@ -135,7 +124,6 @@ for phet-io versions. Ask a PhET developer for credentials.
    + If this is a version that will be used with students, then make sure to remove the password protection. See https://github.com/phetsims/phet-io/blob/master/doc/phetio-security.md for details.
    + Make sure that the current level of instrumentation is represented here in the [Instrumentation Status Spreadsheet](https://docs.google.com/spreadsheets/d/1pU9izdNQkd9vr8TvLAfXe_v68yh-7potH-y712FBPr8/edit#gid=0). MAKE SURE TO UPDATE THE "Latest Published Version" COLUMN.
    + If you are delivering this to a partner, update [partners.md](https://github.com/phetsims/phet-io/blob/master/doc/partners.md) to show this delivery. Read the intro of the document to make sure that you format the entry correctly.
-* **RC | PRODUCTION**: Update the "latest SHAs under testing" above, if appropriate.  **NOTE**: Keep in mind that not all sims use all repos.
 
 ## Step 8. Restore your working copy
 * Check out master for dependencies: `grunt checkout-master`
