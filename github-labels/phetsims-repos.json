@@ -412,5 +412,8 @@
   },
   {
     "name":"phet-io-wrapper-lab-book"
+  },
+  {
+    "name":"circuit-construction-kit-basics"
   }
 ]
