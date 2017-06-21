@@ -63,6 +63,7 @@ If you are working in master, would like to release a dev version by updating th
     + **Maintenance Release**:  If there is a parallel brand that has the same minor number as your branch (i.e. 1.3 and 1.3-phetio), it
        means that these branches should have the same shas (not always true in practice, but mostly accurate, so check your shas). Make 
        sure that all of your commits are cherry-picked onto that branch too (if they apply), so that the branches stay in sync. 
+* **PRODUCTION**: Update the QA credits before continuing.
 
 ## Step 2. Update the version number in package.json
 Use version names of the following form: 
