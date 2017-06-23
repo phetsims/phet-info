@@ -38,9 +38,6 @@ Configure an RSA key, or you will be prompted multiple times for a password duri
  - Add your public key (found in `localhost@~/.ssh/id_rsa.pub`) to `spot@~/.ssh/authorized_keys`
  - Change the permissions of `authorized_keys` so it is not group writable: `chmod g-w authorized_keys`
 
-#### Other relevant checklists:
-* **PRODUCTION_FIRST**: Complete the simulation master checklist. Notably, this includes adding a screenshot so that thumbnails and the twitter card are properly generated in the initial deployment.
-
 ## Shortcut for dev deployment:
 If you are working in master, would like to release a dev version by updating the dev number, and your working copy is clean then you can use `grunt next-dev`. This will run a trial build and if there are any lint or build errors the process will halt. If there are no lint or build errors, package.json will be updated with the next version number and the simulation will be built and deployed.
 
@@ -64,6 +61,8 @@ If you are working in master, would like to release a dev version by updating th
        means that these branches should have the same shas (not always true in practice, but mostly accurate, so check your shas). Make 
        sure that all of your commits are cherry-picked onto that branch too (if they apply), so that the branches stay in sync. 
 * **PRODUCTION**: Update the QA credits before continuing.
+* **PHET PRODUCTION_FIRST**: Complete the simulation master checklist (often an issue in the sim repo). Notably, this 
+      includes adding a screenshot so that thumbnails and the twitter card are properly generated in the initial deployment.
 
 ## Step 2. Update the version number in package.json
 Use version names of the following form: 
