@@ -1,53 +1,52 @@
 ## Published Sims Developer Respononsibility List
-Note: an "alternate" is listed in some cases (mainly for MV sims)
 
 | Simulation  | Developer |
 | ------------- | ------------- |
 | `Acid-Base Solutions` | CM |
-| `Area Builder` | Content Cell  |
-| `Arithmetic`  | Content Cell  |
-| `Atomic Interactions`  | Content Cell  |
-| `Balancing Act`  | Content Cell  |
-| `Balancing Chemical Equations`  | Content Cell  |
-| `Balloons and Static Electricity`  | Content Cell  |
-| `Beer's Law Lab`  | Content Cell  |
-| `Bending Light`  | Content Cell  |
-| `Build an Atom`  | Content Cell  |
-| `Charges And Fields` | Content Cell  |
-| `Color Vision` |  Cell  |
-| `Concentration` |  Cell  |
-| `Energy Skate Park: Basics` |  Cell  |
-| `Faraday's Law` |  Cell  |
-| `Forces and Motion: Basics` |  Cell  |
-| `Fraction Matcher` |  Cell  |
-| `Friction` |  Cell  |
-| `Function Builder` |  Cell  |
-| `Function Builder: Basics` |  Cell  |
-| `Graphing Lines` |  Cell  |
-| `Graphing Slope-Intercept` |  Cell  |
-| `Gravity And Orbits` |  Cell  |
-| `Gravity Force Lab` |  Cell  |
-| `Hooke's Law` |  Cell  |
-| `Isotopes and Atomic Mass` |  Cell  |
-| `John Travoltage` |  Cell  |
-| `Least-Squares Regression` |  Cell  |
-| `Make a Ten` |  Cell  |
-| `Molarity` |  Cell  |
-| `Molecules and Light` |  Cell  |
-| `Molecule Shapes` |  Cell  |
-| `Molecule Shapes: Basics` |  Cell  |
-| `Neuron` |  Cell  |
-| `Ohm's Law`|  Cell  |
-| `pH Scale` |  Cell  |
-| `pH Scale: Basics` |  Cell  |
-| `Plinko Probability` |  Cell  |
-| `Proportion Playground` |  Cell  |
-| `Reactants, Products and Leftovers` |  Cell  |
-| `Resistance in a Wire` |  Cell  |
-| `Rutherford Scattering` |  Cell  |
-| `States of Matter` |  Cell  |
-| `States of Matter: Basics` |  Cell  |
-| `Trig Tour` |  Cell  |
-| `Under Pressure` |  Cell  |
-| `Unit Rates` |  Cell  |
-| `Wave on a String` |  Cell  |
+| `Area Builder` | JB  |
+| `Arithmetic`  | JB  |
+| `Atomic Interactions`  | JB  |
+| `Balancing Act`  | JB  |
+| `Balancing Chemical Equations`  | CM  |
+| `Balloons and Static Electricity`  | JG  |
+| `Beer's Law Lab`  | CM  |
+| `Bending Light`  | SR  |
+| `Build an Atom`  | JB  |
+| `Charges And Fields` | JO  |
+| `Color Vision` |  CM  |
+| `Concentration` |  CM  |
+| `Energy Skate Park: Basics` |  SR  |
+| `Faraday's Law` |  JB  |
+| `Forces and Motion: Basics` |  JG  |
+| `Fraction Matcher` |  SR  |
+| `Friction` |  JB  |
+| `Function Builder` |  CM  |
+| `Function Builder: Basics` |  CM  |
+| `Graphing Lines` |  CM  |
+| `Graphing Slope-Intercept` |  CM  |
+| `Gravity And Orbits` |  JG  |
+| `Gravity Force Lab` |  JG  |
+| `Hooke's Law` |  CM  |
+| `Isotopes and Atomic Mass` |  JB  |
+| `John Travoltage` |  SR  |
+| `Least-Squares Regression` |  JO  |
+| `Make a Ten` |  JO  |
+| `Molarity` |  CM  |
+| `Molecules and Light` |  JG  |
+| `Molecule Shapes` |  JO  |
+| `Molecule Shapes: Basics` |  JO  |
+| `Neuron` |  JB  |
+| `Ohm's Law`|  MK  |
+| `pH Scale` |  CM  |
+| `pH Scale: Basics` |  CM  |
+| `Plinko Probability` |  CM  |
+| `Proportion Playground` |  JO  |
+| `Reactants, Products and Leftovers` |  CM  |
+| `Resistance in a Wire` |  MK  |
+| `Rutherford Scattering` |  JG  |
+| `States of Matter` |  JB  |
+| `States of Matter: Basics` |  JB  |
+| `Trig Tour` |  JG  |
+| `Under Pressure` |  SR  |
+| `Unit Rates` |  CM  |
+| `Wave on a String` |  JO  |
