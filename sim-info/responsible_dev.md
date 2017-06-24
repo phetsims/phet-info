@@ -1,6 +1,6 @@
 | Simulation  | Developer |
 | ------------- | ------------- |
-| Acid-Base Solutions | CM |
+| `Acid-Base Solutions` | CM |
 | Area Builder | Content Cell  |
 | Arithmetic  | Content Cell  |
 | Content Cell  | Content Cell  |
