@@ -61,7 +61,7 @@ If you are working in master, would like to release a dev version by updating th
        means that these branches should have the same shas (not always true in practice, but mostly accurate, so check your shas). Make 
        sure that all of your commits are cherry-picked onto that branch too (if they apply), so that the branches stay in sync. 
 * **PRODUCTION**: Update the QA credits before continuing.
-* **PHET PRODUCTION_FIRST**: Complete the simulation master checklist (often an issue in the sim repo). Notably, this 
+* **PHET PRODUCTION_FIRST**: Complete the simulation master checklist (beyond the scope of this document). Notably, this 
       includes adding a screenshot so that thumbnails and the twitter card are properly generated in the initial deployment.
 
 ## Step 2. Update the version number in package.json
