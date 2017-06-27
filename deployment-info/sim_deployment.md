@@ -136,7 +136,7 @@ for phet-io versions. Ask a PhET developer for credentials.
 * Check out master for dependencies: `grunt checkout-master`
 * Run again to prune and update node modules: `grunt checkout-master`, **Skip This Step** if you are using a chipper sha that is newer than Jan 24th, 2017.
 * Check out master for the sim repo: `git checkout master`
-  
+* Update and commit the new correct version in package.json for master.
   
 ## Deploy a batch of production sims.
 These steps were followed by @samreid on Nov 2, 2016 to roll out a batch of PhET-iO sims to master.
