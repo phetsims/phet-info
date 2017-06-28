@@ -167,10 +167,12 @@ var beakerWidth        // correct
 
 - [ ] All JavaScript scripts should be modularized using requirejs, and should invoke strict mode. For example:
 
+```js
 	define( function( require ) {
 	  'use strict';
  	  // etc.
      	} );
+```
 
 - [ ] Require statements should be organized into blocks, with the code modules first, followed by strings, images, and audio (any order ok for strings/images/audio).  For modules, the var name should match the file name. Example below.
 
