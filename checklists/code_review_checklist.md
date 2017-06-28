@@ -308,9 +308,8 @@ For Line comments, the annotation can appear like this:
 addListener: function( listener ) { /*...*/ }
 ```
 
-Regex for property assignment like x.y = something: `[\w]+\.[\w]+\s=`
-Regex for function declarations: `[\w]+: function\(`
-
+* Regex for property assignment like x.y = something: `[\w]+\.[\w]+\s=`
+* Regex for function declarations: `[\w]+: function\(`
 
 - [ ] Comments should not extend beyond 120 columns, and line breaks should be inserted for multi-line comments just 
 before the word that would extend beyond 120th column.  Multi-line comments should not use a column width less than 80 
