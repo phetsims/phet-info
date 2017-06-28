@@ -155,9 +155,6 @@ for the PhET-iO development process.
 
 - [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/joist/blob/master/util/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
 - [ ] Are copyright headers present and up to date? Run `grunt update-copyright-dates`.
-* Regex for property assignment like x.y = something: `[\w]+\.[\w]+\s=`
-* Regex for function declarations: `[\w]+: function\(`
-
 - [ ] Names (types, variables, properties,...) should be sufficiently descriptive and specific, and should avoid non-standard abbreviations. For example:
 
 ```js
@@ -308,7 +305,12 @@ For Line comments, the annotation can appear like this:
 addListener: function( listener ) { ... }
 ```
 
-- [ ] Comments should not extend beyond 120 columns, and line breaks should be inserted for multi-line comments just before word that would extend beyond 120th column.  Multi-line comments should not use a column width less than 80 (this helps to get more code on the screen at once).  Code lines should also be broken up if they pass 120 columns.
+* Regex for property assignment like x.y = something: `[\w]+\.[\w]+\s=`
+* Regex for function declarations: `[\w]+: function\(`
+
+- [ ] Comments should not extend beyond 120 columns, and line breaks should be inserted for multi-line comments just 
+before the word that would extend beyond 120th column.  Multi-line comments should not use a column width less than 80 
+(this helps to get more code on the screen at once).  Code lines should also be broken up if they pass 120 columns.
 
 - [ ] Where inheritance is needed, use phetcore.inherit. Add prototype and static functions via the appropriate arguments to inherit. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
 
