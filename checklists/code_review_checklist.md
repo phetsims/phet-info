@@ -192,7 +192,7 @@ var thermalString = require( 'string!ENERGY/energy.thermal' );
 var energyImage = require( 'image!ENERGY/energy.png' );
 
 // audio
-var kineticAudio = require( 'audio!ENERGY/energy’ );
+var kineticAudio = require( 'audio!ENERGY/energy' );
 ```
 
 - [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default 
