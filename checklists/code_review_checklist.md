@@ -409,22 +409,6 @@ var thoughts = happy ? ‘I am happy’ : ‘I am not happy :(’;
 
 - [ ] Naming for Property values:  All AXON/Property instances should be declared with the suffix `Property`.  For instance, if a visible property is added, it should have the name `visibleProperty` instead of simply `visible`.  This will guarantee consistency with Properties created by PropertySet, and help to avoid confusion with primitive (non-Property) values.
 
-- [ ] The use of Property is preferred to PropertySet in new sim code. This is primarily for clarity: PropertySet supports ES5 setters and getters, so that e.g. this.positionProperty could be accessed as this.position or modified as this.position = new Vector2( 1.23, 4.56 ). Although convenient, this causes ambiguity for the reader as to whether this.position is an ordinary var, or whether it’s shorthand for a PropertySet instance. When Property is used, assignment must done like this: 
-
-```js
-this.positionProperty.set( new Vector2( 1.23, 4.56 ) ) // or
-this.positionProperty.value = new Vector2( 1.23, 4.56 )
-``` 
-
-Although more verbose, this syntax is unambiguous. Similarly, use either
-
-```js
-this.positionProperty.get() or
-this.positionProperty.value
-```
-
-for access.
-
 - [ ] Line comments should be preceded by a blank line.  For instance:
 
 ```js
