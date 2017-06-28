@@ -215,7 +215,7 @@ function BallNode( ball, visibleProperty, fill, stroke, lineWidth ){
 }
 
 // Call site
-var ballNode = new BallNode( ball, visibleProperty, ‘blue`, ‘black`, 2 );
+var ballNode = new BallNode( ball, visibleProperty, 'blue', 'black', 2 );
 ```
 Here’s the same constructor with an appropriate use of options. The call site is easier  to read, and the order of 
 options is flexible.
@@ -384,7 +384,7 @@ or
 ( foo && bar ) ? fooBar() : fooCat();
 ( foo && bar ) && fooBar();
 ( foo && !(bar && fooBar)) && nowIAmConfused();
-this.fill = ( foo && bar ) ? ‘red’ : ‘blue’; 
+this.fill = ( foo && bar ) ? 'red' : 'blue'; 
 
 
 If the expression is only one item, the parentheses can be omitted. This is the most common use case.
