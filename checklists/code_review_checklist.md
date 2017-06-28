@@ -290,25 +290,27 @@ this.doSomethingElse();
 * To quality that something is read-only, use `@public (read-only)`. This indicates that the given property (AND its value) should not be changed by outside code (e.g. a Property should not have its value changed)
 * To qualify that something is public to a specific repository, use (for example) `@public (scenery-internal)`
 * Separate multiple qualifiers with commas. For example: `@public (scenery-internal, read-only)`
+
 For JSDoc-style comments, the annotation should appear in context like this:
 
 ```js
-    /**
-     * Creates the icon for the "Energy" screen, a cartoonish bar graph.
-     * @returns {Node}
-     * @public
-     */
+/**
+ * Creates the icon for the "Energy" screen, a cartoonish bar graph.
+ * @returns {Node}
+ * @public
+ */
 ```
 
 For Line comments, the annotation can appear like this:
 
 ```js
 // @public Adds a {function} listener
-addListener: function( listener ) { ... }
+addListener: function( listener ) { /*...*/ }
 ```
 
-* Regex for property assignment like x.y = something: `[\w]+\.[\w]+\s=`
-* Regex for function declarations: `[\w]+: function\(`
+Regex for property assignment like x.y = something: `[\w]+\.[\w]+\s=`
+Regex for function declarations: `[\w]+: function\(`
+
 
 - [ ] Comments should not extend beyond 120 columns, and line breaks should be inserted for multi-line comments just 
 before the word that would extend beyond 120th column.  Multi-line comments should not use a column width less than 80 
