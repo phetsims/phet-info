@@ -230,8 +230,8 @@ options is flexible.
 function BallNode( ball, visibleProperty, options ) {
 
   options = _.extend( {
-    fill: ‘white`,  // {Color|string} fill color
-    stroke: `black`, // {Color|string} stroke color
+    fill: 'white',  // {Color|string} fill color
+    stroke: 'black', // {Color|string} stroke color
     lineWidth: 1 // {number} width of the stroke
   }, options ); 
 
@@ -240,8 +240,8 @@ function BallNode( ball, visibleProperty, options ) {
 
 // Call site
 var ballNode = new BallNode( ball, visibleProperty, {
-  fill: ‘blue`, 
-  stroke: ‘black`, 
+  fill: 'blue', 
+  stroke: 'black', 
   lineWidth: 2 
 } );
 ```
@@ -366,44 +366,53 @@ addListener: function( listener ) { ... }
 
 - [ ] Methods should be invoked using the dot operator rather than the bracket operator.  For more details, please see https://github.com/phetsims/gravity-and-orbits/issues/9
 For instance: instead of :
-self[ isFaceSmile ? 'smile' : 'grimace' ]();
+```self[ isFaceSmile ? 'smile' : 'grimace' ]();```
 Prefer
-isFaceSmile ? self.smile() : self.grimace();
+```isFaceSmile ? self.smile() : self.grimace();```
 or
+```js
       if ( isFaceSmile ) {
         self.smile();
       }
       else {
         self.grimace();
       }
+```
 
 - [ ] It is not uncommon to use conditional shorthand and short circuiting for invocation. 
 
+```js
 ( expression ) && statement;
 ( expression ) ? statement1 : statement2;
 ( foo && bar ) ? fooBar() : fooCat();
 ( foo && bar ) && fooBar();
 ( foo && !(bar && fooBar)) && nowIAmConfused();
 this.fill = ( foo && bar ) ? 'red' : 'blue'; 
-
+```
 
 If the expression is only one item, the parentheses can be omitted. This is the most common use case.
 
+```js
 assert && assert( happy, ‘Why aren\’t you happy?’ );
 happy && smile();
 var thoughts = happy ? ‘I am happy’ : ‘I am not happy :(’;
+```
 
 - [ ] Naming for Property values:  All AXON/Property instances should be declared with the suffix `Property`.  For instance, if a visible property is added, it should have the name `visibleProperty` instead of simply `visible`.  This will guarantee consistency with Properties created by PropertySet, and help to avoid confusion with primitive (non-Property) values.
 
 - [ ] The use of Property is preferred to PropertySet in new sim code. This is primarily for clarity: PropertySet supports ES5 setters and getters, so that e.g. this.positionProperty could be accessed as this.position or modified as this.position = new Vector2( 1.23, 4.56 ). Although convenient, this causes ambiguity for the reader as to whether this.position is an ordinary var, or whether it’s shorthand for a PropertySet instance. When Property is used, assignment must done like this: 
 
-this.positionProperty.set( new Vector2( 1.23, 4.56 ) ) or
-this.positionProperty.value = new Vector2( 1.23, 4.56 ) 
+```js
+this.positionProperty.set( new Vector2( 1.23, 4.56 ) ) // or
+this.positionProperty.value = new Vector2( 1.23, 4.56 )
+``` 
 
 Although more verbose, this syntax is unambiguous. Similarly, use either
 
+```js
 this.positionProperty.get() or
 this.positionProperty.value
+```
 
 for access.
 
