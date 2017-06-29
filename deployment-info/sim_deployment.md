@@ -63,6 +63,8 @@ If you are working in master, would like to release a dev version by updating th
 * **PRODUCTION**: Update the QA credits before continuing.
 * **PHET PRODUCTION_FIRST**: Complete the simulation master checklist (beyond the scope of this document). Notably, this 
       includes adding a screenshot so that thumbnails and the twitter card are properly generated in the initial deployment.
+* **ALL RC and PRODUCTION**: please see https://github.com/phetsims/chipper/issues/587 for a description of branch names and 
+      how to keep phet and phet-io branch names in sync  
 
 ## Step 2. Update the version number in package.json
 Use version names of the following form: 
