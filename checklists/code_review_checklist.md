@@ -1,4 +1,5 @@
 *NOTE! Prior to doing a code review, copy this checklist to a GitHub issue for the repository being reviewed.*
+*Please mark failed items with ❌*
 
 PhET code-review checklist
 =============
@@ -16,8 +17,11 @@ PhET code-review checklist
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter 'stringTest=long')
 - [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter 'stringTest=X')
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter 'stringTest=xss' (test passes if sim does not redirect, OK if sim crashes or fails to fully start). Only test on one desktop platform.
-- [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 is published.  Strings keys should
-generally match the values, such as `{binaryProbability: "Binary Probability"}`. Screen names should use camelcase, like so  `screen.screenName`. For patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) choose keys that are unlikley to conflict with strings that might be needed in the future.  For example, for `"{{price}}"` consider using key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
+- [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 is published.  Strings keys
+should generally match the values, such as `{binaryProbability: "Binary Probability"}`. Screen names should use 
+camelcase, like so  `screen.screenName`. For patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) 
+choose keys that are unlikley to conflict with strings that might be needed in the future.  For example, for `"{{price}}"`
+consider using key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
 
 **Repository structure**
 
@@ -79,14 +83,6 @@ All JavaScript source should be in the js/ directory. There should be a subdirec
 - [ ] Does a GitHub issue exist for tracking credits, to ensure that they are correct before publication?
 - [ ] Are there git repository branches that are no longer used and should be pruned?
 
-**Coding conventions**
-
-- [ ] Does the code meet PhET's code-style guidelines, as described in the [“Coding Style Guidelines” section of the "PhET Development Overview"](http://bit.ly/phet-html5-development-overview#bookmark=id.ltflelig4smk)?
-- [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/joist/blob/master/util/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
-- [ ] Are copyright headers present and up to date? Run `grunt update-copyright-dates`.
-* Regex for property assignment like x.y = something: `[\w]+\.[\w]+\s=`
-* Regex for function declarations: `[\w]+: function\(`
-
 **Documentation**
 
 - [ ] Are documentation conventions followed, as described in the [“Coding Style Guidelines” section of the PhET Development Overview](http://bit.ly/phet-html5-development-overview#bookmark=id.ltflelig4smk)?
@@ -114,7 +110,7 @@ All JavaScript source should be in the js/ directory. There should be a subdirec
 - [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary properties/functions)
 - [ ] Is there too much unnecessary decoupling? (e.g. by passing all of the properties of an object independently instead of passing the object itself)?
 - [ ] Are the source files reasonable in size? Scrutinize large files with too many responsibilities - can responsibilities be broken into smaller delegates?
-- [ ] Are any significant chunks of code duplicated? This will be checked manually as well as with https://github.com/danielstjules/jsinspect
+- [ ] Are any significant chunks of code duplicated? This will be checked manually as well as with https://github.com/danielstjules/jsinspect or `grunt find-duplicates`
 - [ ] Is there anything that should be generalized and migrated to common code?
 - [ ] Are there any TODO or FIXME comments in the code?  They should be addressed or promoted to GitHub issues.
 - [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.)
@@ -158,3 +154,273 @@ match the filename.
 
 - [ ] If the simulation is supposed to be instrumented for PhET-iO, please see [How to Instrument a PhET Simulation for PhET-iO](https://github.com/phetsims/phet-io/blob/master/doc/how-to-instrument-a-phet-simulation-for-phet-io.md)
 for the PhET-iO development process.
+
+**Coding conventions**
+
+- [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/joist/blob/master/util/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
+- [ ] Are copyright headers present and up to date? Run `grunt update-copyright-dates`.
+- [ ] Names (types, variables, properties,...) should be sufficiently descriptive and specific, and should avoid non-standard abbreviations. For example:
+
+```js
+var numPart            // incorrect
+var numberOfParticles  // correct
+
+var width              // incorrect
+var beakerWidth        // correct
+```
+
+- [ ] All JavaScript scripts should be modularized using requirejs, and should invoke strict mode. For example:
+
+```js
+	define( function( require ) {
+	  'use strict';
+ 	  // etc.
+     	} );
+```
+
+- [ ] Require statements should be organized into blocks, with the code modules first, followed by strings, images, and audio (any order ok for strings/images/audio).  For modules, the var name should match the file name. Example below.
+
+```js
+// modules
+var inherit = require( 'PHET_CORE/inherit' );
+var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+var Line = require( 'SCENERY/nodes/Line' );
+
+// strings
+var kineticString = require( 'string!ENERGY/energy.kinetic' );
+var potentialString = require( 'string!ENERGY/energy.potential' );
+var thermalString = require( 'string!ENERGY/energy.thermal' );
+
+// images
+var energyImage = require( 'image!ENERGY/energy.png' );
+
+// audio
+var kineticAudio = require( 'audio!ENERGY/energy' );
+```
+
+- [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default 
+value.  This improves readability at the call site, especially when the number of parameters is large.  It also 
+eliminates order dependency that is required by using parameters.
+
+For example, this constructor uses parameters for everything. At the call site, the semantics of the arguments are difficult to determine without consulting the constructor.
+
+```js
+/**
+ * @param {Ball} ball - model element
+ * @param {Property.<boolean>} visibleProperty - is the ball visible?
+ * @param {Color|string} fill - fill color
+ * @param {Color|string} stroke - stroke color
+ * @param {number} lineWidth - width of the stroke
+ * @constructor
+ */
+function BallNode( ball, visibleProperty, fill, stroke, lineWidth ){
+   ...
+}
+
+// Call site
+var ballNode = new BallNode( ball, visibleProperty, 'blue', 'black', 2 );
+```
+Here’s the same constructor with an appropriate use of options. The call site is easier  to read, and the order of 
+options is flexible.
+
+```js
+/**
+ * @param {Ball} ball - model element
+ * @param {Property.<boolean>} visibleProperty - is the ball visible?
+ * @param {Object} [options]
+ * @constructor
+ */
+function BallNode( ball, visibleProperty, options ) {
+
+  options = _.extend( {
+    fill: 'white',  // {Color|string} fill color
+    stroke: 'black', // {Color|string} stroke color
+    lineWidth: 1 // {number} width of the stroke
+  }, options ); 
+
+  // ...
+}
+
+// Call site
+var ballNode = new BallNode( ball, visibleProperty, {
+  fill: 'blue', 
+  stroke: 'black', 
+  lineWidth: 2 
+} );
+```
+
+- [ ] Constructor and function documentation.  Parameter types and names should be clearly specified for each function 
+and constructor (if there are any parameters) using @param annotations.  The description for each parameter should 
+follow a hyphen.  Primitive types should use lower case.  Constructors should additionally include the @constructor 
+annotation. For instance:
+
+```js
+/** 
+ * The PhetDeveloper is responsible for creating code for simulations
+ * and documenting their code thoroughly.
+ * 
+ * @param {string} name - full name
+ * @param {number} age - age, in years
+ * @param {boolean} isEmployee - whether this developer is an employee of CU
+ * @param {function} callback - called immediate after coffee is consumed
+ * @param {Property.<number>} hoursProperty - cumulative hours worked
+ * @param {string[]} friendNames - names of friends
+ * @param {Object} [options] - optional configuration, see constructor
+ * @constructor
+ */
+function PhetDeveloper( name, age, isEmployee, callback, hoursProperty, friendNames, options ) {}
+```
+
+- [ ] For most functions, the same form as above should be used, with a @return annotation which identifies the return 
+type and the meaning of the returned value.  Functions should also document any side effects.  For extremely simple 
+functions that are just a few lines of simple code, an abbreviated line-comment can be used, for example: `// Computes {Number} distance based on {Foo} foo.`
+
+- [ ] If references are needed to the enclosing object, such as for a closure, ‘self’ should be used, but it should only be 
+used in closures.  The ‘self’ variable should not be defined unless it is needed in a closure.  Example:
+
+```js
+var self = this;
+someProperty.link( function(){
+  self.doSomething();
+} );
+this.doSomethingElse();
+```
+
+- [ ] Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations to document the intent of the programmer, and define the public API. Visibility annotations are required for anything that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc is authoritative. For example, use Array.<Object> or Object[]instead of Array<Object>). PhET guidelines for visibility annotations are as follows:
+* Use `@public` for anything that is intended to be part of the public API.
+* Use `@protected` for anything that is intended for use by subtypes.
+* Use `@private` for anything that is NOT intended to be part of the public or protected API.
+* Put qualifiers in parenthesis after the annotation, for example:
+* To quality that something is read-only, use `@public (read-only)`. This indicates that the given property (AND its value) should not be changed by outside code (e.g. a Property should not have its value changed)
+* To qualify that something is public to a specific repository, use (for example) `@public (scenery-internal)`
+* Separate multiple qualifiers with commas. For example: `@public (scenery-internal, read-only)`
+
+For JSDoc-style comments, the annotation should appear in context like this:
+
+```js
+/**
+ * Creates the icon for the "Energy" screen, a cartoonish bar graph.
+ * @returns {Node}
+ * @public
+ */
+```
+
+For Line comments, the annotation can appear like this:
+
+```js
+// @public Adds a {function} listener
+addListener: function( listener ) { /*...*/ }
+```
+
+* Regex for property assignment like x.y = something: `[\w]+\.[\w]+\s=`
+* Regex for function declarations: `[\w]+: function\(`
+
+- [ ] Comments should not extend beyond 120 columns, and line breaks should be inserted for multi-line comments just 
+before the word that would extend beyond 120th column.  Multi-line comments should not use a column width less than 80 
+(this helps to get more code on the screen at once).  Code lines should also be broken up if they pass 120 columns.
+
+- [ ] Where inheritance is needed, use phetcore.inherit. Add prototype and static functions via the appropriate arguments to inherit. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
+
+```js
+  return inherit( Object, Line, {
+
+    // Convenience method for creating a line with a different color.
+    withColor: function( color ) {
+      return new Line( this.x1, this.y1, this.x2, this.y2, color );
+    },
+
+    toString: function() {
+      return 'Line[x1=' + this.x1 + 
+             ' y1=' + this.y1 + ' x2=' + this.x2 +     ' y2=' + this.y2 +
+             ' rise=' + this.rise + ' run=' + this.run + ' color=' +
+             this.color.toString() + ']';
+    },
+
+    // Returns true if 2 points on specified line are also on this line.
+    same: function( line ) {
+      return ( line !== null ) && this.onLineXY( line.x1, line.y1 ) &&
+              this.onLineXY( line.x2, line.y2 );
+    },
+
+    // Returns true if the slope is undefined.
+    undefinedSlope: function() {
+      return this.run === 0;
+    },
+
+    // Gets the slope. Returns NaN if slope is undefined.
+    getSlope: function() {
+      if ( this.undefinedSlope() ) {
+        return Number.NaN;
+      }
+      else {
+        return this.rise / this.run;
+      }
+    },
+
+    /*
+     * Given x, solve y = m(x - x1) + y1.  Returns NaN if the solution is
+     * not unique, or there is no solution (x can't possibly be on the
+     * line.)  This occurs when we have a vertical line, with no run.
+     */
+    solveY: function( x ) {
+      if ( this.undefinedSlope() ) {
+        return Number.NaN;
+      }
+      else {
+        return ( this.getSlope() * ( x - this.x1 ) ) + this.y1;
+      }
+    }
+  } );
+```
+
+- [ ] Methods should be invoked using the dot operator rather than the bracket operator.  For more details, please see https://github.com/phetsims/gravity-and-orbits/issues/9
+For instance: instead of :
+```self[ isFaceSmile ? 'smile' : 'grimace' ]();```
+Prefer
+```isFaceSmile ? self.smile() : self.grimace();```
+or
+```js
+      if ( isFaceSmile ) {
+        self.smile();
+      }
+      else {
+        self.grimace();
+      }
+```
+
+- [ ] It is not uncommon to use conditional shorthand and short circuiting for invocation. 
+
+```js
+( expression ) && statement;
+( expression ) ? statement1 : statement2;
+( foo && bar ) ? fooBar() : fooCat();
+( foo && bar ) && fooBar();
+( foo && !(bar && fooBar)) && nowIAmConfused();
+this.fill = ( foo && bar ) ? 'red' : 'blue'; 
+```
+
+If the expression is only one item, the parentheses can be omitted. This is the most common use case.
+
+```js
+assert && assert( happy, ‘Why aren\’t you happy?’ );
+happy && smile();
+var thoughts = happy ? ‘I am happy’ : ‘I am not happy :(’;
+```
+
+- [ ] Naming for Property values:  All AXON/Property instances should be declared with the suffix `Property`.  For instance, if a visible property is added, it should have the name `visibleProperty` instead of simply `visible`.  This will guarantee consistency with Properties created by PropertySet, and help to avoid confusion with primitive (non-Property) values.
+
+- [ ] Line comments should be preceded by a blank line.  For instance:
+
+```js
+// Randomly choose an existing crystal to possibly bond to
+var crystal = this.crystals.get( _.random( this.crystals.length - 1 ) );
+
+// Find a good configuration to have the particles move toward
+var targetConfiguration = this.getTargetConfiguration( crystal );
+```
+
+- [ ] Line comments should have whitespace between the // and the first letter of the line comment.  See the preceding example.
+
+- [ ] Files should be named like CapitalizedCamelCasing.js when returning a class constructor function, or lower-case-style.js when returning a function.  When returning a constructor function, the constructor function name should match the filename.
+
+- [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS5/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the Example Simulation.
