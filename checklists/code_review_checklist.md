@@ -91,71 +91,7 @@ All JavaScript source should be in the js/ directory. There should be a subdirec
 - [ ] Are sim-specific query parameters (if any) identified and documented in one .js file in js/common/ or js/ (if there is no common/)? The .js file should be named `{{REPO}}QueryParameters`, for example ArithmeticQueryParameters for the aritmetic repository.
 - [ ] Do the `@author` annotations seem correct? 
 
-**Math Libraries**
-
-- [ ] Check that `dot.Util.roundSymmetric` is used instead of `Math.round`. `Math.round` does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879.
-- [ ] `dot.Util.toFixed` or `dot.Util.toFixedNumber` should be used instead of `toFixed`. JavaScript's `toFixed` is notoriously buggy. Behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
-- [ ] Check that random numbers are generated using `phet.joist.random`, and are doing so after modules are declared (non-statically).  For instance, the following methods (and perhaps others) should not be used:
-* `Math.random`
-* `_.shuffle`
-* `_.sample`
-* `_.random`
-* `new Random()`
-
-**Organization, Readability, Maintainability**
-
-- [ ] Does the organization and structure of the code make sense? Do the model and view contain types that you would expect (or guess!) by looking at the sim? Do the names of things correspond to the names that you see in the user interface?
-- [ ] Are appropriate design patterns used?
-- [ ] Is inheritance used where appropriate? Does the type hierarchy make sense?
-- [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary properties/functions)
-- [ ] Is there too much unnecessary decoupling? (e.g. by passing all of the properties of an object independently instead of passing the object itself)?
-- [ ] Are the source files reasonable in size? Scrutinize large files with too many responsibilities - can responsibilities be broken into smaller delegates?
-- [ ] Are any significant chunks of code duplicated? This will be checked manually as well as with https://github.com/danielstjules/jsinspect or `grunt find-duplicates`
-- [ ] Is there anything that should be generalized and migrated to common code?
-- [ ] Are there any TODO or FIXME comments in the code?  They should be addressed or promoted to GitHub issues.
-- [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.)
-Does changing the values of these constants break the sim? For example, see https://github.com/phetsims/plinko-probability/issues/84.
-- [ ] The simulation should use Property instead of PropertySet
-- [ ] Are all dependent properties modeled as DerivedProperty instead of Property?
-
-**Performance, Usability**
-
-- [ ] Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms)
-- [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter 'webgl=false')
-- [ ] Are UI components sufficiently responsive? (especially continuous UI components, such as sliders)
-- [ ] Are pointer areas optimized, especially for touch? (run with query parameter 'showPointerAreas')
-- [ ] Do pointer areas overlap? (run with query parameter 'showPointerAreas')
-- [ ] Is the timestep `dt` capped appropriately?  Try switching applications or browser tabs, then switch back.  Did the model take one big/long/awkward step forward?  If so, `dt` may need to be capped.  Example from `faradays-law.FaradaysLawModel`:
-
-```js
-// Cap large dt values, which can occur when the tab containing
-// the sim had been hidden and then re-shown
-dt = Math.min( 0.1, dt );
-```
-
-**Memory Leaks**
-
-- [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.)
-- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is there a call to that component’s dispose function, or documentation about why dispose is unnecessary?
-- [ ] Are there leaks due to registering observers or listeners? These guidelines should be followed, or documentation added about why following them is not necessary:
-	- [ ] AXON: `Property.link` is accompanied by `Property.unlink`.
-	- [ ] AXON: `PropertySet.link` is accompanied by `PropertySet.unlink`.
-	- [ ] AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
-	- [ ] AXON: Creation of `Multilink` is accompanied by `dispose`.
-	- [ ] AXON: `Events.on` is accompanied by `Events.off`.
-	- [ ] AXON: `Emitter.addListener` is accompanied by `Emitter.removeListener`.
-	- [ ] SCENERY: `Node.on` is accompanied by `Node.off`
-	- [ ] TANDEM: `tandem.addInstance` is accompanied by `tandem.removeInstance`.
-- [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls
-`this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly
-match the filename.
-
-**PhET-iO**
-
-- [ ] If the simulation is supposed to be instrumented for PhET-iO, please see [How to Instrument a PhET Simulation for PhET-iO](https://github.com/phetsims/phet-io/blob/master/doc/how-to-instrument-a-phet-simulation-for-phet-io.md)
-for the PhET-iO development process.
-
-**Coding conventions**
+**Coding Conventions**
 
 - [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/joist/blob/master/util/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
 - [ ] Are copyright headers present and up to date? Run `grunt update-copyright-dates`.
@@ -415,3 +351,68 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 - [ ] Files should be named like CapitalizedCamelCasing.js when returning a class constructor function, or lower-case-style.js when returning a function.  When returning a constructor function, the constructor function name should match the filename.
 
 - [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS5/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the Example Simulation.
+
+
+**Math Libraries**
+
+- [ ] Check that `dot.Util.roundSymmetric` is used instead of `Math.round`. `Math.round` does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879.
+- [ ] `dot.Util.toFixed` or `dot.Util.toFixedNumber` should be used instead of `toFixed`. JavaScript's `toFixed` is notoriously buggy. Behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
+- [ ] Check that random numbers are generated using `phet.joist.random`, and are doing so after modules are declared (non-statically).  For instance, the following methods (and perhaps others) should not be used:
+* `Math.random`
+* `_.shuffle`
+* `_.sample`
+* `_.random`
+* `new Random()`
+
+**Organization, Readability, Maintainability**
+
+- [ ] Does the organization and structure of the code make sense? Do the model and view contain types that you would expect (or guess!) by looking at the sim? Do the names of things correspond to the names that you see in the user interface?
+- [ ] Are appropriate design patterns used?
+- [ ] Is inheritance used where appropriate? Does the type hierarchy make sense?
+- [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary properties/functions)
+- [ ] Is there too much unnecessary decoupling? (e.g. by passing all of the properties of an object independently instead of passing the object itself)?
+- [ ] Are the source files reasonable in size? Scrutinize large files with too many responsibilities - can responsibilities be broken into smaller delegates?
+- [ ] Are any significant chunks of code duplicated? This will be checked manually as well as with https://github.com/danielstjules/jsinspect or `grunt find-duplicates`
+- [ ] Is there anything that should be generalized and migrated to common code?
+- [ ] Are there any TODO or FIXME comments in the code?  They should be addressed or promoted to GitHub issues.
+- [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.)
+Does changing the values of these constants break the sim? For example, see https://github.com/phetsims/plinko-probability/issues/84.
+- [ ] The simulation should use Property instead of PropertySet
+- [ ] Are all dependent properties modeled as DerivedProperty instead of Property?
+
+**Performance, Usability**
+
+- [ ] Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms)
+- [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter 'webgl=false')
+- [ ] Are UI components sufficiently responsive? (especially continuous UI components, such as sliders)
+- [ ] Are pointer areas optimized, especially for touch? (run with query parameter 'showPointerAreas')
+- [ ] Do pointer areas overlap? (run with query parameter 'showPointerAreas')
+- [ ] Is the timestep `dt` capped appropriately?  Try switching applications or browser tabs, then switch back.  Did the model take one big/long/awkward step forward?  If so, `dt` may need to be capped.  Example from `faradays-law.FaradaysLawModel`:
+
+```js
+// Cap large dt values, which can occur when the tab containing
+// the sim had been hidden and then re-shown
+dt = Math.min( 0.1, dt );
+```
+
+**Memory Leaks**
+
+- [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.)
+- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is there a call to that component’s dispose function, or documentation about why dispose is unnecessary?
+- [ ] Are there leaks due to registering observers or listeners? These guidelines should be followed, or documentation added about why following them is not necessary:
+	- [ ] AXON: `Property.link` is accompanied by `Property.unlink`.
+	- [ ] AXON: `PropertySet.link` is accompanied by `PropertySet.unlink`.
+	- [ ] AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
+	- [ ] AXON: Creation of `Multilink` is accompanied by `dispose`.
+	- [ ] AXON: `Events.on` is accompanied by `Events.off`.
+	- [ ] AXON: `Emitter.addListener` is accompanied by `Emitter.removeListener`.
+	- [ ] SCENERY: `Node.on` is accompanied by `Node.off`
+	- [ ] TANDEM: `tandem.addInstance` is accompanied by `tandem.removeInstance`.
+- [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls
+`this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly
+match the filename.
+
+**PhET-iO**
+
+- [ ] If the simulation is supposed to be instrumented for PhET-iO, please see [How to Instrument a PhET Simulation for PhET-iO](https://github.com/phetsims/phet-io/blob/master/doc/how-to-instrument-a-phet-simulation-for-phet-io.md)
+for the PhET-iO development process.
