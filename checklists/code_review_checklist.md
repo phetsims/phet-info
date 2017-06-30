@@ -323,6 +323,40 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 
 - [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS5/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the Example Simulation.
 
+- [ ] Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations 
+to document the intent of the programmer, and define the public API. Visibility annotations are required for anything
+that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation
+systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc
+is authoritative. For example, use Array.<Object> or Object[]instead of Array<Object>). PhET guidelines for visibility
+annotations are as follows:
+
+* Use `@public` for anything that is intended to be part of the public API.
+* Use `@protected` for anything that is intended for use by subtypes.
+* Use `@private` for anything that is NOT intended to be part of the public or protected API.
+* Put qualifiers in parenthesis after the annotation, for example:
+* To quality that something is read-only, use `@public (read-only)`. This indicates that the given property (AND its value) should not be changed by outside code (e.g. a Property should not have its value changed)
+* To qualify that something is public to a specific repository, use (for example) `@public (scenery-internal)`
+* Separate multiple qualifiers with commas. For example: `@public (scenery-internal, read-only)`
+
+For JSDoc-style comments, the annotation should appear in context like this:
+
+```js
+/**
+ * Creates the icon for the "Energy" screen, a cartoonish bar graph.
+ * @returns {Node}
+ * @public
+ */
+```
+
+For Line comments, the annotation can appear like this:
+
+```js
+// @public Adds a {function} listener
+addListener: function( listener ) { /*...*/ }
+```
+
+* Regex for property assignment like x.y = something: `[\w]+\.[\w]+\s=`
+* Regex for function declarations: `[\w]+: function\(`
 
 **Math Libraries**
 
