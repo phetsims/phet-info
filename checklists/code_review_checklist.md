@@ -222,30 +222,10 @@ before the word that would extend beyond 120th column.  Multi-line comments shou
 ```js
   return inherit( Object, Line, {
 
-    // Convenience method for creating a line with a different color.
-    withColor: function( color ) {
-      return new Line( this.x1, this.y1, this.x2, this.y2, color );
-    },
-
-    toString: function() {
-      return 'Line[x1=' + this.x1 + 
-             ' y1=' + this.y1 + ' x2=' + this.x2 +     ' y2=' + this.y2 +
-             ' rise=' + this.rise + ' run=' + this.run + ' color=' +
-             this.color.toString() + ']';
-    },
-
-    // Returns true if 2 points on specified line are also on this line.
-    same: function( line ) {
-      return ( line !== null ) && this.onLineXY( line.x1, line.y1 ) &&
-              this.onLineXY( line.x2, line.y2 );
-    },
-
-    // Returns true if the slope is undefined.
-    undefinedSlope: function() {
-      return this.run === 0;
-    },
-
-    // Gets the slope. Returns NaN if slope is undefined.
+   /**
+    * Gets the slope of the line
+    * @returns {number}
+    */
     getSlope: function() {
       if ( this.undefinedSlope() ) {
         return Number.NaN;
@@ -255,10 +235,11 @@ before the word that would extend beyond 120th column.  Multi-line comments shou
       }
     },
 
-    /*
-     * Given x, solve y = m(x - x1) + y1.  Returns NaN if the solution is
-     * not unique, or there is no solution (x can't possibly be on the
-     * line.)  This occurs when we have a vertical line, with no run.
+    /**
+     * Given x, solve y = m(x - x1) + y1.  Returns NaN if the solution is not unique, or there is no solution (x can't 
+     * possibly be on the line.)  This occurs when we have a vertical line, with no run.
+     * @param {number} x - the x coordinate
+     * @returns {number} the solution
      */
     solveY: function( x ) {
       if ( this.undefinedSlope() ) {
