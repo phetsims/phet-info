@@ -254,9 +254,13 @@ before the word that would extend beyond 120th column.  Multi-line comments shou
 
 - [ ] Methods should be invoked using the dot operator rather than the bracket operator.  For more details, please see https://github.com/phetsims/gravity-and-orbits/issues/9
 For instance: instead of :
-```self[ isFaceSmile ? 'smile' : 'grimace' ]();```
+```js
+self[ isFaceSmile ? 'smile' : 'grimace' ]();
+```
 Prefer
-```isFaceSmile ? self.smile() : self.grimace();```
+```js
+isFaceSmile ? self.smile() : self.grimace();
+```
 or
 ```js
       if ( isFaceSmile ) {
