@@ -327,7 +327,7 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 to document the intent of the programmer, and define the public API. Visibility annotations are required for anything
 that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation
 systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc
-is authoritative. For example, use Array.<Object> or Object[]instead of Array<Object>). PhET guidelines for visibility
+is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility
 annotations are as follows:
 
 **Math Libraries**
