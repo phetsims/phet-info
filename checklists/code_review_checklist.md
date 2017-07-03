@@ -247,7 +247,7 @@ this.doSomethingElse();
   } );
 ```
 
-- [ ] Methods should be invoked using the dot operator rather than the bracket operator.  For more details, please see https://github.com/phetsims/gravity-and-orbits/issues/9. For example:
+- [ ] Functions should be invoked using the dot operator rather than the bracket operator.  For more details, please see https://github.com/phetsims/gravity-and-orbits/issues/9. For example:
 ```js
 // avoid
 self[ isFaceSmile ? 'smile' : 'frown' ]();
@@ -297,7 +297,7 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 
 - [ ] Line comments should have whitespace between the `//` and the first letter of the line comment.  See the preceding example.
 
-- [ ] Files should be named like CapitalizedCamelCasing.js when returning a class constructor function, or lower-case-style.js when returning a function.  When returning a constructor function, the constructor function name should match the filename.
+- [ ] Files should be named like CapitalizedCamelCasing.js when returning a constructor, or lower-case-style.js when returning a non-constructor function.  When returning a constructor, the constructor name should match the filename.
 
 - [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS5/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the Example Simulation.
 
