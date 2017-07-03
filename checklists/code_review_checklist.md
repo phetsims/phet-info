@@ -82,9 +82,9 @@ All JavaScript source should be in the js/ directory. There should be a subdirec
 - [ ] Does .gitignore match the one in simula-rasa?
 - [ ] Does a GitHub issue exist for tracking credits, to ensure that they are correct before publication?
 - [ ] Are there git repository branches that are no longer used and should be pruned?
-- [ ] Does model.md adequately describe the model, in terms appropriate for teachers?
-- [ ] Does implementation-notes.md adequately describe the implementation, with an overview that will be useful to future maintainers?
-- [ ] Are sim-specific query parameters (if any) identified and documented in one .js file in js/common/ or js/ (if there is no common/)? The .js file should be named `{{REPO}}QueryParameters`, for example ArithmeticQueryParameters for the aritmetic repository.
+- [ ] Does `model.md` adequately describe the model, in terms appropriate for teachers?
+- [ ] Does `implementation-notes.md` adequately describe the implementation, with an overview that will be useful to future maintainers?
+- [ ] Are sim-specific query parameters (if any) identified and documented in one .js file in js/common/ or js/ (if there is no common/)? The .js file should be named `{{REPO}}QueryParameters.js`, for example ArithmeticQueryParameters.js for the aritmetic repository.
 
 **Coding Conventions**
 
