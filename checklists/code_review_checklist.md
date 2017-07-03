@@ -210,9 +210,7 @@ someProperty.link( function(){
 this.doSomethingElse();
 ```
 
-- [ ] Comments should not extend beyond 120 columns, and line breaks should be inserted for multi-line comments just 
-before the word that would extend beyond 120th column.  Multi-line comments should not use a column width less than 80 
-(this helps to get more code on the screen at once).  Code lines should also be broken up if they pass 120 columns.
+- [ ] Comments should not extend beyond 120 columns. Break long comments into multiple lines to optimize readability (use your judgement).
 
 - [ ] Where inheritance is needed, use `PHET_CORE/inherit`. Add prototype and static functions via the appropriate arguments to inherit. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
 
