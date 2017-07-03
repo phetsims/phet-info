@@ -28,6 +28,7 @@
   - [ ] Sim primer draft
   - [ ] Verify credits
 - [ ] **Post-publication items** 
+  - [ ] Add the simulation to [sim_new_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/sim_new_checklist.md).
   - [ ] Add to Edmodo
   - [ ] Add to [Gooru](http://gooru.org/PhET/content/resources) (signed in as phethelp)
   - [ ] Sim primer (create issue, publish ideally within 1 month of live sim)
