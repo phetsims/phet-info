@@ -41,7 +41,7 @@ For a sim repository named “my-repo”, the general structure should look like
          license.json
       js/
          (see section below)
-      dependencies.json (@samreid thinks this is only necessary in a branch)
+      dependencies.json
       .gitignore
       my-repo_en.html
       my-repo-strings_en.json
