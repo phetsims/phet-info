@@ -297,6 +297,8 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 
 - [ ] Line comments should have whitespace between the `//` and the first letter of the line comment.  See the preceding example.
 
+- [ ] Differentiate between `Property` and "property" in comments. They are different things. `Property` is a type in AXON; property is any value associated with a JavaScript object.
+
 - [ ] Files should be named like CapitalizedCamelCasing.js when returning a constructor, or lower-case-style.js when returning a non-constructor function.  When returning a constructor, the constructor name should match the filename.
 
 - [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS5/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the Example Simulation.
