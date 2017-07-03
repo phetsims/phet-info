@@ -16,6 +16,7 @@
 | `Color Vision` |  CM  |
 | `Concentration` |  CM  |
 | `Energy Skate Park: Basics` |  SR  |
+| `Expression Exchange` |  JB  |
 | `Faraday's Law` |  JB  |
 | `Forces and Motion: Basics` |  JG  |
 | `Fraction Matcher` |  SR  |
