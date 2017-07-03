@@ -250,11 +250,11 @@ this.doSomethingElse();
 - [ ] Methods should be invoked using the dot operator rather than the bracket operator.  For more details, please see https://github.com/phetsims/gravity-and-orbits/issues/9
 For example, instead of :
 ```js
-self[ isFaceSmile ? 'smile' : 'grimace' ]();
+self[ isFaceSmile ? 'smile' : 'frown' ]();
 ```
 prefer
 ```js
-isFaceSmile ? self.smile() : self.grimace();
+isFaceSmile ? self.smile() : self.frown();
 ```
 or
 ```js
@@ -262,7 +262,7 @@ or
         self.smile();
       }
       else {
-        self.grimace();
+        self.frown();
       }
 ```
 
