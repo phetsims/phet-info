@@ -176,7 +176,7 @@ var ballNode = new BallNode( ball, visibleProperty, {
 - [ ] Constructor and function documentation.  Parameter types and names should be clearly specified for each function 
 and constructor (if there are any parameters) using @param annotations.  The description for each parameter should 
 follow a hyphen.  Primitive types should use lower case.  Constructors should additionally include the @constructor 
-annotation. For instance:
+annotation. For example:
 
 ```js
 /** 
@@ -250,11 +250,11 @@ before the word that would extend beyond 120th column.  Multi-line comments shou
 ```
 
 - [ ] Methods should be invoked using the dot operator rather than the bracket operator.  For more details, please see https://github.com/phetsims/gravity-and-orbits/issues/9
-For instance: instead of :
+For example, instead of :
 ```js
 self[ isFaceSmile ? 'smile' : 'grimace' ]();
 ```
-Prefer
+prefer
 ```js
 isFaceSmile ? self.smile() : self.grimace();
 ```
@@ -287,9 +287,9 @@ happy && smile();
 var thoughts = happy ? ‘I am happy’ : ‘I am not happy :(’;
 ```
 
-- [ ] Naming for Property values:  All AXON/Property instances should be declared with the suffix `Property`.  For instance, if a visible property is added, it should have the name `visibleProperty` instead of simply `visible`.  This will guarantee consistency with Properties created by PropertySet, and help to avoid confusion with primitive (non-Property) values.
+- [ ] Naming for Property values:  All AXON/Property instances should be declared with the suffix `Property`.  For example, if a visible property is added, it should have the name `visibleProperty` instead of simply `visible`.  This will guarantee consistency with Properties created by PropertySet, and help to avoid confusion with primitive (non-Property) values.
 
-- [ ] Line comments should be preceded by a blank line.  For instance:
+- [ ] Line comments should be preceded by a blank line.  For example:
 
 ```js
 // Randomly choose an existing crystal to possibly bond to
@@ -344,7 +344,7 @@ addListener: function( listener ) { /*...*/ }
 
 - [ ] Check that `dot.Util.roundSymmetric` is used instead of `Math.round`. `Math.round` does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879.
 - [ ] `dot.Util.toFixed` or `dot.Util.toFixedNumber` should be used instead of `toFixed`. JavaScript's `toFixed` is notoriously buggy. Behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
-- [ ] Check that random numbers are generated using `phet.joist.random`, and are doing so after modules are declared (non-statically).  For instance, the following methods (and perhaps others) should not be used:
+- [ ] Check that random numbers are generated using `phet.joist.random`, and are doing so after modules are declared (non-statically).  For example, the following methods (and perhaps others) should not be used:
 * `Math.random`
 * `_.shuffle`
 * `_.sample`
