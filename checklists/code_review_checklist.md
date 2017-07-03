@@ -100,7 +100,7 @@ var width              // incorrect
 var beakerWidth        // correct
 ```
 
-- [ ] Require statements should be organized into blocks, with the code modules first, followed by strings, images, and audio (any order ok for strings/images/audio).  For modules, the var name should match the file name. Example below.
+- [ ] Require statements should be organized into blocks, with the code modules first, followed by strings, images, mipmaps and audio (any order ok for strings/images/mipmaps/audio).  For modules, the var name should match the file name. Example below.
 
 ```js
 // modules
