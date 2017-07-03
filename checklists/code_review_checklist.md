@@ -212,7 +212,7 @@ this.doSomethingElse();
 
 - [ ] Comments should not extend beyond 120 columns. Break long comments into multiple lines to optimize readability (use your judgement).
 
-- [ ] Where inheritance is needed, use `PHET_CORE/inherit`. Add prototype and static functions via the appropriate arguments to inherit. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
+- [ ] Where inheritance is needed, use `PHET_CORE/inherit`. Add prototype and static functions via the appropriate arguments to `inherit`. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
 
 ```js
   return inherit( Object, Line, {
@@ -367,10 +367,10 @@ Does changing the values of these constants break the sim? For example, see http
 **Performance, Usability**
 
 - [ ] Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms)
-- [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter 'webgl=false')
+- [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter `webgl=false`)
 - [ ] Are UI components sufficiently responsive? (especially continuous UI components, such as sliders)
-- [ ] Are pointer areas optimized, especially for touch? (run with query parameter 'showPointerAreas')
-- [ ] Do pointer areas overlap? (run with query parameter 'showPointerAreas')
+- [ ] Are pointer areas optimized, especially for touch? (run with query parameter `showPointerAreas`)
+- [ ] Do pointer areas overlap? (run with query parameter `showPointerAreas`)
 
 **Memory Leaks**
 
