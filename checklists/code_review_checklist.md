@@ -174,8 +174,8 @@ var ballNode = new BallNode( ball, visibleProperty, {
 ```
 
 - [ ] Constructor and function documentation.  Parameter types and names should be clearly specified for each function 
-and constructor (if there are any parameters) using @param annotations.  The description for each parameter should 
-follow a hyphen.  Primitive types should use lower case.  Constructors should additionally include the @constructor 
+and constructor (if there are any parameters) using `@param` annotations.  The description for each parameter should 
+follow a hyphen.  Primitive types should use lower case.  Constructors should additionally include the `@constructor` 
 annotation. For example:
 
 ```js
@@ -195,12 +195,11 @@ annotation. For example:
 function PhetDeveloper( name, age, isEmployee, callback, hoursProperty, friendNames, options ) {}
 ```
 
-- [ ] For most functions, the same form as above should be used, with a @return annotation which identifies the return 
+- [ ] For most functions, the same form as above should be used, with a `@return` annotation which identifies the return 
 type and the meaning of the returned value.  Functions should also document any side effects.  For extremely simple 
 functions that are just a few lines of simple code, an abbreviated line-comment can be used, for example: `// Computes {Number} distance based on {Foo} foo.`
 
-- [ ] If references are needed to the enclosing object, such as for a closure, ‘self’ should be used, but it should only be 
-used in closures.  The ‘self’ variable should not be defined unless it is needed in a closure.  Example:
+- [ ] If references are needed to the enclosing object, such as for a closure, `self` should be defined, but it should only be used in closures.  The `self` variable should not be defined unless it is needed in a closure.  Example:
 
 ```js
 var self = this;
@@ -214,7 +213,7 @@ this.doSomethingElse();
 before the word that would extend beyond 120th column.  Multi-line comments should not use a column width less than 80 
 (this helps to get more code on the screen at once).  Code lines should also be broken up if they pass 120 columns.
 
-- [ ] Where inheritance is needed, use phetcore.inherit. Add prototype and static functions via the appropriate arguments to inherit. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
+- [ ] Where inheritance is needed, use `PHET_CORE/inherit`. Add prototype and static functions via the appropriate arguments to inherit. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
 
 ```js
   return inherit( Object, Line, {
@@ -287,7 +286,7 @@ happy && smile();
 var thoughts = happy ? ‘I am happy’ : ‘I am not happy :(’;
 ```
 
-- [ ] Naming for Property values:  All AXON/Property instances should be declared with the suffix `Property`.  For example, if a visible property is added, it should have the name `visibleProperty` instead of simply `visible`.  This will guarantee consistency with Properties created by PropertySet, and help to avoid confusion with primitive (non-Property) values.
+- [ ] Naming for Property values:  All `AXON/Property` instances should be declared with the suffix `Property`.  For example, if a visible property is added, it should have the name `visibleProperty` instead of simply `visible`.  This will help to avoid confusion with non-Property definitions.
 
 - [ ] Line comments should be preceded by a blank line.  For example:
 
@@ -299,7 +298,7 @@ var crystal = this.crystals.get( _.random( this.crystals.length - 1 ) );
 var targetConfiguration = this.getTargetConfiguration( crystal );
 ```
 
-- [ ] Line comments should have whitespace between the // and the first letter of the line comment.  See the preceding example.
+- [ ] Line comments should have whitespace between the `//` and the first letter of the line comment.  See the preceding example.
 
 - [ ] Files should be named like CapitalizedCamelCasing.js when returning a class constructor function, or lower-case-style.js when returning a function.  When returning a constructor function, the constructor function name should match the filename.
 
@@ -309,8 +308,7 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 to document the intent of the programmer, and define the public API. Visibility annotations are required for anything
 that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation
 systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc
-is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility
-annotations are as follows:
+is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility annotations are as follows:
 
 * Use `@public` for anything that is intended to be part of the public API.
 * Use `@protected` for anything that is intended for use by subtypes.
@@ -337,13 +335,13 @@ For Line comments, the annotation can appear like this:
 addListener: function( listener ) { /*...*/ }
 ```
 
-* Regex for property assignment like x.y = something: `[\w]+\.[\w]+\s=`
+* Regex for property assignment like `x.y = something`: `[\w]+\.[\w]+\s=`
 * Regex for function declarations: `[\w]+: function\(`
 
 **Math Libraries**
 
 - [ ] Check that `dot.Util.roundSymmetric` is used instead of `Math.round`. `Math.round` does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879.
-- [ ] `dot.Util.toFixed` or `dot.Util.toFixedNumber` should be used instead of `toFixed`. JavaScript's `toFixed` is notoriously buggy. Behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
+- [ ] `DOT/Util.toFixed` or `DOT/Util.toFixedNumber` should be used instead of `toFixed`. JavaScript's `toFixed` is notoriously buggy. Behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
 - [ ] Check that random numbers are generated using `phet.joist.random`, and are doing so after modules are declared (non-statically).  For example, the following methods (and perhaps others) should not be used:
 * `Math.random`
 * `_.shuffle`
@@ -361,11 +359,11 @@ addListener: function( listener ) { /*...*/ }
 - [ ] Are the source files reasonable in size? Scrutinize large files with too many responsibilities - can responsibilities be broken into smaller delegates?
 - [ ] Are any significant chunks of code duplicated? This will be checked manually as well as with https://github.com/danielstjules/jsinspect or `grunt find-duplicates`
 - [ ] Is there anything that should be generalized and migrated to common code?
-- [ ] Are there any TODO or FIXME comments in the code?  They should be addressed or promoted to GitHub issues.
+- [ ] Are there any `TODO` or `FIXME` comments in the code?  They should be addressed or promoted to GitHub issues.
 - [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.)
 Does changing the values of these constants break the sim? For example, see https://github.com/phetsims/plinko-probability/issues/84.
-- [ ] The simulation should use Property instead of PropertySet
-- [ ] Are all dependent properties modeled as DerivedProperty instead of Property?
+- [ ] The simulation should use `Property` instead of `PropertySet`.
+- [ ] Are all dependent properties modeled as `DerivedProperty` instead of `Property`?
 
 **Performance, Usability**
 
