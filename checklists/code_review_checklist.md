@@ -82,14 +82,9 @@ All JavaScript source should be in the js/ directory. There should be a subdirec
 - [ ] Does .gitignore match the one in simula-rasa?
 - [ ] Does a GitHub issue exist for tracking credits, to ensure that they are correct before publication?
 - [ ] Are there git repository branches that are no longer used and should be pruned?
-
-**Documentation**
-
-- [ ] Are documentation conventions followed, as described in the [“Coding Style Guidelines” section of the PhET Development Overview](http://bit.ly/phet-html5-development-overview#bookmark=id.ltflelig4smk)?
 - [ ] Does model.md adequately describe the model, in terms appropriate for teachers?
 - [ ] Does implementation-notes.md adequately describe the implementation, with an overview that will be useful to future maintainers?
 - [ ] Are sim-specific query parameters (if any) identified and documented in one .js file in js/common/ or js/ (if there is no common/)? The .js file should be named `{{REPO}}QueryParameters`, for example ArithmeticQueryParameters for the aritmetic repository.
-- [ ] Do the `@author` annotations seem correct? 
 
 **Coding Conventions**
 
@@ -124,6 +119,8 @@ var energyImage = require( 'image!ENERGY/energy.png' );
 // audio
 var kineticAudio = require( 'audio!ENERGY/energy' );
 ```
+
+- [ ] Do the `@author` annotations seem correct? 
 
 - [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default 
 value.  This improves readability at the call site, especially when the number of parameters is large.  It also 
