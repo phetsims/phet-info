@@ -90,7 +90,7 @@ All JavaScript source should be in the js/ directory. There should be a subdirec
 
 - [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/joist/blob/master/util/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
 - [ ] Are copyright headers present and up to date? Run `grunt update-copyright-dates`.
-- [ ] Names (types, variables, properties,...) should be sufficiently descriptive and specific, and should avoid non-standard abbreviations. For example:
+- [ ] Names (types, variables, properties, functions,...) should be sufficiently descriptive and specific, and should avoid non-standard abbreviations. For example:
 
 ```js
 var numPart            // incorrect
