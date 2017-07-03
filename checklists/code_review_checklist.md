@@ -8,8 +8,8 @@ PhET code-review checklist
 
 - [ ] Does the sim build without warnings or errors?
 - [ ] Does the sim start up? (requirejs and built versions)
-- [ ] Does the sim experience any assertion failures? (run with query parameter 'ea')
-- [ ] Does the sim pass a scenery fuzzer test? (run with query parameter 'fuzzMouse&ea')
+- [ ] Does the sim experience any assertion failures? (run with query parameter `ea`)
+- [ ] Does the sim pass a scenery fuzzer test? (run with query parameter `fuzzMouse&ea`)
 
 **Internationalization**
 - [ ] Are there any strings that are not being internationalized? (run with query parameter `stringTest=x`, you should see nothing but 'x' strings)
