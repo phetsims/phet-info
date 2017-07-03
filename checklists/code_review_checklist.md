@@ -247,17 +247,15 @@ this.doSomethingElse();
   } );
 ```
 
-- [ ] Methods should be invoked using the dot operator rather than the bracket operator.  For more details, please see https://github.com/phetsims/gravity-and-orbits/issues/9
-For example, instead of :
+- [ ] Methods should be invoked using the dot operator rather than the bracket operator.  For more details, please see https://github.com/phetsims/gravity-and-orbits/issues/9. For example:
 ```js
+// avoid
 self[ isFaceSmile ? 'smile' : 'frown' ]();
-```
-prefer
-```js
+
+// OK
 isFaceSmile ? self.smile() : self.frown();
-```
-or
-```js
+
+// OK
 if ( isFaceSmile ) {
   self.smile();
 }
