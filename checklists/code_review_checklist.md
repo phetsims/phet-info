@@ -258,12 +258,12 @@ isFaceSmile ? self.smile() : self.frown();
 ```
 or
 ```js
-      if ( isFaceSmile ) {
-        self.smile();
-      }
-      else {
-        self.frown();
-      }
+if ( isFaceSmile ) {
+  self.smile();
+}
+else {
+  self.frown();
+}
 ```
 
 - [ ] It is not uncommon to use conditional shorthand and short circuiting for invocation. 
@@ -375,7 +375,7 @@ Does changing the values of these constants break the sim? For example, see http
 **Memory Leaks**
 
 - [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.)
-- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is there a call to that component’s dispose function, or documentation about why dispose is unnecessary?
+- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is there a call to that component’s `dispose` function, or documentation about why `dispose` is unnecessary?
 - [ ] Are there leaks due to registering observers or listeners? These guidelines should be followed, or documentation added about why following them is not necessary:
 	- [ ] AXON: `Property.link` is accompanied by `Property.unlink`.
 	- [ ] AXON: `PropertySet.link` is accompanied by `PropertySet.unlink`.
