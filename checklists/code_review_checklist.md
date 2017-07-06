@@ -138,8 +138,7 @@ function BallNode( ball, visibleProperty, fill, stroke, lineWidth ){
 // Call site
 var ballNode = new BallNode( ball, visibleProperty, 'blue', 'black', 2 );
 ```
-Here’s the same constructor with an appropriate use of options. The call site is easier  to read, and the order of 
-options is flexible.
+Here’s the same constructor with an appropriate use of options. The call site is easier  to read, and the order of options is flexible.
 
 ```js
 /**
@@ -167,10 +166,7 @@ var ballNode = new BallNode( ball, visibleProperty, {
 } );
 ```
 
-- [ ] Constructor and function documentation.  Parameter types and names should be clearly specified for each function 
-and constructor (if there are any parameters) using `@param` annotations.  The description for each parameter should 
-follow a hyphen.  Primitive types should use lower case.  Constructors should additionally include the `@constructor` 
-annotation. For example:
+- [ ] Constructor and function documentation.  Parameter types and names should be clearly specified for each function and constructor (if there are any parameters) using `@param` annotations.  The description for each parameter should follow a hyphen.  Primitive types should use lower case.  Constructors should additionally include the `@constructor` annotation. For example:
 
 ```js
 /** 
@@ -189,9 +185,7 @@ annotation. For example:
 function PhetDeveloper( name, age, isEmployee, callback, hoursProperty, friendNames, options ) {}
 ```
 
-- [ ] For most functions, the same form as above should be used, with a `@return` annotation which identifies the return 
-type and the meaning of the returned value.  Functions should also document any side effects.  For extremely simple 
-functions that are just a few lines of simple code, an abbreviated line-comment can be used, for example: `// Computes {Number} distance based on {Foo} foo.`
+- [ ] For most functions, the same form as above should be used, with a `@return` annotation which identifies the return type and the meaning of the returned value.  Functions should also document any side effects.  For extremely simple functions that are just a few lines of simple code, an abbreviated line-comment can be used, for example: `// Computes {Number} distance based on {Foo} foo.`
 
 - [ ] If references are needed to the enclosing object, such as for a closure, `self` should be defined, but it should only be used in closures.  The `self` variable should not be defined unless it is needed in a closure.  Example:
 
@@ -296,11 +290,7 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 
 - [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS5/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the Example Simulation.
 
-- [ ] Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations 
-to document the intent of the programmer, and define the public API. Visibility annotations are required for anything
-that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation
-systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc
-is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility annotations are as follows:
+- [ ] Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations to document the intent of the programmer, and define the public API. Visibility annotations are required for anything that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility annotations are as follows:
 
 * Use `@public` for anything that is intended to be part of the public API.
 * Use `@protected` for anything that is intended for use by subtypes.
@@ -378,9 +368,7 @@ Does changing the values of these constants break the sim? For example, see http
 	- [ ] AXON: `Emitter.addListener` is accompanied by `Emitter.removeListener`.
 	- [ ] SCENERY: `Node.on` is accompanied by `Node.off`
 	- [ ] TANDEM: `tandem.addInstance` is accompanied by `tandem.removeInstance`.
-- [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls
-`this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly
-match the filename.
+- [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls `this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly match the filename.
 
 **PhET-iO**
 
