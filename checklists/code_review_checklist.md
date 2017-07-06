@@ -118,9 +118,7 @@ var kineticAudio = require( 'audio!ENERGY/energy' );
 
 - [ ] Do the `@author` annotations seem correct? 
 
-- [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default 
-value.  This improves readability at the call site, especially when the number of parameters is large.  It also 
-eliminates order dependency that is required by using parameters.
+- [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default value.  This improves readability at the call site, especially when the number of parameters is large.  It also eliminates order dependency that is required by using parameters.
 
 For example, this constructor uses parameters for everything. At the call site, the semantics of the arguments are difficult to determine without consulting the constructor.
 
