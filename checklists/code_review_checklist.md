@@ -296,7 +296,7 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 * Use `@protected` for anything that is intended for use by subtypes.
 * Use `@private` for anything that is NOT intended to be part of the public or protected API.
 * Put qualifiers in parenthesis after the annotation, for example:
-* To quality that something is read-only, use `@public (read-only)`. This indicates that the given property (AND its value) should not be changed by outside code (e.g. a Property should not have its value changed)
+* To qualify that something is read-only, use `@public (read-only)`. This indicates that the given property (AND its value) should not be changed by outside code (e.g. a Property should not have its value changed)
 * To qualify that something is public to a specific repository, use (for example) `@public (scenery-internal)`
 * Separate multiple qualifiers with commas. For example: `@public (scenery-internal, read-only)`
 
