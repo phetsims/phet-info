@@ -323,8 +323,8 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 addListener: function( listener ) { /*...*/ }
 ```
 
-- [ ] Now make sure every javascript property has a visibility annotation. Two of the most common publicly accessible 
-members for PhET are properties and functions. Here are some helpful regex to search for these declarations as PhET uses them.
+- [ ] Now make sure every javascript property has a visibility annotation. Here are some helpful regexes to search for 
+these declarations as PhET uses them.
 * Regex for property assignment like `x.y = something`: `[\w]+\.[\w]+\s=`
 * Regex for function declarations: `[\w]+: function\(`
 
