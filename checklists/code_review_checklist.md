@@ -4,14 +4,14 @@
 PhET code-review checklist
 =============
 
-**Build and Run Checks**
+#### **Build and Run Checks**
 
 - [ ] Does the sim build without warnings or errors?
 - [ ] Does the sim start up? (requirejs and built versions)
 - [ ] Does the sim experience any assertion failures? (run with query parameter `ea`)
 - [ ] Does the sim pass a scenery fuzz test? (run with query parameter `fuzzMouse&ea`)
 
-**Internationalization**
+#### **Internationalization**
 - [ ] Are there any strings that are not being internationalized? (run with query parameter `stringTest=x`, you should see nothing but 'x' strings)
 - [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter `stringTest=double`)
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter `stringTest=long`)
@@ -20,7 +20,7 @@ PhET code-review checklist
 - [ ] Use named placeholders (e.g. `"{{value}} {{units}}"`) instead of numbered placeholders (e.g. `"{0} {1}"`).
 - [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 is published.  Strings keys should generally match the values, such as `{binaryProbability: "Binary Probability"}`. Screen names should use camelcase, like so  `screen.screenName`. For patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) choose keys that are unlikely to conflict with strings that might be needed in the future.  For example, for `"{{price}}"` consider using key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
 
-**Repository structure**
+#### **Repository structure**
 
 - [ ] Are all required files and directories present?
 For a sim repository named “my-repo”, the general structure should look like this (where assets/, audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
@@ -82,7 +82,7 @@ All JavaScript source should be in the js/ directory. There should be a subdirec
 - [ ] Does `implementation-notes.md` adequately describe the implementation, with an overview that will be useful to future maintainers?
 - [ ] Are sim-specific query parameters (if any) identified and documented in one .js file in js/common/ or js/ (if there is no common/)? The .js file should be named `{{REPO}}QueryParameters.js`, for example ArithmeticQueryParameters.js for the aritmetic repository.
 
-**Coding Conventions**
+#### **Coding Conventions**
 
 - [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/joist/blob/master/util/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
 - [ ] Are copyright headers present and up to date? Run `grunt update-copyright-dates`.
@@ -290,17 +290,23 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 
 - [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS5/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the example-sim repository.
 
-- [ ] Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations to document the intent of the programmer, and define the public API. Visibility annotations are required for anything that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility annotations are as follows:
+##### Visibility Annotations
+   Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations to 
+   document the intent of the programmer, and define the public API. Visibility annotations are required for anything 
+   that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation 
+   systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, 
+   JSDoc is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines 
+   for visibility annotations are as follows:
 
-* Use `@public` for anything that is intended to be part of the public API.
-* Use `@protected` for anything that is intended for use by subtypes.
-* Use `@private` for anything that is NOT intended to be part of the public or protected API.
-* Put qualifiers in parenthesis after the annotation, for example:
-* To qualify that something is read-only, use `@public (read-only)`. This indicates that the given property (AND its value) should not be changed by outside code (e.g. a Property should not have its value changed)
-* To qualify that something is public to a specific repository, use (for example) `@public (scenery-internal)`
-* Separate multiple qualifiers with commas. For example: `@public (scenery-internal, read-only)`
+- [ ] Use `@public` for anything that is intended to be part of the public API.
+- [ ] Use `@protected` for anything that is intended for use by subtypes.
+- [ ] Use `@private` for anything that is NOT intended to be part of the public or protected API.
+- [ ] Put qualifiers in parenthesis after the annotation, for example:
+- [ ] To qualify that something is read-only, use `@public (read-only)`. This indicates that the given property (AND its value) should not be changed by outside code (e.g. a Property should not have its value changed)
+- [ ] To qualify that something is public to a specific repository, use (for example) `@public (scenery-internal)`
+- [ ] Separate multiple qualifiers with commas. For example: `@public (scenery-internal, read-only)`
 
-For JSDoc-style comments, the annotation should appear in context like this:
+- [ ] For JSDoc-style comments, the annotation should appear in context like this:
 
 ```js
 /**
@@ -310,17 +316,19 @@ For JSDoc-style comments, the annotation should appear in context like this:
  */
 ```
 
-For Line comments, the annotation can appear like this:
+- [ ] For Line comments, the annotation can appear like this:
 
 ```js
 // @public Adds a {function} listener
 addListener: function( listener ) { /*...*/ }
 ```
 
+- [ ] Now make sure every javascript property has a visibility annotation. Two of the most common publicly accessible 
+members for PhET are properties and functions. Here are some helpful regex to search for these declarations as PhET uses them.
 * Regex for property assignment like `x.y = something`: `[\w]+\.[\w]+\s=`
 * Regex for function declarations: `[\w]+: function\(`
 
-**Math Libraries**
+#### **Math Libraries**
 
 - [ ] Check that `dot.Util.roundSymmetric` is used instead of `Math.round`. `Math.round` does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879.
 - [ ] `DOT/Util.toFixed` or `DOT/Util.toFixedNumber` should be used instead of `toFixed`. JavaScript's `toFixed` is notoriously buggy. Behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
@@ -331,7 +339,7 @@ addListener: function( listener ) { /*...*/ }
 * `_.random`
 * `new Random()`
 
-**Organization, Readability, Maintainability**
+#### **Organization, Readability, Maintainability**
 
 - [ ] Does the organization and structure of the code make sense? Do the model and view contain types that you would expect (or guess!) by looking at the sim? Do the names of things correspond to the names that you see in the user interface?
 - [ ] Are appropriate design patterns used?
@@ -347,7 +355,7 @@ Does changing the values of these constants break the sim? For example, see http
 - [ ] The simulation should use `Property` instead of `PropertySet`.
 - [ ] Are all dependent properties modeled as `DerivedProperty` instead of `Property`?
 
-**Performance, Usability**
+#### **Performance, Usability**
 
 - [ ] Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms)
 - [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter `webgl=false`)
@@ -355,7 +363,7 @@ Does changing the values of these constants break the sim? For example, see http
 - [ ] Are pointer areas optimized, especially for touch? (run with query parameter `showPointerAreas`)
 - [ ] Do pointer areas overlap? (run with query parameter `showPointerAreas`)
 
-**Memory Leaks**
+#### **Memory Leaks**
 
 - [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.)
 - [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is there a call to that component’s `dispose` function, or documentation about why `dispose` is unnecessary?
@@ -370,7 +378,7 @@ Does changing the values of these constants break the sim? For example, see http
 	- [ ] TANDEM: `tandem.addInstance` is accompanied by `tandem.removeInstance`.
 - [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls `this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly match the filename.
 
-**PhET-iO**
+#### **PhET-iO**
 
 - [ ] If the simulation is supposed to be instrumented for PhET-iO, please see [How to Instrument a PhET Simulation for PhET-iO](https://github.com/phetsims/phet-io/blob/master/doc/how-to-instrument-a-phet-simulation-for-phet-io.md)
 for the PhET-iO development process.
