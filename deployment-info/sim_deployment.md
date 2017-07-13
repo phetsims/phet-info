@@ -126,9 +126,7 @@ for phet-io versions. Ask a PhET developer for credentials.
           Chrome [see this solution](http://superuser.com/a/636697/493443).
    + **INITIAL_PUBLICATION**: Generate and check in (on the master branch) the auto-generated readme file for a published sim.  The README.md file can be created using ```grunt published-README```.
    + **NOT_A_NEW_SIMULATION**: Verify that any previously existing translations are still available and that
-        their version numbers are correct.
-   + After the new simulation is available from the website, the 3rd party contributions page must be updated.
-    Directions for how to do this are in `chipper/js/grunt/reportThirdParty.js`. 
+        their version numbers are correct. 
 * **PRODUCTION FOR PHET_IO_BRAND**:
    + If this is a version that will be used with students, then make sure to remove the password protection. See https://github.com/phetsims/phet-io/blob/master/doc/phet-io-security.md for details.
    + Make sure that the current level of instrumentation is represented here in the [Instrumentation Status Spreadsheet](https://docs.google.com/spreadsheets/d/1pU9izdNQkd9vr8TvLAfXe_v68yh-7potH-y712FBPr8/edit#gid=0). MAKE SURE TO UPDATE THE "Latest Published Version" COLUMN.
@@ -140,6 +138,7 @@ for phet-io versions. Ask a PhET developer for credentials.
 * Check out master for the sim repo: `git checkout master`
 * Update and commit the new correct version in package.json for master.  Basically, master should be set up for what 
 would be the next release branch name.  So if you just created release branch 1.3, then the version should be 1.4.0-dev.0 in master.
++ Update the 3rd party credits shown on the sims web page by running `grunt report-third-party`.  Then manually commit and push `sherpa/third-party-licenses.md`.
   
 ## Deploy a batch of production sims.
 These steps were followed by @samreid on Nov 2, 2016 to roll out a batch of PhET-iO sims to master.
