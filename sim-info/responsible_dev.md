@@ -34,6 +34,7 @@
 | `Make a Ten` |  JO  |
 | `Molarity` |  CM  |
 | `Molecules and Light` |  JG  |
+| `Molecule Polarity` |  CM  |
 | `Molecule Shapes` |  JO  |
 | `Molecule Shapes: Basics` |  JO  |
 | `Neuron` |  JB  |
