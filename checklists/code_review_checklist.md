@@ -19,7 +19,9 @@ PhET code-review checklist
 - [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter `stringTest=X`)
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter `stringTest=xss`? This test passes if sim does not redirect, OK if sim crashes or fails to fully start. Only test on one desktop platform.
 - [ ] Use named placeholders (e.g. `"{{value}} {{units}}"`) instead of numbered placeholders (e.g. `"{0} {1}"`).
-- [ ] Make sure the string keys are all perfect, they are difficult to change after 1.0.0 is published.  Strings keys should generally match the values, such as `{binaryProbability: "Binary Probability"}`. Screen names should use camelcase, like so  `screen.screenName`. For patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) choose keys that are unlikely to conflict with strings that might be needed in the future.  For example, for `"{{price}}"` consider using key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
+- [ ] Make sure the string keys are all perfect - they are difficult to change after 1.0.0 is published.  Strings keys should generally match their values, such as `"binaryProbability": { "value": "Binary Probability" }`. 
+- [ ] String keys for screen names should have the general form `"screen.{{screenName}}"`, e.g. `"screen.lab"`. 
+- [ ] String patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) should use keys that are unlikely to conflict with strings that might be needed in the future.  For example, for `"{{price}}"` consider using key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
 
 #### **Repository structure**
 
