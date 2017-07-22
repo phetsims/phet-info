@@ -105,8 +105,8 @@ var beakerWidth        // correct
 ```js
 // modules
 var inherit = require( 'PHET_CORE/inherit' );
-var Rectangle = require( 'SCENERY/nodes/Rectangle' );
 var Line = require( 'SCENERY/nodes/Line' );
+var Rectangle = require( 'SCENERY/nodes/Rectangle' );
 
 // strings
 var kineticString = require( 'string!ENERGY/energy.kinetic' );
