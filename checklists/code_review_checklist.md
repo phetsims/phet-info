@@ -322,8 +322,7 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 addListener: function( listener ) { /*...*/ }
 ```
 
-- [ ] Now make sure every javascript property has a visibility annotation. Here are some helpful regexes to search for 
-these declarations as PhET uses them.
+- [ ] Now make sure every JavaScript property has a visibility annotation. Here are some helpful regexes to search for these declarations as PhET uses them.
 * Regex for property assignment like `x.y = something`: `[\w]+\.[\w]+\s=`
 * Regex for function declarations: `[\w]+: function\(`
 
