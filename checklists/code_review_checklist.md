@@ -93,11 +93,11 @@ All JavaScript source should be in the js/ directory. There should be a subdirec
 - [ ] Names (types, variables, properties, functions,...) should be sufficiently descriptive and specific, and should avoid non-standard abbreviations. For example:
 
 ```js
-var numPart            // incorrect
-var numberOfParticles  // correct
+var numPart;            // incorrect
+var numberOfParticles;  // correct
 
-var width              // incorrect
-var beakerWidth        // correct
+var width;              // incorrect
+var beakerWidth;        // correct
 ```
 
 - [ ] Require statements should be organized into blocks, with the code modules first, followed by strings, images and audio (any order ok for strings/images/audio).  For modules, the var name should match the file name. Example below.
@@ -136,7 +136,7 @@ For example, this constructor uses parameters for everything. At the call site, 
  * @constructor
  */
 function BallNode( ball, visibleProperty, fill, stroke, lineWidth ){
-   ...
+   // ...
 }
 
 // Call site
@@ -189,7 +189,7 @@ var ballNode = new BallNode( ball, visibleProperty, {
 function PhetDeveloper( name, age, isEmployee, callback, hoursProperty, friendNames, options ) {}
 ```
 
-- [ ] For most functions, the same form as above should be used, with a `@return` annotation which identifies the return type and the meaning of the returned value.  Functions should also document any side effects.  For extremely simple functions that are just a few lines of simple code, an abbreviated line-comment can be used, for example: `// Computes {Number} distance based on {Foo} foo.`
+- [ ] For most functions, the same form as above should be used, with a `@returns` annotation which identifies the return type and the meaning of the returned value.  Functions should also document any side effects.  For extremely simple functions that are just a few lines of simple code, an abbreviated line-comment can be used, for example: `// Computes {Number} distance based on {Foo} foo.`
 
 - [ ] If references are needed to the enclosing object, such as for a closure, `self` should be defined, but it should only be used in closures.  The `self` variable should not be defined unless it is needed in a closure.  Example:
 
@@ -291,6 +291,8 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 - [ ] Differentiate between `Property` and "property" in comments. They are different things. `Property` is a type in AXON; property is any value associated with a JavaScript object.
 
 - [ ] Files should be named like CapitalizedCamelCasing.js when returning a constructor, or lower-case-style.js when returning a non-constructor function.  When returning a constructor, the constructor name should match the filename.
+
+- [ ] Every class, method and property should be documented.
 
 - [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS5/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the example-sim repository.
 
