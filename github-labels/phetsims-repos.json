@@ -415,5 +415,8 @@
   },
   {
     "name":"QA"
+  },
+  {
+    "name":"circuit-construction-kit-dc-virtual-lab"
   }
 ]
