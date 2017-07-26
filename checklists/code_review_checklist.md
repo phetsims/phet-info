@@ -292,7 +292,7 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 
 - [ ] Files should be named like CapitalizedCamelCasing.js when returning a constructor, or lower-case-style.js when returning a non-constructor function.  When returning a constructor, the constructor name should match the filename.
 
-- [ ] Every class, method and property should be documented.
+- [ ] Every type, method and property should be documented.
 
 - [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS5/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the example-sim repository.
 
