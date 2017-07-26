@@ -138,7 +138,7 @@ for phet-io versions. Ask a PhET developer for credentials.
 * Check out master for the sim repo: `git checkout master`
 * Update and commit the new correct version in package.json for master.  Basically, master should be set up for what 
 would be the next release branch name.  So if you just created release branch 1.3, then the version should be 1.4.0-dev.0 in master.
-+ Update the 3rd party credits shown on the sims web page by running `grunt report-third-party`.  Then manually commit and push `sherpa/third-party-licenses.md`. NOTE! For the first publication of an HTML5 sim that was ported from Java, you must do this _after_ the HTML5 version has been made visible on the website.  Failure to do so will result in a silent failure on the server, and you won't see any "Third Party" Credits on the HTML5 sim's web page.
++ Update the 3rd party credits shown on the sim's web page by running `grunt report-third-party`.  Then manually commit and push `sherpa/third-party-licenses.md`. NOTE! For the first publication of an HTML5 sim that was ported from Java, you must do this _after_ the HTML5 version has been made visible on the website.  Failure to do so will result in a silent failure on the server, and you won't see any "Third Party" Credits on the HTML5 sim's web page.
   
 ## Deploy a batch of production sims.
 These steps were followed by @samreid on Nov 2, 2016 to roll out a batch of PhET-iO sims to master.
