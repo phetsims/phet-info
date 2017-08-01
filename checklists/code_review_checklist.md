@@ -224,7 +224,9 @@ someProperty.link( function(){
 this.doSomethingElse();
 ```
 
-- [ ] Comments should not extend beyond 120 columns. Break long comments into multiple lines to optimize readability (use your judgement).  It is OK for require statements to exceed 120 columns.
+- [ ] Generally, lines should not exceed 120 columns. Break up long statements, expressions, or comments into multiple
+lines to optimize readability.  It is OK for require statements or other structured patterns to exceed 120 columns.  
+Use your judgment!   
 
 - [ ] Where inheritance is needed, use `PHET_CORE/inherit`. Add prototype and static functions via the appropriate arguments to `inherit`. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
 
