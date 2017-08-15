@@ -12,6 +12,32 @@ PhET code-review checklist
 - [ ] Does the sim experience any assertion failures? (run with query parameter `ea`)
 - [ ] Does the sim pass a scenery fuzz test? (run with query parameters `fuzzMouse&ea`)
 
+#### **Memory Leaks**
+
+- [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.) There should be a GitHub issue showing the results of testing done by the primary developer.
+- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is there a call to that component’s `dispose` function, or documentation about why `dispose` is unnecessary?
+- [ ] Are there leaks due to registering observers or listeners? These guidelines should be followed, or documentation added about why following them is not necessary:
+	- [ ] AXON: `Property.link` is accompanied by `Property.unlink`.
+	- [ ] AXON: `PropertySet.link` is accompanied by `PropertySet.unlink`.
+	- [ ] AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
+	- [ ] AXON: Creation of `Multilink` is accompanied by `dispose`.
+	- [ ] AXON: `Events.on` is accompanied by `Events.off`.
+	- [ ] AXON: `Emitter.addListener` is accompanied by `Emitter.removeListener`.
+	- [ ] SCENERY: `Node.on` is accompanied by `Node.off`
+	- [ ] TANDEM: `tandem.addInstance` is accompanied by `tandem.removeInstance`.
+- [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls `this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly match the filename.
+- [ ] PhET-iO instantiates different objects and wires up listeners that are not present in the PhET-branded simulation.  It needs
+      to be tested separately for memory leaks.  To help isolate the nature of the memory leak, this test should be run separately
+      from the PhET brand memory leak test.  Test with the "console" and "instance proxies" wrappers (easily accessed from phetmarks)
+
+#### **Performance, Usability**
+
+- [ ] Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms)
+- [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter `webgl=false`)
+- [ ] Are UI components sufficiently responsive? (especially continuous UI components, such as sliders)
+- [ ] Are pointer areas optimized, especially for touch? (run with query parameter `showPointerAreas`)
+- [ ] Do pointer areas overlap? (run with query parameter `showPointerAreas`)
+
 #### **Internationalization**
 - [ ] Are there any strings that are not being internationalized? (run with query parameter `stringTest=x`, you should see nothing but 'x' strings)
 - [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter `stringTest=double`)
@@ -201,7 +227,9 @@ someProperty.link( function(){
 this.doSomethingElse();
 ```
 
-- [ ] Comments should not extend beyond 120 columns. Break long comments into multiple lines to optimize readability (use your judgement).
+- [ ] Generally, lines should not exceed 120 columns. Break up long statements, expressions, or comments into multiple
+lines to optimize readability.  It is OK for require statements or other structured patterns to exceed 120 columns.  
+Use your judgment!   
 
 - [ ] Where inheritance is needed, use `PHET_CORE/inherit`. Add prototype and static functions via the appropriate arguments to `inherit`. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
 
@@ -353,29 +381,6 @@ addListener: function( listener ) { /*...*/ }
 - [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.) Does changing the values of these constants break the sim? For example, see https://github.com/phetsims/plinko-probability/issues/84.
 - [ ] The simulation should use `Property` instead of `PropertySet`.
 - [ ] Are all dependent properties modeled as `DerivedProperty` instead of `Property`?
-
-#### **Performance, Usability**
-
-- [ ] Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms)
-- [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter `webgl=false`)
-- [ ] Are UI components sufficiently responsive? (especially continuous UI components, such as sliders)
-- [ ] Are pointer areas optimized, especially for touch? (run with query parameter `showPointerAreas`)
-- [ ] Do pointer areas overlap? (run with query parameter `showPointerAreas`)
-
-#### **Memory Leaks**
-
-- [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.)
-- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is there a call to that component’s `dispose` function, or documentation about why `dispose` is unnecessary?
-- [ ] Are there leaks due to registering observers or listeners? These guidelines should be followed, or documentation added about why following them is not necessary:
-	- [ ] AXON: `Property.link` is accompanied by `Property.unlink`.
-	- [ ] AXON: `PropertySet.link` is accompanied by `PropertySet.unlink`.
-	- [ ] AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
-	- [ ] AXON: Creation of `Multilink` is accompanied by `dispose`.
-	- [ ] AXON: `Events.on` is accompanied by `Events.off`.
-	- [ ] AXON: `Emitter.addListener` is accompanied by `Emitter.removeListener`.
-	- [ ] SCENERY: `Node.on` is accompanied by `Node.off`
-	- [ ] TANDEM: `tandem.addInstance` is accompanied by `tandem.removeInstance`.
-- [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls `this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly match the filename.
 
 #### **PhET-iO**
 

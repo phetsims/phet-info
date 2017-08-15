@@ -39,7 +39,7 @@ Configure an RSA key, or you will be prompted multiple times for a password duri
  - Change the permissions of `authorized_keys` so it is not group writable: `chmod g-w authorized_keys`
 
 ## Shortcut for dev deployment:
-If you are working in master, would like to release a dev version by updating the dev number, and your working copy is clean then you can use `grunt next-dev`. This will run a trial build and if there are any lint or build errors the process will halt. If there are no lint or build errors, package.json will be updated with the next version number and the simulation will be built and deployed.
+If you are working in master, would like to release a dev version by updating the dev number, and your working copy is clean then you can use `grunt deploy-next-dev`. This will run a trial build and if there are any lint or build errors the process will halt. If there are no lint or build errors, package.json will be updated with the next version number and the simulation will be built and deployed.
 
 ## Step 1. Set up the codebase
 * **DEV**: Dev deploys are often made from master using `pull-all.sh` in `chipper/bin`, but you can use code from branches if you wish 
@@ -138,7 +138,7 @@ for phet-io versions. Ask a PhET developer for credentials.
 * Check out master for the sim repo: `git checkout master`
 * Update and commit the new correct version in package.json for master.  Basically, master should be set up for what 
 would be the next release branch name.  So if you just created release branch 1.3, then the version should be 1.4.0-dev.0 in master.
-+ Update the 3rd party credits shown on the sims web page by running `grunt report-third-party`.  Then manually commit and push `sherpa/third-party-licenses.md`.
++ Update the 3rd party credits shown on the sim's web page by running `grunt report-third-party`.  Then manually commit and push `sherpa/third-party-licenses.md`.
   
 ## Deploy a batch of production sims.
 These steps were followed by @samreid on Nov 2, 2016 to roll out a batch of PhET-iO sims to master.
