@@ -26,5 +26,15 @@ Note: links may be outdated for the current version of Intellij, but they can ge
     * Configuration file should be `chipper/eslint/.eslintrc ` 
     * Additional Rules Dir should be `chipper/eslint/rules`
     * [Here is a picture for a mac](https://cloud.githubusercontent.com/assets/6856943/26806694/876bdad6-4a0f-11e7-9096-e734bf70be6e.png)
-   
-   
+8. Set up external tools for automatic import of require statement. 
+    * On Mac
+        * preferences -> tools -> external tools:
+        * program: grunt
+        * parameters: insert-require-statement --file=$FilePath$ --name=$SelectedText$ --searchPath=/Users/samreid/github
+        * working directory: /Users/samreid/github/circuit-construction-kit-dc
+    * On Windows (unconfirmed if this works on Mac)
+        * File -> Settings -> Tools -> External Tools . . . add new tool
+        * Name it what ever you want
+        * Program: `C:\Program Files\nodejs\node.exe`
+        * Parameters: `C:\Users\{{USER_NAME}}\AppData\Roaming\npm\node_modules\grunt-cli\bin\grunt insert-require-statement --file=$FilePath$ --name=$SelectedText$ --searchPath={{PATH_TO_GIT_REPOS_DIR (like E:\Zepumph\Programming\PHET\git\)}}`
+        * Working Directory: E:\Zepumph\Programming\PHET\git\faradays-law
