@@ -418,5 +418,8 @@
   },
   {
     "name":"circuit-construction-kit-dc-virtual-lab"
+  },
+  {
+    "name":"website-meteor"
   }
 ]
