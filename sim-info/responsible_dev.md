@@ -7,49 +7,49 @@
 | `Arithmetic`  | @jbphet  |
 | `Atomic Interactions`  | @jbphet  |
 | `Balancing Act`  | @jbphet  |
-| `Balancing Chemical Equations`  | CM  |
+| `Balancing Chemical Equations`  | @pixelzoom  |
 | `Balloons and Static Electricity`  | JG  |
-| `Beer's Law Lab`  | CM  |
-| `Bending Light`  | SR  |
+| `Beer's Law Lab`  | @pixelzoom  |
+| `Bending Light`  | @samreid  |
 | `Build an Atom`  | @jbphet  |
 | `Charges And Fields` | JO  |
-| `Color Vision` |  CM  |
-| `Concentration` |  CM  |
-| `Energy Skate Park: Basics` |  SR  |
+| `Color Vision` |  @pixelzoom  |
+| `Concentration` |  @pixelzoom  |
+| `Energy Skate Park: Basics` |  @samreid  |
 | `Expression Exchange` |  @jbphet  |
 | `Faraday's Law` |  @jbphet  |
 | `Forces and Motion: Basics` |  JG  |
-| `Fraction Matcher` |  SR  |
+| `Fraction Matcher` |  @samreid  |
 | `Friction` |  @jbphet  |
-| `Function Builder` |  CM  |
-| `Function Builder: Basics` |  CM  |
-| `Graphing Lines` |  CM  |
-| `Graphing Slope-Intercept` |  CM  |
+| `Function Builder` |  @pixelzoom  |
+| `Function Builder: Basics` |  @pixelzoom  |
+| `Graphing Lines` |  @pixelzoom  |
+| `Graphing Slope-Intercept` |  @pixelzoom  |
 | `Gravity And Orbits` |  JG  |
 | `Gravity Force Lab` |  JG  |
-| `Hooke's Law` |  CM  |
+| `Hooke's Law` |  @pixelzoom  |
 | `Isotopes and Atomic Mass` |  @jbphet  |
-| `John Travoltage` |  SR  |
+| `John Travoltage` |  @samreid  |
 | `Least-Squares Regression` |  JO  |
 | `Make a Ten` |  JO  |
-| `Molarity` |  CM  |
+| `Molarity` |  @pixelzoom  |
 | `Molecules and Light` |  JG  |
-| `Molecule Polarity` |  CM  |
+| `Molecule Polarity` |  @pixelzoom  |
 | `Molecule Shapes` |  JO  |
 | `Molecule Shapes: Basics` |  JO  |
 | `Neuron` |  @jbphet  |
 | `Ohm's Law`|  MK  |
-| `pH Scale` |  CM  |
-| `pH Scale: Basics` |  CM  |
-| `Plinko Probability` |  CM  |
+| `pH Scale` |  @pixelzoom  |
+| `pH Scale: Basics` |  @pixelzoom  |
+| `Plinko Probability` |  @pixelzoom  |
 | `Projectile Motion` |  AL  |
 | `Proportion Playground` |  JO  |
-| `Reactants, Products and Leftovers` |  CM  |
+| `Reactants, Products and Leftovers` |  @pixelzoom  |
 | `Resistance in a Wire` |  MK  |
 | `Rutherford Scattering` |  JG  |
 | `States of Matter` |  @jbphet  |
 | `States of Matter: Basics` |  @jbphet  |
 | `Trig Tour` |  JG  |
-| `Under Pressure` |  SR  |
-| `Unit Rates` |  CM  |
+| `Under Pressure` |  @samreid  |
+| `Unit Rates` |  @pixelzoom  |
 | `Wave on a String` |  JO  |
