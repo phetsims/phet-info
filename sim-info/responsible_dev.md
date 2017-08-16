@@ -38,7 +38,7 @@
 | `Molecule Shapes` |  @jonathanolson  |
 | `Molecule Shapes: Basics` |  @jonathanolson  |
 | `Neuron` |  @jbphet  |
-| `Ohm's Law`|  MK  |
+| `Ohm's Law`|  @zepumph  |
 | `pH Scale` |  @pixelzoom  |
 | `pH Scale: Basics` |  @pixelzoom  |
 | `Plinko Probability` |  @pixelzoom  |
