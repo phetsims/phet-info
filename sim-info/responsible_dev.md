@@ -2,7 +2,7 @@
 
 | Simulation  | Developer |
 | ------------- | ------------- |
-| `Acid-Base Solutions` | CM |
+| `Acid-Base Solutions` | @pixelzoom |
 | `Area Builder` | JB  |
 | `Arithmetic`  | JB  |
 | `Atomic Interactions`  | JB  |
@@ -42,6 +42,7 @@
 | `pH Scale` |  CM  |
 | `pH Scale: Basics` |  CM  |
 | `Plinko Probability` |  CM  |
+| `Projectile Motion` |  AL  |
 | `Proportion Playground` |  JO  |
 | `Reactants, Products and Leftovers` |  CM  |
 | `Resistance in a Wire` |  MK  |
