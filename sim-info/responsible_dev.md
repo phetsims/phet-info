@@ -8,48 +8,48 @@
 | `Atomic Interactions`  | @jbphet  |
 | `Balancing Act`  | @jbphet  |
 | `Balancing Chemical Equations`  | @pixelzoom  |
-| `Balloons and Static Electricity`  | JG  |
+| `Balloons and Static Electricity`  | @jessegreenberg  |
 | `Beer's Law Lab`  | @pixelzoom  |
 | `Bending Light`  | @samreid  |
 | `Build an Atom`  | @jbphet  |
-| `Charges And Fields` | JO  |
+| `Charges And Fields` | @jonathanolson  |
 | `Color Vision` |  @pixelzoom  |
 | `Concentration` |  @pixelzoom  |
 | `Energy Skate Park: Basics` |  @samreid  |
 | `Expression Exchange` |  @jbphet  |
 | `Faraday's Law` |  @jbphet  |
-| `Forces and Motion: Basics` |  JG  |
+| `Forces and Motion: Basics` |  @jessegreenberg  |
 | `Fraction Matcher` |  @samreid  |
 | `Friction` |  @jbphet  |
 | `Function Builder` |  @pixelzoom  |
 | `Function Builder: Basics` |  @pixelzoom  |
 | `Graphing Lines` |  @pixelzoom  |
 | `Graphing Slope-Intercept` |  @pixelzoom  |
-| `Gravity And Orbits` |  JG  |
-| `Gravity Force Lab` |  JG  |
+| `Gravity And Orbits` | @jessegreenberg  |
+| `Gravity Force Lab` |  @jessegreenberg  |
 | `Hooke's Law` |  @pixelzoom  |
 | `Isotopes and Atomic Mass` |  @jbphet  |
 | `John Travoltage` |  @samreid  |
-| `Least-Squares Regression` |  JO  |
-| `Make a Ten` |  JO  |
+| `Least-Squares Regression` |  @jonathanolson  |
+| `Make a Ten` |  @jonathanolson  |
 | `Molarity` |  @pixelzoom  |
-| `Molecules and Light` |  JG  |
+| `Molecules and Light` |  @jessegreenberg  |
 | `Molecule Polarity` |  @pixelzoom  |
-| `Molecule Shapes` |  JO  |
-| `Molecule Shapes: Basics` |  JO  |
+| `Molecule Shapes` |  @jonathanolson  |
+| `Molecule Shapes: Basics` |  @jonathanolson  |
 | `Neuron` |  @jbphet  |
 | `Ohm's Law`|  MK  |
 | `pH Scale` |  @pixelzoom  |
 | `pH Scale: Basics` |  @pixelzoom  |
 | `Plinko Probability` |  @pixelzoom  |
-| `Projectile Motion` |  AL  |
-| `Proportion Playground` |  JO  |
+| `Projectile Motion` | @andrea-phet  |
+| `Proportion Playground` |  @jonathanolson  |
 | `Reactants, Products and Leftovers` |  @pixelzoom  |
-| `Resistance in a Wire` |  MK  |
-| `Rutherford Scattering` |  JG  |
+| `Resistance in a Wire` |  @zepumph  |
+| `Rutherford Scattering` |  @jessegreenberg  |
 | `States of Matter` |  @jbphet  |
 | `States of Matter: Basics` |  @jbphet  |
-| `Trig Tour` |  JG  |
+| `Trig Tour` |  @jessegreenberg  |
 | `Under Pressure` |  @samreid  |
 | `Unit Rates` |  @pixelzoom  |
-| `Wave on a String` |  JO  |
+| `Wave on a String` |  @jonathanolson  |
