@@ -45,7 +45,9 @@ If you are working in master, would like to release a dev version by updating th
 * **DEV**: Dev deploys are often made from master using `pull-all.sh` in `chipper/bin`, but you can use code from branches if you wish 
 * **RC_FIRST**: 
     + **PHET_IO:**: Add `-phetio` to the end of the branch name.
-    + Create a branch with MAJOR.MINOR matching the sim to be published, such as 1.2.  For instance: `git checkout -b 1.2` 
+    + Create a branch with MAJOR.MINOR matching the sim to be published, such as 1.2.  For instance: `git checkout -b 1.2`
+    + Update the version id in package.json for master. Master should be set up for what 
+would be the _next_ release branch name.  So if you just created release branch 1.3, then the version should be "1.4.0-dev.0" in master. (Note the "0" for the maintenance number, so that `grunt bump-version` works properly.)
 * **RC_SUBSEQUENT | PRODUCTION**: 
     + Checkout the branch with MAJOR.MINOR (**PHET_IO** branches will end with `-phetio`). If a branch does not exist for your 
     version, make, following the step above, like you are publishing the first rc.
@@ -136,8 +138,6 @@ for phet-io versions. Ask a PhET developer for credentials.
 * Check out master for dependencies: `grunt checkout-master`
 * Run again to prune and update node modules: `grunt checkout-master`, **Skip This Step** if you are using a chipper sha that is newer than Jan 24th, 2017.
 * Check out master for the sim repo: `git checkout master`
-* Update and commit the new correct version in package.json for master.  Basically, master should be set up for what 
-would be the next release branch name.  So if you just created release branch 1.3, then the version should be 1.4.0-dev.0 in master.
 + Update the 3rd party credits shown on the sim's web page by running `grunt report-third-party`.  Then manually commit and push `sherpa/third-party-licenses.md`.
   
 ## Deploy a batch of production sims.
