@@ -47,7 +47,7 @@ If you are working in master, would like to release a dev version by updating th
     + **PHET_IO:**: Add `-phetio` to the end of the branch name.
     + Create a branch with MAJOR.MINOR matching the sim to be published, such as 1.2.  For instance: `git checkout -b 1.2`
     + Update the version id in package.json for master. Master should be set up for what 
-would be the _next_ release branch name.  So if you just created release branch 1.3, then the version should be "1.4.0-dev.0" in master. (Note the "0" for the maintenance number, so that `grunt bump-version` works properly.)
+would be the _next_ release branch name.  So if you just created release branch 1.3, then the version should be "1.4.0-dev.0" in master. (Note the "0" for the dev number, so that `grunt bump-version` works properly.)
 * **RC_SUBSEQUENT | PRODUCTION**: 
     + Checkout the branch with MAJOR.MINOR (**PHET_IO** branches will end with `-phetio`). If a branch does not exist for your 
     version, make, following the step above, like you are publishing the first rc.
