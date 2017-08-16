@@ -3,24 +3,24 @@
 | Simulation  | Developer |
 | ------------- | ------------- |
 | `Acid-Base Solutions` | @pixelzoom |
-| `Area Builder` | JB  |
-| `Arithmetic`  | JB  |
-| `Atomic Interactions`  | JB  |
-| `Balancing Act`  | JB  |
+| `Area Builder` | @jbphet  |
+| `Arithmetic`  | @jbphet  |
+| `Atomic Interactions`  | @jbphet  |
+| `Balancing Act`  | @jbphet  |
 | `Balancing Chemical Equations`  | CM  |
 | `Balloons and Static Electricity`  | JG  |
 | `Beer's Law Lab`  | CM  |
 | `Bending Light`  | SR  |
-| `Build an Atom`  | JB  |
+| `Build an Atom`  | @jbphet  |
 | `Charges And Fields` | JO  |
 | `Color Vision` |  CM  |
 | `Concentration` |  CM  |
 | `Energy Skate Park: Basics` |  SR  |
-| `Expression Exchange` |  JB  |
-| `Faraday's Law` |  JB  |
+| `Expression Exchange` |  @jbphet  |
+| `Faraday's Law` |  @jbphet  |
 | `Forces and Motion: Basics` |  JG  |
 | `Fraction Matcher` |  SR  |
-| `Friction` |  JB  |
+| `Friction` |  @jbphet  |
 | `Function Builder` |  CM  |
 | `Function Builder: Basics` |  CM  |
 | `Graphing Lines` |  CM  |
@@ -28,7 +28,7 @@
 | `Gravity And Orbits` |  JG  |
 | `Gravity Force Lab` |  JG  |
 | `Hooke's Law` |  CM  |
-| `Isotopes and Atomic Mass` |  JB  |
+| `Isotopes and Atomic Mass` |  @jbphet  |
 | `John Travoltage` |  SR  |
 | `Least-Squares Regression` |  JO  |
 | `Make a Ten` |  JO  |
@@ -37,7 +37,7 @@
 | `Molecule Polarity` |  CM  |
 | `Molecule Shapes` |  JO  |
 | `Molecule Shapes: Basics` |  JO  |
-| `Neuron` |  JB  |
+| `Neuron` |  @jbphet  |
 | `Ohm's Law`|  MK  |
 | `pH Scale` |  CM  |
 | `pH Scale: Basics` |  CM  |
@@ -47,8 +47,8 @@
 | `Reactants, Products and Leftovers` |  CM  |
 | `Resistance in a Wire` |  MK  |
 | `Rutherford Scattering` |  JG  |
-| `States of Matter` |  JB  |
-| `States of Matter: Basics` |  JB  |
+| `States of Matter` |  @jbphet  |
+| `States of Matter: Basics` |  @jbphet  |
 | `Trig Tour` |  JG  |
 | `Under Pressure` |  SR  |
 | `Unit Rates` |  CM  |
