@@ -42,7 +42,8 @@
   - [ ] standard GitHub label set applied
   - [ ] repository added to chipper/data/ files
 - [ ] **Development started** (Date: //)
-- [ ] **Sim is "feature complete"** (Date: //) 
+- [ ] **Sim is "feature complete"** (Date: //)
+- [ ] **Translations ported** (Date: // ) This is relevant for a port from Java/Flash, where the strings and keys are relatively unchanged. Ported string files can be found in babel/autoport/.
 - [ ] **Code review completed** (Date: //) 
 - [ ] **Published** (Date: //) 
   - [ ] README.md updated using `grunt published-readme` (in master and release branch)
