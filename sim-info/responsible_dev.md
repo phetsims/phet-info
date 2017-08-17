@@ -1,54 +1,55 @@
 ## Published Sims Developer Responsibility List
 
 | Simulation  | Developer |
-| ------------- | ------------- |
-| `Acid-Base Solutions` | CM |
-| `Area Builder` | JB  |
-| `Arithmetic`  | JB  |
-| `Atomic Interactions`  | JB  |
-| `Balancing Act`  | JB  |
-| `Balancing Chemical Equations`  | CM  |
-| `Balloons and Static Electricity`  | JG  |
-| `Beer's Law Lab`  | CM  |
-| `Bending Light`  | SR  |
-| `Build an Atom`  | JB  |
-| `Charges And Fields` | JO  |
-| `Color Vision` |  CM  |
-| `Concentration` |  CM  |
-| `Energy Skate Park: Basics` |  SR  |
-| `Expression Exchange` |  JB  |
-| `Faraday's Law` |  JB  |
-| `Forces and Motion: Basics` |  JG  |
-| `Fraction Matcher` |  SR  |
-| `Friction` |  JB  |
-| `Function Builder` |  CM  |
-| `Function Builder: Basics` |  CM  |
-| `Graphing Lines` |  CM  |
-| `Graphing Slope-Intercept` |  CM  |
-| `Gravity And Orbits` |  JG  |
-| `Gravity Force Lab` |  JG  |
-| `Hooke's Law` |  CM  |
-| `Isotopes and Atomic Mass` |  JB  |
-| `John Travoltage` |  SR  |
-| `Least-Squares Regression` |  JO  |
-| `Make a Ten` |  JO  |
-| `Molarity` |  CM  |
-| `Molecules and Light` |  JG  |
-| `Molecule Polarity` |  CM  |
-| `Molecule Shapes` |  JO  |
-| `Molecule Shapes: Basics` |  JO  |
-| `Neuron` |  JB  |
-| `Ohm's Law`|  MK  |
-| `pH Scale` |  CM  |
-| `pH Scale: Basics` |  CM  |
-| `Plinko Probability` |  CM  |
-| `Proportion Playground` |  JO  |
-| `Reactants, Products and Leftovers` |  CM  |
-| `Resistance in a Wire` |  MK  |
-| `Rutherford Scattering` |  JG  |
-| `States of Matter` |  JB  |
-| `States of Matter: Basics` |  JB  |
-| `Trig Tour` |  JG  |
-| `Under Pressure` |  SR  |
-| `Unit Rates` |  CM  |
-| `Wave on a String` |  JO  |
+| :---------- | :------------- |
+| Acid-Base Solutions | @pixelzoom |
+| Area Builder | @jbphet  |
+| Arithmetic  | @jbphet  |
+| Atomic Interactions  | @jbphet  |
+| Balancing Act  | @jbphet  |
+| Balancing Chemical Equations  | @pixelzoom  |
+| Balloons and Static Electricity  | @jessegreenberg  |
+| Beer's Law Lab  | @pixelzoom  |
+| Bending Light  | @samreid  |
+| Build an Atom  | @jbphet  |
+| Charges And Fields | @jonathanolson  |
+| Color Vision |  @pixelzoom  |
+| Concentration |  @pixelzoom  |
+| Energy Skate Park: Basics |  @samreid  |
+| Expression Exchange |  @jbphet  |
+| Faraday's Law |  @jbphet  |
+| Forces and Motion: Basics |  @jessegreenberg  |
+| Fraction Matcher |  @samreid  |
+| Friction |  @jbphet  |
+| Function Builder |  @pixelzoom  |
+| Function Builder: Basics |  @pixelzoom  |
+| Graphing Lines |  @pixelzoom  |
+| Graphing Slope-Intercept |  @pixelzoom  |
+| Gravity And Orbits | @jessegreenberg  |
+| Gravity Force Lab |  @jessegreenberg  |
+| Hooke's Law |  @pixelzoom  |
+| Isotopes and Atomic Mass |  @jbphet  |
+| John Travoltage |  @samreid  |
+| Least-Squares Regression |  @jonathanolson  |
+| Make a Ten |  @jonathanolson  |
+| Molarity |  @pixelzoom  |
+| Molecules and Light |  @jessegreenberg  |
+| Molecule Polarity |  @pixelzoom  |
+| Molecule Shapes |  @jonathanolson  |
+| Molecule Shapes: Basics |  @jonathanolson  |
+| Neuron |  @jbphet  |
+| Ohm's Law|  @zepumph  |
+| pH Scale |  @pixelzoom  |
+| pH Scale: Basics |  @pixelzoom  |
+| Plinko Probability |  @pixelzoom  |
+| Projectile Motion | @andrea-phet  |
+| Proportion Playground |  @jonathanolson  |
+| Reactants, Products and Leftovers |  @pixelzoom  |
+| Resistance in a Wire |  @zepumph  |
+| Rutherford Scattering |  @jessegreenberg  |
+| States of Matter |  @jbphet  |
+| States of Matter: Basics |  @jbphet  |
+| Trig Tour |  @jessegreenberg  |
+| Under Pressure |  @samreid  |
+| Unit Rates |  @pixelzoom  |
+| Wave on a String |  @jonathanolson  |
