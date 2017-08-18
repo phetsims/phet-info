@@ -32,8 +32,8 @@
 | Faraday's Law |  @jbphet  | ✓ |
 | Fluid Pressure and Flow | | |
 | Forces and Motion: Basics |  @jessegreenberg | |
-| Fraction Matcher | @samreid | |
-| Friction | @jbphet | |
+| Fraction Matcher | @samreid | ✓ |
+| Friction | @jbphet | ✓ |
 | Function Builder | @pixelzoom | ✓ |
 | Function Builder: Basics | @pixelzoom | ✓ |
 | Function Finder | | |
