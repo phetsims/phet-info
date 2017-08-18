@@ -1,4 +1,4 @@
-## HTML5 Sims Developer Responsibility List
+## HTML5 Sims - Developer Responsibility List
 
 | Simulation  | Developer | Published? |
 | :---------- | :------------- | :--: |
