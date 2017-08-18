@@ -28,7 +28,7 @@
 | Energy Skate Park: Basics |  @samreid  | ✓ |
 | Equality Explorer | @pixelzoom | |
 | Estimation | @jbphet | |
-| Expression Exchange |  @jbphet  | |
+| Expression Exchange |  @jbphet  | ✓ |
 | Faraday's Law |  @jbphet  | |
 | Fluid Pressure and Flow | | |
 | Forces and Motion: Basics |  @jessegreenberg | |
