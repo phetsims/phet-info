@@ -47,6 +47,7 @@
 - [ ] **Code review completed** (Date: //) 
 - [ ] **Published** (Date: //) 
   - [ ] README.md updated using `grunt published-readme` (in master and release branch)
+  - [ ] Mark the sim as published in [responsible_dev.md](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md)
  
 ## QA
 - [ ] **Dev testing started** (Date: //) 
