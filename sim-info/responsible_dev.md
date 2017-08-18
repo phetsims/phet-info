@@ -1,7 +1,7 @@
 ## Sims Developer Responsibility List
 
 | Simulation  | Developer | Published? |
-| :---------- | :------------- | -- |
+| :---------- | :------------- | :--: |
 | Acid-Base Solutions | @pixelzoom | ✓ |
 | Area Builder | @jbphet  | ✓ |
 | Area Model Multiplication | @jonathanolson |
