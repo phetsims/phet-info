@@ -1,4 +1,4 @@
-## Published Sims Developer Responsibility List
+## Sims Developer Responsibility List
 
 | Simulation  | Developer |
 | :---------- | :------------- |
