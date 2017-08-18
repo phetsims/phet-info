@@ -39,7 +39,7 @@
 | Function Finder | |
 | Gene Expression Essentials | @jbphet |
 | Graphing Lines |  @pixelzoom  |
-| Graphing Quadratics | |
+| Graphing Quadratics | @pixelzoom |
 | Graphing Slope-Intercept |  @pixelzoom  |
 | Gravity And Orbits | @jessegreenberg  |
 | Gravity Force Lab |  @jessegreenberg  |
