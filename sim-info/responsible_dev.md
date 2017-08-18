@@ -43,7 +43,7 @@
 | Graphing Slope-Intercept |  @pixelzoom  |
 | Gravity And Orbits | @jessegreenberg  |
 | Gravity Force Lab |  @jessegreenberg  |
-| Gravity Force Lab: Basics | |
+| Gravity Force Lab: Basics | @jessegreenberg |
 | Hooke's Law |  @pixelzoom  |
 | Isotopes and Atomic Mass |  @jbphet  |
 | John Travoltage |  @samreid  |
