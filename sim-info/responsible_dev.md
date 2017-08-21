@@ -33,6 +33,7 @@
 | Fluid Pressure and Flow | | |
 | Forces and Motion: Basics |  @jessegreenberg | |
 | Fraction Matcher | @samreid | ✓ |
+| Fractions Intro | @jonathanolson |  |
 | Friction | @jbphet | ✓ |
 | Function Builder | @pixelzoom | ✓ |
 | Function Builder: Basics | @pixelzoom | ✓ |
