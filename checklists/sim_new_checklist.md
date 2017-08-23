@@ -46,7 +46,7 @@
 - [ ] **Translations ported** (Date: // ) This is relevant for a port from Java/Flash, where the strings and keys are relatively unchanged. Ported string files can be found in babel/autoport/.
 - [ ] **Code review completed** (Date: //) 
 - [ ] **Published** (Date: //) 
-  - [ ] README.md updated using `grunt published-readme` (in master and release branch)
+  - [ ] README.md updated using `grunt published-README` (in master and release branch)
   - [ ] Mark the sim as published in [responsible_dev.md](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md)
  
 ## QA
