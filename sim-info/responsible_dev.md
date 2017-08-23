@@ -64,7 +64,7 @@
 | pH Scale |  @pixelzoom  | ✓ |
 | pH Scale: Basics |  @pixelzoom  | ✓ |
 | Plinko Probability |  @pixelzoom  | ✓ |
-| Projectile Motion | @andrea-phet  | |
+| Projectile Motion | @andrea-phet  | ✓ |
 | Proportion Playground |  @jonathanolson  | ✓ |
 | Protein Synthesis | @samreid | |
 | Reactants, Products and Leftovers |  @pixelzoom  | ✓ |
