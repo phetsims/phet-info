@@ -22,7 +22,7 @@
 | Circuit Constructor Kit: DC - Virtual Lab| @samreid | |
 | Color Vision |  @pixelzoom  | ✓ |
 | Concentration |  @pixelzoom  | ✓ |
-| Coulomb's Law | | |
+| Coulomb's Law | @mbarlow12 | |
 | Curve Fitting | | |
 | Energy Forms and Changes | @jbphet | |
 | Energy Skate Park: Basics |  @samreid  | ✓ |
