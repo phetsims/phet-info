@@ -41,7 +41,6 @@
   - [ ] repository added to chipper/data/ files
 - [ ] **Development started** (Date: //)
 - [ ] **Sim is "feature complete"** (Date: //)
-- [ ] **Translations ported** (Date: // ) This is relevant for a port from Java/Flash, where the strings and keys are relatively unchanged. Ported string files can be found in babel/autoport/.
 - [ ] **Code review completed** (Date: //) 
 - [ ] **Pre-publication items** 
   - [ ] Main screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
