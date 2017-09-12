@@ -59,7 +59,7 @@
 | Molecule Shapes: Basics |  @jonathanolson  | ✓ |
 | Neuron |  @jbphet  | ✓ |
 | Ohm's Law|  @zepumph  | ✓ |
-| Optics Lab | | |
+| Optics Lab | @veillette| |
 | Pendulum Lab | @jonathanolson | |
 | pH Scale |  @pixelzoom  | ✓ |
 | pH Scale: Basics |  @pixelzoom  | ✓ |
