@@ -70,7 +70,6 @@
 | Reactants, Products and Leftovers |  @pixelzoom  | ✓ |
 | Resistance in a Wire |  @zepumph  | ✓ |
 | Rutherford Scattering |  @jessegreenberg  | ✓ |
-| Seasons | @samreid | |
 | States of Matter |  @jbphet  | ✓ |
 | States of Matter: Basics |  @jbphet  | ✓ |
 | Sugar and Salt Solutions | @samreid | |
