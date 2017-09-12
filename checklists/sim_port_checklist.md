@@ -56,6 +56,7 @@
 
 ## QA
 - [ ] **Legacy sim tested for bugs**; issues reported in repo
+- [ ] **Dev testing started** (Date: //) 
 - [ ] **Dev testing complete** (Date: //) 
 - [ ] **First RC published** (Date: //)
   - [ ] Test matrices put in [Testing Matrices Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYbW9fTGNCODdYVjQ)
