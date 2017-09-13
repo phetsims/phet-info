@@ -60,7 +60,7 @@
 | Neuron |  @jbphet  | ✓ |
 | Ohm's Law|  @zepumph  | ✓ |
 | Optics Lab | @veillette| |
-| Pendulum Lab | @jonathanolson | |
+| Pendulum Lab | @jonathanolson | ✓ |
 | pH Scale |  @pixelzoom  | ✓ |
 | pH Scale: Basics |  @pixelzoom  | ✓ |
 | Plinko Probability |  @pixelzoom  | ✓ |
