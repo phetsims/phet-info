@@ -20,13 +20,11 @@
   - [ ] Carefully review ?showPointerAreas
   - [ ] No new feature requests
 - [ ] **Pre-publication items** 
-  - [ ] Main screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
   - [ ] Auxilary screenshots (up to 3 additional)
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Teacher Guide created, uploaded, and added to sim design folder
   - [ ] Add an activity
   - [ ] Sim primer draft
-  - [ ] Verify credits
 - [ ] **Post-publication items** 
   - [ ] Add to Edmodo
   - [ ] Add to [Gooru](http://gooru.org/PhET/content/resources) (signed in as phethelp)
@@ -43,8 +41,10 @@
   - [ ] repository added to chipper/data/ files
 - [ ] **Development started** (Date: //)
 - [ ] **Sim is "feature complete"** (Date: //)
-- [ ] **Translations ported** (Date: // ) This is relevant for a port from Java/Flash, where the strings and keys are relatively unchanged. Ported string files can be found in babel/autoport/.
 - [ ] **Code review completed** (Date: //) 
+- [ ] **Pre-publication items** 
+  - [ ] Main screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
+  - [ ] Verify credits
 - [ ] **Published** (Date: //) 
   - [ ] README.md updated using `grunt published-README` (in master and release branch)
   - [ ] Mark the sim as published in [responsible_dev.md](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md)
