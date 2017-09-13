@@ -420,6 +420,9 @@
     "name":"circuit-construction-kit-dc-virtual-lab"
   },
   {
+    "name":"circuit-construction-kit-dc"
+  },
+  {
     "name":"website-meteor"
   }
 ]
