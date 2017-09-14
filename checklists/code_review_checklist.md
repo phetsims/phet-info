@@ -18,7 +18,6 @@ PhET code-review checklist
 - [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is there a call to that component’s `dispose` function, or documentation about why `dispose` is unnecessary?
 - [ ] Are there leaks due to registering observers or listeners? These guidelines should be followed, or documentation added about why following them is not necessary:
 	- [ ] AXON: `Property.link` is accompanied by `Property.unlink`.
-	- [ ] AXON: `PropertySet.link` is accompanied by `PropertySet.unlink`.
 	- [ ] AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
 	- [ ] AXON: Creation of `Multilink` is accompanied by `dispose`.
 	- [ ] AXON: `Events.on` is accompanied by `Events.off`.
@@ -379,7 +378,6 @@ addListener: function( listener ) { /*...*/ }
 - [ ] Is there anything that should be generalized and migrated to common code?
 - [ ] Are there any `TODO` or `FIXME` comments in the code?  They should be addressed or promoted to GitHub issues.
 - [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.) Does changing the values of these constants break the sim? For example, see https://github.com/phetsims/plinko-probability/issues/84.
-- [ ] The simulation should use `Property` instead of `PropertySet`.
 - [ ] Are all dependent properties modeled as `DerivedProperty` instead of `Property`?
 
 #### **PhET-iO**
