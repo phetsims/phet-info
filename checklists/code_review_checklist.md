@@ -227,7 +227,7 @@ someProperty.link( function(){
 this.doSomethingElse();
 ```
 
-- [ ] Generally, lines should not exceed 120 columns. Break up long statements, expressions, or comments into multiple
+- [ ] Generally, lines should not exceed 120 columns. Break up long statements, expressions, or comments into multiple 
 lines to optimize readability.  It is OK for require statements or other structured patterns to exceed 120 columns.  
 Use your judgment!   
 
@@ -322,7 +322,7 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 
 - [ ] Every type, method and property should be documented.
 
-- [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS5/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the example-sim repository.
+- [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS3/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the example-sim repository.
 
 ##### Visibility Annotations
 Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations to document the intent of the programmer, and define the public API. Visibility annotations are required for anything that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility annotations are as follows:
