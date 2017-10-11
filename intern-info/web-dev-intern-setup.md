@@ -44,7 +44,7 @@ In the phet/git directory, run this command:
 
 ####Setup the VM:
 1. Install VirtualBox: https://www.virtualbox.org/wiki/Downloads
-1. Download the OVA file from figaro-dev:/data2/phet-vm/PhET_VM.ova. The .ova file is ~13GB and the disk file it creates will be ~30GB.
+1. Download the OVA files from bayes:/data/phet-vm. The .ova files are about 30GB.
 2. Launch VirtualBox.  Go to File > Import Appliance and select the .ova file.
 4. Launch the VM:
 	> Username: phet
