@@ -18,8 +18,8 @@
 | Capacitor Lab: Basics | @jonathanolson | |
 | Charges And Fields | @jonathanolson  | ✓ |
 | Circuit Construction Kit: Black Box Study | @samreid | |
-| Circuit Constructor Kit: DC | @samreid | |
-| Circuit Constructor Kit: DC - Virtual Lab| @samreid | |
+| Circuit Constructor Kit: DC | @samreid | ✓ |
+| Circuit Constructor Kit: DC - Virtual Lab| @samreid | ✓ |
 | Color Vision |  @pixelzoom  | ✓ |
 | Concentration |  @pixelzoom  | ✓ |
 | Coulomb's Law | @mbarlow12 | |
