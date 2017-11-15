@@ -15,7 +15,7 @@
 | Build an Atom  | @jbphet  | ✓ |
 | Build a Molecule | @jonathanolson |
 | Calculus Grapher | @jonathanolson | |
-| Capacitor Lab: Basics | @jonathanolson | |
+| Capacitor Lab: Basics | @jonathanolson | ✓ |
 | Charges And Fields | @jonathanolson  | ✓ |
 | Circuit Construction Kit: Black Box Study | @samreid | |
 | Circuit Constructor Kit: DC | @samreid | ✓ |
