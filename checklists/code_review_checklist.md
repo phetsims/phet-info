@@ -381,6 +381,7 @@ addListener: function( listener ) { /*...*/ }
 - [ ] Are there any `TODO` or `FIXME` comments in the code?  They should be addressed or promoted to GitHub issues.
 - [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.) Does changing the values of these constants break the sim? For example, see https://github.com/phetsims/plinko-probability/issues/84.
 - [ ] Are all dependent properties modeled as `DerivedProperty` instead of `Property`?
+- [ ] All dynamics should be called from Sim.step(dt), do not use window.setTimeout or window.setInterval.  This will help support Legends of Learning and PhET-iO.
 
 #### **PhET-iO**
 
