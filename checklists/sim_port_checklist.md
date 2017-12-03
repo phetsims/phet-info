@@ -40,7 +40,7 @@
   - [ ] README.md created using `grunt unpublished-readme`
   - [ ] Collaborators added (such as QA team, designers, etc)
   - [ ] standard GitHub label set applied
-  - [ ] repository added to chipper/data/ filesr
+  - [ ] repository added to chipper/data/ files
   - [ ] Port existing strings (IF ANY) and commit to the GitHub repo (auto-ported strings from Java and Flash sims can
   be found in babel/autoport). The strings should be deleted from babel/autoport and @jbphet should immediately be asked
   to pull from rosetta to avoid conflicts.
