@@ -42,8 +42,7 @@
   - [ ] standard GitHub label set applied
   - [ ] repository added to chipper/data/ files
   - [ ] Port existing strings (IF ANY) and commit to the GitHub repo (auto-ported strings from Java and Flash sims can
-  be found in babel/autoport). The strings should be deleted from babel/autoport and @jbphet should immediately be asked
-  to pull from rosetta to avoid conflicts.
+  be found in babel/autoport). The auto-ported strings should then be deleted from babel/autoport.
 - [ ] **Development started** (Date: //)
 - [ ] **Sim is "feature complete"** (Date: //) 
 - [ ] **Code review completed** (Date: //) 
