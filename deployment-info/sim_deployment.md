@@ -55,8 +55,7 @@ would be the _next_ release branch name.  So if you just created release branch 
     + If checkout-shas didn't already do so: `npm prune` and `npm update` in the sim repo and in chipper.
     `rm -rf node_modules` and `npm install` in that directory instead.
     + **Maintenance Release**:  If you needed to branch any dependency repositories for the purposes of patching, name the branches
-       after the sim and version you are performing the maintenance release on. For example, if you branched vegas for the 1.1 
-       release of graphing-lines, the branch name in vegas will be graphing-lines-1.1.
+       after the sim and version you are performing the maintenance release on. For example, running `git checkout -b graphing-lines-1.1` in the vegas repository will branch vegas for use by the graphing-lines 1.1 branch. 
     + **Maintenance Release**:  After the commits have been made, update the top level `dependencies.json` to reflect the new shas and          branches of the maintenance release. When you deploy, this step should be done automatically. This top level `dependencies.json`
        is only important for checking out shas.
     + **Maintenance Release**:  If there is a parallel brand that has the same minor number as your branch (i.e. 1.3 and 1.3-phetio), it
