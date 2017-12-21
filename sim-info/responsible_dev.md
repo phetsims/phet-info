@@ -38,7 +38,7 @@
 | Friction | @jbphet | ✓ |
 | Function Builder | @pixelzoom | ✓ |
 | Function Builder: Basics | @pixelzoom | ✓ |
-| Gene Expression Essentials | @jbphet | |
+| Gene Expression Essentials | @jbphet | ✓ |
 | Graphing Lines | @pixelzoom  | ✓ |
 | Graphing Quadratics | @pixelzoom | |
 | Graphing Slope-Intercept | @pixelzoom | ✓ |
