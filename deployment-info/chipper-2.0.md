@@ -1,4 +1,6 @@
 
+**NOTE: Until chipper 2.0 is merged into master, please check out the `2.0` branch of chipper and the `chipper2.0` branch of phet-io-wrappers. The `chipper-2.0` branch of phetmarks may also be useful if you use phetmarks. Leave perennial on master (unless you are @mattpen or working on the build-server)**
+
 # Building simulations
 
 `grunt` (no arguments) in a sim directory will build whatever brands (listed in build-local.json) are supported by the simulation. If this doesn't exist, it will fall back to adapted-from-phet. It's highly recommended that, where there is a `brand: 'phet'` in your build-local.json, it should be augmented by a `brands: [ 'phet', 'phet-io' ]` (or whatever brands you would like to build by default).
