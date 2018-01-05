@@ -33,6 +33,7 @@
 | Faraday's Law |  @jbphet  | ✓ |
 | Fluid Pressure and Flow | @zepumph | |
 | Forces and Motion: Basics |  @jessegreenberg | |
+| Fraction Comparison | |
 | Fraction Matcher | @samreid | ✓ |
 | Fractions Intro | @jonathanolson |  |
 | Friction | @jbphet | ✓ |
