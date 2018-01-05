@@ -29,3 +29,9 @@
 3. Again if expected to be in a meeting or such, good to inform relevant participants
 
 ### Slack status hints/recommendations
+
+We are going to try to use slack status more to communicate availability, since most of us are on Slack these days.
+
+- "/away" toggles the green dot associated with username to turn off
+- "/active" toggles the green dot associated with your username to turn on
+- "/status [:your_new_status_emoji:] [your new status message]" allows you to set a custom status message
