@@ -7,29 +7,26 @@
 ### Known time off (1/2 day to full day)
 
 1. For single day time off, best to also include in status reports
-
 2. Single or half day time off should be noted in the availability calendar
-
 3. An email does not necessarily need to be sent to the group, but any collaborators/meeting attendees would be good to notify if your presence is expected
 
 ### Unexpected time off (sick day for instance)
 
 1. Sick days, since they usually happen unexpectedly, best to email the group if your presence is expected for something (like Thursday meetings). A slack message/status change is also reasonable communication
-
 2. Sick days should also always be marked on the availability calendar, even retroactively
 
 ### Small unavailability (2'ish hours, long lunch, kid duties, errand, etc)
 
 1. Best communicated by changing slack status
-
 2. Do NOT need to be marked on availability calendar
-
 3. Again if expected to be in a meeting or such, good to inform relevant participants
 
 ### Slack status hints/recommendations
 
 We are going to try to use slack status more to communicate availability, since most of us are on Slack these days.
 
-- "/away" toggles the green dot associated with username to turn off
-- "/active" toggles the green dot associated with your username to turn on
-- "/status [:your_new_status_emoji:] [your new status message]" allows you to set a custom status message
+- `/away` toggles the green dot associated with username to turn off
+- `/active` toggles the green dot associated with your username to turn on
+- `/status [:your_new_status_emoji:] [your new status message]` allows you to set a custom status message
+- In the desktop apps, you’ll appear active whenever Slack is open and you're interacting with your computer. After 30 minutes of inactivity, Slack will automatically change your status to away
+- The "Workspace Directory" allows you to see everyone's status in a single view
