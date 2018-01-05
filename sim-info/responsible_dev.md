@@ -13,8 +13,8 @@
 | Beer's Law Lab  | @pixelzoom  | ✓ |
 | Bending Light  | @samreid  | ✓ |
 | Blackbody Spectrum  |   |  |
-| Build an Atom  | @jbphet  | ✓ |
 | Build a Molecule | @jonathanolson |
+| Build an Atom  | @jbphet  | ✓ |
 | Calculus Grapher | @jonathanolson | |
 | Capacitor Lab: Basics | @jonathanolson | ✓ |
 | Charges And Fields | @jonathanolson  | ✓ |
