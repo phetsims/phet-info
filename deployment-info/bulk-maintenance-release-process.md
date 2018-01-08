@@ -51,7 +51,8 @@ for each ( simulation that is fully patched ) {
 ### 1. Prepare your working repos
 
 The following processes rely on `git status` to make sure everything is going smoothly, and can be sabotaged if you have
-files in your repos that are uncommitted or ignored.  Please iterate through all your repos and clean them before beginning. `chipper/bin/status.sh` is useful for scanning your repos.
+files in your repos that are uncommitted or ignored.  Please iterate through all your repos and clean them before beginning.
+`perennial/bin/status.sh` is useful for scanning your repos.
 
 ### 2. maintenance-start
 

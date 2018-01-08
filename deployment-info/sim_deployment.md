@@ -42,7 +42,7 @@ Configure an RSA key, or you will be prompted multiple times for a password duri
 If you are working in master, would like to release a dev version by updating the dev number, and your working copy is clean then you can use `grunt deploy-next-dev`. This will run a trial build and if there are any lint or build errors the process will halt. If there are no lint or build errors, package.json will be updated with the next version number and the simulation will be built and deployed.
 
 ## Step 1. Set up the codebase
-* **DEV**: Dev deploys are often made from master using `pull-all.sh` in `chipper/bin`, but you can use code from branches if you wish 
+* **DEV**: Dev deploys are often made from master using `pull-all.sh` in `perennial/bin`, but you can use code from branches if you wish
 * **RC_FIRST**: 
     + **PHET_IO:**: Add `-phetio` to the end of the branch name.
     + Create a branch with MAJOR.MINOR matching the sim to be published, such as 1.2.  For instance: `git checkout -b 1.2`
