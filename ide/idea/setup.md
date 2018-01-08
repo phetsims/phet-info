@@ -17,15 +17,15 @@ Note: links may be outdated for the current version of Intellij, but they can ge
     * On a Mac, phet-idea-codestyle.xml must be manually copied to `$HOME/Library/Preferences/IntelliJIdea[**version**]/codestyles/`. 
     Restart IDEA, then you can choose it from `Preferences > Editor > Code Style`.
     * See https://www.jetbrains.com/help/idea/2017.1/copying-code-style-settings.html.
-8. Configure node. `File > Settings > Language & Frameworks > Javascript` Make sure `   ECMAScript 5.1` is selected, and 
-    check `Prefer Strict mode. 
-9. Configure eslint. `File > Settings > Language & Frameworks > Javascript > Code Quality Tools > Eslint`.
+8. Configure node. In `File > Settings > Language & Frameworks > Javascript`, Make sure `ECMAScript 5.1` is selected, and
+    check `Prefer Strict mode`.
+9. Configure eslint. In `File > Settings > Language & Frameworks > Javascript > Code Quality Tools > Eslint`:
     * Then navigate to `Language & Frameworks > JavaScript > Code Quality Tools > ESLint`. 
     * Find your node.exe file (probably set up through the project).
     * Fill out ESLint package location (unless global, `chipper/node_modules/eslint`, you may have to `npm install` in chipper)
     * Configuration file should be `chipper/eslint/.eslintrc ` 
     * Additional Rules Dir should be `chipper/eslint/rules`
-    * [Here is a picture for a mac](https://cloud.githubusercontent.com/assets/6856943/26806694/876bdad6-4a0f-11e7-9096-e734bf70be6e.png)
+    * [Here is a picture for a mac](https://cloud.githubusercontent.com/assets/6856943/26806694/876bdad6-4a0f-11e7-9096-e   734bf70be6e.png)
 10. (Optional) Enable Nodejs coding assistance. `File > Settings > Language & Frameworks > Node.js and NPM`. Coding Assistance section. "Node.js Core is disabled" Enable it. This is handy if working on build tools/ node often.
 11. Set up external tools for automatic import of require statement. 
     * On Mac
