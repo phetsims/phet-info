@@ -4,7 +4,7 @@
 Note: links may be outdated for the current version of Intellij, but they can get you started down the right track.
 
 1. Make sure that you have cloned all of the repos into a directory. First clone `chipper/`, and then use 
-`chipper/bin/clone-missing-repos.js`.
+`chipper/bin/clone-missing-repos.sh`.
 2. Make a new project at the same level as you parent dir to all git repos.
 3. Add you github credentials in `File > Settings > Version Control > Github`, and test your credentials with the `Test` 
     button.
