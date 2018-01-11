@@ -7,7 +7,7 @@
 
 `grunt --brands=phet,phet-io` (using `--brands`) will override and build the desired brands. If any brand given like this is not supported, the build will fail out.
 
-Chipper 2.0 also adds the `--debugHTML` option (will build another version with the `_debug` suffix), and has the `-allHTML` option (not relevant for the phet-io brand). Additionally, it is possible to build a sim with a one-off version identifier with `--oneOff={{ONE_OFF_NAME}}`, which will be included in the version identifier.
+Chipper 2.0 also adds the `--debugHTML` option to builds (will build another version with the `_debug` suffix), and has the `-allHTML` option (not relevant for the phet-io brand). Additionally, it is possible to build a sim with a one-off version identifier with `--oneOff={{ONE_OFF_NAME}}`, which will be included in the version identifier. This is a build flag, and is not provided to deployment tasks.
 
 Most other build options should be preserved, and apply to all brands that are built.
 
@@ -43,8 +43,10 @@ perennial# grunt dev --repo=chains --brands=phet,phet-io
 Your default build configuration is specified in `~/.phet/build-local.json`. Describing or identifying the entries in `build-local.json` is beyond the scope of this document; ask a PhET developer for help in setting up this file. At a minimum you will need `devUsername` and `buildServerAuthorizationCode`. A few handy keys:
 
 - `buildServerNotifyEmail`: add your email to be notified on the success or failure of your builds to the build server.
-- `brand:phet` for older chipper SHAs: to automatically build the phet brand instead of the adapted-from-phet brand.
-- `brands: [ 'phet', 'phet-io' ]` for newer chipper SHAs: to automatically build those brands instead of adapted-from-phet
+- `brand:phet` for older (pre 2.0) chipper SHAs: to automatically build the phet brand instead of the adapted-from-phet brand. NOTE: this will be ignored if `--brand` is specified on the command line.
+- `brands: [ 'phet', 'phet-io' ]` for newer chipper SHAs: to automatically build those brands instead of adapted-from-phet. NOTE: This will be ignored if `--brands` is specified on the command line. In particular, since our deployment process does this, this will be ignored for deployments.
+
+It is generally beneficial to include both `brand:` and `brands:` entries in the `build-local.json`, so that it will work on simulations both before and after the chipper 2.0 conversion.
 
 ## Configure an RSA key 
 
@@ -65,13 +67,17 @@ Configure an RSA key, or you will be prompted multiple times for a password duri
 
 ## Dev deployments
 
-Normal dev deployments are assumed to be done from master (with a clean working copy on the sim being deployed). To deploy a dev version, run:
+**Normal dev deployments can only be done from master** (with a clean working copy on the sim being deployed). To deploy a dev version, run:
 ```sh
 grunt dev --brands={{BRANDS}}
 ```
 in the simulation repository. Typically you would have `--brands=phet` or `--brands=phet,phet-io` or some combination.
 
 This will do the entirety of what the checklist did before (and may prompt about certain questions). Notably, it will increment the version test number (e.g. the 2 in 1.3-dev.2). For example, if the package.json specified a version of '1.2-dev.3' before deployment, then '1.2-dev.4' will be committed and deployed.
+
+## One-off deployments
+
+NOT YET IMPLEMENTED
 
 ## RC/production deployments and release branches
 
