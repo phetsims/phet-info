@@ -117,27 +117,6 @@ This will ensure that the top level dependencies.json will properly reference th
 
 This would usually be followed by 1+ RC deployments and then a production deployment.
 
-## Helpful utilities
-
-Perennial includes a number of helpful scripts in perennial/bin (most notably `status.sh`).
-
-Additionally, for working with release branches/patching/etc., it provides the following utilities (see `grunt --help` in perennial for more information, and remember these can be run from recent sim repos):
-
-- `checkout-shas`: Checks out SHAs from whatever dependencies.json currently resides in the sim repo
-- `checkout-target`: Checks out SHAs based on a branch/SHA of the sim repo (e.g. if `--target=1.7`, it will check out all SHAs for that release branch)
-- `checkout-release`: Checks out the latest release branch for a simulation (whatever the website says is the latest)
-- `checkout-master`: Checks out master based on whatever dependencies the sim says in its current state
-- `checkout-master-all`: Checks out master for all repositories
-- `sha-check`: (for maintenance releases) - Tries to identify all sims that do/don't have a SHA in their history. So say we fixed something a few months ago, we can quickly answer "which production sims have this fix".
-- `sim-list`: Provides a quick list of production sims.
-- `npm-update`: Convenience npm prune/update both for the current repository AND chipper
-- `create-release`: Handles creation of release branches
-- `cherry-pick`: Given a list of SHAs, attempts to cherry-pick them until one succeeds. Great for automated maintenance releases.
-- `create-sim`: Creates a sim based on a name/title (off of simula-rasa). Used to live in chipper
-- `sort-require-statements`: Sorts require statements. Used to live in chipper
-- `insert-require-statement`: Inserts/sorts require statements. Used to live in chipper
-- `lint-everything`: Lints all repositories. Used to live in chipper
-
 # Deploying wrappers
 
 `grunt wrapper` in a wrapper directory (e.g. phet-io-wrapper-sonification) should deploy the whole thing. Follow the prompts.
