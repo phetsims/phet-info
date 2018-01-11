@@ -13,11 +13,11 @@ Most other build options should be preserved, and apply to all brands that are b
 
 # Updating supported brands
 
-In each sim's package.json, it lists the brands that are supported. When a phet-io sim is instrumented, it should be added as a supported brand in package.json. Whenever this information is changed, perennial's `grunt generate-data` should be run, and the files under `perennial/data` should be committed/pushed.
+In each sim's package.json, it lists the brands that are supported. When a phet-io sim is instrumented, it should be added as a supported brand in package.json. The files under perennial/data (simulation lists, based on phet-io or other support) will be automatically updated by a process running on bayes (grunt generate-data).
 
 # Building standalone repositories
 
-Scenery/Kite/Dot/etc. can be built as a standalone file that can be included (e.g. that file is used for Scenery examples and documentation). Just `grunt` in the repository should do the trick, and note that there are no brands, so it does not create brand directories. 
+Scenery/Kite/Dot/etc. can be built as a standalone file that can be included (e.g. that file is used for Scenery examples and documentation). Just `grunt` in the repository should do the trick, and note that there are no brands, so it does not create brand directories.
 
 # Building wrapper repositories
 
@@ -48,13 +48,13 @@ Your default build configuration is specified in `~/.phet/build-local.json`. Des
 
 It is generally beneficial to include both `brand:` and `brands:` entries in the `build-local.json`, so that it will work on simulations both before and after the chipper 2.0 conversion.
 
-## Configure an RSA key 
+## Configure an RSA key
 
 Configure an RSA key, or you will be prompted multiple times for a password during dev-related build tasks.
- 
+
  - If you don't already have an RSA key, generate one by running `ssh-keygen -t rsa`.
  - Add an entry for spot in `localhost@~/.ssh/config` using this template:
- 
+
  ```
  Host spot
     HostName spot.colorado.edu
@@ -137,7 +137,6 @@ Additionally, for working with release branches/patching/etc., it provides the f
 - `sort-require-statements`: Sorts require statements. Used to live in chipper
 - `insert-require-statement`: Inserts/sorts require statements. Used to live in chipper
 - `lint-everything`: Lints all repositories. Used to live in chipper
-- `generate-data`: Updates the data files (lists of simulations which support different behaviors)
 
 # Deploying wrappers
 
