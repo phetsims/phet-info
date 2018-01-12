@@ -433,5 +433,17 @@
   },
   {
     "name": "phet-io-wrapper-visualizing-engagement"
+  },
+  {
+    "name": "bumper"
+  },
+  {
+    "name": "area-model-algebra"
+  },
+  {
+    "name": "area-model-counting"
+  },
+  {
+    "name": "area-model-decimals"
   }
 ]
