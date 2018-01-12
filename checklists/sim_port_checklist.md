@@ -40,7 +40,7 @@
   - [ ] README.md created using `grunt unpublished-readme`
   - [ ] Collaborators added (such as QA team, designers, etc)
   - [ ] standard GitHub label set applied
-  - [ ] repository added to perennial/data/active-repos (then `grunt generate-data` in perennial and check in)
+  - [ ] repository added to perennial/data/active-repos
   - [ ] Port existing strings (IF ANY) and commit to the GitHub repo (auto-ported strings from Java and Flash sims can
   be found in babel/autoport). The auto-ported strings should then be deleted from babel/autoport.
 - [ ] **Development started** (Date: //)
