@@ -4,6 +4,9 @@
 | :---------- | :------------- | :--: |
 | Acid-Base Solutions | @pixelzoom | ✓ |
 | Area Builder | @jbphet  | ✓ |
+| Area Model Algebra | @jonathanolson |
+| Area Model Counting | @jonathanolson |
+| Area Model Decimals | @jonathanolson |
 | Area Model Multiplication | @jonathanolson |
 | Arithmetic  | @jbphet  | ✓ |
 | Atomic Interactions  | @jbphet  | ✓ |
