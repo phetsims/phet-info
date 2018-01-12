@@ -38,7 +38,7 @@
   - [ ] README.md created using `grunt unpublished-readme`
   - [ ] Collaborators added (such as QA team, designers, etc)
   - [ ] standard GitHub label set applied
-  - [ ] repository added to perennial/data/active-repos (then `grunt generate-data` in perennial and check in)
+  - [ ] repository added to perennial/data/active-repos
 - [ ] **Development started** (Date: //)
 - [ ] **Sim is "feature complete"** (Date: //)
 - [ ] **Code review completed** (Date: //) 
