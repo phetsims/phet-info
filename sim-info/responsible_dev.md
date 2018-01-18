@@ -48,8 +48,8 @@
 | Graphing Quadratics | @pixelzoom | |
 | Graphing Slope-Intercept | @pixelzoom | ✓ |
 | Gravity And Orbits | @jessegreenberg  | ✓ |
-| Gravity Force Lab |  @jessegreenberg  | ✓ |
-| Gravity Force Lab: Basics | @jessegreenberg | |
+| Gravity Force Lab |  @mbarlow12  | ✓ |
+| Gravity Force Lab: Basics | @mbarlow12 | |
 | Hooke's Law | @pixelzoom | ✓ |
 | Isotopes and Atomic Mass | @jbphet | ✓ |
 | John Travoltage |  @samreid  | ✓ |
