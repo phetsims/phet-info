@@ -2,7 +2,7 @@
 # Maintenance Release Process for Multiple Simulations
 
 This document describes the process for performing maintenance releases that affect multiple simulations.  For the
-single simulation process, please see sim_deployment.md.
+single simulation process, please see chipper-1.0.md and chipper-2.0.md for more information on the build/deployment procedures for different versions.
 
 ## Branches, dependencies.json and releases
 
