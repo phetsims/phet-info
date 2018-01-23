@@ -67,7 +67,7 @@ Configure an RSA key, or you will be prompted multiple times for a password duri
 
 ## Dev deployments
 
-**Normal dev deployments can only be done from master** (with a clean working copy on the sim being deployed). To deploy a dev version, run:
+**Normal dev deployments can only be done from master. If you want to deploy off of a branch, do a one-off deployment** (with a clean working copy on the sim being deployed). To deploy a dev version, run:
 ```sh
 grunt dev --brands={{BRANDS}}
 ```
@@ -77,7 +77,22 @@ This will do the entirety of what the checklist did before (and may prompt about
 
 ## One-off deployments
 
-NOT YET IMPLEMENTED
+These are like dev deployments, but should be done from a named branch (where the name does not contain any `-` or `.` characters).
+
+To create a branch (easily) for one-off deployments, run:
+```sh
+grunt create-one-off --branch={{BRANCH}}
+```
+
+This will create the branch with the relevant name, and set up the package.json appropriately.
+
+Thus a normal `grunt` will build with the one-off version from the branch. To deploy a one-off version:
+
+```sh
+grunt one-off --brands={{BRANDS}}
+```
+
+from the branch.
 
 ## RC/production deployments and release branches
 
