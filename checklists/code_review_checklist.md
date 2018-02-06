@@ -1,5 +1,5 @@
 *NOTE! Prior to doing a code review, copy this checklist to a GitHub issue for the repository being reviewed.*
-*Please mark failed items with ❌*
+*Please mark failed items with* ❌
 
 PhET code-review checklist
 =============
