@@ -77,6 +77,8 @@ This will do the entirety of what the checklist did before (and may prompt about
 
 These are like dev deployments, but should be done from a named branch (where the name does not contain any `-` or `.` characters).
 
+Prior to branch creation, be sure to create a GitHub issue within the associated repo. Its title should be of the form `branch: {{branchName}}`, and the description should describe the purpose of the branch, expected lifetime of the branch, and links to any other relevant issues.
+
 To create a branch (easily) for one-off deployments, run:
 ```sh
 grunt create-one-off --branch={{BRANCH}}
