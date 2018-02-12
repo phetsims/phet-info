@@ -138,4 +138,4 @@ This would usually be followed by 1+ RC deployments and then a production deploy
 
 # Deploying pre-chipper-2.0 things
 
-See https://github.com/phetsims/phet-info/blob/master/deployment-info/sim_deployment.md
+See https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-1.0.md
