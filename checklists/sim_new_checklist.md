@@ -30,7 +30,7 @@
 - [ ] **Post-publication items** 
   - [ ] Add to Edmodo
   - [ ] Add to [Gooru](http://gooru.org/PhET/content/resources) (signed in as phethelp)
-  - [ ] Deliver to [Lendengs of Learning](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=0)
+  - [ ] Deliver to [Legends of Learning](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=0)
   - [ ] Sim primer (create issue, publish ideally within 1 month of live sim)
   - [ ] Hold postmortem if applicable (Date: //) 
 
