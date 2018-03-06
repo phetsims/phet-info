@@ -1,452 +1,404 @@
 [
   {
-    "name":"phetcommon"
+    "name": "acid-base-solutions"
   },
   {
-    "name":"energy-skate-park-basics"
+    "name": "aqua"
   },
   {
-    "name":"scenery"
-  },
-  {
-    "name":"build-an-atom"
-  },
-  {
-    "name":"ohms-law"
-  },
-  {
-    "name":"example-sim"
-  },
-  {
-    "name":"beers-law-lab"
-  },
-  {
-    "name":"resistance-in-a-wire"
-  },
-  {
-    "name":"forces-and-motion-basics"
-  },
-  {
-    "name":"dot"
-  },
-  {
-    "name":"molecule-shapes"
-  },
-  {
-    "name":"assert"
-  },
-  {
-    "name":"build-a-molecule"
-  },
-  {
-    "name":"nitroglycerin"
-  },
-  {
-    "name":"kite"
-  },
-  {
-    "name":"scenery-phet"
-  },
-  {
-    "name":"phet-core"
-  },
-  {
-    "name":"balloons-and-static-electricity"
-  },
-  {
-    "name":"sun"
-  },
-  {
-    "name":"joist"
-  },
-  {
-    "name":"john-travoltage"
-  },
-  {
-    "name":"chipper"
-  },
-  {
-    "name":"tween.js"
-  },
-  {
-    "name":"molarity"
-  },
-  {
-    "name":"axon"
-  },
-  {
-    "name":"gravity-force-lab"
-  },
-  {
-    "name":"phetmarks"
-  },
-  {
-    "name":"wave-on-a-string"
-  },
-  {
-    "name":"phet-info"
-  },
-  {
-    "name":"gravity-and-orbits"
-  },
-  {
-    "name":"graphing-lines"
-  },
-  {
-    "name":"blast"
-  },
-  {
-    "name":"fraction-matcher"
-  },
-  {
-    "name":"build-a-fraction-deprecated"
-  },
-  {
-    "name":"fractions-intro-deprecated"
-  },
-  {
-    "name":"vibe"
-  },
-  {
-    "name":"sherpa"
-  },
-  {
-    "name":"concentration"
-  },
-  {
-    "name":"mobius"
-  },
-  {
-    "name":"friction"
-  },
-  {
-    "name":"balancing-act"
-  },
-  {
-    "name":"vegas"
-  },
-  {
-    "name":"ph-scale"
-  },
-  {
-    "name":"slater"
-  },
-  {
-    "name":"ph-scale-basics"
-  },
-  {
-    "name":"under-pressure"
-  },
-  {
-    "name":"fraction-comparison"
-  },
-  {
-    "name":"acid-base-solutions"
-  },
-  {
-    "name":"fraction-common-deprecated"
-  },
-  {
-    "name":"molecule-polarity"
-  },
-  {
-    "name":"estimation"
-  },
-  {
-    "name":"arithmetic"
-  },
-  {
-    "name":"griddle"
-  },
-  {
-    "name":"balancing-chemical-equations"
-  },
-  {
-    "name":"seasons"
-  },
-  {
-    "name":"area-builder"
-  },
-  {
-    "name":"color-vision"
-  },
-  {
-    "name":"circuit-construction-kit-common"
-  },
-  {
-    "name":"fluid-pressure-and-flow"
-  },
-  {
-    "name":"optics-lab"
-  },
-  {
-    "name":"tasks"
-  },
-  {
-    "name":"graphing-quadratics"
-  },
-  {
-    "name":"plinko-probability"
-  },
-  {
-    "name":"states-of-matter-basics"
-  },
-  {
-    "name":"reactants-products-and-leftovers"
-  },
-  {
-    "name":"brand"
-  },
-  {
-    "name":"molecules-and-light"
-  },
-  {
-    "name":"faradays-law"
-  },
-  {
-    "name":"protein-synthesis"
-  },
-  {
-    "name":"simula-rasa"
-  },
-  {
-    "name":"energy-forms-and-changes"
-  },
-  {
-    "name":"neuron"
-  },
-  {
-    "name":"website"
-  },
-  {
-    "name":"pendulum-lab"
-  },
-  {
-    "name":"molecule-shapes-basics"
-  },
-  {
-    "name":"atomic-interactions"
-  },
-  {
-    "name":"isotopes-and-atomic-mass"
-  },
-  {
-    "name":"charges-and-fields"
-  },
-  {
-    "name":"least-squares-regression"
-  },
-  {
-    "name":"capacitor-lab-basics"
-  },
-  {
-    "name":"sugar-and-salt-solutions"
-  },
-  {
-    "name":"states-of-matter"
-  },
-  {
-    "name":"shred"
-  },
-  {
-    "name":"blackbody-spectrum"
-  },
-  {
-    "name":"bending-light"
-  },
-  {
-    "name":"curve-fitting"
-  },
-  {
-    "name":"babel"
-  },
-  {
-    "name":"function-builder"
-  },
-  {
-    "name":"projectile-motion"
-  },
-  {
-    "name":"chains"
-  },
-  {
-    "name":"rosetta"
-  },
-  {
-    "name":"simulation-picker"
-  },
-  {
-    "name":"rutherford-scattering"
-  },
-  {
-    "name":"tandem"
-  },
-  {
-    "name":"hookes-law"
-  },
-  {
-    "name":"gene-expression-essentials"
-  },
-  {
-    "name":"make-a-ten"
-  },
-  {
-    "name":"calculus-grapher"
-  },
-  {
-    "name":"trig-tour"
-  },
-  {
-    "name":"phet-cafepress"
-  },
-  {
-    "name":"perennial"
-  },
-  {
-    "name":"expression-exchange"
-  },
-  {
-    "name":"models-of-the-hydrogen-atom"
-  },
-  {
-    "name":"masses-and-springs"
-  },
-  {
-    "name":"unit-rates"
-  },
-  {
-    "name":"twixt"
-  },
-  {
-    "name":"circuit-construction-kit-black-box-study"
-  },
-  {
-    "name":"circuit-construction-kit-basics"
-  },
-  {
-    "name":"proportion-playground"
-  },
-  {
-    "name":"phet-io"
-  },
-  {
-    "name":"phet-app"
-  },
-  {
-    "name":"beaker"
-  },
-  {
-    "name":"phet-io-website"
-  },
-  {
-    "name":"yotta"
-  },
-  {
-    "name":"special-ops"
-  },
-  {
-    "name":"installer-builder"
-  },
-  {
-    "name":"faraday"
-  },
-  {
-    "name":"tambo"
-  },
-  {
-    "name":"area-model-multiplication"
-  },
-  {
-    "name":"query-string-machine"
-  },
-  {
-    "name":"phet-office-mix"
-  },
-  {
-    "name":"aqua"
-  },
-  {
-    "name":"a11y-research"
-  },
-  {
-    "name":"gravity-force-lab-basics"
-  },
-  {
-    "name":"circuit-constructor-kit-dc"
-  },
-  {
-    "name":"gas-properties"
-  },
-  {
-    "name":"graphing-slope-intercept"
-  },
-  {
-    "name":"function-basics"
-  },
-  {
-    "name":"coulombs-law"
-  },
-  {
-    "name":"inverse-square-law-common"
-  },
-  {
-    "name":"equality-explorer"
-  },
-  {
-    "name":"area-model-common"
-  },
-  {
-    "name":"fractions-intro"
-  },
-  {
-    "name":"phet-io-wrappers"
-  },
-  {
-    "name":"phet-io-wrapper-sonification"
-  },
-  {
-    "name":"phet-io-wrapper-classroom-activity"
-  },
-  {
-    "name":"phet-io-wrapper-lab-book"
-  },
-  {
-    "name":"circuit-construction-kit-basics"
-  },
-  {
-    "name":"QA"
-  },
-  {
-    "name":"circuit-construction-kit-dc-virtual-lab"
-  },
-  {
-    "name":"circuit-construction-kit-dc"
-  },
-  {
-    "name":"circuit-construction-ios-app"
-  },
-  {
-    "name":"energy-skate-park"
-  },
-  {
-    "name":"website-meteor"
-  },
-  {
-    "name": "interaction-dashboard"
-  },
-  {
-    "name": "bumper"
+    "name": "area-builder"
   },
   {
     "name": "area-model-algebra"
   },
   {
-    "name": "area-model-introduction"
+    "name": "area-model-common"
   },
   {
     "name": "area-model-decimals"
   },
   {
+    "name": "area-model-introduction"
+  },
+  {
+    "name": "area-model-multiplication"
+  },
+  {
+    "name": "arithmetic"
+  },
+  {
+    "name": "assert"
+  },
+  {
+    "name": "atomic-interactions"
+  },
+  {
+    "name": "axon"
+  },
+  {
+    "name": "babel"
+  },
+  {
+    "name": "balancing-act"
+  },
+  {
+    "name": "balancing-chemical-equations"
+  },
+  {
+    "name": "balloons-and-static-electricity"
+  },
+  {
+    "name": "beers-law-lab"
+  },
+  {
+    "name": "bending-light"
+  },
+  {
+    "name": "blackbody-spectrum"
+  },
+  {
+    "name": "blast"
+  },
+  {
+    "name": "brand"
+  },
+  {
+    "name": "build-a-molecule"
+  },
+  {
+    "name": "build-an-atom"
+  },
+  {
+    "name": "bumper"
+  },
+  {
+    "name": "calculus-grapher"
+  },
+  {
+    "name": "capacitor-lab-basics"
+  },
+  {
+    "name": "chains"
+  },
+  {
+    "name": "charges-and-fields"
+  },
+  {
+    "name": "chipper"
+  },
+  {
+    "name": "circuit-construction-ios-app"
+  },
+  {
+    "name": "circuit-construction-kit-common"
+  },
+  {
+    "name": "circuit-construction-kit-black-box-study"
+  },
+  {
+    "name": "circuit-construction-kit-dc"
+  },
+  {
+    "name": "circuit-construction-kit-dc-virtual-lab"
+  },
+  {
+    "name": "color-vision"
+  },
+  {
+    "name": "concentration"
+  },
+  {
+    "name": "coulombs-law"
+  },
+  {
+    "name": "curve-fitting"
+  },
+  {
+    "name": "dot"
+  },
+  {
+    "name": "energy-forms-and-changes"
+  },
+  {
+    "name": "energy-skate-park-basics"
+  },
+  {
+    "name": "equality-explorer"
+  },
+  {
+    "name": "estimation"
+  },
+  {
+    "name": "example-sim"
+  },
+  {
+    "name": "expression-exchange"
+  },
+  {
+    "name": "faradays-law"
+  },
+  {
+    "name": "fluid-pressure-and-flow"
+  },
+  {
+    "name": "forces-and-motion-basics"
+  },
+  {
+    "name": "fraction-comparison"
+  },
+  {
+    "name": "fraction-matcher"
+  },
+  {
+    "name": "fractions-intro"
+  },
+  {
+    "name": "friction"
+  },
+  {
+    "name": "function-builder"
+  },
+  {
     "name": "function-builder-basics"
+  },
+  {
+    "name": "gene-expression-essentials"
+  },
+  {
+    "name": "graphing-lines"
+  },
+  {
+    "name": "graphing-quadratics"
+  },
+  {
+    "name": "graphing-slope-intercept"
+  },
+  {
+    "name": "gravity-and-orbits"
+  },
+  {
+    "name": "gravity-force-lab"
+  },
+  {
+    "name": "gravity-force-lab-basics"
+  },
+  {
+    "name": "griddle"
+  },
+  {
+    "name": "hookes-law"
+  },
+  {
+    "name": "installer-builder"
+  },
+  {
+    "name": "interaction-dashboard"
+  },
+  {
+    "name": "inverse-square-law-common"
+  },
+  {
+    "name": "isotopes-and-atomic-mass"
+  },
+  {
+    "name": "john-travoltage"
+  },
+  {
+    "name": "joist"
+  },
+  {
+    "name": "kite"
+  },
+  {
+    "name": "least-squares-regression"
+  },
+  {
+    "name": "make-a-ten"
+  },
+  {
+    "name": "masses-and-springs"
+  },
+  {
+    "name": "mobius"
+  },
+  {
+    "name": "models-of-the-hydrogen-atom"
+  },
+  {
+    "name": "molarity"
+  },
+  {
+    "name": "molecules-and-light"
+  },
+  {
+    "name": "molecule-polarity"
+  },
+  {
+    "name": "molecule-shapes"
+  },
+  {
+    "name": "molecule-shapes-basics"
+  },
+  {
+    "name": "neuron"
+  },
+  {
+    "name": "nitroglycerin"
+  },
+  {
+    "name": "ohms-law"
+  },
+  {
+    "name": "optics-lab"
+  },
+  {
+    "name": "pendulum-lab"
+  },
+  {
+    "name": "perennial"
+  },
+  {
+    "name": "ph-scale"
+  },
+  {
+    "name": "ph-scale-basics"
+  },
+  {
+    "name": "phet-ios-app"
+  },
+  {
+    "name": "phet-android-app"
+  },
+  {
+    "name": "phet-core"
+  },
+  {
+    "name": "phet-info"
+  },
+  {
+    "name": "phetcommon"
+  },
+  {
+    "name": "phetmarks"
+  },
+  {
+    "name": "phet-io"
+  },
+  {
+    "name": "phet-io-wrappers"
+  },
+  {
+    "name": "phet-io-wrapper-classroom-activity"
+  },
+  {
+    "name": "phet-io-wrapper-lab-book"
+  },
+  {
+    "name": "phet-io-wrapper-sonification"
+  },
+  {
+    "name": "phet-io-website"
+  },
+  {
+    "name": "plinko-probability"
+  },
+  {
+    "name": "projectile-motion"
+  },
+  {
+    "name": "proportion-playground"
+  },
+  {
+    "name": "protein-synthesis"
+  },
+  {
+    "name": "query-string-machine"
+  },
+  {
+    "name": "reactants-products-and-leftovers"
+  },
+  {
+    "name": "resistance-in-a-wire"
+  },
+  {
+    "name": "rosetta"
+  },
+  {
+    "name": "rutherford-scattering"
+  },
+  {
+    "name": "scenery"
+  },
+  {
+    "name": "scenery-phet"
+  },
+  {
+    "name": "sherpa"
+  },
+  {
+    "name": "shred"
+  },
+  {
+    "name": "simula-rasa"
+  },
+  {
+    "name": "slater"
+  },
+  {
+    "name": "smithers"
+  },
+  {
+    "name": "states-of-matter"
+  },
+  {
+    "name": "states-of-matter-basics"
+  },
+  {
+    "name": "sugar-and-salt-solutions"
+  },
+  {
+    "name": "sun"
+  },
+  {
+    "name": "tandem"
+  },
+  {
+    "name": "tambo"
+  },
+  {
+    "name": "tasks"
+  },
+  {
+    "name": "trig-tour"
+  },
+  {
+    "name": "twixt"
+  },
+  {
+    "name": "under-pressure"
+  },
+  {
+    "name": "unit-rates"
+  },
+  {
+    "name": "vegas"
+  },
+  {
+    "name": "vibe"
+  },
+  {
+    "name": "wave-interference"
+  },
+  {
+    "name": "wave-on-a-string"
+  },
+  {
+    "name": "yotta"
+  },
+  {
+    "name": "website"
+  },
+  {
+    "name": "website-meteor"
   }
 ]
