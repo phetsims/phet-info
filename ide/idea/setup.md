@@ -44,6 +44,6 @@ Note: links may be outdated for the current version of Intellij, but they can ge
     * Preferences -> external tools
         * name: grunt-lint-everything
         * program: grunt
-        * arguments: lint-everything --repo=faradays-law
+        * arguments: lint-everything
         * working directory: {{PATH_TO_CHECKOUT}}/perennial
     * Then in the commit changes dialog, select "After Commit" "Run Tool" "grunt-lint-everything"
