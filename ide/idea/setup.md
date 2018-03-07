@@ -41,7 +41,7 @@ Note: links may be outdated for the current version of Intellij, but they can ge
         * Parameters: `C:\Users\{{USER_NAME}}\AppData\Roaming\npm\node_modules\grunt-cli\bin\grunt insert-require-statement --file=$FilePath$ --name=$SelectedText$ --searchPath={{PATH_TO_GIT_REPOS_DIR (like E:\Zepumph\Programming\PHET\git\)}}`
         * Working Directory: E:\Zepumph\Programming\PHET\git\faradays-law
 13. Automatically `grunt lint-everything` on each commit
-    * Preferences -> external tools
+    * Preferences > Tools > External Tools, press the '+' button to add a tool with these values:
         * name: grunt-lint-everything
         * program: grunt
         * arguments: lint-everything
