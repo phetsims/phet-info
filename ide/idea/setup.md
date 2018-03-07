@@ -1,7 +1,7 @@
 
-# Setup Intellij IDEA for PhET Development
+# Setup WebStorm and Intellij IDEA for PhET Development
 
-Note: links may be outdated for the current version of Intellij, but they can get you started down the right track.
+*NOTE: Most of the PhET team uses WebStorm, but some use IDEA. These instructions might work for WebStorm or IDEA, but not both. Or instructions might be incorrect for the current version of either tool. These instructions are intended to get you pointered in the right direction.  If you notice errors or areas that need clarification, please update.*
 
 1. Make sure that you have cloned all of the repos into a directory. First clone `perennial/`, and then run
 `perennial/bin/clone-missing-repos.sh`.                                                             
