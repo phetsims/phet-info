@@ -33,7 +33,7 @@ There are developers at PhET using Windows and MacOS, if you use a different hos
 
 ######Install Git:
 * Windows: Install the software found at http://www.git-scm.com/download/win
-* If you want git to remember your usename and password (highly recommended), run this command: git config --global credential.helper store
+* If you want git to remember your username and password (highly recommended), run this command: git config --global credential.helper store
 		
 ######Checkout the website repo from Github:
 In the phet/git directory, run this command:
