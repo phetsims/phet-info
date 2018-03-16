@@ -305,7 +305,7 @@ var thoughts = happy ? ‘I am happy’ : ‘I am not happy :(’;
 
 - [ ] Naming for Property values:  All `AXON/Property` instances should be declared with the suffix `Property`.  For example, if a visible property is added, it should have the name `visibleProperty` instead of simply `visible`.  This will help to avoid confusion with non-Property definitions.
 
-- [ ] Line comments should be preceded by a blank line.  For example:
+- [ ] Line comments should generally be preceded by a blank line.  For example:
 
 ```js
 // Randomly choose an existing crystal to possibly bond to
