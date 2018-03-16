@@ -23,6 +23,8 @@
     "Import Scheme", and navigate to where the code style is located (noted above).
 9. Configure node. In `File > Settings > Language & Frameworks > Javascript`, Make sure `ECMAScript 5.1` is selected, and
     check `Prefer Strict mode`.
+    * For ES6+ repositories/directors, you'll want to hit the '...' button, add the paths, and set their Language to
+      `ECMAScript 6`. Currently, this should be done for `rosetta`, `perennial`, `installer-builder` and `chipper/js/grunt`.
 10. Configure eslint. In `File > Settings > Language & Frameworks > Javascript > Code Quality Tools > Eslint`:
     * Find your node.exe file (probably set up through the project). (May be filled in automatically)
     * Fill out ESLint package location (unless global, `chipper/node_modules/eslint`). (May be filled in automatically)
