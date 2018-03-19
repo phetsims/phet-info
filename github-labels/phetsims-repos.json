@@ -63,6 +63,9 @@
     "name": "brand"
   },
   {
+    "name": "build-a-fraction"
+  },
+  {
     "name": "build-a-molecule"
   },
   {
@@ -150,7 +153,16 @@
     "name": "fraction-matcher"
   },
   {
+    "name": "fractions-common"
+  },
+  {
+    "name": "fractions-equality"
+  },
+  {
     "name": "fractions-intro"
+  },
+  {
+    "name": "fractions-mixed-numbers"
   },
   {
     "name": "friction"
