@@ -203,7 +203,7 @@ Example:
 ```js
 /**
  * @param {ParticleBox} particleBox - model element
- * @param {Property.<boolean>} visibleProperty - is the box and contents visible?
+ * @param {Property.<boolean>} visibleProperty - are the box and its contents visible?
  * @param {Object} [options]
  * @constructor
  */
@@ -218,7 +218,7 @@ function ParticleBoxNode( particleBox, visibleProperty, options ) {
   
   options.particleNodeOptions = _.extend( {
     fill: 'red',
-    stroke: 'black',
+    stroke: 'gray',
     lineWidth: 0.5
   }, options.particleNodeOptions );
   
