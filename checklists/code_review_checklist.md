@@ -197,6 +197,45 @@ var ballNode = new BallNode( ball, visibleProperty, {
 } );
 ```
 
+- [ ] When options are passed through one constructor to another, a "nested options" pattern should be used.  This helps to avoid duplicating option names and/or accidentally overwriting options for different components that use the same option names.
+
+Example:
+```js
+/**
+ * @param {ParticleBox} particleBox - model element
+ * @param {Property.<boolean>} visibleProperty - is the box and contents visible?
+ * @param {Object} [options]
+ * @constructor
+ */
+function ParticleBoxNode( particleBox, visibleProperty, options ) {
+
+  options = _.extend( {
+    fill: 'white',  // {Color|string} fill color
+    stroke: 'black', // {Color|string} stroke color
+    lineWidth: 1, // {number} width of the stroke
+    particleNodeOptions: null, // {*} to be filled in with defaults below
+  }, options );
+  
+  options.particleNodeOptions = _.extend( {
+    fill: 'red',
+    stroke: 'black',
+    lineWidth: 0.5
+  }, options.particleNodeOptions );
+  
+  // add particle
+  this.addChild( new ParticleNode( particleBox.particle, options.particleNodeOptions ) );
+  
+  .
+  .
+  .
+  
+}
+```
+
+A possible exception to this guideline is when the constructor API is improved by hiding the implementation details, i.e. not revealing that a sub-component exists. In that case, it may make sense to use new top-level options.  This is left to developer and reviewer discretion.
+  
+For more information on the history and thought process around the "nested options" pattern, please see https://github.com/phetsims/tasks/issues/730.
+
 - [ ] Constructor and function documentation.  Parameter types and names should be clearly specified for each function and constructor (if there are any parameters) using `@param` annotations.  The description for each parameter should follow a hyphen.  Primitive types should use lower case.  Constructors should additionally include the `@constructor` annotation. For example:
 
 ```js
