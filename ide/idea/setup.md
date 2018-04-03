@@ -21,7 +21,7 @@
     * See https://www.jetbrains.com/help/idea/2017.1/copying-code-style-settings.html.
     NOTE: For newer versions, you can press the drop-down "settings" icon to the right of the Scheme, select
     "Import Scheme", and navigate to where the code style is located (noted above).
-9. Configure node. In `File > Settings > Language & Frameworks > Javascript`, Make sure `ECMAScript 5.1` is selected, and
+9. Configure JavaScript level. In `File > Settings > Language & Frameworks > Javascript`, Make sure `ECMAScript 5.1` is selected, and
     check `Prefer Strict mode`.
     * For ES6+ repositories/directors, you'll want to hit the '...' button (which is only available in version 2018.1 or
     later), add the paths, and set the "Language" field for each to `ECMAScript 6`. Currently, this should be done for 
