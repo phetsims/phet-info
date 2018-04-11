@@ -36,6 +36,11 @@ will run
 perennial# grunt dev --repo=chains --brands=phet,phet-io
 ```
 
+## If working off campus, install the VPN
+
+- If you work exclusivley on campus, this step is not required.
+- If you plan on deploying sims from a remote location, install the Cisco Anyconnect Secure Mobility Client from https://oit.colorado.edu/services/network-internet-services/vpn.
+ 
 ## Configure build-local.json settings
 
 Your default build configuration is specified in `~/.phet/build-local.json`. Describing or identifying the entries in `build-local.json` is beyond the scope of this document; ask a PhET developer for help in setting up this file. At a minimum you will need `devUsername` and `buildServerAuthorizationCode`. A few handy keys:
@@ -51,17 +56,18 @@ It is generally beneficial to include both `brand:` and `brands:` entries in the
 Configure an RSA key, or you will be prompted multiple times for a password during dev-related build tasks.
 
  - If you don't already have an RSA key, generate one by running `ssh-keygen -t rsa`.
- - Add an entry for spot in `localhost@~/.ssh/config` using this template:
+ - Add an entry for bayes in `localhost@~/.ssh/config` using this template:
 
  ```
- Host spot
-    HostName spot.colorado.edu
+ Host bayes
+    HostName bayes.colorado.edu
     User {{IDENTIKEY}}
     Port 22
     IdentityFile ~/.ssh/id_rsa
  ```
- - Add your public key (found in `localhost@~/.ssh/id_rsa.pub`) to `spot@~/.ssh/authorized_keys`
+ - Add your public key (found in `localhost@~/.ssh/id_rsa.pub`) to `bayes@~/.ssh/authorized_keys`.  This can usually be accomplished by running `ssh-copy-id bayes`.
  - Change the permissions of `authorized_keys` so it is not group writable: `chmod g-w authorized_keys`
+ - Test ssh from your local machine at least once so that you can accept the remote RSA key from bayes by running `ssh bayes`.
 
 ## Dev deployments
 
