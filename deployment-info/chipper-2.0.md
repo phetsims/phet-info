@@ -65,7 +65,7 @@ Configure an RSA key, or you will be prompted multiple times for a password duri
     Port 22
     IdentityFile ~/.ssh/id_rsa
  ```
- - Add your public key (found in `localhost@~/.ssh/id_rsa.pub`) to `bayes@~/.ssh/authorized_keys`.  This can usually be accomplished by running `ssh-copy-id bayes`.
+ - Add your public key (found in `localhost@~/.ssh/id_rsa.pub`) to `bayes@~/.ssh/authorized_keys`.  This can usually be accomplished by running `ssh-copy-id bayes`. If you don't have `ssh-copy-id`, use `cat ~/.ssh/id_rsa.pub | ssh {{IDENTIKEY}}@bayes.colorado.edu "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"`
  - Change the permissions of `authorized_keys` so it is not group writable: `chmod g-w authorized_keys`
  - Test ssh from your local machine at least once so that you can accept the remote RSA key from bayes by running `ssh bayes`.
 
