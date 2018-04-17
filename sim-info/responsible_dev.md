@@ -32,6 +32,7 @@
 | Energy Forms and Changes | @jbphet | |
 | Energy Skate Park: Basics |  @samreid  | ✓ |
 | Equality Explorer | @pixelzoom | |
+| Equality Explorer: Basics | @pixelzoom | |
 | Estimation | @jbphet | |
 | Expression Exchange |  @jbphet  | ✓ |
 | Faraday's Law |  @jbphet  | ✓ |
