@@ -377,6 +377,11 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 - [ ] For something made public solely for a11y, use `@public (a11y)`
 - [ ] For something made public solely for phet-io, use `@public (phet-io)`
 - [ ] Separate multiple qualifiers with commas. For example: `@public (scenery-internal, read-only)`
+- [ ] Specify the most general type clients should know about.  For example;
+```js
+// @public (read-only) {Node}
+this.myNode = new VeryComplicatedNodeSubclass()
+```
 
 - [ ] For JSDoc-style comments, the annotation should appear in context like this:
 
