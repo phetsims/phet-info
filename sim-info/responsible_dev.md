@@ -4,10 +4,10 @@
 | :---------- | :------------- | :--: |
 | Acid-Base Solutions | @pixelzoom | ✓ |
 | Area Builder | @jbphet  | ✓ |
-| Area Model Algebra | @jonathanolson |
-| Area Model Decimals | @jonathanolson |
-| Area Model Introduction | @jonathanolson |
-| Area Model Multiplication | @jonathanolson |
+| Area Model Algebra | @jonathanolson | ✓ |
+| Area Model Decimals | @jonathanolson | ✓ |
+| Area Model Introduction | @jonathanolson | ✓ |
+| Area Model Multiplication | @jonathanolson | ✓ |
 | Arithmetic  | @jbphet  | ✓ |
 | Atomic Interactions  | @jbphet  | ✓ |
 | Balancing Act  | @jbphet  | ✓ |
