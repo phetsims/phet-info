@@ -39,7 +39,7 @@
 | Fluid Pressure and Flow | @zepumph | |
 | Forces and Motion: Basics |  @jessegreenberg | |
 | Fraction Comparison | |
-| Fraction Matcher | @samreid | ✓ |
+| Fraction Matcher | @jonathanolson | ✓ |
 | Fractions: Equality | @jonathanolson |  |
 | Fractions: Intro | @jonathanolson |  |
 | Fractions: Mixed Numbers | @jonathanolson |  |
