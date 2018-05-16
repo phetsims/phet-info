@@ -25,7 +25,7 @@ vs Trait
 
 ## Model-View Transform
 
-role in MVC, use of scenery transform methods (`localToGlobalPoint`, etc.)
+role in MVC, examples to demystify scenery transform methods (`localToGlobalPoint`, etc.)
 
 ## Module
 
