@@ -17,7 +17,7 @@ when to implement `dispose`, use of `this.disposeTypeName`, chaining to supertyp
 
 ## Enum
 
-vs {string[]}, `Object.freeze`
+vs `{string[]}`, `Object.freeze`
 
 ## Mixin
 
