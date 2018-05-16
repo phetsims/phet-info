@@ -3,6 +3,10 @@
 This document describes software design patterns that are specific to PhET, and PhET-specific applications
 of standard design patterns.
 
+Common sections for each pattern:
+- when to use
+- pitfalls
+
 ## Creator
 
 describe the problem, event forwarding, model/view creation, instance management
