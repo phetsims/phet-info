@@ -9,7 +9,7 @@ describe the problem, event forwarding, model/view creation, instance management
 
 ## Dispose
 
-when to implement `dispose`, use of `this.disposeTypeName`, chaining to supertype `dispose`
+when to implement `dispose`, use of `this.disposeTypeName`, chaining to supertype `dispose`, typical order of disposal
 
 ## Mixin
 
