@@ -15,6 +15,10 @@ describe the problem, event forwarding, model/view creation, instance management
 
 when to implement `dispose`, use of `this.disposeTypeName`, chaining to supertype `dispose`, typical order of disposal
 
+## Enum
+
+vs {string[]}, `Object.freeze`
+
 ## Mixin
 
 vs Trait
