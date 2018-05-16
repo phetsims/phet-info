@@ -33,7 +33,7 @@ role in MVC, use of scenery transform methods (`localToGlobalPoint`, etc.)
 
 ## Options
 
-`_.extend`, options vs required parameters, default values, nested options, propagation, filtering
+`_.extend`, options vs required parameters, default values, propagation to supertype (filtering), propagation to subcomponents (nesting)
 
 ## Prototypal Inheritance
 
