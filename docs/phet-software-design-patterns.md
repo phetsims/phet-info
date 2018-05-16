@@ -21,7 +21,7 @@ vs Trait
 
 ## Model-View Controller
 
-`Screen`, `ScreenView`, model container
+`Screen`, `ScreenView`, model container, `Property`, `Emitter`, Nodes
 
 ## Model-View Transform
 
