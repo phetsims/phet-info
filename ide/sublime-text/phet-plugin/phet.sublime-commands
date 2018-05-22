@@ -1,0 +1,16 @@
+[
+    {
+      "caption": "PhET: Insert Require Statement",
+      "command": "phet_run",
+      "args": {
+        "cmd": "grunt insert-require-statement --name=$selectedText --file=$file_name"
+      }
+    },
+    {
+      "caption": "PhET: Sort Require Statements",
+      "command": "phet_run",
+      "args": {
+        "cmd": "grunt sort-require-statements"
+      }
+    }
+]
