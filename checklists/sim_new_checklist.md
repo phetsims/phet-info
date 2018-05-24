@@ -1,16 +1,16 @@
 # {{SIM_NAME}} master checklist
 
 ## Design
-- [x] **Sim folder and design doc created** (N/A)
-  - [x] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) using phet-docs account (N/A)
-  - [x] Place design doc in the sim folder (N/A)
-- [x] **Sim suggestions doc reviewed** (N/A)
-- [x] **Learning goals and standards identified** (N/A)
-- [x] **Design concept complete**  (N/A)
-- [x] **Wireframes complete** (N/A)
-- [x] **Mockups complete** (N/A)
-  - [x] Mockups checked for colorblind and greyscale (N/A)
-- [x] **Features for PhET-iO discussion** (N/A)
+- [ ] **Sim folder and design doc created** (Date: //)
+  - [ ] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) using phet-docs account
+  - [ ] Place design doc in the sim folder
+- [ ] **Sim suggestions doc reviewed**
+- [ ] **Learning goals and standards identified** (Date: //)
+- [ ] **Design concept complete**  (Date: //)
+- [ ] **Wireframes complete** (Date: //)
+- [ ] **Mockups complete** (Date: //)
+  - [ ] Mockups checked for colorblind and greyscale
+- [ ] **Features for PhET-iO discussion**
 - [ ] **Interviews complete** (Date: //)
   - [ ] Results reported to team
   - [ ] Notes pasted into design doc
@@ -35,14 +35,14 @@
   - [ ] Hold postmortem if applicable (Date: //)
 
 ## Implementation
-- [x] **Repository created** (Date: 5/24/18)
-  - [x] Simulation added to [responsible_dev.md](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md)
-  - [x] Use `grunt create-sim` in perennial (see `--help` for arguments) to create the repository structure
+- [ ] **Repository created** (Date: //)
+  - [ ] Simulation added to [responsible_dev.md](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md)
+  - [ ] Use `grunt create-sim` in perennial (see `--help` for arguments) to create the repository structure
   - [ ] Collaborators added (such as QA team, designers, etc)
   - [ ] standard GitHub label set applied
-  - [x] repository added to perennial/data/active-repos
-- [x] **Development started** (Date: ?)
-- [x] **Sim is "feature complete"** (Date: 5/24/18)
+  - [ ] repository added to perennial/data/active-repos
+- [ ] **Development started** (Date: //)
+- [ ] **Sim is "feature complete"** (Date: //)
 - [ ] **Code review completed** (Date: //)
 - [ ] **Pre-publication items**
   - [ ] Main screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
