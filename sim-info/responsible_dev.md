@@ -33,6 +33,7 @@
 | Energy Skate Park: Basics |  @samreid  | ✓ |
 | Equality Explorer | @pixelzoom | |
 | Equality Explorer: Basics | @pixelzoom | |
+| Equality Explorer: Two Variables | @pixelzoom | |
 | Estimation | @jbphet | |
 | Expression Exchange |  @jbphet  | ✓ |
 | Faraday's Law |  @jbphet  | ✓ |
