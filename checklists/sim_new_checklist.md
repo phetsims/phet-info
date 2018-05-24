@@ -26,7 +26,7 @@
   - [ ] Add an activity
   - [ ] Sim primer draft
   - [ ] [LoL icons](https://docs.google.com/document/d/1GmLNE31gs8hQYGze3xwmN9k7B6gu7lQ7wJe2phqdH9Y/edit) for each screen created and uploaded to Drive
-  - [ ] LoL [metadata](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=562591429) for each screen (description, vocab words, questions for before/after sim use)
+  - [ ] [LoL metadata](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=562591429) for each screen (description, vocab words, questions for before/after sim use)
 - [ ] **Post-publication items**
   - [ ] Add to Edmodo
   - [ ] Add to [Gooru](http://gooru.org/PhET/content/resources) (signed in as phethelp)
