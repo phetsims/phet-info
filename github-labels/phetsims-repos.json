@@ -54,6 +54,9 @@
     "name": "bending-light"
   },
   {
+    "name": "binder"
+  },
+  {
     "name": "blackbody-spectrum"
   },
   {
@@ -130,6 +133,9 @@
   },
   {
     "name": "equality-explorer-basics"
+  },
+  {
+    "name": "equality-explorer-two-variables"
   },
   {
     "name": "estimation"
