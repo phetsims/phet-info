@@ -58,6 +58,8 @@ must be documented accordingly.
 TODO: document how to document accordingly
 TODO: explain propagation to supertype (filtering), 
 
+Try to keep related options groups together, both for instantiation and `_.extends` statements. For examples, if you have several options related to a11y, keep them together, don't interleave them with other options.
+
 ### Nesting
 
 If using composition for your type, and you want to pass options into a composed component of the type, you can nest 
