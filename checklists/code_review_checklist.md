@@ -25,9 +25,7 @@ PhET code-review checklist
 	- [ ] SCENERY: `Node.on` is accompanied by `Node.off`
 	- [ ] TANDEM: `tandem.addInstance` is accompanied by `tandem.removeInstance`, or use PhetioObject constructor+dispose
 - [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls `this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly match the filename.
-- [ ] PhET-iO instantiates different objects and wires up listeners that are not present in the PhET-branded simulation.  It needs
-      to be tested separately for memory leaks.  To help isolate the nature of the memory leak, this test should be run separately
-      from the PhET brand memory leak test.  Test with the "console" and "studio" wrappers (easily accessed from phetmarks)
+- [ ] PhET-iO instantiates different objects and wires up listeners that are not present in the PhET-branded simulation.  It needs to be tested separately for memory leaks.  To help isolate the nature of the memory leak, this test should be run separately from the PhET brand memory leak test.  Test with the "console" and "studio" wrappers (easily accessed from phetmarks)
 
 #### **Performance, Usability**
 
