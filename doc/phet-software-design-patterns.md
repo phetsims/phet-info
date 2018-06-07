@@ -56,7 +56,9 @@ object titled `options` must all be "optional." If there are some properties of 
 then the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one 
 must be documented accordingly. 
 TODO: document how to document accordingly
-TODO: explain propagation to supertype (filtering), 
+
+We do not filter child options out before passing them up to the parent. With this in mind please be mindful of the option
+naming to make sure that you don't cause collisions. See https://github.com/phetsims/tasks/issues/934.
 
 Try to keep related options groups together, both for instantiation and `_.extends` statements. For examples, if you have several options related to a11y, keep them together, don't interleave them with other options.
 
