@@ -60,7 +60,8 @@ TODO: document how to document accordingly
 We do not filter child options out before passing them up to the parent. With this in mind please be mindful of the option
 naming to make sure that you don't cause collisions. See https://github.com/phetsims/tasks/issues/934.
 
-Try to keep related options groups together, both for instantiation and `_.extends` statements. For examples, if you have several options related to a11y, keep them together, don't interleave them with other options.
+Try to keep related options groups together, both for instantiation and `_.extends` statements. For examples, if you
+have several options related to a11y, keep them together, don't interleave them with other options.
 
 ### Nesting
 
@@ -88,6 +89,26 @@ those options in a single option on your type, named according to the component 
   }
 ```
 
+### Required Named Parameters
+If one or more of the options are required, then `options` should be renamed  to `config`. See https://github.com/phetsims/tasks/issues/930
+In the `_.extend` call, the options should be commented as to whether they are required or optional.  For example:
+```js
+/**
+ * @param {string} name - the full name of the Person
+ * @param {Object} config
+ * @constructor
+ */
+function Person( name, config ) {
+  config = _.extend( {
+    height: 183, // {number} required - height in centimeters
+    age: 25, // {number} required - age in years
+
+    favoriteColor: null // {Color|null} optional - favorite color, if any
+  }, config );
+}
+```
+In some cases, it may be better to only indicate the `required` properties or only indicate the `optional` properties,
+or to group them--use your judgment.
 
 ## Prototypal Inheritance
 
