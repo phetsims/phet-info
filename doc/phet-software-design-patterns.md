@@ -91,7 +91,8 @@ those options in a single option on your type, named according to the component 
 
 ### Required Named Parameters
 If one or more of the options are required, then `options` should be renamed  to `config`. See https://github.com/phetsims/tasks/issues/930
-In the `_.extend` call, the options should be commented as to whether they are required or optional.  For example:
+In the `_.extend` call, the options should be commented as to whether they are required or optional.  Following the
+`_.extend` call, required fields should have an assertion to verify they were provided. For example:
 ```js
 /**
  * @param {string} name - the full name of the Person
@@ -100,11 +101,14 @@ In the `_.extend` call, the options should be commented as to whether they are r
  */
 function Person( name, config ) {
   config = _.extend( {
-    height: 183, // {number} required - height in centimeters
-    age: 25, // {number} required - age in years
+    height: null, // {number} required - height in centimeters
+    age: null, // {number} required - age in years
 
-    favoriteColor: null // {Color|null} optional - favorite color, if any
+    favoriteColor: 'null' // {Color|null} optional - favorite color, if any
   }, config );
+
+  assert && assert( config.height );
+  assert && assert( config.age );
 }
 ```
 In some cases, it may be better to only indicate the `required` properties or only indicate the `optional` properties,
