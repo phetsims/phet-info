@@ -104,7 +104,7 @@ function Person( name, config ) {
     height: null, // {number} required - height in centimeters
     age: null, // {number} required - age in years
 
-    favoriteColor: 'null' // {Color|null} optional - favorite color, if any
+    favoriteColor: null // {Color|null} optional - favorite color, if any
   }, config );
 
   assert && assert( config.height );
