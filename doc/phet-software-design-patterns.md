@@ -107,8 +107,8 @@ function Person( name, config ) {
     favoriteColor: null // {Color|null} optional - favorite color, if any
   }, config );
 
-  assert && assert( config.height );
-  assert && assert( config.age );
+  assert && assert( config.height !== null, 'height is required' );
+  assert && assert( config.age !== null, 'age is required' );
 }
 ```
 In some cases, it may be better to only indicate the `required` properties or only indicate the `optional` properties,
