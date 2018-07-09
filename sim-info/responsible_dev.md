@@ -50,7 +50,7 @@
 | Gas Properties | @pixelzoom |  |
 | Gene Expression Essentials | @jbphet | ✓ |
 | Graphing Lines | @pixelzoom  | ✓ |
-| Graphing Quadratics | @pixelzoom | |
+| Graphing Quadratics | @andrealin | |
 | Graphing Slope-Intercept | @pixelzoom | ✓ |
 | Gravity And Orbits | @jessegreenberg  | ✓ |
 | Gravity Force Lab |  @mbarlow12  | ✓ |
