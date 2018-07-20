@@ -4,7 +4,7 @@
 - [ ] **Sim folder and design doc created** (Date: //)
   - [ ] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) using phet-docs account
   - [ ] Place design doc in the sim folder
-- [ ] **Sim suggestions doc reviewed ** [suggestions doc](https://phet.unfuddle.com/a#/projects/9404/notebooks/3863/pages/105821)
+- [ ] **Sim suggestions doc reviewed** [suggestions doc](https://phet.unfuddle.com/a#/projects/9404/notebooks/3863/pages/105821)
 - [ ] **Learning goals and standards identified** (Date: //)
 - [ ] **Design concept complete**  (Date: //)
 - [ ] **Wireframes complete** (Date: //)
