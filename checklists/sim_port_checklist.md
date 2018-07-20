@@ -6,7 +6,7 @@
   - [ ] Place design doc in the sim folder
 - [ ] **Legacy sim docs/info gathered**
   - [ ] [Sim suggestions doc](https://phet.unfuddle.com/a#/projects/9404/notebooks/3863/pages/105821) reviewed
-  - [ ] Unfuddle tickets reviewed
+  - [ ] Unfuddle tickets reviewed ([searching tickets](https://github.com/phetsims/phet-info/blob/master/issue-info/unfuddle-ticket-search.md))
 - [ ] **Learning goals and standards identified** (Date: //)
 - [ ] **Design concept complete**  (Date: //)
 - [ ] **Wireframes complete** (Date: //) 
