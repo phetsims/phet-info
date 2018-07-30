@@ -1,4 +1,4 @@
-#New Student Worker Checklist
+# New Student Worker Checklist
 
 ## Admin
 - [ ] Complete Payroll forms (Personal data and Emergency contact), email to oliver.nix@colorado.edu [New Student Employee] (https://docs.google.com/document/d/1At37GOZ83luHGKOOQzjnJH2gu1E-sb-91OsdAmjYIIs/edit)
