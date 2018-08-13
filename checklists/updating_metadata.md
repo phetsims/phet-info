@@ -15,4 +15,4 @@ For anything that could potentially change checked-in top-level sim HTML or conf
 - [ ] If possible, run local aqua testing (`/aqua/test-server/test-sims.html?ea&audioVolume=0&testDuration=10000&testConcurrentBuilds=4&brand=phet&fuzzMouse`) to make sure nothing broke horribly.
 - [ ] `git add` the relevant files, `git commit`  (referencing the issue for the change) and `git push`.
 
-Note that for package.json changes that add flags, an automated process on bayes should update the perennial/data files automatically.
+Note that for package.json changes that add flags, an automated process on bayes should update the perennial/data/ files automatically.
