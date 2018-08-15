@@ -131,7 +131,7 @@ If you want to make a change to the sim's own repo on the release branch (and no
 - Test it. You can `grunt` in the sim repo (the `checkout-target` above did the NPM magic for it to work)
 - Push the change to the sim branch (e.g. `git push origin 1.2`).
 
-otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
+Otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
 
 - From perennial, `grunt checkout-target --repo={{REPO}} --target={{BRANCH}}`, e.g. `grunt checkout-target --repo=chains --target=1.2`.
 - Check the common repo to see if it has a branch named `{{SIM}}-{{BRANCH}}`, e.g. does scenery have a branch named chains-1.2
@@ -140,7 +140,7 @@ otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
 - Apply the change to the sim's branch (it's almost always a cherry-pick, e.g. `git cherry-pick {{SHA}}` in the common repo).
 - Test it. You can `grunt` in the sim repo (the `checkout-target` above did the NPM magic for it to work)
 - Push the change to the common branch (e.g. `git push origin chains-1.2`)
-- If you didn't built it before, run `grunt` in the sim repo.
+- If you didn't build it before, run `grunt` in the sim repo.
 - Copy the dependencies.json from the build directory to the top-level directory in the sim. Older sims had it at `build/dependencies.json`. Newer (chipper 2.0) sims will have it at `build/phet/dependencies.json`.
 - `git add dependencies.json` and commit it mentioning the issue for the maintenance release.
 - `git push origin {{BRANCH}}`.
