@@ -40,7 +40,7 @@ perennial# grunt dev --repo=chains --brands=phet,phet-io
 
 - If you work exclusivley on campus, this step is not required.
 - If you plan on deploying sims from a remote location, install the Cisco Anyconnect Secure Mobility Client from https://oit.colorado.edu/services/network-internet-services/vpn.
- 
+
 ## Configure build-local.json settings
 
 Your default build configuration is specified in `~/.phet/build-local.json`. Describing or identifying the entries in `build-local.json` is beyond the scope of this document; ask a PhET developer for help in setting up this file. At a minimum you will need `devUsername` and `buildServerAuthorizationCode`. A few handy keys:
@@ -65,7 +65,7 @@ Configure an RSA key, or you will be prompted multiple times for a password duri
     Port 22
     IdentityFile ~/.ssh/id_rsa
  ```
- - Add your public key (found in `localhost@~/.ssh/id_rsa.pub`) to `bayes@~/.ssh/authorized_keys`.  
+ - Add your public key (found in `localhost@~/.ssh/id_rsa.pub`) to `bayes@~/.ssh/authorized_keys`.
    - This can usually be accomplished by running `ssh-copy-id bayes`.
    - If you don't have `ssh-copy-id`, use `cat ~/.ssh/id_rsa.pub | ssh {{IDENTIKEY}}@bayes.colorado.edu "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"`
  - Change the permissions of `authorized_keys` so it is not group writable: `chmod g-w authorized_keys`
@@ -122,19 +122,28 @@ grunt production --brands={{BRANDS}} --branch={{BRANCH}}
 ```
 and follow the prompts. It should handle all of the steps in the older deployment checklist, and will notify you about any additional tasks that you will need to take afterwards.
 
-### Maintenance patching
+### Manual maintenance patching
 
-If you want to make a change to the sim's own repo on the release branch, just commit the change and push it to the branch. If the change affects other repositories, you'll want to create or update that repository's branch called {{SIM}}-{{BRANCH}}, and either manually update the top-level dependencies.json of the sim, or copy the entire file from a build directory (preferred).
+If you want to make a change to the sim's own repo on the release branch (and no changes to other dependencies), then generally first do the following:
 
-For example, if I'm patching molecule-shapes and it needs a scenery fix, I'll:
+- From perennial, `grunt checkout-target --repo={{REPO}} --target={{BRANCH}}`, e.g. `grunt checkout-target --repo=chains --target=1.2`.
+- Apply the change to the sim's branch (either a usual commit, or by cherry-picking a change, e.g. `git cherry-pick {{SHA}}` in the sim repo).
+- Test it. You can `grunt` in the sim repo (the `checkout-target` above did the NPM magic for it to work)
+- Push the change to the sim branch (e.g. `git push origin 1.2`).
 
-- Apply the fix in the molecule-shapes repository on the branch (e.g. 1.7)
-- Check to see if scenery has a branch named (e.g.) molecule-shapes-1.7
-  - If it does not exist (assuming you have already checked out SHAs for the release branch), `git checkout -b molecule-shapes-1.7`, apply the fix, and push to that branch.
-  - If it does exist, check it out, apply the fix and push.
-- Build molecule-shapes (`grunt`)
-- Copy `build/phet/dependencies.json` (or any other brand's copy, they are identical) to the top level (`molecule-shapes/dependencies.json`).
-- Commit and push the change to the release branch.
+otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
+
+- From perennial, `grunt checkout-target --repo={{REPO}} --target={{BRANCH}}`, e.g. `grunt checkout-target --repo=chains --target=1.2`.
+- Check the common repo to see if it has a branch named `{{SIM}}-{{BRANCH}}`, e.g. does scenery have a branch named chains-1.2
+  - If it HAS the branch, ensure that the branch's HEAD commit is the same as the currently-checked-out commit. THEN checkout the branch (e.g. `git checkout chains-1.2`) in the common repo. If the commits don't match, INVESTIGATE as something went wrong before. Talk to @jonathanolson?
+  - If there IS NO branch, create it in the common repo with `git checkout -b {{SIM}}-{{BRANCH}}`, e.g. `git checkout -b chains-1.2`
+- Apply the change to the sim's branch (it's almost always a cherry-pick, e.g. `git cherry-pick {{SHA}}` in the common repo).
+- Test it. You can `grunt` in the sim repo (the `checkout-target` above did the NPM magic for it to work)
+- Push the change to the common branch (e.g. `git push origin chains-1.2`)
+- If you didn't built it before, run `grunt` in the sim repo.
+- Copy the dependencies.json from the build directory to the top-level directory in the sim. Older sims had it at `build/dependencies.json`. Newer (chipper 2.0) sims will have it at `build/phet/dependencies.json`.
+- `git add dependencies.json` and commit it mentioning the issue for the maintenance release.
+- `git push origin {{BRANCH}}`.
 
 This will ensure that the top level dependencies.json will properly reference the common-code fixed SHA, and that we'll always have a consistent common code branch for the sim branch.
 
