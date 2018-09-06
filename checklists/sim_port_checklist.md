@@ -54,7 +54,6 @@
   - [ ] Main screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
   - [ ] Verify credits
 - [ ] **Published** (Date: //) 
-  - [ ] README.md updated using `grunt published-readme` (in master and release branch)
   - [ ] Mark the sim as published in [responsible_dev.md](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md)
 
 ## QA
