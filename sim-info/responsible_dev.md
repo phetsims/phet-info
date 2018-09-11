@@ -44,7 +44,7 @@
 | Fractions: Equality | @jonathanolson |  |
 | Fractions: Intro | @jonathanolson |  |
 | Fractions: Mixed Numbers | @jonathanolson |  |
-| Friction | @jbphet | ✓ |
+| Friction | @zepumph | ✓ |
 | Function Builder | @pixelzoom | ✓ |
 | Function Builder: Basics | @pixelzoom | ✓ |
 | Gas Properties | @pixelzoom |  |
