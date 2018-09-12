@@ -13,7 +13,7 @@
 | atomic-interactions 1.0 |  |
 | balancing-act 1.1 |  |
 | balancing-chemical-equations 1.1 |  |
-| balloons-and-static-electricity 1.4 ---- chipper 2.0
+| balloons-and-static-electricity 1.4 | ✓ |
 | beers-law-lab 1.4 |  |
 | bending-light 1.1 |  |
 | build-an-atom 1.6 |  |
