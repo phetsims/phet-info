@@ -39,7 +39,7 @@
 - [ ] **Repository created** (Date: //)
   - [ ] Simulation added to [responsible_dev.md](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md)
   - [ ] Use `grunt create-sim` in perennial (see `--help` for arguments) to create the repository structure
-  - [ ] Collaborators added (such as QA team, designers, etc)
+  - [ ] Collaborators added (Developer team, QA team, designers, etc)
   - [ ] standard GitHub label set applied
   - [ ] repository added to perennial/data/active-repos
 - [ ] **Development started** (Date: //)
