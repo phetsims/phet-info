@@ -42,7 +42,7 @@
   - [ ] Simulation added to [responsible_dev.md](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md)
   - [ ] simula-rasa used to create project skeleton
   - [ ] README.md created using `grunt unpublished-readme`
-  - [ ] Collaborators added (such as QA team, designers, etc)
+  - [ ] Collaborators added (Developer team, QA team, designers, etc)
   - [ ] standard GitHub label set applied
   - [ ] repository added to perennial/data/active-repos
   - [ ] Port existing strings (IF ANY) and commit to the GitHub repo (auto-ported strings from Java and Flash sims can
