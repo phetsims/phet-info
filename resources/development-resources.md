@@ -1,4 +1,4 @@
-#Developer Resources
+Developer Resources
 =
 
 ##Overview
