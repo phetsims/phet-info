@@ -1,16 +1,16 @@
-#Developer Resources
+# Developer Resources
 
-##Overview
+## Overview
 This document contains miscellaneous resources, tips, and tricks that are available to PhET developers.
 
-###Debugging iOS devices
-####On Mac
+### Debugging iOS devices
+#### On Mac
 Mac users can use the Safari Web Inspector to debug a sim in mobile Safari. Once you device is connected to your Mac
 through USB, you should be able to see your device listed under the "Develop" menu item in the Safari menu bar.
 Make sure that "Show Develop in menu bar" is enabled in advanced Safari settings. For more detailed information, see
 https://webdesign.tutsplus.com/articles/quick-tip-using-web-inspector-to-debug-mobile-safari--webdesign-8787
 
-####On Windows
+#### On Windows
 There is nothing native in Windows that lets you debug mobile Apple platforms, but Weinre does a pretty good job. Weinre
 is a debugger for web pages, and is designed to work remotely so you can debug mobile devices. It does not support 
 `debugger` breakpoints, but it allows you to inspect the DOM, print statements, and inspect the application with
