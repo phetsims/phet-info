@@ -28,7 +28,7 @@ debugging interface.
 4) Add this snippet somewhere in the top level sim HTML file.
   `<script src="http://[portNumber]:/target/target-script-min.js#anonymous"></script>`
   This will inject the Weinre target code into the simulation.
-5) Launch the simulation from the mobile device. You should see the sim top level HTML file listed under "Targets" i
+5) Launch the simulation from the mobile device. You should see the sim top level HTML file listed under "Targets" in
 the Weinre interface.
 6) The interface has a similar look and feel to the Chrome dev tools. Have fun debugging!
 
