@@ -1,4 +1,4 @@
-Developer Resources
+#Developer Resources
 
 ##Overview
 This document contains miscellaneous resources, tips, and tricks that are available to PhET developers.
@@ -34,10 +34,10 @@ debugging interface.
 You can go to `http://localhost:[portNumber]/` once Weinre is up and running for additional quick help and information.
 
 Please beware of the following "Gotchyas" that I have encountered while using Weinre
-  - HTML Elements in the "Elements" inspector sometimes never appear, especially those that are added later
+  * HTML Elements in the "Elements" inspector sometimes never appear, especially those that are added later
   with document.createElement().
-  - Sometimes elements in the tree navigation of the "Elements" inspector don't appear when you "open" a new level
+  * Sometimes elements in the tree navigation of the "Elements" inspector don't appear when you "open" a new level
   by clicking on the triangle next to a parent element. Opening/closing the level a few times sometimes makes the
   elements appear correctly.
-  - When styles are removed from an element with the "Styles" panel on the right of the "Elements" inspector, sometimes
+  * When styles are removed from an element with the "Styles" panel on the right of the "Elements" inspector, sometimes
   they are removed for good if you click a checkbox, even if you try to add them back. Reloading is the only solution.
