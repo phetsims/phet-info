@@ -1,5 +1,4 @@
 Developer Resources
-=
 
 ##Overview
 This document contains miscellaneous resources, tips, and tricks that are available to PhET developers.
