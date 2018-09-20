@@ -309,6 +309,9 @@
     "name": "phet-io-wrappers"
   },
   {
+    "name": "phet-io-wrapper-arithmetic"
+  },
+  {
     "name": "phet-io-wrapper-classroom-activity"
   },
   {
