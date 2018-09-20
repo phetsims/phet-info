@@ -146,7 +146,8 @@ var kineticAudio = require( 'audio!ENERGY/energy' );
 
 - [ ] Do the `@author` annotations seem correct?
 
-- [ ] Are all constructors marked with `@constructor`?  That will make them easier to search and review.
+- [ ] Are all constructors marked with `@constructor`?  That will make them easier to search and review.  This is not necessary
+for ES6 constructors.
 
 - [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default value.  This improves readability at the call site, especially when the number of parameters is large.  It also eliminates order dependency that is required by using parameters.
 
