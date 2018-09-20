@@ -52,4 +52,4 @@ launch iTunes to complete the sync. The location of the crash logs will depend o
 Logs are located at `~/Library/Logs/CrashReporter/MobileDevice/`. Open the folder with your device's name. Look for files starting with "Read It LaterPro". If you don't see any, try opening a file called "Retired".
 
 ##### On Windows.
-Logs are located at ~/AppData/Roaming/Apple Computer/Logs/CrashReporter\MobileDevice. Open the folder with your device's name.
+Logs are located at `~/AppData/Roaming/Apple Computer/Logs/CrashReporter\MobileDevice`. Open the folder with your device's name.
