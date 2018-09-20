@@ -4,13 +4,13 @@
 This document contains miscellaneous resources, tips, and tricks that are available to PhET developers.
 
 ### Debugging iOS devices
-#### On Mac
+##### On Mac
 Mac users can use the Safari Web Inspector to debug a sim in mobile Safari. Once you device is connected to your Mac
 through USB, you should be able to see your device listed under the "Develop" menu item in the Safari menu bar.
 Make sure that "Show Develop in menu bar" is enabled in advanced Safari settings. For more detailed information, see
 https://webdesign.tutsplus.com/articles/quick-tip-using-web-inspector-to-debug-mobile-safari--webdesign-8787
 
-#### On Windows
+##### On Windows
 There is nothing native in Windows that lets you debug mobile Apple platforms, but Weinre does a pretty good job. Weinre
 is a debugger for web pages, and is designed to work remotely so you can debug mobile devices. It does not support 
 `debugger` breakpoints, but it allows you to inspect the DOM, print statements, and inspect the application with
@@ -43,3 +43,13 @@ Please beware of the following "Gotchyas" that I have encountered while using We
   elements appear correctly.
   * When styles are removed from an element with the "Styles" panel on the right of the "Elements" inspector, sometimes
   they are removed for good if you click a checkbox, even if you try to add them back. Reloading is the only solution.
+
+#### Getting crash logs
+Crash logs are transfered to iTunes whenver the device is synced to another computer. Just plug in your device and
+launch iTunes to complete the sync. The location of the crash logs will depend on whether you are using Mac or Windows.
+
+##### On Mac
+Logs are located at `~/Library/Logs/CrashReporter/MobileDevice/`. Open the folder with your device's name. Look for files starting with "Read It LaterPro". If you don't see any, try opening a file called "Retired".
+
+##### On Windows.
+Logs are located at `~/AppData/Roaming/Apple Computer/Logs/CrashReporter\MobileDevice`. Open the folder with your device's name.
