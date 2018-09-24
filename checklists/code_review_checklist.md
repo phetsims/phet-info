@@ -271,7 +271,7 @@ this.doSomethingElse();
 lines to optimize readability.  It is OK for require statements or other structured patterns to exceed 120 columns.  
 Use your judgment!   
 
-- [ ] Where inheritance is needed, use `PHET_CORE/inherit`. Add prototype and static functions via the appropriate arguments to `inherit`. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
+- [ ] Where inheritance is needed, use `PHET_CORE/inherit` (ES5) or `extends` (ES6). Add prototype and static functions via the appropriate arguments to `inherit`. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
 
 ```js
   return inherit( Object, Line, {
