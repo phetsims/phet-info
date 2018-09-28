@@ -60,7 +60,7 @@
 | John Travoltage |  @samreid  | ✓ |
 | Least-Squares Regression |  @jonathanolson  | ✓ |
 | Make a Ten |  @jonathanolson  | ✓ |
-| Masses and Springs | @Denz1994 | |
+| Masses and Springs | @Denz1994 | ✓ |
 | Models of the Hydrogen Atom | @pixelzoom | |
 | Molarity | @pixelzoom | ✓ |
 | Molecules and Light | @jessegreenberg | ✓ |
