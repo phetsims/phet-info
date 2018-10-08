@@ -3,6 +3,14 @@
 ## Overview
 This document contains miscellaneous resources, tips, and tricks that are available to PhET developers.
 
+### Applets, extensions, and other Misc to assist in development
+##### On Windows
+* Ditto clipboard manager - helpful for keeping complex copy paste operation history
+
+##### Chrome 
+* Lightshot (screenshot tool)
+* Tenon Check (accessibility auditing)
+
 ### Debugging iOS devices
 ##### On Mac
 Mac users can use the Safari Web Inspector to debug a sim in mobile Safari. Once you device is connected to your Mac
