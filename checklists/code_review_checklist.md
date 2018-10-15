@@ -10,7 +10,7 @@ PhET code-review checklist
 - [ ] Does the html file size seem reasonable, compared to other similar sims?
 - [ ] Does the sim start up? (requirejs and built versions)
 - [ ] Does the sim experience any assertion failures? (run with query parameter `ea`)
-- [ ] Does the sim pass a scenery fuzz test? (run with query parameters `fuzzMouse&ea`)
+- [ ] Does the sim pass a scenery fuzz test? (run with query parameters `fuzz&ea`)
 
 #### **Memory Leaks**
 
