@@ -427,7 +427,7 @@ addListener: function( listener ) { /*...*/ }
 #### **Organization, Readability, Maintainability**
 
 - [ ] Does the organization and structure of the code make sense? Do the model and view contain types that you would expect (or guess!) by looking at the sim? Do the names of things correspond to the names that you see in the user interface?
-- [ ] Are appropriate design patterns used?
+- [ ] Are appropriate design patterns used? See https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md.
 - [ ] Is inheritance used where appropriate? Does the type hierarchy make sense?
 - [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary properties/functions)
 - [ ] Is there too much unnecessary decoupling? (e.g. by passing all of the properties of an object independently instead of passing the object itself)?
