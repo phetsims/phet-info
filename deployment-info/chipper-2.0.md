@@ -133,7 +133,7 @@ If you want to make a change to the sim's own repo on the release branch (and no
 
 Otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
 
-- From perennial, `grunt checkout-target --repo={{REPO}} --target={{BRANCH}}`, e.g. `grunt checkout-target --repo=chains --target=1.2`.
+- From perennial, `grunt checkout-target --repo={{SIM}} --target={{BRANCH}}`, e.g. `grunt checkout-target --repo=chains --target=1.2`.
 - Check the common repo to see if it has a branch named `{{SIM}}-{{BRANCH}}`, e.g. does scenery have a branch named chains-1.2
   - If it HAS the branch, ensure that the branch's HEAD commit is the same as the currently-checked-out commit. THEN checkout the branch (e.g. `git checkout chains-1.2`) in the common repo. If the commits don't match, INVESTIGATE as something went wrong before. Talk to @jonathanolson?
   - If there IS NO branch, create it in the common repo with `git checkout -b {{SIM}}-{{BRANCH}}`, e.g. `git checkout -b chains-1.2`
