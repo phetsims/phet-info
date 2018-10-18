@@ -52,7 +52,7 @@ In the phet/git directory, run this command:
 
 ###### Learn the common git commands:
 
-[Git Tutorial] (http://git-scm.com/docs/gittutorial)
+[Git Tutorial](http://git-scm.com/docs/gittutorial)
 
 #### Setup the VM:
 
