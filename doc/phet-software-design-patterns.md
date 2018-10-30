@@ -89,6 +89,10 @@ those options in a single option on your type, named according to the component 
   }
 ```
 
+In some cases, dependency injection is an appropriate alternative, see https://github.com/phetsims/tasks/issues/952.
+In the above example, this would mean creating the HSlider externally then passing it in to the MyNodeTypeWithHSliderInIt
+constructor.
+
 ### Required Named Parameters
 If one or more of the options are required, then `options` should be renamed  to `config`. See https://github.com/phetsims/tasks/issues/930
 In the `_.extend` call, the options should be commented as to whether they are required or optional.  Following the
