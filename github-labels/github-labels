@@ -49,5 +49,5 @@ dev:chip-away 2f4f4f
 phet-io:event-stream bd5404
 design:phet-io 1FFFFF
 status:fixed-awaiting-deploy 006b75
-status:block-publication 00FFCC
+status:blocks-publication 00FFCC
 dev:maintenance-release 1467ba
