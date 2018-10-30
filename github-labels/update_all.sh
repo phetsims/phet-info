@@ -1,28 +1,36 @@
 #!/bin/bash
 
-# .credentials is a file with your github creds in the format username:password
-# This should probably be replaced with oAuth
-CREDS=`cat ~/.phet/.credentials`
-if [[ "$CREDS" = "" ]]
-then
-  echo "Requires .credential file"
-  exit 1
-fi
+# update_all.sh
+#
+# This file adds a new label to all repos in phetsims-repos
+# The user must add the new label to the github-labels file manually
+#
+# TODO: automatically update github-labels when this script is run
 
 if [[ $1 = '' ]] || [[ $2 = '' ]]
 then
   echo "Usage: $0 label-name color"
   exit 1
 else
-  LABEL={\"name\":\"$1\",\"color\":\"$2\"}
-  echo "$LABEL"
+  label={\"name\":\"$1\",\"color\":\"$2\"}
+  echo "$label"
 fi
 
-for r in `jq -c .[].name phetsims-repos.json`
+read -p "Github Username: " username
+read -sp "Github Password: " password
+echo ''
+creds=${username}:${password}
+
+echo 'For each repo, this script should print "201 Created" to indicate success"'
+
+for repo in `cat phetsims-repos`
 do
-  REPO=`echo phetsims/$r | tr -d '"'`
-  echo "$REPO"
-  URL=https://api.github.com/repos/$REPO/labels
-  echo "$URL"
-  curl -iH 'User-Agent: "phet"' -u "$CREDS" -d "$LABEL" "$URL"
+  repo=`echo ${repo}`
+  url=https://api.github.com/repos/phetsims/$repo/labels
+  echo "Path: ${url}"
+  echo "Data: ${label}"
+  echo "Result:"
+  curl -isH 'User-Agent: "phet"' -u "$creds" -d "$label" -X POST "$url" | head -n 1
 done
+
+echo "Complete. Don't forget to add the new label to the github-labels file"

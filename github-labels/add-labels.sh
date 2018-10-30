@@ -1,71 +1,104 @@
 #!/bin/bash
 
-# .credentials is a file with your github creds in the format username:password
-# This should probably be replaced with oAuth
-CREDS=`cat ~/.phet/.credentials`
-if [[ "$CREDS" = "" ]]
-then
-  echo "Requires .credential file"
-  exit 1
-fi
+# add-labels.sh
+#
+# This script adds all labels in github-labels to the specified repo
+# The user must manually add the new repo to phetsims-repos so it receives automatic updates in the future
+#
+# TODO: automatically update phetsims-repos when this script is run
 
-#REPO should be in the format "organization/repo"
-#REPO="phetsims/friction"
-if [[ $1 -eq '' ]] 
+if [[ -z "$1" ]]
 then
   echo "Usage: $0 organization/repo"
+  exit 1
 else
+  echo $1
 
-  REPO=$1
-  URL=https://api.github.com/repos/$REPO/labels
+  read -p "Github Username: " username
+  read -sp "Github Password: " password
+  echo ''
+  creds=${username}:${password}
+
+  echo 'For each repo, this script should print "200 OK", "201 Created" or "204 No Content" to indicate success.'
+  echo '"422 Unprocessable Entity" indicates an attempt to duplicate a label and can be ignored.'
+
+  repo=$1
+  url=https://api.github.com/repos/${repo}/labels
 
 
   #delete the "invalid" label
-  curl -iH 'User-Agent: "PhET"' -u "$CREDS" -X "DELETE" "$URL/invalid"
+  echo "Path: ${url}/invalid"
+  echo "Result (204 expected):"
+  curl -isH 'User-Agent: "PhET"' -u "$creds" -X DELETE "$url/invalid" | head -n 1
 
   # Replace standard-issue labels with phet-specific labels if they exist
-  REPLACE='{
+  replace='{
       "name": "type:wontfix",
       "color": "ffffff"
     }'
-  curl -iH 'User-Agent: "PhET"' -u "$CREDS" -d "$REPLACE" "$URL/wontfix"
+  echo "Path: ${url}/wontfix"
+  echo "Data: ${replace}"
+  echo "Result (200 expected):"
+  curl -isH 'User-Agent: "PhET"' -u "$creds" -d "$replace" -X PATCH "$url/wontfix" | head -n 1
 
-  REPLACE='{
+  replace='{
       "name": "type:question",
       "color": "EDCB62"
     }'
-  curl -iH 'User-Agent: "PhET"' -u "$CREDS" -d "$REPLACE" "$URL/question"
+  echo "Path: ${url}/question"
+  echo "Data: ${replace}"
+  echo "Result (200 expected):"
+  curl -isH 'User-Agent: "PhET"' -u "$creds" -d "$replace" -X PATCH "$url/question" | head -n 1
 
-  REPLACE='{
+  replace='{
       "name": "dev:help-wanted",
       "color": "63D1F4"
     }'
-  curl -iH 'User-Agent: "PhET"' -u "$CREDS" -d "$REPLACE" "$URL/help%20wanted"
+  echo "Path: ${url}/20wanted"
+  echo "Data: ${replace}"
+  echo "Result (200 expected):"
+  curl -isH 'User-Agent: "PhET"' -u "$creds" -d "$replace" -X PATCH "$url/help%20wanted" | head -n 1
 
-  REPLACE='{
+  replace='{
       "name": "dev:enhancement",
       "color": "0276FD"
     }'
-  curl -iH 'User-Agent: "PhET"' -u "$CREDS" -d "$REPLACE" "$URL/enhancement"
+  echo "Path: ${url}/enhancement"
+  echo "Data: ${replace}"
+  echo "Result (200 expected):"
+  curl -isH 'User-Agent: "PhET"' -u "$creds" -d "$replace" -X PATCH "$url/enhancement" | head -n 1
 
-  REPLACE='{
+  replace='{
       "name": "type:duplicate",
       "color": "EEEED1"
     }'
-  curl -iH 'User-Agent: "PhET"' -u "$CREDS" -d "$REPLACE" "$URL/duplicate"
+  echo "Path: ${url}/duplicate"
+  echo "Data: ${replace}"
+  echo "Result (200 expected):"
+  curl -isH 'User-Agent: "PhET"' -u "$creds" -d "$replace" -X PATCH "$url/duplicate" | head -n 1
 
-  REPLACE='{
+  replace='{
       "name": "type:bug",
       "color": "FF00AA"
     }'
-  curl -iH 'User-Agent: "PhET"' -u "$CREDS" -d "$REPLACE" "$URL/bug"
+  echo "Path: ${url}/bug"
+  echo "Data: ${replace}"
+  echo "Result (200 expected):"
+  curl -isH 'User-Agent: "PhET"' -u "$creds" -d "$replace" -X PATCH "$url/bug" | head -n 1
 
-  #Add labels from JSON file
-  for label in `jq -c .[] github-labels.json`
+  #Add labels from file
+  for label in `cat github-labels`
   do
-    curl -iH 'User-Agent: "PhET"' -u "$CREDS" -d "$label" "$URL"
+    name=`echo ${label} | cut -f1 -d,`
+    color=`echo ${label} | cut -f2 -d,`
+    json="{\"name\":\"$name\",\"color\":\"$color\"}"
+    echo "Path: ${url}"
+    echo "Data: ${json}"
+    echo "Result (201 expected):"
+    curl -isH 'User-Agent: "PhET"' -u "$creds" -d "$json" -X POST "$url" | head -n 1
   done
-fi
 
+  echo "Complete. Don't forget to add the repo to the phetsims-repos file"
+fi
 
 
