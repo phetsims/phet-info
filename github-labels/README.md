@@ -1,17 +1,23 @@
 ## Updating Github Repo Labels
 
-###### Requirements
-+ Create a .phet/.credentials file to your home directory.  The contents should be gitHubUsername:gitHubPassword
-+ (Do not add this file to the git repo)
-+ Download the jq executable from https://stedolan.github.io/jq/ and configure it to run from your path with the command `jq`.
-  + On windows for example, I renamed the downloaded file to jq.exe, put it in this folder: C:\Users\username\phet, and added that folder to my PATH environment variable in System Properties.
-
+### NOTE: The `.phet/.credentials` file is no longer required.
+This file is not used anywhere else in the project and may be safely removed.  Instead, you are asked for your credentials in an interactive prompt.  While slightly
+inconvenient this is far more secure.
 
 #### To standardize the labels on a new repo
-1. Add the new repo name to [phetsims-repos.json](phetsims-repos.json)
+1. Add the new repo name to [phetsims-repos](phetsims-repos)
 2. Run `./add-labels.sh phetsims/{{new-repo-name}}`
 
-
 #### To add a new label to all the organization's repos
-1. Following the [labeling-scheme](labeling-scheme.md), add the new label to [github-labels.json](github-labels.json).
-2. Run `./update_all.sh {{new-label-name}} {{new-label-color}}`.  new-label-color should be the hexcode with no # symbol, e.g. FF00AA.
+1. Following the [labeling-scheme](labeling-scheme.md), add the new label to [github-labels](github-labels).
+2. Run `./update_all.sh {{new-label-name}} {{new-label-color}}`.  `new-label-color` should be the hexcode with no #
+symbol, e.g. FF00AA.
+
+#### To change the text and/or color of a label
+1. Following the [labeling-scheme](labeling-scheme.md), update the existing label in [github-labels](github-labels).
+2. Run `./change-label.sh {{old-label-name}} {{new-label-name}} {{new-label-color}}`.  `new-label-color` should be the
+hexcode with no # symbol, e.g. `FF00AA`.
+
+#### To remove a label from all repos
+1. Remove the label from [github-labels](github-labels).
+2. Run `./delete-label.sh {{label-name}}`.

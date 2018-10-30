@@ -78,6 +78,7 @@ kite
 least-squares-regression
 make-a-ten
 masses-and-springs
+masses-and-springs-basics
 mobius
 models-of-the-hydrogen-atom
 molarity
@@ -101,6 +102,7 @@ phetcommon
 phetmarks
 phet-io
 phet-io-wrappers
+phet-io-wrapper-arithmetic
 phet-io-wrapper-classroom-activity
 phet-io-wrapper-hookes-law-energy
 phet-io-wrapper-lab-book
