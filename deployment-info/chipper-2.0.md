@@ -106,6 +106,8 @@ from the branch.
 
 New chipper 2.0 release branches will support building of all brands. The branch name will ONLY ever be of the format `{{MAJOR}}.{{MINOR}}`, e.g. `1.7`, and that branch will only support building/deploying versions that match that major/minor combination.
 
+NOTE: Release branches are created for RCs. If you need to make a change after the first RC (but before publication), you will still want to follow the process for maintenance patches.
+
 ### If the release branch does not yet exist
 
 First, make sure you have checked out all of the repo SHAs that you intend to use for the release branch. If you want to also deploy an RC (which is typical when creating the release branch), just run the RC deployment command, and it will prompt you whether the release branch should be created. For example, if `1.6` was the latest release branch, and you want to create `1.7` and deploy an RC, just fire off `grunt rc --branch=1.7 --brands={{BRANDS}}`.
@@ -133,7 +135,7 @@ If you want to make a change to the sim's own repo on the release branch (and no
 
 Otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
 
-- From perennial, `grunt checkout-target --repo={{REPO}} --target={{BRANCH}}`, e.g. `grunt checkout-target --repo=chains --target=1.2`.
+- From perennial, `grunt checkout-target --repo={{SIM}} --target={{BRANCH}}`, e.g. `grunt checkout-target --repo=chains --target=1.2`.
 - Check the common repo to see if it has a branch named `{{SIM}}-{{BRANCH}}`, e.g. does scenery have a branch named chains-1.2
   - If it HAS the branch, ensure that the branch's HEAD commit is the same as the currently-checked-out commit. THEN checkout the branch (e.g. `git checkout chains-1.2`) in the common repo. If the commits don't match, INVESTIGATE as something went wrong before. Talk to @jonathanolson?
   - If there IS NO branch, create it in the common repo with `git checkout -b {{SIM}}-{{BRANCH}}`, e.g. `git checkout -b chains-1.2`

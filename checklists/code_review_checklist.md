@@ -10,7 +10,7 @@ PhET code-review checklist
 - [ ] Does the html file size seem reasonable, compared to other similar sims?
 - [ ] Does the sim start up? (requirejs and built versions)
 - [ ] Does the sim experience any assertion failures? (run with query parameter `ea`)
-- [ ] Does the sim pass a scenery fuzz test? (run with query parameters `fuzzMouse&ea`)
+- [ ] Does the sim pass a scenery fuzz test? (run with query parameters `fuzz&ea`)
 
 #### **Memory Leaks**
 
@@ -112,7 +112,7 @@ All JavaScript source should be in the js/ directory. There should be a subdirec
 
 #### **Coding Conventions**
 
-- [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/joist/blob/master/util/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
+- [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/phet-info/blob/master/ide/idea/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
 - [ ] Are copyright headers present and up to date? Run `grunt update-copyright-dates`.
 - [ ] Names (types, variables, properties, functions,...) should be sufficiently descriptive and specific, and should avoid non-standard abbreviations. For example:
 
@@ -271,7 +271,7 @@ this.doSomethingElse();
 lines to optimize readability.  It is OK for require statements or other structured patterns to exceed 120 columns.  
 Use your judgment!   
 
-- [ ] Where inheritance is needed, use `PHET_CORE/inherit`. Add prototype and static functions via the appropriate arguments to `inherit`. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
+- [ ] Where inheritance is needed, use `PHET_CORE/inherit` (ES5) or `extends` (ES6). Add prototype and static functions via the appropriate arguments to `inherit`. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
 
 ```js
   return inherit( Object, Line, {
@@ -344,6 +344,10 @@ var thoughts = happy ? ‘I am happy’ : ‘I am not happy :(’;
 
 - [ ] Naming for Property values:  All `AXON/Property` instances should be declared with the suffix `Property`.  For example, if a visible property is added, it should have the name `visibleProperty` instead of simply `visible`.  This will help to avoid confusion with non-Property definitions.
 
+- [ ] Properties should use type-specific subclasses where appropriate (.e.g BooleanProperty, NumberProperty, StringProperty) or provide documentation as to why they are not.
+
+- [ ] Are Property value validation options (`valueType`, `validValues`, etc...) utilized? Is their presence or lack thereof properly documented?
+
 - [ ] Line comments should generally be preceded by a blank line.  For example:
 
 ```js
@@ -364,6 +368,8 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 
 - [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS3/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the example-sim repository.
 
+- [ ] Assertions should be used appropriately and consistently. Type checking should not just be done in code comments. Use `Array.isArray` to type check an array.
+``
 ##### Visibility Annotations
 Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations to document the intent of the programmer, and define the public API. Visibility annotations are required for anything that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility annotations are as follows:
 
@@ -421,7 +427,7 @@ addListener: function( listener ) { /*...*/ }
 #### **Organization, Readability, Maintainability**
 
 - [ ] Does the organization and structure of the code make sense? Do the model and view contain types that you would expect (or guess!) by looking at the sim? Do the names of things correspond to the names that you see in the user interface?
-- [ ] Are appropriate design patterns used?
+- [ ] Are appropriate design patterns used? See https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md.
 - [ ] Is inheritance used where appropriate? Does the type hierarchy make sense?
 - [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary properties/functions)
 - [ ] Is there too much unnecessary decoupling? (e.g. by passing all of the properties of an object independently instead of passing the object itself)?
