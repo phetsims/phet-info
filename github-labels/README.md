@@ -21,3 +21,9 @@ hexcode with no # symbol, e.g. `FF00AA`.
 #### To remove a label from all repos
 1. Remove the label from [github-labels](github-labels).
 2. Run `./delete-label.sh {{label-name}}`.
+
+### FAQ
+
+* #### Why do we need the list of repos in github-labels/, could the script just depend on perennial/data/active-repos instead?
+
+    We do need two lists, because there are active repos missing from "active-repos". There are some repos, like website, which are active but very large and not collaborated on by all team members. Because active-repos is shared by the clone-missing-repos script, this creates a significant inconvenience in terms of storage.
