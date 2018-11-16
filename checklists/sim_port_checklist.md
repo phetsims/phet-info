@@ -51,7 +51,7 @@
 - [ ] **Sim is "feature complete"** (Date: //) 
 - [ ] **Code review completed** (Date: //) 
 - [ ] **Pre-publication items** 
-  - [ ] Main screenshot (2048x1344, PNG, 32-bit color, browser chrome stripped)
+  - [ ] Main screenshot (read [this](https://github.com/phetsims/QA/blob/master/doc/qa-book.md#screenshots))
   - [ ] Verify credits
 - [ ] **Published** (Date: //) 
   - [ ] Mark the sim as published in [responsible_dev.md](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md)
