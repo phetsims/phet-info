@@ -371,7 +371,7 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 - [ ] Assertions should be used appropriately and consistently. Type checking should not just be done in code comments. Use `Array.isArray` to type check an array.
 
 - [ ] Abstract methods (normally implemented with an error) should be marked with `@abstract` jsdoc. 
-``
+
 ##### Visibility Annotations
 Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations to document the intent of the programmer, and define the public API. Visibility annotations are required for anything that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility annotations are as follows:
 
