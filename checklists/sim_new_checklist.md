@@ -23,7 +23,6 @@
   - [ ] Auxilary screenshots (up to 3 additional)
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Teacher Guide created, uploaded, and added to sim design folder
-  - [ ] Add an activity
   - [ ] Sim primer draft
   - [ ] [LoL icons](https://docs.google.com/document/d/1GmLNE31gs8hQYGze3xwmN9k7B6gu7lQ7wJe2phqdH9Y/edit) for each screen created and uploaded to Drive
   - [ ] [LoL metadata](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=562591429) for each screen (description, vocab words, questions for before/after sim use)
