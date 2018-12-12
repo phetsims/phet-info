@@ -105,8 +105,8 @@ In the `_.extend` call, the options should be commented as to whether they are r
  */
 function Person( name, config ) {
   config = _.extend( {
-    height: null, // {number} required - height in centimeters
-    age: null, // {number} required - age in years
+    height: null, // {number} @required - height in centimeters
+    age: null, // {number} @required - age in years
 
     favoriteColor: null // {Color|null} optional - favorite color, if any
   }, config );
