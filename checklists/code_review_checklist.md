@@ -42,9 +42,52 @@ PhET code-review checklist
 - [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter `stringTest=X`)
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter `stringTest=xss`? This test passes if sim does not redirect, OK if sim crashes or fails to fully start. Only test on one desktop platform.
 - [ ] Use named placeholders (e.g. `"{{value}} {{units}}"`) instead of numbered placeholders (e.g. `"{0} {1}"`).
-- [ ] Make sure the string keys are all perfect - they are difficult to change after 1.0.0 is published.  Strings keys should generally match their values, such as `"binaryProbability": { "value": "Binary Probability" }`. 
-- [ ] String keys for screen names should have the general form `"screen.{{screenName}}"`, e.g. `"screen.lab"`. 
-- [ ] String patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) should use keys that are unlikely to conflict with strings that might be needed in the future.  For example, for `"{{price}}"` consider using key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
+- [ ] Make sure the string keys are all perfect - they are difficult to change after 1.0.0 is published. Guidelines for string keys are:
+
+(1) Strings keys should generally match their values. E.g.:
+
+```js
+"helloWorld": { 
+  value: "Hello World!" 
+},
+"quadraticTerms": { 
+  value: "Quadratic Terms" 
+}
+```
+
+(2) If a string key would be exceptionally long, use a key name that is an abbreviated form of the string value, or that captures the purpose/essence of the value. E.g.:
+
+```js
+// key is abbreviated
+"iWentToTheStore": {
+  value: "I went to the store to get milk, eggs, butter, and sugar."
+},
+
+// key is based on purpose 
+"describeTheScreen": { 
+  value: "The Play Area is a small room. The Control Panel has buttons, a checkbox, and radio buttons to change conditions in the room." 
+}
+```
+(3) If string key names would collide, use your judgment to disambiguate. E.g.:
+
+```js
+"simplifyTitle": { 
+   value: "Simplify!" 
+},
+"simplifyCheckbox": { 
+   value: "simplify" 
+}
+```
+
+(4) String keys for screen names should have the general form `"screen.{{screenName}}"`. E.g.:
+
+```js
+  "screen.explore": {
+    "value": "Explore"
+  },
+```
+
+(5) String patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) should use keys that are unlikely to conflict with strings that might be needed in the future.  For example, for `"{{price}}"` consider using key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
 
 #### **Repository structure**
 
