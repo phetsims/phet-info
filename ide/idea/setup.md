@@ -26,7 +26,7 @@ selected, and check `Prefer Strict mode`.
 10. Configure eslint. In `File > Settings > Language & Frameworks > Javascript > Code Quality Tools > Eslint`:
     * Find your node.exe file (probably set up through the project). (May be filled in automatically)
     * Fill out ESLint package location (unless global, `chipper/node_modules/eslint`). (May be filled in automatically)
-    * Configuration file should be `chipper/eslint/.eslintrc ` 
+    * Configuration file: "Automatically search" 
     * Additional Rules Dir should be `chipper/eslint/rules`
     * [Here is a picture for a mac](https://cloud.githubusercontent.com/assets/6856943/26806694/876bdad6-4a0f-11e7-9096-e734bf70be6e.png)
 11. (Optional) Enable Nodejs coding assistance. `File > Settings > Language & Frameworks > Node.js and NPM`. Coding Assistance section. "Node.js Core is disabled" Enable it. This is handy if working on build tools/ node often.
