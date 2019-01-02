@@ -1,9 +1,0 @@
-[
-    {
-      "caption": "PhET: Insert Require Statement",
-      "command": "phet_run_cmd",
-      "args": {
-        "cmd": "grunt insert-require-statement --name=$selectedText --file=$file_name"
-      }
-    }
-]
