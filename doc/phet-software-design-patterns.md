@@ -15,9 +15,9 @@ describe the problem, event forwarding, model/view creation, instance management
 
 when to implement `dispose`, use of `this.disposeTypeName`, chaining to supertype `dispose`, typical order of disposal
 
-## Enum
+## Enumerations
 
-`Enumerator` vs `{string[]}` vs `Object.freeze`
+`PHET_CORE/Enumeration` vs `{string[]}` vs `Object.freeze`
 
 ## Mixin
 
