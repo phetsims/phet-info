@@ -35,6 +35,10 @@ role in MVC, examples to demystify scenery transform methods (`localToGlobalPoin
 
 `require` statements and requirejs
 
+## Namespace
+
+why we need it, convention for inner classes
+
 ## Observable
 
 `Property`, `Emitter`, ... and their role in MVC
