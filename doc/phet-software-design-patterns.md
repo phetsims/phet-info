@@ -39,7 +39,7 @@ role in MVC, examples to demystify scenery transform methods (`localToGlobalPoin
 
 `Property`, `Emitter`, ... and their role in MVC
 
-## Options and Config Parameters
+## `options` and `config` Parameters
 
 Use `_.extend` to overwrite defaults to options for a type like:
 ```js
@@ -93,8 +93,8 @@ In some cases, dependency injection is an appropriate alternative, see https://g
 In the above example, this would mean creating the HSlider externally then passing it in to the MyNodeTypeWithHSliderInIt
 constructor.
 
-### Required Named Parameters
-If one or more of the options are required, then `options` should be renamed  to `config`. See https://github.com/phetsims/tasks/issues/930
+### Required fields
+If one or more of the fields in `option`s is required, then `options` should be renamed  to `config`. See https://github.com/phetsims/tasks/issues/930
 In the `_.extend` call, the options should be commented as to whether they are required or optional.  Following the
 `_.extend` call, required fields should have an assertion to verify they were provided. For example:
 ```js
