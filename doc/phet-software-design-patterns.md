@@ -125,6 +125,7 @@ or to group them--use your judgment.
 ## Prototypal Inheritance
 
 what it is, how it differs from class, use of `call` and `inherit`, use with Mixin and Trait
+
 e.g. https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9
 
 ## Trait
