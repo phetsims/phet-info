@@ -12,21 +12,42 @@ Common sections for each pattern:
 
 describe the problem, event forwarding, model/view creation, instance management
 
+MK, DB, JO, JB, SR, CK, MB
+see https://github.com/phetsims/scenery-phet/issues/214
+
 ## Dispose
 
 when to implement `dispose`, use of `this.dispose{{TypeName}}`, chaining to supertype `dispose`, typical order of disposal
 
+DB, CK, MK
+
 ## Enumerations
 
-`PHET_CORE/Enumeration` vs `{string[]}` vs `Object.freeze`
+`PHET_CORE/Enumeration`, 'rich' enumerations, `{string[]}` vs `numbers + Object.freeze`
 
-## Mixin
+Rich enums: https://github.com/phetsims/phet-core/issues/50
+
+```js
+const Justfications = new Enumeration( [ 'left', 'right', 'center' ] );
+const JUSTIFICATIONS = [ 'left', 'right', 'center' ];
+const Justiciations = { ... };  Object.freeze( Justiciations );
+```
+
+Whether to use Enumeration exclusively is undecided, create an issue to discuss.
+
+MK, DB, CK
+
+## Mixin & Traits
 
 vs Trait, see discussion in https://github.com/phetsims/scenery/issues/700
 
+CM, CK, JG, MK, MB, DB
+
 ## Model-View Controller
 
-`Screen`, `ScreenView`, model container, `Property`, `Emitter`, Nodes
+`Screen`, `ScreenView`, model container, `Property`, `Emitter`, `Nodes`
+
+Most important pattern for new developers
 
 ## Model-View Transform
 
@@ -40,9 +61,13 @@ role in MVC, examples to demystify scenery transform methods (`localToGlobalPoin
 
 why we need it, convention for inner classes
 
+JG, DB, CK
+
 ## Observable
 
 `Property`, `Emitter`, ... and their role in MVC
+
+Very important pattern for new developers
 
 ## `options` and `config` Parameters
 
@@ -125,10 +150,11 @@ or to group them--use your judgment.
 
 ## Prototypal Inheritance
 
-what it is, how it differs from class, use of `call` and `inherit`, use with Mixin and Trait
+what it is, how it differs from `class`, use of `call` and `inherit`, use with Mixin and Trait
 
 e.g. https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9
 
-## Trait
+## Traits
 
-vs Mixin
+see Mixin & Traits
+
