@@ -22,6 +22,8 @@ when to implement `dispose`, use of `this.dispose{{TypeName}}`, chaining to supe
 
 Interested developers: DB, CK, MK
 
+TODO: MK will flesh out for 1/21/19
+
 ## Enumerations
 
 `PHET_CORE/Enumeration`, 'rich' enumerations, `{string[]}` vs `numbers + Object.freeze`
@@ -37,6 +39,8 @@ const Justiciations = { ... };  Object.freeze( Justiciations );
 Whether to use Enumeration exclusively is undecided, create an issue to discuss.
 
 Interested developers: MK, DB, CK
+
+TODO: CM will flesh out for 1/14/19
 
 ## Mixin & Traits
 
