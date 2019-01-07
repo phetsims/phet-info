@@ -6,6 +6,7 @@ of standard design patterns.
 Common sections for each pattern:
 - when to use
 - pitfalls
+- examples
 
 ## Creator
 
