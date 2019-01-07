@@ -72,7 +72,7 @@ Very important pattern for new developers
 
 ## `options` and `config` Parameters
 
-TODO This section needs some work. The pattern is probably "configurtion" for parameterizing types, which we use to avoid an explosion of constructor parameters. `config` and `options` are the two patterns that PhET typically uses.
+TODO This section needs some work. The pattern is probably "configurtion" for parameterizing types, which we use to avoid an explosion of constructor parameters. `config` and `options` are the two implementation of that pattern that PhET typically uses.
 
 Use `_.extend` to overwrite defaults to options for a type like:
 ```js
