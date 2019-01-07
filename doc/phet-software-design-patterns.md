@@ -14,7 +14,7 @@ describe the problem, event forwarding, model/view creation, instance management
 
 ## Dispose
 
-when to implement `dispose`, use of `this.disposeTypeName`, chaining to supertype `dispose`, typical order of disposal
+when to implement `dispose`, use of `this.dispose{{TypeName}}`, chaining to supertype `dispose`, typical order of disposal
 
 ## Enumerations
 
