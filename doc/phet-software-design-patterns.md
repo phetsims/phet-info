@@ -161,6 +161,10 @@ e.g. https://medium.com/javascript-scene/master-the-javascript-interview-what-s-
 
 Interested developers: CK, MK, SR, DB
 
+## State Machine
+
+Use in Games, see https://github.com/phetsims/vegas/issues/74
+
 ## Traits
 
 see Mixin & Traits
