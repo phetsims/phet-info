@@ -12,14 +12,14 @@ Common sections for each pattern:
 
 describe the problem, event forwarding, model/view creation, instance management
 
-MK, DB, JO, JB, SR, CK, MB
+Interested developers: MK, DB, JO, JB, SR, CK, MB
 see https://github.com/phetsims/scenery-phet/issues/214
 
 ## Dispose
 
 when to implement `dispose`, use of `this.dispose{{TypeName}}`, chaining to supertype `dispose`, typical order of disposal
 
-DB, CK, MK
+Interested developers: DB, CK, MK
 
 ## Enumerations
 
@@ -35,13 +35,13 @@ const Justiciations = { ... };  Object.freeze( Justiciations );
 
 Whether to use Enumeration exclusively is undecided, create an issue to discuss.
 
-MK, DB, CK
+Interested developers: MK, DB, CK
 
 ## Mixin & Traits
 
 vs Trait, see discussion in https://github.com/phetsims/scenery/issues/700
 
-CM, CK, JG, MK, MB, DB
+Interested developers: CM, CK, JG, MK, MB, DB
 
 ## Model-View Controller
 
@@ -61,7 +61,7 @@ role in MVC, examples to demystify scenery transform methods (`localToGlobalPoin
 
 why we need it, convention for inner classes
 
-JG, DB, CK
+Interested developers: JG, DB, CK
 
 ## Observable
 
@@ -153,6 +153,10 @@ or to group them--use your judgment.
 what it is, how it differs from `class`, use of `call` and `inherit`, use with Mixin and Trait
 
 e.g. https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9
+
+## Singleton
+
+Interested developers: CK, MK, SR, DB
 
 ## Traits
 
