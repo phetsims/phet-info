@@ -21,7 +21,7 @@ when to implement `dispose`, use of `this.disposeTypeName`, chaining to supertyp
 
 ## Mixin
 
-vs Trait
+vs Trait, see discussion in https://github.com/phetsims/scenery/issues/700
 
 ## Model-View Controller
 
