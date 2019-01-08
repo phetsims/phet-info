@@ -18,7 +18,9 @@ Interested developers: MK, DB, JO, JB, SR, CK, MB
 
 ## Dependency Injection
 
-SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clarify which form of dependency injection, and some examples of where it's currently used in PhET sims.
+A standard pattern described in https://en.wikipedia.org/wiki/Dependency_injection.
+
+SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clarify which form of dependency injection (probably constructor-based injection), and some examples of where it's currently used in PhET sims.
 
 ## Dispose
 
