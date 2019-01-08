@@ -14,7 +14,7 @@ PhET code-review checklist
 
 #### **Memory Leaks**
 
-- [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.) Test on a version built using `grunt --mangle=false`. There should be a GitHub issue showing the results of testing done by the primary developer.
+- [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.) Test on a version built using `grunt --minify.mangle=false`. There should be a GitHub issue showing the results of testing done by the primary developer.
 - [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is there a call to that component’s `dispose` function, or documentation about why `dispose` is unnecessary?
 - [ ] Are there leaks due to registering observers or listeners? These guidelines should be followed, or documentation added about why following them is not necessary:
 	- [ ] AXON: `Property.link` is accompanied by `Property.unlink`.
@@ -47,11 +47,11 @@ PhET code-review checklist
 (1) Strings keys should generally match their values. E.g.:
 
 ```js
-"helloWorld": { 
-  value: "Hello World!" 
+"helloWorld": {
+  value: "Hello World!"
 },
-"quadraticTerms": { 
-  value: "Quadratic Terms" 
+"quadraticTerms": {
+  value: "Quadratic Terms"
 }
 ```
 
@@ -63,19 +63,19 @@ PhET code-review checklist
   value: "I went to the store to get milk, eggs, butter, and sugar."
 },
 
-// key is based on purpose 
-"describeTheScreen": { 
-  value: "The Play Area is a small room. The Control Panel has buttons, a checkbox, and radio buttons to change conditions in the room." 
+// key is based on purpose
+"describeTheScreen": {
+  value: "The Play Area is a small room. The Control Panel has buttons, a checkbox, and radio buttons to change conditions in the room."
 }
 ```
 (3) If string key names would collide, use your judgment to disambiguate. E.g.:
 
 ```js
-"simplifyTitle": { 
-   value: "Simplify!" 
+"simplifyTitle": {
+   value: "Simplify!"
 },
-"simplifyCheckbox": { 
-   value: "simplify" 
+"simplifyCheckbox": {
+   value: "simplify"
 }
 ```
 
@@ -227,16 +227,16 @@ function BallNode( ball, visibleProperty, options ) {
     fill: 'white',  // {Color|string} fill color
     stroke: 'black', // {Color|string} stroke color
     lineWidth: 1 // {number} width of the stroke
-  }, options ); 
+  }, options );
 
   // ...
 }
 
 // Call site
 var ballNode = new BallNode( ball, visibleProperty, {
-  fill: 'blue', 
-  stroke: 'black', 
-  lineWidth: 2 
+  fill: 'blue',
+  stroke: 'black',
+  lineWidth: 2
 } );
 ```
 
@@ -258,34 +258,34 @@ function ParticleBoxNode( particleBox, visibleProperty, options ) {
     lineWidth: 1, // {number} width of the stroke
     particleNodeOptions: null, // {*} to be filled in with defaults below
   }, options );
-  
+
   options.particleNodeOptions = _.extend( {
     fill: 'red',
     stroke: 'gray',
     lineWidth: 0.5
   }, options.particleNodeOptions );
-  
+
   // add particle
   this.addChild( new ParticleNode( particleBox.particle, options.particleNodeOptions ) );
-  
+
   .
   .
   .
-  
+
 }
 ```
 
 A possible exception to this guideline is when the constructor API is improved by hiding the implementation details, i.e. not revealing that a sub-component exists. In that case, it may make sense to use new top-level options.  This is left to developer and reviewer discretion.
-  
+
 For more information on the history and thought process around the "nested options" pattern, please see https://github.com/phetsims/tasks/issues/730.
 
 - [ ] Constructor and function documentation.  Parameter types and names should be clearly specified for each function and constructor (if there are any parameters) using `@param` annotations.  The description for each parameter should follow a hyphen.  Primitive types should use lower case.  Constructors should additionally include the `@constructor` annotation. For example:
 
 ```js
-/** 
+/**
  * The PhetDeveloper is responsible for creating code for simulations
  * and documenting their code thoroughly.
- * 
+ *
  * @param {string} name - full name
  * @param {number} age - age, in years
  * @param {boolean} isEmployee - whether this developer is an employee of CU
@@ -310,9 +310,9 @@ someProperty.link( function(){
 this.doSomethingElse();
 ```
 
-- [ ] Generally, lines should not exceed 120 columns. Break up long statements, expressions, or comments into multiple 
-lines to optimize readability.  It is OK for require statements or other structured patterns to exceed 120 columns.  
-Use your judgment!   
+- [ ] Generally, lines should not exceed 120 columns. Break up long statements, expressions, or comments into multiple
+lines to optimize readability.  It is OK for require statements or other structured patterns to exceed 120 columns.
+Use your judgment!
 
 - [ ] Where inheritance is needed, use `PHET_CORE/inherit` (ES5) or `extends` (ES6). Add prototype and static functions via the appropriate arguments to `inherit`. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
 
@@ -333,7 +333,7 @@ Use your judgment!
     },
 
     /**
-     * Given x, solve y = m(x - x1) + y1.  Returns NaN if the solution is not unique, or there is no solution (x can't 
+     * Given x, solve y = m(x - x1) + y1.  Returns NaN if the solution is not unique, or there is no solution (x can't
      * possibly be on the line.)  This occurs when we have a vertical line, with no run.
      * @param {number} x - the x coordinate
      * @returns {number} the solution
@@ -366,7 +366,7 @@ else {
 }
 ```
 
-- [ ] It is not uncommon to use conditional shorthand and short circuiting for invocation. 
+- [ ] It is not uncommon to use conditional shorthand and short circuiting for invocation.
 
 ```js
 ( expression ) && statement;
@@ -374,7 +374,7 @@ else {
 ( foo && bar ) ? fooBar() : fooCat();
 ( foo && bar ) && fooBar();
 ( foo && !(bar && fooBar)) && nowIAmConfused();
-this.fill = ( foo && bar ) ? 'red' : 'blue'; 
+this.fill = ( foo && bar ) ? 'red' : 'blue';
 ```
 
 If the expression is only one item, the parentheses can be omitted. This is the most common use case.
@@ -413,7 +413,7 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 
 - [ ] Assertions should be used appropriately and consistently. Type checking should not just be done in code comments. Use `Array.isArray` to type check an array.
 
-- [ ] Abstract methods (normally implemented with an error) should be marked with `@abstract` jsdoc. 
+- [ ] Abstract methods (normally implemented with an error) should be marked with `@abstract` jsdoc.
 
 ##### Visibility Annotations
 Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations to document the intent of the programmer, and define the public API. Visibility annotations are required for anything that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility annotations are as follows:
