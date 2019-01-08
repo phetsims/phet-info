@@ -76,7 +76,9 @@ why we need it, convention for inner classes
 
 Interested developers: JG, DB, CK
 
-## Observable
+## Observer
+
+A standard pattern described in https://en.wikipedia.org/wiki/Observer_pattern
 
 `Property`, `Emitter`, ... and their role in MVC
 
