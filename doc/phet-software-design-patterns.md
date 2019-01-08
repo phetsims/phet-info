@@ -16,6 +16,10 @@ See implementations discusssed in https://github.com/phetsims/scenery-phet/issue
 
 Interested developers: MK, DB, JO, JB, SR, CK, MB
 
+## Dependency Injection
+
+SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clarify which form of dependency injection, and some examples of where it's currently used in PhET sims.
+
 ## Dispose
 
 when to implement `dispose`, use of `this.dispose{{TypeName}}`, chaining to supertype `dispose`, typical order of disposal
