@@ -50,7 +50,9 @@ TODO: CM will flesh out for 1/14/19
 
 ## Mixin & Traits
 
-vs Trait, see discussion in https://github.com/phetsims/scenery/issues/700
+Standard patterns described in https://en.wikipedia.org/wiki/Mixin and https://en.wikipedia.org/wiki/Trait_(computer_programming).
+
+see discussion in https://github.com/phetsims/scenery/issues/700
 
 Interested developers: CM, CK, JG, MK, MB, DB
 
@@ -172,6 +174,8 @@ what it is, how it differs from `class`, use of `call` and `inherit`, use with M
 e.g. https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9
 
 ## Singleton
+
+A standard pattern described in https://en.wikipedia.org/wiki/Singleton_pattern.
 
 Interested developers: CK, MK, SR, DB
 
