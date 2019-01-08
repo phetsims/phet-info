@@ -56,6 +56,8 @@ Interested developers: CM, CK, JG, MK, MB, DB
 
 ## Model-View Controller
 
+A standard pattern described in https://en.wikipedia.org/wiki/Model–view–controller
+
 `Screen`, `ScreenView`, model container, `Property`, `Emitter`, `Nodes`
 
 Most important pattern for new developers
