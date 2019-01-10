@@ -83,8 +83,10 @@ Interested developers: JG, DB, CK
 A standard pattern described in https://en.wikipedia.org/wiki/Observer_pattern
 
 `Property`, `Emitter`, ... and their role in MVC
+NOTE: when this gets flushed out, scenery input system, options callbacks should be passed the SCENERY/Event from their input listeners.
 
 Very important pattern for new developers
+
 
 ## `options` and `config` Parameters
 
