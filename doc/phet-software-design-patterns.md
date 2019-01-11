@@ -24,11 +24,52 @@ SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clar
 
 ## Dispose
 
-when to implement `dispose`, use of `this.dispose{{TypeName}}`, chaining to supertype `dispose`, typical order of disposal
+Disposal is the process of freeing up memory so that it can be garbage collected. In javascript disposal can be trickier
+than in other languages because it isn't as explicit. A type needs to be disposed if it has any references to undisposed 
+code outside of its type. For example you need to dispose if you add a listener to an `Emitter` that was passed into 
+the constructor. You do not need to dispose if a type only effects that type and its children, because it is 
+self contained and can be garbage collected as a whole.
 
-Interested developers: DB, CK, MK
+Once establishing that you need to dispose a type, add the `dispose` method to the prototype. This method should be 
+`@public` is likely an `@override`. The `dispose` method should do two things, first it should call a private member 
+function called `this.dispose{{TypeName}}`, and two it should call its parent's dispose method if it has a parent. In
+the view it will likely extend from `{{Node}}` and, as such, you will call `Node.prototype.dispose.call( this );` (for es5).
+We call "this" type's dispose before the parent's call because we tear down code in the opposite order of construction.
+With that last sentence in mind, the safest order of disposal within `this.dispose{{TypeName}}` is the opposite order of
+component creation.
 
-TODO: MK will flesh out for 1/21/19
+Take the following type:
+
+```js
+class MyAddChildAndLinkNode extends Node{
+  constructor( aNode, aProperty){
+    
+    super();
+    
+    const aNewNode = new Node();
+    aNode.addChild( aNewNode );
+    
+    const aFunction = ()=>{ console.log( 'I love this Property.' )};
+    aProperty.link( aFunction);
+    
+    this.disposeMyAddChildAndLinkNode = ()=>{
+      aProperty.unlink( aFunction);
+      aNode.removeChild( aNewNode);
+    }
+  }
+  
+  /**
+  * @override
+  * @public
+  */
+  dispose(){
+    this.disposeMyAddChildAndLinkNode();
+    super.dispose();
+  }
+}
+```
+
+Note that the `Property` is unlinked before the child is removed from the `Node`.
 
 ## Enumerations
 
