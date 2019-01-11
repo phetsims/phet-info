@@ -75,7 +75,7 @@ Note that the `Property` is unlinked before the child is removed from the `Node`
 
 This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
 
-PhET’s preferred implementation of this pattern can be found in [Enumeration.js](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js).  Examples and coding conventions are in the comment header of that file.  See the wave-interference repository for exemplars of Enumeration use.
+PhET’s preferred implementation of this pattern can be found in [Enumeration.js](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js).  Examples and coding conventions are in the comment header of that file.  See the wave-interference repository for exemplars of Enumeration use.  Rich enumerations are not currently supported, but may be supported in the future (see https://github.com/phetsims/phet-core/issues/50).
 
 You’ll find a couple of other patterns commonly used in PhET code. These are good to know about, but should be avoided in new code.
 
