@@ -73,21 +73,15 @@ Note that the `Property` is unlinked before the child is removed from the `Node`
 
 ## Enumerations
 
-`PHET_CORE/Enumeration`, 'rich' enumerations, `{string[]}` vs `numbers + Object.freeze`
+This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
 
-Rich enums: https://github.com/phetsims/phet-core/issues/50
+PhET’s preferred implementation of this pattern can be found in [Enumeration.js](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js).  Examples and coding conventions are in the comment header of that file.  See the wave-interference repository for exemplars of Enumeration use.
 
-```js
-const Justfications = new Enumeration( [ 'left', 'right', 'center' ] );
-const JUSTIFICATIONS = [ 'left', 'right', 'center' ];
-const Justiciations = { ... };  Object.freeze( Justiciations );
-```
+You’ll find a couple of other patterns commonly used in PhET code. These are good to know about, but should be avoided in new code.
 
-Whether to use Enumeration exclusively is undecided, create an issue to discuss.
+(1) A set of string values.  For example, [Slider.js](https://github.com/phetsims/sun/blob/master/js/Slider.js) uses `’horizontal’` and `’vertical’` as the values for its `orientation` option. This approach results in the duplication of string literals throughout the code.
 
-Interested developers: MK, DB, CK
-
-TODO: CM will flesh out for 1/14/19
+(2) Idiomatic JavaScript implementation, as described in [StackOverflow](https://stackoverflow.com/questions/287903/what-is-the-preferred-syntax-for-defining-enums-in-javascript).  The typical implementation associates named keys with numeric values. PhET’s implementation uses string values (to facilitate debugging) and `Object.freeze`  to prevent unintentional modification. See for example [SolutionType.js](https://github.com/phetsims/acid-base-solutions/blob/master/js/common/enum/SolutionType.js).
 
 ## Mixin & Traits
 
