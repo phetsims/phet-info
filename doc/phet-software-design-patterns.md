@@ -91,6 +91,8 @@ see discussion in https://github.com/phetsims/scenery/issues/700
 
 Interested developers: CM, CK, JG, MK, MB, DB
 
+JG volunteeered to do this one for 2/4/19.
+
 ## Model-View Controller
 
 A standard pattern described in https://en.wikipedia.org/wiki/Model–view–controller
