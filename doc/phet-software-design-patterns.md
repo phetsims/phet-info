@@ -77,7 +77,7 @@ This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated
 
 PhET’s preferred implementation of this pattern can be found in [Enumeration.js](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js).  Examples and coding conventions are in the comment header of that file.  See the wave-interference repository for exemplars of Enumeration use.  Rich enumerations are not currently supported, but may be supported in the future (see https://github.com/phetsims/phet-core/issues/50).
 
-You’ll find a couple of other patterns commonly used in PhET code. These are good to know about, but should be avoided in new code.
+You’ll find a couple of other patterns commonly used in PhET code. These are good to know, but should be avoided in new code.
 
 (1) A set of string values.  For example, [Slider.js](https://github.com/phetsims/sun/blob/master/js/Slider.js) uses `’horizontal’` and `’vertical’` as the values for its `orientation` option. This approach results in the duplication of string literals throughout the code.
 
