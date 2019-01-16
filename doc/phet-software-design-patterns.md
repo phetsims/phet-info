@@ -71,6 +71,12 @@ class MyAddChildAndLinkNode extends Node{
 
 Note that the `Property` is unlinked before the child is removed from the `Node`.
 
+TODO: discuss when we may opt out of the extra closure, and just dispose instance vars directly from 
+the prototype `dispose` method.
+  SR thought that if there are only member vars, then they can all go in the prototype method. But otherwise
+  if there is one local constructor var that needs to be disposed, then but everything in a closure in the constructor 
+  for consistency.
+
 ## Enumerations
 
 This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
