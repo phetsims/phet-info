@@ -29,7 +29,7 @@
 | Concentration |  @pixelzoom  | ✓ |
 | Coulomb's Law | @mbarlow12 | ✓ |
 | Curve Fitting | @jonathanolson | |
-| Energy Forms and Changes | @chrisklus | |
+| Energy Forms and Changes | @chrisklus | ✓ |
 | Energy Skate Park |  @jessegreenberg  | |
 | Energy Skate Park: Basics |  @samreid  | ✓ |
 | Equality Explorer | @pixelzoom | ✓ |
