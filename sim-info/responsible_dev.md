@@ -88,5 +88,5 @@
 | Trig Tour |  @jessegreenberg  | ✓ |
 | Under Pressure |  @samreid  | ✓ |
 | Unit Rates |  @pixelzoom  | ✓ |
-| Wave Interference | @samreid | |
+| Wave Interference | @samreid | ✓ |
 | Wave on a String |  @jonathanolson  | ✓ |
