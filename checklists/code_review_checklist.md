@@ -454,17 +454,6 @@ addListener: function( listener ) { /*...*/ }
 * Regex for property assignment like `x.y = something`: `[\w]+\.[\w]+\s=`
 * Regex for function declarations: `[\w]+: function\(`
 
-#### **Math Libraries**
-
-- [ ] Check that `dot.Util.roundSymmetric` is used instead of `Math.round`. `Math.round` does not treat positive and negative numbers symmetrically, see https://github.com/phetsims/dot/issues/35#issuecomment-113587879.
-- [ ] `DOT/Util.toFixed` or `DOT/Util.toFixedNumber` should be used instead of `toFixed`. JavaScript's `toFixed` is notoriously buggy. Behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
-- [ ] Check that random numbers are generated using `phet.joist.random`, and are doing so after modules are declared (non-statically).  Including, but not limited to:
-- [ ] No usage of `Math.random`
-- [ ] No usage of `_.shuffle`
-- [ ] No usage of `_.sample`
-- [ ] No usage of `_.random`
-- [ ] No usage of `new Random()`
-
 #### IE11
 - [ ] No usage of `Number.parseInt()`
 - [ ] No usage of `Array.prototype.find`
