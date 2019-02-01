@@ -180,8 +180,7 @@ Creating and using a PhET mixins will look similar. Both will have
 
 The only difference is traits should have assertions in the `mixInto` method to verify the class and requirements.
 
-The following is an example of a Trait.
-<details>
+<details><summary>Trait Example</summary>
   
 ```js
 // the trait to be mixed into a class
