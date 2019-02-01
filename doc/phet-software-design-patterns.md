@@ -153,7 +153,7 @@ You’ll find a couple of other patterns commonly used in PhET code. These are g
 
 (2) Idiomatic JavaScript implementation, as described in [StackOverflow](https://stackoverflow.com/questions/287903/what-is-the-preferred-syntax-for-defining-enums-in-javascript).  The typical implementation associates named keys with numeric values. PhET’s implementation uses string values (to facilitate debugging) and `Object.freeze`  to prevent unintentional modification. See for example [SolutionType.js](https://github.com/phetsims/acid-base-solutions/blob/master/js/common/enum/SolutionType.js).
 
-## Mixin & Traits
+## Mixins & Traits
 
 Descriptions for each standard pattern can be found here:
   - Mixin: https://en.wikipedia.org/wiki/Mixin
