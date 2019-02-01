@@ -165,17 +165,17 @@ Notes on PhET's decisions regarding mixin vs trait can be found here: https://gi
 
 Summarizing the above, traits and mixins are similar in that both allow code injection and reuise for a class without requiring inheritance. The difference between mixin/trait and inheritance is that a class can receive all the methods and features of the mixin/trait without the semantics of "being a kind of" the mixin/trait.
 
-PhET's definition of mixin and trait does not perfectly align with standard definitions. By standard definition, the differences between mixin/trait are:
+PhET's definition of mixin and trait does not perfectly align with standard definitions. By standard definition, the differences are:
   - A trait requires methods from the class it is mixed into, a mixin doesn't.
-  - A trait can be composed by combining existing traits, a mixin cannot.
-  - A trait cannot specify or access state variables, a mixin can.
+  - A trait can be composed by combining existing traits, a mixin can't.
+  - A trait can't specify or access state variables, a mixin can.
 
 PhET defines the difference between mixin and trait as:
   - A trait can require methods and properties from the class it is mixed into, a mixin cannot.
 
 An example of PhET mixin is phet-core/Poolable. An example of a PhET trait is scenery/Paintable.
 
-Creating and using a PhET mixins will look similar. Both will have
+Creating and using a PhET mixins and traits will look similar. Both will have
   - A `mixInto` method that is called on the class using the mixin/trait.
   - An `initialize{{Name}}` method that will be called in the constructor of the class using the mixin/trait.
   - The class using the mixin/trait will have `@mixes {{Name}}` annotation at the constructor.
@@ -199,7 +199,6 @@ const MyTrait = {
 
       /**
        * This should be called in the constructor of a SuperClass.
-       * @return {[type]} [description]
        */
       initializeSomeTrait: () => {},
 
