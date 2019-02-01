@@ -175,7 +175,7 @@ PhET defines the difference between mixin and trait as:
 
 An example of PhET mixin is phet-core/Poolable. An example of a PhET trait is scenery/Paintable.
 
-Creating and using a PhET mixins and traits will look similar. Both will have
+Creating and using mixins and traits will look similar. Both will have
   - A `mixInto` method that is called on the class using the mixin/trait.
   - An `initialize{{Name}}` method that will be called in the constructor of the class using the mixin/trait.
   - The class using the mixin/trait will have `@mixes {{Name}}` annotation at the constructor.
