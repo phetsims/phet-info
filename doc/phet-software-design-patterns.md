@@ -155,12 +155,81 @@ You’ll find a couple of other patterns commonly used in PhET code. These are g
 
 ## Mixin & Traits
 
-Standard patterns described in https://en.wikipedia.org/wiki/Mixin and https://en.wikipedia.org/wiki/Trait_(computer_programming).
+These are standard patterns, descriptions of each can be found below:
+  Mixin: https://en.wikipedia.org/wiki/Mixin
+  Trait: https://en.wikipedia.org/wiki/Trait_(computer_programming)
 
-see discussion in https://github.com/phetsims/scenery/issues/700
+More information about traits can be found here: http://scg.unibe.ch/archive/papers/Scha03aTraits.pdf
+
+Summarized from the above, traits and mixins are similar in that both allow code injection and reuise for a class without requiring inheritance. The difference between mixin/trait and inheritance is that a class can receive all the methods and features of the mixin/trait without the semantics of "being a kind of" the mixin/trait.
+
+PhET's definition of mixin and trait does not perfectly align with standard definitions. By standard definition, the differences between mixin/trait are:
+  - A trait requires methods from the class it is mixed into, a mixin cannot.
+  - A trait can be composed by combining existing traits, a mixin cannot.
+  - A trait cannot specify or access state variables, a mixin can.
+
+PhET defines the difference between mixin and trait as:
+  - A trait can require methods and properties from the class it is mixed into, a mixin cannot.
+
+An example of PhET mixin can be found in phet-core/Poolable.
+An example of a PhET trait can be found in scenery/Paintable.
+
+Creating and using a PhET mixins will look similar. Both will have
+  - `mixInto` method that is called on the class using the mixin/trait
+  - `initialize{{Name}}` method that will be called in the constructor of the class using the mixin/trait
+  - The class using the mixin/trait will have `@mixes {{Name}}` annotation at the constructor
+
+The only difference is traits should have assertions in the mixInto method to verify the class.
+
+The following is an example of a Trait.
+```js
+// the trait to be mixed into a class
+const MyTrait = {
+
+  /**
+   * Adds MyTrait methods to the prototype.
+   * @param {SuperClass} class
+   */
+  mixInto: ( class ) => {
+    assert && assert( _.includes( inheritance( class ), SuperClass ), 'Only SuperClass subclasses should mix MyTrait' );
+
+    extend( class.prototype, {
+
+      /**
+       * This should be called in the constructor of a SuperClass.
+       * @return {[type]} [description]
+       */
+      initializeSomeTrait: () => {},
+
+      //...
+    } );
+  }
+}
+
+// the class mixing in the trait
+class MyClass extends SuperClass {
+
+  /**
+   * @mixes SomeTrait
+   */
+  constructor() {
+    super();
+
+    // to initialize features of the trait
+    this.initializeSomeTrait();
+  }
+
+  // to mix SomeTrait methods into the prototype
+  SomeTrait.mixInto( MyClass );
+}
+```
+
+Questions for the discussion on 2/4/19:
+  - Poolable is our only usage of a mixin, but it is described as a trait. Should it be changed to a mixin?
+  - Do we need the above code example, or are references sufficient?
+  - This example is in es6, none of our traits/mixins use es6.
 
 Interested developers: CM, CK, JG, MK, MB, DB
-
 JG volunteeered to do this one for 2/4/19.
 
 ## Model-View Controller
