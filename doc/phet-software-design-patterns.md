@@ -155,16 +155,18 @@ You’ll find a couple of other patterns commonly used in PhET code. These are g
 
 ## Mixin & Traits
 
-These are standard patterns, descriptions of each can be found below:
+Descriptions for each standard pattern can be found here:
   - Mixin: https://en.wikipedia.org/wiki/Mixin
   - Trait: https://en.wikipedia.org/wiki/Trait_(computer_programming)
 
 More information about traits can be found here: http://scg.unibe.ch/archive/papers/Scha03aTraits.pdf
 
+Notes on PhET's decisions regarding mixin vs trait can be found here: https://github.com/phetsims/scenery/issues/700
+
 Summarizing the above, traits and mixins are similar in that both allow code injection and reuise for a class without requiring inheritance. The difference between mixin/trait and inheritance is that a class can receive all the methods and features of the mixin/trait without the semantics of "being a kind of" the mixin/trait.
 
 PhET's definition of mixin and trait does not perfectly align with standard definitions. By standard definition, the differences between mixin/trait are:
-  - A trait requires methods from the class it is mixed into, a mixin cannot.
+  - A trait requires methods from the class it is mixed into, a mixin doesn't.
   - A trait can be composed by combining existing traits, a mixin cannot.
   - A trait cannot specify or access state variables, a mixin can.
 
