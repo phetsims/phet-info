@@ -16,7 +16,7 @@
 | Beer's Law Lab  | @pixelzoom  | ✓ |
 | Bending Light  | @samreid  | ✓ |
 | Blackbody Spectrum  | @jbphet  |  |
-| Build a Fraction | @jonathanolson |  |
+| Build a Fraction | @jonathanolson | ✓ |
 | Build a Molecule | @jonathanolson |  |
 | Build an Atom  | @jbphet  | ✓ |
 | Calculus Grapher | @jonathanolson | |
@@ -42,9 +42,9 @@
 | Forces and Motion: Basics |  @jessegreenberg | |
 | Fraction Comparison | @samreid |
 | Fraction Matcher | @jonathanolson | ✓ |
-| Fractions: Equality | @jonathanolson |  |
-| Fractions: Intro | @jonathanolson |  |
-| Fractions: Mixed Numbers | @jonathanolson |  |
+| Fractions: Equality | @jonathanolson | ✓ |
+| Fractions: Intro | @jonathanolson | ✓ |
+| Fractions: Mixed Numbers | @jonathanolson | ✓ |
 | Friction | @zepumph | ✓ |
 | Function Builder | @pixelzoom | ✓ |
 | Function Builder: Basics | @pixelzoom | ✓ |
