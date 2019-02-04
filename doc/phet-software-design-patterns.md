@@ -219,10 +219,10 @@ class MyClass extends SuperClass {
     // to initialize features of the trait
     this.initializeSomeTrait();
   }
-
-  // to mix SomeTrait methods into the prototype
-  SomeTrait.mixInto( MyClass );
 }
+
+// to mix SomeTrait methods into the prototype
+SomeTrait.mixInto( MyClass );
 ```
 </details>
 
