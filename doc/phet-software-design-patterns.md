@@ -39,7 +39,7 @@ SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clar
 
 ## Dispose
 
-Disposal is the process of freeing up memory so that it can be garbage collected. In javascript disposal can be trickier
+Disposal is the process of freeing up memory so that it can be garbage collected. In JavaScript, disposal can be trickier
 than in other languages because it isn't as explicit. A type needs to be disposed if it has any references to undisposed 
 code outside of its type. For example you need to dispose if you add a listener to an `Emitter` that was passed into 
 the constructor. You do not need to dispose if a type only effects that type and its children, because it is 
@@ -138,10 +138,10 @@ class MyAddChildAndLinkNode extends Node{
 
 Sometimes the above preferred patterns won't work. For example sometimes things are conditionally created, and 
 therefore are only conditionally disposed. If there are these sorts of complex disposal constraints, then create an 
-emitter to manage disposal tasks, and add a listener to the emitter for each disposal task. Here is a list to follow:
+`Emitter` to manage disposal tasks, and add a listener to the Emitter for each disposal task. Here is a list to follow:
 
 * Name the emitter like `disposeEmitter{{TypeName}}`
-* Add listeners to the emitter, recognizing that disposal should usually happen in reverse order of construction
+* Add listeners to the Emitter, recognizing that disposal should usually happen in reverse order of construction
 * In the `dispose` method, emit the dispose emitter, and call the parent dispose (`super.dispose()`) in the appropriate 
 order.
 
@@ -188,9 +188,8 @@ More information about traits can be found here: http://scg.unibe.ch/archive/pap
 
 Notes on PhET's decisions regarding mixin vs trait can be found here: https://github.com/phetsims/scenery/issues/700
 
-Summarizing the above, traits and mixins are similar in that both allow code injection and reuse for a class without 
-requiring inheritance. The difference between mixin/trait and inheritance is that a class can receive all the methods 
-and features of the mixin/trait without the semantics of "being a kind of" the mixin/trait.
+Summarizing the above, traits and mixins allow the code reuse benefits of multiple inheritance without using actual
+multiple inheritance.
 
 PhET's definition of mixin and trait does not perfectly align with standard definitions. By standard definition, the 
 differences are:
