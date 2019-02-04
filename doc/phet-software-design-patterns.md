@@ -12,7 +12,7 @@ Common sections for each pattern:
 
 describe the problem, event forwarding, model/view creation, instance management
 
-See implementations discusssed in https://github.com/phetsims/scenery-phet/issues/214
+See implementations discussed in https://github.com/phetsims/scenery-phet/issues/214
 
 Interested developers: MK, DB, JO, JB, SR, CK, MB
 
