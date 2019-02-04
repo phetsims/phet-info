@@ -25,7 +25,7 @@ SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clar
 
 ## Dispose
 
-Disposal is the process of freeing up memory so that it can be garbage collected. In JavaScript disposal can be trickier
+Disposal is the process of freeing up memory so that it can be garbage collected. In JavaScript, disposal can be trickier
 than in other languages because it isn't as explicit. A type needs to be disposed if it has any references to undisposed 
 code outside of its type. For example you need to dispose if you add a listener to an `Emitter` that was passed into 
 the constructor. You do not need to dispose if a type only effects that type and its children, because it is 
