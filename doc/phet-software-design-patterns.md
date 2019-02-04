@@ -193,7 +193,7 @@ const MyTrait = {
 
   /**
    * Adds MyTrait methods to the prototype.
-   * @param {function} myClass
+   * @param {function} myClass - must be a subtype of SuperClass
    */
   mixInto: myClass => {
     assert && assert( _.includes( inheritance( myClass ), SuperClass ), 'Only SuperClass classes should mix MyTrait' );
