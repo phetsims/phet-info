@@ -190,12 +190,12 @@ const MyTrait = {
 
   /**
    * Adds MyTrait methods to the prototype.
-   * @param {SuperClass} class
+   * @param {SuperClass} myClass
    */
-  mixInto: ( class ) => {
-    assert && assert( _.includes( inheritance( class ), SuperClass ), 'Only SuperClass subclasses should mix MyTrait' );
+  mixInto: ( myClass ) => {
+    assert && assert( _.includes( inheritance( myClass ), SuperClass ), 'Only SuperClass classes should mix MyTrait' );
 
-    extend( class.prototype, {
+    extend( myClass.prototype, {
 
       /**
        * This should be called in the constructor of a SuperClass.
