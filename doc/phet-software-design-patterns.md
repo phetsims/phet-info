@@ -232,7 +232,7 @@ Questions for the discussion on 2/4/19:
   - This example is in es6, none of our traits/mixins use es6.
 
 Interested developers: CM, CK, JG, MK, MB, DB
-JG volunteeered to do this one for 2/4/19.
+JG volunteered to do this one for 2/4/19.
 
 ## Model-View Controller
 
