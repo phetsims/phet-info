@@ -20,7 +20,8 @@ Interested developers: MK, DB, JO, JB, SR, CK, MB
 
 A standard pattern described in https://en.wikipedia.org/wiki/Dependency_injection.
 
-SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clarify which form of dependency injection (probably constructor-based injection), and some examples of where it's currently used in PhET sims.
+SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clarify which form of dependency injection 
+(probably constructor-based injection), and some examples of where it's currently used in PhET sims.
 
 ## Dispose
 
@@ -28,7 +29,8 @@ Disposal is the process of freeing up memory so that it can be garbage collected
 than in other languages because it isn't as explicit. A type needs to be disposed if it has any references to undisposed 
 code outside of its type. For example you need to dispose if you add a listener to an `Emitter` that was passed into 
 the constructor. You do not need to dispose if a type only effects that type and its children, because it is 
-self contained and can be garbage collected as a whole. For more information about the general pattern, see https://en.wikipedia.org/wiki/Dispose_pattern
+self contained and can be garbage collected as a whole. For more information about the general pattern,
+see https://en.wikipedia.org/wiki/Dispose_pattern
 
 [Here](https://github.com/phetsims/sun/issues/121#issuecomment-209141994) is a 
 helpful list of actions that likely need doing while disposing:
@@ -48,8 +50,8 @@ because we tear down code in the opposite order of construction.
 The preferred approach in implementing disposal for PhET code is to create a private member function in the constructor 
 called `this.dispose{{TypeName}}` (see [issue](https://github.com/phetsims/tasks/issues/727)), and then to call that 
 from the `dispose` method. With disposal order in mind, the 
-safest order of disposal within `this.dispose` is to call `this.dispose{{TypeName}}` before calling for the parent. Within
-`this.dispose{{TypeName}}`, the safes order of disposal is the opposite order of component creation.
+safest order of disposal within `this.dispose` is to call `this.dispose{{TypeName}}` before calling for the parent.
+Within `this.dispose{{TypeName}}`, the safes order of disposal is the opposite order of component creation.
 
 Take the following type:
 
@@ -145,13 +147,22 @@ Here are some issues that have investigated trying to bring creation and disposa
 
 This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
 
-PhET’s preferred implementation of this pattern can be found in [Enumeration.js](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js).  Examples and coding conventions are in the comment header of that file.  See the wave-interference repository for exemplars of Enumeration use.  Rich enumerations are not currently supported, but may be supported in the future (see https://github.com/phetsims/phet-core/issues/50).
+PhET’s preferred implementation of this pattern can be found in [Enumeration.js](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js).  
+Examples and coding conventions are in the comment header of that file.  See the wave-interference repository for 
+exemplars of Enumeration use.  Rich enumerations are not currently supported, but may be supported in the future 
+(see https://github.com/phetsims/phet-core/issues/50).
 
-You’ll find a couple of other patterns commonly used in PhET code. These are good to know, but should be avoided in new code.
+You’ll find a couple of other patterns commonly used in PhET code. These are good to know, but should be avoided in new 
+code.
 
-(1) A set of string values.  For example, [Slider.js](https://github.com/phetsims/sun/blob/master/js/Slider.js) uses `’horizontal’` and `’vertical’` as the values for its `orientation` option. This approach results in the duplication of string literals throughout the code.
+(1) A set of string values.  For example, [Slider.js](https://github.com/phetsims/sun/blob/master/js/Slider.js) uses
+`’horizontal’` and `’vertical’` as the values for its `orientation` option. This approach results in the duplication of
+string literals throughout the code.
 
-(2) Idiomatic JavaScript implementation, as described in [StackOverflow](https://stackoverflow.com/questions/287903/what-is-the-preferred-syntax-for-defining-enums-in-javascript).  The typical implementation associates named keys with numeric values. PhET’s implementation uses string values (to facilitate debugging) and `Object.freeze`  to prevent unintentional modification. See for example [SolutionType.js](https://github.com/phetsims/acid-base-solutions/blob/master/js/common/enum/SolutionType.js).
+(2) Idiomatic JavaScript implementation, as described in [StackOverflow](https://stackoverflow.com/questions/287903/what-is-the-preferred-syntax-for-defining-enums-in-javascript).
+The typical implementation associates named keys with numeric values. PhET’s implementation uses string values (to 
+facilitate debugging) and `Object.freeze`  to prevent unintentional modification. See for example
+ [SolutionType.js](https://github.com/phetsims/acid-base-solutions/blob/master/js/common/enum/SolutionType.js).
 
 ## Mixins & Traits
 
@@ -264,14 +275,17 @@ Interested developers: JG, DB, CK
 A standard pattern described in https://en.wikipedia.org/wiki/Observer_pattern
 
 `Property`, `Emitter`, ... and their role in MVC
-NOTE: when this gets flushed out, scenery input system, options callbacks should be passed the SCENERY/Event from their input listeners.
+NOTE: when this gets fleshed out, scenery input system, options callbacks should be passed the SCENERY/Event from their
+input listeners.
 
 Very important pattern for new developers
 
 
 ## `options` and `config` Parameters
 
-TODO This section needs some work. The pattern is probably "configurtion" for parameterizing types, which we use to avoid an explosion of constructor parameters. `config` and `options` are the two implementation of that pattern that PhET typically uses.
+TODO This section needs some work. The pattern is probably "configuration" for parameterizing types, which we use to 
+avoid an explosion of constructor parameters. `config` and `options` are the two implementation of that pattern that 
+PhET typically uses.
 
 Use `_.extend` to overwrite defaults to options for a type like:
 ```js
