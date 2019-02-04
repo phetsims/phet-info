@@ -188,22 +188,22 @@ The only difference is traits should have assertions in the `mixInto` method to 
 <details><summary>Trait Example</summary>
   
 ```js
-// the trait to be mixed into a class
+// the trait to be mixed into a type
 const MyTrait = {
 
   /**
    * Adds MyTrait methods to the prototype.
-   * @param {function} myClass - must be a subtype of SuperClass
+   * @param {function} myType - must be a subtype of SuperType
    */
-  mixInto: myClass => {
-    assert && assert( _.includes( inheritance( myClass ), SuperClass ), 'Only SuperClass classes should mix MyTrait' );
+  mixInto: myType => {
+    assert && assert( _.includes( inheritance( myType ), SuperType ), 'Only SuperType types should mix MyTrait' );
 
-    extend( myClass.prototype, {
+    extend( myType.prototype, {
 
       /**
-       * This should be called in the constructor of a SuperClass.
+       * This should be called in the constructor of a SuperType.
        */
-      initializeSomeTrait: () => {},
+      initializeMyTrait: () => {},
 
       //...
     } );
@@ -214,18 +214,18 @@ const MyTrait = {
 class MyClass extends SuperClass {
 
   /**
-   * @mixes SomeTrait
+   * @mixes MyTrait
    */
   constructor() {
     super();
 
     // to initialize features of the trait
-    this.initializeSomeTrait();
+    this.initializeMyTrait();
   }
 }
 
-// to mix SomeTrait methods into the prototype
-SomeTrait.mixInto( MyClass );
+// to mix MyTrait methods into the prototype
+MyTrait.mixInto( MyClass );
 ```
 </details>
 
