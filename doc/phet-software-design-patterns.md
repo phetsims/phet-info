@@ -163,9 +163,12 @@ More information about traits can be found here: http://scg.unibe.ch/archive/pap
 
 Notes on PhET's decisions regarding mixin vs trait can be found here: https://github.com/phetsims/scenery/issues/700
 
-Summarizing the above, traits and mixins are similar in that both allow code injection and reuise for a class without requiring inheritance. The difference between mixin/trait and inheritance is that a class can receive all the methods and features of the mixin/trait without the semantics of "being a kind of" the mixin/trait.
+Summarizing the above, traits and mixins are similar in that both allow code injection and reuise for a class without 
+requiring inheritance. The difference between mixin/trait and inheritance is that a class can receive all the methods 
+and features of the mixin/trait without the semantics of "being a kind of" the mixin/trait.
 
-PhET's definition of mixin and trait does not perfectly align with standard definitions. By standard definition, the differences are:
+PhET's definition of mixin and trait does not perfectly align with standard definitions. By standard definition, the 
+differences are:
   - A trait requires methods from the class it is mixed into, a mixin doesn't.
   - A trait can be composed by combining existing traits, a mixin can't.
   - A trait can't specify or access state variables, a mixin can.
