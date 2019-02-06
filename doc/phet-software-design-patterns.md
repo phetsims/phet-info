@@ -17,28 +17,12 @@ SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clar
 
 ## Dispose
 
-Disposal is the process of freeing up memory so that it can be garbage collected. In general, JavaScript will garbage 
- collect. But a memory leak is when . . . . thus we the need Dispose pattern. An instance needs to be disposed if any 
- code outside that Type has a reference to it. For example you need to dispose if you add a listener to an `Emitter` 
- that was passed into 
+Disposal is the process of freeing up memory so that it can be garbage collected. In JavaScript, disposal can be trickier
+than in other languages because it isn't as explicit. A type needs to be disposed if it has any references to undisposed 
+code outside of its type. For example you need to dispose if you add a listener to an `Emitter` that was passed into 
 the constructor. You do not need to dispose if a type only effects that type and its children, because it is 
 self contained and can be garbage collected as a whole. For more information about the general pattern,
 see https://en.wikipedia.org/wiki/Dispose_pattern
-
-
-****
-Guidlines on things you need to clean up, and things that you don't.
-
-A leak often happens due to the Observer pattern. If you own the observable and ALL of its observers (and there is no 
-chance of outside observers being added), then you don't need
-to dispose, but if you own one or the other then you need to 
-****
-onluy if externally visible, or connected to something that is externally visible
-****
-
-with Node, be careful with DAG, 
-****
-
 
 [Here](https://github.com/phetsims/sun/issues/121#issuecomment-209141994) is a 
 helpful list of actions that likely need doing while disposing:
@@ -77,9 +61,7 @@ class MyAddChildAndLinkNode extends Node{
     
     this.disposeMyAddChildAndLinkNode = ()=>{
       aProperty.unlink( aFunction);
-      
-      // Because aNewNode has a reference back to its parent (aNode). There are many ways that this reference could be removed.
-      aNode.removeChild( aNewNode); 
+      aNode.removeChild( aNewNode);
     }
   }
   
