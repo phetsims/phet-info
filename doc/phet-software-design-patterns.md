@@ -17,12 +17,20 @@ SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clar
 
 ## Dispose
 
-Disposal is the process of freeing up memory so that it can be garbage collected. In JavaScript, disposal can be trickier
-than in other languages because it isn't as explicit. A type needs to be disposed if it has any references to undisposed 
-code outside of its type. For example you need to dispose if you add a listener to an `Emitter` that was passed into 
-the constructor. You do not need to dispose if a type only effects that type and its children, because it is 
-self contained and can be garbage collected as a whole. For more information about the general pattern,
-see https://en.wikipedia.org/wiki/Dispose_pattern
+Disposal is the process of freeing up memory so that it can be garbage collected. In general, JavaScript will garbage 
+collect. A memory leak is when an Object in the sim keeps a reference to something that should be garbage collected. 
+This reference inhibits garbage collection from happening. The dispose pattern helps to prevent. An instance needs to 
+be disposed if any code outside that Type has a reference to it. For example a Type needs to be disposed if a listener 
+is added to an `AXON/Emitter` that was passed into that Type's constructor. You do not need to dispose an instance if 
+references are only between type and its children. Because it is self contained, it can be garbage collected as a 
+whole. For more information about the general pattern, see https://en.wikipedia.org/wiki/Dispose_pattern
+
+A leak often happens due to the Observer pattern. If you own the observable and ALL of its observers (and there is no 
+chance of outside observers being added), then you don't need to dispose. if you own only the observable or the 
+observers, then you need to dispose by cutting those references. 
+
+Note: when use `SCENERY/Node` that need disposal, be careful about disposing when using DAG (directed asyclic graph) 
+features.
 
 [Here](https://github.com/phetsims/sun/issues/121#issuecomment-209141994) is a 
 helpful list of actions that likely need doing while disposing:
@@ -31,21 +39,25 @@ helpful list of actions that likely need doing while disposing:
   3. de-register from tandem (data collection)
 
 Once establishing that you need to dispose a type, add the `dispose` method to the prototype. This method should be 
-`@public` is likely an `@override`. The `dispose` method on the prototype, when called, should completely
+`@public` and is likely an `@override`. The `dispose` method on the prototype, when called, should completely
 release this object from any references that would otherwise keep it from being garbage collected. Make sure that this
 method calls its parent and mixin disposals as well. In the view a type will likely extend from `{{Node}}` and, as such, 
-you will call `Node.prototype.dispose.call( this );` (for es5). We call "this" type's dispose before the parent's call 
-because we tear down code in the opposite order of construction. 
+you will call `Node.prototype.dispose.call( this );` (for es5). In general call `this` type's dispose before the 
+parent's call to tear down code in the opposite order of construction. 
+
+Below are a few methods to implement disposal specifics. They are listed in order of preference, and the first should be
+used unless it can't, the same for the next, and so on.
 
 ----------
 
 The preferred approach in implementing disposal for PhET code is to create a private member function in the constructor 
 called `this.dispose{{TypeName}}` (see [issue](https://github.com/phetsims/tasks/issues/727)), and then to call that 
-from the `dispose` method. With disposal order in mind, the 
-safest order of disposal within `this.dispose` is to call `this.dispose{{TypeName}}` before calling for the parent.
-Within `this.dispose{{TypeName}}`, the safes order of disposal is the opposite order of component creation.
+method from the `dispose` method (on the prototype). With disposal order in mind, the generally safest order of 
+disposal within `this.dispose` is to call `this.dispose{{TypeName}}` before calling for the parent. Within 
+`this.dispose{{TypeName}}`, the generally safest order of disposal is the opposite order of component creation.
 
-Take the following type:
+Here is an example of using this disposal method. Note that the `Property` is unlinked before the child is removed 
+from the `Node`.
 
 ```js
 class MyAddChildAndLinkNode extends Node{
@@ -61,7 +73,10 @@ class MyAddChildAndLinkNode extends Node{
     
     this.disposeMyAddChildAndLinkNode = ()=>{
       aProperty.unlink( aFunction);
-      aNode.removeChild( aNewNode);
+      
+      // Because aNewNode has a reference back to its parent (aNode). Note there are many ways that this reference 
+      // could be removed.
+      aNode.removeChild( aNewNode); 
     }
   }
   
@@ -76,13 +91,13 @@ class MyAddChildAndLinkNode extends Node{
 }
 ```
 
-Note that the `Property` is unlinked before the child is removed from the `Node`.
 
 ----------
 
-If performance is an important consideration for a type, then the above pattern can be adapted, and the 
-constructor closure removed. Instead promote any local vars that would be needed for disposal to `@private` 
-instance fields and move that logic to the `dispose`, like below.
+If performance is an important consideration for a type, then the above pattern is less desirable because it creates a
+closure for each instance. That method can be adapted, and the constructor closure removed. Instead promote any local 
+variables that would be needed for disposal to `@private` instance fields and move that logic directly to the `dispose` 
+method, like below.
 
 ```js
 class MyAddChildAndLinkNode extends Node{
@@ -114,12 +129,12 @@ class MyAddChildAndLinkNode extends Node{
 }
 ```
 
-Sometimes the above preferred patterns won't work. For example sometimes things are conditionally created, and 
+Sometimes the above, preferred patterns won't work. For example sometimes components are conditionally created, and 
 therefore are only conditionally disposed. If there are these sorts of complex disposal constraints, then create an 
-`Emitter` to manage disposal tasks, and add a listener to the Emitter for each disposal task. Here is a list to follow:
+`AXON/Emitter` to manage disposal tasks, and add a listener to the Emitter for each disposal task. 
 
 * Name the emitter like `disposeEmitter{{TypeName}}`
-* Add listeners to the Emitter, recognizing that disposal should usually happen in reverse order of construction
+* Add listeners to the Emitter, recognizing that listener order is not guaranteed. 
 * In the `dispose` method, emit the dispose emitter, and call the parent dispose (`super.dispose()`) in the appropriate 
 order.
 
@@ -130,6 +145,8 @@ See [issue](https://github.com/phetsims/axon/issues/214) for details on the "dis
 A deprecated pattern once used for disposal involves creating an array to keep track of items to dispose. Often this 
 array is called `disposeActions`, and is of type `{Array.<function>}`. For example see use of `this.disposeActions` 
 [here](https://github.com/phetsims/circuit-construction-kit-common/blob/91d44b050d79627bf0d470e3b2f1029976e6e004/js/view/CircuitElementNode.js#L71)
+
+-------------
 
 Here are some issues that have investigated trying to bring creation and disposal closer together:
 * https://github.com/phetsims/axon/issues/84
