@@ -11,6 +11,7 @@ PhET code-review checklist
 - [ ] Does the sim start up? (requirejs and built versions)
 - [ ] Does the sim experience any assertion failures? (run with query parameter `ea`)
 - [ ] Does the sim pass a scenery fuzz test? (run with query parameters `fuzz&ea`)
+- [ ] Does linting with "sim_es6_eslintrc_review.js" reveal any problems that should be fixed? (change eslintConfig in package.json and run `grunt lint`)
 
 #### **Memory Leaks**
 
