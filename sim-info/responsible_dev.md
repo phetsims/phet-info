@@ -22,6 +22,7 @@
 | Calculus Grapher | @jonathanolson | |
 | Capacitor Lab: Basics | @jonathanolson | ✓ |
 | Charges And Fields | @jonathanolson  | ✓ |
+| Circuit Construction Kit: AC+DC | @samreid | |
 | Circuit Construction Kit: Black Box Study | @samreid | |
 | Circuit Constructor Kit: DC | @samreid | ✓ |
 | Circuit Constructor Kit: DC - Virtual Lab| @samreid | ✓ |
