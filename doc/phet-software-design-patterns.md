@@ -286,7 +286,7 @@ Topics for continued discussion about this:
   - Concrete list of when to use mixin/trait vs inheritance
   - Pattern for using dispose with mixin/trait.
 
-Interested developers: CM, CK, JG, MK, MB, DB
+Interested developers: CM, CK, JG, MK, MB, DB  
 JG volunteered to do this one for 2/4/19.
 
 ## Composition and Inheritance
