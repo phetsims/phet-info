@@ -277,18 +277,26 @@ class MyClass extends SuperClass {
   }
 }
 
-// to mix MyTrait methods into the prototype
+// to mix MyTrait methods into the prototype, after inherit for es5 usages
 MyTrait.mixInto( MyClass );
 ```
 </details>
 
-Questions for the discussion on 2/4/19:
-  - Poolable is our only usage of a mixin, but it is described as a trait. Should it be changed to a mixin?
-  - Do we need the above code example, or are references sufficient?
-  - This example is in es6, none of our traits/mixins use es6.
+Topics for continued discussion about this:
+  - Concrete list of when to use mixin/trait vs inheritance
+  - Pattern for using dispose with mixin/trait.
 
 Interested developers: CM, CK, JG, MK, MB, DB
 JG volunteered to do this one for 2/4/19.
+
+## Composition and Inheritance
+  - Noted as a new topic during patterns discussion on 2/11/19.
+  - Would be good to note PhET decisions and patterns for this here.
+  - Relavant info/links:
+    - https://en.wikipedia.org/wiki/Composition_over_inheritance
+      - "Composition over inheritance (or composite reuse principle) in object-oriented programming (OOP) is the principle that classes should achieve polymorphic behavior and code reuse by their composition (by containing instances of other classes that implement the desired functionality) rather than inheritance from a base or parent class."
+    - Chrome's optimization makes it so that sims would be faster if we used composition over inheritance.
+    - Composition is generally more flexible.
 
 ## Model-View Controller
 
