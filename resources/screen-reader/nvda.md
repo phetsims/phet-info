@@ -21,6 +21,8 @@ It can also be set to "show speech viewer on startup"
 Here is a list of settings that will silence a screen reader when "speech mode" is off:
 
 * Turn off these settings:
+
+  * Preferences -> Settings -> General -> "Play sounds when starting or exiting nvda"
   * Preferences -> Settings -> Keyboard -> "Play sound for spelling errors while typing"
   * Preferences -> settings -> Browse Mode -> "Audio indication of focus and browse modes"
   * Preferences -> settings -> Keyboard -> "Beep if typing lower case when caps lock is on"
