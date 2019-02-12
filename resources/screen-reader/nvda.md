@@ -7,7 +7,9 @@ In general, use the "NVDA" key (defaults to `Insert`) to control NVDA with the k
 
 Here is a list of keyboard shortcuts to get you started: https://webaim.org/resources/shortcuts/nvda
 
-
+An important shortcut to note is the ability to cycle between speech mode "on", speech mode "off", and speech mode "beeps"
+   `Insert + s`
+ 
 ### Setup
 
 @zepumph prefers to use the screen reader via the "speech viewer." To turn on speech viewer: 
