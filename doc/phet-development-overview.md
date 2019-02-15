@@ -12,7 +12,7 @@ PhET Interactive Simulations creates free, open source educational simulations i
 
 **[Creating a New Sim](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#creating-a-new-sim)**
 
-**[Building and Testing (Windows & macOS)](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#building-and-testing-windows--macos)**
+**[Building and Testing (Windows and macOS)](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#building-and-testing-windows-and-macos)**
 
 **[Source code and dependencies](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#source-code-and-dependencies)**
 
@@ -20,17 +20,17 @@ PhET Interactive Simulations creates free, open source educational simulations i
 
 **[Master is Unstable: Accessing Rigorously Tested Code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#master-is-unstable-accessing-rigorously-tested-code)**
 
-**[Original Java/Flash source code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#original-javaflash-soucre-code)**
+**[Original Java/Flash source code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#original-javaflash-source-code)**
 
 **[3rd Party Dependencies](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#3rd-party-dependencies)**
 
-**[Licenses](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#licenses)**
+**[Licensing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#licensing)**
 
 **[Coding Style Guidelines](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#coding-style-guidelines)**
 
 **[Platforms](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#platforms)**
 
-**[Modularity & RequireJS](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#modularity--requirejs)**
+**[Modularity and RequireJS](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#modularity-and-requirejs)**
 
 **[Layout](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#layout)**
 
@@ -40,7 +40,7 @@ PhET Interactive Simulations creates free, open source educational simulations i
 
 **[Published Versions](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#published-versions)**
 
-**[Development Process & Checklist](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#development-process--checklist)**
+**[Development Process and Checklist](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#development-process-and-checklist)**
 
 **[Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)**
 
@@ -156,17 +156,16 @@ When running the first git clone command, it may show a dialog that says: The �
 3. Download & install node+npm from http://nodejs.org/download
 4. Launch a node server program on your development machine  
   a. Install the http-server as a command line program using the Terminal  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install http-server -g`
-  * If that yields an error like “Please try running this command again as root/Administrator.” then run using the sudo command like so:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install http-server -g`  
+If that yields an error like “Please try running this command again as root/Administrator.” then run using the sudo command like so:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`sudo npm install http-server -g`  
   b. Change into the phetsims directory (if you were not already there).  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd phetsims/`  
   c. Run the http server program  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`http-server`
-5. Open a browser to the path for one of the simulations:  http://localhost:8080/example-sim/build/phet/example-sim_en_phet.html
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`http-server`  
+5. Open a browser to the path for one of the simulations: http://localhost:8080/example-sim/build/phet/example-sim_en_phet.html
 6. For building the simulations, install the grunt command line utility (may require sudo):  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install -g grunt-cli`
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install -g grunt-cli`  
 Now you can test modifying the simulation code and see the changes by refreshing the browser http://localhost:8080/example-sim/example-sim_en.html.
 You can also use this to test on remote devices after looking up your ip address.
 Questions should be directed to the Developing Interactive Simulations in HTML5 Google Group.
@@ -175,30 +174,24 @@ Questions should be directed to the Developing Interactive Simulations in HTML5 
 
 After checking out the dependencies and installing grunt-cli in the preceding instructions, you can create your own simulation using the template.
 
-1. Check out the template sim, called ‘simula-rasa’ using this git clone command:
-
-cd phetsims
-git clone https://github.com/phetsims/simula-rasa.git
-
-2. Install the perennial dependencies:
-
-cd perennial
-npm install
-
-3. Use the perennial ‘grunt’ task to create a new sim, like so (still in the perennial directory):
-
-grunt create-sim --repo=NAME --author=AUTHOR
-
-For instance, if the simulation is going to be named Acceleration Lab and the author is Sam Reid from PhET Interactive Simulations, then you could put
-
-grunt create-sim --repo=acceleration-lab --author="Sam Reid (PhET Interactive Simulations)"
-
+1. Check out the template sim, called ‘simula-rasa’ using this git clone command:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd phetsims`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`git clone https://github.com/phetsims/simula-rasa.git`  
+2. Install the perennial dependencies:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd perennial`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install`  
+3. Use the perennial ‘grunt’ task to create a new sim, like so (still in the perennial directory):  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`grunt create-sim --repo=NAME --author=AUTHOR`  
+For instance, if the simulation is going to be named Acceleration Lab and the author is Sam Reid from PhET Interactive Simulations, then you could put:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`grunt create-sim --repo=acceleration-lab --author="Sam Reid (PhET Interactive Simulations)"`  
 4. Test the created simulation in the browser and make sure it launches.  It should be a blank simulation.  Write to the Developing Interactive Simulations in HTML5 Google Group if you run into problems.
 
-## Building and Testing (Windows and maOS)
+## Building and Testing (Windows and macOS)
 
-Building the Simulation with chipper
-Open Git Bash (Windows) or Terminal (macOS)
+### Building the Simulation with chipper
+
+1. Open Git Bash (Windows) or Terminal (macOS) and type:  
+```
 cd example-sim
 npm install
 npm prune
@@ -208,79 +201,80 @@ cd ../chipper
 npm update 
 cd ../example-sim
 grunt
-Open a browser to the path to test it
+```
+
+2. Open a browser to the path to test it:
 http://localhost:8080/example-sim/build/phet/example-sim_en_phet.html
 
-Working with Git and GitHub
+### Working with Git and GitHub
 
 Pulling the latest changes
 Creating an issuehttp://localhost:8080/example-sim/build/example_sim.html
 Committing
 Submitting a pull request
 
-Submit an Issue
+### Submit an Issue
 
-Using Chrome dev tools to debug a simulation
+### Using Chrome dev tools to debug a simulation
 
 ## Source code and Dependencies
 
-Our simulations and dependencies are hosted publicly on GitHub
-https://github.com/phetsims
+Our simulations and dependencies are hosted publicly on GitHub: https://github.com/phetsims
 
 We have 40+ repositories for the simulations and their dependencies, all of which can be found here: https://github.com/phetsims?tab=repositories.
 
 Below is a list of some of the repositories that contain libraries and frameworks upon which the individual simulations depend.
 
-Scenery: A general scene graph for rendering the graphics and handling the input.  Documentation site for scenery
-Axon: for model implementation
-Assert: assertion framework for development testing
-phet-core: inheritance, extension and other utility functions
-phetcommon: higher-level common dependencies
-scenery-phet: PhET-specific scenery graphics and input handlers
-Joist: Framework for application loading, launching, and handling tabs
-Dot: Mathematics framework for model & view
-Kite: Shape library
-Sun: Graphical user interface components, such as buttons, checkboxes, etc
-Sherpa: All of our 3rd party dependencies
-Chipper:Tools for developing and building simulations.
-Perennial:Maintenance tools that won't change with different versions of chipper checked out
+* scenery: A general scene graph for rendering the graphics and handling the input. Documentation site for scenery
+* axon: for model implementation
+* assert: assertion framework for development testing
+* phet-core: inheritance, extension and other utility functions
+* phetcommon: higher-level common dependencies
+* scenery-phet: PhET-specific scenery graphics and input handlers
+* joist: Framework for application loading, launching, and handling tabs
+* dot: Mathematics framework for model & view
+* kite: Shape library
+* sun: Graphical user interface components, such as buttons, checkboxes, etc
+* sherpa: All of our 3rd party dependencies
+* chipper: Tools for developing and building simulations.
+* perennial: Maintenance tools that won't change with different versions of chipper checked out
 
 ## Checking out the HTML5 code from GitHub
 
-Our example-sim repository README.md includes a list of git clone commands that will check out the example simulation and all of its dependencies.
-https://github.com/phetsims/example-sim
+Our example-sim repository README.md includes a list of git clone commands that will check out the example simulation and all of its dependencies: https://github.com/phetsims/example-sim
 
-And to clone some of our in-development sims:
-git clone git://github.com/phetsims/forces-and-motion-basics.git
-git clone git://github.com/phetsims/build-an-atom.git
+And to clone some of our in-development sims:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`git clone git://github.com/phetsims/forces-and-motion-basics.git`  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`git clone git://github.com/phetsims/build-an-atom.git`  
 
 All repositories should be cloned into the same directory so that relative paths will work.
 
-Here is a full list of all phetsims repos.  If the sim won’t launch due to a missing dependency, you may need to check out some more of these repos:
-https://github.com/phetsims?tab=repositories
+Here is a full list of all phetsims repositories.  If the sim won’t launch due to a missing dependency, you may need to check out some more of these repos: https://github.com/phetsims?tab=repositories
 
-Also note that this will check out the ‘master’ branch of all of our dependencies, which may create breaking changes intermittently if you remain up-to-date with them.  If you run into any breaking changes, please notify us immediately.  Also, we recommend developing your code on a public repo such as GitHub to enable us to test and update your simulations as common dependencies are changed.
+Also note that this will check out the ‘master’ branch of all of our dependencies, which may create breaking changes intermittently if you remain up-to-date with them. If you run into any breaking changes, please notify us immediately. Also, we recommend developing your code on a public repo such as GitHub to enable us to test and update your simulations as common dependencies are changed.
 
-## Master is Potentially Unstable: Accessing Rigorously Tested Code
+## Master is Unstable: Accessing Rigorously Tested Code
 
-The master branch of the PhET simulation and library repositories is constantly under development and not guaranteed to be stable.  It is our intent that the master branch of simulations + libraries will build and run properly, but sometimes the code goes through intermediate states where errors can be introduced.  On the other hand, our published simulations have been rigorously tested across 18+ platforms and are the most stable option.  If you are adapting a PhET simulation, or would like to access simulation code that corresponds directly to one of our published versions, then you will need to check out specific SHA revisions in all of the appropriate repositories.  Checking out these fixed, tested revisions is also important when working on a release-candidate branch of a simulation. Here are the instructions:
-First, identify the version for which you want to check out the source code, for example: http://phet.colorado.edu/sims/html/area-builder/latest/area-builder_en.html
-Navigate to a file named dependencies.json at the same path, for example: http://phet.colorado.edu/sims/html/area-builder/latest/dependencies.json
-Download the dependencies.json file to the root of the simulation directory.
-Open a command prompt and cd into the root of the simulation directory.
-Run `grunt checkout-shas`.  This step will read from the dependencies.json file and check out all of the SHAs corresponding to the entries in the file.
-To checkout the SHA for the simulation itself, first look up the SHA in the dependencies file, move the dependencies file to some other location or delete it, and use `git checkout` to check it out the appropriate SHA.  (Note future version of `grunt checkout-shas` may handle this last step).
-Inspect the simulation and its dependencies to make sure `grunt checkout-shas` had the intended effect of getting the right SHA for each repo
-Now you can use the published source code.  To restore each branch to master, you can run `grunt checkout-master`.
+The master branch of the PhET simulation and library repositories is constantly under development and not guaranteed to be stable. It is our intent that the master branch of simulations + libraries will build and run properly, but sometimes the code goes through intermediate states where errors can be introduced. On the other hand, our published simulations have been rigorously tested across 18+ platforms and are the most stable option. If you are adapting a PhET simulation, or would like to access simulation code that corresponds directly to one of our published versions, then you will need to check out specific SHA revisions in all of the appropriate repositories. Checking out these fixed, tested revisions is also important when working on a release-candidate branch of a simulation. Here are the instructions:
 
-Exception and caveats:
-Running 'grunt checkout-shas' give errors when the working copy is not committed.  These grunt commands are currently only supported for clean git repos.  Stashing may be a way around this problem.  Also, if you want to use dependencies from a different version than in the SHAs, that will have to be done as an additional manual step.
-When working in a branch, grunt checkout-master will check out the master branch and additional manual steps will be required to get back to the desired branch(es).  For instance, this is an issue when working with the “adapted-from-phet” branch of brand.
+1. First, identify the version for which you want to check out the source code, for example: http://phet.colorado.edu/sims/html/area-builder/latest/area-builder_en.html
+2. Navigate to a file named dependencies.json at the same path, for example: http://phet.colorado.edu/sims/html/area-builder/latest/dependencies.json
+3. Download the dependencies.json file to the root of the simulation directory.
+4. Open a command prompt and cd into the root of the simulation directory.
+5. Run `grunt checkout-shas`.  This step will read from the dependencies.json file and check out all of the SHAs corresponding to the entries in the file.
+6. To checkout the SHA for the simulation itself, first look up the SHA in the dependencies file, move the dependencies file to some other location or delete it, and use `git checkout` to check it out the appropriate SHA. (Note future version of `grunt checkout-shas` may handle this last step).
+7. Inspect the simulation and its dependencies to make sure `grunt checkout-shas` had the intended effect of getting the right SHA for each repo.
 
-## Original (Java/Flash) Source Code
+Now you can use the published source code. To restore each branch to master, you can run `grunt checkout-master`.
 
-Follow the directions at this link to get the source code for original Java and Flash version of the simulations:
-http://phet.colorado.edu/en/about/source-code
+### Exceptions and caveats:
+
+1. Running `grunt checkout-shas` gives errors when the working copy is not committed.  These grunt commands are currently only supported for clean git repos.  Stashing may be a way around this problem.  Also, if you want to use dependencies from a different version than in the SHAs, that will have to be done as an additional manual step.
+2. When working in a branch, `grunt checkout-master` will check out the master branch and additional manual steps will be required to get back to the desired branch(es). For instance, this is an issue when working with the “adapted-from-phet” branch of brand.
+
+## Original Java/Flash Source Code
+
+Follow the directions at this link to get the source code for original Java and Flash version of the simulations: http://phet.colorado.edu/en/about/source-code
 
 After checking it out (could take 30+ minutes), the source code for the simulations are located in (for example):
 svn-checkout/trunk/simulations-java/simulations/forces-and-motion-basics
@@ -293,26 +287,25 @@ PhET Simulations use around 3 open source 3rd party dependencies for the deploye
 
 New simulations should be published under GPLv3 and reusable library dependencies should be published as MIT.
 
-##Coding Style Guidelines
+## Coding Style Guidelines
 
 To improve the readability and maintainability of PhET Simulation code, we have identified several style recommendations for writing code and documentation:
 
-(1) The PhET Code Review Checklist is available at https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md
-provides additional steps to make sure a simulation is well written.  This checklist is used for publication of any new PhET simulation to make sure they are consistent and maintainable.  It enumerates steps including but not limited to coding style.
+* The PhET Code Review Checklist is available at https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md provides additional steps to make sure a simulation is well written.  This checklist is used for publication of any new PhET simulation to make sure they are consistent and maintainable.  It enumerates steps including but not limited to coding style.
 
-(2) the chipper eslint task, which reports linting errors for the sim during the build task
+* The chipper eslint task, which reports linting errors for the sim during the build task
 
-(3) an IntelliJ IDEA code formatting style, which can be used to automatically indent and format the code.  Our example-sim also shows how to use  our libraries idiomatically as well as a good example of code commenting + documentation.
+* An IntelliJ IDEA code formatting style, which can be used to automatically indent and format the code.  Our example-sim also shows how to use  our libraries idiomatically as well as a good example of code commenting + documentation.
 
-We also tend to agree with most of the guidelines set out in idiomatic.js. 
+We also tend to agree with most of the guidelines set out in [idiomatic.js](https://github.com/rwldrn/idiomatic.js/). 
 
 ## Platforms
 
 The simulation should be tested and run on the platforms linked below.  In our experience to date, some optimization is often required to obtain acceptable performance on tablets such as the iPad.
 
-https://phet.colorado.edu/en/help-center/running-sims/general#q11-header
+System requirements: https://phet.colorado.edu/en/help-center/running-sims/general#q11-header
 
-## Modularity & RequireJS
+## Modularity and RequireJS
 
 The current implementation of JavaScript (ECMAScript 5) does not directly support modular JavaScript development.  RequireJS will be used to support modularization of the JavaScript code.  Information about RequireJS can be found at http://requirejs.org/.  Examples of how it will be used by PhET can be seen in the Example Simulation code at https://github.com/phetsims/example-sim.  Specifically, check out the config.js file, the grunt.js build file, and the source files in the js directory.
 
@@ -320,14 +313,15 @@ PhET will consider the built-in AMD support that will be a part of ECMAScript 6 
 
 ## Layout
 
-Design:
+### Design:
+
 Minimum width x height: 768x504 (1.52:1, inside Mobile Safari)
 
-The simulation should scale isometrically such that all portions are visible at any resolution.  An example of this type of scaling can be seen in the example simulation.
+The simulation should scale isometrically such that all portions are visible at any resolution. An example of this type of scaling can be seen in the example simulation.
 
 ## Compiling the Code
 
-A minification and unification process is implemented in our repo https://github.com/phetsims/chipper . This can be used to create a single-file HTML that contains all images and audio, and is suitable for download for offline usage.
+A minification and unification process is implemented in our repo https://github.com/phetsims/chipper. This can be used to create a single-file HTML that contains all images and audio, and is suitable for download for offline usage.
 
 ## Offline Operation
 
@@ -339,57 +333,56 @@ Here is a link to some published sims, so that you can see a demonstration of ho
 http://phet.colorado.edu/en/simulations/category/html
 
 
-## Development Process & Checklist
+## Development Process and Checklist
 
 The steps to create a fully functional PhET simulation, given an existing Java/Flash version or development specification:
 
-1. The simulation and its code:
-	a. must use the appropriate libraries in the correct fashion
-	b. must be adequately commented
-	c. must contain no dead code (i.e. commented out code that does nothing)
-	d. must be maintainable
-	e. reusable components should be polished and moved to the appropriate libraries
-f. should pass all jshint tests when running chipper, and should be compiled into a single file HTML file
-h. original vector artwork for anything appearing in the images/ directory should be checked into the assets/ directory.
-i. must run with ?ea (assertions) enabled without any assertion errors being triggered
+1. The simulation and its code:  
+	a. must use the appropriate libraries in the correct fashion  
+	b. must be adequately commented  
+	c. must contain no dead code (i.e. commented out code that does nothing)  
+	d. must be maintainable  
+	e. reusable components should be polished and moved to the appropriate libraries  
+  f. should pass all jshint tests when running chipper, and should be compiled into a single file HTML file  
+  h. original vector artwork for anything appearing in the images/ directory should be checked into the assets/ directory.  
+  i. must run with ?ea (assertions) enabled without any assertion errors being triggered  
 2. Simulation & User Interface Testing
-	a. Testing on our supported platforms and identification of problems on different browsers
-	b. Performance must be sufficiently fast on all supported platforms.
-i. The simulation should start in <8 seconds on iPad3
-ii. We strive for a steady 60fps on iPad3 when possible
-c. The simulation should be tested with assertions enabled ?ea
-d. The simulation should be tested for touch areas: ?showPointerAreas
-3. Code review
-	a. The code will be reviewed by one or more PhET developers in order to identify possible bugs or maintenance problems
-	b. Issues raised in the review will be addressed
-4. Release candidate testing
-	a. Before publication, a release candidate branch is created so that the branch can be thoroughly tested and, if no significant bugs are found, published
-5. Publication
-	a. The simulation is made available on the PhET website
-6. Maintenance
+	a. Testing on our supported platforms and identification of problems on different browsers  
+	b. Performance must be sufficiently fast on all supported platforms.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i. The simulation should start in <8 seconds on iPad3  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii. We strive for a steady 60fps on iPad3 when possible  
+  c. The simulation should be tested with assertions enabled: `?ea`  
+  d. The simulation should be tested for touch areas: `?showPointerAreas`  
+3. Code review  
+	a. The code will be reviewed by one or more PhET developers in order to identify possible bugs or maintenance problems  
+	b. Issues raised in the review will be addressed  
+4. Release candidate testing  
+	a. Before publication, a release candidate branch is created so that the branch can be thoroughly tested and, if no significant bugs are found, published  
+5. Publication  
+	a. The simulation is made available on the PhET website  
+6. Maintenance  
 	a. the simulation is published and any bugs reported by students or teachers will be resolved
 
 ## Utilities and Instrumentation for Development and Testing
 
-Many aspects of a simulation must be developed properly and working well in order for the simulation to behave properly across our many supported platforms.  PhET has developed several utilities and instruments to make this development and testing easier.  The most up-to-date documentation for the query parameters is available here:
+Many aspects of a simulation must be developed properly and working well in order for the simulation to behave properly across our many supported platforms. PhET has developed several utilities and instruments to make this development and testing easier.  The most up-to-date documentation for the query parameters is available here:
 https://github.com/phetsims/chipper/blob/master/js/initialize-globals.js
 
-1. Query parameter: screenIndex  This query parameter may be used to specify the initial screen of the simulation.  It can be paired with standalone above to launch just a specific screen of the simulation.  For instance:
+1. Query parameter: `?screenIndex`. This query parameter may be used to specify the initial screen of the simulation.  It can be paired with standalone above to launch just a specific screen of the simulation.  For instance:
 http://localhost:8080/energy-skate-park-basics/energy-skate-park-basics_en.html?screenIndex=1&standalone launches Energy Skate Park: Basics using only the 2nd screen.
-2. Phet Allocations:  Object instance allocation tracking, so we can cut down on garbage collection.  See https://github.com/phetsims/phet-core/blob/master/js/phetAllocation.js
-  Sample usage:
-  1. Run the sim and set up the scenario that you wish to profile
-  2. In the JS console, type: window.alloc={}
-  3. Wait until you have taken enough data
-  4. Type x = window.alloc; delete window.alloc;
- 
-  Now you can inspect the x variable which contains the allocation information.
-3. Query parameter: ea.  This parameter is used to “enable assertions”. The sim should run without triggering any assertion errors in ?ea mode.
-4. Query parameter: showPointerAreas.  This query parameter shows the areas for mouse and touch input events.  On mobile devices (and sometimes for mouse) it is essential to increase the interaction region for a scenery node.  Touch areas are shown in red and custom mouse areas are shown in blue.
-
-5. makeRandomSlowness()  This method can be called after the simulation is started to simulate an intermittently slow system.  This can be used to help replicate bugs that only happen intermittently or only on slow platforms.  To call this method, launch the sim, show the developer console, and type the command as above.
-6. makeEverythingSlow()  This method can be called after the simulation is started to simulate a slow system.  This can be used to help replicate bugs that only happen intermittently or only on slow platforms.  To call this method, launch the sim, show the developer console, and type the command as above.
-7. Query parameter: ‘profiler’ Launching a sim with ?profiler will print out the time to create each screen, and will show a histogram which updates every 60 frames depicting how long the frames are taking (in ms).  Note: just showing the average FPS or ms/frame is not sufficient, since we need to see when garbage collections happen, which are typically a spike in a single frame.  Hence, the data is shown as a histogram.  After the first 30ms slots, there is a ++= showing the times of longer frames (in ms)
+2. Phet Allocations: Object instance allocation tracking, so we can cut down on garbage collection.  See https://github.com/phetsims/phet-core/blob/master/js/phetAllocation.js  
+Sample usage:  
+  a. Run the sim and set up the scenario that you wish to profile  
+  b. In the JS console, type: window.alloc={}  
+  c. Wait until you have taken enough data  
+  d. Type x = window.alloc; delete window.alloc;  
+Now you can inspect the x variable which contains the allocation information.
+3. Query parameter: `?ea`. This parameter is used to “enable assertions”. The sim should run without triggering any assertion errors in ?ea mode.
+4. Query parameter: `?showPointerAreas`. This query parameter shows the areas for mouse and touch input events.  On mobile devices (and sometimes for mouse) it is essential to increase the interaction region for a scenery node. Touch areas are shown in red and custom mouse areas are shown in blue.
+![(TODO) Pointer Areas Example Image]()
+5. makeRandomSlowness(). This method can be called after the simulation is started to simulate an intermittently slow system.  This can be used to help replicate bugs that only happen intermittently or only on slow platforms.  To call this method, launch the sim, show the developer console, and type the command as above.
+6. makeEverythingSlow(). This method can be called after the simulation is started to simulate a slow system.  This can be used to help replicate bugs that only happen intermittently or only on slow platforms.  To call this method, launch the sim, show the developer console, and type the command as above.
+7. Query parameter: `?profiler`. Launching a sim with ?profiler will print out the time to create each screen, and will show a histogram which updates every 60 frames depicting how long the frames are taking (in ms).  Note: just showing the average FPS or ms/frame is not sufficient, since we need to see when garbage collections happen, which are typically a spike in a single frame.  Hence, the data is shown as a histogram.  After the first 30ms slots, there is a ++= showing the times of longer frames (in ms)
 8. Usage of Unit Tests: After making changes in one of the repos with unit tests (see if tests/qunit exists), run the unit tests afterwards (tests/qunit/unit-tests.html) to see if anything is broken. We highly recommend checking "Hide passed tests", and wait until all tests are complete (it may pause at 0 tests complete at the start).
 9. Adding Unit Tests: If you want to add a test, add it to one of the tests/qunit/js/* files that have a QUnit module( '...' ) declaration, and read the QUnit tutorials to understand how it works. You can add new files with more tests by creating the file and referencing it in tests/qunit/js/unit-tests.js (whose purpose is to load those files).
 10. Namespaces for Unit Tests and Playground: Each unit-tests.html makes certain namespaces global (e.g. Scenery's makes window.scenery/kite/dot/axon/core for Scenery/Kite/Dot/Axon/phet-core respectively). Since unit tests don't use require.js directly (for Scenery/Kite/Dot they need to work with the standalone built-library versions), the namespaces are used to access types. For instance, "new scenery.Rectangle( ... )" is used.
@@ -398,10 +391,10 @@ http://localhost:8080/energy-skate-park-basics/energy-skate-park-basics_en.html?
 ## Performance Optimization
 
 Getting to optimal performance on all supported platforms can be tricky--this section enumerates possible optimizations strategies:
-Consider using WebGL
-Reduce allocations (including but not limited to closures) during animation.
-Eliminate closures and move values to properties and prototypes, see https://github.com/phetsims/scenery/issues/664
-Consider replacing color strings with color constants, see https://github.com/phetsims/sun/issues/312
+1. Consider using WebGL.
+2. Reduce allocations (including but not limited to closures) during animation.
+3. Eliminate closures and move values to properties and prototypes, see https://github.com/phetsims/scenery/issues/664.
+4. Consider replacing color strings with color constants, see https://github.com/phetsims/sun/issues/312.
 
 ## Working with GitHub Issues
 
