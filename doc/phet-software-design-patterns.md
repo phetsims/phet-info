@@ -285,6 +285,7 @@ MyTrait.mixInto( MyClass );
 Topics for continued discussion about this:
   - Concrete list of when to use mixin/trait vs inheritance
   - Pattern for using dispose with mixin/trait.
+  - How to guard against shadowing (https://github.com/phetsims/phet-core/issues/54)
 
 ## Composition and Inheritance
   - Noted as a new topic during patterns discussion on 2/11/19.
