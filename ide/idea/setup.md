@@ -52,3 +52,5 @@ selected, and check `Prefer Strict mode`.
 14. Turn off some generally-incompatible inspections:
     * Go to File > Settings > Editor > Inspections.
     * Turn off JavaScript > General Closure compiler syntax
+15. Further resources:
+    * [Here is a list of default keyboard shortcuts for windows and mac](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
