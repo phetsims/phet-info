@@ -229,6 +229,12 @@ differences are:
 PhET defines the difference between mixin and trait as:
   - A trait can require methods and properties from the class it is mixed into, a mixin cannot.
 
+### When to use Mixin and Trait
+In general, composition should be favored over inheritance and inheritance should be favored over mixin. If the composition
+pattern produces lots of forwarding calls, it is an indication that you should be using inheritance or mixin instead.
+The mixin pattern should only be used as a substitute for multiple inheritance only if single inheritance is not desirable
+or is difficult to use.
+
 An example of PhET mixin is phet-core/Poolable. An example of a PhET trait is scenery/Paintable.
 
 Creating and using mixins and traits will look similar. Both will have
@@ -295,6 +301,12 @@ Topics for continued discussion about this:
       - "Composition over inheritance (or composite reuse principle) in object-oriented programming (OOP) is the principle that classes should achieve polymorphic behavior and code reuse by their composition (by containing instances of other classes that implement the desired functionality) rather than inheritance from a base or parent class."
     - Chrome's optimization makes it so that sims would be faster if we used composition over inheritance.
     - Composition is generally more flexible.
+  - If what you are trying to model can easily be described by composition, you should use composition.
+  - If composition produces numerous forwarding calls, it indicates that perhaps inheritance should be used instead.
+    - The forwarding calls produced by composition can be beneficial though, they are explicit and protect things things
+    that need to stay private.
+  - It was mentioned that numerous forwarding calls can increase the memory impact, especially on types that are instantiated many many times by a simulation (like Vector2).
+
 
 ## Model-View Controller
 
