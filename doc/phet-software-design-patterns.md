@@ -229,6 +229,12 @@ differences are:
 PhET defines the difference between mixin and trait as:
   - A trait can require methods and properties from the class it is mixed into, a mixin cannot.
 
+### When to use Mixin and Trait
+In general, composition should be favored over inheritance and inheritance should be favored over mixin. If the composition
+pattern produces lots of forwarding calls, it is an indication that you should be using inheritance or mixin instead.
+The mixin pattern should only be used as a substitute for multiple inheritance only if single inheritance is not desirable
+or is difficult to use.
+
 An example of PhET mixin is phet-core/Poolable. An example of a PhET trait is scenery/Paintable.
 
 Creating and using mixins and traits will look similar. Both will have
