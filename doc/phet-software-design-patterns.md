@@ -235,6 +235,7 @@ pattern produces lots of forwarding calls, it is an indication that you should b
 The mixin pattern should only be used as a substitute for multiple inheritance only if single inheritance is not desirable
 or is difficult to use.
 
+### Examples
 An example of PhET mixin is phet-core/Poolable. An example of a PhET trait is scenery/Paintable.
 
 Creating and using mixins and traits will look similar. Both will have
@@ -246,7 +247,6 @@ Creating and using mixins and traits will look similar. Both will have
   - The class using the mixin/trait will have `@mixes {{Name}}` annotation at the constructor.
 
 The only difference is traits should have assertions in the `mixInto` method to verify the class and requirements.
-
 
 <details><summary>Trait Example</summary>
   
@@ -307,7 +307,6 @@ MyTrait.mixInto( MyClass );
 </details>
 
 Topics for continued discussion about this:
-  - Pattern for using dispose with mixin/trait.
   - How to guard against shadowing (https://github.com/phetsims/phet-core/issues/54)
 
 ## Composition and Inheritance
