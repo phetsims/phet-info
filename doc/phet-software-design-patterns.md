@@ -314,9 +314,6 @@ MyTrait.mixInto( MyClass );
 ```
 </details>
 
-Topics for continued discussion about this:
-  - How to guard against shadowing (https://github.com/phetsims/phet-core/issues/54)
-
 ## Composition and Inheritance
   - Noted as a new topic during patterns discussion on 2/11/19.
   - Would be good to note PhET decisions and patterns for this here.
