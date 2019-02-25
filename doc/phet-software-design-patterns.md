@@ -240,9 +240,13 @@ An example of PhET mixin is phet-core/Poolable. An example of a PhET trait is sc
 Creating and using mixins and traits will look similar. Both will have
   - A `mixInto` method that is called on the class using the mixin/trait.
   - An `initialize{{Name}}` method that will be called in the constructor of the class using the mixin/trait.
+  - If necessary, the mixin/trait should have a `dispose{{Name}}` method that handles disposal, to be called by the
+  type using the mixin/trait when it is disposed. Method should not be named `dispose` to avoid overriding the `dispose`
+  method of the mixing type.
   - The class using the mixin/trait will have `@mixes {{Name}}` annotation at the constructor.
 
 The only difference is traits should have assertions in the `mixInto` method to verify the class and requirements.
+
 
 <details><summary>Trait Example</summary>
   
@@ -264,6 +268,11 @@ const MyTrait = {
        */
       initializeMyTrait: () => {},
 
+      /**
+       * Called when disposing the type mixing in this trait
+       */
+      disposeMyTrait: () => {},
+
       //...
     } );
   }
@@ -280,6 +289,15 @@ class MyClass extends SuperClass {
 
     // to initialize features of the trait
     this.initializeMyTrait();
+  }
+
+  /**
+   * Make eligible for garbage collection.
+   */
+  dispose() {
+
+    // if MyTrait requires/implements disposal
+    this.disposeMyTrait();
   }
 }
 
