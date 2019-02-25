@@ -8,6 +8,40 @@ Common sections for each pattern:
 - pitfalls
 - examples
 
+## Creator Pattern (with Drag Forwarding)
+(formerly known as the Model Element Creator Pattern) 
+
+TODO: describe the problem, event forwarding, model/view creation, instance management, phet-io, accessibility
+
+Many simulations show a "Toolbox" with "tool" icons which can be dragged into the play area and returned to the toolbox. 
+This can be divided into the following steps:
+1. Create the icons and display them in the toolbox.
+2. Add a listener on the icon.  When pressed, (a) the icon is hidden (b) optionally-a new object is created (in
+the model or the view) (c) pointer events are forwarded from the toolbox item to the corresponding view object listener.
+If the view object is persistent (such as a ruler), it may need to be moved to the front.  Some simulations may animate
+this step.
+3. The view object listener has a release listener that checks whether the item should go back into the toolbox.  In 
+some simulations, the bounding boxes are checked for intersection.  In some simulations, the center of the dragged 
+object must be inside the toolbox.  If the object is dropped into the toolbox, the play area object is disposed or 
+hidden, and the icon is shown again.  Some simulations may animate the object going back to the toolbox.  
+
+See implementations discussed in https://github.com/phetsims/scenery-phet/issues/214
+
+Simulations that use SimpleDragHandler.createForwardingListener:
+* Capacitor Lab Basics (Voltmeter)
+* Circuit Construction Kit (Circuit elements and sensors)
+* Equality Explorer (Terms)
+* Fluid Pressure and Flow (Sensors)
+* Masses and Springs (Ruler and timer)
+* Projectile Motion (Tracer and measuring tape)
+
+Simulations that use DragListener.createForwardingListener
+* Energy Skate Park (Measuring tape)
+* Fractions Suite (Pieces, fraction elements and containers)
+* Wave Interference (Tools)
+
+Interested developers: MK, DB, JO, JB, SR*, CK, MB
+
 ## Dependency Injection
 
 A standard pattern described in https://en.wikipedia.org/wiki/Dependency_injection.
@@ -151,40 +185,6 @@ array is called `disposeActions`, and is of type `{Array.<function>}`. For examp
 Here are some issues that have investigated trying to bring creation and disposal closer together:
 * https://github.com/phetsims/axon/issues/84
 * https://github.com/phetsims/axon/issues/93
-
-## Drag Forwarding
-(formerly known as the Creator Pattern or Model Element Creator Pattern, or Toolbox) 
-
-TODO: describe the problem, event forwarding, model/view creation, instance management, phet-io, accessibility
-
-Many simulations show a "Toolbox" with "tool" icons which can be dragged into the play area and returned to the toolbox. 
-This can be divided into the following steps:
-1. Create the icons and display them in the toolbox.
-2. Add a listener on the icon.  When pressed, (a) the icon is hidden (b) optionally-a new object is created (in
-the model or the view) (c) pointer events are forwarded from the toolbox item to the corresponding view object listener.
-If the view object is persistent (such as a ruler), it may need to be moved to the front.  Some simulations may animate
-this step.
-3. The view object listener has a release listener that checks whether the item should go back into the toolbox.  In 
-some simulations, the bounding boxes are checked for intersection.  In some simulations, the center of the dragged 
-object must be inside the toolbox.  If the object is dropped into the toolbox, the play area object is disposed or 
-hidden, and the icon is shown again.  Some simulations may animate the object going back to the toolbox.  
-
-See implementations discussed in https://github.com/phetsims/scenery-phet/issues/214
-
-Simulations that use SimpleDragHandler.createForwardingListener:
-* Capacitor Lab Basics (Voltmeter)
-* Circuit Construction Kit (Circuit elements and sensors)
-* Equality Explorer (Terms)
-* Fluid Pressure and Flow (Sensors)
-* Masses and Springs (Ruler and timer)
-* Projectile Motion (Tracer and measuring tape)
-
-Simulations that use DragListener.createForwardingListener
-* Energy Skate Park (Measuring tape)
-* Fractions Suite (Pieces, fraction elements and containers)
-* Wave Interference (Tools)
-
-Interested developers: MK, DB, JO, JB, SR*, CK, MB
 
 ## Enumerations
 
