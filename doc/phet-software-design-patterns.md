@@ -11,21 +11,26 @@ Common sections for each pattern:
 ## Creator Pattern (with Drag Forwarding)
 (formerly known as the Model Element Creator Pattern) 
 
-TODO: describe the problem, event forwarding, model/view creation, instance management, phet-io, accessibility
+Simulations may allocate all of the objects during startup, or may dynamically create new instances while the simulation
+is running.  In the case where the dynamically created instances are created by dragging an icon in a toolbox or panel,
+there is the additional complexity of making sure the drag event that began on the icon continues on the newly created 
+item.  This issue was originally identified and explored in https://github.com/phetsims/scenery-phet/issues/214.
 
-Many simulations show a "Toolbox" with "tool" icons which can be dragged into the play area and returned to the toolbox. 
-This can be divided into the following steps:
-1. Create the icons and display them in the toolbox.
-2. Add a listener on the icon.  When pressed, (a) the icon is hidden (b) optionally-a new object is created (in
-the model or the view) (c) pointer events are forwarded from the toolbox item to the corresponding view object listener.
-If the view object is persistent (such as a ruler), it may need to be moved to the front.  Some simulations may animate
-this step.
-3. The view object listener has a release listener that checks whether the item should go back into the toolbox.  In 
-some simulations, the bounding boxes are checked for intersection.  In some simulations, the center of the dragged 
-object must be inside the toolbox.  If the object is dropped into the toolbox, the play area object is disposed or 
-hidden, and the icon is shown again.  Some simulations may animate the object going back to the toolbox.  
+This pattern is also described in equality-explorer/doc/implementation-notes.md "Creator Pattern"
 
-See implementations discussed in https://github.com/phetsims/scenery-phet/issues/214
+Generally speaking, the pattern for creating a new item works like so:
+1. The user drags an icon in a toolbox or control panel
+2. This triggers a new model element to be created.
+3. The view receives a message from the model that a new element has been created, and the view creates the corresponding 
+view node.
+4. The drag event is forwarded to the listener for the view node.
+
+For disposal:
+1. The item is dropped back into the toolbox or otherwise deleted/removed/erased.
+2. This triggers the model to remove the model element
+3. The view receives a message that the model element has been removed, and removes the corresponding view node.
+
+This pattern has been implemented as a working example in scenery/examples/creator-pattern.html
 
 Simulations that use SimpleDragHandler.createForwardingListener:
 * Capacitor Lab Basics (Voltmeter)
@@ -40,7 +45,23 @@ Simulations that use DragListener.createForwardingListener
 * Fractions Suite (Pieces, fraction elements and containers)
 * Wave Interference (Tools)
 
+Deprecated solutions to this same problem:
+* Bending Light uses handleForwardedStartEvent, handleForwardedDragEvent, handleForwardedEndEvent
+
+Variants or Alternate problems:
+* It is possible to use the drag forwarding pattern without dynamically creating instances.  For instance, 
+in Wave Interference, there is only one Wave Meter Node, so dragging the icon displays the view and forwards the event 
+without creating a new one.
+* Forces and Motion: Basics doesn't dynamically create elements.  The real elements are already in the toolbox,
+hence no creation or forwarding takes place.
+
 Interested developers: MK, DB, JO, JB, SR*, CK, MB
+
+For discussion:
+* phet-io
+* accessibility
+* improving/fixing the "lookup" phase
+* adding entries to other "Deprecated" and "Alternate" sections
 
 ## Dependency Injection
 
