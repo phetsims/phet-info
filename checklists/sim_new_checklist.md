@@ -46,7 +46,7 @@
 - [ ] **Code review completed** (Date: //)
 - [ ] **Pre-publication items**
   - [ ] Main screenshot (read [this](https://github.com/phetsims/QA/blob/master/doc/qa-book.md#screenshots))
-  - [ ] Verify credits
+  - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks)
 - [ ] **Published** (Date: //)
   - [ ] Mark the sim as published in [responsible_dev.md](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md)
 
