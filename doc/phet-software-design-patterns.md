@@ -30,7 +30,7 @@ For disposal:
 2. This triggers the model to remove the model element
 3. The view receives a message that the model element has been removed, and removes the corresponding view node.
 
-This pattern has been implemented as a working example in scenery/examples/creator-pattern.html
+A simple, working example of this pattern is implemented in scenery/examples/creator-pattern.html
 
 Simulations that use SimpleDragHandler.createForwardingListener:
 * Capacitor Lab Basics (Voltmeter)
