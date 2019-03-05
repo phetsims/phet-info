@@ -483,7 +483,10 @@ e.g. https://medium.com/javascript-scene/master-the-javascript-interview-what-s-
 
 A standard pattern described in https://en.wikipedia.org/wiki/Singleton_pattern.
 
-Interested developers: CK, MK, SR, DB
+Interested developers: CK*, MK, SR, DB. CK Will discuss this Monday March 18
+
+Uppercase vs lowercase.
+Create class then instantiate vs create object literal
 
 ## State Machine
 
