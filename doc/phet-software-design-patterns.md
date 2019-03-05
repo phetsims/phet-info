@@ -18,9 +18,9 @@ item.  This issue was originally identified and explored in https://github.com/p
 
 This pattern is also described in equality-explorer/doc/implementation-notes.md "Creator Pattern"
 
-Generally speaking, the pattern for creating a new item works like so:
+Generally speaking, the pattern for creating a new item by dragging from the control panel works like so:
 1. The user drags an icon in a toolbox or control panel
-2. This triggers a new model element to be created.
+2. This triggers a new model element to be created (usually positioned above the icon, so it is not occluded by touch)
 3. The view receives a message from the model that a new element has been created, and the view creates the corresponding 
 view node.
 4. The drag event is forwarded to the listener for the view node.
@@ -32,7 +32,12 @@ For disposal:
 
 A simple, working example of this pattern is implemented in scenery/examples/creator-pattern.html
 
-Simulations that use SimpleDragHandler.createForwardingListener:
+Simulations that use DragListener.createForwardingListener (recommended pattern)
+* Energy Skate Park (Measuring tape)
+* Fractions Suite (Pieces, fraction elements and containers)
+* Wave Interference (Tools)
+
+Simulations that use SimpleDragHandler.createForwardingListener (similar to recommended pattern)
 * Capacitor Lab Basics (Voltmeter)
 * Circuit Construction Kit (Circuit elements and sensors)
 * Equality Explorer (Terms)
@@ -40,13 +45,12 @@ Simulations that use SimpleDragHandler.createForwardingListener:
 * Masses and Springs (Ruler and timer)
 * Projectile Motion (Tracer and measuring tape)
 
-Simulations that use DragListener.createForwardingListener
-* Energy Skate Park (Measuring tape)
-* Fractions Suite (Pieces, fraction elements and containers)
-* Wave Interference (Tools)
-
 Deprecated solutions to this same problem:
 * Bending Light uses handleForwardedStartEvent, handleForwardedDragEvent, handleForwardedEndEvent
+
+Simulations with other strategies:
+* Charges and Fields uses `hookDragHandler`, see ChargesAndSensorsPanel.js
+* Balancing Act uses: 
 
 Variants or Alternate problems:
 * It is possible to use the drag forwarding pattern without dynamically creating instances.  For instance, 
@@ -58,9 +62,12 @@ hence no creation or forwarding takes place.
 Interested developers: MK, DB, JO, JB, SR*, CK, MB
 
 For discussion:
-* phet-io
-* accessibility
-* improving/fixing the "lookup" phase
+* phet-io (these listeners should be instrumented and these interactions should appear in the data stream),
+  Newly created items could be assigned tandems with tandem.createGroupTandem().createNextTandem() (if they are enumerated
+  like `resistor42`).
+  or preassigned tandems (if they are uniquely identified, like `voltmeterA` and `voltmeterB`).
+* accessibility (hasn't been designed yet)
+* improving/fixing the "lookup" phase: CHECK!
 * adding entries to other "Deprecated" and "Alternate" sections
 
 ## Dependency Injection
