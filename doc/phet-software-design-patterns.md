@@ -392,6 +392,8 @@ Very important pattern for new developers
 
 ## `options` and `config` Parameters
 
+TODO Incorporate best practices from https://github.com/phetsims/phet-info/issues/96.
+
 TODO This section needs some work. The pattern is probably "configuration" for parameterizing types, which we use to 
 avoid an explosion of constructor parameters. `config` and `options` are the two implementation of that pattern that 
 PhET typically uses.
