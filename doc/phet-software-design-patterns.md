@@ -522,7 +522,7 @@ define( require => {
 
   console.log( 'I\'m only going to say this once.' );
 
-  const singletonInstance = {
+  const singletonObject = {
 
     printMessage() {
       console.log( 'I\'ll say this as many times as you\'d like.' );
@@ -530,7 +530,7 @@ define( require => {
 
   };
 
-  return singletonInstance;
+  return singletonObject;
 }
 ```
 
