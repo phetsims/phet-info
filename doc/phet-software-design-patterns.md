@@ -483,7 +483,62 @@ e.g. https://medium.com/javascript-scene/master-the-javascript-interview-what-s-
 
 ## Singleton
 
-A standard pattern described in https://en.wikipedia.org/wiki/Singleton_pattern.
+This is a standard pattern described in https://en.wikipedia.org/wiki/Singleton_pattern.
+
+The pattern in the above Wikipedia article uses a class that can only be instantiated once, and uses a method `getInstance` to do so:
+
+```js
+
+let singletonInstance = null;
+
+class Singleton {
+	
+  constructor() {
+    console.log( 'I\'m only going to say this once.' );
+  }
+
+  printMessage() {
+    console.log( 'I\'ll say this as many times as you\'d like.' );
+  }
+
+  static getInstance() {
+    if( !singletonInstance ) 
+      singletonInstance = new Singleton();
+    }
+    return singletonInstance;
+  }
+
+}
+
+```
+
+This doesn't actually make any sense with JavaScript because there's nothing preventing a user from repeatedly instantiating the class with `new Singleton()` instead of using `Singleton.getInstance()`.
+
+Instead, when using JavaScript and a module loading system (like RequireJS), we are able to create static object literals that cannot be instantiated, but are loaded at runtime. We typically name these singletons by starting with a lower case letter, though many of the current usages in PhET code don't follow this naming convention.
+
+```js
+
+define( require => {
+
+  console.log( 'I\'m only going to say this once.' );
+
+  const singletonInstance = {
+
+    printMessage() {
+      console.log( 'I\'ll say this as many times as you\'d like.' );
+    }
+
+  };
+
+  return singletonInstance;
+}
+```
+
+In the future, we should continue to name classes that can have multiple instances with casing like `SomeClass`, and name singletons with casing like `someSingleton`.
+
+Something to discuss for 03/18/19:
+
+When file prefixes in a sim are abbreviated as uppercase letters (e.g. EFAC for Energy Forms and Changes), is it preferable to continue following that pattern for singleton files like EFACConstants.js, or better to break the uppercase abbreviation and use efacConstants.js instead?
 
 Interested developers: CK*, MK, SR, DB. CK Will discuss this Monday March 18
 
