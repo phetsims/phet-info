@@ -550,10 +550,7 @@ Something to discuss for 03/18/19:
 
 When file prefixes in a sim are abbreviated as uppercase letters (e.g. EFAC for Energy Forms and Changes), is it preferable to continue following that pattern for singleton files like EFACConstants.js, or better to break the uppercase abbreviation and use efacConstants.js instead?
 
-Interested developers: CK*, MK, SR, DB. CK Will discuss this Monday March 18
-
-Uppercase vs lowercase.
-Create class then instantiate vs create object literal
+Interested developers: CK*, MK, SR, DB. CK will refactor and plan for discussion Monday March 25
 
 ## State Machine
 
