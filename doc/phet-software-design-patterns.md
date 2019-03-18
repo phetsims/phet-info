@@ -534,6 +534,16 @@ define( require => {
 }
 ```
 
+To use a singleton, simply import it to your file and invoke methods directly on the object.
+
+```js
+
+const singletonObject = require( 'SIMULATION_NAME/singletonObject' );
+
+singletonObject.printMessage();
+
+```
+
 In the future, we should continue to name classes that can have multiple instances with casing like `SomeClass`, and name singletons with casing like `someSingleton`.
 
 Something to discuss for 03/18/19:
