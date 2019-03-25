@@ -485,36 +485,46 @@ e.g. https://medium.com/javascript-scene/master-the-javascript-interview-what-s-
 
 This is a standard pattern described in https://en.wikipedia.org/wiki/Singleton_pattern.
 
-The pattern in the above Wikipedia article uses a class that can only be instantiated once, and uses a method `getInstance` to do so:
+When using JavaScript and a module loading system (like RequireJS), there are two patterns that we use for Singletons. 
+
+The first is to create a class and then return a single instance of the class *instead* of returning the class itself.
 
 ```js
 
-let singletonInstance = null;
+define( require => {
 
-class Singleton {
-	
-  constructor() {
-    console.log( 'I\'m only going to say this once.' );
-  }
+  class SingletonClass {
 
-  printMessage() {
-    console.log( 'I\'ll say this as many times as you\'d like.' );
-  }
-
-  static getInstance() {
-    if( !singletonInstance ) 
-      singletonInstance = new Singleton();
+    constructor( x ) {
+      console.log( 'I\'m only going to say this once.' );
+      this.x = x;
     }
-    return singletonInstance;
-  }
 
-}
+    printMessage() {
+      console.log( 'I\'ll say this as many times as you\'d like.' );
+    }
 
+    getX() {
+      return this.x;
+    }
+
+    setX( x ) {
+      this.x = x;
+    }
+
+  };
+
+  const singletonClass = new SingletonClass( 0 );
+  return namespace.register( 'singletonClass', singletonClass );
+
+} );
 ```
 
-This doesn't actually make any sense with JavaScript because there's nothing preventing a user from repeatedly instantiating the class with `new Singleton()` instead of using `Singleton.getInstance()`.
+A class should be used whenever keeping track of state is desired. The convention for naming a singleton class file is to start with a lowercase letter since an instance of the class is imported.
 
-Instead, when using JavaScript and a module loading system (like RequireJS), we are able to create static object literals that cannot be instantiated, but are loaded at runtime. We typically name these singletons by starting with a lower case letter, though many of the current usages in PhET code don't follow this naming convention.
+phetioEngine.js is an example of this pattern in PhET code.
+
+The second pattern is to create a static object literal. These cannot be instantiated, but instead are loaded at runtime.
 
 ```js
 
@@ -522,33 +532,37 @@ define( require => {
 
   console.log( 'I\'m only going to say this once.' );
 
-  const singletonObject = {
+  const SingletonObjectLiteral = {
 
     printMessage() {
       console.log( 'I\'ll say this as many times as you\'d like.' );
-    }
+    },
+
+    CONSTANT_NUMBER_ONE: 1,
+    CONSTANT_NUMBER_ONE: 2,
 
   };
 
-  return singletonObject;
+  return SingletonObjectLiteral;
 }
 ```
 
-To use a singleton, simply import it to your file and invoke methods directly on the object.
+An object literal should be used when keeping track of state is not needed. If one counter variable needs to be tracked (or something very simple like that), then the dev team thinks that it could still be appropriate to use an object literal. A class should be used for anything more substantial than that. The convention for naming a singleton object literal file is to start with an uppercase letter since a singleton object literal is not an instance of a class.
+
+Simulation constant files are a common example of this pattern in PhET code (e.g. WaveInterferenceConstants.js).
+
+To use a singleton, simply import it to your file and invoke methods directly on it.
 
 ```js
 
-const singletonObject = require( 'SIMULATION_NAME/singletonObject' );
+const singletonClass = require( 'SIMULATION_NAME/singletonClass' );
+const SingletonObjectLiteral = require( 'SIMULATION_NAME/SingletonObjectLiteral' );
 
-singletonObject.printMessage();
+console.log( singletonClass.getX() );
+
+SingletonObjectLiteral.printMessage();
 
 ```
-
-In the future, we should continue to name classes that can have multiple instances with casing like `SomeClass`, and name singletons with casing like `someSingleton`.
-
-Something to discuss for 03/18/19:
-
-When file prefixes in a sim are abbreviated as uppercase letters (e.g. EFAC for Energy Forms and Changes), is it preferable to continue following that pattern for singleton files like EFACConstants.js, or better to break the uppercase abbreviation and use efacConstants.js instead?
 
 Interested developers: CK*, MK, SR, DB. CK will refactor and plan for discussion Monday March 25
 
