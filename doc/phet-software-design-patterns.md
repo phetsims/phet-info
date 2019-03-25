@@ -493,7 +493,7 @@ The first is to create a class and then return a single instance of the class *i
 
 define( require => {
 
-  class SingletonClass {
+  class Singleton {
 
     constructor( x ) {
       console.log( 'I\'m only going to say this once.' );
@@ -514,11 +514,13 @@ define( require => {
 
   };
 
-  const singletonClass = new SingletonClass( 0 );
-  return namespace.register( 'singletonClass', singletonClass );
+  const singleton = new Singleton( 0 );
+  return namespace.register( 'singleton', singleton );
 
 } );
 ```
+
+File
 
 A class should be used whenever keeping track of state is desired. The convention for naming a singleton class file is to start with a lowercase letter since an instance of the class is imported.
 
@@ -532,7 +534,7 @@ define( require => {
 
   console.log( 'I\'m only going to say this once.' );
 
-  const SingletonObjectLiteral = {
+  const ExampleConstants = {
 
     printMessage() {
       console.log( 'I\'ll say this as many times as you\'d like.' );
@@ -543,7 +545,7 @@ define( require => {
 
   };
 
-  return SingletonObjectLiteral;
+  return namespace.register( 'ExampleConstants', ExampleConstants );
 }
 ```
 
@@ -555,12 +557,12 @@ To use a singleton, simply import it to your file and invoke methods directly on
 
 ```js
 
-const singletonClass = require( 'SIMULATION_NAME/singletonClass' );
-const SingletonObjectLiteral = require( 'SIMULATION_NAME/SingletonObjectLiteral' );
+const singleton = require( 'SIMULATION_NAME/singleton' );
+const ExampleConstants = require( 'SIMULATION_NAME/ExampleConstants' );
 
-console.log( singletonClass.getX() );
+console.log( singleton.getX() );
 
-SingletonObjectLiteral.printMessage();
+ExampleConstants.printMessage();
 
 ```
 
