@@ -77,6 +77,8 @@ A standard pattern described in https://en.wikipedia.org/wiki/Dependency_injecti
 SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clarify which form of dependency injection 
 (probably constructor-based injection), and some examples of where it's currently used in PhET sims.
 
+MB will take this for 4/1/19 discussion.
+
 ## Dispose
 
 Disposal is the process of freeing up memory so that it can be garbage collected. In general, JavaScript will garbage 
@@ -496,20 +498,24 @@ define( require => {
   class Singleton {
 
     constructor( x ) {
-      console.log( 'I\'m only going to say this once.' );
       this.x = x;
-    }
-
-    printMessage() {
-      console.log( 'I\'ll say this as many times as you\'d like.' );
+      this.initialized = false
     }
 
     getX() {
+      assert && assert( this.initialized, 'this should only be called after initialization' );
       return this.x;
     }
 
     setX( x ) {
+      assert && assert( this.initialized, 'this should only be called after initialization' );
       this.x = x;
+    }
+    
+    initialize( x ) {
+      assert && assert( !this.initialized, 'this should only be initialized once' );
+      this.initialized = true;
+      this.setX( x );
     }
 
   };
@@ -520,9 +526,9 @@ define( require => {
 } );
 ```
 
-File
-
 A class should be used whenever keeping track of state is desired. The convention for naming a singleton class file is to start with a lowercase letter since an instance of the class is imported.
+
+If initial state information is needed, then we can use an initialize pattern like what's written above. This is preferrable to the getInstance pattern because it is simpler and does not expose the contructor. Also, since a single instance is being registered, the module loading system is basically doing getInstance for us.
 
 phetioEngine.js is an example of this pattern in PhET code.
 
