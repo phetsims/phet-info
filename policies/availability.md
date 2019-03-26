@@ -30,3 +30,7 @@ We are going to try to use slack status more to communicate availability, since 
 - `/status [:your_new_status_emoji:] [your new status message]` allows you to set a custom status message
 - In the desktop apps, you’ll appear active whenever Slack is open and you're interacting with your computer. After 30 minutes of inactivity, Slack will automatically change your status to away
 - The "Workspace Directory" allows you to see everyone's status in a single view
+
+### CU Leave Policies
+Sick: https://www.colorado.edu/hr/leave#sick-89
+Vacation: https://www.colorado.edu/hr/leave#vacation_annual-89
