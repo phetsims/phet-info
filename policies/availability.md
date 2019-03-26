@@ -33,4 +33,5 @@ We are going to try to use slack status more to communicate availability, since 
 
 ### CU Leave Policies
 Sick: https://www.colorado.edu/hr/leave#sick-89
+
 Vacation: https://www.colorado.edu/hr/leave#vacation_annual-89
