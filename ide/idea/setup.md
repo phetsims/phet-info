@@ -49,8 +49,9 @@ selected, and check `Prefer Strict mode`.
         * arguments: lint-everything
         * working directory: {{PATH_TO_CHECKOUT}}/perennial
     * Then in the commit changes dialog, select "After Commit" "Run Tool" "grunt-lint-everything"
-14. Turn off some generally-incompatible inspections:
+14. Some inspections don't mesh well with the way our code base is setup, we can turn them off:
     * Go to File > Settings > Editor > Inspections.
-    * Turn off JavaScript > General Closure compiler syntax
+    * When using `@extends` with `inherit` calls, you can get the entire constructor flagged with the warning: 
+    "Cyclic inheritance involving {TYPE}" -- Turn it off with JavaScript > General Closure compiler syntax.
 15. Further resources:
     * [Here is a list of default keyboard shortcuts for windows and mac](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
