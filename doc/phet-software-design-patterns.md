@@ -570,8 +570,6 @@ ExampleConstants.printMessage();
 
 ```
 
-Interested developers: CK*, MK, SR, DB. CK will refactor and plan for discussion Monday March 25
-
 ## State Machine
 
 Use in Games, see https://github.com/phetsims/vegas/issues/74
