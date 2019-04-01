@@ -59,8 +59,6 @@ without creating a new one.
 * Forces and Motion: Basics doesn't dynamically create elements.  The real elements are already in the toolbox,
 hence no creation or forwarding takes place.
 
-Interested developers: MK, DB, JO, JB, SR*, CK, MB
-
 For discussion:
 * phet-io (these listeners should be instrumented and these interactions should appear in the data stream),
   Newly created items could be assigned tandems with tandem.createGroupTandem().createNextTandem() (if they are enumerated
