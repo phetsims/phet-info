@@ -9,8 +9,8 @@ of standard design patterns.
 * [Creator](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-pattern-with-drag-forwarding)
 * [Dependency Injection](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dependency-injection)
 * [Dispose](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dispose)
-* [Enumeration](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#enumerations)
-* [Mixins & Traits](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixins--traits)
+* [Enumeration](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#enumeration)
+* [Mixins & Traits](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixins-and-traits)
 * [Model-View Controller](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller) 🚧 
 * [Module](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#module) 🚧 
 * [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace) 🚧   @jonathanolson
