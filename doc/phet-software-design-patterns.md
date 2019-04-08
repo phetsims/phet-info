@@ -21,6 +21,9 @@ of standard design patterns.
 * [State Machine](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#state-machine) 🚧 @jbphet
 
 ## Composition and Inheritance
+
+Author: 🚧 
+
   - Noted as a new topic during patterns discussion on 2/11/19.
   - Would be good to note PhET decisions and patterns for this here.
   - Relavant info/links:
@@ -36,6 +39,8 @@ of standard design patterns.
   
 ## Creator (with Drag Forwarding)
 (formerly known as the Model Element Creator Pattern) 
+
+Author: @samreid
 
 Simulations may allocate all of the objects during startup, or may dynamically create new instances while the simulation
 is running.  In the case where the dynamically created instances are created by dragging an icon in a toolbox or panel,
@@ -95,6 +100,8 @@ For discussion:
 * adding entries to other "Deprecated" and "Alternate" sections
 
 ## Dependency Injection
+
+Author: @mbarlow12
 
 Some background reading for those interested:
 * https://martinfowler.com/articles/injection.html
@@ -206,6 +213,8 @@ Note: Since JS doesn't have strict privacy on object methods & properties (i.e. 
 The complication really arises from what can be done when the button is pushed. Perhaps it creates and appends a new `Shape` or contextually adds a new `Button` to perform some other action.
 
 ## Dispose
+
+Author: @zepumph
 
 Disposal is the process of freeing up memory so that it can be garbage collected. In general, JavaScript will garbage 
 collect. A memory leak is when an Object in the sim keeps a reference to something that should be garbage collected. 
@@ -344,6 +353,8 @@ Here are some issues that have investigated trying to bring creation and disposa
 
 ## Enumeration
 
+Author: @pixelzoom
+
 This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
 
 PhET’s preferred implementation of this pattern can be found in [Enumeration.js](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js).  
@@ -364,6 +375,8 @@ facilitate debugging) and `Object.freeze`  to prevent unintentional modification
  [SolutionType.js](https://github.com/phetsims/acid-base-solutions/blob/master/js/common/enum/SolutionType.js).
 
 ## Mixins and Traits
+
+Author: @jessegreenberg
 
 Descriptions for each standard pattern can be found here:
   - Mixin: https://en.wikipedia.org/wiki/Mixin
@@ -472,6 +485,8 @@ MyTrait.mixInto( MyClass );
 
 ## Model-View Controller
 
+Author: 🚧 
+
 A standard pattern described in https://en.wikipedia.org/wiki/Model–view–controller
 
 `Screen`, `ScreenView`, model container, `Property`, `Emitter`, `Nodes`
@@ -480,21 +495,29 @@ Most important pattern for new developers
 
 ## Model-View Transform
 
+Author: 🚧  
+
 role in MVC, examples to demystify scenery transform methods (`localToGlobalPoint`, etc.).
 When should you use `localToGlobalPoint` instead of `parentToGlobalPoint` and
 `globalToParentPoint` instead of `globalToLocalPoint`?
 
 ## Module
 
+Author: 🚧 
+
 `require` statements and requirejs
 
 ## Namespace
+
+Author: @jonathanolson 🚧 
 
 why we need it, convention for inner classes
 
 Interested developers: JG, DB, CK
 
 ## Observer
+
+Author: @pixelzoom 🚧 
 
 A standard pattern described in https://en.wikipedia.org/wiki/Observer_pattern
 
@@ -506,6 +529,8 @@ Very important pattern for new developers
 
 
 ## `options` and `config`
+
+Author: 🚧 
 
 TODO Incorporate best practices from https://github.com/phetsims/phet-info/issues/96.
 
@@ -592,11 +617,15 @@ or to group them--use your judgment.
 
 ## Prototypal Inheritance
 
+Author: 🚧 
+
 what it is, how it differs from `class`, use of `call` and `inherit`, use with Mixin and Trait
 
 e.g. https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9
 
 ## Singleton
+
+Author:  
 
 This is a standard pattern described in https://en.wikipedia.org/wiki/Singleton_pattern.
 
@@ -687,9 +716,11 @@ ExampleConstants.printMessage();
 
 ## State Machine
 
+Author: @jbphet 🚧 
+
 Use in Games, see https://github.com/phetsims/vegas/issues/74
 
 ## Traits
 
-see Mixin & Traits
+see [Mixins & Traits](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixins-and-traits)
 
