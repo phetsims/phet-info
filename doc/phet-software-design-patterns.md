@@ -10,7 +10,7 @@ of standard design patterns.
 * [Dependency Injection](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dependency-injection)
 * [Dispose](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dispose)
 * [Enumeration](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#enumeration)
-* [Mixins & Traits](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixins-and-traits)
+* [Mixin and Trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
 * [Model-View Controller](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller) 🚧 
 * [Module](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#module) 🚧 
 * [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace) 🚧   @jonathanolson
@@ -374,7 +374,7 @@ The typical implementation associates named keys with numeric values. PhET’s i
 facilitate debugging) and `Object.freeze`  to prevent unintentional modification. See for example
  [SolutionType.js](https://github.com/phetsims/acid-base-solutions/blob/master/js/common/enum/SolutionType.js).
 
-## Mixins and Traits
+## Mixin and Trait
 
 Author: @jessegreenberg
 
@@ -720,7 +720,7 @@ Author: @jbphet 🚧
 
 Use in Games, see https://github.com/phetsims/vegas/issues/74
 
-## Traits
+## Trait
 
-see [Mixins & Traits](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixins-and-traits)
+see [Mixin and Trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
 
