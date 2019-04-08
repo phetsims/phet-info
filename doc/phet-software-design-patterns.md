@@ -8,7 +8,23 @@ Common sections for each pattern:
 - pitfalls
 - examples
 
-## Creator Pattern (with Drag Forwarding)
+## Table of Contents
+
+* [Composition and Inheritance](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#composition-and-inheritance)
+* [Creator](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-pattern-with-drag-forwarding)
+* [Dependency Injection](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dependency-injection)
+* [Dispose](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dispose)
+* [Enumeration](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#enumerations)
+* [Mixins & Traits](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixins--traits)
+* [Model-View Controller](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller)
+* [Module](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#module)
+* [Observer](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#observer)
+* [options and config](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config-parameters)
+* [Prototypal Inheritance](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#prototypal-inheritance)
+* [Singleton](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#singleton)
+* [State Machine](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#state-machine)
+
+## Creator (with Drag Forwarding)
 (formerly known as the Model Element Creator Pattern) 
 
 Simulations may allocate all of the objects during startup, or may dynamically create new instances while the simulation
@@ -316,7 +332,7 @@ Here are some issues that have investigated trying to bring creation and disposa
 * https://github.com/phetsims/axon/issues/84
 * https://github.com/phetsims/axon/issues/93
 
-## Enumerations
+## Enumeration
 
 This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
 
@@ -337,7 +353,7 @@ The typical implementation associates named keys with numeric values. PhET’s i
 facilitate debugging) and `Object.freeze`  to prevent unintentional modification. See for example
  [SolutionType.js](https://github.com/phetsims/acid-base-solutions/blob/master/js/common/enum/SolutionType.js).
 
-## Mixins & Traits
+## Mixins and Traits
 
 Descriptions for each standard pattern can be found here:
   - Mixin: https://en.wikipedia.org/wiki/Mixin
@@ -494,7 +510,7 @@ input listeners.
 Very important pattern for new developers
 
 
-## `options` and `config` Parameters
+## `options` and `config`
 
 TODO Incorporate best practices from https://github.com/phetsims/phet-info/issues/96.
 
