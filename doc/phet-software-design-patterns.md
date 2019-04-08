@@ -3,11 +3,6 @@
 This document describes software design patterns that are specific to PhET, and PhET-specific applications
 of standard design patterns.
 
-Common sections for each pattern:
-- when to use
-- pitfalls
-- examples
-
 ## Table of Contents
 
 * [Composition and Inheritance](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#composition-and-inheritance)
