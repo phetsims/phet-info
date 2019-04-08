@@ -70,12 +70,120 @@ For discussion:
 
 ## Dependency Injection
 
-A standard pattern described in https://en.wikipedia.org/wiki/Dependency_injection.
+Some background reading for those interested:
+* https://martinfowler.com/articles/injection.html
+* https://en.wikipedia.org/wiki/Dependency_injection
+* https://www.jamesshore.com/Blog/Dependency-Injection-Demystified.html
 
 SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clarify which form of dependency injection 
 (probably constructor-based injection), and some examples of where it's currently used in PhET sims.
 
-MB will take this for 4/1/19 discussion.
+The main goal of DI is to decouple the implementation of a required object instance from where it’s used. While there are a few different ways to accomplish this, the basic idea is to provide the wrapping class with its required instance variables instead of allowing it to instantiate them itself. For example,
+
+```js
+class MyClass {
+    constructor() {
+        super();
+        this.otherObject = new OtherObject();
+    }
+}
+```
+Here, `MyClass` is tightly coupled to the specific implementation of `OtherObject` making it rather inflexible. With DI, you instantiate the object elsewhere and add it to a class via its constructor (Constructor Injection) or through a setter (Setter Injection)
+
+```js
+class MyClass {
+  constructor( otherObject ) {
+    super();
+    this.otherObject = otherObject;
+  }
+}
+```
+
+```js
+class MyClass {
+  constructor() {
+    super();
+  }
+
+  _setOtherObject( otherObject ) {
+    this.otherObject = otherObject;
+  }
+
+  set otherObject( otherObject ) {
+    this._setOtherObject( otherObject );
+  }
+}
+```
+
+There are other forms of DI using interfaces or service locators, but they're not really applicable for the vast majority of PhET use cases. In JavaScript, since everything is an `Object`, you could say that any assignment to class/object properties from a constructor/method is DI since they all extend `Object`'s methods.
+
+```js
+class MyClass {
+  constructor( aString, anArray, otherObject ) {
+    super();
+    this.aString = aString;
+    this.anArray = anArray;
+    this.otherObject = otherObject;
+  }
+
+  myClassToString() {
+    return this.aString.toString() + this.anArray.toString() + this.otherObject.toString();
+  }
+}
+
+const myClassInstance = new MyClass( 'hello', [ 'there', 'world' ], new DifferentOtherObjectImplementation() );
+myClassInstance.myClassToString();
+```
+
+This takes advantage of the fact that while each argument has a `toString` method, their implementations can be wildly different (provided the implementation still returns a `string`).
+
+-------------
+
+We already see a lot of straightforward DI at PhET such as passing `model` or `Property` instances as constructor arguments or in our `options` and `config` objects. The issue (as presented in https://github.com/phetsims/tasks/issues/952) is in places where we have a composite Node/object and when such types should use DI or initialize their instance variables internally.
+
+A simple example would be a Node that had a `Text` object and a `Button` object as its children and we want to expose adding a push handler to the client code.
+
+```js
+class ButtonAndText extends Node {
+
+  constructor() {
+    super();
+    this.textNode = new Text( 'some text' );
+    this.button = new RoundPushButton( {
+      radius: ...,
+      content: ...,
+      baseColor: ...,
+      touchAreaDilation: ...
+    } );
+    this.children = [ this.textNode, this.button ];
+  }
+
+  addPushListener( handler ) {
+    this.button.addListener( handler );
+  }
+}
+```
+
+vs
+
+```js
+class ButtonAndText extends Node {
+  constructor( textNode, roundPushButton ) {
+    super();
+    this.textNode = textNode;
+    this.roundPushButton = roundPushButton;
+    this.children = [ this.textNode, this.roundPushButton ];
+  }
+
+  // can also add the listener here
+  addPushListener( handler ) {
+    this.button.addListener( handler );
+  }
+}
+```
+Note: Since JS doesn't have strict privacy on object methods & properties (i.e. `new ButtonAndText().button.addListener( ... )` is allowed), this boils down to a convention we'd like to see implemented as opposed to a hard requirement of the language.
+
+The complication really arises from what can be done when the button is pushed. Perhaps it creates and appends a new `Shape` or contextually adds a new `Button` to perform some other action.
 
 ## Dispose
 
