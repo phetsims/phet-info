@@ -19,6 +19,20 @@ of standard design patterns.
 * [Singleton](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#singleton)
 * [State Machine](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#state-machine)
 
+## Composition and Inheritance
+  - Noted as a new topic during patterns discussion on 2/11/19.
+  - Would be good to note PhET decisions and patterns for this here.
+  - Relavant info/links:
+    - https://en.wikipedia.org/wiki/Composition_over_inheritance
+      - "Composition over inheritance (or composite reuse principle) in object-oriented programming (OOP) is the principle that classes should achieve polymorphic behavior and code reuse by their composition (by containing instances of other classes that implement the desired functionality) rather than inheritance from a base or parent class."
+    - Chrome's optimization makes it so that sims would be faster if we used composition over inheritance.
+    - Composition is generally more flexible.
+  - If what you are trying to model can easily be described by composition, you should use composition.
+  - If composition produces numerous forwarding calls, it indicates that perhaps inheritance should be used instead.
+    - The forwarding calls produced by composition can be beneficial though, they are explicit and protect things things
+    that need to stay private.
+  - It was mentioned that numerous forwarding calls can increase the memory impact, especially on types that are instantiated many many times by a simulation (like Vector2).
+  
 ## Creator (with Drag Forwarding)
 (formerly known as the Model Element Creator Pattern) 
 
@@ -454,21 +468,6 @@ class MyClass extends SuperClass {
 MyTrait.mixInto( MyClass );
 ```
 </details>
-
-## Composition and Inheritance
-  - Noted as a new topic during patterns discussion on 2/11/19.
-  - Would be good to note PhET decisions and patterns for this here.
-  - Relavant info/links:
-    - https://en.wikipedia.org/wiki/Composition_over_inheritance
-      - "Composition over inheritance (or composite reuse principle) in object-oriented programming (OOP) is the principle that classes should achieve polymorphic behavior and code reuse by their composition (by containing instances of other classes that implement the desired functionality) rather than inheritance from a base or parent class."
-    - Chrome's optimization makes it so that sims would be faster if we used composition over inheritance.
-    - Composition is generally more flexible.
-  - If what you are trying to model can easily be described by composition, you should use composition.
-  - If composition produces numerous forwarding calls, it indicates that perhaps inheritance should be used instead.
-    - The forwarding calls produced by composition can be beneficial though, they are explicit and protect things things
-    that need to stay private.
-  - It was mentioned that numerous forwarding calls can increase the memory impact, especially on types that are instantiated many many times by a simulation (like Vector2).
-
 
 ## Model-View Controller
 
