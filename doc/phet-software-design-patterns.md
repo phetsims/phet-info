@@ -99,10 +99,6 @@ class MyClass {
 
 ```js
 class MyClass {
-  constructor() {
-    super();
-  }
-
   _setOtherObject( otherObject ) {
     this.otherObject = otherObject;
   }
