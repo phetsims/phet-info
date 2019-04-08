@@ -528,7 +528,7 @@ input listeners.
 Very important pattern for new developers
 
 
-## `options` and `config`
+## options and config
 
 Author: 🚧 
 
