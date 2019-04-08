@@ -625,7 +625,7 @@ e.g. https://medium.com/javascript-scene/master-the-javascript-interview-what-s-
 
 ## Singleton
 
-Author:  
+Author: @chrisklus 
 
 This is a standard pattern described in https://en.wikipedia.org/wiki/Singleton_pattern.
 
