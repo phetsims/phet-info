@@ -83,7 +83,6 @@ The main goal of DI is to decouple the implementation of a required object insta
 ```js
 class MyClass {
     constructor() {
-        super();
         this.otherObject = new OtherObject();
     }
 }
@@ -93,7 +92,6 @@ Here, `MyClass` is tightly coupled to the specific implementation of `OtherObjec
 ```js
 class MyClass {
   constructor( otherObject ) {
-    super();
     this.otherObject = otherObject;
   }
 }
