@@ -37,6 +37,7 @@
 | Equality Explorer: Basics | @pixelzoom | ✓ |
 | Equality Explorer: Two Variables | @pixelzoom | ✓ |
 | Estimation | @jbphet | |
+| Example Sim | @pixelzoom | |
 | Expression Exchange |  @jbphet  | ✓ |
 | Faraday's Law |  @jbphet  | ✓ |
 | Fluid Pressure and Flow | @zepumph | |
@@ -83,6 +84,7 @@
 | Reactants, Products and Leftovers |  @pixelzoom  | ✓ |
 | Resistance in a Wire |  @zepumph  | ✓ |
 | Rutherford Scattering |  @jessegreenberg  | ✓ |
+| Simula Rasa | @pixelzoom | |
 | States of Matter |  @jbphet  | ✓ |
 | States of Matter: Basics |  @jbphet  | ✓ |
 | Sugar and Salt Solutions | @samreid | |
