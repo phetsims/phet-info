@@ -103,6 +103,7 @@ phet-info
 phetcommon
 phetmarks
 phet-io
+phet-io-test-sim
 phet-io-wrappers
 phet-io-wrapper-arithmetic
 phet-io-wrapper-classroom-activity
