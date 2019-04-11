@@ -12,7 +12,7 @@ of standard design patterns.
 * [Enumeration](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#enumeration)
 * [Mixin and Trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
 * [Model-View Controller](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller) 🚧 
-* [Module](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#module) 🚧 
+* [Module](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#module) @denz1994 🚧 
 * [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace) 🚧   @jonathanolson
 * [Observer](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#observer) 🚧 @pixelzoom
 * [options and config](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config) 🚧 
@@ -503,7 +503,7 @@ When should you use `localToGlobalPoint` instead of `parentToGlobalPoint` and
 
 ## Module
 
-Author: 🚧 
+Author: @denz1994 🚧 
 
 `require` statements and requirejs
 
