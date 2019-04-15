@@ -177,6 +177,23 @@ setPhotonAbsorptionStrategy( wavelength, strategy ) {
   this.mapWavelengthToAbsorptionStrategy[ wavelength ] = strategy;
 }
 ```
+An example of DI through the options object can be found in [Slider.js](https://github.com/phetsims/sun/blob/master/js/Slider.js). There are a series of options that allow the client to alter the appearance of the Slider’s thumb, but the client can also pass an instance of a `SliderThumb` in the options that will override the [defaults](https://github.com/phetsims/sun/blob/b4fadc867525be5577febefd3324064e6684e2f2/js/Slider.js#L70).
+
+```js
+var thumb = options.thumbNode || new SliderThumb( {
+
+  // propagate options that are specific to SliderThumb
+  size: options.thumbSize,
+  fill: options.thumbFill,
+  fillHighlighted: options.thumbFillHighlighted,
+  stroke: options.thumbStroke,
+  lineWidth: options.thumbLineWidth,
+  centerLineStroke: options.thumbCenterLineStroke,
+  tandem: options.tandem.createTandem( 'thumb' )
+} );
+```
+
+This is useful if the requirements go beyond the provided defaults (e.g. registering a custom input listener on the thumb).
 
 ## Dispose
 
