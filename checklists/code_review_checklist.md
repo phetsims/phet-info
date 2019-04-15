@@ -419,6 +419,31 @@ var targetConfiguration = this.getTargetConfiguration( crystal );
 
 - [ ] Abstract methods (normally implemented with an error) should be marked with `@abstract` jsdoc.
 
+- [ ] If you need to namespace an inner class, use `{{namespace}}.register`, and include a comment about why the inner class needs to be namespaced. For example:
+
+```js
+const myNamespace = require(...);
+
+class SlotMachineNode extends Node {
+  constructor( ... ) {
+    this.leverNode = new LeverNode(...);
+    ...
+  }
+ ...
+}
+
+myNamespace.register( 'SlotMachineNode', SlotMachineNode );
+
+class LeverNode extends Node { 
+ ...
+}
+
+// It was useful to be able to instantiate this in the console for testing, and we may need to do so in the future.
+myNamespace.register( 'SlotMachineNode.LeverNode', LeverNode );
+
+return SlotMachineNode;
+```
+
 ##### Visibility Annotations
 Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations to document the intent of the programmer, and define the public API. Visibility annotations are required for anything that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility annotations are as follows:
 
