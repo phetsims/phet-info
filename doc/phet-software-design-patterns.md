@@ -166,51 +166,17 @@ This takes advantage of the fact that while each argument has a `toString` metho
 
 -------------
 
-We already see a lot of straightforward DI at PhET such as passing `model` or `Property` instances as constructor arguments or in our `options` and `config` objects. The issue (as presented in https://github.com/phetsims/tasks/issues/952) is in places where we have a composite Node/object and when such types should use DI or initialize their instance variables internally.
+We already see a lot of straightforward DI at PhET such as passing `model` or `Property` instances as constructor arguments or in our `options` and `config` objects. How PhET handles DI is largely up to the developer and we can find instances of each flavor in our codebase; however, we most commonly see dependencies passed either as constructor arguments or within our options/config objects. When deciding what approach to take, it's generally a good idea to examine the those objects for their complexity. Large, heavily nested options objects are a relatively good indicator that DI may simplify your implementation.
 
-A simple example would be a Node that had a `Text` object and a `Button` object as its children and we want to expose adding a push handler to the client code.
+To start, [Molecules and Light](https://github.com/phetsims/molecules-and-light) employs setter injection in how it handles absorption of various wavelengths of light for different molecules.
 
-```js
-class ButtonAndText extends Node {
-
-  constructor() {
-    super();
-    this.textNode = new Text( 'some text' );
-    this.button = new RoundPushButton( {
-      radius: ...,
-      content: ...,
-      baseColor: ...,
-      touchAreaDilation: ...
-    } );
-    this.children = [ this.textNode, this.button ];
-  }
-
-  addPushListener( handler ) {
-    this.button.addListener( handler );
-  }
-}
-```
-
-vs
+In [Molecule.js](https://github.com/phetsims/molecules-and-light/blob/master/js/photon-absorption/model/Molecule.js), the constructor initializes `this.mapWavelengthToAbsorptionStrategy = {}`. Then on ln 189, we have the following method allows any object inheriting Molecule to dynamically set the necessary `PhotonAbsorptionStrategy`
 
 ```js
-class ButtonAndText extends Node {
-  constructor( textNode, roundPushButton ) {
-    super();
-    this.textNode = textNode;
-    this.roundPushButton = roundPushButton;
-    this.children = [ this.textNode, this.roundPushButton ];
-  }
-
-  // can also add the listener here
-  addPushListener( handler ) {
-    this.button.addListener( handler );
-  }
+setPhotonAbsorptionStrategy( wavelength, strategy ) {
+  this.mapWavelengthToAbsorptionStrategy[ wavelength ] = strategy;
 }
 ```
-Note: Since JS doesn't have strict privacy on object methods & properties (i.e. `new ButtonAndText().button.addListener( ... )` is allowed), this boils down to a convention we'd like to see implemented as opposed to a hard requirement of the language.
-
-The complication really arises from what can be done when the button is pushed. Perhaps it creates and appends a new `Shape` or contextually adds a new `Button` to perform some other action.
 
 ## Dispose
 
