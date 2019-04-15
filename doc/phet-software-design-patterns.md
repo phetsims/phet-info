@@ -13,7 +13,7 @@ of standard design patterns.
 * [Mixin and Trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
 * [Model-View Controller](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller) 🚧 
 * [Module](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#module) @denz1994 🚧 
-* [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace) 🚧   @jonathanolson
+* [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace)
 * [Observer](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#observer) 🚧 @pixelzoom
 * [options and config](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config) 🚧 
 * [Prototypal Inheritance](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#prototypal-inheritance) 🚧 
@@ -509,9 +509,46 @@ Author: @denz1994 🚧
 
 ## Namespace
 
-Author: @jonathanolson 🚧 
+Author: @jonathanolson
 
-why we need it, convention for inner classes
+This describes the PhET-specific conventions for the pattern described by https://en.wikipedia.org/wiki/Namespace.
+Namespaces allow runtime (dev tools) access to arbitrary namespaced objects. For example, if running in a simulation,
+`window.phet` is available, and has a number of other namespaces below it (e.g. `window.phet.scenery`), so that while
+debugging, the type `phet.scenery.Node` can be directly accessed. In other contexts, namespaces may be directly
+available on `window` (e.g. built forms of dot/kite/scenery and other related utilities). This is instead of a
+"global" namespace (where every object is in one namespace), which would prevent any two types in any repositories from
+having the same name (name collision). In addition another "alternative" would be to not give access to runtime objects,
+but this would make debugging much more difficult.
+
+For our uses, each repository generally has one namespace (available via requireJS) at the top level, e.g.
+`molecule-shapes/js/moleculeShapes.js` (generally camel-cased) would contain:
+```js
+define( function( require ) {
+  'use strict';
+
+  var Namespace = require( 'PHET_CORE/Namespace' );
+
+  return new Namespace( 'moleculeShapes' );
+} );
+```
+Thus the namespace object would be available under `phet.moleculeShapes` in simulations.
+
+To add an object to a namespace, use the `register` method, e.g.:
+```js
+moleculeShapes.register( 'Bond', Bond );
+```
+
+For example, now `phet.moleculeShapes.Bond` will point to the value of `Bond` above. Note that when assertions are
+enabled in require.js mode that some checks will be made to ensure that almost all modules are namespaced, and that
+namespaces correspond to modules (to help catch namespace errors).
+
+There is a somewhat-unused feature to call register with dot-separated path-like values in the string portion (for
+handling things like inner classes, see https://github.com/phetsims/phet-core/issues/52), however there is some
+uncertainty about the usefulness. It's @jonathanolson's opinion that this can be scrapped, and if references are
+desired then they can be set directly on the main type/object for the module (e.g. `Bond.Something = Something`).
+
+Another unused feature is to nest namespaces. It should be possible to register one namespace as an object on
+another namespace.
 
 Interested developers: JG, DB, CK
 
