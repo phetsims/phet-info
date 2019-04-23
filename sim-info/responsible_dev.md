@@ -19,6 +19,7 @@
 | Build a Fraction | @jonathanolson | ✓ |
 | Build a Molecule | @jonathanolson |  |
 | Build an Atom  | @jbphet  | ✓ |
+| Buoyancy | @jonathanolson | |
 | Calculus Grapher | @jonathanolson | |
 | Capacitor Lab: Basics | @jonathanolson | ✓ |
 | Charges And Fields | @jonathanolson  | ✓ |
@@ -30,6 +31,7 @@
 | Concentration |  @pixelzoom  | ✓ |
 | Coulomb's Law | @mbarlow12 | ✓ |
 | Curve Fitting | @jonathanolson | |
+| Density | @jonathanolson | |
 | Energy Forms and Changes | @chrisklus | ✓ |
 | Energy Skate Park |  @jessegreenberg  | |
 | Energy Skate Park: Basics |  @samreid  | ✓ |
