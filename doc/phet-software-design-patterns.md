@@ -763,9 +763,43 @@ Area Model, Expression Exchange, Area Model, and a number of other sims.  It was
 extensively to control the behavior of the biomolecules in Gene Expression Essentials.  If you're
 in search of examples, these would be good places to start.
 
-When using a state machine, it's generally a good idea to define the states in an enum.  Here is
-as example from   
+The states which a state machine will support should be defined in an Enum.  Here is an example (this
+is from the Arithmetic sim, but has been "modernized" to meet our latest standards):
+```js
+define( function( require ) {
+  'use strict';
 
+  // modules
+  const arithmetic = require( 'ARITHMETIC/arithmetic' );
+
+  // @public
+  const GameState = new Enumeration( [
+    'SELECTING_LEVEL',
+    'AWAITING_USER_INPUT',
+    'DISPLAYING_CORRECT_ANSWER_FEEDBACK',
+    'DISPLAYING_INCORRECT_ANSWER_FEEDBACK',
+    'SHOWING_LEVEL_COMPLETED_DIALOG',
+    'LEVEL_COMPLETED'
+  ] );
+
+  arithmetic.register( 'GameState', GameState );
+
+  return GameState;
+
+} );
+``` 
+
+There are many different possible ways to implement a state machine, and PhET has not
+standardized on a single implementation.  On approach is to use the pattern described in
+"Design Patterns: Elements of Reusable Object-Oriented Software", where each state of the
+state machine is represented by an instance of an abstract "state" base class, and the
+methods defined in this base class specify all of the stimuli that can be received by the
+state machine.  This was the approach taken in the Build an Atom game, and the base class
+for all states can be seen at [BAAGameState.js](https://github.com/phetsims/build-an-atom/blob/master/js/game/model/BAAGameState.js).
+
+What else should be added here?
++ anti-patterns?  Should we not use switch for instance?
++ other examples from other sims?
 
 ## Trait
 
