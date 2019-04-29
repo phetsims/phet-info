@@ -747,7 +747,7 @@ Author: @jbphet 🚧
 
 In general, a state machine, also known as a Finite-State Machine (FSM), is an abstract machine that
 can be in one and only one of a finite number of states at any one time and takes actions and changes
-its state in response to inputs, aka stimuli.  The the book "Design Patterns: Elements of Reusable
+its state in response to inputs, aka stimuli.  In the book "Design Patterns: Elements of Reusable
 Object-Oriented Software" by Gamma, Helm, Johnson, and Vlissides, the pattern is simply referred to
 as "State".  In the book "Head First Design Patterns" by Freeman & Freeman, the pattern is defined
 as follows:
@@ -755,7 +755,7 @@ as follows:
 > The State Pattern allows an object to alter its behavior when its internal state changes.  The
 > object will appear to change its class.
 
-There are tons of references on line for this pattern, here are some that seem reasonably good:
+There are tons of references on line for this pattern. Here are some that seem reasonably good:
 + Wikipedia: https://en.wikipedia.org/wiki/State_pattern
 + GeeksForGeeks: https://www.geeksforgeeks.org/state-design-pattern/
 + Game Programming Patterns: http://gameprogrammingpatterns.com/state.html
@@ -793,6 +793,8 @@ define( function( require ) {
 
 There are many different possible ways to implement the state machine behavior, and PhET has not
 standardized on a single implementation.  On approach is to use the pattern described in
+There are many different possible ways to implement a state machine, and PhET has not
+standardized on a single implementation.  One approach is to use the pattern described in
 "Design Patterns: Elements of Reusable Object-Oriented Software", where each state of the
 state machine is represented by an instance of an abstract "state" base class, and the
 methods defined in this base class specify all of the stimuli that can be received by the
