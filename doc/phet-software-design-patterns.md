@@ -743,7 +743,7 @@ ExampleConstants.printMessage();
 
 ## State Machine
 
-Author: @jbphet 🚧
+Author: @jbphet
 
 In general, a state machine, also known as a Finite-State Machine (FSM), is an abstract machine that
 can be in one and only one of a finite number of states at any one time and takes actions and changes
@@ -791,19 +791,75 @@ define( function( require ) {
 } );
 ``` 
 
-There are many different possible ways to implement the state machine behavior, and PhET has not
-standardized on a single implementation.  On approach is to use the pattern described in
-There are many different possible ways to implement a state machine, and PhET has not
-standardized on a single implementation.  One approach is to use the pattern described in
+There are many different possible ways to implement a state machine in code, and PhET has not
+standardized on a single approach.  One method is to use the pattern described in
 "Design Patterns: Elements of Reusable Object-Oriented Software", where each state of the
 state machine is represented by an instance of an abstract "state" base class, and the
 methods defined in this base class specify all of the stimuli that can be received by the
-state machine.  This was the approach taken in the Build an Atom game, and the base class
-for all states can be seen at [BAAGameState.js](https://github.com/phetsims/build-an-atom/blob/master/js/game/model/BAAGameState.js).
+state machine.  A transition from one state to another is done by switching the instance of
+of the state from one of these subclasses to another.  This was the approach taken in the Build
+an Atom game (and several other game implementations), and the base class for all states can be
+seen at [BAAGameState.js] (https://github.com/phetsims/build-an-atom/blob/master/js/game/model/BAAGameState.js).
 
-What else should be added here?
-+ anti-patterns?  Should we not use switch for instance?
-+ other examples from other sims?
+Another approach is to use a switch statement that switches on the current state, and the code 
+under each switch statement handles the incoming event.  This approach hasn't been used much in
+PhET code (at least not at the time of this writing), so here is an example that was found on
+line at https://24ways.org/2018/state-machines-in-user-interfaces/.
+
+```js
+function loginMachine(state, event) {
+       switch (state) {
+           case 'start':
+               if (event === 'SUBMIT') {
+                   return 'loading';
+               }
+               break;
+           case 'loading':
+               if (event === 'RESOLVE') {
+                   return 'success';
+               } else if (event === 'REJECT') {
+                   return 'error';
+               }
+               break;
+           case 'success':
+               // Accept no further events
+               break;
+           case 'error':
+               if (event === 'SUBMIT') {
+                   return 'loading';
+               }
+               break;
+           default:
+               // This should never occur
+               return undefined;
+       }
+   }
+```
+
+Yet another approach is to use a function table, where one axis represents the states and the 
+other represents the stimuli or events that can occur.  The benefit of this approach is that
+it forces the implementation to explicitly handle all combinations of states and stimuli.
+There is an article with an explanation and some good diagrams at https://en.wikipedia.org/wiki/State_transition_table.  
+There is a decent stack overflow article that shows an example of that here: 
+https://stackoverflow.com/questions/133214/is-there-a-typical-state-machine-implementation-pattern
+
+One of the tricky things about software-based state machines is that it is often difficult for 
+someone who is tasked with maintaining the code to understand the big picture of how the state machine operates
+based on examination of the source code.  Due to this, it is a strongly recommended practice for PhET
+developers that the state machine be documented in diagrammatic form in either a GitHub issue, a JPG or PNG in 
+the doc folder, or in the design document.  Also, there are tools such as http://asciiflow.com/ that can be useful for
+creating "ascii art" representations of the state diagram.
+
+There are some standard ways to diagram state machine behavior, so when documenting one, please
+investigate UML State Diagrams.  A quick search on this turned up [a link that has a pretty good
+explanation and some examples](https://www.geeksforgeeks.org/unified-modeling-language-uml-state-diagrams/).
+
+In most cases it will likely be important that state transitions are visible within a PhET-iO
+instrumented sim.  For this reason, an Axon Property should generally be used for the state value
+so that it can easily be instrumented.  Setting state values via the PhET-iO API is less likely
+to be supported, since it would be difficult to make the code able to handle arbitrarily state transitions.
+If this were ever done, it would require thorough documentation to describe the valid 
+state transitions that can be triggered via this API. 
 
 ## Trait
 
