@@ -21,6 +21,14 @@ read -sp "Github Password: " password
 echo ''
 creds=${username}:${password}
 
+read -p "Do you want to update the list of repos(y/N)?" shouldUpdate
+if [[ ${shouldUpdate} != 'N' ]]
+then
+    ./update-repos.sh ${username} ${password}
+fi
+
+
+
 echo 'For each repo, this script should print "204 No Content" to indicate success'
 
 for repo in `cat phetsims-repos`
