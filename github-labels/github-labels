@@ -36,11 +36,8 @@ project:requires-kathy,0000FF
 status:blocks-publication,00FFCC
 status:blocks-sim-publication,00ff6e
 status:fixed-awaiting-deploy,006b75
-status:fixed-pending-testing,00FFCC
-status:in-progress,CCFFCC
 status:on-hold,F0FFF0
 status:ready-for-review,3E766D
-status:ready-to-test,006400
 type:automated-testing,FF00AA
 type:bug,FF00AA
 type:duplicate,EEEED1
