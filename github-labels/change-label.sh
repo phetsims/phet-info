@@ -20,10 +20,11 @@ read -p "Github Username: " username
 read -sp "Github Password: " password
 echo ''
 creds=${username}:${password}
+./update-repos-list.sh ${username} ${password}
 
 echo 'For each repo, this script should print "200 OK" to indicate success'
 
-for repo in `cat phetsims-repos`
+for repo in `cat .repos`
 do
   repo=`echo ${repo}`
   url=https://api.github.com/repos/phetsims/${repo}/labels/${old}
@@ -33,4 +34,8 @@ do
   curl -isH 'User-Agent: "PhET"' -u "$creds" -d "$new" -X PATCH "$url" | head -n 1
 done
 
-echo "Complete. Don't forget to update the label in the github-labels file"
+sed s/${ppp}/${nnn}/ github-labels > .tmp && mv .tmp github-labels
+sort github-labels -o github-labels
+git pull && git commit github-labels -m "Changed github label from ${old} to ${new}" && git push
+
+echo "Complete."

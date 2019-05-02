@@ -7,3 +7,5 @@ node_modules/
 *.sublime-project
 *.sublime-workspace
 .eslintcache
+github-labels/.repos
+github-labels/.response
