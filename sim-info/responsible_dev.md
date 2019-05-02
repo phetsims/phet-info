@@ -29,7 +29,7 @@
 | Circuit Constructor Kit: DC - Virtual Lab| @samreid | ✓ |
 | Color Vision |  @pixelzoom  | ✓ |
 | Concentration |  @pixelzoom  | ✓ |
-| Coulomb's Law | @mbarlow12 | ✓ |
+| Coulomb's Law | @zepumph | ✓ |
 | Curve Fitting | @jonathanolson | |
 | Density | @jonathanolson | |
 | Energy Forms and Changes | @chrisklus | ✓ |
@@ -58,8 +58,8 @@
 | Graphing Quadratics | @pixelzoom | ✓ |
 | Graphing Slope-Intercept | @pixelzoom | ✓ |
 | Gravity And Orbits | @jessegreenberg  | ✓ |
-| Gravity Force Lab |  @mbarlow12  | ✓ |
-| Gravity Force Lab: Basics | @mbarlow12 | |
+| Gravity Force Lab |  @zepumph  | ✓ |
+| Gravity Force Lab: Basics | @zepumph | |
 | Hooke's Law | @pixelzoom | ✓ |
 | Isotopes and Atomic Mass | @jbphet | ✓ |
 | John Travoltage |  @samreid  | ✓ |
