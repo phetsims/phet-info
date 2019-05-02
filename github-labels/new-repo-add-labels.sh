@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# add-labels.sh
+# new-repo-add-labels.sh
 #
 # This script adds all labels in github-labels to the specified repo
 # The user must manually add the new repo to phetsims-repos so it receives automatic updates in the future
@@ -18,6 +18,7 @@ else
   read -sp "Github Password: " password
   echo ''
   creds=${username}:${password}
+  update-repos-list.sh ${username} ${password}
 
   echo 'For each repo, this script should print "200 OK", "201 Created" or "204 No Content" to indicate success.'
   echo '"422 Unprocessable Entity" indicates an attempt to duplicate a label and can be ignored.'
@@ -98,7 +99,7 @@ else
     curl -isH 'User-Agent: "PhET"' -u "$creds" -d "$json" -X POST "$url" | head -n 1
   done
 
-  echo "Complete. Don't forget to add the repo to the phetsims-repos file"
+  echo "Complete."
 fi
 
 

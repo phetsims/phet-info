@@ -12,7 +12,6 @@ else
     creds=${1}:${2}
 fi
 
-echo $creds
 curl -is -u "$creds" https://api.github.com/orgs/phetsims/repos -o .response
 
 pageExtractor='s/.*page=\([0-9]\).*/\1/g'

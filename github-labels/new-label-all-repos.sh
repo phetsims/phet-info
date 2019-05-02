@@ -21,9 +21,11 @@ read -sp "Github Password: " password
 echo ''
 creds=${username}:${password}
 
+update-repos-list.sh ${username} ${password}
+
 echo 'For each repo, this script should print "201 Created" to indicate success"'
 
-for repo in `cat phetsims-repos`
+for repo in `cat .repos`
 do
   repo=`echo ${repo}`
   url=https://api.github.com/repos/phetsims/$repo/labels
@@ -33,4 +35,8 @@ do
   curl -isH 'User-Agent: "phet"' -u "$creds" -d "$label" -X POST "$url" | head -n 1
 done
 
-echo "Complete. Don't forget to add the new label to the github-labels file"
+echo ${label},${color} >> github-labels
+sort github-labels -o github-labels
+git pull && git commit github-labels -m "Added github label from ${label}" && git push
+
+echo "Complete."

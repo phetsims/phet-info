@@ -21,13 +21,7 @@ read -sp "Github Password: " password
 echo ''
 creds=${username}:${password}
 
-read -p "Do you want to update the list of repos(y/N)?" shouldUpdate
-if [[ ${shouldUpdate} != 'N' ]]
-then
-    ./update-repos.sh ${username} ${password}
-fi
-
-
+update-repos-list.sh ${username} ${password}
 
 echo 'For each repo, this script should print "204 No Content" to indicate success'
 
@@ -40,5 +34,9 @@ do
     curl -isH 'User-Agent: "phet"' -u "$creds" -X DELETE ${url} | head -n 1
 done
 
-echo "Complete. Don't forget to remove the label from the github-labels file"
+sed -n /${ppp}/'!p' github-labels > .tmp && mv .tmp github-labels
+sort github-labels -o github-labels
+git pull && git commit github-labels -m "Removed github label ${label}" && git push
+
+echo "Complete."
 
