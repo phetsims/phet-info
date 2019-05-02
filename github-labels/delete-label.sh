@@ -2,10 +2,7 @@
 
 # delete-label.sh
 #
-# This script removes the label from all repos in phetsims-repos
-# The label needs to be removed manually from github-labels
-#
-# TODO: automatically update github-labels when this script is run
+# This script removes the label from all repos
 
 if [[ $1 = '' ]]
 then
@@ -21,11 +18,11 @@ read -sp "Github Password: " password
 echo ''
 creds=${username}:${password}
 
-update-repos-list.sh ${username} ${password}
+./update-repos-list.sh ${username} ${password}
 
 echo 'For each repo, this script should print "204 No Content" to indicate success'
 
-for repo in `cat phetsims-repos`
+for repo in `cat .repos`
 do
     repo=`echo ${repo}`
     url=https://api.github.com/repos/phetsims/${repo}/labels/${label}

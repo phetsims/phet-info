@@ -3,9 +3,6 @@
 # new-repo-add-labels.sh
 #
 # This script adds all labels in github-labels to the specified repo
-# The user must manually add the new repo to phetsims-repos so it receives automatic updates in the future
-#
-# TODO: automatically update phetsims-repos when this script is run
 
 if [[ -z "$1" ]]
 then

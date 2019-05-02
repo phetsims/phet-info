@@ -2,10 +2,7 @@
 
 # update_all.sh
 #
-# This file adds a new label to all repos in phetsims-repos
-# The user must add the new label to the github-labels file manually
-#
-# TODO: automatically update github-labels when this script is run
+# This file adds a new label to all repos
 
 if [[ $1 = '' ]] || [[ $2 = '' ]]
 then
