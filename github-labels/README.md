@@ -5,21 +5,19 @@ This file is not used anywhere else in the project and may be safely removed.  I
 inconvenient this is far more secure.
 
 #### To standardize the labels on a new repo
-1. Add the new repo name to [phetsims-repos](phetsims-repos)
-2. Run `./new-repo-add-labels.sh phetsims/{{new-repo-name}}`
+1. Run `./new-repo-add-labels.sh phetsims/{{new-repo-name}}`
 
 #### To add a new label to all the organization's repos
-1. Following the [labeling-scheme](labeling-scheme.md), add the new label to [github-labels](github-labels).
+1. Choose a new label following the [labeling-scheme](labeling-scheme.md)
 2. Run `./new-label-all-repos.sh {{new-label-name}} {{new-label-color}}`.  `new-label-color` should be the hexcode with no #
 symbol, e.g. FF00AA.
 
 #### To change the text and/or color of a label
-1. Following the [labeling-scheme](labeling-scheme.md), update the existing label in [github-labels](github-labels).
+1. Update the desired lable, following the [labeling-scheme](labeling-scheme.md)
 2. Run `./change-label.sh {{old-label-name}} {{new-label-name}} {{new-label-color}}`.  `new-label-color` should be the
 hexcode with no # symbol, e.g. `FF00AA`.
 
 #### To remove a label from all repos
-1. Remove the label from [github-labels](github-labels).
 2. Run `./delete-label.sh {{label-name}}`.
 
 ### FAQ
