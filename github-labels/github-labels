@@ -50,3 +50,4 @@ type:performance,8B1C62
 type:question,EDCB62
 type:user-feedback,EDE162
 type:wontfix,ffffff
+{"name":"status:ready-for-qa","color":"00cc00"},
