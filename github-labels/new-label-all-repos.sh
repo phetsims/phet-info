@@ -18,7 +18,7 @@ read -sp "Github Password: " password
 echo ''
 creds=${username}:${password}
 
-update-repos-list.sh ${username} ${password}
+./update-repos-list.sh ${username} ${password}
 
 echo 'For each repo, this script should print "201 Created" to indicate success"'
 
@@ -26,10 +26,10 @@ for repo in `cat .repos`
 do
   repo=`echo ${repo}`
   url=https://api.github.com/repos/phetsims/$repo/labels
-  echo "Path: ${url}"
-  echo "Data: ${label}"
+  echo "Adding label to: ${repo}"
   echo "Result:"
   curl -isH 'User-Agent: "phet"' -u "$creds" -d "$label" -X POST "$url" | head -n 1
+  echo ""
 done
 
 echo ${label},${color} >> github-labels
