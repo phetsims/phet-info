@@ -94,6 +94,7 @@
 | Trig Tour |  @jessegreenberg  | ✓ |
 | Under Pressure |  @samreid  | ✓ |
 | Unit Rates |  @pixelzoom  | ✓ |
+| Vector Addition | @veillette | |
 | Wave Interference | @samreid | ✓ |
 | Wave on a String |  @jonathanolson  | ✓ |
 | Waves Intro | @samreid |  |
