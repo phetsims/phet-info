@@ -513,7 +513,7 @@ where `SCENERY` is a dependency of the particular repository where the module li
 
 Be aware there are two prime cases when using `require` isn't ideal. 
 
-1. Some types of circular dependencies
+1. Some types of [circular dependencies](https://en.wikipedia.org/wiki/Circular_dependency)
 2. Using conditional code to do a require call like, _if(someCondition) require('a1') else require('a2')_;
 
 Generally, this may require a rethinking of design or a workaround. For example, if `Node.js` requires `Trail.js` and `Trail.js` requires `Node.js.` We can load both modules from the `Scenery` namespace and access them through `scenery.Node` or `scenery.Trail`. The assumption is that the modules are loaded into the namespace before they are being used. The circular dependency is documented in the require statements of the file.
@@ -567,8 +567,10 @@ It is important to note that 'using strict' should be enforced throughout the Ph
 
 -------
 
-### TODO: Questions/Comments/Concerns:
+#### TODO: Questions/Comments/Concerns:
 - Should we investigate an alternative solution to circular dependencies (search for "Circular dependency" for use cases)?
+    - Perhaps a minimum of two devs should sign off/review before intentional circular dependency implementations?
+    - Maybe use [npm circular-dependency-plugin](https://www.npmjs.com/package/circular-dependency-plugin)?
 - Is a "package"  considered a collection of modules by PhET standards
 - Is "type" the best word to use for the modules types subsection?
 - Other thoughts or branching discussions?
