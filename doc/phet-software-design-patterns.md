@@ -486,7 +486,7 @@ When should you use `localToGlobalPoint` instead of `parentToGlobalPoint` and
 
 ## Module
 
-A module is a program unit that contains declarations which formulate the classes and objects in a system. Modularity is a property of a system whose modules can be compiled independently, but have connections with other modules.  A module has two core components: its interface and its implementation.
+A module is a program unit that contains declarations which formulate the classes and objects in a system. Modularity is a property of a system whose modules can be compiled independently, but have connections with other modules.  A module has two core components: its interface and its implementation. JavaScript modules are useful to define a unit of code and how to register a value for the module. Additionally, modules allow  units of code to reference other units of code.
 
 More background reading:
 
@@ -502,23 +502,23 @@ Modules are also sometimes referred to as packages in the PhET project.
 
 #### Importing Modules:
 
-PhET relies heavily on RequireJS to support importing modules. RequireJS is flexible enough to support browser-based platforms and server sided environments, such as Node. RequireJS pulls inspiration from CommonJS (a popular module format) but improves on it by coding a module format that works well natively in a browser. For more information, read the RequireJS [documentation](https://requirejs.org/).
+PhET relies heavily on RequireJS to support importing modules. RequireJS is flexible enough to support browser-based platforms and server sided environments, such as Node.js. RequireJS pulls inspiration from CommonJS (a popular module format) but improves on it by coding a module format that works well natively in a browser. For more information, read the RequireJS [documentation](https://requirejs.org/).
 
 RequireJS imports are handled at top of all files and use the `require` keyword. Typically, require statements for importing would look something like this:
 
 ```js
     var Node = require( 'SCENERY/nodes/Node' );
 ```
-where `SCENERY` is a dependency of the particular repository where the module lives.
+where `SCENERY` is a dependency of the particular repository where the module lives. This follows a condensed syntax compatible with CommonJS based on asycnhronous module dependency (AMD). This [article](https://requirejs.org/docs/whyamd.html) is a great resource for further reading. 
 
-Be aware there are two prime cases when using `require` isn't ideal. 
+Be aware of two cases, when using `require` should be reconsidered. 
 
 1. Some types of [circular dependencies](https://en.wikipedia.org/wiki/Circular_dependency)
 2. Using conditional code to do a require call like, _if(someCondition) require('a1') else require('a2')_;
 
-Generally, this may require a rethinking of design or a workaround. For example, if `Node.js` requires `Trail.js` and `Trail.js` requires `Node.js.` We can load both modules from the `Scenery` namespace and access them through `scenery.Node` or `scenery.Trail`. The assumption is that the modules are loaded into the namespace before they are being used. The circular dependency is documented in the require statements of the file.
+Generally circular dependencies, require a rethinking of design or a workaround. For example, if `Node.js` requires `Trail.js` and `Trail.js` requires `Node.js.` We can load both modules from the `Scenery` namespace and access them through `scenery.Node` or `scenery.Trail`. The assumption is that the modules are loaded into the namespace before they are being used. The circular dependency is documented near the require statements of both files.
 
-Additionally, you may come across conditional module declarations such as this code snippet from [Chipper/js/common/getLicenseEntry.js](https://github.com/phetsims/chipper/blob/master/js/common/getLicenseEntry.js): 
+Additionally, you may come across conditional module declarations, such as this code snippet from [Chipper/js/common/getLicenseEntry.js](https://github.com/phetsims/chipper/blob/master/js/common/getLicenseEntry.js): 
 ```js
   // browser require.js-compatible definition
   if ( typeof define !== 'undefined' ) {
@@ -533,7 +533,7 @@ Additionally, you may come across conditional module declarations such as this c
   }
 ```
 
-If you come across conditional declarations like the one above, this module is most likely utilized in both client sided and server sided code. The difference in the declaration is needed due to limitations by RequireJS . 
+If you come across conditional declarations like the one above, this module is most likely utilized in both client sided and server sided code. The difference in the declaration is needed due to limitations by RequireJS. 
 
 ----
 
@@ -556,8 +556,43 @@ The PhET codebase follows a similar pattern for module structure as outlined bel
 - Declaration as a function using strict
 - Import:  statements using `require` or `module`
 - Constructor: Houses the main body of our module (attributes and elements)
-- NameSpace: Register our module to avoid conflicts (see NameSpace section)
+- NameSpace: Register our module to avoid conflicts (see [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace) section)
 - Inherit: Module dependency, methods, and statics
+
+Putting it all together modules will usually follow this format:
+
+```js
+
+// Copyright 2013-2018, University of Colorado Boulder
+
+/**
+ * Example Node used for demonstrating typical module formatting in the PhET project.
+ *
+ * @author Denzell Barnett (PhET Interactive Simulations)
+ */
+
+// Declaration using strict mode.
+define( function( require ) {
+  'use strict';
+
+  // Imports
+  var inherit = require( 'PHET_CORE/inherit' );
+  var Node = require( 'SCENERY/nodes/Node' );
+  var fooRepo = require( 'FOO_REPO/fooRepo' );
+
+  // Constructor
+  function FooNode( fooArgument ) {
+    // ...
+  }
+
+  // Namespace registration to repository.
+  fooRepo.register( 'FooNode', FooNode );
+
+  // Inherit is a utility function for setting up prototypal inheritance
+  return inherit( Node, FooNode );
+} );
+
+```
 
 It is important to note that 'using strict' should be enforced throughout the PhET codebase. Strict mode has the unique property of limiting certain javascript functionalities that may not be backward compatible between versions. To avoid this there are three general solutions:
 
@@ -569,7 +604,7 @@ It is important to note that 'using strict' should be enforced throughout the Ph
 
 #### TODO: Questions/Comments/Concerns:
 - Should we investigate an alternative solution to circular dependencies (search for "Circular dependency" for use cases)?
-    - Perhaps a minimum of two devs should sign off/review before intentional circular dependency implementations?
+    - Perhaps a minimum of two devs should sign off/review before implementing intentional circular dependencies?
     - Maybe use [npm circular-dependency-plugin](https://www.npmjs.com/package/circular-dependency-plugin)?
 - Is a "package"  considered a collection of modules by PhET standards
 - Is "type" the best word to use for the modules types subsection?
