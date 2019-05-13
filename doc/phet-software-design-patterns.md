@@ -554,7 +554,7 @@ The PhET codebase follows a similar pattern for module structure as outlined bel
 
 - Top level documentation: General purpose, authorship, and copyright
 - Declaration as a function using strict
-- Import:  statements using `require` or `module`
+- Import:  statements using `require`
 - Constructor: Houses the main body of our module (attributes and elements)
 - NameSpace: Register our module to avoid conflicts (see [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace) section)
 - Inherit: Module dependency, methods, and statics
