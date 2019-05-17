@@ -486,6 +486,8 @@ When should you use `localToGlobalPoint` instead of `parentToGlobalPoint` and
 
 ## Module
 
+Author: @Denz1994 
+
 A module is a program unit that contains declarations which formulate the classes and objects in a system. Modularity is a property of a system whose modules can be compiled independently, but have connections with other modules.  A module has two core components: its interface and its implementation. JavaScript modules are useful to define a unit of code and how to register a value for the module. Additionally, modules allow  units of code to reference other units of code.
 
 More background reading:
