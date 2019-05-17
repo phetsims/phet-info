@@ -18,7 +18,7 @@ of standard design patterns.
 * [options and config](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config) 🚧
 * [Prototypal Inheritance](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#prototypal-inheritance) 🚧
 * [Singleton](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#singleton)
-* [State Machine](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#state-machine) 🚧 @jbphet
+* [State Machine](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#state-machine)
 
 ## Composition and Inheritance
 
