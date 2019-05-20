@@ -537,7 +537,7 @@ Additionally, you may come across conditional module declarations, such as this 
 
 If you come across conditional declarations like the one above, this module is most likely utilized in both client sided and server sided code. The difference in the declaration is needed due to limitations by RequireJS. This is also referred to as a [Universal Module Definition](https://www.davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/) and is compatible with both CommonJS and RequireJS.
 
-Lastly, there is a pattern used for PhET-io wrappers that gets away from the RequireJS overhead.
+Lastly, there is a pattern used for PhET-io wrappers that gets away from the RequireJS overhead. This pattern involves initializing the module directly to the `window` object and calling it in from the HTML DOM using a `<script>` tag.
 
 ----
 
