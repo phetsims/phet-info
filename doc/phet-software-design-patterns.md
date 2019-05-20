@@ -498,8 +498,6 @@ More background reading:
 
 Modules operate as independent pieces of code and are used throughout the whole PhET project. Take a look at some examples in [sim code](https://github.com/phetsims/equality-explorer/blob/master/js/common/view/BoxNode.js), [common code](https://github.com/phetsims/joist/blob/master/js/HomeButton.js), and [code for build tools](https://github.com/phetsims/perennial/blob/master/js/common/build.js).
 
-Modules are also sometimes referred to as packages in the PhET project.
-
 ----
 
 #### Importing Modules:
@@ -511,7 +509,7 @@ RequireJS imports are handled at top of all files and use the `require` keyword.
 ```js
     var Node = require( 'SCENERY/nodes/Node' );
 ```
-where `SCENERY` is a dependency of the particular repository where the module lives. This follows a condensed syntax compatible with CommonJS based on asycnhronous module dependency (AMD). This [article](https://requirejs.org/docs/whyamd.html) is a great resource for further reading. 
+where `SCENERY` is an alias or symbolic constant that represents a path to the repository where the module lives. This follows a condensed syntax compatible with CommonJS based on asycnhronous module dependency (AMD). This [article](https://requirejs.org/docs/whyamd.html) is a great resource for further reading. Note we are not using ES6 modules, but this may change in the upcoming months.
 
 Be aware of two cases, when using `require` should be reconsidered. 
 
@@ -519,6 +517,8 @@ Be aware of two cases, when using `require` should be reconsidered.
 2. Using conditional code to do a require call like, _if(someCondition) require('a1') else require('a2')_;
 
 Generally circular dependencies, require a rethinking of design or a workaround. For example, if `Node.js` requires `Trail.js` and `Trail.js` requires `Node.js.` We can load both modules from the `Scenery` namespace and access them through `scenery.Node` or `scenery.Trail`. The assumption is that the modules are loaded into the namespace before they are being used. The circular dependency is documented near the require statements of both files.
+
+Also if the same file contains two different modules with the same name, RequireJS may consider this a circular dependency. For example, both `KITE` and `NODE` have modules called `Rectangle.js`. The current solution employed involves using a specialized `// eslint-disable` as a workaround.
 
 Additionally, you may come across conditional module declarations, such as this code snippet from [Chipper/js/common/getLicenseEntry.js](https://github.com/phetsims/chipper/blob/master/js/common/getLicenseEntry.js): 
 ```js
@@ -535,15 +535,17 @@ Additionally, you may come across conditional module declarations, such as this 
   }
 ```
 
-If you come across conditional declarations like the one above, this module is most likely utilized in both client sided and server sided code. The difference in the declaration is needed due to limitations by RequireJS. 
+If you come across conditional declarations like the one above, this module is most likely utilized in both client sided and server sided code. The difference in the declaration is needed due to limitations by RequireJS. This is also referred to as a [Universal Module Definition](https://www.davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/) and is compatible with both CommonJS and RequireJS.
+
+Lastly, there is a pattern used for PhET-io wrappers that gets away from the RequireJS overhead.
 
 ----
 
-#### Modules types:
+#### Module catagories:
 
 JS doesn’t support strict typing so we categorize our module require statements into sections such as modules, strings, images, sound, phet-io, etc. This is an organizational practice for readability and is documented as such.
 
-Specific support for types that need plugins follow the RequireJS API as described in its [documentation](https://requirejs.org/docs/plugins.html#api) 
+Specific support for catagories that need plugins follow the RequireJS API as described in its [documentation](https://requirejs.org/docs/plugins.html#api) 
 ```js
   // strings
   var modelString = require( 'string!GRAVITY_AND_ORBITS/model' );
@@ -601,17 +603,6 @@ It is important to note that 'using strict' should be enforced throughout the Ph
 1. Never concatenate strict files and nonstrict files.
 2. Concatenate files by wrapping their bodies in immediately invoked function expressions.
 3. Write your files so that they behave the same in either mode.
-
--------
-
-#### TODO: Questions/Comments/Concerns:
-- Should we investigate an alternative solution to circular dependencies (search for "Circular dependency" for use cases)?
-    - Perhaps a minimum of two devs should sign off/review before implementing intentional circular dependencies?
-    - Maybe use [npm circular-dependency-plugin](https://www.npmjs.com/package/circular-dependency-plugin)?
-- Is a "package"  considered a collection of modules by PhET standards
-- Is "type" the best word to use for the modules types subsection?
-- Other thoughts or branching discussions?
-
 
 
 ## Namespace
