@@ -456,11 +456,20 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 - [ ] For something made public solely for a11y, use `@public (a11y)`
 - [ ] For something made public solely for phet-io, use `@public (phet-io)`
 - [ ] Separate multiple qualifiers with commas. For example: `@public (scenery-internal, read-only)`
-- [ ] Specify the most general type clients should know about.  For example;
+- [ ] Type annotations indicate the most general type clients should know about.  Where the type is obvious from the 
+declaration value, type annotations are unnecessary and can be omitted, see https://github.com/phetsims/wave-interference/issues/268#issuecomment-448345802 
+and below.  Some examples:
 ```js
 // @public (read-only) {Node}
 this.myNode = new VeryComplicatedNodeSubclass()
+
+// @public - whether the wave area graph should be displayed
+this.showGraphProperty = new BooleanProperty( false );
+
+// @public - {Node|null} the layer that shows the fish, null if we have no fish
+this.fishLayer = new Node();
 ```
+
 
 - [ ] For JSDoc-style comments, the annotation should appear in context like this:
 
