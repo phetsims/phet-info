@@ -11,6 +11,16 @@ This document contains miscellaneous resources, tips, and tricks that are availa
 * Lightshot (screenshot tool)
 * Tenon Check (accessibility auditing)
 
+### Github
+Most of these can be found with simple google searches, but it is nice to have a list of resources that have been 
+helpful to PhET devs while learning how to superuse Github
+* Mastering markdown: https://guides.github.com/features/mastering-markdown/
+* Mastering search: https://help.github.com/en/articles/searching-code
+* Referencing issues in commit messages can be done in the following ways:
+  * If referencing the same repo as the commit, just use a hash: "I did a commit, see #32"
+  * You can also use the full URL to the github issue: "The things I did in this commit are good, see https://github.com/phetsims/chipper/issues/32"
+  * You can use github shorthand too: "This commit fixes a lot of stuff, see phetsims/chipper#32"
+
 ### Debugging iOS devices
 ##### On Mac
 Mac users can use the Safari Web Inspector to debug a sim in mobile Safari. Once you device is connected to your Mac
