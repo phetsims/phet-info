@@ -14,7 +14,7 @@
 - [ ] Follow remaining "Implementation" tasks in the checklist (e.g. add to responsible-dev.md, etc.), and as part of that use https://github.com/phetsims/phet-info/blob/master/github-labels/README.md for updating labels.
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository
 - [ ] If applicable, add any needed dependencies to `phetLibs` in package.json. If that changes, run `grunt update` afterwards.
-- [ ] Navigate to phettest.colorado.edu and click the "Refresh Perennial" button (Please note that VPN or being on campus is required to access phettest.colorado.edu)
+- [ ] Navigate to phettest.colorado.edu and click the "Refresh Perennial" button (Please note that VPN or being on campus is required to access phettest.colorado.edu, see https://oit.colorado.edu/services/network-internet-services/vpn)
 
 # Steps to create a different type of repo
 
