@@ -74,6 +74,7 @@
 | Molecule Shapes |  @jonathanolson  | ✓ |
 | Molecule Shapes: Basics |  @jonathanolson  | ✓ |
 | Neuron |  @jbphet  | ✓ |
+| Number Line: Integers |  @jbphet  |  |
 | Ohm's Law|  @zepumph  | ✓ |
 | Optics Lab | @veillette| |
 | Pendulum Lab | @jonathanolson | ✓ |
