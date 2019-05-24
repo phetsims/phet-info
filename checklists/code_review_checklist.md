@@ -4,7 +4,7 @@
 PhET code-review checklist
 =============
 
-#### Table of Contents
+## Table of Contents
 * [Build and Run Check](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#build-and-run-checks)
 * [Memory Leaks](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#memory-leaks)
 * [Performance, Usability](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#performance-usability)
@@ -16,7 +16,7 @@ PhET code-review checklist
 * [Organization, Readability, Maintainability](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#organization-readability-maintainability)
 * [PhET-iO](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#phet-io)
 
-#### **Build and Run Checks**
+### **Build and Run Checks**
 
 - [ ] Does the sim build without warnings or errors?
 - [ ] Does the html file size seem reasonable, compared to other similar sims?
@@ -25,7 +25,7 @@ PhET code-review checklist
 - [ ] Does the sim pass a scenery fuzz test? (run with query parameters `fuzz&ea`)
 - [ ] Does linting with "sim_es6_eslintrc_review.js" reveal any problems that should be fixed? (change eslintConfig in package.json and run `grunt lint`)
 
-#### **Memory Leaks**
+### **Memory Leaks**
 
 - [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.) Test on a version built using `grunt --minify.mangle=false`. There should be a GitHub issue showing the results of testing done by the primary developer.
 - [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is there a call to that component’s `dispose` function, or documentation about why `dispose` is unnecessary?
@@ -40,7 +40,7 @@ PhET code-review checklist
 - [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls `this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly match the filename.
 - [ ] PhET-iO instantiates different objects and wires up listeners that are not present in the PhET-branded simulation.  It needs to be tested separately for memory leaks.  To help isolate the nature of the memory leak, this test should be run separately from the PhET brand memory leak test.  Test with the "console" and "studio" wrappers (easily accessed from phetmarks)
 
-#### **Performance, Usability**
+### **Performance, Usability**
 
 - [ ] Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms)
 - [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter `webgl=false`)
@@ -48,7 +48,7 @@ PhET code-review checklist
 - [ ] Are pointer areas optimized, especially for touch? (run with query parameter `showPointerAreas`)
 - [ ] Do pointer areas overlap? (run with query parameter `showPointerAreas`) Some overlap may be OK depending on the z-ordering (if the frontmost object is supposed to occlude touch/mouse areas)
 
-#### **Internationalization**
+### **Internationalization**
 - [ ] Are there any strings that are not being internationalized? (run with query parameter `stringTest=x`, you should see nothing but 'x' strings)
 - [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter `stringTest=double`)
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter `stringTest=long`)
@@ -105,7 +105,7 @@ to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
 
 (5) String patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) should use keys that are unlikely to conflict with strings that might be needed in the future.  For example, for `"{{price}}"` consider using key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
 
-#### **Repository Structure**
+### **Repository Structure**
 
 - [ ] Are all required files and directories present?
 For a sim repository named “my-repo”, the general structure should look like this (where assets/, audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
