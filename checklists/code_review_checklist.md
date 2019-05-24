@@ -4,6 +4,18 @@
 PhET code-review checklist
 =============
 
+#### Table of Contents
+* [Build and Run Check]
+* [Memory Leaks]
+* [Performance, Usability]
+* [Internationalization]
+* [Repository Structure]
+* [Coding Conventions]
+* [Math Libraries]
+* [IE11]
+* [Organization, Readability, Maintainability]
+* [PhET-iO]
+
 #### **Build and Run Checks**
 
 - [ ] Does the sim build without warnings or errors?
@@ -93,7 +105,7 @@ to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
 
 (5) String patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) should use keys that are unlikely to conflict with strings that might be needed in the future.  For example, for `"{{price}}"` consider using key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
 
-#### **Repository structure**
+#### **Repository Structure**
 
 - [ ] Are all required files and directories present?
 For a sim repository named “my-repo”, the general structure should look like this (where assets/, audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
