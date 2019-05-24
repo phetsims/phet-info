@@ -5,16 +5,16 @@ PhET code-review checklist
 =============
 
 #### Table of Contents
-* [Build and Run Check]
-* [Memory Leaks]
-* [Performance, Usability]
-* [Internationalization]
-* [Repository Structure]
-* [Coding Conventions]
-* [Math Libraries]
-* [IE11]
-* [Organization, Readability, Maintainability]
-* [PhET-iO]
+* [Build and Run Check](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#build-and-run-checks)
+* [Memory Leaks](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#memory-leaks)
+* [Performance, Usability](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#performance-usability)
+* [Internationalization](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#internationalization)
+* [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#repository-structure)
+* [Coding Conventions](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#coding-conventions)
+* [Math Libraries](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#math-libraries)
+* [IE11](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#ie11)
+* [Organization, Readability, Maintainability](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#organization-readability-maintainability)
+* [PhET-iO](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#phet-io)
 
 #### **Build and Run Checks**
 
