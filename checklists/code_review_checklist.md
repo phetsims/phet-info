@@ -16,7 +16,7 @@ PhET code-review checklist
 * [Organization, Readability, Maintainability](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#organization-readability-maintainability)
 * [PhET-iO](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#phet-io)
 
-### **Build and Run Checks**
+## **Build and Run Checks**
 
 - [ ] Does the sim build without warnings or errors?
 - [ ] Does the html file size seem reasonable, compared to other similar sims?
@@ -25,7 +25,7 @@ PhET code-review checklist
 - [ ] Does the sim pass a scenery fuzz test? (run with query parameters `fuzz&ea`)
 - [ ] Does linting with "sim_es6_eslintrc_review.js" reveal any problems that should be fixed? (change eslintConfig in package.json and run `grunt lint`)
 
-### **Memory Leaks**
+## **Memory Leaks**
 
 - [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.) Test on a version built using `grunt --minify.mangle=false`. There should be a GitHub issue showing the results of testing done by the primary developer.
 - [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is there a call to that component’s `dispose` function, or documentation about why `dispose` is unnecessary?
@@ -40,7 +40,7 @@ PhET code-review checklist
 - [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls `this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly match the filename.
 - [ ] PhET-iO instantiates different objects and wires up listeners that are not present in the PhET-branded simulation.  It needs to be tested separately for memory leaks.  To help isolate the nature of the memory leak, this test should be run separately from the PhET brand memory leak test.  Test with the "console" and "studio" wrappers (easily accessed from phetmarks)
 
-### **Performance, Usability**
+## **Performance, Usability**
 
 - [ ] Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms)
 - [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter `webgl=false`)
@@ -48,7 +48,7 @@ PhET code-review checklist
 - [ ] Are pointer areas optimized, especially for touch? (run with query parameter `showPointerAreas`)
 - [ ] Do pointer areas overlap? (run with query parameter `showPointerAreas`) Some overlap may be OK depending on the z-ordering (if the frontmost object is supposed to occlude touch/mouse areas)
 
-### **Internationalization**
+## **Internationalization**
 - [ ] Are there any strings that are not being internationalized? (run with query parameter `stringTest=x`, you should see nothing but 'x' strings)
 - [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter `stringTest=double`)
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter `stringTest=long`)
@@ -105,7 +105,7 @@ to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
 
 (5) String patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) should use keys that are unlikely to conflict with strings that might be needed in the future.  For example, for `"{{price}}"` consider using key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
 
-### **Repository Structure**
+## **Repository Structure**
 
 - [ ] Are all required files and directories present?
 For a sim repository named “my-repo”, the general structure should look like this (where assets/, audio/ or images/ may be omitted if the sim doesn’t have those types of assets).
@@ -169,7 +169,7 @@ All JavaScript source should be in the js/ directory. There should be a subdirec
 - [ ] Does `implementation-notes.md` adequately describe the implementation, with an overview that will be useful to future maintainers?
 - [ ] Are sim-specific query parameters (if any) identified and documented in one .js file in js/common/ or js/ (if there is no common/)? The .js file should be named `{{REPO}}QueryParameters.js`, for example ArithmeticQueryParameters.js for the aritmetic repository.
 
-#### **Coding Conventions**
+## **Coding Conventions**
 
 - [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/phet-info/blob/master/ide/idea/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
 - [ ] Are copyright headers present and up to date? Run `grunt update-copyright-dates`.
@@ -456,7 +456,7 @@ myNamespace.register( 'SlotMachineNode.LeverNode', LeverNode );
 return SlotMachineNode;
 ```
 
-##### Type Expressions
+### Type Expressions
 
 - [ ] Type expressions should conform approximately to [Google Closure Compiler](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler) syntax.  PhET stretches the syntax in many cases (beyond the scope of this document to describe).
 
@@ -492,7 +492,7 @@ this.particlesVisibleCheckbox = new Checkbox(...);
 
 - [ ] Look for cases where the use of type expressions involving Property subclasses are incorrect.  Because of the structure of the `Property` class hierarchy, specifying type-specific Properties (`{BooleanProperty}`, `{NumberProperty}`,...) may be incorrect, because it precludes values of type `{DerivedProperty}` and `{DynamicProperty}`.   Similarly, use of `{DerivedProperty}` and `{DynamicProperty}` precludes values of (e.g.) `{BooleanProperty}`. Especially in common code, using `{Property,<TYPE>}` is typically correct, unless some specific feature of the `Property` subclass is required.  For example, `{Property.<boolean>}` instead of `{BooleanProperty}`.
 
-##### Visibility Annotations
+### Visibility Annotations
 Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations to document the intent of the programmer, and define the public API. Visibility annotations are required for anything that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility annotations are as follows:
 
 - [ ] Use `@public` for anything that is intended to be part of the public API.
@@ -540,15 +540,15 @@ addListener: function( listener ) { /*...*/ }
 * Regex for property assignment like `x.y = something`: `[\w]+\.[\w]+\s=`
 * Regex for function declarations: `[\w]+: function\(`
 
-#### **Math Libraries**
+## **Math Libraries**
 
 - [ ] `DOT/Util.toFixed` or `DOT/Util.toFixedNumber` should be used instead of `toFixed`. JavaScript's `toFixed` is notoriously buggy. Behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
 
-#### IE11
+## IE11
 - [ ] No usage of `Number.parseInt()`
 - [ ] No usage of `Array.prototype.find`
 
-#### **Organization, Readability, Maintainability**
+## **Organization, Readability, Maintainability**
 
 - [ ] Does the organization and structure of the code make sense? Do the model and view contain types that you would expect (or guess!) by looking at the sim? Do the names of things correspond to the names that you see in the user interface?
 - [ ] Are appropriate design patterns used? See [phet-software-design-patterns.md](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md).  If new or inappropriate patterns are identified, create an issue.
@@ -566,7 +566,7 @@ addListener: function( listener ) { /*...*/ }
 - [ ] Are all dependent properties modeled as `DerivedProperty` instead of `Property`?
 - [ ] All dynamics should be called from Sim.step(dt), do not use window.setTimeout or window.setInterval.  This will help support Legends of Learning and PhET-iO.
 
-#### **PhET-iO**
+## **PhET-iO**
 
 - [ ] If the simulation is supposed to be instrumented for PhET-iO, please see [How to Instrument a PhET Simulation for PhET-iO](https://github.com/phetsims/phet-io/blob/master/doc/how-to-instrument-a-phet-simulation-for-phet-io.md)
 for the PhET-iO development process.
