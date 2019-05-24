@@ -7,7 +7,8 @@ PhET code-review checklist
 ## Table of Contents
 * [Build and Run Check](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#build-and-run-checks)
 * [Memory Leaks](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#memory-leaks)
-* [Performance, Usability](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#performance-usability)
+* [Performance](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#performance)
+* [Usability](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#usability)
 * [Internationalization](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#internationalization)
 * [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#repository-structure)
 * [Coding Conventions](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#coding-conventions)
@@ -42,10 +43,13 @@ PhET code-review checklist
 - [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls `this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly match the filename.
 - [ ] PhET-iO instantiates different objects and wires up listeners that are not present in the PhET-branded simulation.  It needs to be tested separately for memory leaks.  To help isolate the nature of the memory leak, this test should be run separately from the PhET brand memory leak test.  Test with the "console" and "studio" wrappers (easily accessed from phetmarks)
 
-## **Performance, Usability**
+## **Performance**
 
 - [ ] Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms)
 - [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter `webgl=false`)
+
+## **Usability**
+
 - [ ] Are UI components sufficiently responsive? (especially continuous UI components, such as sliders)
 - [ ] Are pointer areas optimized, especially for touch? (run with query parameter `showPointerAreas`)
 - [ ] Do pointer areas overlap? (run with query parameter `showPointerAreas`) Some overlap may be OK depending on the z-ordering (if the frontmost object is supposed to occlude touch/mouse areas)
