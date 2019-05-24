@@ -182,31 +182,31 @@ All JavaScript source should be in the js/ directory. There should be a subdirec
 - [ ] Names (types, variables, properties, functions,...) should be sufficiently descriptive and specific, and should avoid non-standard abbreviations. For example:
 
 ```js
-var numPart;            // incorrect
-var numberOfParticles;  // correct
+const numPart = 100;            // incorrect
+const numberOfParticles = 100;  // correct
 
-var width;              // incorrect
-var beakerWidth;        // correct
+const width = 150;              // incorrect
+const beakerWidth = 150;        // correct
 ```
 
 - [ ] Require statements should be organized into blocks, with the code modules first, followed by plugins (strings, images, audio, ifphetio - any order ok for plugins).  For modules, the var name should match the file name. Example below.
 
 ```js
 // modules
-var inherit = require( 'PHET_CORE/inherit' );
-var Line = require( 'SCENERY/nodes/Line' );
-var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+const inherit = require( 'PHET_CORE/inherit' );
+const Line = require( 'SCENERY/nodes/Line' );
+const Rectangle = require( 'SCENERY/nodes/Rectangle' );
 
 // strings
-var kineticString = require( 'string!ENERGY/energy.kinetic' );
-var potentialString = require( 'string!ENERGY/energy.potential' );
-var thermalString = require( 'string!ENERGY/energy.thermal' );
+const kineticString = require( 'string!ENERGY/energy.kinetic' );
+const potentialString = require( 'string!ENERGY/energy.potential' );
+const thermalString = require( 'string!ENERGY/energy.thermal' );
 
 // images
-var energyImage = require( 'image!ENERGY/energy.png' );
+const energyImage = require( 'image!ENERGY/energy.png' );
 
 // audio
-var kineticAudio = require( 'audio!ENERGY/energy' );
+const kineticAudio = require( 'audio!ENERGY/energy' );
 ```
 
 - [ ] Do the `@author` annotations seem correct?
@@ -219,43 +219,48 @@ for ES6 constructors.
 For example, this constructor uses parameters for everything. At the call site, the semantics of the arguments are difficult to determine without consulting the constructor.
 
 ```js
-/**
- * @param {Ball} ball - model element
- * @param {Property.<boolean>} visibleProperty - is the ball visible?
- * @param {Color|string} fill - fill color
- * @param {Color|string} stroke - stroke color
- * @param {number} lineWidth - width of the stroke
- * @constructor
- */
-function BallNode( ball, visibleProperty, fill, stroke, lineWidth ){
-   // ...
+class BallNode extends Node {
+
+  /**
+   * @param {Ball} ball - model element
+   * @param {Property.<boolean>} visibleProperty - is the ball visible?
+   * @param {Color|string} fill - fill color
+   * @param {Color|string} stroke - stroke color
+   * @param {number} lineWidth - width of the stroke
+   */
+  constructor( ball, visibleProperty, fill, stroke, lineWidth ){
+    // ...
+  }
 }
 
 // Call site
-var ballNode = new BallNode( ball, visibleProperty, 'blue', 'black', 2 );
+const ballNode = new BallNode( ball, visibleProperty, 'blue', 'black', 2 );
 ```
 Here’s the same constructor with an appropriate use of options. The call site is easier  to read, and the order of options is flexible.
 
 ```js
-/**
- * @param {Ball} ball - model element
- * @param {Property.<boolean>} visibleProperty - is the ball visible?
- * @param {Object} [options]
- * @constructor
- */
-function BallNode( ball, visibleProperty, options ) {
+class BallNode extends Node {
 
-  options = _.extend( {
-    fill: 'white',  // {Color|string} fill color
-    stroke: 'black', // {Color|string} stroke color
-    lineWidth: 1 // {number} width of the stroke
-  }, options );
+  /**
+   * @param {Ball} ball - model element
+   * @param {Property.<boolean>} visibleProperty - is the ball visible?
+   * @param {Object} [options]
+   * @constructor
+   */
+  constructor( ball, visibleProperty, options ) {
 
-  // ...
+    options = _.extend( {
+      fill: 'white',  // {Color|string} fill color
+      stroke: 'black', // {Color|string} stroke color
+      lineWidth: 1 // {number} width of the stroke
+    }, options );
+
+    // ...
+  }
 }
 
 // Call site
-var ballNode = new BallNode( ball, visibleProperty, {
+const ballNode = new BallNode( ball, visibleProperty, {
   fill: 'blue',
   stroke: 'black',
   lineWidth: 2
@@ -266,34 +271,32 @@ var ballNode = new BallNode( ball, visibleProperty, {
 
 Example:
 ```js
-/**
- * @param {ParticleBox} particleBox - model element
- * @param {Property.<boolean>} visibleProperty - are the box and its contents visible?
- * @param {Object} [options]
- * @constructor
- */
-function ParticleBoxNode( particleBox, visibleProperty, options ) {
+class ParticleBoxNode extends Node {
 
-  options = _.extend( {
-    fill: 'white',  // {Color|string} fill color
-    stroke: 'black', // {Color|string} stroke color
-    lineWidth: 1, // {number} width of the stroke
-    particleNodeOptions: null, // {*} to be filled in with defaults below
-  }, options );
+  /**
+   * @param {ParticleBox} particleBox - model element
+   * @param {Property.<boolean>} visibleProperty - are the box and its contents visible?
+   * @param {Object} [options]
+   */
+  constructor( particleBox, visibleProperty, options ) {
 
-  options.particleNodeOptions = _.extend( {
-    fill: 'red',
-    stroke: 'gray',
-    lineWidth: 0.5
-  }, options.particleNodeOptions );
+    options = _.extend( {
+      fill: 'white',  // {Color|string} fill color
+      stroke: 'black', // {Color|string} stroke color
+      lineWidth: 1, // {number} width of the stroke
+      particleNodeOptions: null, // {*} to be filled in with defaults below
+    }, options );
 
-  // add particle
-  this.addChild( new ParticleNode( particleBox.particle, options.particleNodeOptions ) );
+    options.particleNodeOptions = _.extend( {
+      fill: 'red',
+      stroke: 'gray',
+      lineWidth: 0.5
+    }, options.particleNodeOptions );
 
-  .
-  .
-  .
-
+    // add particle
+    this.addChild( new ParticleNode( particleBox.particle, options.particleNodeOptions ) );
+    ...
+  }
 }
 ```
 
@@ -325,7 +328,7 @@ function PhetDeveloper( name, age, isEmployee, callback, hoursProperty, friendNa
 - [ ] If references are needed to the enclosing object, such as for a closure, `self` should be defined, but it should only be used in closures.  The `self` variable should not be defined unless it is needed in a closure.  Example:
 
 ```js
-var self = this;
+const self = this;
 someProperty.link( function(){
   self.doSomething();
 } );
