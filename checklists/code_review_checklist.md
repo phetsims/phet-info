@@ -452,7 +452,7 @@ return SlotMachineNode;
 
 - [ ] All method parameters should have type expressions. For example `@param {number} width`.
 
-- [ ] In sim-specific code, options and fields should have type expressions when their type is not obvious from the context.  “Obvious” typically means that the value type is clearly shown in the righthand-side of the definition. E.g. `const width = 42` clear shows that `width` is `{number}`. E.g. `const checkbox = new Checkbox(…)` clearly shows that `checkbox` is `{Checkbox}`.   If the type is obvious from the context, the developer may still provide a type expression at his/her discretion.  Examples;
+- [ ] In sim-specific code, options and fields should have type expressions when their type is not obvious from the context.  “Obvious” typically means that the value type is clearly shown in the righthand-side of the definition. E.g. `const width = 42` clear shows that `width` is `{number}`. E.g. `const checkbox = new Checkbox(…)` clearly shows that `checkbox` is `{Checkbox}`.   If the type is obvious from the context, the developer may still provide a type expression at his/her discretion.  Examples:
 
 ```js
 // @public {GameState} the current state of the game
