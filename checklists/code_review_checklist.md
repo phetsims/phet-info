@@ -444,6 +444,42 @@ myNamespace.register( 'SlotMachineNode.LeverNode', LeverNode );
 return SlotMachineNode;
 ```
 
+##### Type Expressions
+
+- [ ] Type expressions should conform approximately to [Google Closure Compiler](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler) syntax.  PhET stretches the syntax in many cases (beyond the scope of this document to describe).
+
+- [ ] Prefer the most basic/restrictive type expression when defining APIs.  For example, if a client only needs to know that a parameter is `{Node}`, don’t describe the parameter as `{Rectangle}`.
+
+- [ ] All method parameters should have type expressions. For example `@param {number} width`.
+
+- [ ] In sim-specific code, options and fields should have type expressions when their type is not obvious from the context.  “Obvious” typically means that the value type is clearly shown in the righthand-side of the definition. E.g. `const width = 42` clear shows that `width` is `{number}`. E.g. `const checkbox = new Checkbox(…)` clearly shows that `checkbox` is `{Checkbox}`.   If the type is obvious from the context, the developer may still provide a type expression at his/her discretion.  Examples;
+
+```js
+// @public {GameState} the current state of the game
+this.gameState = this.computeGameState();
+
+// @public (read-only) the width of the container
+this.containerWidth = 150;
+
+// @private the checkbox used to show particles
+this.particlesVisibleCheckbox = new Checkbox(...);
+```
+
+- [ ] In common code repositories all options and fields should have type expressions, regardless of  their visibility, and regardless whether their type is obvious from the context. If the same examples from above appeared in common code:
+
+```js
+// @public {GameState} the current state of the game
+this.gameState = this.computeGameState();
+
+// @public (read-only) {number} the width of the container
+this.containerWidth = 150;
+
+// @private {Checkbox} the checkbox used to show particles
+this.particlesVisibleCheckbox = new Checkbox(...);
+```
+
+- [ ] Look for cases where the use of type expressions involving Property subclasses are incorrect.  Because of the structure of the `Property` class hierarchy, specifying type-specific Properties (`{BooleanProperty}`, `{NumberProperty}`,...) may be incorrect, because it precludes values of type `{DerivedProperty}` and `{DynamicProperty}`.   Similarly, use of `{DerivedProperty}` and `{DynamicProperty}` precludes values of (e.g.) `{BooleanProperty}`. Especially in common code, using `{Property,<TYPE>}` is typically correct, unless some specific feature of the `Property` subclass is required.  For example, `{Property.<boolean>}` instead of `{BooleanProperty}`.
+
 ##### Visibility Annotations
 Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations to document the intent of the programmer, and define the public API. Visibility annotations are required for anything that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility annotations are as follows:
 
