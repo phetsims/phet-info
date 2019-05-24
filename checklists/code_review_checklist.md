@@ -16,7 +16,7 @@ PhET code-review checklist
   * [Visibility Annotations](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#visibility-annotations)
 * [Math Libraries](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#math-libraries)
 * [IE11](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#ie11)
-* [Organization, Readability, Maintainability](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#organization-readability-maintainability)
+* [Organization, Readability, and Maintainability](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#organization-readability-and-maintainability)
 * [PhET-iO](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#phet-io)
 
 ## **Build and Run Checks**
@@ -554,7 +554,7 @@ addListener: function( listener ) { /*...*/ }
 - [ ] No usage of `Number.parseInt()`
 - [ ] No usage of `Array.prototype.find`
 
-## **Organization, Readability, Maintainability**
+## **Organization, Readability, and Maintainability**
 
 - [ ] Does the organization and structure of the code make sense? Do the model and view contain types that you would expect (or guess!) by looking at the sim? Do the names of things correspond to the names that you see in the user interface?
 - [ ] Are appropriate design patterns used? See [phet-software-design-patterns.md](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md).  If new or inappropriate patterns are identified, create an issue.
