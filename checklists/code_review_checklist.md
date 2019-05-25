@@ -304,23 +304,29 @@ A possible exception to this guideline is when the constructor API is improved b
 
 For more information on the history and thought process around the "nested options" pattern, please see https://github.com/phetsims/tasks/issues/730.
 
-- [ ] Constructor and function documentation.  Parameter types and names should be clearly specified for each function and constructor (if there are any parameters) using `@param` annotations.  The description for each parameter should follow a hyphen.  Primitive types should use lower case.  Constructors should additionally include the `@constructor` annotation. For example:
+- [ ] Constructor and function documentation.  Parameter types and names should be clearly specified for each constructor and function using `@param` annotations.  The description for each parameter should follow a hyphen.  Primitive types should use lower case. For example:
 
 ```js
 /**
- * The PhetDeveloper is responsible for creating code for simulations
- * and documenting their code thoroughly.
- *
- * @param {string} name - full name
- * @param {number} age - age, in years
- * @param {boolean} isEmployee - whether this developer is an employee of CU
- * @param {function} callback - called immediate after coffee is consumed
- * @param {Property.<number>} hoursProperty - cumulative hours worked
- * @param {string[]} friendNames - names of friends
- * @param {Object} [options] - optional configuration, see constructor
- * @constructor
+ * The PhetDeveloper is responsible for creating code for simulations and documenting their code thoroughly.
  */
-function PhetDeveloper( name, age, isEmployee, callback, hoursProperty, friendNames, options ) {}
+class PhetDeveloper {
+
+  /**
+   * @param {string} name - full name
+   * @param {number} age - age, in years
+   * @param {boolean} isEmployee - whether this developer is an employee of CU
+   * @param {function} callback - called immediate after coffee is consumed
+   * @param {Property.<number>} hoursProperty - cumulative hours worked
+   * @param {string[]} friendNames - names of friends
+   * @param {Object} [options]  
+   */
+  constructor( name, age, isEmployee, callback, hoursProperty, friendNames, options ) {
+    ...
+  }
+  
+  ...
+}
 ```
 
 - [ ] For most functions, the same form as above should be used, with a `@returns` annotation which identifies the return type and the meaning of the returned value.  Functions should also document any side effects.  For extremely simple functions that are just a few lines of simple code, an abbreviated line-comment can be used, for example: `// Computes {Number} distance based on {Foo} foo.`
@@ -339,40 +345,8 @@ this.doSomethingElse();
 lines to optimize readability.  It is OK for require statements or other structured patterns to exceed 120 columns.
 Use your judgment!
 
-- [ ] Where inheritance is needed, use `PHET_CORE/inherit` (ES5) or `extends` (ES6). Add prototype and static functions via the appropriate arguments to `inherit`. Spaces should exist between the function names unless the functions are all short and closely related.  Example:
-
-```js
-  return inherit( Object, Line, {
-
-   /**
-    * Gets the slope of the line
-    * @returns {number}
-    */
-    getSlope: function() {
-      if ( this.undefinedSlope() ) {
-        return Number.NaN;
-      }
-      else {
-        return this.rise / this.run;
-      }
-    },
-
-    /**
-     * Given x, solve y = m(x - x1) + y1.  Returns NaN if the solution is not unique, or there is no solution (x can't
-     * possibly be on the line.)  This occurs when we have a vertical line, with no run.
-     * @param {number} x - the x coordinate
-     * @returns {number} the solution
-     */
-    solveY: function( x ) {
-      if ( this.undefinedSlope() ) {
-        return Number.NaN;
-      }
-      else {
-        return ( this.getSlope() * ( x - this.x1 ) ) + this.y1;
-      }
-    }
-  } );
-```
+- [ ] Use `class` and `extends` for defining classes and implementing inheritance. `PHET_CORE/inherit` was a pre-ES6 implementation of inheritance that is specific to PhET and has been supplanted by `class` and `extends`. `inherit` should
+not be used in new code.
 
 - [ ] Functions should be invoked using the dot operator rather than the bracket operator.  For more details, please see https://github.com/phetsims/gravity-and-orbits/issues/9. For example:
 ```js
