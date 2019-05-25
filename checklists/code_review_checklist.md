@@ -377,17 +377,17 @@ Use your judgment!
 - [ ] Functions should be invoked using the dot operator rather than the bracket operator.  For more details, please see https://github.com/phetsims/gravity-and-orbits/issues/9. For example:
 ```js
 // avoid
-self[ isFaceSmile ? 'smile' : 'frown' ]();
+this[ isFaceSmile ? 'smile' : 'frown' ]();
 
 // OK
-isFaceSmile ? self.smile() : self.frown();
+isFaceSmile ? this.smile() : this.frown();
 
 // OK
 if ( isFaceSmile ) {
-  self.smile();
+  this.smile();
 }
 else {
-  self.frown();
+  this.frown();
 }
 ```
 
@@ -407,7 +407,7 @@ If the expression is only one item, the parentheses can be omitted. This is the 
 ```js
 assert && assert( happy, ‘Why aren\’t you happy?’ );
 happy && smile();
-var thoughts = happy ? ‘I am happy’ : ‘I am not happy :(’;
+const thoughts = happy ? ‘I am happy’ : ‘I am not happy :(’;
 ```
 
 - [ ] Naming for Property values:  All `AXON/Property` instances should be declared with the suffix `Property`.  For example, if a visible property is added, it should have the name `visibleProperty` instead of simply `visible`.  This will help to avoid confusion with non-Property definitions.
@@ -420,10 +420,10 @@ var thoughts = happy ? ‘I am happy’ : ‘I am not happy :(’;
 
 ```js
 // Randomly choose an existing crystal to possibly bond to
-var crystal = this.crystals.get( _.random( this.crystals.length - 1 ) );
+const crystal = this.crystals.get( _.random( this.crystals.length - 1 ) );
 
 // Find a good configuration to have the particles move toward
-var targetConfiguration = this.getTargetConfiguration( crystal );
+const targetConfiguration = this.getTargetConfiguration( crystal );
 ```
 
 - [ ] Line comments should have whitespace between the `//` and the first letter of the line comment.  See the preceding example.
