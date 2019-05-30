@@ -32,6 +32,7 @@
 | Coulomb's Law | @zepumph | ✓ |
 | Curve Fitting | @jonathanolson | |
 | Density | @jonathanolson | |
+| Diffusion | @pixelzoom | |
 | Energy Forms and Changes | @chrisklus | ✓ |
 | Energy Skate Park |  @jessegreenberg  | |
 | Energy Skate Park: Basics |  @samreid  | ✓ |
