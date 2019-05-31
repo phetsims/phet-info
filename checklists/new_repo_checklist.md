@@ -2,7 +2,7 @@
 
 At https://github.com/phetsims:
 - [ ] Press the "New" button. 
-- [ ] Copy (with modifications) the description from another sim. 
+- [ ] Set the Description field to `"{{SIM_TITLE}}" is an educational simulation in HTML5, by PhET Interactive Simulations."` and replace `{{SIM_TITLE}}` with the title of the new sim.  
 - [ ] Set visibility to "Public". DO NOT check the "Initialize this repository with a README" checkbox. 
 - [ ] Leave "Add .gitignore" and "Add a license" set to "None". 
 (We don't want to create any files, because that will initialize the repo, which we need to defer to a later step.)
