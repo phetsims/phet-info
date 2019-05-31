@@ -43,8 +43,8 @@ Other:
 
 At https://github.com/phetsims:
 - [ ] Press the "New" button. 
-- [ ] Come up with a description.
-- [ ] Decide on visibility.
+- [ ] Fill in the Description field.  (Ask other developers if you need suggestions.) 
+- [ ] Decide on visibility. (Ask other developers if you're not sure.) 
 - [ ] Generally do not select options that would initialize the sim (README, .gitignore, license).
 
 In your working copy of the sim repo:
