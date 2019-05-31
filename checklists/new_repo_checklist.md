@@ -32,7 +32,7 @@ At https://github.com/phetsims/{{REPO}}:
 - [ ] Create a Master Checklist issue using template [sim_new_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/sim_new_checklist.md). Use "{{REPO}} Master Checklist" as the issue name. Assign to @ariel-phet.
 
 Other:
-- [ ] Navigate to phettest.colorado.edu and click the "Refresh Perennial" button. (If you're off campus, [CU's VPN service] (https://oit.colorado.edu/services/network-internet-services/vpn) is required to access phettest.colorado.edu.)
+- [ ] Navigate to phettest.colorado.edu and click the "Refresh Perennial" button. If you're off campus, [CU's VPN service](https://oit.colorado.edu/services/network-internet-services/vpn) is required to access phettest.colorado.edu.
 - [ ] Apply GitHub labels. See [github-labels/README.md](https://github.com/phetsims/phet-info/blob/master/github-labels/README.md).
 - [ ] Notify dev-public and email, e.g. "I just added {{REPO}} to active repos. Please pull perennial and run `clone-missing-repos.sh` at your convenience."
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
