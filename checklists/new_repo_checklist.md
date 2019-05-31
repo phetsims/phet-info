@@ -9,7 +9,7 @@ At https://github.com/phetsims:
 (We don't want to create any files, because that will initialize the repo, which we need to defer to a later step.)
 
 In your working copy of perennial repo:
-- [ ] Run `grunt create-sim --repo={{REPO}} --author="{{AUTHOR_STRING}}" --title="{{TITLE}}"`. This will create the file structure and skeleton code for the sim.
+- [ ] Run `grunt create-sim --repo={{REPO}} --author="{{AUTHOR}}" --title="{{TITLE}}"`. This will create the file structure and skeleton code for the sim.
 - [ ] Add the new repo to `perennial/data/active-repos` Run `clone-missing-repos.sh` to check your change, commit and push. After a few minutes, an automated process should update the other files under perennial/data. Pull perennial so you can find the sim in phetmarks.
 
 In your working copy of the sim repo: 
