@@ -7,7 +7,7 @@
 - [ ] `git commit -m "Initial commit"`
 - [ ] `git remote add origin https://github.com/phetsims/{{REPO}}.git`
 - [ ] `git push -u origin master`
-- [ ] In github (sim repo => "Settings" => Collaborators and Teams), add the teams used in another public sim (currently QA, design and development), and give equivalent permissions.
+- [ ] In github (sim repo => "Settings" => Collaborators and Teams), add the teams used in another public sims (currently Design, Development, and Quality Assurance), and give equivalent permissions.
 - [ ] Add to perennial/data/active-repos, run `clone-missing-repos.sh` to check your change, commit and push. (After a few minutes, an automated process should update the other files under perennial/data. pull perennial so you can find the sim in phetmarks.)
 - [ ] Notify dev-public and email, e.g. "Just added {{REPO}} to active repos. Please pull perennial and run `clone-missing-repos.sh` at your convenience."
 - [ ] Create a sim issue from the template https://github.com/phetsims/phet-info/blob/master/checklists/sim_new_checklist.md. Put the title as the issue name. Assign @ariel-phet.
