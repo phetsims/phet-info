@@ -20,7 +20,7 @@ In your working copy of the sim repo:
 - [ ] `git push -u origin master`
 
 At https://github.com/phetsims/{{REPO}}:
-- [ ] Go to Settings => Collaborators and Teams, add the teams used in another public sims (currently Design, Development, and Quality Assurance), and give equivalent permissions.
+- [ ] Go to Settings => Collaborators and Teams, add the teams used in another public sims (currently Design, Development, and Quality Assurance) with "Write" permissions.
 - [ ] Create a Master Checklist issue using template [sim_new_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/sim_new_checklist.md). Use "{{REPO}} Master Checklist" as the issue name. Assign to @ariel-phet.
 
 Other:
@@ -48,7 +48,7 @@ In your working copy of the sim repo:
 - [ ] `git push -u origin master`
 
 At https://github.com/phetsims/{{REPO}}:
-- [ ] Go to Settings => Collaborators and Teams, add the teams used in another public sims (currently Design, Development, and Quality Assurance), and give equivalent permissions. _NOTE: If the repo is private, it is REQUIRED to add the Machine User collaborator (so automated processes can clone/pull the repo). CT will break otherwise._
+- [ ] Go to Settings => Collaborators and Teams, add the teams used in another public sims (currently Design, Development, and Quality Assurance) with "Write" permissions. _NOTE: If the repo is private, it is REQUIRED to add the Machine User collaborator (so automated processes can clone/pull the repo). CT will break otherwise._
 
 In your working copy of perennial repo:
 - [ ] If applicable: Add the new repo to `perennial/data/active-repos`. Run `clone-missing-repos.sh` to check your change, commit and push. After a few minutes, an automated process should update the other files under perennial/data. Pull perennial so you can find the sim in phetmarks.
