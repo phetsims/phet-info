@@ -45,7 +45,7 @@ At https://github.com/phetsims:
 - [ ] Press the "New" button. 
 - [ ] Fill in the Description field.  (Ask other developers if you need suggestions.) 
 - [ ] Decide on visibility. (Ask other developers if you're not sure.) 
-- [ ] Generally do not select options that would initialize the sim (README, .gitignore, license).
+- [ ] Generally do not select options that would initialize the repo by creating files (README, .gitignore, license).
 
 In your working copy of the sim repo:
 - [ ] Create the file structure locally. It's best to start (currently) by copying from a similar repository (but without the `.git` directory). Make sure to keep `.gitignore`, etc.
