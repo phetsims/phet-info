@@ -1,6 +1,6 @@
 # Steps to create a new simulation
 
-- [ ] Create the repo: Go to https://github.com/phetsims, hit the "New" button. Copy (with modifications) the description from another sim. Set visibility to "Public". DO NOT check the "Initialize this repository with a README" checkbox. Leave "Add .gitignore" and "Add a license" set to "None". (We don't want to create any files, because that will initialize the repo, which we need to defer to a later step.)
+- [ ] Create the repo: Go to https://github.com/phetsims. Press the "New" button. Copy (with modifications) the description from another sim. Set visibility to "Public". DO NOT check the "Initialize this repository with a README" checkbox. Leave "Add .gitignore" and "Add a license" set to "None". (We don't want to create any files, because that will initialize the repo, which we need to defer to a later step.)
 - [ ] In perennial, `grunt create-sim --repo={{REPO}} --author="{{AUTHOR_STRING}}" --title="{{TITLE}}"`. This will create the file structure for the sim.
 - [ ] In the sim repo: `git init`
 - [ ] `git add * .gitignore`
