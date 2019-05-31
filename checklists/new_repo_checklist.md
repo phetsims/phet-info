@@ -2,7 +2,7 @@
 
 These steps contain the following placeholders that you'll need to fill in:
 
-- `{{AUTHOR}}}` - the `@author` annotation name that will appear in code, e.g. `Jane Doe` 
+- `{{AUTHOR}}}` - the name that will appear in `@author` code annotations, e.g. `Jane Doe` 
 - `{{REPO}}` - the repository name, e.g. `gas-properties`
 - `{{TITLE}}` - the simulation's title, e.g. `Gas Properties`
 
