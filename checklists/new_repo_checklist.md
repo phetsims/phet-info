@@ -1,8 +1,16 @@
-# Steps to create a new simulation
+# New Repository Checklist
+
+These steps contain the following placeholders that you'll need to fill in:
+
+`{{AUTHOR}}}` - the `@author` annotation name that will appear in code, e.g. `Jane Doe` 
+`{{REPO}}` - the repository name, e.g. `gas-properties`
+`{{TITLE}}` - the simulation's title, e.g. `Gas Properties`
+
+## Steps to create a new simulation
 
 At https://github.com/phetsims:
 - [ ] Press the "New" button. 
-- [ ] Set the Description field to `"{{SIM_TITLE}}" is an educational simulation in HTML5, by PhET Interactive Simulations.` and replace `{{SIM_TITLE}}` with the title of the new sim.  
+- [ ] Set the Description field to `"{{TITLE}}" is an educational simulation in HTML5, by PhET Interactive Simulations.`  
 - [ ] Set visibility to "Public". 
 - [ ] DO NOT check the "Initialize this repository with a README" checkbox. 
 - [ ] Leave "Add .gitignore" and "Add a license" set to "None". 
@@ -31,7 +39,7 @@ Other:
 - [ ] Follow any remaining "Implementation" tasks in the Master Checklist issue that you created above.
 - [ ] If applicable, add any needed dependencies to `phetLibs` in package.json. If you change package.json, run `grunt update`.
 
-# Steps to create a different type of repo
+## Steps to create a different type of repo
 
 At https://github.com/phetsims:
 - [ ] Press the "New" button. 
