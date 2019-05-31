@@ -6,7 +6,7 @@ These steps contain the following placeholders that you'll need to fill in:
 `{{REPO}}` - the repository name, e.g. `gas-properties`
 `{{TITLE}}` - the simulation's title, e.g. `Gas Properties`
 
-## Steps to create a new simulation
+## Steps to create a new simulation repo
 
 At https://github.com/phetsims:
 - [ ] Press the "New" button. 
