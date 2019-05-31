@@ -13,8 +13,8 @@ At https://github.com/phetsims:
 - [ ] Set the Description field to `"{{TITLE}}" is an educational simulation in HTML5, by PhET Interactive Simulations.`  
 - [ ] Set visibility to "Public". 
 - [ ] DO NOT check the "Initialize this repository with a README" checkbox. 
-- [ ] Leave "Add .gitignore" and "Add a license" set to "None". 
-(We don't want to create any files, because that will initialize the repo, which we need to defer to a later step.)
+- [ ] Leave "Add .gitignore" set to "None"
+- [ ] Leave "Add a license" set to "None". 
 
 In your working copy of perennial repo:
 - [ ] Run `grunt create-sim --repo={{REPO}} --author="{{AUTHOR}}" --title="{{TITLE}}"`. This will create the file structure and skeleton code for the sim.
