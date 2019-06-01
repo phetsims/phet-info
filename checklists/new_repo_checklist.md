@@ -18,7 +18,7 @@ At https://github.com/phetsims:
 
 In your working copy of perennial repo:
 - [ ] Run `grunt create-sim --repo={{REPO}} --author="{{AUTHOR}}" --title="{{TITLE}}"` to create the file structure and skeleton code for the sim.
-- [ ] Add the new repo to `perennial/data/active-repos`. Run `clone-missing-repos.sh` to check your change, commit and push. After a few minutes, an automated process should update the other files under perennial/data. Pull perennial so you can find the sim in phetmarks.
+- [ ] Add the new repo to `perennial/data/active-repos`. Run `clone-missing-repos.sh` to check your change, commit and push. After a few minutes, an automated process should update the other files under perennial/data/. Pull perennial so you can find the sim in phetmarks.
 
 In your working copy of the sim repo: 
 - [ ] `git init`
@@ -59,7 +59,7 @@ At https://github.com/phetsims/{{REPO}}:
 - [ ] Go to Settings => Collaborators and Teams, add the teams used in another public sims (currently Design, Development, and Quality Assurance) with "Write" permissions. _NOTE: If the repo is private, it is REQUIRED to add the Machine User collaborator (so automated processes can clone/pull the repo). CT will break otherwise._
 
 In your working copy of perennial repo:
-- [ ] If applicable: Add the new repo to `perennial/data/active-repos`. Run `clone-missing-repos.sh` to check your change, commit and push. After a few minutes, an automated process should update the other files under perennial/data. Pull perennial so you can find the sim in phetmarks.
+- [ ] If applicable: Add the new repo to `perennial/data/active-repos`. Run `clone-missing-repos.sh` to check your change, commit and push. After a few minutes, an automated process should update the other files under perennial/data/. Pull perennial so you can find the sim in phetmarks.
 
 Other:
 - [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and run `clone-missing-repos.sh` at your convenience."
