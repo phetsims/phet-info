@@ -193,7 +193,7 @@ const beakerWidth = 150;        // correct
 
 ```js
 // modules
-const Image = require( 'SCENERY/nodes/Image' );
+const inherit = require( 'PHET_CORE/inherit' );
 const Line = require( 'SCENERY/nodes/Line' );
 const Rectangle = require( 'SCENERY/nodes/Rectangle' );
 
