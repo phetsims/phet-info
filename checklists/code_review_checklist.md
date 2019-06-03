@@ -189,7 +189,7 @@ const width = 150;              // incorrect
 const beakerWidth = 150;        // correct
 ```
 
-- [ ] Require statements should be organized into blocks, with the code modules first, followed by plugins (strings, images, audio, ifphetio - any order ok for plugins).  For modules, the var name should match the file name. Example below.
+- [ ] Require statements should be organized into blocks, with the code modules first, followed by plugins (strings, images, audio, ifphetio - any order ok for plugins).  For modules, the variable name should match the file name. Example below.
 
 ```js
 // modules
