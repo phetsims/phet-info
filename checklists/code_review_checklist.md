@@ -245,7 +245,6 @@ class BallNode extends Node {
    * @param {Ball} ball - model element
    * @param {Property.<boolean>} visibleProperty - is the ball visible?
    * @param {Object} [options]
-   * @constructor
    */
   constructor( ball, visibleProperty, options ) {
 
