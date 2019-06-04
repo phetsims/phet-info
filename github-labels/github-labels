@@ -37,6 +37,7 @@ status:blocks-publication,00FFCC
 status:blocks-sim-publication,00ff6e
 status:fixed-awaiting-deploy,006b75
 status:on-hold,F0FFF0
+status:ready-for-qa,00cc00
 status:ready-for-review,3E766D
 type:automated-testing,FF00AA
 type:bug,FF00AA
@@ -50,4 +51,3 @@ type:performance,8B1C62
 type:question,EDCB62
 type:user-feedback,EDE162
 type:wontfix,ffffff
-{"name":"status:ready-for-qa","color":"00cc00"},
