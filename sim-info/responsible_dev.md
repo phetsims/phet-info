@@ -54,6 +54,7 @@
 | Function Builder | @pixelzoom | ✓ |
 | Function Builder: Basics | @pixelzoom | ✓ |
 | Gas Properties | @pixelzoom |  |
+| Gases Intro | @pixelzoom |  |
 | Gene Expression Essentials | @jbphet | ✓ |
 | Graphing Lines | @pixelzoom  | ✓ |
 | Graphing Quadratics | @pixelzoom | ✓ |
