@@ -18,7 +18,6 @@ At https://github.com/phetsims:
 
 In your working copy of perennial repo:
 - [ ] Run `grunt create-sim --repo={{REPO}} --author="{{AUTHOR}}" --title="{{TITLE}}"` to create the file structure and skeleton code for the sim.
-- [ ] Add the new repo to `perennial/data/active-repos`. Run `clone-missing-repos.sh` to check your change, commit and push. After a few minutes, an automated process should update the other files under perennial/data/. Pull perennial so you can find the sim in phetmarks.
 
 In your working copy of the sim repo: 
 - [ ] `git init`
@@ -26,6 +25,9 @@ In your working copy of the sim repo:
 - [ ] `git commit -m "Initial commit"`
 - [ ] `git remote add origin https://github.com/phetsims/{{REPO}}.git`
 - [ ] `git push -u origin master`
+
+In your working copy of perennial repo:
+- [ ] Add the new repo to `perennial/data/active-repos`. Run `clone-missing-repos.sh` to check your change, commit and push. After a few minutes, an automated process should update the other files under perennial/data/. Pull perennial so you can find the sim in phetmarks.
 
 At https://github.com/phetsims/{{REPO}}:
 - [ ] Go to Settings => Collaborators and Teams, add the teams used in another public sims (currently Design, Development, and Quality Assurance) with "Write" permissions.
