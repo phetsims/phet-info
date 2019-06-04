@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# update_all.sh
+# new-label-all-repos.sh
 #
 # This file adds a new label to all repos
 
@@ -9,6 +9,8 @@ then
   echo "Usage: $0 label-name color"
   exit 1
 else
+  name=$1
+  color=$2
   label={\"name\":\"$1\",\"color\":\"$2\"}
   echo "$label"
 fi
@@ -32,7 +34,7 @@ do
   echo ""
 done
 
-echo ${label},${color} >> github-labels
+echo ${name},${color} >> github-labels
 sort github-labels -o github-labels
 git pull && git commit github-labels -m "Added github label from ${label}" && git push
 
