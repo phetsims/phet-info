@@ -1,4 +1,4 @@
-*NOTE! Prior to doing a code review, copy this checklist to a GitHub issue for the repository being reviewed. Delete the Table of Contents sections, since the links will be incorrect.*
+*NOTE! Prior to doing a code review, copy this checklist to a GitHub issue for the repository being reviewed. Delete the Table of Contents section, since the links will be incorrect.*
 
 *Please mark failed items with* ❌
 
