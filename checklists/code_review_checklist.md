@@ -403,7 +403,7 @@ not be used in new code.
 
 - [ ] Differentiate between `Property` and "property" in comments. They are different things. `Property` is a type in AXON; property is any value associated with a JavaScript object. Often "field" can be used in exchange for "property" which can help with clarity.
 
-- [ ] Files should be named like CapitalizedCamelCasing.js when returning a constructor, or lower-case-style.js when returning a non-constructor function.  When returning a constructor, the constructor name should match the filename.
+- [ ] Files should be named like `CapitalizedCamelCasing.js` when returning a constructor, or `lowerCaseCamelCasing.js` when returning a non-constructor function or singleton.  When returning a constructor or singleton, the constructor name should match the filename.
 
 - [ ] Every type, method and property should be documented.
 
