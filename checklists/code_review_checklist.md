@@ -364,7 +364,7 @@ not be used in new code.
   }
   ```
 
-- [ ] It is not uncommon to use conditional shorthand and short circuiting for invocation.
+- [ ] It is not uncommon to use conditional shorthand and short circuiting for invocation. Use parentheses to maximize readability.
 
   ```js
   ( expression ) && statement;
@@ -378,9 +378,9 @@ not be used in new code.
   If the expression is only one item, the parentheses can be omitted. This is the most common use case.
   
   ```js
-  assert && assert( happy, ‘Why aren\’t you happy?’ );
+  assert && assert( happy, 'Why aren\'t you happy?' );
   happy && smile();
-  const thoughts = happy ? ‘I am happy’ : ‘I am not happy :(’;
+  const thoughts = happy ? 'I am happy' : 'I am not happy :(';
   ```
 
 - [ ] Naming for Property values:  All `AXON/Property` instances should be declared with the suffix `Property`.  For example, if a visible property is added, it should have the name `visibleProperty` instead of simply `visible`.  This will help to avoid confusion with non-Property definitions.
@@ -401,7 +401,7 @@ not be used in new code.
 
 - [ ] Line comments should have whitespace between the `//` and the first letter of the line comment.  See the preceding example.
 
-- [ ] Differentiate between `Property` and "property" in comments. They are different things. `Property` is a type in AXON; property is any value associated with a JavaScript object.
+- [ ] Differentiate between `Property` and "property" in comments. They are different things. `Property` is a type in AXON; property is any value associated with a JavaScript object. Often "field" can be used in exchange for "property" which can help with clarity.
 
 - [ ] Files should be named like CapitalizedCamelCasing.js when returning a constructor, or lower-case-style.js when returning a non-constructor function.  When returning a constructor, the constructor name should match the filename.
 
