@@ -22,3 +22,12 @@ Common sections for each pattern:
   has keys pressed.
   
 
+### Describer Types
+
+Dynamic descriptions require a large amount of string formation based on model state. In general housing that logic
+in a `*Describer.js` type is helpful and idiomatic, where `*` is the purpose this particular describer has. Try not to 
+make a single general describer that has too much responsibility, for example `MolarityDescriber` in https://github.com/phetsims/molarity/issues/79
+
+Although describers don't need to be the only place where `StringUtils.fillIn` is used for accessible descriptions, 
+they can cover the majority of the usages, as well as keeping track of the model and custom state needed to create these
+descriptions.

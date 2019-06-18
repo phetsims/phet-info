@@ -533,6 +533,11 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 - [ ] Are all dependent properties modeled as `DerivedProperty` instead of `Property`?
 - [ ] All dynamics should be called from Sim.step(dt), do not use window.setTimeout or window.setInterval.  This will help support Legends of Learning and PhET-iO.
 
+## **Accessibility**
+- [ ] Are accessibility features integrated well into the code. They should be added in a maintainable way, even if that requires upfront refactoring.
+- [ ] Are accessible design patterns used, see [accessible-design-patterns.md](https://github.com/phetsims/phet-info/blob/master/doc/accessible-design-patterns.md)
+- [ ] Does resetting the simulation also reset the entire PDOM?
+
 ## **PhET-iO**
 
 - [ ] If the simulation is supposed to be instrumented for PhET-iO, please see [How to Instrument a PhET Simulation for PhET-iO](https://github.com/phetsims/phet-io/blob/master/doc/how-to-instrument-a-phet-simulation-for-phet-io.md)
