@@ -537,6 +537,7 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 - [ ] Are accessibility features integrated well into the code. They should be added in a maintainable way, even if that requires upfront refactoring.
 - [ ] Are accessible design patterns used, see [accessible-design-patterns.md](https://github.com/phetsims/phet-info/blob/master/doc/accessible-design-patterns.md)
 - [ ] Does resetting the simulation also reset the entire PDOM?
+- [ ] Is `Node.accessibleOrder` used appropriately to maintain visual and PDOM layout balance?
 
 ## **PhET-iO**
 
