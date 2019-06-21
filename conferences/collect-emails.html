@@ -369,7 +369,7 @@ Developed and tested on Mac OS + Google Chrome.
      * @param {string} email
      * @returns {boolean}
      */
-    const validateEmail = email => {
+    const isValidEmail = email => {
       const regExp = /\S+@\S+\.\S+/;
       return regExp.test( email );
     };
@@ -381,7 +381,7 @@ Developed and tested on Mac OS + Google Chrome.
     submitButton.addEventListener( 'click', () => {
       const input = textInput.value;
 
-      if ( validateEmail( input ) ) {
+      if ( isValidEmail( input ) ) {
 
         // add the latest email and save
         emails.push( input );
