@@ -307,6 +307,11 @@ Developed and tested on Mac OS + Google Chrome.
     if ( showEmails ) {
       const emailsList = document.getElementById( 'emails-list' );
 
+      /**
+       * appends a string to the list of displayed emails
+       *
+       * @param {string} string
+       */
       const appendToEmailList = string => {
         const listElement = document.createElement( 'li' );
         listElement.appendChild( document.createTextNode( string ) );
