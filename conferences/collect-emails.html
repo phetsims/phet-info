@@ -1,0 +1,411 @@
+<!DOCTYPE HTML>
+
+<!--
+Copyright 2019, University of Colorado Boulder
+
+This is an email gathering utility intended for offline usage at PhET conferences. Because offline support is a
+requirement, acquired emails are saved to localStorage instead of a remote database.
+
+The email list is stored via a key in localStorage, see PHET_MORE_INFO_EMAILS_STRING below. To view emails saved
+on the current device, add the query parameter flag `showEmails` to the URL of this file. I recommend copying them to
+another destination at the end of each conference booth session.
+
+To delete the saved email list from the current device, click the 'delete emails' button while viewing the list of
+emails. If the email list is deleted by mistake, it is available for recovery via a backup key in localStorage, see
+PHET_MORE_INFO_EMAILS_BACKUP_STRING below. The backup list includes all emails that have ever been saved to the current
+device, not just the emails saved since the most recent deletion. To view the backup list, open a console in your
+browser and enter `JSON.parse( localStorage.getItem( {{PHET_MORE_INFO_EMAILS_BACKUP_STRING}} ) );`. The double braces
+indicate that you need to fill in the value from below, e.g.
+`JSON.parse( localStorage.getItem( 'phet-more-info-emails-backup' ) );`.
+
+NOTE/TODO: For some reason, when opening a new tab, localStorage in the console doesn't contain any saved data
+(including the backup) until this utility is run in the tab. Then, the backup and any saved emails become available.
+
+Developed and tested on Mac OS + Google Chrome.
+
+@author Chris Klusendorf (PhET Interactive Simulations)
+-->
+
+<html lang="en">
+<head>
+  <!-- if you happen to be online, make the fonts look nicer :) -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+
+  :root {
+    --form-width: 1000px;
+    --default-border-width: 2px;
+    --email-list-padding-y: 10px;
+    --form-padding: 10px;
+
+    --default-font-weight: 300;
+
+    --phet-blue: #6acef5;
+    --red: #e74c3c;
+    --green: #2ecc71;
+    --gray: #6b6b6b;
+    --light-gray: #dbdbdb;
+
+    --short-transition: 0.3s;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: white;
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  #phet-logo {
+    width: 300px;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 10%;
+    right: 0;
+    left: 0;
+  }
+
+  .form-container {
+    max-width: var(--form-width);
+    margin: auto;
+    position: absolute;
+    top: 37%;
+    right: 0;
+    left: 0;
+  }
+
+  #display-text {
+    margin: 10px 0;
+    text-align: left;
+    font-size: 30px;
+    font-weight: var(--default-font-weight);
+    color: black;
+  }
+
+  #text-input {
+    width: calc( var(--form-width) - 2 * var(--form-padding) - 2 * var(--default-border-width) );
+    padding: var(--form-padding);
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    font-weight: var(--default-font-weight);
+    border: var(--default-border-width) solid black;
+    border-radius: 5px;
+    transition: var(--short-transition);
+  }
+
+  #text-input.error {
+    border-color: var(--red);
+  }
+
+  #text-input.success {
+    border-color: var(--green);
+    transition: var(--short-transition);
+  }
+
+  #text-input:focus {
+    box-shadow: none;
+    outline: none;
+    border-color: var(--phet-blue);
+  }
+
+  ::-webkit-input-placeholder {
+    color: var(--light-gray);
+  }
+
+  button {
+    display: block;
+    margin: 16px 0 0 0;
+    padding: 11px 10px 10px 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: var(--default-font-weight);
+    font-size: 22px;
+    color: black;
+    background: #faf8fb;
+    border: var(--default-border-width) solid var(--gray);
+    border-radius: 4px;
+    transition: var(--short-transition);
+  }
+
+  #submit-button {
+    float: right;
+  }
+
+  #submit-button:hover {
+    border-color: var(--phet-blue);
+    cursor: pointer;
+    transition: var(--short-transition);
+  }
+
+  #submit-button:focus {
+    box-shadow: none;
+    outline: none;
+    border-color: var(--phet-blue);
+    transition: var(--short-transition);
+  }
+
+  #emails-list {
+    height: calc(100% - 2 * var(--email-list-padding-y) );
+    margin: 0;
+    padding: var(--email-list-padding-y) 0;
+    list-style-type: none;
+    overflow-y: scroll;
+  }
+
+  #emails-list li {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
+  }
+
+  #delete-emails-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  #delete-emails-button:hover {
+    border-color: var(--red);
+    cursor: pointer;
+    transition: var(--short-transition);
+  }
+
+  #delete-emails-button:focus {
+    box-shadow: none;
+    outline: none;
+    border-color: var(--red);
+    transition: var(--short-transition);
+  }
+
+</style>
+
+<div id="email-form">
+
+  <!-- include logo via inline svg so that no additional files are needed -->
+  <svg version="1.1" id="phet-logo" x="0px" y="0px" viewBox="0 0 572 270" enable-background="new 0 0 572 270"
+       xml:space="preserve">
+    <g>
+      <rect x="1.562" y="239.43" width="7.455" height="28.963"/>
+      <polygon points="35.618,256.809 23.85,239.43 16.375,239.43 16.375,268.393 23.85,268.393 23.85,251.154 35.713,268.393
+        43.098,268.393 43.098,239.43 35.618,239.43 	"/>
+      <polygon points="48.27,246.201 56.611,246.201 56.611,268.393 64.076,268.393 64.076,246.201 72.514,246.201 72.514,239.43
+        48.27,239.43 	"/>
+      <polygon points="77.212,268.393 97.41,268.393 97.41,262.28 84.677,262.28 84.677,256.969 95.717,256.969 95.717,250.847
+        84.677,250.847 84.677,245.507 97.41,245.507 97.41,239.43 77.212,239.43 	"/>
+      <path d="M126.516,248.852c0-6.122-4.772-9.431-11.676-9.431h-11.431v28.972h7.479v-9.678h3.082l5.385,9.678h8.34l-6.998-10.804
+        C124.053,256.494,126.516,253.629,126.516,248.852z M115.314,253.112h-4.426v-7.604h4.426c1.941,0,3.732,1.476,3.732,3.822
+        C119.047,251.627,117.256,253.112,115.314,253.112z"/>
+      <path d="M143,239.43l-11.52,28.963h8.044l2.255-6.939h9.467l2.266,6.939h8.037l-11.514-28.963H143z M143.562,255.931l2.959-8.992
+        l2.902,8.992H143.562z"/>
+      <path d="M164.206,253.891c0,12.244,7.378,14.817,13.596,14.817c3.084,0,6.261-0.824,9.292-2.047v-6.478
+        c-3.172,1.527-5.865,2.096-8.854,2.096c-3.439,0-6.568-1.526-6.568-8.389c0-6.865,3.129-8.384,6.568-8.384
+        c2.989,0,5.683,0.562,8.854,2.08v-6.471c-3.031-1.211-6.208-2.04-9.292-2.04C171.584,239.077,164.206,241.637,164.206,253.891z"/>
+      <polygon points="191.061,246.201 199.401,246.201 199.401,268.393 206.874,268.393 206.874,246.201 215.298,246.201
+        215.298,239.43 191.061,239.43 	"/>
+      <rect x="220.039" y="239.43" width="7.471" height="28.963"/>
+      <polygon points="246.585,259.926 240.119,239.43 232.129,239.43 243.247,268.393 250.02,268.393 261.057,239.43 253.065,239.43
+        "/>
+      <polygon points="265.54,268.393 285.732,268.393 285.732,262.28 273.008,262.28 273.008,256.969 284.045,256.969 284.045,250.847
+        273.008,250.847 273.008,245.507 285.732,245.507 285.732,239.43 265.54,239.43 	"/>
+      <path d="M306.405,247.114c0-3.213,2.566-4.952,7.173-4.952c2.953,0,5.339,0.913,6.948,1.826v-3.222
+        c-1.863-0.916-4.309-1.731-7.258-1.731c-7.381,0-9.99,4.173-9.99,8.079c0,9.695,15.981,5.429,15.981,13.897
+        c0,3.826-4.03,4.606-7.391,4.606c-3.938,0-6.632-1.167-8.327-2.3v3.389c2.04,1.095,4.865,2.046,8.555,2.046
+        c6.475,0,10.299-2.922,10.299-7.741C322.396,249.934,306.405,253.454,306.405,247.114z"/>
+      <rect x="328.833" y="239.421" width="3.127" height="28.972"/>
+      <polygon points="352.808,254.159 342.864,239.43 339.476,239.43 339.476,268.393 342.606,268.393 342.606,244.55 352.808,259.323
+        363.062,244.55 363.062,268.393 366.19,268.393 366.19,239.43 362.808,239.43 	"/>
+      <path d="M394.271,256.669c0,6.21-2.827,9.213-8.651,9.213c-5.823,0-8.65-3.003-8.65-9.213V239.43h-3.123v17.057
+        c0,7.92,4.178,12.266,11.773,12.266c7.607,0,11.777-4.346,11.777-12.266V239.43h-3.126V256.669z"/>
+      <polygon points="407.835,239.43 404.7,239.43 404.7,268.393 422.644,268.393 422.644,265.36 407.835,265.36 	"/>
+      <path d="M437.815,239.43l-11.557,28.963h3.383l3.479-9.02h12.512l3.479,9.02h3.337l-11.511-28.963H437.815z M434.284,256.37
+        l5.094-13.251l5.079,13.251H434.284z"/>
+      <polygon points="450.979,242.461 461.229,242.461 461.229,268.393 464.363,268.393 464.363,242.461 474.568,242.461
+        474.568,239.43 450.979,239.43 	"/>
+      <rect x="479.307" y="239.421" width="3.127" height="28.972"/>
+      <path d="M502.121,239.035c-8.902,0-13.418,4.991-13.418,14.856c0,9.857,4.516,14.861,13.418,14.861
+        c8.949,0,13.473-5.004,13.473-14.861C515.594,244.026,511.07,239.035,502.121,239.035z M502.121,265.793
+        c-7.121,0-10.299-3.646-10.299-11.902c0-8.21,3.178-11.903,10.299-11.903c7.174,0,10.344,3.693,10.344,11.903
+        C512.465,262.147,509.295,265.793,502.121,265.793z"/>
+      <polygon points="542.576,263.835 525.291,239.43 521.727,239.43 521.727,268.393 524.854,268.393 524.854,243.988 542.182,268.393
+        545.703,268.393 545.703,239.43 542.576,239.43 	"/>
+      <path d="M555.135,247.114c0-3.213,2.561-4.952,7.174-4.952c2.949,0,5.338,0.913,6.953,1.826v-3.222
+        c-1.871-0.916-4.303-1.731-7.26-1.731c-7.381,0-9.986,4.173-9.986,8.079c0,9.695,15.99,5.429,15.99,13.897
+        c0,3.826-4.049,4.606-7.395,4.606c-3.949,0-6.641-1.167-8.34-2.3v3.389c2.043,1.095,4.873,2.046,8.561,2.046
+        c6.471,0,10.293-2.922,10.293-7.741C571.125,249.934,555.135,253.454,555.135,247.114z"/>
+    </g>
+    <g>
+      <path fill="#6ACEF5" d="M72.444,51.607H5.73c-2.303,0-4.168,1.873-4.168,4.161v166.815c0,2.303,1.865,4.169,4.168,4.169h36.82
+        c2.309,0,4.174-1.866,4.174-4.169v-43.639c0-2.32,1.859-4.176,4.176-4.176h21.544c42.55,0,66.969-22.587,66.969-61.716
+        C139.413,74.194,114.994,51.607,72.444,51.607 M68.244,137.483H50.9c-2.316,0-4.176-1.875-4.176-4.184V92.543
+        c0-2.309,1.859-4.166,4.176-4.166h17.344c19.95,0,26.268,13.65,26.268,24.676C94.512,124.62,88.194,137.483,68.244,137.483"/>
+      <path fill="#6ACEF5" d="M566.957,51.607H310.864c-2.303,0-4.176,1.873-4.176,4.161v166.815c0,2.303,1.873,4.169,4.176,4.169
+        h113.764c2.305,0,4.17-1.866,4.17-4.169v-28.678c0-2.304-1.865-4.178-4.17-4.178h-70.693c-1.151,0-2.082-0.931-2.082-2.089v-27.862
+        c0-1.15,0.931-2.093,2.082-2.093h60.449c2.303,0,4.168-1.857,4.168-4.16v-28.678c0-2.305-1.865-4.18-4.168-4.18h-60.449
+        c-1.151,0-2.082-0.932-2.082-2.087v-28.12c0-1.148,0.931-2.082,2.082-2.082L472.92,88.5c1.158,0,2.1,0.938,2.1,2.085v131.999
+        c0,2.303,1.871,4.169,4.16,4.169h36.832c2.299,0,4.17-1.866,4.17-4.169V90.584c0-1.146,0.934-2.085,2.086-2.085h44.689
+        c2.289,0,4.168-1.875,4.168-4.161v-28.57C571.125,53.48,569.246,51.607,566.957,51.607"/>
+      <path fill="#FEE105" d="M251.91,98.883c-1.674,5.188-3.257,10.438-4.684,15.795c-0.299,1.124-0.575,2.272-0.883,3.408
+        c-13.424,58.008-6.145,95.92-3.615,108.266c0.605,0.256,1.215,0.4,1.844,0.4h34.041c2.304,0,4.192-1.866,4.192-4.169v-73.032
+        C282.806,125.348,271.836,107.185,251.91,98.883"/>
+      <path fill="#FEE105" d="M202.447,95.461V50.004c0-2.305-1.879-4.184-4.167-4.184h-36.837c-2.301,0-4.174,1.879-4.174,4.184v172.579
+        c0,2.303,1.873,4.169,4.174,4.169h23.162c1.066,0,2.076-0.4,2.914-1.026c6.533-52.292,26.07-97.769,45.346-131.446
+        c-2.616-0.258-5.295-0.385-8.107-0.385C217.688,93.895,208.75,94.404,202.447,95.461"/>
+      <polygon fill="#FEE105"
+               points="223.613,35.178 249.447,44.523 282.689,16.838 257.101,47.133 284.746,56.877 294.714,1.286 	"/>
+      <polyline fill="#F2E916" points="259.645,62.437 258.566,50.036 268.104,53.473 	"/>
+    </g>
+    <g>
+      <path fill="#6ACEF5" d="M533.501,226.752v-10.048h-3.753v-1.344h9.029v1.344h-3.769v10.048H533.501z"/>
+      <path fill="#6ACEF5" d="M540.277,226.752V215.36h2.27l2.696,8.066c0.249,0.751,0.431,1.313,0.544,1.687
+        c0.129-0.415,0.332-1.023,0.606-1.826l2.728-7.927h2.028v11.393h-1.453v-9.535l-3.311,9.535h-1.36l-3.295-9.699v9.699H540.277z"/>
+    </g>
+  </svg>
+
+  <div class="form-container">
+    <h1 id="display-text"></h1>
+
+    <input id="text-input" type="text" autocomplete="off" class="initial">
+    <button id="submit-button">submit</button>
+  </div>
+
+</div>
+
+<div id="saved-emails" class="hide">
+  <ul id="emails-list"></ul>
+  <button id="delete-emails-button">delete emails</button>
+</div>
+
+<script>
+  ( function() {
+
+    // constants
+    const PHET_MORE_INFO_EMAILS_STRING = 'phet-more-info-emails';
+    const PHET_MORE_INFO_EMAILS_BACKUP_STRING = `${PHET_MORE_INFO_EMAILS_STRING}-backup`;
+    const SHOW_EMAILS_STRING = 'showEmails';
+    const SIGN_UP_STRING = 'Sign up for more information about PhET:';
+    const EXAMPLE_EMAIL_STRING = 'example@example.com';
+    const NO_EMAILS_STRING = 'There are no emails saved on this device.';
+    const EMPTY_STRING = '';
+
+    // emails collected from a previous session
+    const savedEmails = JSON.parse( localStorage.getItem( PHET_MORE_INFO_EMAILS_STRING ) );
+    const savedBackupEmails = JSON.parse( localStorage.getItem( PHET_MORE_INFO_EMAILS_BACKUP_STRING ) );
+
+    // get query parameters
+    const queryParameters = new URLSearchParams( window.location.search );
+    const showEmails = queryParameters.has( SHOW_EMAILS_STRING );
+
+    // see if a phet admin wants to view the saved emails table instead of the email form
+    if ( showEmails ) {
+      const emailsList = document.getElementById( 'emails-list' );
+
+      const appendToEmailList = string => {
+        const listElement = document.createElement( 'li' );
+        listElement.appendChild( document.createTextNode( string ) );
+        emailsList.appendChild( listElement );
+      };
+
+      // populate the emails table
+      if ( savedEmails ) {
+        savedEmails.forEach( email => {
+          appendToEmailList( email );
+        } );
+      }
+      else {
+        appendToEmailList( NO_EMAILS_STRING );
+      }
+
+      // hide the email form, show the saved emails table
+      document.getElementById( 'email-form' ).classList.add( 'hide' );
+      document.getElementById( 'saved-emails' ).classList.remove( 'hide' );
+
+      // handle delete emails button press
+      document.getElementById( 'delete-emails-button' ).addEventListener( 'click', () => {
+        localStorage.setItem( PHET_MORE_INFO_EMAILS_STRING, null );
+        emailsList.innerHTML = EMPTY_STRING;
+        appendToEmailList( NO_EMAILS_STRING );
+      } );
+    }
+
+    // add saved emails to an array that will be appended to during this session
+    const emails = savedEmails ? [ ...savedEmails ] : [];
+    const backupEmails = savedBackupEmails ? [ ...savedBackupEmails ] : [];
+
+    // get references to html elements
+    const displayText = document.getElementById( 'display-text' );
+    const textInput = document.getElementById( 'text-input' );
+    const submitButton = document.getElementById( 'submit-button' );
+
+    /**
+     * displays text above the input field and adds a class to the input field. if no class is provided, all classes are
+     * removed from the input field.
+     *
+     * @param {string} message
+     * @param {string} [className]
+     */
+    const showText = ( message, className ) => {
+      displayText.innerText = message;
+      textInput.placeholder = EXAMPLE_EMAIL_STRING;
+      className ? textInput.classList.add( className ) : textInput.className = EMPTY_STRING;
+    };
+
+    /**
+     * simple validation for an email address. returns true for the form 'anystring@anystring.anystring'
+     *
+     * @param {string} email
+     * @returns {boolean}
+     */
+    const validateEmail = email => {
+      const regExp = /\S+@\S+\.\S+/;
+      return regExp.test( email );
+    };
+
+    // setup initial display text
+    showText( SIGN_UP_STRING );
+
+    // handle submit button press
+    submitButton.addEventListener( 'click', () => {
+      const input = textInput.value;
+
+      if ( validateEmail( input ) ) {
+
+        // add the latest email and save
+        emails.push( input );
+        backupEmails.push( input );
+        localStorage.setItem( PHET_MORE_INFO_EMAILS_STRING, JSON.stringify( emails ) );
+        localStorage.setItem( PHET_MORE_INFO_EMAILS_BACKUP_STRING, JSON.stringify( backupEmails ) );
+
+        // show a success message, clear input and placeholder
+        showText( 'Thank you!', 'success' );
+        textInput.value = EMPTY_STRING;
+        textInput.placeholder = EMPTY_STRING;
+
+        // two seconds after success, return to initial state
+        setTimeout( () => {
+          showText( SIGN_UP_STRING );
+        }, 2000 );
+      }
+      else {
+        showText( 'Please enter a valid email address:', 'error' );
+      }
+
+      // clear focus highlight
+      submitButton.blur();
+    } );
+
+    // return to initial state when text input is focused
+    textInput.addEventListener( 'focus', () => {
+      showText( SIGN_UP_STRING );
+    } );
+  } )();
+</script>
+</body>
+</html>
