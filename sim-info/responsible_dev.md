@@ -70,7 +70,7 @@
 | Masses and Springs | @Denz1994 | ✓ |
 | Masses and Springs: Basics | @Denz1994 | ✓ |
 | Models of the Hydrogen Atom | @pixelzoom | |
-| Molarity |  | ✓ |
+| Molarity | @zepumph | ✓ |
 | Molecules and Light | @jessegreenberg | ✓ |
 | Molecule Polarity | @pixelzoom | ✓ |
 | Molecule Shapes |  @jonathanolson  | ✓ |
