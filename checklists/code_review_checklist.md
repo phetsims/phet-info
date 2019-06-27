@@ -472,6 +472,21 @@ not be used in new code.
   this.particlesVisibleCheckbox = new Checkbox(...);
   ```
 
+- [ ] Type expressions for Enumeration values should be annotated as instances of that Enumeration, see examples in https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js for more.
+  ```js
+  /**
+   * @param {LeftOrRight} - whichHand
+   */
+   function getHand( whichHand ){
+     if( whichHand === LeftOrRight.LEFT ){
+       return new LeftHand();
+     }
+     else if( whichHand === LeftOrRight.RIGHT ){
+       return new RightHand();
+     }
+    }
+  ```
+  
 - [ ] Look for cases where the use of type expressions involving Property subclasses are incorrect.  Because of the structure of the `Property` class hierarchy, specifying type-specific Properties (`{BooleanProperty}`, `{NumberProperty}`,...) may be incorrect, because it precludes values of type `{DerivedProperty}` and `{DynamicProperty}`.   Similarly, use of `{DerivedProperty}` and `{DynamicProperty}` precludes values of (e.g.) `{BooleanProperty}`. Especially in common code, using `{Property,<TYPE>}` is typically correct, unless some specific feature of the `Property` subclass is required.  For example, `{Property.<boolean>}` instead of `{BooleanProperty}`.
 
 ### Visibility Annotations
