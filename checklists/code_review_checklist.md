@@ -550,6 +550,7 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 
 ## **Accessibility**
 - [ ] Does the sim pass an accessibility fuzz test? (run with query parameters `fuzzBoard&ea`)
+- [ ] Run the accessible HTML through an [HTML validator](https://validator.w3.org/nu/#textarea), does the HTML pass?
 - [ ] Are accessibility features integrated well into the code. They should be added in a maintainable way, even if that requires upfront refactoring.
 - [ ] Are accessible design patterns used, see [accessible-design-patterns.md](https://github.com/phetsims/phet-info/blob/master/doc/accessible-design-patterns.md)
 - [ ] Does resetting the simulation also reset the entire PDOM?
