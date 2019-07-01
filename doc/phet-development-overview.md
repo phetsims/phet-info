@@ -51,7 +51,7 @@ PhET Interactive Simulations creates free, open source educational simulations i
 **[Embedding a Simulation in your website](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#embedding-a-simulation-in-your-website)**
 
 ## Getting Started (for Windows)
-
+  
 In order to get the code for an existing PhET simulation, you will need to follow several steps (also shown in the Developing with PhET: Getting Started (on Windows) screencast):
 
 ### Checking out the code and running it in development mode
@@ -156,7 +156,7 @@ git clone https://github.com/phetsims/tandem.git
 
 When running the first git clone command, it may show a dialog that says: The “git” command requires the command line developer tools.  Would you like to install the tools now?  In this case, press “Install”.
 
-3. Download & install node+npm from http://nodejs.org/download
+3. Download & install node+npm from http://nodejs.org/en
 4. Launch a node server program on your development machine  
   a. Install the http-server as a command line program using the Terminal  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install http-server -g`  

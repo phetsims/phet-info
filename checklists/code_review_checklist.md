@@ -472,6 +472,21 @@ not be used in new code.
   this.particlesVisibleCheckbox = new Checkbox(...);
   ```
 
+- [ ] Type expressions for Enumeration values should be annotated as instances of that Enumeration, see examples in https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js for more.
+  ```js
+  /**
+   * @param {LeftOrRight} - whichHand
+   */
+   function getHand( whichHand ){
+     if( whichHand === LeftOrRight.LEFT ){
+       return new LeftHand();
+     }
+     else if( whichHand === LeftOrRight.RIGHT ){
+       return new RightHand();
+     }
+    }
+  ```
+  
 - [ ] Look for cases where the use of type expressions involving Property subclasses are incorrect.  Because of the structure of the `Property` class hierarchy, specifying type-specific Properties (`{BooleanProperty}`, `{NumberProperty}`,...) may be incorrect, because it precludes values of type `{DerivedProperty}` and `{DynamicProperty}`.   Similarly, use of `{DerivedProperty}` and `{DynamicProperty}` precludes values of (e.g.) `{BooleanProperty}`. Especially in common code, using `{Property,<TYPE>}` is typically correct, unless some specific feature of the `Property` subclass is required.  For example, `{Property.<boolean>}` instead of `{BooleanProperty}`.
 
 ### Visibility Annotations
@@ -534,6 +549,8 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 - [ ] All dynamics should be called from Sim.step(dt), do not use window.setTimeout or window.setInterval.  This will help support Legends of Learning and PhET-iO.
 
 ## **Accessibility**
+- [ ] Does the sim pass an accessibility fuzz test? (run with query parameters `fuzzBoard&ea`)
+- [ ] Run the accessible HTML through an [HTML validator](https://validator.w3.org/nu/#textarea), does the HTML pass?
 - [ ] Are accessibility features integrated well into the code. They should be added in a maintainable way, even if that requires upfront refactoring.
 - [ ] Are accessible design patterns used, see [accessible-design-patterns.md](https://github.com/phetsims/phet-info/blob/master/doc/accessible-design-patterns.md)
 - [ ] Does resetting the simulation also reset the entire PDOM?
