@@ -28,6 +28,8 @@ Developed and tested on Mac OS + Google Chrome.
 
 <html lang="en">
 <head>
+  <title>Learn more about PhET!</title>
+
   <!-- if you happen to be online, make the fonts look nicer :) -->
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
@@ -35,20 +37,22 @@ Developed and tested on Mac OS + Google Chrome.
 <style>
 
   :root {
-    --form-width: 1000px;
+    --form-width: 1100px;
+    --sign-up-button-width: 100px;
     --default-border-width: 2px;
-    --email-list-padding-y: 10px;
-    --form-padding: 10px;
+    --input-height: 65px;
+    --default-padding: 10px;
+    --text-input-padding: 10px;
 
     --default-font-weight: 300;
+    --short-transition: 0.3s;
 
     --phet-blue: #6acef5;
+    --phet-blue-light: #89d8f7;
     --red: #e74c3c;
+    --red-light: #fb6b5c;
     --green: #2ecc71;
-    --gray: #6b6b6b;
-    --light-gray: #dbdbdb;
-
-    --short-transition: 0.3s;
+    --gray-light: #dbdbdb;
   }
 
   html, body {
@@ -70,7 +74,7 @@ Developed and tested on Mac OS + Google Chrome.
     display: block;
     margin: auto;
     position: absolute;
-    top: 10%;
+    top: 11%;
     right: 0;
     left: 0;
   }
@@ -78,8 +82,9 @@ Developed and tested on Mac OS + Google Chrome.
   .form-container {
     max-width: var(--form-width);
     margin: auto;
+    padding: 0 30px;
     position: absolute;
-    top: 37%;
+    top: 40%;
     right: 0;
     left: 0;
   }
@@ -93,14 +98,18 @@ Developed and tested on Mac OS + Google Chrome.
   }
 
   #text-input {
-    width: calc( var(--form-width) - 2 * var(--form-padding) - 2 * var(--default-border-width) );
-    padding: var(--form-padding);
+    -webkit-appearance: none;
+    width: calc(100% - 2 * var(--text-input-padding) - 2 * var(--default-border-width) - var(--default-padding) - var(--sign-up-button-width));
+    height: calc(var(--input-height) - 2 * var(--text-input-padding) - 2 * var(--default-border-width));
+    padding: var(--text-input-padding);
     font-family: 'Roboto', sans-serif;
     font-size: 36px;
     font-weight: var(--default-font-weight);
-    border: var(--default-border-width) solid black;
+    border: var(--default-border-width) solid var(--gray-light);
     border-radius: 5px;
     transition: var(--short-transition);
+    display: inline-block;
+    float: left;
   }
 
   #text-input.error {
@@ -118,45 +127,54 @@ Developed and tested on Mac OS + Google Chrome.
     border-color: var(--phet-blue);
   }
 
-  ::-webkit-input-placeholder {
-    color: var(--light-gray);
+  #text-input.error:focus {
+    border-color: var(--red);
   }
 
+  ::-webkit-input-placeholder {
+    color: var(--gray-light);
+  }
+
+  #sign-up-button,
   button {
     display: block;
-    margin: 16px 0 0 0;
+    margin: 0;
     padding: 11px 10px 10px 10px;
     font-family: 'Roboto', sans-serif;
     font-weight: var(--default-font-weight);
     font-size: 22px;
-    color: black;
-    background: #faf8fb;
-    border: var(--default-border-width) solid var(--gray);
+    color: white;
+    background: var(--phet-blue-light);
+    border: var(--default-border-width) solid transparent;
     border-radius: 4px;
     transition: var(--short-transition);
   }
 
-  #submit-button {
+  #sign-up-button {
+    -webkit-appearance: none;
+    display: inline-block;
+    width: var(--sign-up-button-width);
     float: right;
+    height: var(--input-height);
   }
 
-  #submit-button:hover {
-    border-color: var(--phet-blue);
+  #sign-up-button:hover {
+    background: var(--phet-blue);
     cursor: pointer;
     transition: var(--short-transition);
   }
 
-  #submit-button:focus {
+  #sign-up-button:focus {
     box-shadow: none;
     outline: none;
-    border-color: var(--phet-blue);
+    background: var(--phet-blue);
     transition: var(--short-transition);
   }
 
   #emails-list {
-    height: calc(100% - 2 * var(--email-list-padding-y) );
+    height: calc(100% - 2 * var(--default-padding));
     margin: 0;
-    padding: var(--email-list-padding-y) 0;
+    padding: var(--default-padding) 0;
     list-style-type: none;
     overflow-y: scroll;
   }
@@ -170,10 +188,11 @@ Developed and tested on Mac OS + Google Chrome.
     position: absolute;
     bottom: 10px;
     right: 10px;
+    background: var(--red-light);
   }
 
   #delete-emails-button:hover {
-    border-color: var(--red);
+    background: var(--red);
     cursor: pointer;
     transition: var(--short-transition);
   }
@@ -181,7 +200,7 @@ Developed and tested on Mac OS + Google Chrome.
   #delete-emails-button:focus {
     box-shadow: none;
     outline: none;
-    border-color: var(--red);
+    background: var(--red);
     transition: var(--short-transition);
   }
 
@@ -270,11 +289,15 @@ Developed and tested on Mac OS + Google Chrome.
   </svg>
 
   <div class="form-container">
-    <h1 id="display-text"></h1>
+    <form id="email-form">
+      <h1 id="display-text"></h1>
+      <div id="input-container">
 
-    <!-- turn off autocomplete so that previously added emails are not exposed as suggestions -->
-    <input id="text-input" type="text" autocomplete="off" class="initial">
-    <button id="submit-button">submit</button>
+        <!-- turn off autocomplete so that previously added emails are not exposed as suggestions -->
+        <input id="text-input" type="text" autocomplete="off" class="initial">
+        <input id="sign-up-button" type="submit" value="Sign up">
+      </div>
+    </form>
   </div>
 
 </div>
@@ -285,24 +308,28 @@ Developed and tested on Mac OS + Google Chrome.
 </div>
 
 <script>
-  ( function() {
+  ( () => {
 
     // constants
-    const PHET_MORE_INFO_EMAILS_STRING = 'phet-more-info-emails';
-    const PHET_MORE_INFO_EMAILS_BACKUP_STRING = `${PHET_MORE_INFO_EMAILS_STRING}-backup`;
-    const SHOW_EMAILS_STRING = 'showEmails';
-    const SIGN_UP_STRING = 'Sign up for more information about PhET:';
-    const EXAMPLE_EMAIL_STRING = 'example@example.com';
-    const NO_EMAILS_STRING = 'There are no emails saved on this device.';
-    const EMPTY_STRING = '';
+    const EMAILS_KEY = 'phet-more-info-emails';
+    const EMAILS_BACKUP_KEY = `${EMAILS_KEY}-backup`;
+    const SHOW_EMAILS_URL_KEY = 'showEmails';
+
+    // strings
+    const signUpString = 'Sign up for more information about PhET:';
+    const successString = 'Thank you!';
+    const errorString = 'Please enter a valid email address:';
+    const exampleEmailString = 'example@example.com';
+    const noEmailsString = 'There are no emails saved on this device.';
+    const emptyString = '';
 
     // emails collected from a previous session
-    const savedEmails = JSON.parse( localStorage.getItem( PHET_MORE_INFO_EMAILS_STRING ) );
-    const savedBackupEmails = JSON.parse( localStorage.getItem( PHET_MORE_INFO_EMAILS_BACKUP_STRING ) );
+    const savedEmails = JSON.parse( localStorage.getItem( EMAILS_KEY ) );
+    const savedBackupEmails = JSON.parse( localStorage.getItem( EMAILS_BACKUP_KEY ) );
 
     // get query parameters
     const queryParameters = new URLSearchParams( window.location.search );
-    const showEmails = queryParameters.has( SHOW_EMAILS_STRING );
+    const showEmails = queryParameters.has( SHOW_EMAILS_URL_KEY );
 
     // see if a phet admin wants to view the saved emails table instead of the email form
     if ( showEmails ) {
@@ -326,7 +353,7 @@ Developed and tested on Mac OS + Google Chrome.
         } );
       }
       else {
-        appendToEmailList( NO_EMAILS_STRING );
+        appendToEmailList( noEmailsString );
       }
 
       // hide the email form, show the saved emails table
@@ -335,9 +362,9 @@ Developed and tested on Mac OS + Google Chrome.
 
       // handle delete emails button press
       document.getElementById( 'delete-emails-button' ).addEventListener( 'click', () => {
-        localStorage.setItem( PHET_MORE_INFO_EMAILS_STRING, null );
-        emailsList.innerHTML = EMPTY_STRING;
-        appendToEmailList( NO_EMAILS_STRING );
+        localStorage.setItem( EMAILS_KEY, null );
+        emailsList.innerHTML = emptyString;
+        appendToEmailList( noEmailsString );
       } );
     }
 
@@ -347,8 +374,9 @@ Developed and tested on Mac OS + Google Chrome.
 
     // get references to html elements
     const displayText = document.getElementById( 'display-text' );
+    const emailForm = document.getElementById( 'email-form' );
     const textInput = document.getElementById( 'text-input' );
-    const submitButton = document.getElementById( 'submit-button' );
+    const signUpButton = document.getElementById( 'sign-up-button' );
 
     /**
      * displays text above the input field and adds a class to the input field. if no class is provided, all classes are
@@ -359,8 +387,8 @@ Developed and tested on Mac OS + Google Chrome.
      */
     const showText = ( message, className ) => {
       displayText.innerText = message;
-      textInput.placeholder = EXAMPLE_EMAIL_STRING;
-      className ? textInput.classList.add( className ) : textInput.className = EMPTY_STRING;
+      textInput.placeholder = exampleEmailString;
+      className ? textInput.classList.add( className ) : textInput.className = emptyString;
     };
 
     /**
@@ -370,46 +398,50 @@ Developed and tested on Mac OS + Google Chrome.
      * @returns {boolean}
      */
     const isValidEmail = email => {
-      const regExp = /\S+@\S+\.\S+/;
-      return regExp.test( email );
+      const regEx = /\S+@\S+\.\S+/;
+      return regEx.test( email );
     };
 
-    // setup initial display text
-    showText( SIGN_UP_STRING );
+    // set initial state when text input is focused
+    textInput.addEventListener( 'focus', () => {
+      showText( signUpString );
+    } );
 
-    // handle submit button press
-    submitButton.addEventListener( 'click', () => {
+    // focus text input on page load so the user can type immediately
+    textInput.focus();
+
+    // handle form submit
+    emailForm.addEventListener( 'submit', event => {
+
+      // don't reload the page
+      event.preventDefault();
+
       const input = textInput.value;
-
       if ( isValidEmail( input ) ) {
 
         // add the latest email and save
         emails.push( input );
         backupEmails.push( input );
-        localStorage.setItem( PHET_MORE_INFO_EMAILS_STRING, JSON.stringify( emails ) );
-        localStorage.setItem( PHET_MORE_INFO_EMAILS_BACKUP_STRING, JSON.stringify( backupEmails ) );
+        localStorage.setItem( EMAILS_KEY, JSON.stringify( emails ) );
+        localStorage.setItem( EMAILS_BACKUP_KEY, JSON.stringify( backupEmails ) );
 
         // show a success message, clear input and placeholder
-        showText( 'Thank you!', 'success' );
-        textInput.value = EMPTY_STRING;
-        textInput.placeholder = EMPTY_STRING;
+        showText( successString, 'success' );
+        textInput.value = emptyString;
+        textInput.placeholder = emptyString;
+        textInput.blur();
 
         // two seconds after success, return to initial state
         setTimeout( () => {
-          showText( SIGN_UP_STRING );
+          textInput.focus();
         }, 2000 );
       }
       else {
-        showText( 'Please enter a valid email address:', 'error' );
+        showText( errorString, 'error' );
       }
 
-      // clear focus highlight
-      submitButton.blur();
-    } );
-
-    // return to initial state when text input is focused
-    textInput.addEventListener( 'focus', () => {
-      showText( SIGN_UP_STRING );
+      // clear focus highlight if pressed
+      signUpButton.blur();
     } );
   } )();
 </script>
