@@ -100,7 +100,7 @@ Developed and tested on Mac OS + Google Chrome.
   #text-input {
     -webkit-appearance: none;
     width: calc(100% - 2 * var(--text-input-padding) - 2 * var(--default-border-width) - var(--default-padding) - var(--sign-up-button-width));
-    height: calc( var(--input-height) - 2 * var(--text-input-padding) - 2 * var(--default-border-width));
+    height: calc(var(--input-height) - 2 * var(--text-input-padding) - 2 * var(--default-border-width));
     padding: var(--text-input-padding);
     font-family: 'Roboto', sans-serif;
     font-size: 36px;
@@ -308,7 +308,7 @@ Developed and tested on Mac OS + Google Chrome.
 </div>
 
 <script>
-  ( function() {
+  ( () => {
 
     // constants
     const EMAILS_KEY = 'phet-more-info-emails';
