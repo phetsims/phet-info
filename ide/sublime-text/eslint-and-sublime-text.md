@@ -25,9 +25,6 @@ These steps were verified on Ubuntu 16.04 and Mac OS X 10.11 with Sublime Text 3
           "--rulesdir",
           "C:/Users/Jesse/Documents/Development/phetsims/chipper/eslint/rules/"
         ],
-        "executable": "eslint",
-
-        // so lintinig rungs continuously
         "lint_mode": "background"
     }
   }
