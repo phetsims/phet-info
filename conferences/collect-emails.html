@@ -6,17 +6,17 @@ Copyright 2019, University of Colorado Boulder
 This is an email gathering utility intended for offline usage at PhET conferences. Because offline support is a
 requirement, acquired emails are saved to localStorage instead of a remote database.
 
-The email list is stored via a key in localStorage, see PHET_MORE_INFO_EMAILS_STRING below. To view emails saved
-on the current device, add the query parameter flag `showEmails` to the URL of this file. I recommend copying them to
+The email list is stored via a key in localStorage, see EMAILS_KEY below. To view emails saved on the current device,
+add the query parameter flag `showEmails` to the URL of this file. I recommend copying them to
 another destination at the end of each conference booth session.
 
 To delete the saved email list from the current device, click the 'delete emails' button while viewing the list of
 emails. If the email list is deleted by mistake, it is available for recovery via a backup key in localStorage, see
-PHET_MORE_INFO_EMAILS_BACKUP_STRING below. The backup list includes all emails that have ever been saved to the current
-device (since the cache was last cleared), not just the emails saved since the most recent deletion within this app. To
-view the backup list, open a console in your browser and enter
-`JSON.parse( localStorage.getItem( {{PHET_MORE_INFO_EMAILS_BACKUP_STRING}} ) );`. The double braces indicate that you
-need to fill in the value from below, e.g. `JSON.parse( localStorage.getItem( 'phet-more-info-emails-backup' ) );`.
+EMAILS_BACKUP_KEY below. The backup list includes all emails that have ever been saved to the current device (since the
+cache was last cleared), not just the emails saved since the most recent deletion within this app. To
+view the backup list, open a console in your browser and enter `JSON.parse( localStorage.getItem( {{EMAILS_BACKUP_KEY}} ) );`.
+The double braces indicate that you need to fill in the value from below, e.g.
+`JSON.parse( localStorage.getItem( 'phet-more-info-emails-backup' ) );`.
 
 NOTE/TODO: For some reason, when opening a new tab, localStorage in the console doesn't contain any saved data
 (including the backup) until this utility is run in the tab. Then, the backup and any saved emails become available.
