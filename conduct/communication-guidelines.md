@@ -42,6 +42,7 @@ intent/voice is harder to gauge in places githhub comments
 4. Even if you feel wording was totally reasonable, respect that another party might appreciate a different phrasing (e.g. a characteristic that is statistically rare might be reasonable to call "abnormal" but "uncommon" might be a better phrasing)
 5. If talking directly is ineffective OR if you do not feel comfortable initiating the conversation in the first place, speak to a supervisor. 
 
+---
 
 Notes from dev discussion 07/11/2019
 * It’s not about efficiency. It’s about creating a supportive environment.
