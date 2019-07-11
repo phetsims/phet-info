@@ -6,9 +6,9 @@ This document is targeted towards public forums, but the principles should be ap
 ### Empathy
 Recognize that we all have different stresses at different times, and we all make mistakes
 ### Respectful Candor
-We should be able to discuss things in a candid manor, but maintain professionalism and respect
+We should be able to discuss topics in a candid manor, but maintain professionalism and respect
 ### Specificity
-When providing critiques we should be specific
+When providing critiques we should be specific and clear
 ### Trust
 We are all working towards a common goal, and need to trust that we have the best intentions at heart
 
