@@ -26,7 +26,7 @@ We want to "gracefully accept constructive criticism" and ideally avoid feeling 
 1. Contact the other party directly, no need to "call them out" in the public forum
 2. Assume the "offending party" did not intend poor communication, we are all on the same team
 3. If you are the "offending party" listen to the criticism and be willing to adjust/edit language
-4. Even if you feel wording was totally reasonable, respect that another party might appreciate a different phrasing (eg a characteristic that is statistically rare might be reasonable to call "abnormal" but "uncommon" might be a better phrasing)
+4. Even if you feel wording was totally reasonable, respect that another party might appreciate a different phrasing (e.g. a characteristic that is statistically rare might be reasonable to call "abnormal" but "uncommon" might be a better phrasing)
 5. If talking directly is ineffective OR if you do not feel comfortable initiating the conversation in the first place, speak to a supervisor. 
 
 
