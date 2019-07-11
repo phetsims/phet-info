@@ -16,11 +16,24 @@ We are all working towards a common goal, and need to trust that we have the bes
 ### Outside reader
 These are public forums. A simple heuristic to apply is if an outside person were reading comments with no knowledge of the participants, would they view the exchange as respectful and collaborative?
 
+### Tone is two way
+To be refined but -- basically consider tone when writing comments, and also try not to infer a tone when reading them
+"Good faith" interpretation of what is written
+
 ### Offering solutions
 When pointing out issues/critiques, offering potential solutions adds a more collaborative nature to discussion. There will of course be times where another solution is not obvious. In such cases it is best to say something like "this approach seems problematic for these reasons...but I don't have a solution to offer currently".
 
 ### Be open to feedback
 We want to "gracefully accept constructive criticism" and ideally avoid feeling defensive. (Situations have arisen where people feel their expertise/ability is being questioned, need to have strategy to avoid this feeling, not a fully-formed thought yet, but seems to mainly be about trusting your team.)
+
+
+## To be recognzied
+
+### Bandwidth of the medium 
+intent/voice is harder to gauge in places githhub comments
+
+### Impact vs Intent
+
 
 ## If communication seems problematic
 1. Contact the other party directly, no need to "call them out" in the public forum
