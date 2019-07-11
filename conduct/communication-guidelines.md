@@ -19,6 +19,9 @@ These are public forums. A simple heuristic to apply is if an outside person wer
 ### Offering solutions
 When pointing out issues/critiques, offering potential solutions adds a more collaborative nature to discussion. There will of course be times where another solution is not obvious. In such cases it is best to say something like "this approach seems problematic for these reasons...but I don't have a solution to offer currently"
 
+### Be open to feedback
+We want to "gracefully accept constructive criticism" and ideally avoid feeling defensive. (Situations have arisen where people feel there expertise/ability is being questioned, need to have strategy to avoid this feeling, not a fully formed thought yet, but seems to mainly be about trusting your team)
+
 ## If communication seems problematic
 1. Contact the other party directly, no need to "call them out" in the public forum
 2. Assume the "offending party" did not intend poor communication, we are all on the same team
