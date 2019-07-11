@@ -42,15 +42,21 @@ intent/voice is harder to gauge in places githhub comments
 4. Even if you feel wording was totally reasonable, respect that another party might appreciate a different phrasing (e.g. a characteristic that is statistically rare might be reasonable to call "abnormal" but "uncommon" might be a better phrasing)
 5. If talking directly is ineffective OR if you do not feel comfortable initiating the conversation in the first place, speak to a supervisor. 
 
----
 
 Notes from dev discussion 07/11/2019
-* It’s not about efficiency. It’s about creating a supportive environment.
-* Concern that it will take more time. How to balance.
-* Add something into the document about tone - try to use a “nice” tone. 
-* Read things without inferring a tone.
-* Impact vs intent - understanding that the impact of your comment can be different than the intent of your communication. 
-* Recognizing that everyone is working hard with good intentions, and that we are a learning organization, framing comments in offering improvements and opportunities to grow ... more than just being critical.
-* We want to have an open environment, where everyone feels comfortable making suggestions, offering well-intentioned critques, etc.  So we don’t want team members not making their comments, because they are worried about how reactions. 
-* Lots of energy (emotional energy) can be used up when events arise … pick up the phone and don’t let things linger. 
+It’s not about efficiency. It’s about creating a supportive environment.
+
+Concern that it will take more time. How to balance.
+
+Add something into the document about tone - try to use a “nice” tone. 
+
+Read things without inferring a tone.
+
+Impact vs intent - understanding that the impact of your comment can be different than the intent of your communication. 
+
+Recognizing that everyone is working hard with good intentions, and that we are a learning organization, framing comments in offering improvements and opportunities to grow ... more than just being critical.
+
+We want to have an open environment, where everyone feels comfortable making suggestions, offering well-intentioned critques, etc.  So we don’t want team members not making their comments, because they are worried about how reactions. 
+
+Lots of energy (emotional energy) can be used up when events arise … pick up the phone and don’t let things linger. 
 
