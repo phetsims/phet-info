@@ -32,8 +32,13 @@ PhET code-review checklist
 ## **Memory Leaks**
 
 - [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.) Test on a version built using `grunt --minify.mangle=false`. There should be a GitHub issue showing the results of testing done by the primary developer.
-- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is there a call to that component’s `dispose` function, or documentation about why `dispose` is unnecessary?
-- [ ] Are there leaks due to registering observers or listeners? These guidelines should be followed, or documentation added about why following them is not necessary:
+- [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is
+there a call to that component’s `dispose` function, or is it obvious why it isn't necessary, or is there documentation
+about why `dispose` isn't called?  An example of why no call to `dispose` is needed is if the component is used in
+a screen view that would never be removed from the scene graph.
+- [ ] Are there leaks due to registering observers or listeners? The following guidelines should be followed unless
+there it is obviously no need to unlink, or documentation (in-line or in the implementation nodes)added about why
+following them is not necessary.  Examples of when an unlink is not needed is if the property never 
 	- [ ] AXON: `Property.link` is accompanied by `Property.unlink`.
 	- [ ] AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
 	- [ ] AXON: Creation of `Multilink` is accompanied by `dispose`.
