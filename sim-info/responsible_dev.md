@@ -15,7 +15,7 @@
 | Balloons and Static Electricity  | @jessegreenberg  | ✓ |
 | Beer's Law Lab  | @pixelzoom  | ✓ |
 | Bending Light  | @samreid  | ✓ |
-| Blackbody Spectrum  | @jbphet  |  |
+| Blackbody Spectrum  | @jbphet  | ✓ |
 | Build a Fraction | @jonathanolson | ✓ |
 | Build a Molecule | @jonathanolson |  |
 | Build an Atom  | @jbphet  | ✓ |
