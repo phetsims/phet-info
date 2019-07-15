@@ -104,7 +104,7 @@ from the branch.
 
 ## RC/production deployments and release branches
 
-New chipper 2.0 release branches will support building of all brands. The branch name will ONLY ever be of the format `{{MAJOR}}.{{MINOR}}`, e.g. `1.7`, and that branch will only support building/deploying versions that match that major/minor combination.
+Chipper 2.0 release branches support building of all brands. The branch name will ONLY ever be of the format `{{MAJOR}}.{{MINOR}}`, e.g. `1.7`, and that branch will only support building/deploying versions that match that major/minor combination.
 
 NOTE: Release branches are created for RCs. If you need to make a change after the first RC (but before publication), you will still want to follow the process for maintenance patches.
 
