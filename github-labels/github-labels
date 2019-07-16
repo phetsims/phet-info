@@ -39,6 +39,7 @@ status:fixed-awaiting-deploy,006b75
 status:on-hold,F0FFF0
 status:ready-for-qa,00cc00
 status:ready-for-review,3E766D
+type:a11y-bug,FF0077
 type:automated-testing,FF00AA
 type:bug,FF00AA
 type:duplicate,EEEED1
