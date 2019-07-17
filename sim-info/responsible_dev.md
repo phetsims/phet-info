@@ -27,7 +27,7 @@
 | Circuit Construction Kit: Black Box Study | @samreid | |
 | Circuit Constructor Kit: DC | @samreid | ✓ |
 | Circuit Constructor Kit: DC - Virtual Lab| @samreid | ✓ |
-| Color Vision |  @pixelzoom  | ✓ |
+| Color Vision | @chrisklus | ✓ |
 | Concentration |  @pixelzoom  | ✓ |
 | Coulomb's Law | @zepumph | ✓ |
 | Curve Fitting | @jonathanolson | |
@@ -84,7 +84,7 @@
 | pH Scale |  @pixelzoom  | ✓ |
 | pH Scale: Basics |  @pixelzoom  | ✓ |
 | PhET-iO Test Sim |  @chrisklus | |
-| Plinko Probability |  @pixelzoom  | ✓ |
+| Plinko Probability | @chrisklus  | ✓ |
 | Projectile Motion | @jbphet  | ✓ |
 | Proportion Playground |  @jonathanolson  | ✓ |
 | Protein Synthesis | @samreid | |
