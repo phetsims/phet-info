@@ -60,3 +60,8 @@ We want to have an open environment, where everyone feels comfortable making sug
 
 Lots of energy (emotional energy) can be used up when events arise … pick up the phone and don’t let things linger. 
 
+How do people perceive comments on GitHub? That is "talking to a person", "documenting", or etc ... Perspective makes a difference on interpretation?
+
+Useful links to think about: 
+Interplay with how to bring more diversity into open source communities? 
+
