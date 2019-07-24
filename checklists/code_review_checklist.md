@@ -560,6 +560,7 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 - [ ] Are accessible design patterns used, see [accessible-design-patterns.md](https://github.com/phetsims/phet-info/blob/master/doc/accessible-design-patterns.md)
 - [ ] Does resetting the simulation also reset the entire PDOM?
 - [ ] Is `Node.accessibleOrder` used appropriately to maintain visual and PDOM layout balance?
+- [ ] Make sure accessibility strings aren't being adjusted with ascii specific javascript methods like `toUpperCase()`. Remember that one day these strings will be translatable
 
 ## **PhET-iO**
 
