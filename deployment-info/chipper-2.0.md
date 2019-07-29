@@ -51,6 +51,13 @@ Your default build configuration is specified in `~/.phet/build-local.json`. Des
 
 It is generally beneficial to include both `brand:` and `brands:` entries in the `build-local.json`, so that it will work on simulations both before and after the chipper 2.0 conversion.
 
+## Configure remote ~/.bashrc
+
+In order to ensure that all files you write to the dev server are accessible by other phet users (both people and machines), please add the following line at the bottom of ~/.bashrc on bayes.colorado.edu.
+
+```
+umask g+w
+```
 ## Configure an RSA key
 
 Configure an RSA key, or you will be prompted multiple times for a password during dev-related build tasks.
