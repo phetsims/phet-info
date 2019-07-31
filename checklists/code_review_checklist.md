@@ -38,7 +38,8 @@ about why `dispose` isn't called?  An example of why no call to `dispose` is nee
 a screen view that would never be removed from the scene graph.
 - [ ] Are there leaks due to registering observers or listeners? The following guidelines should be followed unless
 there it is obviously no need to unlink, or documentation (in-line or in the implementation nodes)added about why
-following them is not necessary.  Examples of when an unlink is not needed is if the property never 
+following them is not necessary.  Unlink is not needed for properties contained in classes that are never disposed of,
+such as primary model and view classes that exist for the duration of the sim.
 	- [ ] AXON: `Property.link` is accompanied by `Property.unlink`.
 	- [ ] AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
 	- [ ] AXON: Creation of `Multilink` is accompanied by `dispose`.
