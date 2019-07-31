@@ -141,7 +141,6 @@ For a sim repository named “my-repo”, the general structure should look like
         .gitignore
         my-repo_en.html
         my-repo-strings_en.json
-	myRepo.js
         Gruntfile.js
         LICENSE
         package.json
