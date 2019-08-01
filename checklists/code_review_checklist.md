@@ -52,7 +52,7 @@ such as primary model and view classes that exist for the duration of the sim.
 
 ## **Performance**
 
-- [ ] Does the sim perform as desired across the range of supported platforms? (eg, not too slow on slow platforms, not too fast on fast platforms)
+- [ ] Is there a GitHub issue documenting a comprehensive performance review on all supported platforms?
 - [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter `webgl=false`)
 
 ## **Usability**
