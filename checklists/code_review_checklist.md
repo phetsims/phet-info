@@ -62,10 +62,9 @@ such as primary model and view classes that exist for the duration of the sim.
 - [ ] Do pointer areas overlap? (run with query parameter `showPointerAreas`) Some overlap may be OK depending on the z-ordering (if the frontmost object is supposed to occlude touch/mouse areas)
 
 ## **Internationalization**
-- [ ] Are there any strings that are not being internationalized? (run with query parameter `stringTest=x`, you should see nothing but 'x' strings)
+- [ ] Are there any strings that are not internationalized, and does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter `stringTest=X`. You should see nothing but 'X' strings.)
 - [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter `stringTest=double`)
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter `stringTest=long`)
-- [ ] Does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter `stringTest=X`)
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter 
 `stringTest=xss`? This test passes if sim does not redirect, OK if sim crashes or fails to fully start. Only test on one 
 desktop platform.  For PhET-iO sims, additionally test `?stringTest=xss` in Studio to make sure i18n strings didn't leak 
