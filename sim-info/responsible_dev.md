@@ -32,7 +32,7 @@
 | Coulomb's Law | @zepumph | ✓ |
 | Curve Fitting | @jonathanolson | |
 | Density | @jonathanolson | |
-| Diffusion | @pixelzoom | |
+| Diffusion | @pixelzoom | ✓ |
 | Energy Forms and Changes | @chrisklus | ✓ |
 | Energy Skate Park |  @jessegreenberg  | |
 | Energy Skate Park: Basics |  @samreid  | ✓ |
@@ -53,8 +53,8 @@
 | Friction | @zepumph | ✓ |
 | Function Builder | @pixelzoom | ✓ |
 | Function Builder: Basics | @pixelzoom | ✓ |
-| Gas Properties | @pixelzoom |  |
-| Gases Intro | @pixelzoom |  |
+| Gas Properties | @pixelzoom | ✓ |
+| Gases Intro | @pixelzoom | ✓ |
 | Gene Expression Essentials | @jbphet | ✓ |
 | Graphing Lines | @pixelzoom  | ✓ |
 | Graphing Quadratics | @pixelzoom | ✓ |
