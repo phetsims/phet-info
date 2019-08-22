@@ -667,6 +667,9 @@ A standard pattern described in https://en.wikipedia.org/wiki/Observer_pattern
 NOTE: when this gets fleshed out, scenery input system, options callbacks should be passed the SCENERY/Event from their
 input listeners.
 
+NOTE: the author of this section should include patterns/strategies in how to identify the notifying Property in 
+Multilink and DerivedProperties; see comments in expressed in https://github.com/phetsims/axon/issues/259.
+
 Very important pattern for new developers
 
 
