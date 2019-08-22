@@ -812,7 +812,7 @@ define( require => {
 
 A class should be used whenever keeping track of state is desired. The convention for naming a singleton class file is to start with a lowercase letter since an instance of the class is imported.
 
-If initial state information is needed, then we can use an initialize pattern like what's written above. This is preferrable to the getInstance pattern because it is simpler and does not expose the contructor. Also, since a single instance is being registered, the module loading system is basically doing getInstance for us.
+If initial state information is needed, then we can use an initialize pattern like what's written above. This is preferable to the getInstance pattern because it is simpler and does not expose the contructor. Also, since a single instance is being registered, the module loading system is basically doing getInstance for us.
 
 phetioEngine.js is an example of this pattern in PhET code.
 
