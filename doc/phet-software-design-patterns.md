@@ -19,6 +19,7 @@ of standard design patterns.
 * [Prototypal Inheritance](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#prototypal-inheritance) 🚧
 * [Singleton](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#singleton)
 * [State Machine](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#state-machine)
+* [Strategy](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#strategy) 🚧
 
 ## Composition and Inheritance
 
@@ -975,6 +976,11 @@ so that it can easily be instrumented.  Setting state values via the PhET-iO API
 to be supported, since it would be difficult to make the code able to handle arbitrarily state transitions.
 If this were ever done, it would require thorough documentation to describe the valid 
 state transitions that can be triggered via this API. 
+
+## Strategy
+
+TBD, assigned to @jbphet
+
 
 ## Trait
 
