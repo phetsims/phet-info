@@ -1,6 +1,7 @@
 *NOTE! Prior to doing a code review, copy this checklist to a GitHub issue for the repository being reviewed. Delete the Table of Contents section, since the links will be incorrect.*
 
-*Please mark failed items with* ❌
+*Mark failed items with* ❌
+*Call attention to items with* ⚠️
 
 PhET code-review checklist
 =============
