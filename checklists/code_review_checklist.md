@@ -536,6 +536,7 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 ## IE11
 - [ ] No usage of `Number.parseInt()`
 - [ ] No usage of `Array.prototype.find`
+- [ ] No usage of `String.endsWith()`, please use `_.endsWith()` instead.
 
 ## **Organization, Readability, and Maintainability**
 
