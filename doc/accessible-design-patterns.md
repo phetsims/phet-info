@@ -31,6 +31,3 @@ make a single general describer that has too much responsibility, for example `M
 Although describers don't need to be the only place where `StringUtils.fillIn` is used for accessible descriptions, 
 they can cover the majority of the usages, as well as keeping track of the model and custom state needed to create these
 descriptions.
-
-### Dynamic aria-valuetext
-
