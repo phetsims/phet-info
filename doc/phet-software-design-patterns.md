@@ -982,7 +982,40 @@ state transitions that can be triggered via this API.
 
 ## Strategy
 
-TBD, assigned to @jbphet
+Author: @jbphet
+
+The intent of the "Strategy" design patterns is to define a family of algorithms, encapsulate each one behind a common
+interface, and let clients used them interchangeably to vary some aspect of their behavior.  This is a pattern that is
+used fairly commonly in PhET code, and a resonably good explanation can be found at 
+https://en.wikipedia.org/wiki/Strategy_pattern.
+
+One of the most effective ways to learn a pattern is to study examples of its usage.  One PhET simulation that makes
+extensive use of the strategy pattern is Gene Expression Essentials.  This simulation depicts the basic process of
+DNA transcriptions by showing how various biomolecules interact to transcribe and translate the information encoded in
+DNA molecules into proteins needed by the cells.  The strategy pattern was used in several places in this sim, but the
+most extensive use was for controlling how the biomolecules moved.  In some cases, they need to move around rangomly.
+In others, they need to move directly to a particular location.  In yet another, they had to appear that they were
+moving somewhat randomly, but ultimately arriving at a destination.  This was accomplished by having the biomolecules
+use a set of "motion strategies" that were switched when the motion of the biomolecule needed to change.
+
+In this case, there was an abstract base class called `MotionStrategy` (in Java, this would probably be an interface).
+The main method in that class that was intended to be overidden in all subclasses determined the next position of the
+element, and looks like this:
+
+```js    
+/**
+ * get the next position given the current position, bounds, and amount of time
+ * @param {Vector2} currentPosition
+ * @param {Bounds2} bounds - allowed motion bounds of the controlled item, used in detecting whether the item would go
+ * outside of the motion bounds.
+ * @param {number} dt - delta time
+ * @public
+ */
+getNextPosition: function( currentPosition, bounds, dt ) {
+   // figure out the next position
+},
+```
+
 
 
 ## Trait
