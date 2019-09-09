@@ -19,7 +19,7 @@ of standard design patterns.
 * [Prototypal Inheritance](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#prototypal-inheritance) 🚧
 * [Singleton](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#singleton)
 * [State Machine](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#state-machine)
-* [Strategy](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#strategy) 🚧
+* [Strategy](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#strategy)
 
 ## Composition and Inheritance
 
@@ -984,10 +984,75 @@ state transitions that can be triggered via this API.
 
 Author: @jbphet
 
+### Overview
+
 The intent of the "Strategy" design patterns is to define a family of algorithms and encapsulate each one behind a common
 interface, and then let clients used them interchangeably to vary some aspect of the clients' behavior. This pattern is
 used fairly commonly in PhET code, and a reasonably good explanation can be found at 
-https://en.wikipedia.org/wiki/Strategy_pattern.
+https://en.wikipedia.org/wiki/Strategy_pattern.  There are many other descriptions on the web, and if you're thinking of
+applying this pattern or needing to perform maintenance on an existing implementation of it, it's worth doing some
+searching and reading.
+
+In UML diagrams, the strategy pattern is usually depicted as an abstract base class or interface with multiple concrete
+subclasses.  Here are a couple of examples that were live at this time of this writing:
++ https://upload.wikimedia.org/wikipedia/commons/3/39/Strategy_Pattern_in_UML.png 
++ https://cdncontribute.geeksforgeeks.org/wp-content/uploads/classinh.jpg
++ https://www.tutorialspoint.com/design_pattern/images/strategy_pattern_uml_diagram.jpg
+
+### When to Use
+
+This pattern is useful in situations where the behavior of an object needs to change at run time based on state
+information and there is some benefit in encapsulating that behavior.  If the state information is limited and there
+are not many variations in behavior, a simple `if` statement will often suffice (and is generally easier to read), for
+example:
+```js
+step( dt ){
+  if ( this.isAboveWater ){
+    this.fall( dt );
+  }
+  else{
+    this.float( dt );
+  }
+}
+```
+
+However, if the state and behaviors start to get more complex, a strategy pattern may help to simplify the code and/or
+help to avoid duplication of code where similar behavioral changes are needed in other related classes, for instance:
+
+```js
+step( dt ){
+  if ( this.isAboveWater ){
+    this.fall( dt );
+  }
+  else if ( this.isBelowWater ) {
+    this.floatTowardsSurface( dt );
+  }
+  else if ( this.onSurface && this.waterModel.isWindy ){
+    this.bobOnSurface( dt );
+  }
+  else{
+    this.sitCalmlyOnSurface( dt );
+  }
+}
+```
+
+versus:
+```js
+step( dt ){
+  this.waterInteractionStrategy.step( dt );
+}
+```
+
+In short, here are some rules of thumb for when a strategy pattern might be helpful:
++ there is complex if/switch logic that is being used to decide between different algorithms
++ there is duplication of conditional logic (especially when slightly altered) in a number of related classes/types
++ there are states in a state machine that are logically similar but have different behaviors
+
+It should be noted that, because functions JavaScript are first-class object (meaning that they can be treated as 
+objects), this pattern could be implemented using only functions if the strategy objects have no state of their own that
+they need to keep track of.  
+
+### Examples in PhET Code
 
 One of the most effective ways to learn a pattern is to study examples of its usage.  One PhET simulation that makes
 extensive use of the strategy pattern is Gene Expression Essentials.  This simulation depicts the basic process of
@@ -1023,7 +1088,6 @@ name of the base class for the strategy followed by the name of the simulation i
 + `FadeStrategy` (neuron)
 + `MotionStrategy` (gene-expression-essentials)
 + `PhotonAbsorptionStrategy` (molecules-and-light)
-+ `IGridSizeStrategy` (capacitor-lab-basics)
 
 ## Trait
 
