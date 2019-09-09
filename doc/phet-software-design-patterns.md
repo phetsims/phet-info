@@ -984,9 +984,9 @@ state transitions that can be triggered via this API.
 
 Author: @jbphet
 
-The intent of the "Strategy" design patterns is to define a family of algorithms, encapsulate each one behind a common
-interface, and let clients used them interchangeably to vary some aspect of the clients' behavior.  This is a pattern
-that is used fairly commonly in PhET code, and a reasonably good explanation can be found at 
+The intent of the "Strategy" design patterns is to define a family of algorithms and encapsulate each one behind a common
+interface, and then let clients used them interchangeably to vary some aspect of the clients' behavior. This pattern is
+used fairly commonly in PhET code, and a reasonably good explanation can be found at 
 https://en.wikipedia.org/wiki/Strategy_pattern.
 
 One of the most effective ways to learn a pattern is to study examples of its usage.  One PhET simulation that makes
@@ -1024,8 +1024,6 @@ name of the base class for the strategy followed by the name of the simulation i
 + `MotionStrategy` (gene-expression-essentials)
 + `PhotonAbsorptionStrategy` (molecules-and-light)
 + `IGridSizeStrategy` (capacitor-lab-basics)
-
-
 
 ## Trait
 
