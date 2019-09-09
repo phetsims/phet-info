@@ -986,12 +986,12 @@ Author: @jbphet
 
 ### Overview
 
-The intent of the "Strategy" design patterns is to define a family of algorithms and encapsulate each one behind a common
+The intent of the "Strategy" design pattern is to define a family of algorithms and encapsulate each one behind a common
 interface, and then let clients used them interchangeably to vary some aspect of the clients' behavior. This pattern is
 used fairly commonly in PhET code, and a reasonably good explanation can be found at 
-https://en.wikipedia.org/wiki/Strategy_pattern.  There are many other descriptions on the web, and if you're thinking of
-applying this pattern or needing to perform maintenance on an existing implementation of it, it's worth doing some
-searching and reading.
+https://en.wikipedia.org/wiki/Strategy_pattern.  There are many other decent descriptions on the web, and if you're
+thinking of applying this pattern or needing to perform maintenance on an existing implementation of it, it's worth
+doing some searching and reading.
 
 In UML diagrams, the strategy pattern is usually depicted as an abstract base class or interface with multiple concrete
 subclasses.  Here are a couple of examples that were live at this time of this writing:
@@ -1044,13 +1044,14 @@ step( dt ){
 ```
 
 In short, here are some rules of thumb for when a strategy pattern might be helpful:
-+ there is complex if/switch logic that is being used to decide between different algorithms
-+ there is duplication of conditional logic (especially when slightly altered) in a number of related classes/types
++ there is complex if/switch logic that is being used to decide between different algorithms/behavior
++ there is duplication of conditional logic (especially when slightly altered) in a number of related classes/types that
+is being used to implement different behavior
 + there are states in a state machine that are logically similar but have different behaviors
 
 It should be noted that, because functions JavaScript are first-class object (meaning that they can be treated as 
-objects), this pattern could be implemented using only functions if the strategy objects have no state of their own that
-they need to keep track of.  
+objects), this pattern could be implemented using only functions if the strategy objects do not need to maintain
+internal state.  
 
 ### Examples in PhET Code
 
@@ -1058,14 +1059,15 @@ One of the most effective ways to learn a pattern is to study examples of its us
 extensive use of the strategy pattern is Gene Expression Essentials.  This simulation depicts the basic process of
 DNA transcriptions by showing how various biomolecules interact to transcribe and translate the information encoded in
 DNA molecules into proteins needed by the cells.  The strategy pattern was used in several places in this sim, but the
-most extensive use was for controlling how the biomolecules moved.  In some cases, they need to move around rangomly.
-In others, they need to move directly to a particular location.  In yet another, they had to appear that they were
-moving somewhat randomly, but ultimately arriving at a destination.  This was accomplished by having the biomolecules
-use a set of "motion strategies" that were switched when the motion of the biomolecule needed to change.
+most extensive use was for controlling how the biomolecules moved.  In some cases, biomolecules need to move around 
+randomly. In other situations, they need to move directly to a particular location.  In other cases, biomolecules need
+to appear that they are moving somewhat randomly while ultimately arriving at a destination.  This was accomplished by
+having the biomolecules use a set of "motion strategies" that were switched when the motion behavior of the biomolecule
+needed to change.
 
 In this case, there is an abstract base class called `MotionStrategy` (in Java, this would probably be an interface).
-The main method in that class that was intended to be overridden in all subclasses determined the next position of the
-client element, and looks like this:
+A method in this class is intended to be overridden in all subclasses, and its purpose is to determine the next position
+of the client element.  The code looks like this:
 
 ```js    
 /**
@@ -1081,13 +1083,16 @@ getNextPosition: function( currentPosition, bounds, dt ) {
 },
 ```
 
-Below is a list of some examples of strategy pattern usage in PhET sims.  This list is not exhaustive.  It includes the
-name of the base class for the strategy followed by the name of the simulation in which it is used.
+The various concrete subclasses of the `MotionStrategy` class implement the desired movement behavior, and are switched
+into place based on the state of the biomolecule.
+
+Below is a list of some other examples of strategy pattern usage in PhET sims.  This list is not exhaustive.  It
+includes the name of the base class for the strategy followed by the name of the simulation in which it is used.
 
 + `MotionStrategy` (neuron)
 + `FadeStrategy` (neuron)
-+ `MotionStrategy` (gene-expression-essentials)
 + `PhotonAbsorptionStrategy` (molecules-and-light)
++ `VibrationStrategy` (molecules-and-light)
 
 ## Trait
 
