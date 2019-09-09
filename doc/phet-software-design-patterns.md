@@ -985,8 +985,8 @@ state transitions that can be triggered via this API.
 Author: @jbphet
 
 The intent of the "Strategy" design patterns is to define a family of algorithms, encapsulate each one behind a common
-interface, and let clients used them interchangeably to vary some aspect of their behavior.  This is a pattern that is
-used fairly commonly in PhET code, and a resonably good explanation can be found at 
+interface, and let clients used them interchangeably to vary some aspect of the clients' behavior.  This is a pattern
+that is used fairly commonly in PhET code, and a reasonably good explanation can be found at 
 https://en.wikipedia.org/wiki/Strategy_pattern.
 
 One of the most effective ways to learn a pattern is to study examples of its usage.  One PhET simulation that makes
@@ -998,9 +998,9 @@ In others, they need to move directly to a particular location.  In yet another,
 moving somewhat randomly, but ultimately arriving at a destination.  This was accomplished by having the biomolecules
 use a set of "motion strategies" that were switched when the motion of the biomolecule needed to change.
 
-In this case, there was an abstract base class called `MotionStrategy` (in Java, this would probably be an interface).
-The main method in that class that was intended to be overidden in all subclasses determined the next position of the
-element, and looks like this:
+In this case, there is an abstract base class called `MotionStrategy` (in Java, this would probably be an interface).
+The main method in that class that was intended to be overridden in all subclasses determined the next position of the
+client element, and looks like this:
 
 ```js    
 /**
@@ -1015,6 +1015,15 @@ getNextPosition: function( currentPosition, bounds, dt ) {
    // figure out the next position
 },
 ```
+
+Below is a list of some examples of strategy pattern usage in PhET sims.  This list is not exhaustive.  It includes the
+name of the base class for the strategy followed by the name of the simulation in which it is used.
+
++ `MotionStrategy` (neuron)
++ `FadeStrategy` (neuron)
++ `MotionStrategy` (gene-expression-essentials)
++ `PhotonAbsorptionStrategy` (molecules-and-light)
++ `IGridSizeStrategy` (capacitor-lab-basics)
 
 
 
