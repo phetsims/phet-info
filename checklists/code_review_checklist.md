@@ -14,7 +14,7 @@ PhET code-review checklist
 * [Internationalization](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#internationalization)
 * [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#repository-structure)
 * [Coding Conventions](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#coding-conventions)
-  * [JSDoc](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#jsdoc)
+  * [Documentation](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#documentation)
     * [Type Expressions](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#type-expressions)
   * [Visibility Annotations](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#visibility-annotations)
 * [Math Libraries](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#math-libraries)
