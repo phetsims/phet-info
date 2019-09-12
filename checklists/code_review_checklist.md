@@ -500,6 +500,33 @@ not be used in new code.
     }
   ```
   
+- [ ] Type expressions for functions have a variety of options, increasing in complexity depending on the case. In general note that `{function}` is not enough information. Here are some better options:
+
+    1. The most basic option it to use Google Closure Type syntax, for more info see https://github.com/google/closure-compiler/wiki/Types-in-the-Closure-Type-System. This specifies the param/return types, but nothing more. Here are some examples:
+        * `@param {function()} noParamsAndNoReturnValue`
+        * `@param {function(number)} giveMeNumberAndReturnNothing`
+        * `@param {function(number, number):Vector2} getVector2`
+        * `@param {function(new:Node)} createNode - a function that takes the Node constructor`
+    2. When needing to be a bit more specific, add a name to parameters of the function. Sometimes this is all that is needed for clarity on what the param does: 
+        * `@param {function(model:MyModel, length:number, name:string): Node} getLengthNode`
+        * `@param {function(aSelfExplanatoryNameForAString:string): Node} getStringNode`
+    3. If (2) isn't enough, use English to explain the parameters and return values. This is easy because they are named, and can be easily mentioned:
+        * `@param {function(model:MyModel, length:number, name:string): Node} getLengthNode - returns the length Node that you have always wanted, name is the name of the source of your aspirations, length is a special number according to the following 24 criteria. . .`
+    4. If needing more complexity, or using jsdoc rendering tools (like PhET-iO documentation does), you must use a JSDoc compatible format, not (2) or (3), and you may need to use the more complicated solution. See JSDoc docs for more info. Here is an example of a named callback:
+        ```js
+        /**
+         * @name mySpecialCallback
+         * Converts a string to a number
+         * @param {string}
+         * @returns {number}
+         */
+        /**
+         * @param {mySpecialCallback} callback  
+        */
+        x = function( callback) { callback( 'still chocolate' ) };
+        ```
+
+  
 - [ ] Look for cases where the use of type expressions involving Property subclasses are incorrect.  Because of the structure of the `Property` class hierarchy, specifying type-specific Properties (`{BooleanProperty}`, `{NumberProperty}`,...) may be incorrect, because it precludes values of type `{DerivedProperty}` and `{DynamicProperty}`.   Similarly, use of `{DerivedProperty}` and `{DynamicProperty}` precludes values of (e.g.) `{BooleanProperty}`. Especially in common code, using `{Property,<TYPE>}` is typically correct, unless some specific feature of the `Property` subclass is required.  For example, `{Property.<boolean>}` instead of `{BooleanProperty}`.
 
 ### Visibility Annotations
