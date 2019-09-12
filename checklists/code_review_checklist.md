@@ -500,7 +500,7 @@ not be used in new code.
     }
   ```
   
-- [ ] Type expressions for functions have a variety of options, increasing in complexity depending on the case. In general note that `{function}` is not enough information. Here are some better options:
+- [ ] Type expressions for functions have a variety of possibilities, increasing in complexity depending on the case. In general note that `{function}` is not enough information. Here are some better options:
 
     1. The most basic option it to use Google Closure Type syntax, for more info see https://github.com/google/closure-compiler/wiki/Types-in-the-Closure-Type-System. This specifies the param/return types, but nothing more. Here are some examples:
         * `@param {function()} noParamsAndNoReturnValue`
@@ -525,8 +525,25 @@ not be used in new code.
         */
         x = function( callback) { callback( 'still chocolate' ) };
         ```
-
-  
+       
+- [ ] Type expressions for anonymous Objects have a variety of possibilities, increasing in complexity depending on the case. 
+    1. When the documentation is close by, then {Object} is still acceptable. This mainly applies to options and similar patterns:
+       * `@param {Object} [options] // this is great because of the extend call 5 lines down`
+    2. When using an `Object` with specific properties, name them and their types like so:
+       * `@param {name:string, address:{street:string}, returnNode:function(number):Node, [shoeSize:number]} personalData // note that shoeSize is optional here`
+    3. When you need a bit more explanation, keep the same type expression as (2), but feel free to outline specifics in English after the param name.
+        ```
+        @ param {name:string, address:{street:string}, returnNode:function(number):Node, [shoeSize:number]} personalData - use english after to explain pieces of this
+            (if needed, outline properties on their own lines)
+            name is something
+            address is something else
+            returnNode does this thing
+        ```
+    4. Not all objects have named keys like (2) and (3). Here is how to document dictionary-like `Object`s, where each key is some type, and the value is another type. For key value pairs use this:
+        * `{Object.<string, number>}` Where keys are strings, and values are numbers.
+        *  `{Object.<phetioID:string, count:number>}` - naming each of these can help identify them too. Feel free to explain in English after the type expression if needed.
+    5. If things are too complicated for the above cases, use a `*Def.js` file (especially is used in more than one file), or a `@typedef` declaration right above the jsdoc that uses the typedef.
+      
 - [ ] Look for cases where the use of type expressions involving Property subclasses are incorrect.  Because of the structure of the `Property` class hierarchy, specifying type-specific Properties (`{BooleanProperty}`, `{NumberProperty}`,...) may be incorrect, because it precludes values of type `{DerivedProperty}` and `{DynamicProperty}`.   Similarly, use of `{DerivedProperty}` and `{DynamicProperty}` precludes values of (e.g.) `{BooleanProperty}`. Especially in common code, using `{Property,<TYPE>}` is typically correct, unless some specific feature of the `Property` subclass is required.  For example, `{Property.<boolean>}` instead of `{BooleanProperty}`.
 
 #### Visibility Annotations
