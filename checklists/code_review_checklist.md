@@ -16,7 +16,7 @@ PhET code-review checklist
 * [Coding Conventions](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#coding-conventions)
   * [Documentation](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#documentation)
     * [Type Expressions](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#type-expressions)
-  * [Visibility Annotations](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#visibility-annotations)
+    * [Visibility Annotations](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#visibility-annotations)
 * [Math Libraries](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#math-libraries)
 * [IE11](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#ie11)
 * [Organization, Readability, and Maintainability](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#organization-readability-and-maintainability)
@@ -529,7 +529,7 @@ not be used in new code.
   
 - [ ] Look for cases where the use of type expressions involving Property subclasses are incorrect.  Because of the structure of the `Property` class hierarchy, specifying type-specific Properties (`{BooleanProperty}`, `{NumberProperty}`,...) may be incorrect, because it precludes values of type `{DerivedProperty}` and `{DynamicProperty}`.   Similarly, use of `{DerivedProperty}` and `{DynamicProperty}` precludes values of (e.g.) `{BooleanProperty}`. Especially in common code, using `{Property,<TYPE>}` is typically correct, unless some specific feature of the `Property` subclass is required.  For example, `{Property.<boolean>}` instead of `{BooleanProperty}`.
 
-### Visibility Annotations
+#### Visibility Annotations
 Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations to document the intent of the programmer, and define the public API. Visibility annotations are required for anything that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility annotations are as follows:
 
 - [ ] Use `@public` for anything that is intended to be part of the public API.
