@@ -14,7 +14,8 @@ PhET code-review checklist
 * [Internationalization](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#internationalization)
 * [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#repository-structure)
 * [Coding Conventions](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#coding-conventions)
-  * [Type Expressions](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#type-expressions)
+  * [JSDoc](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#jsdoc)
+    * [Type Expressions](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#type-expressions)
   * [Visibility Annotations](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#visibility-annotations)
 * [Math Libraries](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#math-libraries)
 * [IE11](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#ie11)
@@ -217,10 +218,6 @@ For a sim repository named “my-repo”, the general structure should look like
   const kineticAudio = require( 'sound!ENERGY/energy' );
   ```
 
-- [ ] Do the `@author` annotations seem correct?
-
-- [ ] Are all constructors marked with `@constructor`?  That will make them easier to search and review.  This is not necessary for ES6 constructors.
-
 - [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default value.  This improves readability at the call site, especially when the number of parameters is large.  It also eliminates order dependency that is required by using parameters.
 
   For example, this constructor uses parameters for everything. At the call site, the semantics of the arguments are difficult to determine without consulting the constructor.
@@ -310,33 +307,6 @@ For a sim repository named “my-repo”, the general structure should look like
   
   For more information on the history and thought process around the "nested options" pattern, please see https://github.com/phetsims/tasks/issues/730.
 
-- [ ] Constructor and function documentation.  Parameter types and names should be clearly specified for each constructor and function using `@param` annotations.  The description for each parameter should follow a hyphen.  Primitive types should use lower case. For example:
-
-  ```js
-  /**
-   * The PhetDeveloper is responsible for creating code for simulations and documenting their code thoroughly.
-   */
-  class PhetDeveloper {
-  
-    /**
-     * @param {string} name - full name
-     * @param {number} age - age, in years
-     * @param {boolean} isEmployee - whether this developer is an employee of CU
-     * @param {function} callback - called immediate after coffee is consumed
-     * @param {Property.<number>} hoursProperty - cumulative hours worked
-     * @param {string[]} friendNames - names of friends
-     * @param {Object} [options]  
-     */
-    constructor( name, age, isEmployee, callback, hoursProperty, friendNames, options ) {
-      ...
-    }
-    
-    ...
-  }
-  ```
-
-- [ ] For most functions, the same form as above should be used, with a `@returns` annotation which identifies the return type and the meaning of the returned value.  Functions should also document any side effects.  For extremely simple functions that are just a few lines of simple code, an abbreviated line-comment can be used, for example: `// Computes {Number} distance based on {Foo} foo.`
-
 - [ ] If references are needed to the enclosing object, such as for a closure, `self` should be defined, but it should only be used in closures.  The `self` variable should not be defined unless it is needed in a closure.  Example:
   
   ```js
@@ -394,31 +364,11 @@ not be used in new code.
 
 - [ ] Properties should use type-specific subclasses where appropriate (.e.g BooleanProperty, NumberProperty, StringProperty) or provide documentation as to why they are not.
 
-- [ ] Are Property value validation options (`valueType`, `validValues`, etc...) utilized? Is their presence or lack thereof properly documented?
-
-- [ ] Line comments should generally be preceded by a blank line.  For example:
-
-  ```js
-  // Randomly choose an existing crystal to possibly bond to
-  const crystal = this.crystals.get( _.random( this.crystals.length - 1 ) );
-  
-  // Find a good configuration to have the particles move toward
-  const targetConfiguration = this.getTargetConfiguration( crystal );
-  ```
-
-- [ ] Line comments should have whitespace between the `//` and the first letter of the line comment.  See the preceding example.
-
-- [ ] Differentiate between `Property` and "property" in comments. They are different things. `Property` is a type in AXON; property is any value associated with a JavaScript object. Often "field" can be used in exchange for "property" which can help with clarity.
+- [ ] Are `Validator` validation options (`valueType`, `validValues`, etc...) utilized? These are supported in a number of core types like `Emitter` and `Property`. Is their presence or lack thereof properly documented?
 
 - [ ] Files should be named like `CapitalizedCamelCasing.js` when returning a constructor, or `lowerCaseCamelCasing.js` when returning a non-constructor function or singleton.  When returning a constructor or singleton, the constructor name should match the filename.
 
-- [ ] Every type, method and property should be documented.
-
-- [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS3/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the example-sim repository.
-
 - [ ] Assertions should be used appropriately and consistently. Type checking should not just be done in code comments. Use `Array.isArray` to type check an array.
-
-- [ ] Abstract methods (normally implemented with an error) should be marked with `@abstract` jsdoc.
 
 - [ ] If you need to namespace an inner class, use `{{namespace}}.register`, and include a comment about why the inner class needs to be namespaced. For example:
   
@@ -445,7 +395,63 @@ not be used in new code.
   return SlotMachineNode;
   ```
 
-### Type Expressions
+### Documentation
+
+- [ ] Every type, method and property should be documented.
+
+- [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS3/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the example-sim repository.
+
+- [ ] Differentiate between `Property` and "property" in comments. They are different things. `Property` is a type in AXON; property is any value associated with a JavaScript object. Often "field" can be used in exchange for "property" which can help with clarity.
+
+- [ ] Line comments should generally be preceded by a blank line.  For example:
+
+  ```js
+  // Randomly choose an existing crystal to possibly bond to
+  const crystal = this.crystals.get( _.random( this.crystals.length - 1 ) );
+  
+  // Find a good configuration to have the particles move toward
+  const targetConfiguration = this.getTargetConfiguration( crystal );
+  ```
+
+- [ ] Line comments should have whitespace between the `//` and the first letter of the line comment.  See the preceding example.
+
+
+- [ ] Do the `@author` annotations seem correct?
+
+- [ ] Are all constructors marked with `@constructor`?  That will make them easier to search and review.  This is not necessary for ES6 constructors.
+
+
+- [ ] Constructor and function documentation.  Parameter types and names should be clearly specified for each constructor and function using `@param` annotations.  The description for each parameter should follow a hyphen.  Primitive types should use lower case. For example:
+
+  ```js
+  /**
+   * The PhetDeveloper is responsible for creating code for simulations and documenting their code thoroughly.
+   */
+  class PhetDeveloper {
+  
+    /**
+     * @param {string} name - full name
+     * @param {number} age - age, in years
+     * @param {boolean} isEmployee - whether this developer is an employee of CU
+     * @param {function} callback - called immediate after coffee is consumed
+     * @param {Property.<number>} hoursProperty - cumulative hours worked
+     * @param {string[]} friendNames - names of friends
+     * @param {Object} [options]  
+     */
+    constructor( name, age, isEmployee, callback, hoursProperty, friendNames, options ) {
+      ...
+    }
+    
+    ...
+  }
+  ```
+
+- [ ] For most functions, the same form as above should be used, with a `@returns` annotation which identifies the return type and the meaning of the returned value.  Functions should also document any side effects.  For extremely simple functions that are just a few lines of simple code, an abbreviated line-comment can be used, for example: `// Computes {Number} distance based on {Foo} foo.`
+
+
+- [ ] Abstract methods (normally implemented with an error) should be marked with `@abstract` jsdoc.
+
+#### Type Expressions
 
 - [ ] Type expressions should conform approximately to [Google Closure Compiler](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler) syntax.  PhET stretches the syntax in many cases (beyond the scope of this document to describe).
 
@@ -521,7 +527,7 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 - [ ] For Line comments, the annotation can appear like this:
   
   ```js
-  // @public Adds a {function} listener
+  // @public {function(listener:function)} - Adds a listener
   addListener: function( listener ) { /*...*/ }
   ```
 
