@@ -508,7 +508,7 @@ PhET relies heavily on RequireJS to support importing modules. RequireJS is flex
 RequireJS imports are handled at top of all files and use the `require` keyword. Typically, require statements for importing would look something like this:
 
 ```js
-    var Node = require( 'SCENERY/nodes/Node' );
+    const Node = require( 'SCENERY/nodes/Node' );
 ```
 where `SCENERY` is an alias or symbolic constant that represents a path to the repository where the module lives. This follows a condensed syntax compatible with CommonJS based on asycnhronous module dependency (AMD). This [article](https://requirejs.org/docs/whyamd.html) is a great resource for further reading. Note we are not using ES6 modules, but this may change in the upcoming months.
 
@@ -549,7 +549,7 @@ JS doesn’t support strict typing so we categorize our module require statement
 Specific support for catagories that need plugins follow the RequireJS API as described in its [documentation](https://requirejs.org/docs/plugins.html#api) 
 ```js
   // strings
-  var modelString = require( 'string!GRAVITY_AND_ORBITS/model' );
+  const modelString = require( 'string!GRAVITY_AND_ORBITS/model' );
 ```
 ----
 
@@ -577,13 +577,13 @@ Putting it all together modules will usually follow this format:
  */
 
 // Declaration using strict mode.
-define( function( require ) {
+define( require => {
   'use strict';
 
   // Imports
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var fooRepo = require( 'FOO_REPO/fooRepo' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Node = require( 'SCENERY/nodes/Node' );
+  const fooRepo = require( 'FOO_REPO/fooRepo' );
 
   // Constructor
   function FooNode( fooArgument ) {
@@ -625,10 +625,10 @@ circular dependencies, two types can refer to each other through the namespace.
 For our uses, each repository generally has one namespace (available via requireJS) at the top level, e.g.
 `molecule-shapes/js/moleculeShapes.js` (generally camel-cased) would contain:
 ```js
-define( function( require ) {
+define( require => {
   'use strict';
 
-  var Namespace = require( 'PHET_CORE/Namespace' );
+  const Namespace = require( 'PHET_CORE/Namespace' );
 
   return new Namespace( 'moleculeShapes' );
 } );
@@ -887,7 +887,7 @@ in search of examples, these would be good places to start.
 The states which a state machine will support should be defined in an Enum.  Here is an example (this
 is from the Arithmetic sim, but has been "modernized" to meet our latest standards):
 ```js
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
