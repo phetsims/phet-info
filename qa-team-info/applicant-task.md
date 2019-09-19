@@ -2,6 +2,6 @@
 
 Instructions for Applicant: Perform a 30 minute test of Isotopes and Atomic Mass. Look out for any bugs that occur during interaction. Complete a bug report with relevant information for each bug. Good bug reports allow developers to easily reproduce an issue.
 
-Link to Simulation: http://www.colorado.edu/physics/phet/dev/html/isotopes-and-atomic-mass/1.0.0-dev.5/isotopes-and-atomic-mass_en.html
+Link to Simulation: https://phet-dev.colorado.edu/html/isotopes-and-atomic-mass/1.0.0-dev.5/isotopes-and-atomic-mass_en.html
 
 Send your bug report to phethelp@colorao.edu with “Student Tester Applicant: [Name]” in the subject line.

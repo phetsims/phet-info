@@ -417,4 +417,4 @@ To embed a simulation in your website, use an iframe like so:
 The aspect ratio 834x504 is used for new simulations, because it matches the aspect ratio available on popular devices.
 
 To see a full embedding example in context, view the source for this page:
-http://www.colorado.edu/physics/phet/dev/html/acid-base-solutions/1.1.0/acid-base-solutions_en-iframe.html
+https://phet-dev.colorado.edu/html/acid-base-solutions/1.1.0/acid-base-solutions_en-iframe.html
