@@ -6,6 +6,8 @@
 PhET code-review checklist
 =============
 
+(a.k.a. "The CRC")
+
 ## Table of Contents
 * [Build and Run Check](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#build-and-run-checks)
 * [Memory Leaks](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#memory-leaks)
