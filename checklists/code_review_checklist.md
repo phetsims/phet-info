@@ -3,10 +3,8 @@
 * Mark failed items with ❌
 * Call attention to items with ⚠️
 
-PhET code-review checklist
+PhET Code-Review Checklist (a.k.a "CRC")
 =============
-
-(a.k.a. "The CRC")
 
 ## Table of Contents
 * [Build and Run Check](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#build-and-run-checks)
@@ -371,7 +369,7 @@ not be used in new code.
 
 - [ ] Assertions should be used appropriately and consistently. Type checking should not just be done in code comments. Use `Array.isArray` to type check an array.
 
-- [ ] If you need to namespace an inner class, use `{{namespace}}.register`, and include a comment about why the inner class needs to be namespaced. For example:
+- [ ] If you need to namespace an inner class, use `{{namespace}}.register`, and include a comment about why the inner class needs to be namespaced. Use the form `'{{outerClassname}}.{{innerClassname}}'` for the key. For example:
   
   ```js
   const myNamespace = require(...);
