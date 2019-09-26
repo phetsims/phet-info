@@ -101,4 +101,4 @@
 | Vector Addition | @pixelzoom | |
 | Wave Interference | @samreid | ✓ |
 | Wave on a String |  @jonathanolson  | ✓ |
-| Waves Intro | @samreid |  |
+| Waves Intro | @samreid | ✓ |
