@@ -716,7 +716,7 @@ those options in a single option on your type, named according to the component 
       hsliderOptions: null // filled in below
     }, options );
 
-    // default options to be passed into SSlider
+    // default options to be passed into Slider
     options.hsliderOptions = _.extend( {
 
       endDrag: function() { console.log( 'Drag Ended') },
@@ -732,7 +732,7 @@ In the above example, this would mean creating the HSlider externally then passi
 constructor.
 
 ### Required fields
-If one or more of the fields in `option`s is required, then `options` should be renamed  to `config`. See https://github.com/phetsims/tasks/issues/930
+If one or more of the fields in `option` is required, then `options` should be renamed  to `config`. See https://github.com/phetsims/tasks/issues/930
 In the `_.extend` call, the options should be commented as to whether they are required or optional.  Following the
 `_.extend` call, required fields should have an assertion to verify they were provided. For example:
 ```js
