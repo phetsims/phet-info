@@ -674,15 +674,10 @@ Multilink and DerivedProperties; see comments in expressed in https://github.com
 Very important pattern for new developers
 
 
-## options and config
+## Options and Config
 
-Author: 🚧
-
-TODO Incorporate best practices from https://github.com/phetsims/phet-info/issues/96.
-
-TODO This section needs some work. The pattern is probably "configuration" for parameterizing types, which we use to
-avoid an explosion of constructor parameters. `config` and `options` are the two implementation of that pattern that
-PhET typically uses.
+Author: @pixelzoom, @denz1994
+This pattern is used for parameterizing types, which we use to avoid an explosion of constructor parameters. `config` and `options` are the two implementations of that pattern that PhET typically uses for configuring classes. 
 
 Use `_.extend` to overwrite defaults to options for a type like:
 ```js
@@ -697,8 +692,7 @@ Use `_.extend` to overwrite defaults to options for a type like:
 The above `Node` subtype has default `Node` options different from `Node`'s defaults. Fields passed in an
 object titled `options` must all be "optional." If there are some properties of the object parameter that are required,
 then the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one
-must be documented accordingly.
-TODO: document how to document accordingly
+must be documented accordingly. See "Required Fields" below for documentation.
 
 We do not filter child options out before passing them up to the parent. With this in mind please be mindful of the option
 naming to make sure that you don't cause collisions. See https://github.com/phetsims/tasks/issues/934.
@@ -760,6 +754,64 @@ function Person( name, config ) {
 ```
 In some cases, it may be better to only indicate the `required` properties or only indicate the `optional` properties,
 or to group them--use your judgment.
+
+### Best Practices
+
+(1) Don't modify an options object that you don't own. If you own the options object, then direct assignment to an options field is OK. If you don't own the options object, use _.extend, to assign a field value, which creates a new object that you then own.
+
+```js
+class Shelf extends Node
+constructor Shelf(content){
+// Use extend to create an options object
+  options = _.extend( {
+        material: 'wood',
+      }, options );
+      
+  containerOptions = {
+     containerlabels: null,
+     containerColor:'red'
+  };
+  
+  // Set container to blue via an assignment;
+  containerOptions.color = 'blue';
+  const blueContainer = new Container(height, width, containerOptions);
+}
+```
+
+(2) Before setting a value in an options object (with either assignment or _.extends), verify that the client did not provide a value. Use an assertion to verify. Don't silently override what the client provided.
+
+```js
+// Create two containers
+const height = 20;
+const width = 40;
+this.blueContainerNode = new ContainerNode(height, width);
+this.redContainerNode = new ContainerNode(height, width, { color:'red' } ) ;
+
+// Explicitly set the redContainer's label
+assert && assert( blueContainerNode.conatinerLabel == null, 'label was not previously set' );
+this.redConatiner.label = 'Books';
+```
+
+(3) To test whether a field value exists in an options object, the expressions that you have available are:
+
+!option.someField
+  - Used in to check if someField does not exist as an option field.
+  
+options.someField === undefined
+  - Used to check if someField has no value assigned to it.
+  
+!options.hasOwnProperty( 'someField' )
+  - Returns a boolean that determines if somefield is a property of the options object, as opposed to being inherited
+  
+
+(4) Options as an Object should never have an extra prototype. We may be able to check this in merge since we own that code.
+
+### Points of discussion
+
+(1) Review examples from best practices.
+(2) Documentation of config options.
+(3) Suggested to use "configuration" as the pattern name.
+(4) Best Practices Point 4: Is this handled by PhET_Core/merge.js validateMergableObject() line 61-62?
 
 ## Prototypal Inheritance
 
