@@ -677,6 +677,7 @@ Very important pattern for new developers
 ## Options and Config
 
 Author: @pixelzoom, @denz1994
+
 This pattern is used for parameterizing types, which we use to avoid an explosion of constructor parameters. `config` and `options` are the two implementations of that pattern that PhET typically uses for configuring classes. 
 
 Use `_.extend` to overwrite defaults to options for a type like:
@@ -794,23 +795,31 @@ this.redConatiner.label = 'Books';
 
 (3) To test whether a field value exists in an options object, the expressions that you have available are:
 
-!option.someField
-  - Used in to check if someField does not exist as an option field.
+  Used to check if someField does not exist as an option field.
+  ```js
+  !option.someField 
+  ```
   
-options.someField === undefined
-  - Used to check if someField has no value assigned to it.
+  Used to check if someField has no value assigned to it.
+  ``` js
+  options.someField === undefined
+  ```
   
-!options.hasOwnProperty( 'someField' )
-  - Returns a boolean that determines if somefield is a property of the options object, as opposed to being inherited
-  
+  Returns a boolean that determines if somefield is a property of the options object, as opposed to being inherited
+  ```js
+  !options.hasOwnProperty( 'someField' )
+  ```  
 
 (4) Options as an Object should never have an extra prototype. We may be able to check this in merge since we own that code.
 
 ### Points of discussion
 
 (1) Review examples from best practices.
-(2) Documentation of config options.
+
+(2) Consolidating options documentation https://github.com/phetsims/axon/issues/202.
+
 (3) Suggested to use "configuration" as the pattern name.
+
 (4) Best Practices Point 4: Is this handled by PhET_Core/merge.js validateMergableObject() line 61-62?
 
 ## Prototypal Inheritance
