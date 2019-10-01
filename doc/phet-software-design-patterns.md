@@ -678,7 +678,7 @@ Very important pattern for new developers
 
 Author: @pixelzoom, @denz1994
 
-This pattern is used for parameterizing types, which we use to avoid an explosion of constructor parameters. `config` and `options` are the two implementations of that pattern that PhET typically uses for configuring classes. 
+This pattern is used for parameterizing types, which we use to avoid an explosion of constructor parameters. `config` and `options` are the two implementations of that pattern that PhET typically uses for configuring classes. The between the two is that, fields passed in an object titled `options` must all be "optional." If there are some properties of the object parameter that are required, then the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one must be documented accordingly. See "Required Fields" below for documentation. 
 
 Use `_.extend` to overwrite defaults to options for a type like:
 ```js
@@ -690,10 +690,7 @@ Use `_.extend` to overwrite defaults to options for a type like:
     }, options );
   }
 ```
-The above `Node` subtype has default `Node` options different from `Node`'s defaults. Fields passed in an
-object titled `options` must all be "optional." If there are some properties of the object parameter that are required,
-then the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one
-must be documented accordingly. See "Required Fields" below for documentation.
+The above `Node` subtype has default `Node` options different from `Node`'s defaults. 
 
 We do not filter child options out before passing them up to the parent. With this in mind please be mindful of the option
 naming to make sure that you don't cause collisions. See https://github.com/phetsims/tasks/issues/934.
@@ -762,20 +759,12 @@ or to group them--use your judgment.
 
 ```js
 class Shelf extends Node
-constructor Shelf(content){
+constructor Shelf(content, options ){
+
 // Use extend to create an options object
   options = _.extend( {
         material: 'wood',
       }, options );
-      
-  containerOptions = {
-     containerlabels: null,
-     containerColor:'red'
-  };
-  
-  // Set container to blue via an assignment;
-  containerOptions.color = 'blue';
-  const blueContainer = new Container(height, width, containerOptions);
 }
 ```
 
@@ -789,7 +778,7 @@ this.blueContainerNode = new ContainerNode(height, width);
 this.redContainerNode = new ContainerNode(height, width, { color:'red' } ) ;
 
 // Explicitly set the redContainer's label
-assert && assert( blueContainerNode.conatinerLabel == null, 'label was not previously set' );
+assert && assert( blueContainerNode.conatinerLabel == undefined, 'label was not previously set' );
 this.redConatiner.label = 'Books';
 ```
 
