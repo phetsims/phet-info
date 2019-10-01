@@ -119,7 +119,9 @@ NOTE: Release branches are created for RCs. If you need to make a change after t
 
 First, make sure you have checked out all of the repo SHAs that you intend to use for the release branch. If you want to also deploy an RC (which is typical when creating the release branch), just run the RC deployment command, and it will prompt you whether the release branch should be created. For example, if `1.6` was the latest release branch, and you want to create `1.7` and deploy an RC, just fire off `grunt rc --branch=1.7 --brands={{BRANDS}}`.
 
-If you do not want to deploy an RC when creating the release branch, instead directly do `grunt create-release --branch=1.7` (which will handle all of the steps to create the new branch).
+If you do not want to deploy an RC when creating the release branch, instead directly do `grunt create-release --branch=1.7` (which will handle all of the steps to create the new branch). Release branches should be created using either `grunt rc` or `grunt create-release`, as this sets them up with the correct package.json version and dependencies.json content.
+
+NOTE: It will initialize the branch to a version of 1.0.0-rc.0, and then increment/deploy to 1.0.0-rc.1.
 
 ### RC/production deployment on an existing branch
 
