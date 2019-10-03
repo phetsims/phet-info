@@ -396,7 +396,7 @@ not be used in new code.
   
 - [ ] Putting unused parameters in callbacks is up to developer discretion, as long they are correct wrt to the actual callback signature.  
 
-For example, both of these is acceptable:
+For example, both of these are acceptable:
 
 ```js
 Property.multilink(
