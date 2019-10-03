@@ -393,6 +393,34 @@ not be used in new code.
   
   return SlotMachineNode;
   ```
+  
+- [ ] Putting unused parameters in callbacks is up to developer discretion, as long they are correct wrt to the actual callback signature.  
+
+For example, both of these is acceptable:
+
+```js
+Property.multilink(
+  [ styleProperty, activeProperty, colorProperty ],
+  ( style, active, color ) => {
+    // some algorithm that uses style and active 
+} );
+
+Property.multilink(
+  [ styleProperty, activeProperty, colorProperty ],
+  ( style, active ) => {
+    // some algorithm that uses style and active 
+} );
+```
+
+This is not acceptable, because the 3rd parameter is incorrect.
+
+```js
+Property.multilink(
+  [ styleProperty, activeProperty, colorProperty ],
+  ( style, active, lineWidth ) => {
+    // some algorithm that uses style and active 
+} );
+```
 
 ### Documentation
 
