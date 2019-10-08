@@ -22,12 +22,14 @@
 - [ ] **Pre-publication items**
   - [ ] Auxilary screenshots (up to 3 additional)
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
+  - [ ] Email announcement language
   - [ ] Teacher Guide created, uploaded, and added to sim design folder
   - [ ] Sim primer draft
   - [ ] [LoL icons](https://docs.google.com/document/d/1GmLNE31gs8hQYGze3xwmN9k7B6gu7lQ7wJe2phqdH9Y/edit) for each screen created and uploaded to Drive
   - [ ] [LoL metadata](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=562591429) for each screen (description, vocab words, questions for before/after sim use)
 - [ ] **Post-publication items**
   - [ ] Share new features, design challenges, and treats with group!
+  - [ ] Email announcement
   - [ ] Add to Edmodo
   - [ ] Add to [Gooru](http://gooru.org/PhET/content/resources) (signed in as phethelp)
   - [ ] Deliver to [Legends of Learning](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=0)
