@@ -78,6 +78,7 @@
 | Natural Selection | @pixelzoom | |
 | Neuron |  @jbphet  | ✓ |
 | Number Line: Integers |  @jbphet  |  |
+| Number Play | @chrisklus |  |
 | Ohm's Law|  @zepumph  | ✓ |
 | Optics Lab | @veillette| |
 | Pendulum Lab | @jonathanolson | ✓ |
