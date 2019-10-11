@@ -251,7 +251,7 @@ For a sim repository named “my-repo”, the general structure should look like
      */
     constructor( ball, visibleProperty, options ) {
   
-      options = _.extend( {
+      options = merge( {
         fill: 'white',  // {Color|string} fill color
         stroke: 'black', // {Color|string} stroke color
         lineWidth: 1 // {number} width of the stroke
@@ -269,7 +269,7 @@ For a sim repository named “my-repo”, the general structure should look like
   } );
   ```
 
-- [ ] When options are passed through one constructor to another, a "nested options" pattern should be used.  This helps to avoid duplicating option names and/or accidentally overwriting options for different components that use the same option names.
+- [ ] When options are passed through one constructor to another, a "nested options" pattern should be used.  This helps to avoid duplicating option names and/or accidentally overwriting options for different components that use the same option names. Make sure to use PHET_CORE/merge instead of `_.extend` or `_.merge`. `merge` will automatically recurse to keys named `*Options` and extend those as well.
 
   Example:
   ```js
@@ -282,18 +282,16 @@ For a sim repository named “my-repo”, the general structure should look like
      */
     constructor( particleBox, visibleProperty, options ) {
   
-      options = _.extend( {
+      options = merge( {
         fill: 'white',  // {Color|string} fill color
         stroke: 'black', // {Color|string} stroke color
         lineWidth: 1, // {number} width of the stroke
-        particleNodeOptions: null, // {*} to be filled in with defaults below
+        particleNodeOptions: {
+          fill: 'red',
+          stroke: 'gray',
+          lineWidth: 0.5
+        },
       }, options );
-  
-      options.particleNodeOptions = _.extend( {
-        fill: 'red',
-        stroke: 'gray',
-        lineWidth: 0.5
-      }, options.particleNodeOptions );
   
       // add particle
       this.addChild( new ParticleNode( particleBox.particle, options.particleNodeOptions ) );
