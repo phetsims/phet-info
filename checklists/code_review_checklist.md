@@ -1,10 +1,9 @@
 *NOTE! Prior to doing a code review, copy this checklist to a GitHub issue for the repository being reviewed. Delete the Table of Contents section, since the links will be incorrect.*
 
+# PhET Code-Review Checklist (a.k.a "CRC")
+
 * Mark failed items with ❌
 * Call attention to items with ⚠️
-
-PhET Code-Review Checklist (a.k.a "CRC")
-=============
 
 ## Table of Contents
 * [Build and Run Check](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#build-and-run-checks)
