@@ -154,11 +154,11 @@ To implement PDOM descriptions, follow these thoughts:
   changes. For PDOM accessibility, the word "alerts" means aria-live support via `UtteranceQueue`.
   
   ```js
-    const utteranceQueue = require( 'SCENERY_PHET/accessibility/utteranceQueue' );
+    const utteranceQueue = require( 'UTTERANCE_QUEUE/utteranceQueue' );
     utteranceQueue.addToBack( 'Speak this now'); // This will immediately sent this string to the screen reader to speak.
 
     // This is the same as wrapping a string inside an Utterance
-    const Utterance = require( 'SCENERY_PHET/accessibility/Utterance' );
+    const Utterance = require( 'UTTERANCE_QUEUE/Utterance' );
     utteranceQueue.addToBack( new Utterance( { alert: 'Speak this now' } ) ); 
   ```
   * A variety of features for advanced use has been built into `Utterance`. For example it is possible to loop through,
