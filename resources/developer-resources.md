@@ -71,3 +71,7 @@ Logs are located at `~/Library/Logs/CrashReporter/MobileDevice/`. Open the folde
 
 ##### On Windows.
 Logs are located at `~/AppData/Roaming/Apple Computer/Logs/CrashReporter\MobileDevice`. Open the folder with your device's name.
+
+### Accessibility Resources
+
+* The [Accessibility Developer Guide](https://www.accessibility-developer-guide.com/) is fairly comprehensive.
