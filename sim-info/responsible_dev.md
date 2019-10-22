@@ -23,10 +23,11 @@
 | Calculus Grapher | @jonathanolson | |
 | Capacitor Lab: Basics | @denz1994 | ✓ |
 | Charges And Fields | @jonathanolson  | ✓ |
-| Circuit Construction Kit: AC+DC | @samreid | |
+| Circuit Construction Kit: AC | @samreid | |
 | Circuit Construction Kit: Black Box Study | @samreid | |
 | Circuit Constructor Kit: DC | @samreid | ✓ |
 | Circuit Constructor Kit: DC - Virtual Lab| @samreid | ✓ |
+| Collision Lab | @veillette | ✓ |
 | Color Vision | @chrisklus | ✓ |
 | Concentration |  @pixelzoom  | ✓ |
 | Coulomb's Law | @zepumph | ✓ |
