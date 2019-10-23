@@ -101,6 +101,7 @@
 | Under Pressure |  @samreid  | ✓ |
 | Unit Rates |  @pixelzoom  | ✓ |
 | Vector Addition | @pixelzoom | |
+| Vector Addition: Equations | @pixelzoom | |
 | Wave Interference | @samreid | ✓ |
 | Wave on a String |  @jonathanolson  | ✓ |
 | Waves Intro | @samreid | ✓ |
