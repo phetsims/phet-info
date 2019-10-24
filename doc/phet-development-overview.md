@@ -2,7 +2,7 @@
 
 ## Overview
 
-PhET Interactive Simulations creates free, open source educational simulations in science and math, which you can find at the PhET website.  This document explains PhET’s libraries, practices and patterns for developing interactive simulations in HTML5.  This document is also available at http://bit.ly/phet-html5-development-overview.  For discussion and feedback, please visit the Developing Interactive Simulations in HTML5 Google Group.
+PhET Interactive Simulations creates free, open source educational simulations in science and math, which you can find at the PhET website.  This document explains PhET’s libraries, practices and patterns for developing interactive simulations in HTML5.  This document is also available at https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md.  For discussion and feedback, please visit the Developing Interactive Simulations in HTML5 Google Group.
 
 **[Overview](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#overview)**
 
