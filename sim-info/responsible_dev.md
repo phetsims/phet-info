@@ -16,6 +16,7 @@
 | Beer's Law Lab  | @pixelzoom  | ✓ |
 | Bending Light  | @samreid  | ✓ |
 | Blackbody Spectrum  | @jbphet  | ✓ |
+| Blast | @samreid |  |
 | Build a Fraction | @jonathanolson | ✓ |
 | Build a Molecule | @jonathanolson |  |
 | Build an Atom  | @jbphet  | ✓ |
