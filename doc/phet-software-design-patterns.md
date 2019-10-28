@@ -678,13 +678,13 @@ Very important pattern for new developers
 
 Author: @pixelzoom, @denz1994
 
-This pattern is used for parameterizing types, which we use to avoid an explosion of constructor parameters. `config` and `options` are the two implementations of that pattern that PhET typically uses for configuring classes. The between the two is that, fields passed in an object titled `options` must all be "optional." If there are some properties of the object parameter that are required, then the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one must be documented accordingly. See "Required Fields" below for documentation. 
+This pattern is used for parameterizing types, which we use to avoid an explosion of constructor parameters. `config` and `options` are the two implementations of that pattern that PhET typically uses for configuring classes. The difference between the two is that, fields passed in an object titled `options` must all be "optional." If there are some properties of the object parameter that are required, then the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one must be documented accordingly. See "Required Fields" below for documentation. 
 
-Use `_.extend` to overwrite defaults to options for a type like:
+Use `merge` to overwrite defaults to options for a type like:
 ```js
   function MyNodeType( options ) {
 
-    options = _.extend( {
+    options = merge( {
       visible: false,
       pickable: false
     }, options );
@@ -695,7 +695,7 @@ The above `Node` subtype has default `Node` options different from `Node`'s defa
 We do not filter child options out before passing them up to the parent. With this in mind please be mindful of the option
 naming to make sure that you don't cause collisions. See https://github.com/phetsims/tasks/issues/934.
 
-Try to keep related options groups together, both for instantiation and `_.extends` statements. For examples, if you
+Try to keep related options groups together, both for instantiation and `merge` statements. For examples, if you
 have several options related to a11y, keep them together, don't interleave them with other options.
 
 ### Nesting
@@ -706,7 +706,7 @@ those options in a single option on your type, named according to the component 
 ```js
   function MyNodeTypeWithHSliderInIt( options ) {
 
-    options = _.extend( {
+    options = merge( {
       visible: false,
       pickable: false,
 
@@ -714,7 +714,7 @@ those options in a single option on your type, named according to the component 
     }, options );
 
     // default options to be passed into Slider
-    options.hsliderOptions = _.extend( {
+    options.hsliderOptions = merge( {
 
       endDrag: function() { console.log( 'Drag Ended') },
       startDrag: function() { console.log( 'Drag Started') }
@@ -730,8 +730,8 @@ constructor.
 
 ### Required fields
 If one or more of the fields in `option` is required, then `options` should be renamed  to `config`. See https://github.com/phetsims/tasks/issues/930
-In the `_.extend` call, the options should be commented as to whether they are required or optional.  Following the
-`_.extend` call, required fields should have an assertion to verify they were provided. For example:
+In the `merge` call, the options should be commented as to whether they are required or optional.  Following the
+`merge` call, required fields should have an assertion to verify they were provided. For example:
 ```js
 /**
  * @param {string} name - the full name of the Person
@@ -739,7 +739,7 @@ In the `_.extend` call, the options should be commented as to whether they are r
  * @constructor
  */
 function Person( name, config ) {
-  config = _.extend( {
+  config = merge( {
     height: null, // {number} @required - height in centimeters
     age: null, // {number} @required - age in years
 
@@ -755,7 +755,7 @@ or to group them--use your judgment.
 
 ### Best Practices
 
-(1) Don't modify an options object that you don't own. If you own the options object, then direct assignment to an options field is OK. If you don't own the options object, use _.extend, to assign a field value, which creates a new object that you then own.
+(1) Don't modify an options object that you don't own. If you own the options object, then direct assignment to an options field is OK. If you don't own the options object, use `merge`, to assign a field value, which creates a new object that you then own.
 
 ```js
 class Shelf extends Node
@@ -768,18 +768,16 @@ constructor Shelf(content, options ){
 }
 ```
 
-(2) Before setting a value in an options object (with either assignment or _.extends), verify that the client did not provide a value. Use an assertion to verify. Don't silently override what the client provided.
+(2) Before setting a value in an options object (with either assignment or `merge`), verify that the client did not provide a value. Use an assertion to verify. Don't silently override what the client provided.
 
 ```js
 // Create two containers
-const height = 20;
-const width = 40;
-this.blueContainerNode = new ContainerNode(height, width);
-this.redContainerNode = new ContainerNode(height, width, { color:'red' } ) ;
+this.blueContainerNode = new ContainerNode(height, width,{ blueContainerOptions } );
+this.redContainerNode = new ContainerNode(height, width, { redContainerOptions } ) ;
 
-// Explicitly set the redContainer's label
-assert && assert( blueContainerNode.conatinerLabel == undefined, 'label was not previously set' );
-this.redConatiner.label = 'Books';
+// Explicitly set the blue container's label
+assert && assert( blueContainerOptions.label === undefined, 'label was not previously set' );
+blueContainerOptions.label = 'Books';
 ```
 
 (3) To test whether a field value exists in an options object, the expressions that you have available are:
@@ -799,7 +797,7 @@ this.redConatiner.label = 'Books';
   !options.hasOwnProperty( 'someField' )
   ```  
 
-(4) Options as an Object should never have an extra prototype. We may be able to check this in merge since we own that code.
+(4) Options as an Object should never have an extra prototype.
 
 ### Points of discussion
 
@@ -809,7 +807,7 @@ this.redConatiner.label = 'Books';
 
 (3) Suggested to use "configuration" as the pattern name.
 
-(4) Best Practices Point 4: Is this handled by PhET_Core/merge.js validateMergableObject() line 61-62?
+(4) Best Practices Point 4: Is this handled by PhET_Core/merge.js validateMergableObject() assertion?
 
 ## Prototypal Inheritance
 
