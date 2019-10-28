@@ -772,8 +772,8 @@ constructor Shelf(content, options ){
 
 ```js
 // Create two containers
-this.blueContainerNode = new ContainerNode(height, width,{ blueContainerOptions } );
-this.redContainerNode = new ContainerNode(height, width, { redContainerOptions } ) ;
+this.blueContainerNode = new ContainerNode(height, width, blueContainerOptions );
+this.redContainerNode = new ContainerNode(height, width, redContainerOptions ) ;
 
 // Explicitly set the blue container's label
 assert && assert( blueContainerOptions.label === undefined, 'label was not previously set' );
