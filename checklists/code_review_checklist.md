@@ -49,7 +49,7 @@ If any of these items fail, pause code review.
 - [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is
 there a call to that component’s `dispose` function, or is it obvious why it isn't necessary, or is there documentation
 about why `dispose` isn't called?  An example of why no call to `dispose` is needed is if the component is used in
-a screen view that would never be removed from the scene graph.
+a `ScreenView` that would never be removed from the scene graph.
 - [ ] Are there leaks due to registering observers or listeners? The following guidelines should be followed unless
 there it is obviously no need to unlink, or documentation (in-line or in the implementation nodes)added about why
 following them is not necessary.  Unlink is not needed for properties contained in classes that are never disposed of,
