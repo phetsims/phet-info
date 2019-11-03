@@ -23,14 +23,14 @@
 
 ## GitHub Issues
 
-All sims should have GitHub issues for standard tasks. If any of these issues is missing, pause code review until the issues have been created by the responsible dev.
+The following standard GitHub issues should exist. If any of these issues is missing, or have not been completed, pause code review until the issues have been created by the responsible dev.
 
 GitHub issues should exist that document:
 - [ ] results of memory testing for `brands=phet`
 - [ ] results of memory testing for `brands=phet-io` (if the sim is instrumented for PhET-iO)
 - [ ] performance testing and sign-off
 - [ ] review of pointer areas
-- [ ] credits (they will not be finalized until after RC testing is completed)
+- [ ] credits (will not be completed until after RC testing)
 
 ## **Build and Run Checks**
 
