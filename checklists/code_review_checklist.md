@@ -438,7 +438,7 @@ This section deals with PhET documention conventions. You do not need to exhaust
 
 - [ ] All classes, methods and properties are documented.
 
-- [ ] Documentation at the top of .js files should provide a useful overview of purpose, responsibilies, and (where useful) examples of API use. If the file contains a subclass definition, it should indicate what functionality it adds to the superclass.
+- [ ] Documentation at the top of .js files should provide an overview of purpose, responsibilies, and (where useful) examples of API use. If the file contains a subclass definition, it should indicate what functionality it adds to the superclass.
 
 - [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS3/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the example-sim repository.
 
