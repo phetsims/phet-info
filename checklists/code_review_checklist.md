@@ -434,7 +434,7 @@ Property.multilink(
 
 ### Documentation
 
-This section deals with PhET documention conventions and standards. You do not need to exhaustively check every item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET standards. 
+This section deals with PhET documention conventions. You do not need to exhaustively check every item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET standards. 
 
 - [ ] All classes, methods and properties are documented.
 
