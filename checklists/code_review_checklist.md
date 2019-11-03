@@ -21,7 +21,20 @@
 * [Organization, Readability, and Maintainability](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#organization-readability-and-maintainability)
 * [PhET-iO](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#phet-io)
 
+## GitHub Issues
+
+All sims should have GitHub issues for standard tasks. If any of these issues is missing, pause code review until the issues have been created by the responsible dev.
+
+GitHub issues should exist that document:
+- [ ] results of memory testing for `brands=phet`
+- [ ] results of memory testing for `brands=phet-io` (if the sim is instrumented for PhET-iO)
+- [ ] performance testing and sign-off
+- [ ] review of pointer areas
+- [ ] credits (they will not be finalized until after RC testing is completed)
+
 ## **Build and Run Checks**
+
+If any of these items fail, pause code review.
 
 - [ ] Does the sim build without warnings or errors?
 - [ ] Does the html file size seem reasonable, compared to other similar sims?
@@ -32,7 +45,7 @@
 
 ## **Memory Leaks**
 
-- [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.) Test on a version built using `grunt --minify.mangle=false`. There should be a GitHub issue showing the results of testing done by the primary developer.
+- [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.) Test on a version built using `grunt --minify.mangle=false`. Compare to testing results done by the responsible developer.
 - [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is
 there a call to that component’s `dispose` function, or is it obvious why it isn't necessary, or is there documentation
 about why `dispose` isn't called?  An example of why no call to `dispose` is needed is if the component is used in
@@ -49,18 +62,17 @@ such as primary model and view classes that exist for the duration of the sim.
 	- [ ] SCENERY: `Node.on` is accompanied by `Node.off`
 	- [ ] TANDEM: PhET-iO instrumented `PhetioObject` instances should be disposed.
 - [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls `this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly match the filename.
-- [ ] PhET-iO instantiates different objects and wires up listeners that are not present in the PhET-branded simulation.  It needs to be tested separately for memory leaks.  To help isolate the nature of the memory leak, this test should be run separately from the PhET brand memory leak test.  Test with the "console" and "studio" wrappers (easily accessed from phetmarks)
 
 ## **Performance**
 
-- [ ] Is there a GitHub issue documenting a comprehensive performance review on all supported platforms?
+- [ ] Play with sim, identify any obvious performance issues (e.g. animation that pauses or "hitches"). Refer to the issue documenting performance testing and sign-off. 
 - [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter `webgl=false`)
 
 ## **Usability**
 
 - [ ] Are UI components sufficiently responsive? (especially continuous UI components, such as sliders)
 - [ ] Are pointer areas optimized, especially for touch? (run with query parameter `showPointerAreas`)
-- [ ] Do pointer areas overlap? (run with query parameter `showPointerAreas`) Some overlap may be OK depending on the z-ordering (if the frontmost object is supposed to occlude touch/mouse areas)
+- [ ] Do pointer areas overlap? (run with query parameter `showPointerAreas`) Overlap may be OK in some cases, depending on the z-ordering (if the front-most object is supposed to occlude pointer areas) and whether objects can be moved.
 
 ## **Internationalization**
 - [ ] Are there any strings that are not internationalized, and does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter `stringTest=X`. You should see nothing but 'X' strings.)
@@ -71,7 +83,7 @@ such as primary model and view classes that exist for the duration of the sim.
 desktop platform.  For PhET-iO sims, additionally test `?stringTest=xss` in Studio to make sure i18n strings didn't leak 
 to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
 - [ ] Use named placeholders (e.g. `"{{value}} {{units}}"`) instead of numbered placeholders (e.g. `"{0} {1}"`).
-- [ ] Make sure the string keys are all perfect - they are difficult to change after 1.0.0 is published. Guidelines for string keys are:
+- [ ] Make sure the string keys are all perfect, because they are difficult to change after 1.0.0 is published. Guidelines for string keys are:
   
   (1) Strings keys should generally match their values. E.g.:
   
@@ -176,7 +188,6 @@ For a sim repository named “my-repo”, the general structure should look like
 - [ ] Is the sim's -config.js up-to-date (generated by `grunt generate-config`)
 - [ ] Is the LICENSE file correct? (Generally GPL v3 for sims and MIT for common code, see [this thread](https://github.com/phetsims/tasks/issues/875#issuecomment-312168646) for additional information).
 - [ ] Does .gitignore match the one in simula-rasa?
-- [ ] Does a GitHub issue exist for tracking credits, to ensure that they are correct before publication?
 - [ ] In GitHub, verify that all non-release branches have an associated issue that describes their purpose.
 - [ ] Are there any GitHub branches that are no longer needed and should be deleted?
 - [ ] Does `model.md` adequately describe the model, in terms appropriate for teachers?
@@ -184,6 +195,8 @@ For a sim repository named “my-repo”, the general structure should look like
 - [ ] Are sim-specific query parameters (if any) identified and documented in one .js file in js/common/ or js/ (if there is no common/)? The .js file should be named `{{REPO}}QueryParameters.js`, for example ArithmeticQueryParameters.js for the aritmetic repository.
 
 ## **Coding Conventions**
+
+This section deals with PhET coding conventions. You do not need to exhaustively check every item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET standards. 
 
 - [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/phet-info/blob/master/ide/idea/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
 - [ ] Names (types, variables, properties, functions,...) should be sufficiently descriptive and specific, and should avoid non-standard abbreviations. For example:
@@ -421,7 +434,11 @@ Property.multilink(
 
 ### Documentation
 
-- [ ] Every type, method and property should be documented.
+This section deals with PhET documention conventions and standards. You do not need to exhaustively check every item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET standards. 
+
+- [ ] All classes, methods and properties are documented.
+
+- [ ] Documentation at the top of .js files should provide a useful overview of purpose, responsibilies, and (where useful) examples of API use. If the file contains a subclass definition, it should indicate what functionality it adds to the superclass.
 
 - [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS3/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the example-sim repository.
 
@@ -442,8 +459,7 @@ Property.multilink(
 
 - [ ] Do the `@author` annotations seem correct?
 
-- [ ] Are all constructors marked with `@constructor`?  That will make them easier to search and review.  This is not necessary for ES6 constructors.
-
+- [ ] ES5 (`inherit`) constructors should be annotated with `@constructor`.  ES6 (`class`) constructors should _not_ be annotated with `@constructor`.
 
 - [ ] Constructor and function documentation.  Parameter types and names should be clearly specified for each constructor and function using `@param` annotations.  The description for each parameter should follow a hyphen.  Primitive types should use lower case. For example:
 
@@ -476,6 +492,8 @@ Property.multilink(
 - [ ] Abstract methods (normally implemented with an error) should be marked with `@abstract` jsdoc.
 
 #### Type Expressions
+
+This section deals with PhET conventions for type expressions. You do not need to exhaustively check every item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET standards.
 
 - [ ] Type expressions should conform approximately to [Google Closure Compiler](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler) syntax.  PhET stretches the syntax in many cases (beyond the scope of this document to describe).
 
@@ -571,6 +589,9 @@ Property.multilink(
 - [ ] Look for cases where the use of type expressions involving Property subclasses are incorrect.  Because of the structure of the `Property` class hierarchy, specifying type-specific Properties (`{BooleanProperty}`, `{NumberProperty}`,...) may be incorrect, because it precludes values of type `{DerivedProperty}` and `{DynamicProperty}`.   Similarly, use of `{DerivedProperty}` and `{DynamicProperty}` precludes values of (e.g.) `{BooleanProperty}`. Especially in common code, using `{Property,<TYPE>}` is typically correct, unless some specific feature of the `Property` subclass is required.  For example, `{Property.<boolean>}` instead of `{BooleanProperty}`.
 
 #### Visibility Annotations
+
+This section deals with PhET conventions for visibility annotations. You do not need to exhaustively check every item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET standards.
+
 Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations to document the intent of the programmer, and define the public API. Visibility annotations are required for anything that JavaScript makes public. Information about these annotations can be found here. (Note that other documentation systems like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc is authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for visibility annotations are as follows:
 
 - [ ] Use `@public` for anything that is intended to be part of the public API.
@@ -625,12 +646,15 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 - [ ] Are there any `TODO` or `FIXME` or `REVIEW` comments in the code?  They should be addressed or promoted to GitHub issues.
 - [ ] Are there any [magic numbers](https://en.wikipedia.org/wiki/Magic_number_(programming)) that should be factored out as constants and documented?
 - [ ] Are there any constants that are duplicated in multiple files that should be factored out into a `{{REPO}}Constants.js` file?
-- [ ] Is [PhetColorScheme](https://github.com/phetsims/scenery-phet/blob/master/js/PhetColorScheme.js) used where appropriate? Verify that the sim is not inventing/creating its own colors for things that have been standardized in `PhetColorScheme`.  Identify any colors that might be worth adding to `PhetColorScheme`.
 - [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.) Does changing the values of these constants break the sim? For example, see https://github.com/phetsims/plinko-probability/issues/84.
+- [ ] Is [PhetColorScheme](https://github.com/phetsims/scenery-phet/blob/master/js/PhetColorScheme.js) used where appropriate? Verify that the sim is not inventing/creating its own colors for things that have been standardized in `PhetColorScheme`.  Identify any colors that might be worth adding to `PhetColorScheme`.
 - [ ] Are all dependent properties modeled as `DerivedProperty` instead of `Property`?
 - [ ] All dynamics should be called from Sim.step(dt), do not use window.setTimeout or window.setInterval.  This will help support Legends of Learning and PhET-iO.
 
 ## **Accessibility**
+
+This section may be omitted if the sim has not been instrumented for a11y.
+
 - [ ] Does the sim pass an accessibility fuzz test? (run with query parameters `fuzzBoard&ea`)
 - [ ] Run the accessible HTML through an [HTML validator](https://validator.w3.org/nu/#textarea), does the HTML pass?
 - [ ] Are accessibility features integrated well into the code. They should be added in a maintainable way, even if that requires upfront refactoring.
@@ -641,5 +665,7 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 
 ## **PhET-iO**
 
-- [ ] If the simulation is supposed to be instrumented for PhET-iO, please see [How to Instrument a PhET Simulation for PhET-iO](https://github.com/phetsims/phet-io/blob/master/doc/how-to-instrument-a-phet-simulation-for-phet-io.md)
-for the PhET-iO development process.
+This section may be omitted if the sim has not been instrumented for PhET-iO.
+
+- [ ] Does instrumentation follow the conventions described in [How to Instrument a PhET Simulation for PhET-iO](https://github.com/phetsims/phet-io/blob/master/doc/how-to-instrument-a-phet-simulation-for-phet-io.md)?
+- [ ] PhET-iO instantiates different objects and wires up listeners that are not present in the PhET-branded simulation.  It needs to be tested separately for memory leaks.  To help isolate the nature of the memory leak, this test should be run separately from the PhET brand memory leak test.  Test with the "console" and "studio" wrappers (easily accessed from phetmarks).  Compare to testing results done by the responsible developer.
