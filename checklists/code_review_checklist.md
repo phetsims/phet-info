@@ -65,7 +65,7 @@ such as primary model and view classes that exist for the duration of the sim.
 
 ## **Performance**
 
-- [ ] Play with sim, identify any obvious performance issues (e.g. animation that pauses or "hitches"). Refer to the issue documenting performance testing and sign-off. 
+- [ ] Play with sim, identify any obvious performance issues. Examples: animation that slows down with large numbers of objects; animation that pauses or "hitches" during garbage collection. 
 - [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter `webgl=false`)
 
 ## **Usability**
