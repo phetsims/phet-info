@@ -758,13 +758,12 @@ or to group them--use your judgment.
 (1) Don't modify an options object that you don't own. If you own the options object, then direct assignment to an options field is OK. If you don't own the options object, use `merge`, to assign a field value, which creates a new object that you then own.
 
 ```js
-class Shelf extends Node
-constructor Shelf(content, options ){
-
-// Use extend to create an options object
-  options = _.extend( {
-        material: 'wood',
-      }, options );
+class Shelf extends Node {
+  constructor( content, options ) {
+    options = merge( {
+      material: 'wood',
+    }, options );
+  }
 }
 ```
 
