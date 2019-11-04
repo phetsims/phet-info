@@ -680,15 +680,15 @@ Author: @pixelzoom, @denz1994
 
 This pattern is used for parameterizing types, which we use to avoid an explosion of constructor parameters. `config` and `options` are the two implementations of that pattern that PhET typically uses for configuring classes. The difference between the two is that, fields passed in an object titled `options` must all be "optional." If there are some properties of the object parameter that are required, then the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one must be documented accordingly. See "Required Fields" below for documentation. 
 
-Use `merge` to overwrite defaults to options for a type like:
+Use `merge` to overwrite default option values, e.g.:
 ```js
-  function MyNodeType( options ) {
-
-    options = merge( {
-      visible: false,
-      pickable: false
-    }, options );
-  }
+constructor( options ) {
+  options = merge( {
+    visible: false,
+    pickable: false
+  }, options );
+  ...
+}
 ```
 The above `Node` subtype has default `Node` options different from `Node`'s defaults. 
 
@@ -704,24 +704,22 @@ If using composition for your type, and you want to pass options into a composed
 those options in a single option on your type, named according to the component you are passing the options to.
 
 ```js
-  function MyNodeTypeWithHSliderInIt( options ) {
+class MyNodeTypeWithHSliderInIt extends Node {
+  constructor( options ) {
 
     options = merge( {
       visible: false,
       pickable: false,
-
-      hsliderOptions: null // filled in below
+      hsliderOptions: {
+        endDrag: function() { console.log( 'Drag Ended') },
+        startDrag: function() { console.log( 'Drag Started') }
+      }
     }, options );
-
-    // default options to be passed into Slider
-    options.hsliderOptions = merge( {
-
-      endDrag: function() { console.log( 'Drag Ended') },
-      startDrag: function() { console.log( 'Drag Started') }
-    }, options.hsliderOptions );
 
     var slider = new HSlider( new Property(), new Range(), options.hsliderOptions );
   }
+  ...
+}
 ```
 
 In some cases, dependency injection is an appropriate alternative, see https://github.com/phetsims/tasks/issues/952.
