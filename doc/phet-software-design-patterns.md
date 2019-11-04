@@ -678,7 +678,7 @@ Very important pattern for new developers
 
 Author: @pixelzoom, @denz1994
 
-This pattern is used for parameterizing classes and methods, which we use to avoid an explosion of parameters. `options` nad `config` are the two implementations of that pattern that PhET typically uses. If all properties in the argument are optional, then the parameter should be called `options`.  If one or more properties of the argument are required, then the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one must be documented accordingly. See "Required Fields" below for documentation. 
+This pattern is used for parameterizing classes and methods, which we use to avoid an explosion of parameters. `options` and `config` are the two implementations of that pattern that PhET typically uses. If all properties in the argument are optional, then the parameter should be called `options`.  If one or more properties of the argument are required, then the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one must be documented accordingly. See "Required Fields" below for documentation. 
 
 Use `merge` to overwrite default option values. For example, this `Node` subclass has defaults that are different from `Node`'s defaults:
 ```js
