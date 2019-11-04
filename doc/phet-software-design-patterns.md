@@ -797,7 +797,9 @@ blueContainerOptions.label = 'Books';
   !options.hasOwnProperty( 'someField' )
   ```  
 
-(4) Options as an Object should never have an extra prototype.
+(4) `options` argument should never have an extra prototype.  It should be a simple object literal.
+
+(5) Use `config` judiciously and appropriately. If your API has too many parameters, don't immediately reach for `config` as the solution. Review your API to understand _why_ it has too many parameters, and possibly redesign.
 
 ### Points of discussion
 
