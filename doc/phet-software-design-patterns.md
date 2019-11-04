@@ -682,15 +682,17 @@ This pattern is used for parameterizing types, which we use to avoid an explosio
 
 Use `merge` to overwrite default option values, e.g.:
 ```js
-constructor( options ) {
-  options = merge( {
-    visible: false,
-    pickable: false
-  }, options );
-  ...
+class MyNode extends Node {
+  constructor( options ) {
+    options = merge( {     
+      visible: false,
+      pickable: false
+    }, options );
+    ...
+  }
 }
 ```
-The above `Node` subtype has default `Node` options different from `Node`'s defaults. 
+The above `Node` subclass has default `Node` options different from `Node`'s defaults. 
 
 We do not filter child options out before passing them up to the parent. With this in mind please be mindful of the option
 naming to make sure that you don't cause collisions. See https://github.com/phetsims/tasks/issues/934.
