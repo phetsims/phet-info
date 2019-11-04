@@ -680,7 +680,7 @@ Author: @pixelzoom, @denz1994
 
 This pattern is used for parameterizing types, which we use to avoid an explosion of constructor parameters. `config` and `options` are the two implementations of that pattern that PhET typically uses for configuring classes. The difference between the two is that, fields passed in an object titled `options` must all be "optional." If there are some properties of the object parameter that are required, then the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one must be documented accordingly. See "Required Fields" below for documentation. 
 
-Use `merge` to overwrite default option values, e.g.:
+Use `merge` to overwrite default option values. For example, this `Node` subclass has defaults that are different from `Node`'s defaults:
 ```js
 class MyNode extends Node {
   constructor( options ) {
@@ -689,10 +689,10 @@ class MyNode extends Node {
       pickable: false
     }, options );
     ...
+    super( options );
   }
 }
-```
-The above `Node` subclass has default `Node` options different from `Node`'s defaults. 
+``` 
 
 We do not filter child options out before passing them up to the parent. With this in mind please be mindful of the option
 naming to make sure that you don't cause collisions. See https://github.com/phetsims/tasks/issues/934.
@@ -706,7 +706,7 @@ If using composition for your type, and you want to pass options into a composed
 those options in a single option on your type, named according to the component you are passing the options to.
 
 ```js
-class MyNodeTypeWithHSliderInIt extends Node {
+class MyNode extends Node {
   constructor( options ) {
 
     options = merge( {
@@ -719,13 +719,15 @@ class MyNodeTypeWithHSliderInIt extends Node {
     }, options );
 
     var slider = new HSlider( new Property(), new Range(), options.hsliderOptions );
+    ...
+    super( options );
   }
   ...
 }
 ```
 
 In some cases, dependency injection is an appropriate alternative, see https://github.com/phetsims/tasks/issues/952.
-In the above example, this would mean creating the HSlider externally then passing it in to the MyNodeTypeWithHSliderInIt
+In the above example, this would mean creating the HSlider externally then passing it in to the `MyNode`
 constructor.
 
 ### Required fields
