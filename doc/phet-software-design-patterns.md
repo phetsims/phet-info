@@ -782,17 +782,17 @@ blueContainerOptions.label = 'Books';
 
 (3) To test whether a field value exists in an options object, the expressions that you have available are:
 
-  Used to check if someField does not exist as an option field.
+  Check if `someField` does not exist as an option field:
   ```js
   !option.someField 
   ```
   
-  Used to check if someField has no value assigned to it.
+  Check if `someField` has no value assigned to it:
   ``` js
   options.someField === undefined
   ```
   
-  Returns a boolean that determines if somefield is a property of the options object, as opposed to being inherited
+ Determines if `someField` is a property of the options object, as opposed to being inherited:
   ```js
   !options.hasOwnProperty( 'someField' )
   ```  
