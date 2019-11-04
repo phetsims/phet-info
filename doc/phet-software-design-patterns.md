@@ -678,7 +678,7 @@ Very important pattern for new developers
 
 Author: @pixelzoom, @denz1994
 
-This pattern is used for parameterizing types, which we use to avoid an explosion of constructor parameters. `options` nad `config` are the two implementations of that pattern that PhET typically uses for configuring classes. If all properties in the argument are optional, then the parameter should be called `options`.  If one or more properties of the argument are required, then the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one must be documented accordingly. See "Required Fields" below for documentation. 
+This pattern is used for parameterizing classes and methods, which we use to avoid an explosion of constructor parameters. `options` nad `config` are the two implementations of that pattern that PhET typically uses. If all properties in the argument are optional, then the parameter should be called `options`.  If one or more properties of the argument are required, then the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one must be documented accordingly. See "Required Fields" below for documentation. 
 
 Use `merge` to overwrite default option values. For example, this `Node` subclass has defaults that are different from `Node`'s defaults:
 ```js
@@ -694,16 +694,15 @@ class MyNode extends Node {
 }
 ``` 
 
-We do not filter child options out before passing them up to the parent. With this in mind please be mindful of the option
-naming to make sure that you don't cause collisions. See https://github.com/phetsims/tasks/issues/934.
+We do not filter child options out before passing them a parent class or subcomponent. With this in mind, please be mindful of the option naming to make sure that you don't cause name collisions. See https://github.com/phetsims/tasks/issues/934.
 
 Try to keep related options groups together, both for instantiation and `merge` statements. For examples, if you
 have several options related to a11y, keep them together, don't interleave them with other options.
 
 ### Nesting
 
-If using composition for your type, and you want to pass options into a composed component of the type, you can nest
-those options in a single option on your type, named according to the component you are passing the options to.
+If using composition for your class, and you want to pass options into a subcomponent, you can nest
+those options in a single property, named according to the subcomponent you are passing the options to. In this example, `options.hSlider` is the nested options that will be passed to `HSlider`:
 
 ```js
 class MyNode extends Node {
@@ -727,7 +726,7 @@ class MyNode extends Node {
 ```
 
 In some cases, dependency injection is an appropriate alternative, see https://github.com/phetsims/tasks/issues/952.
-In the above example, this would mean creating the HSlider externally then passing it in to the `MyNode`
+In the above example, this would mean creating the `HSlider` externally then passing it in to the `MyNode`
 constructor.
 
 ### Required fields
@@ -753,7 +752,7 @@ function Person( name, config ) {
 }
 ```
 In some cases, it may be better to only indicate the `required` properties or only indicate the `optional` properties,
-or to group them--use your judgment.
+or to group them -- use your judgment.
 
 ### Best Practices
 
