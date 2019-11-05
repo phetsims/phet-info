@@ -780,22 +780,11 @@ assert && assert( blueContainerOptions.label === undefined, 'label was not previ
 blueContainerOptions.label = 'Books';
 ```
 
-(3) To test whether a field value exists in an options object, the expressions that you have available are:
+(3) To check whether a field exists in `options` or `config`, the expressions that you have available are:
 
-  Check if `someField` does not exist as an option field:
-  ```js
-  !option.someField 
-  ```
-  
-  Check if `someField` has no value assigned to it:
-  ``` js
-  options.someField === undefined
-  ```
-  
- Determines if `someField` is a property of the options object, as opposed to being inherited:
-  ```js
-  !options.hasOwnProperty( 'someField' )
-  ``` 
+* `options.someField === undefined` - checks if `someField` does not exist in as a field in `options`
+* `!options.hasOwnProperty( 'someField' )` - checks if `someField` is a property of `options`, as opposed to being inherited
+* `!option.someField` - checks if `someField` has a falsy value. Don't use this for boolean or number fields!
   
 (4) When overriding options or config using `merge`, arguments should be ordered from least to most specific.  For example:
 
