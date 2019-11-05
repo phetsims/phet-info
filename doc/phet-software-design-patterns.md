@@ -782,8 +782,8 @@ blueContainerOptions.label = 'Books';
 
 (3) To check whether a field exists in `options` or `config`, the expressions that you have available are:
 
-* `options.someField === undefined` - checks if `someField` does not exist in as a field in `options`
-* `!options.hasOwnProperty( 'someField' )` - checks if `someField` is a property of `options`, as opposed to being inherited
+* `options.someField === undefined` - checks if `someField` does not exist as a property
+* `!options.hasOwnProperty( 'someField' )` - checks if `someField` is a non-inherited property
 * `!option.someField` - checks if `someField` has a falsy value. Don't use this for boolean or number fields!
   
 (4) When overriding options or config using `merge`, arguments should be ordered from least to most specific.  For example:
