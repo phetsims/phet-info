@@ -795,9 +795,33 @@ blueContainerOptions.label = 'Books';
  Determines if `someField` is a property of the options object, as opposed to being inherited:
   ```js
   !options.hasOwnProperty( 'someField' )
-  ```  
+  ``` 
+  
+(4) When overriding options or config using `merge`, arguments should be ordered from least to most specific.  For example:
 
-(4) `options` argument should never have an extra prototype.  It should be a simple object literal.
+```js
+// Incorrect
+class MyPanel extends Panel {
+  constructor( options ) {
+    options = merge( options, {
+      fill: 'yellow'
+      ...
+    }, MyConstants.PANEL_OPTIONS );
+    ...
+  }
+}
+
+// Correct
+class MyPanel extends Panel { 
+  constructor( options ) {
+    options = merge( {}, MyConstants.PANEL_OPTIONS, {
+      fill: 'yellow'
+      ...
+    }, options);
+    ...
+  }
+}
+```
 
 (5) Use `config` judiciously and appropriately. If your API has too many parameters, don't immediately reach for `config` as the solution. Review your API to understand _why_ it has too many parameters, and possibly redesign.
 
