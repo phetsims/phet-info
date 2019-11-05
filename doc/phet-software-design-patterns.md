@@ -801,15 +801,6 @@ blueContainerOptions.label = 'Books';
 
 (5) Use `config` judiciously and appropriately. If your API has too many parameters, don't immediately reach for `config` as the solution. Review your API to understand _why_ it has too many parameters, and possibly redesign.
 
-### Points of discussion
-
-(1) Review examples from best practices.
-
-(2) Consolidating options documentation https://github.com/phetsims/axon/issues/202.
-
-(3) Suggested to use "configuration" as the pattern name.
-
-(4) Best Practices Point 4: Is this handled by PhET_Core/merge.js validateMergableObject() assertion?
 
 ## Prototypal Inheritance
 
