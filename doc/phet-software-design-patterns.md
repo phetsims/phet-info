@@ -702,7 +702,7 @@ have several options related to a11y, keep them together, don't interleave them 
 ### Nesting
 
 If using composition for your class, and you want to pass options into a subcomponent, you can nest
-those options in a single property, named according to the subcomponent you are passing the options to. In this example, `options.hSlider` is the nested options that will be passed to `HSlider`:
+those options in a single property, named according to the subcomponent you are passing the options to. In this example, `options.hSliderOptions` is the nested options that will be passed to `HSlider`:
 
 ```js
 class MyNode extends Node {
