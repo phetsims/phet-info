@@ -22,7 +22,7 @@ of standard design patterns.
 
 ## Composition and Inheritance
 
-Author: 🚧
+Author: @samreid 🚧
 
   - Noted as a new topic during patterns discussion on 2/11/19.
   - Would be good to note PhET decisions and patterns for this here.
