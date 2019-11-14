@@ -16,7 +16,6 @@ of standard design patterns.
 * [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace)
 * [Observer](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#observer) 🚧
 * [Options and Config](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config)
-* [Prototypal Inheritance](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#prototypal-inheritance) 🚧
 * [Singleton](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#singleton)
 * [State Machine](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#state-machine)
 * [Strategy](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#strategy)
@@ -27,7 +26,7 @@ Author: 🚧
 
   - Noted as a new topic during patterns discussion on 2/11/19.
   - Would be good to note PhET decisions and patterns for this here.
-  - Relavant info/links:
+  - Relevant info/links:
     - https://en.wikipedia.org/wiki/Composition_over_inheritance
       - "Composition over inheritance (or composite reuse principle) in object-oriented programming (OOP) is the principle that classes should achieve polymorphic behavior and code reuse by their composition (by containing instances of other classes that implement the desired functionality) rather than inheritance from a base or parent class."
     - Chrome's optimization makes it so that sims would be faster if we used composition over inheritance.
@@ -567,36 +566,30 @@ The PhET codebase follows a similar pattern for module structure as outlined bel
 Putting it all together modules will usually follow this format:
 
 ```js
-
-// Copyright 2013-2018, University of Colorado Boulder
+// Copyright 2019, University of Colorado Boulder
 
 /**
  * Example Node used for demonstrating typical module formatting in the PhET project.
  *
  * @author Denzell Barnett (PhET Interactive Simulations)
  */
-
-// Declaration using strict mode.
 define( require => {
   'use strict';
 
-  // Imports
+  // modules
   const inherit = require( 'PHET_CORE/inherit' );
   const Node = require( 'SCENERY/nodes/Node' );
   const fooRepo = require( 'FOO_REPO/fooRepo' );
 
-  // Constructor
-  function FooNode( fooArgument ) {
-    // ...
+  class FooNode{
+   constructor(fooArgument){
+     // ...
+   }  
   }
 
   // Namespace registration to repository.
-  fooRepo.register( 'FooNode', FooNode );
-
-  // Inherit is a utility function for setting up prototypal inheritance
-  return inherit( Node, FooNode );
+  return fooRepo.register( 'FooNode', FooNode );
 } );
-
 ```
 
 It is important to note that 'using strict' should be enforced throughout the PhET codebase. Strict mode has the unique property of limiting certain javascript functionalities that may not be backward compatible between versions. To avoid this there are three general solutions:
@@ -813,15 +806,6 @@ class MyPanel extends Panel {
 ```
 
 (5) Use `config` judiciously and appropriately. If your API has too many parameters, don't immediately reach for `config` as the solution. Review your API to understand _why_ it has too many parameters, and possibly redesign.
-
-
-## Prototypal Inheritance
-
-Author: 🚧
-
-what it is, how it differs from `class`, use of `call` and `inherit`, use with Mixin and Trait
-
-e.g. https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9
 
 ## Singleton
 
