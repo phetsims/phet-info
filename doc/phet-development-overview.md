@@ -185,8 +185,8 @@ After checking out the dependencies and installing grunt-cli in the preceding in
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install`  
 3. Use the perennial ‘grunt’ task to create a new sim, like so (still in the perennial directory):  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`grunt create-sim --repo=NAME --author=AUTHOR`  
-For instance, if the simulation is going to be named Acceleration Lab and the author is Sam Reid from PhET Interactive Simulations, then you could put:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`grunt create-sim --repo=acceleration-lab --author="Sam Reid (PhET Interactive Simulations)"`  
+For instance, if the simulation is going to be named Acceleration Lab and the author is Jane Doe, then you could put:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`grunt create-sim --repo=acceleration-lab --author="Jane Doe"`  
 4. Test the created simulation in the browser and make sure it launches.  It should be a blank simulation.  Write to the Developing Interactive Simulations in HTML5 Google Group if you run into problems.
 
 ## Building and Testing (Windows and macOS)
