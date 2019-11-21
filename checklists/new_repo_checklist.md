@@ -64,6 +64,10 @@ At https://github.com/phetsims/{{REPO}}:
 In your working copy of perennial repo:
 - [ ] If applicable: Add the new repo to `perennial/data/active-repos`. Run `clone-missing-repos.sh` to check your change, commit and push. After a few minutes, an automated process should update the other files under perennial/data/. Pull perennial so you can find the sim in phetmarks.
 
+If this repo is a common code dependency for all sims:
+- [ ] Add it to the list of `clone` commands in [phet-development-overview.md](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md)
+- [ ] Update all sim published README files (because the "Quick Start" section has these git clone commands too).
+
 Other:
 - [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and run `clone-missing-repos.sh` at your convenience."
 - [ ] Apply GitHub labels. See [github-labels/README.md](https://github.com/phetsims/phet-info/blob/master/github-labels/README.md).
