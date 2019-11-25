@@ -3,6 +3,8 @@
 This document describes software design patterns that are specific to PhET, and PhET-specific applications
 of standard design patterns.
 
+For general information on many standard design patterns, see _[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)_ by Addy Osmani.
+
 ## Table of Contents
 
 * [Composition and Inheritance](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#composition-and-inheritance) 🚧
