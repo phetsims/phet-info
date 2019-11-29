@@ -115,7 +115,9 @@ Some background reading for those interested:
 SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clarify which form of dependency injection
 (probably constructor-based injection), and some examples of where it's currently used in PhET sims.
 
-The main goal of DI is to decouple the implementation of a required object instance from where it’s used. While there are a few different ways to accomplish this, the basic idea is to provide the wrapping class with its required instance variables instead of allowing it to instantiate them itself. For example,
+The main goal of DI is to decouple the implementation of a required object instance from where it’s used. While there 
+are a few different ways to accomplish this, the basic idea is to provide the wrapping class with its required instance
+variables instead of allowing it to instantiate them itself. For example,
 
 ```js
 class MyClass {
@@ -124,7 +126,9 @@ class MyClass {
     }
 }
 ```
-Here, `MyClass` is tightly coupled to the specific implementation of `OtherObject` making it rather inflexible. With DI, you instantiate the object elsewhere and add it to a class via its constructor (Constructor Injection) or through a setter (Setter Injection)
+Here, `MyClass` is tightly coupled to the specific implementation of `OtherObject` making it rather inflexible. With DI,
+you instantiate the object elsewhere and add it to a class via its constructor (Constructor Injection) or through a
+setter (Setter Injection)
 
 ```js
 class MyClass {
@@ -146,7 +150,9 @@ class MyClass {
 }
 ```
 
-There are other forms of DI using interfaces or service locators, but they're not really applicable for the vast majority of PhET use cases. In JavaScript, since everything is an `Object`, you could say that any assignment to class/object properties from a constructor/method is DI since they all extend `Object`'s methods.
+There are other forms of DI using interfaces or service locators, but they're not really applicable for the vast
+majority of PhET use cases. In JavaScript, since everything is an `Object`, you could say that any assignment to
+class/object properties from a constructor/method is DI since they all extend `Object`'s methods.
 
 ```js
 class MyClass {
@@ -166,15 +172,24 @@ const myClassInstance = new MyClass( 'hello', [ 'there', 'world' ], new Differen
 myClassInstance.myClassToString();
 ```
 
-This takes advantage of the fact that while each argument has a `toString` method, their implementations can be wildly different (provided the implementation still returns a `string`).
+This takes advantage of the fact that while each argument has a `toString` method, their implementations can be wildly
+different (provided the implementation still returns a `string`).
 
 -------------
 
-We already see a lot of straightforward DI at PhET such as passing `model` or `Property` instances as constructor arguments or in our `options` and `config` objects. How PhET handles DI is largely up to the developer and we can find instances of each flavor in our codebase; however, we most commonly see dependencies passed either as constructor arguments or within our options/config objects. When deciding what approach to take, it's generally a good idea to examine the those objects for their complexity. Large, heavily nested options objects are a relatively good indicator that DI may simplify your implementation.
+We already see a lot of straightforward DI at PhET such as passing `model` or `Property` instances as constructor
+arguments or in our `options` and `config` objects. How PhET handles DI is largely up to the developer and we can find
+instances of each flavor in our codebase; however, we most commonly see dependencies passed either as constructor
+arguments or within our options/config objects. When deciding what approach to take, it's generally a good idea to
+examine the those objects for their complexity. Large, heavily nested options objects are a relatively good indicator
+that DI may simplify your implementation.
 
-To start, [Molecules and Light](https://github.com/phetsims/molecules-and-light) employs setter injection in how it handles absorption of various wavelengths of light for different molecules.
+To start, [Molecules and Light](https://github.com/phetsims/molecules-and-light) employs setter injection in how it
+handles absorption of various wavelengths of light for different molecules.
 
-In [Molecule.js](https://github.com/phetsims/molecules-and-light/blob/master/js/photon-absorption/model/Molecule.js), the constructor initializes `this.mapWavelengthToAbsorptionStrategy = {}`. Then on ln 189, we have the following method allows any object inheriting Molecule to dynamically set the necessary `PhotonAbsorptionStrategy`
+In [Molecule.js](https://github.com/phetsims/molecules-and-light/blob/master/js/photon-absorption/model/Molecule.js),
+the constructor initializes `this.mapWavelengthToAbsorptionStrategy = {}`. Then on ln 189, we have the following method
+allows any object inheriting Molecule to dynamically set the necessary `PhotonAbsorptionStrategy`
 
 ```js
 setPhotonAbsorptionStrategy( wavelength, strategy ) {
@@ -492,7 +507,10 @@ When should you use `localToGlobalPoint` instead of `parentToGlobalPoint` and
 
 Author: @Denz1994 
 
-A module is a program unit that contains declarations which formulate the classes and objects in a system. Modularity is a property of a system whose modules can be compiled independently, but have connections with other modules.  A module has two core components: its interface and its implementation. JavaScript modules are useful to define a unit of code and how to register a value for the module. Additionally, modules allow  units of code to reference other units of code.
+A module is a program unit that contains declarations which formulate the classes and objects in a system. Modularity is
+a property of a system whose modules can be compiled independently, but have connections with other modules.  A module
+has two core components: its interface and its implementation. JavaScript modules are useful to define a unit of code
+and how to register a value for the module. Additionally, modules allow  units of code to reference other units of code.
 
 More background reading:
 
@@ -500,20 +518,26 @@ More background reading:
 - Object-Oriented Programming with Applications by Grady Booch
 - Effective JavaScript by David Herman
 
-Modules operate as independent pieces of code and are used throughout the whole PhET project. Take a look at some examples in [sim code](https://github.com/phetsims/equality-explorer/blob/master/js/common/view/BoxNode.js), [common code](https://github.com/phetsims/joist/blob/master/js/HomeButton.js), and [code for build tools](https://github.com/phetsims/perennial/blob/master/js/common/build.js).
+Modules operate as independent pieces of code and are used throughout the whole PhET project. Take a look at some
+examples in [sim code](https://github.com/phetsims/equality-explorer/blob/master/js/common/view/BoxNode.js), [common code](https://github.com/phetsims/joist/blob/master/js/HomeButton.js), and [code for build tools](https://github.com/phetsims/perennial/blob/master/js/common/build.js).
 
 ----
 
 #### Importing Modules:
 
-PhET relies heavily on RequireJS to support importing modules. RequireJS is flexible enough to support browser-based platforms and server sided environments, such as Node.js. RequireJS pulls inspiration from CommonJS (a popular module format) but improves on it by coding a module format that works well natively in a browser. For more information, read the RequireJS [documentation](https://requirejs.org/).
+PhET relies heavily on RequireJS to support importing modules. RequireJS is flexible enough to support browser-based
+platforms and server sided environments, such as Node.js. RequireJS pulls inspiration from CommonJS (a popular module
+format) but improves on it by coding a module format that works well natively in a browser. For more information, read
+the RequireJS [documentation](https://requirejs.org/).
 
-RequireJS imports are handled at top of all files and use the `require` keyword. Typically, require statements for importing would look something like this:
+RequireJS imports are handled at top of all files and use the `require` keyword. Typically, require statements for
+importing would look something like this:
 
 ```js
     const Node = require( 'SCENERY/nodes/Node' );
 ```
-where `SCENERY` is an alias or symbolic constant that represents a path to the repository where the module lives. This follows a condensed syntax compatible with CommonJS based on asycnhronous module dependency (AMD). This [article](https://requirejs.org/docs/whyamd.html) is a great resource for further reading. Note we are not using ES6 modules, but this may change in the upcoming months.
+where `SCENERY` is an alias or symbolic constant that represents a path to the repository where the module lives. This
+follows a condensed syntax compatible with CommonJS based on asycnhronous module dependency (AMD). This [article](https://requirejs.org/docs/whyamd.html) is a great resource for further reading. Note we are not using ES6 modules, but this may change in the upcoming months.
 
 Be aware of two cases, when using `require` should be reconsidered. 
 
@@ -675,9 +699,15 @@ Very important pattern for new developers
 
 Author: @pixelzoom, @denz1994
 
-This pattern is used for parameterizing classes and methods, which we use to avoid an explosion of parameters. `options` and `config` are the two implementations of that pattern that PhET typically uses. If all properties in the argument are optional, then the parameter should be called `options`.  If one or more properties of the argument are required, then the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one must be documented accordingly. See "Required Fields" below for documentation. 
+This pattern is used for parameterizing classes and methods, which we use to avoid an explosion of parameters. `options`
+and `config` are the two implementations of that pattern that PhET typically uses. If all properties in the argument are
+optional, then the parameter should be called `options`.  If one or more properties of the argument are required, then
+the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one must be
+documented accordingly. See "Required Fields" below for documentation. 
 
-Use `merge` to overwrite default option values. For example, this `Node` subclass has defaults that are different from `Node`'s defaults:
+Use `merge` to overwrite default option values. For example, this `Node` subclass has defaults that are different from
+`Node`'s defaults:
+
 ```js
 class MyNode extends Node {
   constructor( options ) {
@@ -691,7 +721,8 @@ class MyNode extends Node {
 }
 ``` 
 
-We do not filter child options out before passing them a parent class or subcomponent. With this in mind, please be mindful of the option naming to make sure that you don't cause name collisions. See https://github.com/phetsims/tasks/issues/934.
+We do not filter child options out before passing them a parent class or subcomponent. With this in mind, please be 
+mindful of the option naming to make sure that you don't cause name collisions. See https://github.com/phetsims/tasks/issues/934.
 
 Try to keep related options groups together, both for instantiation and `merge` statements. For examples, if you
 have several options related to a11y, keep them together, don't interleave them with other options.
@@ -699,7 +730,8 @@ have several options related to a11y, keep them together, don't interleave them 
 ### Nesting
 
 If using composition for your class, and you want to pass options into a subcomponent, you can nest
-those options in a single property, named according to the subcomponent you are passing the options to. In this example, `options.hSliderOptions` is the nested options that will be passed to `HSlider`:
+those options in a single property, named according to the subcomponent you are passing the options to. In this example,
+`options.hSliderOptions` is the nested options that will be passed to `HSlider`:
 
 ```js
 class MyNode extends Node {
