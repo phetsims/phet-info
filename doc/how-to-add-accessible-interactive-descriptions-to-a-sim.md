@@ -1,6 +1,6 @@
 
 
-# How to Make a Sim PDOM Accessible
+# How To Add Accessible Interactive Descriptions To A Sim
 
 ## Understand the Goal
   * What features are you trying to implement? The majority of this document (as of this writing) deals with PDOM descriptions.
@@ -23,6 +23,20 @@ a keyboard to tab navigate.
 ### More info
 
 For more information, see the "Resources for further understanding" below.
+
+## What does "Interactive Descriptions" mean?
+Interactive descriptions is an accessibility feature that PhET has developed, larger tailored towards screen reader 
+accessibility. It has the following components (with their implementation in parens):
+  * State Descriptions (PDOM)
+    a. Static States
+    b. Dynamic States
+  * Responsive Descriptions 
+    a. Object Responses (UtteranceQueue/PDOM/Both)
+    b. Context Responses (UtteranceQueue)
+  * Alternative Input:
+    keyboard (PDOM)
+    mobile (PDOM)
+    switch (PDOM)	
 
 ## Understanding the PDOM
 The traditional renderings of PhET sims (svg, canvas, webgl) hold very little semantic data as to what is inside the
