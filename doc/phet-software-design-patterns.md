@@ -498,7 +498,7 @@ Most important pattern for new developers
 
 ## Model-View Transform
 
-Author: 🚧 @chrisklus
+Author: @chrisklus 🚧
 
 role in MVC, examples to demystify scenery transform methods (`localToGlobalPoint`, etc.).
 When should you use `localToGlobalPoint` instead of `parentToGlobalPoint` and
