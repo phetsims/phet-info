@@ -14,6 +14,7 @@ For general information on many standard design patterns, see _[Learning JavaScr
 * [Enumeration](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#enumeration)
 * [Mixin and Trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
 * [Model-View Controller](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller) 🚧
+* [Model-View Transform](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-transform) 🚧
 * [Module](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#module)
 * [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace)
 * [Observer](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#observer) 🚧
@@ -497,7 +498,7 @@ Most important pattern for new developers
 
 ## Model-View Transform
 
-Author: 🚧
+Author: @chrisklus 🚧
 
 role in MVC, examples to demystify scenery transform methods (`localToGlobalPoint`, etc.).
 When should you use `localToGlobalPoint` instead of `parentToGlobalPoint` and
