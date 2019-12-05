@@ -38,3 +38,9 @@ descriptions.
 
 When a Node is created who's sole purpose is to provide descriptions to the PDOM, then suffix that node with 
 `DescriptionNode.js`. For example, see `MolarityBeakerDescriptionNode.js`.
+
+#### `*AlertManager.js`
+
+In some sims it makes sense to have a single file to in do most or all of the interfacing with `utteranceQueue`.
+While it is not required to only call utteranceQueue from a single place, it can be a nice organizational tool for the 
+interactive descriptions outfitting toolbox. For example `MolarityAlertManager` is the sole alerting file in the sim.
