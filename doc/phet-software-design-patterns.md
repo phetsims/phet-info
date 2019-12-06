@@ -968,7 +968,7 @@ define( require => {
   const arithmetic = require( 'ARITHMETIC/arithmetic' );
 
   // @public
-  const GameState = new Enumeration( [
+  const GameState = Enumeration.byKeys( [
     'SELECTING_LEVEL',
     'AWAITING_USER_INPUT',
     'DISPLAYING_CORRECT_ANSWER_FEEDBACK',
