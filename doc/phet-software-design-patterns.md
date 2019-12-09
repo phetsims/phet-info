@@ -760,9 +760,8 @@ In the above example, this would mean creating the `HSlider` externally then pas
 constructor.
 
 ### Required fields
-If one or more of the fields in `option` is required, then `options` should be renamed  to `config`. See https://github.com/phetsims/tasks/issues/930
-In the `merge` call, the options should be commented as to whether they are required or optional.  Following the
-`merge` call, required fields should have an assertion to verify they were provided. For example:
+If one or more of the fields in `options` is required, then `options` should be renamed  to `config`. See https://github.com/phetsims/tasks/issues/930
+In the `merge` call, `PhET-Core/required.js` should be used to indicate that the field is required and other non-required fields are assumed optional.  Following the `merge` call, any further validations should be provided. For example:
 ```js
 /**
  * @param {string} name - the full name of the Person
@@ -771,12 +770,18 @@ In the `merge` call, the options should be commented as to whether they are requ
  */
 function Person( name, config ) {
   config = merge( {
-    height: null, // {number} @required - height in centimeters
-    age: null, // {number} @required - age in years
+  
+    // {number} height in centimeters
+    height: required(config.height), 
+    
+    // {number} age in years
+    age: required(config.age), 
 
-    favoriteColor: null // {Color|null} optional - favorite color, if any
+    favoriteColor: null // {Color|null} favorite Color, if any
+    favoritCar: null // {Car|null} favorite Car, if any
   }, config );
 
+  // Any further validations should be handled after the config object
   assert && assert( config.height !== null, 'height is required' );
   assert && assert( config.age !== null, 'age is required' );
 }
