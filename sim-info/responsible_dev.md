@@ -64,7 +64,7 @@
 | Graphing Slope-Intercept | @pixelzoom | ✓ |
 | Gravity And Orbits | @jessegreenberg  | ✓ |
 | Gravity Force Lab |  @zepumph  | ✓ |
-| Gravity Force Lab: Basics | @zepumph | |
+| Gravity Force Lab: Basics | @zepumph | ✓ |
 | Hooke's Law | @pixelzoom | ✓ |
 | Isotopes and Atomic Mass | @jbphet | ✓ |
 | John Travoltage |  @samreid  | ✓ |
