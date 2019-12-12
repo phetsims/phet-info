@@ -43,7 +43,7 @@
 | Equality Explorer: Basics | @pixelzoom | ✓ |
 | Equality Explorer: Two Variables | @pixelzoom | ✓ |
 | Estimation | @jbphet | |
-| Example Sim | @pixelzoom | |
+| Example Sim | @pixelzoom | ✓ |
 | Expression Exchange |  @jbphet  | ✓ |
 | Faraday's Law |  @jbphet  | ✓ |
 | Fluid Pressure and Flow | @zepumph | |
