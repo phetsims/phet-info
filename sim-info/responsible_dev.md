@@ -33,7 +33,7 @@
 | Color Vision | @chrisklus | ✓ |
 | Concentration |  @pixelzoom  | ✓ |
 | Coulomb's Law | @zepumph | ✓ |
-| Curve Fitting | @jonathanolson | |
+| Curve Fitting | @jonathanolson | ✓ |
 | Density | @jonathanolson | |
 | Diffusion | @pixelzoom | ✓ |
 | Energy Forms and Changes | @chrisklus | ✓ |
