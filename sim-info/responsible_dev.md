@@ -47,7 +47,7 @@
 | Expression Exchange |  @jbphet  | ✓ |
 | Faraday's Law |  @jbphet  | ✓ |
 | Fluid Pressure and Flow | @zepumph | |
-| Forces and Motion: Basics |  @jessegreenberg | |
+| Forces and Motion: Basics |  @jessegreenberg | ✓ |
 | Fraction Comparison | @samreid |
 | Fraction Matcher | @jonathanolson | ✓ |
 | Fractions: Equality | @jonathanolson | ✓ |
