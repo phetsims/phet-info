@@ -23,7 +23,7 @@
 | Buoyancy | @jonathanolson | |
 | Calculus Grapher | @jonathanolson | |
 | Capacitor Lab: Basics | @denz1994 | ✓ |
-| Chains |  |  |
+| Chains |  | ✓ |
 | Charges And Fields | @jonathanolson  | ✓ |
 | Circuit Construction Kit: AC | @samreid | |
 | Circuit Construction Kit: Black Box Study | @samreid | |
