@@ -803,7 +803,9 @@ class Shelf extends Node {
 }
 ```
 
-(2) Before setting a value in an options object (with either assignment or `merge`), verify that the client did not provide a value. Use an assertion to verify. Don't silently override what the client provided.
+(2) In some cases, options should be specified within the constructor or method itself, and not overrideable by the 
+client. In those cases, use an assertion to verify that the client did not specify a value for that option. Don't 
+silently override what the client provided. 
 
 ```js
 // Create two containers
