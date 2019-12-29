@@ -777,8 +777,8 @@ function Person( name, config ) {
     // {number} age in years
     age: required(config.age), 
 
-    favoriteColor: null // {Color|null} favorite Color, if any
-    favoritCar: null // {Car|null} favorite Car, if any
+    favoriteColor: null, // {Color|null} favorite Color, if any
+    favoriteCar: null // {Car|null} favorite Car, if any
   }, config );
 
   // Any further validations should be handled after the config object
@@ -816,6 +816,9 @@ this.redContainerNode = new ContainerNode(height, width, redContainerOptions ) ;
 assert && assert( blueContainerOptions.label === undefined, 'label was not previously set' );
 blueContainerOptions.label = 'Books';
 ```
+
+Please see https://github.com/phetsims/phet-info/issues/128 for a discussion of acceptable approaches for checking that
+a client did not provide an option, and how the option can be specified.
 
 (3) To check whether a field exists in `options` or `config`, the expressions that you have available are:
 
