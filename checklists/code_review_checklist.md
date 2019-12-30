@@ -627,7 +627,7 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 
 ## **Math Libraries**
 
-- [ ] `DOT/Util.toFixed` or `DOT/Util.toFixedNumber` should be used instead of `toFixed`. JavaScript's `toFixed` is notoriously buggy. Behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
+- [ ] `DOT/Utils.toFixed` or `DOT/Utils.toFixedNumber` should be used instead of `toFixed`. JavaScript's `toFixed` is notoriously buggy. Behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
 
 ## IE11
 - [ ] No usage of `Number.parseInt()`
