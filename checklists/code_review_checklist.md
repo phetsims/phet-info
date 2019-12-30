@@ -663,6 +663,7 @@ This section may be omitted if the sim has not been instrumented for a11y.
 - [ ] Does resetting the simulation also reset the entire PDOM?
 - [ ] Is `Node.accessibleOrder` used appropriately to maintain visual and PDOM layout balance?
 - [ ] Make sure accessibility strings aren't being adjusted with ascii specific javascript methods like `toUpperCase()`. Remember that one day these strings will be translatable
+- [ ] Make sure for accessibility strings that all end of sentence periods do not have a leading space before it. Some screen readers will read these as "dot." This can occur often when a clause is conditionally added.
 
 ## **PhET-iO**
 
