@@ -682,19 +682,21 @@ Interested developers: JG, DB, CK
 
 ## Observer
 
-Author: @pixelzoom 🚧
+Author: 🚧
 
 A standard pattern described in https://en.wikipedia.org/wiki/Observer_pattern
 
-`Property`, `Emitter`, ... and their role in MVC
+Very important pattern for new PhET developers
+
+* `Property`, `DerivedProperty`, `Multilink`, `Emitter`, `Events`
+* role in MVC 
+* role in PhET-iO
+
 NOTE: when this gets fleshed out, scenery input system, options callbacks should be passed the SCENERY/Event from their
 input listeners.
 
-NOTE: the author of this section should include patterns/strategies in how to identify the notifying Property in 
-Multilink and DerivedProperties; see comments in expressed in https://github.com/phetsims/axon/issues/259.
-
-Very important pattern for new developers
-
+NOTE: the author of this section should include patterns/strategies for how to identify the notifying Property in 
+DerivedProperty and Multilink; see comments in expressed in https://github.com/phetsims/axon/issues/259.
 
 ## Options and Config
 
