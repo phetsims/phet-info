@@ -1,4 +1,4 @@
-# Employee Leaving Draft Checklist
+# Employee/Affiliate Leaving Draft Checklist
 
 ## Admin
 - [ ] Exit Interview if appropriate
