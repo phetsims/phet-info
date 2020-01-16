@@ -4,6 +4,9 @@
 - [ ] Exit Interview if appropriate
 - [ ] Return of keys
 - [ ] Return of any PhET owned equipment
+- [ ] Backup files (research data)
+- [ ] Physical data (paper surveys, etc)
+- [ ] Automatic reply on CU email?
 - [ ] https://docs.google.com/document/d/0B3aB5oT9c4e0R2VrTXVWd0pleFU/edit
 - [ ] What else?
 
