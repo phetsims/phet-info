@@ -11,7 +11,8 @@
 - [ ] Remove from PhET google group
  - [ ] Owned documents?
  - [ ] Google calendar?
-- [ ] Remove github access
+- [ ] Remove GitHub access
+- [ ] Remove from Slack
 - [ ] Remove unfuddle access
 - [ ] Remove admin access on website
 - [ ] Remove from About Page
