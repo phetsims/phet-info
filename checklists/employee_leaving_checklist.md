@@ -4,6 +4,7 @@
 - [ ] Exit Interview if appropriate
 - [ ] Return of keys
 - [ ] Return of any PhET owned equipment
+- [ ] https://docs.google.com/document/d/0B3aB5oT9c4e0R2VrTXVWd0pleFU/edit
 - [ ] What else?
 
   
