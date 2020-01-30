@@ -1,6 +1,7 @@
 # Draft Delete Repo Checklist
 
-## Before using this checklist, decide whether the repo is being deleted or archived. 
+## Before using this checklist:
+Decide whether the repo is being deleted or archived. 
 - A repo should be deleted if...
 - A repo should be archived if...
 
