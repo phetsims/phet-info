@@ -2,36 +2,36 @@
 
 These steps contain the following placeholders that you'll need to fill in:
 
-- `{{AUTHOR}}}` - the name that will appear in `@author` code annotations, e.g. `Jane Doe` 
+- `{{AUTHOR}}}` - the name that will appear in `@author` code annotations, e.g. `Jane Doe`
 - `{{REPO}}` - the repository name, e.g. `gas-properties`
 - `{{TITLE}}` - the simulation's title, e.g. `Gas Properties`
 
 ## Steps to create a new simulation repo
 
 At https://github.com/phetsims:
-- [ ] Press the "New" button. 
-- [ ] Set the Description field to `"{{TITLE}}" is an educational simulation in HTML5, by PhET Interactive Simulations.`  
-- [ ] Set visibility to "Public". 
-- [ ] DO NOT check the "Initialize this repository with a README" checkbox. 
+- [ ] Press the "New" button.
+- [ ] Set the Description field to `"{{TITLE}}" is an educational simulation in HTML5, by PhET Interactive Simulations.`
+- [ ] Set visibility to "Public".
+- [ ] DO NOT check the "Initialize this repository with a README" checkbox.
 - [ ] Leave "Add .gitignore" set to "None"
-- [ ] Leave "Add a license" set to "None". 
+- [ ] Leave "Add a license" set to "None".
 
 In your working copy of perennial repo:
 - [ ] Run `grunt create-sim --repo={{REPO}} --author="{{AUTHOR}}" --title="{{TITLE}}"` to create the file structure and skeleton code for the sim.
 
-In your working copy of the sim repo: 
+In your working copy of the sim repo:
 - [ ] `git init`
 - [ ] `git add * .gitignore`
 - [ ] `git commit -m "Initial commit"`
 - [ ] `git remote add origin https://github.com/phetsims/{{REPO}}.git`
 - [ ] `git push -u origin master`
 
-In your working copy of perennial repo:
-- [ ] Add the new repo to `perennial/data/active-repos`. Run `clone-missing-repos.sh` to check your change, commit and push. After a few minutes, an automated process should update the other files under perennial/data/. Pull perennial so you can find the sim in phetmarks.
-
 At https://github.com/phetsims/{{REPO}}:
 - [ ] Go to Settings => Collaborators and Teams, add the teams used in another public sims (currently Design, Development, and Quality Assurance) with "Write" permissions.
 - [ ] Create a Master Checklist issue using template [sim_new_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/sim_new_checklist.md). Use "{{TITLE}} Master Checklist" as the issue name. Assign to @ariel-phet.
+
+In your working copy of perennial repo:
+- [ ] Add the new repo to `perennial/data/active-repos`. Run `clone-missing-repos.sh` to check your change, commit and push. After a few minutes, an automated process should update the other files under perennial/data/. Pull perennial so you can find the sim in phetmarks.
 
 Other:
 - [ ] Navigate to phettest.colorado.edu and click the "Refresh Perennial" button. If you're off campus, [CU's VPN service](https://oit.colorado.edu/services/network-internet-services/vpn) is required to access phettest.colorado.edu.
@@ -45,9 +45,9 @@ Other:
 ## Steps to create a different type of repo
 
 At https://github.com/phetsims:
-- [ ] Press the "New" button. 
-- [ ] Fill in the Description field.  (Ask other developers if you need suggestions.) 
-- [ ] Decide on visibility. (Ask other developers if you're not sure.) 
+- [ ] Press the "New" button.
+- [ ] Fill in the Description field.  (Ask other developers if you need suggestions.)
+- [ ] Decide on visibility. (Ask other developers if you're not sure.)
 - [ ] Typically do not select options that would initialize the repo by creating files (README, .gitignore, LICENSE).
 
 In your working copy of the sim repo:
