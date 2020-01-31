@@ -454,6 +454,27 @@ This section deals with PhET documention conventions. You do not need to exhaust
   // Find a good configuration to have the particles move toward
   const targetConfiguration = this.getTargetConfiguration( crystal );
   ```
+  
+- [ ] When documenting conditionals (if/else statements), follow these guidlines:
+
+    1. Comments above the first `if` in a conditional should be about the entire conditional, not just the if block.
+    2. Comments should not break up sections of the conditional.
+    3. If a comment is needed to describe a single block of the conditional, then add that comment just inside the block (no space between the `if`/`else if`/`else` and the comment), with a space below it as to not be confused with a comment about logic below.
+    
+    ```js
+    
+    // Comment about the reason to split on peppers were pickled.
+    if( peterPiperPickedAJarOfPickledPeppers ){
+      // if we want to explain what this `if` statement is about
+      
+      peterAlsoHasBrine();
+    }
+    else {
+      
+      // documentation about why we have no peppers. This is about the next line of code, and not the "else as a whole block."
+      peterHasNoPeppers();
+    }
+    ```
 
 - [ ] Line comments should have whitespace between the `//` and the first letter of the line comment.  See the preceding example.
 
