@@ -80,6 +80,7 @@
 | Molecule Shapes: Basics |  @jonathanolson  | ✓ |
 | Natural Selection | @pixelzoom | |
 | Neuron |  @jbphet  | ✓ |
+| Normal Modes | |  |
 | Number Line: Integers |  @jbphet  |  |
 | Number Play | @chrisklus |  |
 | Ohm's Law|  @zepumph  | ✓ |
