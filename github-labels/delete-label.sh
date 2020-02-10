@@ -13,12 +13,10 @@ else
     echo "$label"
 fi
 
-read -p "Github Username: " username
-read -sp "Github Password: " password
-echo ''
-creds=${username}:${password}
+binDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+creds=`node ${binDir}/printGithubAuthorization.js`
 
-./update-repos-list.sh ${username} ${password}
+./update-repos-list.sh
 
 echo 'For each repo, this script should print "204 No Content" to indicate success'
 
