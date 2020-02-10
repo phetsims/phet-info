@@ -4,6 +4,11 @@
 This file is not used anywhere else in the project and may be safely removed.  Instead, you are asked for your credentials in an interactive prompt.  While slightly
 inconvenient this is far more secure.
 
+### Getting Started
+You must add the developerGithubAccessToken and developerGithubUsername properties to ~/.phet/build-local.json.  See
+https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token
+for creating a personal access token.
+
 #### To standardize the labels on a new repo
 1. Run `./new-repo-add-labels.sh phetsims/{{new-repo-name}}`
 

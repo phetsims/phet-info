@@ -2,15 +2,8 @@
 
 mv .repos .repos.old
 
-if [[ $2 == '' ]]
-then
-    read -p "Github Username: " username
-    read -sp "Github Password: " password
-    echo ''
-    creds=${username}:${password}
-else
-    creds=${1}:${2}
-fi
+binDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+creds=`node ${binDir}/printGithubAuthorization.js`
 
 curl -is -u "$creds" https://api.github.com/orgs/phetsims/repos -o .response
 

@@ -11,11 +11,10 @@ then
 fi
 echo $1
 
-read -p "Github Username: " username
-read -sp "Github Password: " password
-echo ''
-creds=${username}:${password}
-./update-repos-list.sh ${username} ${password}
+binDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+creds=`node ${binDir}/printGithubAuthorization.js`
+
+./update-repos-list.sh
 
 echo 'For each repo, this script should print "200 OK", "201 Created" or "204 No Content" to indicate success.'
 echo '"422 Unprocessable Entity" indicates an attempt to duplicate a label and can be ignored.'
