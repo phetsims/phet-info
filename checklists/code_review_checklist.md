@@ -54,7 +54,7 @@ about why `dispose` isn't called?  An example of why no call to `dispose` is nee
 a `ScreenView` that would never be removed from the scene graph.
 - [ ] Are there leaks due to registering observers or listeners? The following guidelines should be followed unless
 there it is obviously no need to unlink, or documentation (in-line or in the implementation nodes)added about why
-following them is not necessary.  Unlink is not needed for properties contained in classes that are never disposed of,
+following them is not necessary.  Unlink is not needed for Properties contained in classes that are never disposed of,
 such as primary model and view classes that exist for the duration of the sim.
 	- [ ] AXON: `Property.link` is accompanied by `Property.unlink`.
 	- [ ] AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
@@ -201,7 +201,7 @@ For a sim repository named “my-repo”, the general structure should look like
 This section deals with PhET coding conventions. You do not need to exhaustively check every item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET standards. 
 
 - [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/phet-info/blob/master/ide/idea/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
-- [ ] Names (types, variables, properties, functions,...) should be sufficiently descriptive and specific, and should avoid non-standard abbreviations. For example:
+- [ ] Names (types, variables, properties, Properties, functions,...) should be sufficiently descriptive and specific, and should avoid non-standard abbreviations. For example:
   
   ```js
   const numPart = 100;            // incorrect
@@ -621,7 +621,7 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 - [ ] Use `@protected` for anything that is intended for use by subtypes.
 - [ ] Use `@private` for anything that is NOT intended to be part of the public or protected API.
 - [ ] Put qualifiers in parenthesis after the annotation, for example:
-  - [ ] To qualify that something is read-only, use `@public (read-only)`. This indicates that the given property (AND its value) should not be changed by outside code (e.g. a Property should not have its value changed)
+  - [ ] To qualify that something is read-only, use `@public (read-only)`. This indicates that the given Property (AND its value) should not be changed by outside code (e.g. a Property should not have its value changed)
   - [ ] To qualify that something is public to a specific repository, use (for example) `@public (scenery-internal)`
   - [ ] For something made public solely for a11y, use `@public (a11y)`
   - [ ] For something made public solely for phet-io, use `@public (phet-io)`
@@ -671,7 +671,7 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 - [ ] Are there any constants that are duplicated in multiple files that should be factored out into a `{{REPO}}Constants.js` file?
 - [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.) Does changing the values of these constants break the sim? For example, see https://github.com/phetsims/plinko-probability/issues/84.
 - [ ] Is [PhetColorScheme](https://github.com/phetsims/scenery-phet/blob/master/js/PhetColorScheme.js) used where appropriate? Verify that the sim is not inventing/creating its own colors for things that have been standardized in `PhetColorScheme`.  Identify any colors that might be worth adding to `PhetColorScheme`.
-- [ ] Are all dependent properties modeled as `DerivedProperty` instead of `Property`?
+- [ ] Are all dependent Properties modeled as `DerivedProperty` instead of `Property`?
 - [ ] All dynamics should be called from Sim.step(dt), do not use window.setTimeout or window.setInterval.  This will help support Legends of Learning and PhET-iO.
 
 ## **Accessibility**
