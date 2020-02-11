@@ -7,7 +7,7 @@ inconvenient this is far more secure.
 ### Getting Started
 You must add the developerGithubAccessToken and developerGithubUsername properties to ~/.phet/build-local.json.  See
 https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token
-for creating a personal access token.
+for creating a personal access token. Under "Select Scopes", the token should be given full "repo" access.
 
 #### To standardize the labels on a new repo
 1. Run `./new-repo-add-labels.sh phetsims/{{new-repo-name}}`
