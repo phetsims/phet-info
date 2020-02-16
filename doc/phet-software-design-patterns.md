@@ -500,9 +500,40 @@ Most important pattern for new developers
 
 Author: @chrisklus 🚧
 
-role in MVC, examples to demystify scenery transform methods (`localToGlobalPoint`, etc.).
+Construction requests: role in MVC, examples to demystify scenery transform methods (`localToGlobalPoint`, etc.).
 When should you use `localToGlobalPoint` instead of `parentToGlobalPoint` and
 `globalToParentPoint` instead of `globalToLocalPoint`?
+
+At PhET, since we use the model-view controller pattern, we often have separate coordinate systems for the model and view. This is because units - like meters, for example - are desirable to use in the model, but the simulation view uses pixels, and the simulation's display always needs to fit within the dev bounds (1024 x 618 pixels). To support any size model coordinate system and have it sized correctly in the view, we need two separate coordinate systems and the ability to transform between the two. 
+
+Since the majority of our simulations take place in a 2-dimensional coordinate frame, we often use ModelViewTransform2.js to achive these tranformations. It allows you to create an instance of a transform that suits your scaling, translational, and rotational specifications - and then you can call methods on that instance to switch between coordinate systems.
+Here's an example of what a `modelViewTransform` instantiation could look like:
+
+```js
+
+const modelViewTransform = ModelViewTransform2.createSinglePointScaleInvertedYMapping(
+  Vector2.ZERO, // map (0, 0) in the model...
+  new Vector2( this.layoutBounds.width * 0.5, this.layoutBounds.height * 0.5 ), // ...to be at the center of the sim's layout
+  10 // sets the scale factor to adjust for big or small models in comparison to pixels
+);
+
+```
+
+Then `modelViewTransform` can be used to position model things correctly in the view. For example, updating the view position of a model element could look like this:
+
+```js
+
+model.modelElement.positionProperty.link( position => {
+  modelElementNode.translation = modelViewTransform.modelToViewPosition( position );
+} );
+
+```
+
+Similarly, the reverse conversion could be made to convert from view coordinates to model coordinates. 
+
+However, it's not always as simple as just model and view. There can be multiple coordinate frames within the view. Every node has a local coordinate frame, and a node can reference its parent coordinate frame. Question for devs - how much should be expanded here? There is a lot to be explained about Node coordinate frames.
+
+At the root of the view is the global coordinate frame, which is the whole browser window. Mouse event positions, like `event.pointer.point`, are in the global coordinate frame. Node has methods to convert between these coodinate frames, like `globalToLocalPoint` and `localToParentPoint`, for example. Determining which of these to use for a given situation depends on where in the tree the node is and which node the method is being called on. See https://github.com/phetsims/phet-info/issues/133 for a simple example.
 
 ## Module
 
