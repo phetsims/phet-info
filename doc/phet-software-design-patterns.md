@@ -507,14 +507,14 @@ When should you use `localToGlobalPoint` instead of `parentToGlobalPoint` and
 At PhET, since we use the model-view controller pattern, we often have separate coordinate systems for the model and view. This is because units - like meters, for example - are desirable to use in the model, but the simulation view uses pixels, and the simulation's display always needs to fit within the dev bounds (1024 x 618 pixels). To support any size model coordinate system and have it sized correctly in the view, we need two separate coordinate systems and the ability to transform between the two. 
 
 Since the majority of our simulations take place in a 2-dimensional coordinate frame, we often use ModelViewTransform2.js to achive these tranformations. It allows you to create an instance of a transform that suits your scaling, translational, and rotational specifications - and then you can call methods on that instance to switch between coordinate systems.
-Here's an example of what a `modelViewTransform` instantiation could look like:
+Here's an example of what a `modelViewTransform` instantiation could look like in the view:
 
 ```js
 
 const modelViewTransform = ModelViewTransform2.createSinglePointScaleInvertedYMapping(
   Vector2.ZERO, // map (0, 0) in the model...
-  new Vector2( this.layoutBounds.width * 0.5, this.layoutBounds.height * 0.5 ), // ...to be at the center of the sim's layout
-  10 // sets the scale factor to adjust for big or small models in comparison to pixels
+  this.layoutBounds.center // ...to be at the center of the sim's layout
+  10 // set the scale factor to adjust for big or small models in comparison to pixels
 );
 
 ```
