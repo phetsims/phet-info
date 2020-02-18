@@ -6,7 +6,7 @@
 1. Make sure that you have cloned all of the repos into a directory. First clone `perennial/`, and then run
 `perennial/bin/clone-missing-repos.sh`.                                                             
 2. Run `npm install` (or if already existing, `npm prune` and `npm update`) under `chipper/` and `perennial/`
-3. Make a new project at the same level as your parent dir to all git repos. When asked, create a "Static Web" module
+3. Make a new project in the same directory where you cloned all git repos. When asked, create a "Static Web" module
     for the same directory (if in Intellij IDEA).
 4. Add you github credentials in `File > Settings > Version Control > Github`, and test your credentials with the `Test` 
     button. (May need to hit "Create API Token")
