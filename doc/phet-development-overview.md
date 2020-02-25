@@ -105,7 +105,7 @@ git clone https://github.com/phetsims/utterance-queue.git
 
 Now you can test modifying the simulation code and see the changes by refreshing the browser.
 You can also use this to test on remote devices after looking up your ip address
-Questions should be directed to the Devloping Interactive Simulations in HTML5 Google Group
+Questions should be directed to the Devloping Interactive Simulations in HTML5 Google Group.
 
 ## Getting Started (for macOS)
 
@@ -174,6 +174,11 @@ If that yields an error like “Please try running this command again as root/Ad
 Now you can test modifying the simulation code and see the changes by refreshing the browser http://localhost:8080/example-sim/example-sim_en.html.
 You can also use this to test on remote devices after looking up your ip address.
 Questions should be directed to the Developing Interactive Simulations in HTML5 Google Group.
+7. Run `npm config set save false` so that package-lock.json files are not created.
+
+Now you can test modifying the simulation code and see the changes by refreshing the browser.
+You can also use this to test on remote devices after looking up your ip address
+Questions should be directed to the Devloping Interactive Simulations in HTML5 Google Group.
 
 ## Creating a New Sim
 
