@@ -1,4 +1,51 @@
 <code_scheme name="phet-idea-codestyle" version="173">
+    <option name="CLASS_COUNT_TO_USE_IMPORT_ON_DEMAND" value="30"/>
+    <option name="NAMES_COUNT_TO_USE_IMPORT_ON_DEMAND" value="10"/>
+    <option name="IMPORT_LAYOUT_TABLE">
+        <value>
+            <package name="" withSubpackages="true" static="false"/>
+            <emptyLine/>
+            <package name="java" withSubpackages="true" static="false"/>
+            <emptyLine/>
+            <package name="javax" withSubpackages="true" static="false"/>
+            <emptyLine/>
+            <package name="org" withSubpackages="true" static="false"/>
+            <emptyLine/>
+            <package name="edu" withSubpackages="true" static="false"/>
+            <emptyLine/>
+            <package name="com" withSubpackages="true" static="false"/>
+            <emptyLine/>
+            <package name="" withSubpackages="true" static="true"/>
+        </value>
+    </option>
+    <option name="HTML_DO_NOT_ALIGN_CHILDREN_OF_MIN_LINES" value="200000"/>
+    <option name="ELSE_ON_NEW_LINE" value="true"/>
+    <option name="CATCH_ON_NEW_LINE" value="true"/>
+    <option name="FINALLY_ON_NEW_LINE" value="true"/>
+    <option name="ALIGN_MULTILINE_PARAMETERS_IN_CALLS" value="true"/>
+    <option name="ALIGN_MULTILINE_BINARY_OPERATION" value="true"/>
+    <option name="ALIGN_MULTILINE_ASSIGNMENT" value="true"/>
+    <option name="ALIGN_MULTILINE_TERNARY_OPERATION" value="true"/>
+    <option name="ALIGN_MULTILINE_THROWS_LIST" value="true"/>
+    <option name="ALIGN_MULTILINE_EXTENDS_LIST" value="true"/>
+    <option name="ALIGN_MULTILINE_PARENTHESIZED_EXPRESSION" value="true"/>
+    <option name="SPACE_WITHIN_PARENTHESES" value="true"/>
+    <option name="SPACE_WITHIN_METHOD_CALL_PARENTHESES" value="true"/>
+    <option name="SPACE_WITHIN_METHOD_PARENTHESES" value="true"/>
+    <option name="SPACE_WITHIN_IF_PARENTHESES" value="true"/>
+    <option name="SPACE_WITHIN_WHILE_PARENTHESES" value="true"/>
+    <option name="SPACE_WITHIN_FOR_PARENTHESES" value="true"/>
+    <option name="SPACE_WITHIN_CATCH_PARENTHESES" value="true"/>
+    <option name="SPACE_WITHIN_SWITCH_PARENTHESES" value="true"/>
+    <option name="SPACE_WITHIN_SYNCHRONIZED_PARENTHESES" value="true"/>
+    <option name="SPACE_BEFORE_CATCH_PARENTHESES" value="false"/>
+    <option name="SPACE_BEFORE_SWITCH_PARENTHESES" value="false"/>
+    <option name="SPACE_BEFORE_SYNCHRONIZED_PARENTHESES" value="false"/>
+    <option name="KEEP_SIMPLE_BLOCKS_IN_ONE_LINE" value="true"/>
+    <option name="IF_BRACE_FORCE" value="3"/>
+    <option name="DOWHILE_BRACE_FORCE" value="3"/>
+    <option name="WHILE_BRACE_FORCE" value="3"/>
+    <option name="FOR_BRACE_FORCE" value="3"/>
     <HTMLCodeStyleSettings>
         <option name="HTML_DO_NOT_ALIGN_CHILDREN_OF_MIN_LINES" value="200000"/>
     </HTMLCodeStyleSettings>
@@ -24,7 +71,6 @@
         <option name="ALIGN_MULTILINE_PARAMETERS_IN_CALLS" value="true"/>
         <option name="SPACE_WITHIN_METHOD_CALL_PARENTHESES" value="true"/>
         <option name="SPACE_WITHIN_METHOD_PARENTHESES" value="true"/>
-        <option name="PARENT_SETTINGS_INSTALLED" value="true"/>
     </codeStyleSettings>
     <codeStyleSettings language="ECMA Script Level 4">
         <option name="ELSE_ON_NEW_LINE" value="true"/>
