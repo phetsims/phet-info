@@ -59,6 +59,7 @@
 | Gas Properties | @pixelzoom | ✓ |
 | Gases Intro | @pixelzoom | ✓ |
 | Gene Expression Essentials | @jbphet | ✓ |
+| Greenhouse Effect | @jbphet  | |
 | Graphing Lines | @pixelzoom  | ✓ |
 | Graphing Quadratics | @pixelzoom | ✓ |
 | Graphing Slope-Intercept | @pixelzoom | ✓ |
