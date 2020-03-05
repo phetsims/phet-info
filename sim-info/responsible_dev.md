@@ -82,6 +82,7 @@
 | Natural Selection | @pixelzoom | |
 | Neuron |  @jbphet  | ✓ |
 | Normal Modes | @jonathanolson |  |
+| Number Line: Distance |  @jbphet  |  |
 | Number Line: Integers |  @jbphet  |  |
 | Number Line: Operations |  @jbphet  |  |
 | Number Play | @chrisklus |  |
