@@ -210,24 +210,19 @@ This section deals with PhET coding conventions. You do not need to exhaustively
   const beakerWidth = 150;        // correct
   ```
 
-- [ ] Require statements should be organized into blocks, with the code modules first, followed by plugins (strings, images, sound, ifphetio - any order ok for plugins).  For modules, the variable name should match the file name. Example below.
+- [ ] All `import` statements should appear at the top of the .js file, immediately following the copyright comment and file overview comment. If `import` appears elsewhere, documention should indicate why. Imports for code and resources (images, sounds,...) are all treated the same. Imports should be sorted according to PhET code style, as done by WebStorm "Organize Imports". Example:
   
   ```js
-  // modules
-  const inherit = require( 'PHET_CORE/inherit' );
-  const Line = require( 'SCENERY/nodes/Line' );
-  const Rectangle = require( 'SCENERY/nodes/Rectangle' );
+import merge from '../../../../phet-core/js/merge.js';
+import HBox from '../../../../scenery/js/nodes/HBox.js';
+import Image from '../../../../scenery/js/nodes/Image.js';
+import Text from '../../../../scenery/js/nodes/Text.js';
+import Checkbox from '../../../../sun/js/Checkbox.js';
+import wolfImage from '../../../images/wolf_png.js';
+import naturalSelectionStrings from '../../natural-selection-strings.js';
+import naturalSelection from '../../naturalSelection.js';
+import NaturalSelectionConstants from '../NaturalSelectionConstants.js';
   
-  // strings
-  const kineticString = require( 'string!ENERGY/energy.kinetic' );
-  const potentialString = require( 'string!ENERGY/energy.potential' );
-  const thermalString = require( 'string!ENERGY/energy.thermal' );
-  
-  // images
-  const energyImage = require( 'image!ENERGY/energy.png' );
-  
-  // sound
-  const kineticAudio = require( 'sound!ENERGY/energy' );
   ```
 
 - [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default value.  This improves readability at the call site, especially when the number of parameters is large.  It also eliminates order dependency that is required by using parameters.
