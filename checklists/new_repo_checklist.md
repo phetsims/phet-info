@@ -27,7 +27,7 @@ In your working copy of the sim repo:
 - [ ] `git push -u origin master`
 
 At https://github.com/phetsims/{{REPO}}:
-- [ ] Go to Settings => Collaborators and Teams, add the teams used in another public sims (currently Design, Development, and Quality Assurance) with "Write" permissions.
+- [ ] Go to Settings => Manage Access => Invite teams or people, add the teams used in another public sims (currently Design, Development, and Quality Assurance) with "Write" permissions.
 - [ ] Create a Master Checklist issue using template [sim_new_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/sim_new_checklist.md). Use "{{TITLE}} Master Checklist" as the issue name. Assign to @ariel-phet.
 
 In your working copy of perennial repo:
