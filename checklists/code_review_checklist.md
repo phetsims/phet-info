@@ -212,7 +212,7 @@ This section deals with PhET coding conventions. You do not need to exhaustively
 
 - [ ] All `import` statements should be grouped together towards the top of the .js file. If `import` appears elsewhere, documention should indicate why. Imports for code and resources (images, sounds,...) are all treated the same. Imports should be sorted according to PhET code style, as done by WebStorm "Organize Imports". Example:
   
-  ```js
+```js
 import merge from '../../../../phet-core/js/merge.js';
 import HBox from '../../../../scenery/js/nodes/HBox.js';
 import Image from '../../../../scenery/js/nodes/Image.js';
@@ -222,8 +222,7 @@ import wolfImage from '../../../images/wolf_png.js';
 import naturalSelectionStrings from '../../natural-selection-strings.js';
 import naturalSelection from '../../naturalSelection.js';
 import NaturalSelectionConstants from '../NaturalSelectionConstants.js';
-  
-  ```
+```
 
 - [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default value.  This improves readability at the call site, especially when the number of parameters is large.  It also eliminates order dependency that is required by using parameters.
 
