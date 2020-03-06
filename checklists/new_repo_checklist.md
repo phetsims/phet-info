@@ -31,7 +31,7 @@ At https://github.com/phetsims/{{REPO}}:
 - [ ] Create a Master Checklist issue using template [sim_new_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/sim_new_checklist.md). Use "{{TITLE}} Master Checklist" as the issue name. Assign to @ariel-phet.
 
 In your working copy of perennial repo:
-- [ ] Add the new repo to `perennial/data/active-repos`. Run `clone-missing-repos.sh` to check your change, commit and push. After a few minutes, an automated process should update the other files under perennial/data/. Pull perennial so you can find the sim in phetmarks.
+- [ ] Add the new repo to `perennial/data/active-repos`. Commit and push. After a few minutes, an automated process should update the other files under perennial/data/. Pull perennial so you can find the sim in phetmarks.
 
 Other:
 - [ ] Navigate to phettest.colorado.edu and click the "Refresh Perennial" button. If you're off campus, [CU's VPN service](https://oit.colorado.edu/services/network-internet-services/vpn) is required to access phettest.colorado.edu.
@@ -62,7 +62,7 @@ At https://github.com/phetsims/{{REPO}}:
 - [ ] Go to Settings => Collaborators and Teams, add the teams used in another public sims (currently Design, Development, and Quality Assurance) with "Write" permissions. _NOTE: If the repo is private, it is REQUIRED to add the Machine User collaborator (so automated processes can clone/pull the repo). CT will break otherwise._
 
 In your working copy of perennial repo:
-- [ ] If applicable: Add the new repo to `perennial/data/active-repos`. Run `clone-missing-repos.sh` to check your change, commit and push. After a few minutes, an automated process should update the other files under perennial/data/. Pull perennial so you can find the sim in phetmarks.
+- [ ] If applicable: Add the new repo to `perennial/data/active-repos`. Commit and push. After a few minutes, an automated process should update the other files under perennial/data/. Pull perennial so you can find the sim in phetmarks.
 
 If this repo is a common code dependency for all sims:
 - [ ] Add it to the list of `clone` commands in [phet-development-overview.md](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md)
