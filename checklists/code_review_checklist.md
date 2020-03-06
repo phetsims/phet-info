@@ -210,7 +210,7 @@ This section deals with PhET coding conventions. You do not need to exhaustively
   const beakerWidth = 150;        // correct
   ```
 
-- [ ] All `import` statements should appear at the top of the .js file, immediately following the copyright comment and file overview comment. If `import` appears elsewhere, documention should indicate why. Imports for code and resources (images, sounds,...) are all treated the same. Imports should be sorted according to PhET code style, as done by WebStorm "Organize Imports". Example:
+- [ ] All `import` statements should be grouped together towards the top of the .js file. If `import` appears elsewhere, documention should indicate why. Imports for code and resources (images, sounds,...) are all treated the same. Imports should be sorted according to PhET code style, as done by WebStorm "Organize Imports". Example:
   
   ```js
 import merge from '../../../../phet-core/js/merge.js';
