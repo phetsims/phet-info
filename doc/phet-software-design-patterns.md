@@ -488,13 +488,64 @@ MyTrait.mixInto( MyClass );
 
 ## Model-View-Controller (MVC)
 
-Author: 🚧
+Author: 🚧 @jessegreenberg 🚧
 
-A standard pattern described in https://en.wikipedia.org/wiki/Model–view–controller
+Model-View-Controller is a software pattern for applications where the developer separates the implementation into three
+distinct categories. Model code is responsible for the application data and logic. View code is responsible for the
+presentation of data to the user. The controller is responsible for handling user input and updating the model. The
+separation between model and view is important, the model should be completely unaware of the view. Benefits of this
+pattern include
+- Modifications to the view do not impact application behavior.
+- You can support multiple view representations for a single model.
+- Improved maintainability with more compartmentalized code.
 
-`Screen`, `ScreenView`, model container, `Property`, `Emitter`, `Nodes`
+For more information about this pattern, please see [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
 
-Most important pattern for new developers
+One way PhET uses model-view separation is in our simulation specific code. Simulation code is organized into directories
+that separate the model and view like this:
+```text
+   my-sim/
+      js/
+         my-screen/
+            MyScreen.js
+            model/
+              // <-- Model JavaScript here
+            view/
+              // <-- View JavaScript here
+```
+Code under the "model" directory is responsible for simulation physics, state, component visibility, and so on. Code
+under the "view" directory is responsible for the presentation of this information. The model and view are
+applied to create a simulation screen by a class called Screen.js, which may be used like
+```js
+  const myScreen = new Screen(
+    function() { return new MyModel(); },
+    function( myModel ) { return new MyView( myModel ); }
+  );
+``` 
+In this example you can see that MyModel is oblivious to the view, while the view has a reference to the model to inform
+the representation.
+
+Communication from the model to the view is facilitated by classes in axon such as Property and Emitter.
+These are Observables which contain model state information and broadcast changes to the view so that it can update
+accordingly.
+
+Model-View separation can also be found at other tiers of PhET's implementation. Scenery (which
+is used extensively in simulation view code) is implemented with model-view separation as well. For example,
+a scenery Node acts as a model which is responsible for state information such as visibility, transformation, bounds
+and other things. Meanwhile, other view code in scenery is responsible for rendering this state information for the
+user.
+
+**Questions:**
+Does PhET actually use Model-View-**Controller**? I don't think of separated "controller" code. If I were to
+draw a diagram of PhET's model-view separation it would be:
+```text
+    +----------------+    Axon          +------------------+                   +-----------+
+    |                |  +-------------> |                  |                   |           |
+    |                |                  |                  |     User Input    |           |
+    |    Model       |                  |   View           |   <------------+  |   User    |
+    |                | <--------------+ |                  |                   |           |
+    +----------------+ Input Listeners  +------------------+                   +-----------+
+```
 
 ## Model-View Transform
 
