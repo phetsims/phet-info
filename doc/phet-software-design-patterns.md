@@ -519,8 +519,8 @@ under the "view" directory is responsible for the presentation of this informati
 applied to create a simulation screen by a class called Screen.js, which may be used like
 ```js
   const myScreen = new Screen(
-    function() { return new MyModel(); },
-    function( myModel ) { return new MyView( myModel ); }
+    () => { return new MyModel(); },
+    myModel => { return new MyView( myModel ); }
   );
 ``` 
 In this example you can see that MyModel is oblivious to the view, while the view has a reference to the model to inform
