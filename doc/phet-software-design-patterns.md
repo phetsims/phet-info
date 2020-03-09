@@ -13,7 +13,7 @@ For general information on many standard design patterns, see _[Learning JavaScr
 * [Dispose](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dispose)
 * [Enumeration](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#enumeration)
 * [Mixin and Trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
-* [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc) 🚧
+* [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc)
 * [Model-View Transform](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-transform)
 * [Module](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#module)
 * [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace)
