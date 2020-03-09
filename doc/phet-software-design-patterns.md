@@ -488,7 +488,7 @@ MyTrait.mixInto( MyClass );
 
 ## Model-View-Controller (MVC)
 
-Author: 🚧 @jessegreenberg 🚧
+Author: @jessegreenberg
 
 Model-View-Controller is a software pattern for applications where the developer separates the implementation into three
 distinct categories. Model code is responsible for the application data and logic. View code is responsible for the
@@ -525,24 +525,27 @@ applied to create a simulation screen by a class called Screen.js, which may be 
 In this example you can see that MyModel is oblivious to the view, while the view has a reference to the model to inform
 the representation.
 
+Controller code at PhET is generally in input and event handling which is done through `Node.addInputListener`.
 Communication from the model to the view is facilitated by classes in axon such as Property and Emitter.
 These are Observables which contain model state information and broadcast changes to the view so that it can update
 accordingly.
 
-Model-View separation can also be found at other tiers of PhET's implementation. Scenery (which
-is used extensively in simulation view code) is implemented with model-view separation as well. For example,
-a scenery Node acts as a model which is responsible for state information such as visibility, transformation, bounds
-and other things. Meanwhile, other view code in scenery is responsible for rendering this state information for the
-user.
+The "Model" in this pattern doesn't need to be the "domain" model for a simulation. It can contain any logic
+for application behavior for any context. Model-View separation can be found at other tiers of PhET's
+implementation. Scenery (which is used extensively in simulation view code) is implemented with model-view separation.
+For example, a scenery Node acts as a model which is responsible for state information such as visibility,
+transformation, bounds and other things. Meanwhile, other view code in scenery is responsible for rendering this state
+information for the user. You will find "model-view" separation in the [sun](github.com/phetsims/sun) button 
+implementation as well.
 
-**Questions:**
-Does PhET actually use Model-View-**Controller**? I don't think of separated "controller" code. If I were to
-draw a diagram of PhET's model-view separation it would be:
+There are several variations on the Model-View-Controller pattern. Please see [this article for more information](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
+PhET's usage is most similar to the Model-View-Delegate pattern used by Java in the implementation of Swing. In this
+pattern, the controller code is generally packaged with view code. A diagram of this pattern would look like
 ```text
     +----------------+    Axon          +------------------+                   +-----------+
     |                |  +-------------> |                  |                   |           |
     |                |                  |                  |     User Input    |           |
-    |    Model       |                  |   View           |   <------------+  |   User    |
+    |    Model       |                  | View/Controller  |   <------------+  |   User    |
     |                | <--------------+ |                  |                   |           |
     +----------------+ Input Listeners  +------------------+                   +-----------+
 ```
