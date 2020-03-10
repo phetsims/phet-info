@@ -30,9 +30,9 @@ Author: @samreid 🚧
 
   - Relevant info/links:
     - https://en.wikipedia.org/wiki/Composition_over_inheritance
-      - "Composition over inheritance (or composite reuse principle) in object-oriented programming (OOP) is the 
-      principle that classes should achieve polymorphic behavior and code reuse by their composition (by containing 
-      instances of other classes that implement the desired functionality) rather than inheritance from a base or parent 
+      - "Composition over inheritance (or composite reuse principle) in object-oriented programming (OOP) is the
+      principle that classes should achieve polymorphic behavior and code reuse by their composition (by containing
+      instances of other classes that implement the desired functionality) rather than inheritance from a base or parent
       class."
     - Chrome's optimization makes it so that sims would be faster if we used composition over inheritance.
     - Composition is generally more flexible.
@@ -40,7 +40,7 @@ Author: @samreid 🚧
   - If composition produces numerous forwarding calls, it indicates that perhaps inheritance should be used instead.
     - The forwarding calls produced by composition can be beneficial though, they are explicit and protect things things
     that need to stay private.
-  - Numerous forwarding calls can increase the memory impact, especially on types that are instantiated many many times 
+  - Numerous forwarding calls can increase the memory impact, especially on types that are instantiated many many times
   by a simulation (like Vector2).
 
 ## Creator (with Drag Forwarding)
@@ -117,7 +117,7 @@ Some background reading for those interested:
 SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clarify which form of dependency injection
 (probably constructor-based injection), and some examples of where it's currently used in PhET sims.
 
-The main goal of DI is to decouple the implementation of a required object instance from where it’s used. While there 
+The main goal of DI is to decouple the implementation of a required object instance from where it’s used. While there
 are a few different ways to accomplish this, the basic idea is to provide the wrapping class with its required instance
 variables instead of allowing it to instantiate them itself. For example,
 
@@ -522,7 +522,7 @@ applied to create a simulation screen by a class called Screen.js, which may be 
     () => { return new MyModel(); },
     myModel => { return new MyView( myModel ); }
   );
-``` 
+```
 In this example you can see that MyModel is oblivious to the view, while the view has a reference to the model to inform
 the representation.
 
@@ -536,7 +536,7 @@ for application behavior for any context. Model-View separation can be found at 
 implementation. Scenery (which is used extensively in simulation view code) is implemented with model-view separation.
 For example, a scenery Node acts as a model which is responsible for state information such as visibility,
 transformation, bounds and other things. Meanwhile, other view code in scenery is responsible for rendering this state
-information for the user. You will find "model-view" separation in the [sun](github.com/phetsims/sun) button 
+information for the user. You will find "model-view" separation in the [sun](github.com/phetsims/sun) button
 implementation as well.
 
 There are several variations on the Model-View-Controller pattern. Please see [this article for more information](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
@@ -555,7 +555,7 @@ pattern, the controller code is generally packaged with view code. A diagram of 
 
 Author: @chrisklus
 
-At PhET, since we use the model-view controller pattern, we often have separate coordinate systems for the model and view. This is because units - like meters, for example - are desirable to use in the model, but the simulation view uses view coordinates, and the simulation's display always needs to fit within the layout bounds (ScreenView.layoutBounds). To support any size model coordinate system and have it sized correctly in the view, we need two separate coordinate systems and the ability to transform between the two. 
+At PhET, since we use the model-view controller pattern, we often have separate coordinate systems for the model and view. This is because units - like meters, for example - are desirable to use in the model, but the simulation view uses view coordinates, and the simulation's display always needs to fit within the layout bounds (ScreenView.layoutBounds). To support any size model coordinate system and have it sized correctly in the view, we need two separate coordinate systems and the ability to transform between the two.
 
 Since the majority of our simulations take place in a 2-dimensional coordinate frame, we often use ModelViewTransform2.js to achive these tranformations. It allows you to create an instance of a transform that suits your scaling, translational, and rotational specifications - and then you can call methods on that instance to switch between coordinate systems.
 Here's an example of what a `modelViewTransform` instantiation could look like in the view. It's the most typical case where you're positioning Nodes relative to the ScreenView's coordinate frame:
@@ -588,7 +588,7 @@ It's also important to know about the different coordinate frames in a scene gra
 
 ## Module
 
-Author: @Denz1994 
+Author: @Denz1994
 
 A module is a program unit that contains declarations which formulate the classes and objects in a system. Modularity is
 a property of a system whose modules can be compiled independently, but have connections with other modules.  A module
@@ -608,71 +608,28 @@ examples in [sim code](https://github.com/phetsims/equality-explorer/blob/master
 
 #### Importing Modules:
 
-PhET relies heavily on RequireJS to support importing modules. RequireJS is flexible enough to support browser-based
-platforms and server sided environments, such as Node.js. RequireJS pulls inspiration from CommonJS (a popular module
-format) but improves on it by coding a module format that works well natively in a browser. For more information, read
-the RequireJS [documentation](https://requirejs.org/).
-
-RequireJS imports are handled at top of all files and use the `require` keyword. Typically, require statements for
-importing would look something like this:
+PhET uses ES6 modules for simulation code, directly loaded in the browser, and built using webpack. We use default imports and exports, so import statements will generally look like:
 
 ```js
-    const Node = require( 'SCENERY/nodes/Node' );
-```
-where `SCENERY` is an alias or symbolic constant that represents a path to the repository where the module lives. This
-follows a condensed syntax compatible with CommonJS based on asycnhronous module dependency (AMD). This [article](https://requirejs.org/docs/whyamd.html) is a great resource for further reading. Note we are not using ES6 modules, but this may change in the upcoming months.
-
-Be aware of two cases, when using `require` should be reconsidered. 
-
-1. Some types of [circular dependencies](https://en.wikipedia.org/wiki/Circular_dependency)
-2. Using conditional code to do a require call like, _if(someCondition) require('a1') else require('a2')_;
-
-Generally circular dependencies, require a rethinking of design or a workaround. For example, if `Node.js` requires `Trail.js` and `Trail.js` requires `Node.js.` We can load both modules from the `Scenery` namespace and access them through `scenery.Node` or `scenery.Trail`. The assumption is that the modules are loaded into the namespace before they are being used. The circular dependency is documented near the require statements of both files.
-
-Also if the same file contains two different modules with the same name, RequireJS may consider this a circular dependency. For example, both `KITE` and `NODE` have modules called `Rectangle.js`. The current solution employed involves using a specialized `// eslint-disable` as a workaround.
-
-Additionally, you may come across conditional module declarations, such as this code snippet from [Chipper/js/common/getLicenseEntry.js](https://github.com/phetsims/chipper/blob/master/js/common/getLicenseEntry.js): 
-```js
-  // browser require.js-compatible definition
-  if ( typeof define !== 'undefined' ) {
-    define( function() {
-      return getLicenseEntry;
-    } );
-  }
-
-  // Node.js-compatible definition
-  if ( typeof module !== 'undefined' ) {
-    module.exports = getLicenseEntry;
-  }
+    import Vector2 from '../../../dot/js/Vector2.js';
+    import Touch from '../input/Touch.js';
 ```
 
-If you come across conditional declarations like the one above, this module is most likely utilized in both client sided and server sided code. The difference in the declaration is needed due to limitations by RequireJS. This is also referred to as a [Universal Module Definition](https://www.davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/) and is compatible with both CommonJS and RequireJS.
+The shortest possible relative path should be used, and the imports should be sorted lexicographically by the import path (what Webstorm does by default). Additionally, the imports should all be in one block near the top of the file (after the copyright and file-description comments).
 
-Lastly, there is a pattern used for PhET-io wrappers that gets away from the RequireJS overhead. This pattern involves initializing the module directly to the `window` object and calling it in from the HTML DOM using a `<script>` tag.
+It's possible to declare circular dependencies, but directly invoking and running code from both parts of the circular dependency at load time will not work.
 
-----
-
-#### Module catagories:
-
-JS doesn’t support strict typing so we categorize our module require statements into sections such as modules, strings, images, sound, phet-io, etc. This is an organizational practice for readability and is documented as such.
-
-Specific support for catagories that need plugins follow the RequireJS API as described in its [documentation](https://requirejs.org/docs/plugins.html#api) 
-```js
-  // strings
-  const modelString = require( 'string!GRAVITY_AND_ORBITS/model' );
-```
-----
+Some code is loaded in our "preloads" section, and is available through the global `phet` object, like `phet.joist.random`. These do not need any import statements to work, and should be available for all module-based code.
 
 #### Anatomy of a module:
 
 The PhET codebase follows a similar pattern for module structure as outlined below:
 
 - Top level documentation: General purpose, authorship, and copyright
-- Declaration as a function using strict
-- Import:  statements using `require`
-- Constructor: Houses the main body of our module (attributes and elements)
+- Imports: whatever import statements are required, in one single block
+- Class/etc.: Houses the main body of our module (attributes and elements)
 - NameSpace: Register our module to avoid conflicts (see [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace) section)
-- Inherit: Module dependency, methods, and statics
+- Export default: exports the main object from the module
 
 Putting it all together modules will usually follow this format:
 
@@ -684,26 +641,22 @@ Putting it all together modules will usually follow this format:
  *
  * @author Denzell Barnett (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const inherit = require( 'PHET_CORE/inherit' );
-  const Node = require( 'SCENERY/nodes/Node' );
-  const fooRepo = require( 'FOO_REPO/fooRepo' );
+import Node from '../../../scenery/js/nodes/Node.js';
+import Vector2 from '../../../dot/js/Vector2.js';
+import fooRepo from '../fooRepo.js';
 
-  class FooNode{
-   constructor(fooArgument){
-     // ...
-   }  
+class FooNode {
+  constructor( fooArgument) {
+    // ...
   }
+}
 
-  // Namespace registration to repository.
-  return fooRepo.register( 'FooNode', FooNode );
-} );
+fooRepo.register( 'FooNode', FooNode ); // Namespace registration to repository.
+export default fooRepo;
 ```
 
-It is important to note that 'using strict' should be enforced throughout the PhET codebase. Strict mode has the unique property of limiting certain javascript functionalities that may not be backward compatible between versions. To avoid this there are three general solutions:
+It is important to note that 'using strict' should be enforced throughout the PhET codebase for preloads or non-module files. Strict mode is NOT needed for ES6 module files, and should not be used in them. Strict mode has the unique property of limiting certain javascript functionalities that may not be backward compatible between versions. To avoid this there are three general solutions:
 
 1. Never concatenate strict files and nonstrict files.
 2. Concatenate files by wrapping their bodies in immediately invoked function expressions.
@@ -729,13 +682,9 @@ circular dependencies, two types can refer to each other through the namespace.
 For our uses, each repository generally has one namespace (available via requireJS) at the top level, e.g.
 `molecule-shapes/js/moleculeShapes.js` (generally camel-cased) would contain:
 ```js
-define( require => {
-  'use strict';
+import Namespace from '../../phet-core/js/Namespace.js';
 
-  const Namespace = require( 'PHET_CORE/Namespace' );
-
-  return new Namespace( 'moleculeShapes' );
-} );
+export default new Namespace( 'moleculeShapes' );
 ```
 Thus the namespace object would be available under `phet.moleculeShapes` in simulations.
 
@@ -744,9 +693,7 @@ To add an object to a namespace, use the `register` method, e.g.:
 moleculeShapes.register( 'Bond', Bond );
 ```
 
-For example, now `phet.moleculeShapes.Bond` will point to the value of `Bond` above. Note that when assertions are
-enabled in require.js mode that some checks will be made to ensure that almost all modules are namespaced, and that
-namespaces correspond to modules (to help catch namespace errors).
+For example, now `phet.moleculeShapes.Bond` will point to the value of `Bond` above.
 
 There is a somewhat-unused feature to call register with dot-separated path-like values in the string portion (for
 handling things like inner classes, see https://github.com/phetsims/phet-core/issues/52), however there is some
@@ -771,13 +718,13 @@ A standard pattern described in https://en.wikipedia.org/wiki/Observer_pattern
 Very important pattern for new PhET developers
 
 * `Property`, `DerivedProperty`, `Multilink`, `Emitter`, `Events`
-* role in MVC 
+* role in MVC
 * role in PhET-iO
 
 NOTE: when this gets fleshed out, scenery input system, options callbacks should be passed the SCENERY/Event from their
 input listeners.
 
-NOTE: the author of this section should include patterns/strategies for how to identify the notifying Property in 
+NOTE: the author of this section should include patterns/strategies for how to identify the notifying Property in
 DerivedProperty and Multilink; see comments in expressed in https://github.com/phetsims/axon/issues/259.
 
 ## Options and Config
@@ -788,7 +735,7 @@ This pattern is used for parameterizing classes and methods, which we use to avo
 and `config` are the two implementations of that pattern that PhET typically uses. If all properties in the argument are
 optional, then the parameter should be called `options`.  If one or more properties of the argument are required, then
 the parameter should be called `config`. Some elements of the `config` parameter can be optional, but each one must be
-documented accordingly. See "Required Fields" below for documentation. 
+documented accordingly. See "Required Fields" below for documentation.
 
 Use `merge` to overwrite default option values. For example, this `Node` subclass has defaults that are different from
 `Node`'s defaults:
@@ -796,7 +743,7 @@ Use `merge` to overwrite default option values. For example, this `Node` subclas
 ```js
 class MyNode extends Node {
   constructor( options ) {
-    options = merge( {     
+    options = merge( {
       visible: false,
       pickable: false
     }, options );
@@ -804,9 +751,9 @@ class MyNode extends Node {
     super( options );
   }
 }
-``` 
+```
 
-We do not filter child options out before passing them a parent class or subcomponent. With this in mind, please be 
+We do not filter child options out before passing them a parent class or subcomponent. With this in mind, please be
 mindful of the option naming to make sure that you don't cause name collisions. See https://github.com/phetsims/tasks/issues/934.
 
 Try to keep related options groups together, both for instantiation and `merge` statements. For examples, if you
@@ -865,12 +812,12 @@ In the `merge` call, `PhET-Core/required.js` should be used to indicate that the
  */
 function Person( name, config ) {
   config = merge( {
-  
+
     // {number} height in centimeters
-    height: required(config.height), 
-    
+    height: required(config.height),
+
     // {number} age in years
-    age: required(config.age), 
+    age: required(config.age),
 
     favoriteColor: null, // {Color|null} favorite Color, if any
     favoriteCar: null // {Car|null} favorite Car, if any
@@ -898,9 +845,9 @@ class Shelf extends Node {
 }
 ```
 
-(2) In some cases, options should be specified within the constructor or method itself, and not overrideable by the 
-client. In those cases, use an assertion to verify that the client did not specify a value for that option. Don't 
-silently override what the client provided. 
+(2) In some cases, options should be specified within the constructor or method itself, and not overrideable by the
+client. In those cases, use an assertion to verify that the client did not specify a value for that option. Don't
+silently override what the client provided.
 
 ```js
 // Create two containers
@@ -920,7 +867,7 @@ a client did not provide an option, and how the option can be specified.
 * `options.someField === undefined` - checks if `someField` does not exist as a property
 * `!options.hasOwnProperty( 'someField' )` - checks if `someField` is a non-inherited property
 * `!option.someField` - checks if `someField` has a falsy value. Don't use this for boolean or number fields!
-  
+
 (4) When overriding options or config using `merge`, arguments should be ordered from least to most specific.  For example:
 
 ```js
@@ -936,7 +883,7 @@ class MyPanel extends Panel {
 }
 
 // Correct
-class MyPanel extends Panel { 
+class MyPanel extends Panel {
   constructor( options ) {
     options = merge( {}, MyConstants.PANEL_OPTIONS, {
       fill: 'yellow'
@@ -1030,9 +977,8 @@ Simulation constant files are a common example of this pattern in PhET code (e.g
 To use a singleton, simply import it to your file and invoke methods directly on it.
 
 ```js
-
-const singleton = require( 'SIMULATION_NAME/singleton' );
-const ExampleConstants = require( 'SIMULATION_NAME/ExampleConstants' );
+import singleton from '../singleton.js';
+import ExampleConstants from '../ExampleConstants.js';
 
 console.log( singleton.getX() );
 
@@ -1067,28 +1013,22 @@ in search of examples, these would be good places to start.
 The states which a state machine will support should be defined in an Enum.  Here is an example (this
 is from the Arithmetic sim, but has been "modernized" to meet our latest standards):
 ```js
-define( require => {
-  'use strict';
+import Enumeration from '../../../phet-core/js/Enumeration.js';
+import arithmetic from '../../arithmetic.js';
 
-  // modules
-  const arithmetic = require( 'ARITHMETIC/arithmetic' );
+// @public
+const GameState = Enumeration.byKeys( [
+  'SELECTING_LEVEL',
+  'AWAITING_USER_INPUT',
+  'DISPLAYING_CORRECT_ANSWER_FEEDBACK',
+  'DISPLAYING_INCORRECT_ANSWER_FEEDBACK',
+  'SHOWING_LEVEL_COMPLETED_DIALOG',
+  'LEVEL_COMPLETED'
+] );
 
-  // @public
-  const GameState = Enumeration.byKeys( [
-    'SELECTING_LEVEL',
-    'AWAITING_USER_INPUT',
-    'DISPLAYING_CORRECT_ANSWER_FEEDBACK',
-    'DISPLAYING_INCORRECT_ANSWER_FEEDBACK',
-    'SHOWING_LEVEL_COMPLETED_DIALOG',
-    'LEVEL_COMPLETED'
-  ] );
-
-  arithmetic.register( 'GameState', GameState );
-
-  return GameState;
-
-} );
-``` 
+arithmetic.register( 'GameState', GameState );
+export default GameState;
+```
 
 There are many different possible ways to implement a state machine in code, and PhET has not
 standardized on a single approach.  One method is to use the pattern described in
@@ -1100,7 +1040,7 @@ of the state from one of these subclasses to another.  This was the approach tak
 an Atom game (and several other game implementations), and the base class for all states can be
 seen at [BAAGameState.js] (https://github.com/phetsims/build-an-atom/blob/master/js/game/model/BAAGameState.js).
 
-Another approach is to use a switch statement that switches on the current state, and the code 
+Another approach is to use a switch statement that switches on the current state, and the code
 under each switch statement handles the incoming event.  This approach hasn't been used much in
 PhET code (at least not at the time of this writing), so here is an example that was found on
 line at https://24ways.org/2018/state-machines-in-user-interfaces/.
@@ -1135,17 +1075,17 @@ function loginMachine(state, event) {
    }
 ```
 
-Yet another approach is to use a function table, where one axis represents the states and the 
+Yet another approach is to use a function table, where one axis represents the states and the
 other represents the stimuli or events that can occur.  The benefit of this approach is that
 it forces the implementation to explicitly handle all combinations of states and stimuli.
-There is an article with an explanation and some good diagrams at https://en.wikipedia.org/wiki/State_transition_table.  
-There is a decent stack overflow article that shows an example of that here: 
+There is an article with an explanation and some good diagrams at https://en.wikipedia.org/wiki/State_transition_table.
+There is a decent stack overflow article that shows an example of that here:
 https://stackoverflow.com/questions/133214/is-there-a-typical-state-machine-implementation-pattern
 
-One of the tricky things about software-based state machines is that it is often difficult for 
+One of the tricky things about software-based state machines is that it is often difficult for
 someone who is tasked with maintaining the code to understand the big picture of how the state machine operates
 based on examination of the source code.  Due to this, it is a strongly recommended practice for PhET
-developers that the state machine be documented in diagrammatic form in either a GitHub issue, a JPG or PNG in 
+developers that the state machine be documented in diagrammatic form in either a GitHub issue, a JPG or PNG in
 the doc folder, or in the design document.  Also, there are tools such as http://asciiflow.com/ that can be useful for
 creating "ascii art" representations of the state diagram.
 
@@ -1157,8 +1097,8 @@ In most cases it will likely be important that state transitions are visible wit
 instrumented sim.  For this reason, an Axon Property should generally be used for the state value
 so that it can easily be instrumented.  Setting state values via the PhET-iO API is less likely
 to be supported, since it would be difficult to make the code able to handle arbitrarily state transitions.
-If this were ever done, it would require thorough documentation to describe the valid 
-state transitions that can be triggered via this API. 
+If this were ever done, it would require thorough documentation to describe the valid
+state transitions that can be triggered via this API.
 
 ## Strategy
 
@@ -1168,14 +1108,14 @@ Author: @jbphet
 
 The intent of the "Strategy" design pattern is to define a family of algorithms and encapsulate each one behind a common
 interface, and then let clients used them interchangeably to vary some aspect of the clients' behavior. This pattern is
-used fairly commonly in PhET code, and a reasonably good explanation can be found at 
+used fairly commonly in PhET code, and a reasonably good explanation can be found at
 https://en.wikipedia.org/wiki/Strategy_pattern.  There are many other decent descriptions on the web, and if you're
 thinking of applying this pattern or needing to perform maintenance on an existing implementation of it, it's worth
 doing some searching and reading.
 
 In UML diagrams, the strategy pattern is usually depicted as an abstract base class or interface with multiple concrete
 subclasses.  Here are a couple of examples that were live at this time of this writing:
-+ https://upload.wikimedia.org/wikipedia/commons/3/39/Strategy_Pattern_in_UML.png 
++ https://upload.wikimedia.org/wikipedia/commons/3/39/Strategy_Pattern_in_UML.png
 + https://cdncontribute.geeksforgeeks.org/wp-content/uploads/classinh.jpg
 + https://www.tutorialspoint.com/design_pattern/images/strategy_pattern_uml_diagram.jpg
 
@@ -1229,9 +1169,9 @@ In short, here are some rules of thumb for when a strategy pattern might be help
 is being used to implement different behavior
 + there are states in a state machine that are logically similar but have different behaviors
 
-It should be noted that, because functions JavaScript are first-class object (meaning that they can be treated as 
+It should be noted that, because functions JavaScript are first-class object (meaning that they can be treated as
 objects), this pattern could be implemented using only functions if the strategy objects do not need to maintain
-internal state.  
+internal state.
 
 ### Examples in PhET Code
 
@@ -1239,7 +1179,7 @@ One of the most effective ways to learn a pattern is to study examples of its us
 extensive use of the strategy pattern is Gene Expression Essentials.  This simulation depicts the basic process of
 DNA transcriptions by showing how various biomolecules interact to transcribe and translate the information encoded in
 DNA molecules into proteins needed by the cells.  The strategy pattern was used in several places in this sim, but the
-most extensive use was for controlling how the biomolecules moved.  In some cases, biomolecules need to move around 
+most extensive use was for controlling how the biomolecules moved.  In some cases, biomolecules need to move around
 randomly. In other situations, they need to move directly to a particular location.  In other cases, biomolecules need
 to appear that they are moving somewhat randomly while ultimately arriving at a destination.  This was accomplished by
 having the biomolecules use a set of "motion strategies" that were switched when the motion behavior of the biomolecule
@@ -1249,7 +1189,7 @@ In this case, there is an abstract base class called `MotionStrategy` (in Java, 
 A method in this class is intended to be overridden in all subclasses, and its purpose is to determine the next position
 of the client element.  The code looks like this:
 
-```js    
+```js
 /**
  * get the next position given the current position, bounds, and amount of time
  * @param {Vector2} currentPosition
