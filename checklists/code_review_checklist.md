@@ -137,12 +137,11 @@ to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
 ## **Repository Structure**
 
 - [ ] Are all required files and directories present?
-For a sim repository named “my-repo”, the general structure should look like this (where assets/, sound/ or images/ may be omitted if the sim doesn’t have those types of assets).
+For a sim repository named “my-repo”, the general structure should look like this (where assets/, images/, mipmaps/ or sounds/ may be omitted if the sim doesn’t have those types of resource files).
 
   ```js
      my-repo/
         assets/
-           license.json
         doc/
            images/
                  *see annotation
@@ -152,7 +151,10 @@ For a sim repository named “my-repo”, the general structure should look like
            license.json
         js/
            (see section below)
+	mipmaps/
+	   license.json
         sound/
+	   license.json
         dependencies.json
         .gitignore
         my-repo_en.html
@@ -163,6 +165,8 @@ For a sim repository named “my-repo”, the general structure should look like
         README.md
   ```
   *Any images used in model.md or implementation-notes.md should be added here. Images specific to aiding with documentation do not need their own license.
+  
+- [ ] Verify that the same image file is not present in both images/ and mipmaps/. If you need a mipmap, use it for all occurences of the image.  
 
 - [ ] Is the js/ directory properly structured?
   All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims, where the subdirectory matches the repo name).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Lab”, the general directory structure should look like this:
