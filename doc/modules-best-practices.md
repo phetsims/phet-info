@@ -3,7 +3,7 @@
 This document summarizes PhET best practices for the use of ES6 modules. 
 This was originally discussed in https://github.com/phetsims/chipper/issues/873.
 
-DO:
+## Do
 
 * Group all `imports` at the top of the .js file, immediately after the overview comment block, organized ala WebStorm "Organize Imports".
 
@@ -17,7 +17,7 @@ import Line from '../model/Line.js';
 
 * Discuss exceptions to best practices on Slack, as they are encountered.  Modify the best practices if necessary, and/or document (at the call site) why you needed to diverge from the best practices.
 
-DO NOT:
+## Do Not
 
 * Do not use property notation for imports, e.g. `import * as lib from 'lib';`
 
