@@ -215,7 +215,10 @@ This section deals with PhET coding conventions. You do not need to exhaustively
   const beakerWidth = 150;        // correct
   ```
 
-- [ ] Verify that PhET best practices for modules are followed. The best practices are:
+- [ ] Verify that PhET best practices for modules are followed.
+
+<details>
+<summary>Modules Best Practices</summary>
 
 DO:
 
@@ -244,6 +247,8 @@ DO NOT:
 * Do not rename on import, e.g. `import { named1 as myNamed1 } from 'src/mylib';`See exception above, for name collisions.
 
 * Do not re-export, e.g. `export { foo } from 'src/other_module';`
+
+</details>
 
 - [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default value.  This improves readability at the call site, especially when the number of parameters is large.  It also eliminates order dependency that is required by using parameters.
 
