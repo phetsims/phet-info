@@ -907,38 +907,37 @@ When using JavaScript and a module loading system (like RequireJS), there are tw
 The first is to create a class and then return a single instance of the class *instead* of returning the class itself.
 
 ```js
+import namespaceName from '../namespaceName.js';
 
-define( require => {
+class Singleton {
 
-  class Singleton {
+  constructor( x ) {  
+    this.x = x;
+    this.initialized = false
+  }
+  
+  getX() {
+    assert && assert( this.initialized, 'this should only be called after initialization' );
+    return this.x;
+  }
+  
+  setX( x ) {
+    assert && assert( this.initialized, 'this should only be called after initialization' );
+    this.x = x;
+  }
+  
+  initialize( x ) {
+    assert && assert( !this.initialized, 'this should only be initialized once' );
+    this.initialized = true;
+    this.setX( x );
+  }
 
-    constructor( x ) {
-      this.x = x;
-      this.initialized = false
-    }
+};
 
-    getX() {
-      assert && assert( this.initialized, 'this should only be called after initialization' );
-      return this.x;
-    }
+const singleton = new Singleton( 0 );
 
-    setX( x ) {
-      assert && assert( this.initialized, 'this should only be called after initialization' );
-      this.x = x;
-    }
-
-    initialize( x ) {
-      assert && assert( !this.initialized, 'this should only be initialized once' );
-      this.initialized = true;
-      this.setX( x );
-    }
-
-  };
-
-  const singleton = new Singleton( 0 );
-  return namespace.register( 'singleton', singleton );
-
-} );
+namespaceName.register( 'singleton', singleton );
+export default singleton;
 ```
 
 A class should be used whenever keeping track of state is desired. The convention for naming a singleton class file is to start with a lowercase letter since an instance of the class is imported.
@@ -950,24 +949,23 @@ phetioEngine.js is an example of this pattern in PhET code.
 The second pattern is to create a static object literal. These cannot be instantiated, but instead are loaded at runtime.
 
 ```js
+import namespaceName from '../namespaceName.js';
 
-define( require => {
+console.log( 'I\'m only going to say this once.' );
 
-  console.log( 'I\'m only going to say this once.' );
+const ExampleConstants = {
 
-  const ExampleConstants = {
+  printMessage() {
+    console.log( 'I\'ll say this as many times as you\'d like.' );
+  },
+  
+  CONSTANT_NUMBER_ONE: 1,
+  CONSTANT_NUMBER_ONE: 2,
 
-    printMessage() {
-      console.log( 'I\'ll say this as many times as you\'d like.' );
-    },
+};
 
-    CONSTANT_NUMBER_ONE: 1,
-    CONSTANT_NUMBER_ONE: 2,
-
-  };
-
-  return namespace.register( 'ExampleConstants', ExampleConstants );
-}
+namespaceName.register( 'ExampleConstants', ExampleConstants );
+export default ExampleConstants;
 ```
 
 An object literal should be used when keeping track of state is not needed. If one counter variable needs to be tracked (or something very simple like that), then the dev team thinks that it could still be appropriate to use an object literal. A class should be used for anything more substantial than that. The convention for naming a singleton object literal file is to start with an uppercase letter since a singleton object literal is not an instance of a class.
