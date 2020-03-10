@@ -215,19 +215,35 @@ This section deals with PhET coding conventions. You do not need to exhaustively
   const beakerWidth = 150;        // correct
   ```
 
-- [ ] All `import` statements should be grouped together towards the top of the .js file. If `import` appears elsewhere, documention should indicate why. Imports for code and resources (images, sounds,...) are all treated the same. Imports should be sorted according to PhET code style, as done by WebStorm "Organize Imports". Example:
-  
+- [ ] Verify that PhET best practices for modules are followed. The best practices are:
+
+DO:
+
+* Group all `imports` at the top of the .js file, immediately after the overview comment block, organized ala WebStorm "Organize Imports".
+
+* Include a default export, placed at the end of the .js file, e.g. `export default NumberControl;`
+
+* Rename on import only if you have a name collision between imports, e.g.
 ```js
-import merge from '../../../../phet-core/js/merge.js';
-import HBox from '../../../../scenery/js/nodes/HBox.js';
-import Image from '../../../../scenery/js/nodes/Image.js';
-import Text from '../../../../scenery/js/nodes/Text.js';
-import Checkbox from '../../../../sun/js/Checkbox.js';
-import wolfImage from '../../../images/wolf_png.js';
-import naturalSelectionStrings from '../../natural-selection-strings.js';
-import naturalSelection from '../../naturalSelection.js';
-import NaturalSelectionConstants from '../NaturalSelectionConstants.js';
+import SceneryLine from '../../../../scenery/js/nodes/Line.js';
+import Line from '../model/Line.js';
 ```
+
+* Discuss exceptions to best practices on Slack, as they are encountered.  Modify the best practices if necessary, and/or document (at the call site) why you needed to diverge from the best practices.
+
+DO NOT:
+
+* Do not use property notation for imports, e.g. `import * as lib from 'lib';`
+
+* Do not use named exports.
+
+* Do not use the `export` keyword inline, e.g. `export function createIcon(...) {...};`. This makes it impossible to identify what the module exports without scanning the entire .js file.
+
+* Do not rename on export, e.g. `export { MY_CONST as THE_CONST };` 
+
+* Do not rename on import, e.g. `import { named1 as myNamed1 } from 'src/mylib';`See exception above, for name collisions.
+
+* Do not re-export, e.g. `export { foo } from 'src/other_module';`
 
 - [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default value.  This improves readability at the call site, especially when the number of parameters is large.  It also eliminates order dependency that is required by using parameters.
 
