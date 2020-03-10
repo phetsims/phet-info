@@ -137,12 +137,11 @@ to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
 ## **Repository Structure**
 
 - [ ] Are all required files and directories present?
-For a sim repository named “my-repo”, the general structure should look like this (where assets/, sound/ or images/ may be omitted if the sim doesn’t have those types of assets).
+For a sim repository named “my-repo”, the general structure should look like this (where assets/, images/, mipmaps/ or sounds/ may be omitted if the sim doesn’t have those types of resource files).
 
   ```js
      my-repo/
         assets/
-           license.json
         doc/
            images/
                  *see annotation
@@ -152,7 +151,10 @@ For a sim repository named “my-repo”, the general structure should look like
            license.json
         js/
            (see section below)
+	mipmaps/
+	   license.json
         sound/
+	   license.json
         dependencies.json
         .gitignore
         my-repo_en.html
@@ -163,6 +165,8 @@ For a sim repository named “my-repo”, the general structure should look like
         README.md
   ```
   *Any images used in model.md or implementation-notes.md should be added here. Images specific to aiding with documentation do not need their own license.
+  
+- [ ] Verify that the same image file is not present in both images/ and mipmaps/. If you need a mipmap, use it for all occurences of the image.  
 
 - [ ] Is the js/ directory properly structured?
   All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims, where the subdirectory matches the repo name).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Lab”, the general directory structure should look like this:
@@ -211,19 +215,40 @@ This section deals with PhET coding conventions. You do not need to exhaustively
   const beakerWidth = 150;        // correct
   ```
 
-- [ ] All `import` statements should be grouped together towards the top of the .js file. If `import` appears elsewhere, documention should indicate why. Imports for code and resources (images, sounds,...) are all treated the same. Imports should be sorted according to PhET code style, as done by WebStorm "Organize Imports". Example:
-  
+- [ ] Verify that PhET best practices for modules are followed.
+
+<details>
+<summary>Modules Best Practices</summary>
+
+DO:
+
+* Group all `imports` at the top of the .js file, immediately after the overview comment block, organized ala WebStorm "Organize Imports".
+
+* Include a default export, placed at the end of the .js file, e.g. `export default NumberControl;`
+
+* Rename on import only if you have a name collision between imports, e.g.
 ```js
-import merge from '../../../../phet-core/js/merge.js';
-import HBox from '../../../../scenery/js/nodes/HBox.js';
-import Image from '../../../../scenery/js/nodes/Image.js';
-import Text from '../../../../scenery/js/nodes/Text.js';
-import Checkbox from '../../../../sun/js/Checkbox.js';
-import wolfImage from '../../../images/wolf_png.js';
-import naturalSelectionStrings from '../../natural-selection-strings.js';
-import naturalSelection from '../../naturalSelection.js';
-import NaturalSelectionConstants from '../NaturalSelectionConstants.js';
+import SceneryLine from '../../../../scenery/js/nodes/Line.js';
+import Line from '../model/Line.js';
 ```
+
+* Discuss exceptions to best practices on Slack, as they are encountered.  Modify the best practices if necessary, and/or document (at the call site) why you needed to diverge from the best practices.
+
+DO NOT:
+
+* Do not use property notation for imports, e.g. `import * as lib from 'lib';`
+
+* Do not use named exports.
+
+* Do not use the `export` keyword inline, e.g. `export function createIcon(...) {...};`. This makes it impossible to identify what the module exports without scanning the entire .js file.
+
+* Do not rename on export, e.g. `export { MY_CONST as THE_CONST };` 
+
+* Do not rename on import, e.g. `import { named1 as myNamed1 } from 'src/mylib';`See exception above, for name collisions.
+
+* Do not re-export, e.g. `export { foo } from 'src/other_module';`
+
+</details>
 
 - [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default value.  This improves readability at the call site, especially when the number of parameters is large.  It also eliminates order dependency that is required by using parameters.
 

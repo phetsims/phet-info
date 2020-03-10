@@ -13,12 +13,13 @@ For general information on many standard design patterns, see _[Learning JavaScr
 * [Dispose](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dispose)
 * [Enumeration](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#enumeration)
 * [Mixin and Trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
-* [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc) 🚧
+* [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc)
 * [Model-View Transform](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-transform)
 * [Module](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#module)
 * [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace)
 * [Observer](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#observer) 🚧
 * [Options and Config](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config)
+* [Scenes](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#scenes)
 * [Singleton](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#singleton)
 * [State Machine](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#state-machine)
 * [Strategy](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#strategy)
@@ -488,7 +489,7 @@ MyTrait.mixInto( MyClass );
 
 ## Model-View-Controller (MVC)
 
-Author: 🚧 @jessegreenberg 🚧
+Author: @jessegreenberg
 
 Model-View-Controller is a software pattern for applications where the developer separates the implementation into three
 distinct categories. Model code is responsible for the application data and logic. View code is responsible for the
@@ -518,31 +519,34 @@ under the "view" directory is responsible for the presentation of this informati
 applied to create a simulation screen by a class called Screen.js, which may be used like
 ```js
   const myScreen = new Screen(
-    function() { return new MyModel(); },
-    function( myModel ) { return new MyView( myModel ); }
+    () => { return new MyModel(); },
+    myModel => { return new MyView( myModel ); }
   );
 ``` 
 In this example you can see that MyModel is oblivious to the view, while the view has a reference to the model to inform
 the representation.
 
+Controller code at PhET is generally in input and event handling which is done through `Node.addInputListener`.
 Communication from the model to the view is facilitated by classes in axon such as Property and Emitter.
 These are Observables which contain model state information and broadcast changes to the view so that it can update
 accordingly.
 
-Model-View separation can also be found at other tiers of PhET's implementation. Scenery (which
-is used extensively in simulation view code) is implemented with model-view separation as well. For example,
-a scenery Node acts as a model which is responsible for state information such as visibility, transformation, bounds
-and other things. Meanwhile, other view code in scenery is responsible for rendering this state information for the
-user.
+The "Model" in this pattern doesn't need to be the "domain" model for a simulation. It can contain any logic
+for application behavior for any context. Model-View separation can be found at other tiers of PhET's
+implementation. Scenery (which is used extensively in simulation view code) is implemented with model-view separation.
+For example, a scenery Node acts as a model which is responsible for state information such as visibility,
+transformation, bounds and other things. Meanwhile, other view code in scenery is responsible for rendering this state
+information for the user. You will find "model-view" separation in the [sun](github.com/phetsims/sun) button 
+implementation as well.
 
-**Questions:**
-Does PhET actually use Model-View-**Controller**? I don't think of separated "controller" code. If I were to
-draw a diagram of PhET's model-view separation it would be:
+There are several variations on the Model-View-Controller pattern. Please see [this article for more information](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
+PhET's usage is most similar to the Model-View-Delegate pattern used by Java in the implementation of Swing. In this
+pattern, the controller code is generally packaged with view code. A diagram of this pattern would look like
 ```text
     +----------------+    Axon          +------------------+                   +-----------+
     |                |  +-------------> |                  |                   |           |
     |                |                  |                  |     User Input    |           |
-    |    Model       |                  |   View           |   <------------+  |   User    |
+    |    Model       |                  | View/Controller  |   <------------+  |   User    |
     |                | <--------------+ |                  |                   |           |
     +----------------+ Input Listeners  +------------------+                   +-----------+
 ```
@@ -807,6 +811,17 @@ mindful of the option naming to make sure that you don't cause name collisions. 
 
 Try to keep related options groups together, both for instantiation and `merge` statements. For examples, if you
 have several options related to a11y, keep them together, don't interleave them with other options.
+
+### Scenes
+
+Author: @jessegreenberg
+
+A "Scene" in a PhET simulation is a collection of elements presented to the user. When a new scene is selected,
+elements of the previous scene will be swapped out for elements in the new scene. A single simulation Screen may have
+multiple Scenes. The implementation of a Scene should adhere to the [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc)
+pattern and be implemented like any other component in a simulation. There is no base class called Scene which
+combines a SceneModel and a SceneView. Instead, model information for a Scene should exist with the rest of the
+simulation model and view code for a scene should exist with the rest of the simulation view code.
 
 ### Nesting
 
