@@ -902,7 +902,7 @@ Author: @chrisklus
 
 This is a standard pattern described in https://en.wikipedia.org/wiki/Singleton_pattern.
 
-When using JavaScript and a module loading system (like RequireJS), there are two patterns that we use for Singletons.
+When using JavaScript and a module loading system (like ES6 modules), there are two patterns that we use for Singletons.
 
 The first is to create a class and then return a single instance of the class *instead* of returning the class itself.
 
@@ -931,7 +931,6 @@ class Singleton {
     this.initialized = true;
     this.setX( x );
   }
-
 };
 
 const singleton = new Singleton( 0 );
@@ -942,7 +941,7 @@ export default singleton;
 
 A class should be used whenever keeping track of state is desired. The convention for naming a singleton class file is to start with a lowercase letter since an instance of the class is imported.
 
-If initial state information is needed, then we can use an initialize pattern like what's written above. This is preferable to the getInstance pattern because it is simpler and does not expose the contructor. Also, since a single instance is being registered, the module loading system is basically doing getInstance for us.
+If initial state information is needed, then we can use an initialize pattern like what's written above. This is preferable to the getInstance pattern because it is simpler and does not expose the constructor. Also, since a single instance is being registered, the module loading system is basically doing getInstance for us.
 
 phetioEngine.js is an example of this pattern in PhET code.
 
@@ -961,7 +960,6 @@ const ExampleConstants = {
   
   CONSTANT_NUMBER_ONE: 1,
   CONSTANT_NUMBER_ONE: 2,
-
 };
 
 namespaceName.register( 'ExampleConstants', ExampleConstants );
