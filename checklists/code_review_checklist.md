@@ -215,40 +215,7 @@ This section deals with PhET coding conventions. You do not need to exhaustively
   const beakerWidth = 150;        // correct
   ```
 
-- [ ] Verify that PhET best practices for modules are followed.
-
-<details>
-<summary>Modules Best Practices</summary>
-
-DO:
-
-* Group all `imports` at the top of the .js file, immediately after the overview comment block, organized ala WebStorm "Organize Imports".
-
-* Include a default export, placed at the end of the .js file, e.g. `export default NumberControl;`
-
-* Rename on import only if you have a name collision between imports, e.g.
-```js
-import SceneryLine from '../../../../scenery/js/nodes/Line.js';
-import Line from '../model/Line.js';
-```
-
-* Discuss exceptions to best practices on Slack, as they are encountered.  Modify the best practices if necessary, and/or document (at the call site) why you needed to diverge from the best practices.
-
-DO NOT:
-
-* Do not use property notation for imports, e.g. `import * as lib from 'lib';`
-
-* Do not use named exports.
-
-* Do not use the `export` keyword inline, e.g. `export function createIcon(...) {...};`. This makes it impossible to identify what the module exports without scanning the entire .js file.
-
-* Do not rename on export, e.g. `export { MY_CONST as THE_CONST };` 
-
-* Do not rename on import, e.g. `import { named1 as myNamed1 } from 'src/mylib';`See exception above, for name collisions.
-
-* Do not re-export, e.g. `export { foo } from 'src/other_module';`
-
-</details>
+- [ ] Verify that [Modules Best Practices](https://github.com/phetsims/phet-info/blob/master/doc/modules-best-practices.md) are followed.
 
 - [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default value.  This improves readability at the call site, especially when the number of parameters is large.  It also eliminates order dependency that is required by using parameters.
 
