@@ -829,7 +829,8 @@ function Person( name, config ) {
 }
 ```
 In some cases, it may be better to only indicate the `required` properties or only indicate the `optional` properties,
-or to group them -- use your judgment.
+or to group them -- use your judgment. Note that documentation is above the required config field and within the config object.
+The required() function is enough indication that this is a required field in the config object and no further distinction is required in the documentation.
 
 ### Best Practices
 
