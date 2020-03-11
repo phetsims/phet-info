@@ -759,17 +759,6 @@ mindful of the option naming to make sure that you don't cause name collisions. 
 Try to keep related options groups together, both for instantiation and `merge` statements. For examples, if you
 have several options related to a11y, keep them together, don't interleave them with other options.
 
-### Scenes
-
-Author: @jessegreenberg
-
-A "Scene" in a PhET simulation is a collection of elements presented to the user. When a new scene is selected,
-elements of the previous scene will be swapped out for elements in the new scene. A single simulation Screen may have
-multiple Scenes. The implementation of a Scene should adhere to the [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc)
-pattern and be implemented like any other component in a simulation. There is no base class called Scene which
-combines a SceneModel and a SceneView. Instead, model information for a Scene should exist with the rest of the
-simulation model and view code for a scene should exist with the rest of the simulation view code.
-
 ### Nesting
 
 If using composition for your class, and you want to pass options into a subcomponent, you can nest
@@ -896,6 +885,17 @@ class MyPanel extends Panel {
 ```
 
 (5) Use `config` judiciously and appropriately. If your API has too many parameters, don't immediately reach for `config` as the solution. Review your API to understand _why_ it has too many parameters, and possibly redesign.
+
+## Scenes
+
+Author: @jessegreenberg
+
+A "Scene" in a PhET simulation is a collection of elements presented to the user. When a new scene is selected,
+elements of the previous scene will be swapped out for elements in the new scene. A single simulation Screen may have
+multiple Scenes. The implementation of a Scene should adhere to the [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc)
+pattern and be implemented like any other component in a simulation. There is no base class called Scene which
+combines a SceneModel and a SceneView. Instead, model information for a Scene should exist with the rest of the
+simulation model and view code for a scene should exist with the rest of the simulation view code.
 
 ## Singleton
 
