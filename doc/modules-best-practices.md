@@ -1,4 +1,4 @@
-# Modules Best Practices
+# PhET Best Practices for Modules
 
 This document summarizes PhET best practices for the use of ES6 modules. 
 This was originally discussed in https://github.com/phetsims/chipper/issues/873.
