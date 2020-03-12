@@ -215,7 +215,7 @@ This section deals with PhET coding conventions. You do not need to exhaustively
   const beakerWidth = 150;        // correct
   ```
 
-- [ ] Verify that [PhET Best Practices for Modules](https://github.com/phetsims/phet-info/blob/master/doc/best-practices-for-modules.md) are followed.
+- [ ] Verify that [Best Practices for Modules](https://github.com/phetsims/phet-info/blob/master/doc/best-practices-for-modules.md) are followed.
 
 - [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default value.  This improves readability at the call site, especially when the number of parameters is large.  It also eliminates order dependency that is required by using parameters.
 
