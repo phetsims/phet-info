@@ -44,7 +44,7 @@ If any of these items fail, pause code review.
 - [ ] Does the sim pass a scenery fuzz test? (run with query parameters `fuzz&ea`)
 - [ ] Does the sim behave correctly when listener order is shuffled? (run with query parameters `ea&shuffleListeners` and `ea&shuffleListeners&fuzz`)
 - [ ] Does the sim use `Map`? If so, make sure that it still works well in IE11 as not all `Map` functions are supported there.
-- [ ] Does the sim output any deprecation warnings?  Run with `?deprecationWarning`. Do not use deprecated methods in new code.
+- [ ] Does the sim output any deprecation warnings?  Run with `?deprecationWarnings`. Do not use deprecated methods in new code.
 
 ## **Memory Leaks**
 
