@@ -432,6 +432,8 @@ This section deals with PhET documention conventions. You do not need to exhaust
 
 - [ ] Differentiate between `Property` and "property" in comments. They are different things. `Property` is a type in AXON; property is any value associated with a JavaScript object. Often "field" can be used in exchange for "property" which can help with clarity.
 
+- [ ] Classes that mix in traits or mixin should use the `@mixes MyType` annotation. 
+
 - [ ] Line comments should generally be preceded by a blank line.  For example:
 
   ```js
