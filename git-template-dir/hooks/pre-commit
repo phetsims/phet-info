@@ -10,7 +10,7 @@
 # ${REPO_LIST} is one of the files in perennial/data/
 # ${ROOT} is the parent directory for your local copy of PhET repos
 #
-# Keep in mind that the repo needs to support 'grunt lint'.  So you may want to use ${REPO_LIST}=active-runnables
+# Keep in mind that the repos must support 'grunt lint'.  So you may want to use ${REPO_LIST}=active-runnables
 #
 #-----------------------------------------------------------------------------------------------------------------------
 
