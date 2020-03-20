@@ -1,2 +1,10 @@
 #!/bin/sh
+#-----------------------------------------------------------------------------------------------------------------------
+# git pre-commit hooks
+#
+# To install this and other hooks, run:
+# for-each.sh active-runnables git init --template=${ROOT}/phet-info/git-template-dir'
+# where ${ROOT} is the parent directory for your local copy of PhET repos.
+#-----------------------------------------------------------------------------------------------------------------------
+
 grunt lint
