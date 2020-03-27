@@ -10,6 +10,10 @@
 #
 # This and other hooks may use grunt, so you will also need to 'npm install' for active-repos.
 #
+# git init does not overwrite files, so you may need to clear existing precommit hooks with a command like:
+#
+#    for-each.sh active-repos rm .git/hooks/pre-commit
+#
 #-----------------------------------------------------------------------------------------------------------------------
 
 # If the repo has a Gruntfile.js, then it should support lint.
