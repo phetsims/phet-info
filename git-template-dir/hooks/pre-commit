@@ -16,8 +16,4 @@
 #
 #-----------------------------------------------------------------------------------------------------------------------
 
-# If the repo has a Gruntfile.js, then it should support lint.
-if [ -f "Gruntfile.js" ]
-then
-  grunt lint
-fi
+node ../chipper/js/scripts/lint-main.js
