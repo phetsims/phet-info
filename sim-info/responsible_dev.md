@@ -94,6 +94,7 @@
 | PhET-iO Test Sim |  @chrisklus | |
 | Plinko Probability | @chrisklus  | ✓ |
 | Projectile Motion | @jbphet  | ✓ |
+| Proportion |  @zepumph  |  |
 | Proportion Playground |  @jonathanolson  | ✓ |
 | Protein Synthesis | @samreid | |
 | Reactants, Products and Leftovers |  @pixelzoom  | ✓ |
