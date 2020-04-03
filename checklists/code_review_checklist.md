@@ -679,7 +679,9 @@ This section may be omitted if the sim has not been instrumented for a11y.
 
 This section may be omitted if the sim has not been instrumented for PhET-iO.
 
-- [ ] Does instrumentation follow the conventions described in [How to Instrument a PhET Simulation for PhET-iO](https://github.com/phetsims/phet-io/blob/master/doc/how-to-instrument-a-phet-simulation-for-phet-io.md)?
+- [ ] Does instrumentation follow the conventions described in [PhET-iO Instrumentation Guide](https://github.com/phetsims/phet-io/blob/master/doc/phet-io-instrumentation-guide.md)?
+This could be an extensive bullet. At the very make sure that it is know what amount of instrumentation this sim
+ supports. Describing this further goes beyond the scope of this docuement.
 - [ ] PhET-iO instantiates different objects and wires up listeners that are not present in the PhET-branded simulation.
   It needs to be tested separately for memory leaks.  To help isolate the nature of the memory leak, this test should 
   be run separately from the PhET brand memory leak test.  Test with a colorized Data Stream, and Studio (easily 
