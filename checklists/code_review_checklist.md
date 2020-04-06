@@ -680,8 +680,8 @@ This section may be omitted if the sim has not been instrumented for a11y.
 This section may be omitted if the sim has not been instrumented for PhET-iO.
 
 - [ ] Does instrumentation follow the conventions described in [PhET-iO Instrumentation Guide](https://github.com/phetsims/phet-io/blob/master/doc/phet-io-instrumentation-guide.md)?
-This could be an extensive bullet. At the very make sure that it is know what amount of instrumentation this sim
- supports. Describing this further goes beyond the scope of this docuement.
+This could be an extensive bullet. At the very least, be sure to know what amount of instrumentation this sim
+ supports. Describing this further goes beyond the scope of this document.
 - [ ] PhET-iO instantiates different objects and wires up listeners that are not present in the PhET-branded simulation.
   It needs to be tested separately for memory leaks.  To help isolate the nature of the memory leak, this test should 
   be run separately from the PhET brand memory leak test.  Test with a colorized Data Stream, and Studio (easily 
@@ -692,6 +692,6 @@ This could be an extensive bullet. At the very make sure that it is know what am
 events and deserves a comment in this PhET-iO section.
 - [ ] Are random numbers using `phet.joist.random`, and all doing so after modules are declared (non-statically)?  For
 example, the following methods (and perhaps others) should not be used: `Math.random`, `_.shuffle`, `_.sample`, `_.random`.
-This also deserves re-iteration due its effect on record/playback for PhET-iO.
+This also deserves re-iteration due to its effect on record/playback for PhET-iO.
 - [ ] Like JSON, keys for `undefined` values are omitted when serializing objects across frames. Consider this when 
 determining whether `toStateObject` should use `null` or `undefined` values.
