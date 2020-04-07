@@ -54,9 +54,9 @@ Note: a11y is a synonym for accessibility.
 options to provide PDOM descriptions.
 
 * The DAG features of the a11y side of Scenery are handled the same way as graphical `Node`s in Scenery. Each `Node` 
-with the `ParallelDOM` trait added to its prototype has N `AccessibleInstance`s based on the number of times it has been added
-to the scene graph. The PDOM elements of each `Node` are created and handled with `AccessiblePeer`. There is a 1x1
-relationship of `AccessibleInstance` and `AccessiblePeer`.
+with the `ParallelDOM` trait added to its prototype has N `PDOMInstance`s based on the number of times it has been added
+to the scene graph. The PDOM elements of each `Node` are created and handled with `PDOMPeer`. There is a 1x1
+relationship of `PDOMInstance` and `PDOMPeer`.
 
 ## Basic Example - adding a11y features to a `Node`
 The primary to add a `Node` to the PDOM is through options passed through to `Node.js`. First off, each
