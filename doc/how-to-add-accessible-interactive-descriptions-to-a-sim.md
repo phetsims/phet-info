@@ -50,11 +50,11 @@ and you can get information out of it, as the PDOM is updated in real time in re
 ## Overall Code structure
 Note: a11y is a synonym for accessibility.
 
-* `Accessibility.js` is a trait that is added to `Node.js`, so `Node` is already set up with a11y specific
+* `ParallelDOM.js` is a trait that is added to `Node.js`, so `Node` is already set up with a11y specific
 options to provide PDOM descriptions.
 
 * The DAG features of the a11y side of Scenery are handled the same way as graphical `Node`s in Scenery. Each `Node` 
-with the `Accessibility` trait added to its prototype has N `AccessibleInstance`s based on the number of times it has been added
+with the `ParallelDOM` trait added to its prototype has N `AccessibleInstance`s based on the number of times it has been added
 to the scene graph. The PDOM elements of each `Node` are created and handled with `AccessiblePeer`. There is a 1x1
 relationship of `AccessibleInstance` and `AccessiblePeer`.
 
@@ -161,7 +161,7 @@ To implement PDOM descriptions, follow these thoughts:
       the H2's content, "Play Area", provides the region with an accessible name in the _Accessibility Tree_ which is 
       accessed by assistive technology.
   * This is where you are piecing together all of the individual nodes.
-  * For a full list of available options, see `Accessibility.js`. 
+  * For a full list of available options, see `ParallelDOM.js`. 
 
 ### Interactive Alerts
   * `UtteranceQueue` is a type set up to emit live descriptions on demand. This is most often implemented based on model
