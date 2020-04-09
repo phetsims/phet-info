@@ -1,16 +1,10 @@
 [
     {
-      "caption": "PhET: Insert Require Statement",
-      "command": "phet_run",
-      "args": {
-        "cmd": "grunt insert-require-statement --name=$selectedText --file=$file_name"
-      }
+      "caption": "PhET: Import",
+      "command": "phet_import"
     },
     {
-      "caption": "PhET: Sort Require Statements",
-      "command": "phet_run",
-      "args": {
-        "cmd": "grunt sort-require-statements"
-      }
+      "caption": "PhET: Sort Imports",
+      "command": "phet_sort_imports"
     }
 ]
