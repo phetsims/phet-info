@@ -57,6 +57,72 @@ from functools import reduce
 
 # test on Windows
 
+# [func for func in dir(sublime.View) if callable(getattr(sublime.View, func))]
+#
+# ['__bool__', '__class__', '__delattr__', '__dir__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__',
+# '__init__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__',
+# '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'add_phantom', 'add_regions', 'assign_syntax',
+# 'begin_edit', 'buffer_id', 'change_count', 'classify', 'close', 'command_history', 'em_width', 'encoding', 'end_edit',
+# 'erase', 'erase_phantom_by_id', 'erase_phantoms', 'erase_regions', 'erase_status', 'expand_by_class',
+# 'extract_completions', 'extract_scope', 'extract_tokens_with_scopes', 'file_name', 'find', 'find_all',
+# 'find_all_results', 'find_all_results_with_text', 'find_by_class', 'find_by_selector', 'fold', 'folded_regions',
+# 'full_line', 'get_regions', 'get_status', 'get_symbols', 'has_non_empty_selection_region', 'hide_popup', 'id',
+# 'indentation_level', 'indented_region', 'indexed_references', 'indexed_symbols', 'insert', 'is_auto_complete_visible',
+# 'is_dirty', 'is_folded', 'is_in_edit', 'is_loading', 'is_popup_visible', 'is_primary', 'is_read_only', 'is_scratch',
+# 'is_valid', 'layout_extent', 'layout_to_text', 'layout_to_window', 'line', 'line_endings', 'line_height', 'lines',
+# 'match_selector', 'meta_info', 'name', 'overwrite_status', 'query_phantom', 'query_phantoms', 'replace',
+# 'reset_reference_document', 'retarget', 'rowcol', 'run_command', 'scope_name', 'score_selector', 'sel',
+# 'set_encoding', 'set_line_endings', 'set_name', 'set_overwrite_status', 'set_read_only', 'set_reference_document',
+# 'set_scratch', 'set_status', 'set_syntax_file', 'set_viewport_position', 'settings', 'show', 'show_at_center',
+# 'show_popup', 'show_popup_menu', 'size', 'split_by_newlines', 'style', 'style_for_scope', 'substr', 'symbols',
+# 'text_point', 'text_to_layout', 'text_to_window', 'unfold', 'update_popup', 'viewport_extent', 'viewport_position',
+# 'visible_region', 'window', 'window_to_layout', 'window_to_text', 'word']
+
+# [func for func in dir(sublime.Window) if callable(getattr(sublime.Window, func))]
+#
+# ['__bool__', '__class__', '__delattr__', '__dir__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__',
+# '__init__', '__le__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__',
+# '__sizeof__', '__str__', '__subclasshook__', 'active_group', 'active_panel', 'active_sheet', 'active_sheet_in_group',
+# 'active_view', 'active_view_in_group', 'create_output_panel', 'destroy_output_panel', 'extract_variables',
+# 'find_open_file', 'find_output_panel', 'focus_group', 'focus_sheet', 'focus_view', 'folders', 'get_layout',
+# 'get_output_panel', 'get_sheet_index', 'get_tabs_visible', 'get_view_index', 'hwnd', 'id', 'is_menu_visible',
+# 'is_minimap_visible', 'is_sidebar_visible', 'is_status_bar_visible', 'is_valid', 'layout',
+# 'lookup_references_in_index', 'lookup_references_in_open_files', 'lookup_symbol_in_index',
+# 'lookup_symbol_in_open_files', 'new_file', 'num_groups', 'open_file', 'panels', 'project_data', 'project_file_name',
+# 'run_command', 'set_layout', 'set_menu_visible', 'set_minimap_visible', 'set_project_data', 'set_sheet_index',
+# 'set_sidebar_visible', 'set_status_bar_visible', 'set_tabs_visible', 'set_view_index', 'settings', 'sheets',
+# 'sheets_in_group', 'show_input_panel', 'show_quick_panel', 'status_message', 'template_settings',
+# 'transient_sheet_in_group', 'transient_view_in_group', 'views', 'views_in_group']
+
+# >>> [func for func in dir(sublime) if callable(getattr(sublime, func))]
+# ['Edit', 'Html', 'Phantom', 'PhantomSet', 'Region', 'Selection', 'Settings', 'Sheet', 'View', 'Window', '_LogWriter',
+# 'active_window', 'arch', 'cache_path', 'channel', 'decode_value', 'encode_value', 'error_message', 'executable_hash',
+# 'executable_path', 'expand_variables', 'find_resources', 'get_clipboard', 'get_macro', 'installed_packages_path',
+# 'load_binary_resource', 'load_resource', 'load_settings', 'log_build_systems', 'log_commands', 'log_indexing',
+# 'log_input', 'log_result_regex', 'message_dialog', 'ok_cancel_dialog', 'packages_path', 'platform', 'run_command',
+# 'save_settings', 'score_selector', 'set_clipboard', 'set_timeout', 'set_timeout_async', 'status_message', 'version',
+# 'windows', 'yes_no_cancel_dialog']
+
+# >>> view.extract_tokens_with_scopes( view.sel()[0] )
+# [((2648, 2669), 'source.js meta.class.js meta.block.js meta.function.declaration.js entity.name.function.js ')]
+
+# >>> view.extract_completions( 'updateS' )
+# ['updateSize', 'updateStepInformation']
+
+# >>> view.indentation_level( view.sel()[0].begin() )
+# 2
+
+# view.substr(view.indented_region( view.sel()[0].begin() ))
+
+# >>> view.indexed_references()
+# [((798, 803), 'merge'), ((826, 844), 'createFromVertices'), ((856, 876), 'getEllipsoidVertices'), ((937, 954), 'getEllipsoidShape'), ((1007, 1016), 'getVolume'), ((1100, 1106), 'assert'), ((1339, 1349), 'updateSize'), ((1500, 1518), 'updateFromVertices'), ((1541, 1561), 'getEllipsoidVertices'), ((1676, 1693), 'getEllipsoidShape'), ((1764, 1773), 'getVolume'), ((2571, 2581), 'updateSize'), ((2593, 2610), 'getSizeFromRatios'), ((2690, 2716), 'bodyGetStepMatrixTransform'), ((2785, 2788), 'm02'), ((2828, 2831), 'm12'), ((3767, 3781), 'getTranslation'), ((3784, 3793), 'toVector3'), ((3881, 3889), 'minusXYZ'), ((4703, 4726), 'solveQuadraticRootsReal'), ((4738, 4744), 'filter'), ((6232, 6237), 'reset'), ((6250, 6260), 'updateSize'), ((6300, 6305), 'reset'), ((6516, 6523), 'ellipse'), ((6926, 6930), 'push'), ((6950, 6953), 'cos'), ((6981, 6984), 'sin'), ((7329, 7337), 'register')]
+
+# >>> view.indexed_symbols()
+# [((625, 634), 'Ellipsoid'), ((747, 758), 'constructor'), ((1463, 1473), 'updateSize'), ((2161, 2178), 'getSizeFromRatios'), ((2523, 2532), 'setRatios'), ((2648, 2669), 'updateStepInformation'), ((3703, 3712), 'intersect'), ((5097, 5113), 'getDisplacedArea'), ((5706, 5724), 'getDisplacedVolume'), ((6200, 6205), 'reset'), ((6462, 6479), 'getEllipsoidShape'), ((6729, 6749), 'getEllipsoidVertices'), ((7216, 7225), 'getVolume')]
+
+number_names = [ 'i', 'j', 'n', 'x', 'y', 'z', 'width', 'height', 'index', 'dt' ]
+node_names = [ 'node', 'content', 'listParent' ]
+
 def get_git_root(view):
   """Returns the absolute path of the git root"""
   return view.window().folders()[0]
@@ -129,8 +195,26 @@ def insert_import_and_sort(view, edit, name, path):
   insert_import_in_front(view, edit, 'import ' + name + ' from \'' + path +'\';')
   sort_imports(view, edit)
 
-def test_print(str):
-  print(str)
+def detect_type(name):
+  if name in number_names:
+    return 'number'
+  if name.endsWith('Node') or name in node_names:
+    return 'Node'
+  if name.endsWith('Bounds') or name == 'bounds':
+    return 'Bounds2'
+  if name.endsWith('Point') or name == 'point':
+    return 'Vector2'
+  if name.endsWith('Position') or name == 'position':
+    return 'Vector2'
+  if name.endsWith('Property') or name == 'property':
+    return 'Property.<*>'
+  if name == 'options':
+    return '[Object]'
+  if name == 'config':
+    return 'Object'
+  if name == 'tandem':
+    return 'Tandem'
+  return '*'
 
 def run_sort_imports(command, view, edit):
   sort_imports(view, edit)
@@ -153,6 +237,43 @@ def run_import(command, view, edit):
     else:
       view.window().status_message('contains import for: ' + name)
 
+def run_document_function(command, view, edit):
+  for region in view.sel():
+    start_point = region.begin()
+    name_region = view.word(region)
+    name = view.substr(name_region)
+    previous_line_point = view.full_line(name_region).begin() - 1
+    name_scope_region = view.extract_scope(start_point)
+    name_and_parameters = view.substr(view.extract_scope(name_scope_region.end()))
+    function_scope_region = view.extract_scope(view.full_line(name_scope_region).end() + 1)
+    indentation = view.indentation_level( start_point )
+
+    hasReturn = 'return' in view.substr(function_scope_region)
+
+    parameters = []
+    paren_start = name_and_parameters.find('( ')
+    paren_end = name_and_parameters.find(' )')
+    if paren_start >= 0 and paren_end >= 0:
+      # todo: handle defaults?
+      parameters = name_and_parameters[paren_start + 2 : paren_end].split( ', ' )
+
+    whitespace = indentation * '  '
+    comment = '\n' + whitespace + '/**\n' + whitespace + ' * '
+    if name == 'dispose':
+      comment = comment + 'Releases references\n' + whitespace + ' * @public'
+    if name == 'step':
+      comment = comment + 'Steps forward in time\n' + whitespace + ' * @public'
+    comment = comment + '\n'
+    if parameters:
+      comment = comment + whitespace + ' *\n'
+      for parameter in parameters:
+        # todo: guess type
+        comment = comment + whitespace + ' * @param {' + detect_type(parameter) + '} ' + parameter + '\n'
+    if hasReturn:
+      comment = comment + whitespace + ' * @returns {*}\n'
+    comment = comment + whitespace + ' */'
+
+    view.insert(edit, previous_line_point, comment )
 
 
 

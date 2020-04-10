@@ -6,5 +6,9 @@
     {
       "caption": "PhET: Sort Imports",
       "command": "phet_sort_imports"
+    },
+    {
+      "caption": "PhET: Document Function",
+      "command": "phet_document_function"
     }
 ]
