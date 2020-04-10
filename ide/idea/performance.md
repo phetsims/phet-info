@@ -34,3 +34,7 @@ https://dev.to/adammcquiff/improve-the-performance-of-webstorm-and-other-jetbrai
     ```
   * the main memory related ones are explained in https://www.jetbrains.com/help/idea/tuning-the-ide.html#common-jvm-options
   * A complete documentation of JVM options can be found in https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html
+  
+## Other Resources
+
+https://stackoverflow.com/questions/29388626/how-to-speed-up-webstorm contains all of the above tips and more, including specifics on which plugins to disable. 
