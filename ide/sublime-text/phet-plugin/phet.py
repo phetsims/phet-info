@@ -55,6 +55,34 @@ from functools import reduce
 # (lambda x, y: x + y)
 # map(func,iterable)
 
+# test on Windows
+
+def get_git_root(view):
+  """Returns the absolute path of the git root"""
+  return view.window().folders()[0]
+
+def load_file(path):
+  with open(path, 'r') as content_file:
+    content = content_file.read()
+  return content
+
+def get_perennial_list(view, name):
+  return list(filter(lambda line: len(line) > 0, load_file(os.path.join(get_git_root(view),'perennial/data/' + name)).splitlines()))
+
+def get_active_repos(view):
+  return get_perennial_list(view, 'active-repos')
+
+def scan_for_relative_js_files(view, js_type_name):
+  results = []
+  current_path = os.path.dirname(view.file_name())
+  for repo in get_active_repos(view):
+    repo_path = os.path.join(get_git_root(view), repo + '/js')
+    for root, dirs, files in os.walk(repo_path):
+      for name in files:
+        if name == js_type_name + '.js':
+          results.append(os.path.join(root, name))
+  return list(map(lambda x: os.path.relpath(x, current_path), results))
+
 def lookup_import_paths(view, str):
   """Returns a list of relative paths for modules detected to str"""
   current_path = os.path.dirname(view.file_name())
@@ -89,7 +117,6 @@ def sort_imports(view, edit):
   for import_string in sorted(import_strings,key=(lambda str: str.split('\'')[ 1 ]), reverse=True):
     view.insert(edit, start_index, import_string + '\n')
 
-
 def insert_import_in_front(view, edit, import_text):
   start_index = cover_regions(find_import_regions(view)).begin()
   view.insert(edit, start_index, import_text + '\n')
@@ -113,6 +140,8 @@ def run_import(command, view, edit):
     name = view.substr(view.word(region))
     if not contains_import(view, name):
       paths = lookup_import_paths(view, name)
+      if not paths:
+        paths = scan_for_relative_js_files(view, name)
       if paths:
         paths = list(filter_preferred_paths(paths))
         if len(paths) == 1:
