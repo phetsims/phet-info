@@ -55,3 +55,10 @@ selected, and check `Prefer Strict mode`.
     "Cyclic inheritance involving {TYPE}" -- Turn it off with JavaScript > General Closure compiler syntax.
 15. Further resources:
     * [Here is a list of default keyboard shortcuts for windows and mac](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
+
+## Preferences
+These may not be required, but are settings that other developers have found useful for their coding style. Use at your
+own risk!
+
+* View Markdown preview horizontally split instead of vertically: `Languages & Frameworks > Markdown > Editor and Preview Panel Layout: Split horizontally`
+* Move Editor tabs from the top to the right to maximize vertical space: `Editor > General > Editor Tabs > Tab placement: Right`
