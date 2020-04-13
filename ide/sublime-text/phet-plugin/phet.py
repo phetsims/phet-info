@@ -2,7 +2,7 @@
 #
 # @author Jonathan Olson <jonathan.olson@colorado.edu>
 
-import sublime, sublime_plugin, os
+import sublime, sublime_plugin, os, re
 
 from functools import reduce
 
@@ -228,8 +228,32 @@ def sort_imports(view, edit):
     view.erase(edit,view.full_line(region))
 
   # It should work to sort imports after the first apostrophe for both node.js and modules
-  for import_string in sorted(import_strings,key=(lambda str: str.split('\'')[ 1 ]), reverse=True):
+  for import_string in sorted(import_strings,key=(lambda str: str.split('\'')[1]), reverse=True):
     view.insert(edit, start_index, import_string + '\n')
+
+def remove_unused_imports(view, edit):
+  """Removes imports where their declared string isn't in the file (not 100% accurate, but helpful)"""
+  candidate_regions = find_import_regions(view)
+  regions_to_remove = []
+  after_imports_point = union_regions(candidate_regions).end()
+  for region in candidate_regions:
+    import_string = view.substr(region)
+    if import_string.startswith('const '):
+      name = import_string.split(' ')[1]
+    elif import_string.startswith('import '):
+      match = re.search('import (.+) from', import_string)
+      if match:
+        name = match.group(1)
+      else:
+        break
+    else:
+      break
+    if view.find(name, after_imports_point).empty():
+      regions_to_remove.append(region)
+  # iterate backward so we don't have to recompute regions here
+  for region in reversed(regions_to_remove):
+    print('removing: ' + view.substr(region))
+    view.erase(edit,view.full_line(region))
 
 def insert_import_in_front(view, edit, import_text):
   start_index = union_regions(find_import_regions(view)).begin()
@@ -324,7 +348,10 @@ def run_document_function(command, view, edit):
 
     view.insert(edit, previous_line_point, comment )
 
+def run_remove_unused_imports(command, view, edit):
+  remove_unused_imports(view, edit)
 
-
-
+def run_clean(command, view, edit):
+  remove_unused_imports(view, edit)
+  sort_imports(view, edit)
 
