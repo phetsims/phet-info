@@ -10,5 +10,13 @@
     {
       "caption": "PhET: Document Function",
       "command": "phet_document_function"
+    },
+    {
+      "caption": "PhET: Remove Unused Imports",
+      "command": "phet_remove_unused_imports"
+    },
+    {
+      "caption": "PhET: Clean",
+      "command": "phet_clean"
     }
 ]
