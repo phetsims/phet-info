@@ -173,6 +173,9 @@ def load_file(path):
     content = content_file.read()
   return content
 
+def handle_windows_relative_path(path):
+  return path.replace('\\', '/')
+
 def get_perennial_list(view, name):
   """Ability to load things like active-repos with e.g. get_perennial_list(view, 'active-repos')"""
   return list(filter(lambda line: len(line) > 0, load_file(os.path.join(get_git_root(view),'perennial/data/' + name)).splitlines()))
@@ -190,13 +193,13 @@ def scan_for_relative_js_files(view, js_type_name):
       for name in files:
         if name == js_type_name + '.js':
           results.append(os.path.join(root, name))
-  return list(map(lambda x: os.path.relpath(x, current_path), results))
+  return list(map(handle_windows_relative_path, map(lambda x: os.path.relpath(x, current_path), results)))
 
 def lookup_import_paths(view, str):
   """Returns a list of relative paths for modules detected to str"""
   current_path = os.path.dirname(view.file_name())
   locations = list(filter(lambda x: (str + '.js') in x[0] and not ('blue-rain' in x[0]), view.window().lookup_symbol_in_index(str)))
-  return list(map(lambda x: os.path.relpath(x[0], current_path), locations))
+  return list(map(handle_windows_relative_path, map(lambda x: os.path.relpath(x[0], current_path), locations)))
 
 def filter_preferred_paths(paths):
   """Returns all paths with the same minimum count of ../ in them"""
