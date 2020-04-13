@@ -1,6 +1,12 @@
+# Copyright 2020, University of Colorado Boulder
+#
+# @author Jonathan Olson <jonathan.olson@colorado.edu>
+
 import sublime, sublime_plugin, os
 
 from functools import reduce
+
+### Summary of sublime plugin documentation and API
 
 # location: a tuple of (str, str, (int, int)) that contains information about a location of a symbol. The first string
 #   is the absolute file path, the second is the file path relative to the project, the third element is a two-element
