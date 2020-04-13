@@ -123,22 +123,59 @@ from functools import reduce
 number_names = [ 'i', 'j', 'n', 'x', 'y', 'z', 'width', 'height', 'index', 'dt' ]
 node_names = [ 'node', 'content', 'listParent' ]
 
+def detect_type(name):
+  """Returns a guess on the type of a given name"""
+  if name in number_names:
+    return 'number'
+  if name.endswith('Node') or name in node_names:
+    return 'Node'
+  if name.endswith('Bounds') or name == 'bounds':
+    return 'Bounds2'
+  if name.endswith('Point') or name == 'point':
+    return 'Vector2'
+  if name.endswith('Position') or name == 'position':
+    return 'Vector2'
+  if name.endswith('Property') or name == 'property':
+    return 'Property.<*>'
+  if name == 'options':
+    return '[Object]'
+  if name == 'config':
+    return 'Object'
+  if name == 'tandem':
+    return 'Tandem'
+  return '*'
+
 def get_git_root(view):
   """Returns the absolute path of the git root"""
   return view.window().folders()[0]
 
+def count_up_directory(path):
+  """Returns a count of ../, for determining what the best path is to import"""
+  return path.count('../')
+
+def union_regions(regions):
+  """Returns the union of sublime.Region instances (using their term 'cover')"""
+  return reduce((lambda maybe,region: region if maybe == None else maybe.cover(region)),regions,None)
+
+def is_node_js(view):
+  """Whether we're handling things in a node.js or module context"""
+  return (not view.find('\n\'use strict\';\n', 0).empty()) and (not view.find(' = require\\( \'', 0).empty())
+
 def load_file(path):
+  """Loads a file as a string"""
   with open(path, 'r') as content_file:
     content = content_file.read()
   return content
 
 def get_perennial_list(view, name):
+  """Ability to load things like active-repos with e.g. get_perennial_list(view, 'active-repos')"""
   return list(filter(lambda line: len(line) > 0, load_file(os.path.join(get_git_root(view),'perennial/data/' + name)).splitlines()))
 
 def get_active_repos(view):
   return get_perennial_list(view, 'active-repos')
 
 def scan_for_relative_js_files(view, js_type_name):
+  """Walks our filesystem of repo/js/** looking for something matching ${js_type_name}.js, returned as relative paths"""
   results = []
   current_path = os.path.dirname(view.file_name())
   for repo in get_active_repos(view):
@@ -155,36 +192,38 @@ def lookup_import_paths(view, str):
   locations = list(filter(lambda x: (str + '.js') in x[0] and not ('blue-rain' in x[0]), view.window().lookup_symbol_in_index(str)))
   return list(map(lambda x: os.path.relpath(x[0], current_path), locations))
 
-def count_up_directory(path):
-  return path.count('../')
-
 def filter_preferred_paths(paths):
+  """Returns all paths with the same minimum count of ../ in them"""
   min_directory_up_count = min(map(count_up_directory,paths))
   return filter(lambda path: count_up_directory(path) == min_directory_up_count, paths)
 
 def contains_import(view, str):
-  return not view.find('import ' + str, 0).empty()
-
-def cover_regions(regions):
-  return reduce((lambda maybe,region: region if maybe == None else maybe.cover(region)),regions,None)
+  if is_node_js(view):
+    return not view.find('const ' + str + ' = require\\(', 0).empty()
+  else:
+    return not view.find('import ' + str, 0).empty()
 
 def find_import_regions(view):
-  return view.find_all(r'^import .+;$');
+  if is_node_js(view):
+    return view.find_all(r'^const .+ = require\(.+;.*$');
+  else:
+    return view.find_all(r'^import .+;$');
 
 def sort_imports(view, edit):
   import_regions = find_import_regions(view)
-  start_index = cover_regions(import_regions).begin()
+  start_index = union_regions(import_regions).begin()
   import_strings = []
 
   for region in reversed(import_regions):
     import_strings.append(view.substr(region))
     view.erase(edit,view.full_line(region))
 
+  # It should work to sort imports after the first apostrophe for both node.js and modules
   for import_string in sorted(import_strings,key=(lambda str: str.split('\'')[ 1 ]), reverse=True):
     view.insert(edit, start_index, import_string + '\n')
 
 def insert_import_in_front(view, edit, import_text):
-  start_index = cover_regions(find_import_regions(view)).begin()
+  start_index = union_regions(find_import_regions(view)).begin()
   view.insert(edit, start_index, import_text + '\n')
 
 def insert_import_and_sort(view, edit, name, path):
@@ -192,45 +231,46 @@ def insert_import_and_sort(view, edit, name, path):
   if path[0] != '.':
     path = './' + path
 
-  insert_import_in_front(view, edit, 'import ' + name + ' from \'' + path +'\';')
-  sort_imports(view, edit)
+  if is_node_js(view):
+    # strip off .js suffix
+    if path.endswith( '.js' ):
+      path = path[:-3]
+    insert_import_in_front(view, edit, 'const ' + name + ' = require( \'' + path +'\' );')
+  else:
+    insert_import_in_front(view, edit, 'import ' + name + ' from \'' + path +'\';')
 
-def detect_type(name):
-  if name in number_names:
-    return 'number'
-  if name.endsWith('Node') or name in node_names:
-    return 'Node'
-  if name.endsWith('Bounds') or name == 'bounds':
-    return 'Bounds2'
-  if name.endsWith('Point') or name == 'point':
-    return 'Vector2'
-  if name.endsWith('Position') or name == 'position':
-    return 'Vector2'
-  if name.endsWith('Property') or name == 'property':
-    return 'Property.<*>'
-  if name == 'options':
-    return '[Object]'
-  if name == 'config':
-    return 'Object'
-  if name == 'tandem':
-    return 'Tandem'
-  return '*'
+  sort_imports(view, edit)
 
 def run_sort_imports(command, view, edit):
   sort_imports(view, edit)
 
 def run_import(command, view, edit):
   for region in view.sel():
+    # get the name we're trying to import
     name = view.substr(view.word(region))
+
     if not contains_import(view, name):
+      # scan for symbols in a fast way (with known files in the Sublime index)
       paths = lookup_import_paths(view, name)
+
+      # fall back to scanning all JS files we have, use their names
       if not paths:
         paths = scan_for_relative_js_files(view, name)
+
+      # if we're in node.js mode, we want to be able to import built-ins or top-level things like 'fs', which probably
+      # will not be found
+      if is_node_js(view) and not paths:
+        paths = [name + '.js'] # the suffix will get stripped off later
+
       if paths:
+        # find preferred paths (smallest amounts of ../)
         paths = list(filter_preferred_paths(paths))
+
+        # we'll need to show a popup if there are still multiple choices
         if len(paths) == 1:
           insert_import_and_sort(view, edit, name, paths[0])
         else:
+          # if we hit escape, don't error out or try to import something
           view.show_popup_menu(paths, lambda index: insert_import_and_sort(view, edit, name, paths[index]) if index >= 0 else 0)
       else:
         view.window().status_message('could not find: ' + name)
