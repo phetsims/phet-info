@@ -176,6 +176,11 @@ def load_file(path):
 def handle_windows_relative_path(path):
   return path.replace('\\', '/')
 
+def ensure_dot_slash(path):
+  if path[0] != '.':
+    return './' + path
+  return path
+
 def get_perennial_list(view, name):
   """Ability to load things like active-repos with e.g. get_perennial_list(view, 'active-repos')"""
   return list(filter(lambda line: len(line) > 0, load_file(os.path.join(get_git_root(view),'perennial/data/' + name)).splitlines()))
@@ -260,10 +265,6 @@ def insert_import_in_front(view, edit, import_text):
   view.insert(edit, start_index, import_text + '\n')
 
 def insert_import_and_sort(view, edit, name, path):
-  # for relative paths, we need the ./
-  if path[0] != '.':
-    path = './' + path
-
   if is_node_js(view):
     # strip off .js suffix
     if path.endswith( '.js' ):
@@ -289,6 +290,8 @@ def run_import(command, view, edit):
       # fall back to scanning all JS files we have, use their names
       if not paths:
         paths = scan_for_relative_js_files(view, name)
+
+      paths = list(map(ensure_dot_slash, paths))
 
       # if we're in node.js mode, we want to be able to import built-ins or top-level things like 'fs', which probably
       # will not be found
