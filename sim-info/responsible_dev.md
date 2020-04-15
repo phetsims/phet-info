@@ -83,7 +83,7 @@
 | Neuron |  @jbphet  | ✓ |
 | Normal Modes | @jonathanolson |  |
 | Number Line: Distance |  @jbphet  |  |
-| Number Line: Integers |  @jbphet  |  |
+| Number Line: Integers |  @jbphet  | ✓ |
 | Number Line: Operations |  @jbphet  |  |
 | Number Play | @chrisklus |  |
 | Ohm's Law|  @zepumph  | ✓ |
