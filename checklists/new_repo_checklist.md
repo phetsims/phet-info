@@ -79,4 +79,19 @@ Other:
 - [ ] Rename in perennial/data/active-repos
 - [ ] Delete the old repo
 - [ ] Run `perennial/bin/clone-missting/repos.sh`.
-- [ ] Update `package.json` accordingly.
+- [ ] Update `package.json` accordingly. Including but not necessarily limited to:
+  * `name`
+  * `repository.url`
+  * `phet.requirejsNamespace`
+  
+**If this is a simulation. . .**
+  - [ ] Rename the many files:   
+    * `*en.json` string file
+    * `main.js` file
+    * Screens/Views/Models? 
+    * Namespace file
+  - [ ] Make sure to update the title in the `*en.json` string file and update its usage in the main js file
+  - [ ] Run `grunt modulify`
+  - [ ] update usages of the Namespace file
+  - [ ] Looks through all usages in the repo of the previous name to make sure issues links, comments and code are updated.
+  This especially applies to imports for the namespace and strings.
