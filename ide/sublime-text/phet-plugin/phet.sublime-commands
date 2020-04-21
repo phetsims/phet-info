@@ -18,5 +18,48 @@
     {
       "caption": "PhET: Clean",
       "command": "phet_clean"
+    },
+
+    {
+      "caption": "PhET: Open Phetmarks",
+      "command": "phet_open_phetmarks"
+    },
+    {
+      "caption": "PhET: Open Issues",
+      "command": "phet_open_issues"
+    },
+    {
+      "caption": "PhET: Open GitHub",
+      "command": "phet_open_github"
+    },
+    {
+      "caption": "PhET: Open Sim",
+      "command": "phet_open_sim"
+    },
+    {
+      "caption": "PhET: Open Built Sim",
+      "command": "phet_open_built_sim"
+    },
+    {
+      "caption": "PhET: Go to repo",
+      "command": "phet_go_to_repo"
+    },
+
+    {
+      "caption": "PhET: Lint",
+      "command": "phet_lint"
+    },
+    {
+      "caption": "PhET: Update",
+      "command": "phet_update"
+    },
+    {
+      "caption": "PhET: Grunt",
+      "command": "phet_grunt"
+    },
+
+    {
+      "caption": "PhET: Dev",
+      "command": "phet_dev"
     }
 ]

@@ -2,7 +2,7 @@
 #
 # @author Jonathan Olson <jonathan.olson@colorado.edu>
 
-import sublime, sublime_plugin, os, re, subprocess
+import sublime, sublime_plugin, os, re, subprocess, webbrowser, json, threading
 
 from functools import reduce
 
@@ -151,9 +151,42 @@ def detect_type(name):
     return 'Tandem'
   return '*'
 
+def execute(cmd, cmd_args, cwd, callback):
+  def thread_target(cmd, cmd_args, cwd, callback):
+    proc = subprocess.Popen([ cmd ] + cmd_args, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    # proc.wait()
+    callback(proc.communicate()[0].decode())
+  thread = threading.Thread(target=thread_target, args=(cmd, cmd_args, cwd, callback))
+  thread.start()
+  # returns immediately after the thread starts
+  return thread
+
+def execute_and_show(view, cmd, cmd_args, cwd):
+  execute(cmd, cmd_args, cwd, lambda output: show_output(view.window(), output))
+
+def open_link(url):
+  webbrowser.get('chrome').open(url, autoraise=True)
+
+def show_output(window, str):
+  view = window.create_output_panel('phet')
+  view.set_read_only(False)
+  view.run_command('append', {"characters": str})
+  view.set_read_only(True)
+  window.run_command('show_panel', {"panel": "output.phet"})
+
 def get_git_root(view):
   """Returns the absolute path of the git root"""
   return view.window().folders()[0]
+
+def get_relative_to_root(view, path):
+  return os.path.relpath(path, get_git_root(view))
+
+def get_repo(view):
+  relative_path = get_relative_to_root(view, view.file_name())
+  if relative_path[0] == '.':
+    return None
+  else:
+    return relative_path.split('/')[0]
 
 def count_up_directory(path):
   """Returns a count of ../, for determining what the best path is to import"""
@@ -172,6 +205,12 @@ def load_file(path):
   with open(path, 'r') as content_file:
     content = content_file.read()
   return content
+
+def get_build_local():
+  return json.loads(load_file(os.path.expanduser('~') + '/.phet/build-local.json'))
+
+def get_local_testing_url():
+  return get_build_local()[ 'localTestingURL' ]
 
 def handle_windows_relative_path(path):
   return path.replace('\\', '/')
@@ -310,6 +349,48 @@ def try_import_name(name, view, edit):
     view.window().status_message('contains import for: ' + name)
 
 
+
+
+class PhetInternalImportCommand(sublime_plugin.TextCommand):
+  def run(self, edit, name, path):
+    view = self.view
+    insert_import_and_sort(self.view, edit, name, path)
+
+class PhetInternalGoToRepoCommand(sublime_plugin.TextCommand):
+  def run(self, edit, repo):
+    view = self.view
+    view.window().open_file(get_git_root(view) + '/' + repo + '/README.md', sublime.TRANSIENT)
+
+
+
+
+
+class PhetDevCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    print('test')
+
+class PhetLintCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    repo = get_repo(view)
+    if repo:
+      execute_and_show(view, 'grunt', ['lint', '--no-color'], get_git_root(view) + '/' + repo)
+
+class PhetUpdateCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    repo = get_repo(view)
+    if repo:
+      execute_and_show(view, 'grunt', ['update', '--no-color'], get_git_root(view) + '/' + repo)
+
+class PhetGruntCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    repo = get_repo(view)
+    if repo:
+      execute_and_show(view, 'grunt', ['--no-color'], get_git_root(view) + '/' + repo)
+
 class PhetImportCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     view = self.view
@@ -334,11 +415,6 @@ class PhetRemoveUnusedImportsCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     view = self.view
     remove_unused_imports(view, edit)
-
-class PhetInternalImportCommand(sublime_plugin.TextCommand):
-  def run(self, edit, name, path):
-    view = self.view
-    insert_import_and_sort(self.view, edit, name, path)
 
 class PhetDocumentFunction(sublime_plugin.TextCommand):
   def run(self, edit):
@@ -380,37 +456,46 @@ class PhetDocumentFunction(sublime_plugin.TextCommand):
 
       view.insert(edit, previous_line_point, comment)
 
-#  class generally copied from http://mreq.eu/2014/10/running-custom-command/
-class PhetRunCommand(sublime_plugin.WindowCommand):
-  def run(self, cmd):
+class PhetOpenPhetmarksCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    open_link(get_local_testing_url() + 'phetmarks')
 
-    # Save the file first so you don't look working copy changes
-    window = self.window
-    view = window.active_view()
-    view.run_command('save')
+class PhetOpenGithubCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    repo = get_repo(view)
+    if repo:
+      open_link('https://github.com/phetsims/' + repo)
 
-    if "$file_name" in cmd:
-      view = self.window.active_view()
-      cmd = cmd.replace("$file_name",view.file_name())
-    if "$file_dir" in cmd:
-      view = self.window.active_view()
-      cmd = cmd.replace("$file_dir",os.path.split(view.file_name())[0])
+class PhetOpenIssuesCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    repo = get_repo(view)
+    if repo:
+      open_link('https://github.com/phetsims/' + repo + '/issues')
 
-    if "$selectedText" in cmd:
+class PhetOpenSimCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    repo = get_repo(view)
+    if repo:
+      open_link(get_local_testing_url() + repo + '/' + repo + '_en.html?ea&brand=phet')
 
-      # code section copied from https://stackoverflow.com/questions/19707727/api-how-to-get-selected-text-from-object-sublime-selection
-      sel = view.sel()
-      region1 = sel[0]
-      selectionText = view.substr(region1)
+class PhetOpenBuiltSimCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    repo = get_repo(view)
+    if repo:
+      open_link(get_local_testing_url() + repo + '/build/phet/' + repo + '_en_phet.html')
 
-      cmd = cmd.replace("$selectedText", selectionText)
+class PhetGoToRepoCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    active_repos = get_active_repos(view)
 
-
-    print ('Running custom command:', cmd)
-
-    proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, cwd=os.path.split(view.file_name())[0])
-    while proc.poll() is None:
-      line = proc.stdout.readline()
-      if( len(line) > 0):
-        print (line.decode("utf-8")) # give output from your execution/your own message
-    self.commandResult = proc.wait() # catch return code
+    # if we hit escape, don't error out or try to import something
+    def on_done(index):
+      if index >= 0:
+        view.run_command('phet_internal_go_to_repo', {"repo": active_repos[index]})
+    view.window().show_quick_panel(active_repos, on_done)
