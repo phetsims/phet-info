@@ -76,7 +76,7 @@ Other:
 ## Steps for renaming a repo
 - [ ] Make sure all commits are pushed to that repo.
 - [ ] On Github.com, go to repo -> Settings -> Options -> "Repository name"  and rename.
-- [ ] Rename in perennial/data/active-repos
+- [ ] Rename in `perennial/data/active-repos`
 - [ ] Delete the old repo
 - [ ] Run `perennial/bin/clone-missting/repos.sh`.
 - [ ] Update `package.json` accordingly. Including but not necessarily limited to:
