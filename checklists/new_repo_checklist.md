@@ -72,3 +72,11 @@ Other:
 - [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and run `clone-missing-repos.sh` at your convenience."
 - [ ] Apply GitHub labels. See [github-labels/README.md](https://github.com/phetsims/phet-info/blob/master/github-labels/README.md).
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
+
+## Steps for renaming a repo
+- [ ] Make sure all commits are pushed to that repo.
+- [ ] On Github.com, go to repo -> Settings -> Options -> "Repository name"  and rename.
+- [ ] Rename in perennial/data/active-repos
+- [ ] Delete the old repo
+- [ ] Run `perennial/bin/clone-missting/repos.sh`.
+- [ ] Update `package.json` accordingly.
