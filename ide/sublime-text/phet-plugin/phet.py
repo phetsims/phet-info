@@ -2,7 +2,7 @@
 #
 # @author Jonathan Olson <jonathan.olson@colorado.edu>
 
-import sublime, sublime_plugin, os, re
+import sublime, sublime_plugin, os, re, subprocess
 
 from functools import reduce
 
@@ -275,86 +275,142 @@ def insert_import_and_sort(view, edit, name, path):
 
   sort_imports(view, edit)
 
-def run_sort_imports(command, view, edit):
-  sort_imports(view, edit)
+def try_import_name(name, view, edit):
+  if not contains_import(view, name):
+    # scan for symbols in a fast way (with known files in the Sublime index)
+    paths = lookup_import_paths(view, name)
 
-def run_import(command, view, edit):
-  for region in view.sel():
-    # get the name we're trying to import
-    name = view.substr(view.word(region))
+    # fall back to scanning all JS files we have, use their names
+    if not paths:
+      paths = scan_for_relative_js_files(view, name)
 
-    if not contains_import(view, name):
-      # scan for symbols in a fast way (with known files in the Sublime index)
-      paths = lookup_import_paths(view, name)
+    paths = list(map(ensure_dot_slash, paths))
 
-      # fall back to scanning all JS files we have, use their names
-      if not paths:
-        paths = scan_for_relative_js_files(view, name)
+    # if we're in node.js mode, we want to be able to import built-ins or top-level things like 'fs', which probably
+    # will not be found
+    if is_node_js(view) and not paths:
+      paths = [name + '.js'] # the suffix will get stripped off later
 
-      paths = list(map(ensure_dot_slash, paths))
+    if paths:
+      # find preferred paths (smallest amounts of ../)
+      paths = list(filter_preferred_paths(paths))
 
-      # if we're in node.js mode, we want to be able to import built-ins or top-level things like 'fs', which probably
-      # will not be found
-      if is_node_js(view) and not paths:
-        paths = [name + '.js'] # the suffix will get stripped off later
-
-      if paths:
-        # find preferred paths (smallest amounts of ../)
-        paths = list(filter_preferred_paths(paths))
-
-        # we'll need to show a popup if there are still multiple choices
-        if len(paths) == 1:
-          insert_import_and_sort(view, edit, name, paths[0])
-        else:
-          # if we hit escape, don't error out or try to import something
-          view.show_popup_menu(paths, lambda index: insert_import_and_sort(view, edit, name, paths[index]) if index >= 0 else 0)
+      # we'll need to show a popup if there are still multiple choices
+      if len(paths) == 1:
+        insert_import_and_sort(view, edit, name, paths[0])
       else:
-        view.window().status_message('could not find: ' + name)
+        # if we hit escape, don't error out or try to import something
+        def on_done(index):
+          if index >= 0:
+            view.run_command('phet_internal_import', {"name": name, "path": paths[index]})
+        view.window().show_quick_panel(paths, on_done)
     else:
-      view.window().status_message('contains import for: ' + name)
+      view.window().status_message('could not find: ' + name)
+  else:
+    view.window().status_message('contains import for: ' + name)
 
-def run_document_function(command, view, edit):
-  for region in view.sel():
-    start_point = region.begin()
-    name_region = view.word(region)
-    name = view.substr(name_region)
-    previous_line_point = view.full_line(name_region).begin() - 1
-    name_scope_region = view.extract_scope(start_point)
-    name_and_parameters = view.substr(view.extract_scope(name_scope_region.end()))
-    function_scope_region = view.extract_scope(view.full_line(name_scope_region).end() + 1)
-    indentation = view.indentation_level( start_point )
 
-    hasReturn = 'return' in view.substr(function_scope_region)
+class PhetImportCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    for region in view.sel():
+      # get the name we're trying to import
+      name = view.substr(view.word(region))
 
-    parameters = []
-    paren_start = name_and_parameters.find('( ')
-    paren_end = name_and_parameters.find(' )')
-    if paren_start >= 0 and paren_end >= 0:
-      # todo: handle defaults?
-      parameters = name_and_parameters[paren_start + 2 : paren_end].split( ', ' )
+      try_import_name(name, view, edit)
 
-    whitespace = indentation * '  '
-    comment = '\n' + whitespace + '/**\n' + whitespace + ' * '
-    if name == 'dispose':
-      comment = comment + 'Releases references\n' + whitespace + ' * @public'
-    if name == 'step':
-      comment = comment + 'Steps forward in time\n' + whitespace + ' * @public'
-    comment = comment + '\n'
-    if parameters:
-      comment = comment + whitespace + ' *\n'
-      for parameter in parameters:
-        # todo: guess type
-        comment = comment + whitespace + ' * @param {' + detect_type(parameter) + '} ' + parameter + '\n'
-    if hasReturn:
-      comment = comment + whitespace + ' * @returns {*}\n'
-    comment = comment + whitespace + ' */'
+class PhetCleanCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    remove_unused_imports(view, edit)
+    sort_imports(view, edit)
 
-    view.insert(edit, previous_line_point, comment )
+class PhetSortImportsCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    sort_imports(view, edit)
 
-def run_remove_unused_imports(command, view, edit):
-  remove_unused_imports(view, edit)
+class PhetRemoveUnusedImportsCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    remove_unused_imports(view, edit)
 
-def run_clean(command, view, edit):
-  remove_unused_imports(view, edit)
-  sort_imports(view, edit)
+class PhetInternalImportCommand(sublime_plugin.TextCommand):
+  def run(self, edit, name, path):
+    view = self.view
+    insert_import_and_sort(self.view, edit, name, path)
 
+class PhetDocumentFunction(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    for region in view.sel():
+      start_point = region.begin()
+      name_region = view.word(region)
+      name = view.substr(name_region)
+      previous_line_point = view.full_line(name_region).begin() - 1
+      name_scope_region = view.extract_scope(start_point)
+      name_and_parameters = view.substr(view.extract_scope(name_scope_region.end()))
+      function_scope_region = view.extract_scope(view.full_line(name_scope_region).end() + 1)
+      indentation = view.indentation_level( start_point )
+
+      hasReturn = 'return' in view.substr(function_scope_region)
+
+      parameters = []
+      paren_start = name_and_parameters.find('( ')
+      paren_end = name_and_parameters.find(' )')
+      if paren_start >= 0 and paren_end >= 0:
+        # todo: handle defaults?
+        parameters = name_and_parameters[paren_start + 2 : paren_end].split( ', ' )
+
+      whitespace = indentation * '  '
+      comment = '\n' + whitespace + '/**\n' + whitespace + ' * '
+      if name == 'dispose':
+        comment = comment + 'Releases references\n' + whitespace + ' * @public'
+      if name == 'step':
+        comment = comment + 'Steps forward in time\n' + whitespace + ' * @public'
+      comment = comment + '\n'
+      if parameters:
+        comment = comment + whitespace + ' *\n'
+        for parameter in parameters:
+          # todo: guess type
+          comment = comment + whitespace + ' * @param {' + detect_type(parameter) + '} ' + parameter + '\n'
+      if hasReturn:
+        comment = comment + whitespace + ' * @returns {*}\n'
+      comment = comment + whitespace + ' */'
+
+      view.insert(edit, previous_line_point, comment)
+
+#  class generally copied from http://mreq.eu/2014/10/running-custom-command/
+class PhetRunCommand(sublime_plugin.WindowCommand):
+  def run(self, cmd):
+
+    # Save the file first so you don't look working copy changes
+    window = self.window
+    view = window.active_view()
+    view.run_command('save')
+
+    if "$file_name" in cmd:
+      view = self.window.active_view()
+      cmd = cmd.replace("$file_name",view.file_name())
+    if "$file_dir" in cmd:
+      view = self.window.active_view()
+      cmd = cmd.replace("$file_dir",os.path.split(view.file_name())[0])
+
+    if "$selectedText" in cmd:
+
+      # code section copied from https://stackoverflow.com/questions/19707727/api-how-to-get-selected-text-from-object-sublime-selection
+      sel = view.sel()
+      region1 = sel[0]
+      selectionText = view.substr(region1)
+
+      cmd = cmd.replace("$selectedText", selectionText)
+
+
+    print ('Running custom command:', cmd)
+
+    proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, cwd=os.path.split(view.file_name())[0])
+    while proc.poll() is None:
+      line = proc.stdout.readline()
+      if( len(line) > 0):
+        print (line.decode("utf-8")) # give output from your execution/your own message
+    self.commandResult = proc.wait() # catch return code
