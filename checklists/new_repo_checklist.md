@@ -83,7 +83,8 @@ Other:
   * `name`
   * `repository.url`
   * `phet.requirejsNamespace`
-  
+- [ ] Notify Slack channel dev-public that the repo has been renamed. E.g. "I just renamed repository {{OLD_REPO}} to {{NEW_REPO}}. Please pull perennial and run `clone-missing-repos.sh` at your convenience."
+
 **If this is a simulation. . .**
   - [ ] Rename the many files:   
     * `*en.json` string file
