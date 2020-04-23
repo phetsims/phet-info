@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>PhET Find Results</string>
+
+
+
+    <key>patterns</key>
+    <array>
+        <dict>
+            <key>match</key>
+            <string>^([^ ]+) (\/[^ ]+):$</string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>constant.numeric.line-number.phet-find-results</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.filename.phet-find-results</string>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>match</key>
+            <string>^    (ERROR:)</string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>constant.other.phet-find-results</string>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>match</key>
+            <string>^ +([0-9]+) </string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>constant.numeric.line-number.phet-find-results</string>
+                </dict>
+            </dict>
+        </dict>
+        <dict>
+            <key>match</key>
+            <string>^ +([0-9]+):</string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>constant.numeric.line-number.match.phet-find-results</string>
+                </dict>
+            </dict>
+        </dict>
+    </array>
+
+    <key>scopeName</key>
+    <string>text.phet-find-results</string>
+
+</dict>
+</plist>
