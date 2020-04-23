@@ -387,7 +387,7 @@ Sample usage:
   c. Wait until you have taken enough data  
   d. Type x = window.alloc; delete window.alloc;  
 Now you can inspect the x variable which contains the allocation information.
-3. Query parameter: `?ea`. This parameter is used to “enable assertions”. The sim should run without triggering any assertion errors in ?ea mode.
+3. Run with query parameter `?ea` to enable assertions in the code. The sim should run without any assertion errors. (Assertions are predicates about what should be true at specific points in the code. They are used to identify programming errors.)
 4. Query parameter: `?showPointerAreas`. This query parameter shows the areas for mouse and touch input events.  On mobile devices (and sometimes for mouse) it is essential to increase the interaction region for a scenery node. Touch areas are shown in red and custom mouse areas are shown in blue.
 5. makeRandomSlowness(). This method can be called after the simulation is started to simulate an intermittently slow system.  This can be used to help replicate bugs that only happen intermittently or only on slow platforms.  To call this method, launch the sim, show the developer console, and type the command as above.
 6. makeEverythingSlow(). This method can be called after the simulation is started to simulate a slow system.  This can be used to help replicate bugs that only happen intermittently or only on slow platforms.  To call this method, launch the sim, show the developer console, and type the command as above.
