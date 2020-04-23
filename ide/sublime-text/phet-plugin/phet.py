@@ -6,7 +6,15 @@ import sublime, sublime_plugin, os, re, subprocess, webbrowser, json, threading
 
 from functools import reduce
 
+# Useful URLs:
 # https://www.sublimetext.com/docs/3/api_reference.html
+# http://www.sublimetext.com/docs/commands
+# https://github.com/Binocular222/Sublime-Text-3-Full-Documentation
+# https://github.com/Binocular222/Sublime-Text-3-Full-Documentation/blob/master/Command.txt
+# https://www.sublimetext.com/docs/3/scope_naming.html
+# https://sublime-text-unofficial-documentation.readthedocs.io/en/latest/reference/api.html
+
+# undocumented APIs?:
 # [func for func in dir(sublime.View) if callable(getattr(sublime.View, func))]
 # [func for func in dir(sublime.Window) if callable(getattr(sublime.View, func))]
 # lookup_references_in_index / lookup_references_in_open_files / lookup_symbol_in_index / lookup_symbol_in_open_files
