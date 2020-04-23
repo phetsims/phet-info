@@ -6,111 +6,22 @@ import sublime, sublime_plugin, os, re, subprocess, webbrowser, json, threading
 
 from functools import reduce
 
-### Summary of sublime plugin documentation and API
-
-# location: a tuple of (str, str, (int, int)) that contains information about a location of a symbol. The first string
-#   is the absolute file path, the second is the file path relative to the project, the third element is a two-element
-#   tuple of the row and column.
-# point: an int that represents the offset from the beginning of the editor buffer. The View methods text_point() and
-#   rowcol() allow converting to and from this format.
-# value: any of the Python data types bool, int, float, str, list or dict.
-# dip: a float that represents a device-independent pixel.
-# vector: a tuple of (dip, dip) representing x and y coordinates.
-# CommandInputHandler: a subclass of either TextInputHandler or ListInputHandler.
-
-# Selection - set of Regions, not overlapping - can be modified or queried
-# Region - Region(a, b), a==b valid, they are int
-
-# Window
-# window.new_file() => View
-# window.open_file(file_name, <flags>) => View
-# window.folders() => [str] -------- hmmm?
-# window.project_file_name() => str
-# window.project_data() => dict ---- same format as .sublime-project
-# window.show_quick_panel(items, on_done, <flags>, <selected_index>, <on_highlighted>) None
-#   Shows a quick panel, to select an item in a list. on_done will be called once, with the index of the selected item.
-#     If the quick panel was cancelled, on_done will be called with an argument of -1.
-#   items may be a list of strings, or a list of string lists. In the latter case, each entry in the quick panel will show multiple rows.
-#   flags is a bitwise OR of sublime.MONOSPACE_FONT and sublime.KEEP_OPEN_ON_FOCUS_LOST
-#   on_highlighted, if given, will be called every time the highlighted item in the quick panel is changed.
-
-# textCommand.is_enabled/is_visible/description
-
-# View
-# view.file_name()
-# view.name()
-# view.window() -- Window
-# view.is_loading() - Returns True if the buffer is still loading from disk, and not ready for use.
-# view.is_dirty() - Returns True if there are any unsaved modifications to the buffer.
-# view.is_read_only()
-
-# view.substr(region) => str
-# view.insert(edit, point, string)
-# view.erase(edit, region)
-# view.replace(edit, region, string)
-# view.sel() => Selection
-# view.find(pattern, start_point, <flags>) => Region
-# view.find_all(pattern, <flags>, <format>, <extractions>) => [Region]
-# view.rowcol(point) => (int,int)
-# view.text_point(row, col) => int
-# view.show(location, <show_surrounds>)
-
-# view.show_popup_menu(items, on_done, <flags>)
-
-# lambda x: x
-# (lambda x, y: x + y)
-# map(func,iterable)
-
-# test on Windows
-
+# https://www.sublimetext.com/docs/3/api_reference.html
 # [func for func in dir(sublime.View) if callable(getattr(sublime.View, func))]
-#
-# ['__bool__', '__class__', '__delattr__', '__dir__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__',
-# '__init__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__',
-# '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'add_phantom', 'add_regions', 'assign_syntax',
-# 'begin_edit', 'buffer_id', 'change_count', 'classify', 'close', 'command_history', 'em_width', 'encoding', 'end_edit',
-# 'erase', 'erase_phantom_by_id', 'erase_phantoms', 'erase_regions', 'erase_status', 'expand_by_class',
-# 'extract_completions', 'extract_scope', 'extract_tokens_with_scopes', 'file_name', 'find', 'find_all',
-# 'find_all_results', 'find_all_results_with_text', 'find_by_class', 'find_by_selector', 'fold', 'folded_regions',
-# 'full_line', 'get_regions', 'get_status', 'get_symbols', 'has_non_empty_selection_region', 'hide_popup', 'id',
-# 'indentation_level', 'indented_region', 'indexed_references', 'indexed_symbols', 'insert', 'is_auto_complete_visible',
-# 'is_dirty', 'is_folded', 'is_in_edit', 'is_loading', 'is_popup_visible', 'is_primary', 'is_read_only', 'is_scratch',
-# 'is_valid', 'layout_extent', 'layout_to_text', 'layout_to_window', 'line', 'line_endings', 'line_height', 'lines',
-# 'match_selector', 'meta_info', 'name', 'overwrite_status', 'query_phantom', 'query_phantoms', 'replace',
-# 'reset_reference_document', 'retarget', 'rowcol', 'run_command', 'scope_name', 'score_selector', 'sel',
-# 'set_encoding', 'set_line_endings', 'set_name', 'set_overwrite_status', 'set_read_only', 'set_reference_document',
-# 'set_scratch', 'set_status', 'set_syntax_file', 'set_viewport_position', 'settings', 'show', 'show_at_center',
-# 'show_popup', 'show_popup_menu', 'size', 'split_by_newlines', 'style', 'style_for_scope', 'substr', 'symbols',
-# 'text_point', 'text_to_layout', 'text_to_window', 'unfold', 'update_popup', 'viewport_extent', 'viewport_position',
-# 'visible_region', 'window', 'window_to_layout', 'window_to_text', 'word']
+# [func for func in dir(sublime.Window) if callable(getattr(sublime.View, func))]
+# lookup_references_in_index / lookup_references_in_open_files / lookup_symbol_in_index / lookup_symbol_in_open_files
+# [func for func in dir(sublime) if callable(getattr(sublime.View, func))]
 
-# [func for func in dir(sublime.Window) if callable(getattr(sublime.Window, func))]
-#
-# ['__bool__', '__class__', '__delattr__', '__dir__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__',
-# '__init__', '__le__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__',
-# '__sizeof__', '__str__', '__subclasshook__', 'active_group', 'active_panel', 'active_sheet', 'active_sheet_in_group',
-# 'active_view', 'active_view_in_group', 'create_output_panel', 'destroy_output_panel', 'extract_variables',
-# 'find_open_file', 'find_output_panel', 'focus_group', 'focus_sheet', 'focus_view', 'folders', 'get_layout',
-# 'get_output_panel', 'get_sheet_index', 'get_tabs_visible', 'get_view_index', 'hwnd', 'id', 'is_menu_visible',
-# 'is_minimap_visible', 'is_sidebar_visible', 'is_status_bar_visible', 'is_valid', 'layout',
-# 'lookup_references_in_index', 'lookup_references_in_open_files', 'lookup_symbol_in_index',
-# 'lookup_symbol_in_open_files', 'new_file', 'num_groups', 'open_file', 'panels', 'project_data', 'project_file_name',
-# 'run_command', 'set_layout', 'set_menu_visible', 'set_minimap_visible', 'set_project_data', 'set_sheet_index',
-# 'set_sidebar_visible', 'set_status_bar_visible', 'set_tabs_visible', 'set_view_index', 'settings', 'sheets',
-# 'sheets_in_group', 'show_input_panel', 'show_quick_panel', 'status_message', 'template_settings',
-# 'transient_sheet_in_group', 'transient_view_in_group', 'views', 'views_in_group']
-
-# >>> [func for func in dir(sublime) if callable(getattr(sublime, func))]
-# ['Edit', 'Html', 'Phantom', 'PhantomSet', 'Region', 'Selection', 'Settings', 'Sheet', 'View', 'Window', '_LogWriter',
-# 'active_window', 'arch', 'cache_path', 'channel', 'decode_value', 'encode_value', 'error_message', 'executable_hash',
-# 'executable_path', 'expand_variables', 'find_resources', 'get_clipboard', 'get_macro', 'installed_packages_path',
-# 'load_binary_resource', 'load_resource', 'load_settings', 'log_build_systems', 'log_commands', 'log_indexing',
-# 'log_input', 'log_result_regex', 'message_dialog', 'ok_cancel_dialog', 'packages_path', 'platform', 'run_command',
-# 'save_settings', 'score_selector', 'set_clipboard', 'set_timeout', 'set_timeout_async', 'status_message', 'version',
-# 'windows', 'yes_no_cancel_dialog']
-
-# >>> view.extract_tokens_with_scopes( view.sel()[0] )
-# [((2648, 2669), 'source.js meta.class.js meta.block.js meta.function.declaration.js entity.name.function.js ')]
+# potential commands?
+# auto_complete build clear_fields close_file copy cut decrease_font_size delete_word duplicate_line exec
+# expand_selection find_all_under find_next find_prev find_under find_under_expand find_under_prev focus_group
+# hide_auto_complete hide_overlay hide_panel increase_font_size indent insert insert_snippet join_lines left_delete move
+# move_to move_to_group new_file new_window next_field next_result next_view next_view_in_stack paste paste_and_indent
+# prev_field prev_result prev_view prev_view_in_stack prompt_open_file prompt_save_as prompt_select_project redo
+# redo_or_repeat reindent right_delete run_macro run_macro_file save scroll_lines select_all select_lines set_layout
+# show_overlay show_panel show_scope_name single_selection slurp_find_string slurp_replace_string soft_redo soft_undo
+# sort_lines split_selection_into_lines swap_line_down swap_line_up switch_file toggle_comment toggle_full_screen
+# toggle_overwrite toggle_record_macro toggle_side_bar transpose undo unindent
 
 # >>> view.extract_completions( 'updateS' )
 # ['updateSize', 'updateStepInformation']
@@ -125,6 +36,38 @@ from functools import reduce
 
 # >>> view.indexed_symbols()
 # [((625, 634), 'Ellipsoid'), ((747, 758), 'constructor'), ((1463, 1473), 'updateSize'), ((2161, 2178), 'getSizeFromRatios'), ((2523, 2532), 'setRatios'), ((2648, 2669), 'updateStepInformation'), ((3703, 3712), 'intersect'), ((5097, 5113), 'getDisplacedArea'), ((5706, 5724), 'getDisplacedVolume'), ((6200, 6205), 'reset'), ((6462, 6479), 'getEllipsoidShape'), ((6729, 6749), 'getEllipsoidVertices'), ((7216, 7225), 'getVolume')]
+
+# for temp files:
+# def get_cache_directory():
+#   path = os.path.join(sublime.cache_path(), 'phet')
+#   if not os.path.exists(path):
+#     os.mkdir(path)
+#   return path
+
+# sublime.log_commands(True)
+# sublime.log_commands(False)
+
+goto_region_dict = {}
+
+def clear_goto_region(id):
+  goto_region_dict[id] = []
+
+def push_goto_region(id, from_region, to_file, to):
+  if id not in goto_region_dict:
+    clear_goto_region(id)
+  goto_region_dict[id].append({'from_region': from_region, 'to_file': to_file, 'to': to})
+
+def lookup_goto_region(id, point):
+  if id not in goto_region_dict:
+    return None
+  for entry in goto_region_dict[id]:
+    from_region = entry['from_region']
+    if point > from_region.begin() and point < from_region.end():
+      return entry
+
+load_actions = {}
+
+
 
 number_names = [ 'i', 'j', 'n', 'x', 'y', 'z', 'width', 'height', 'index', 'dt' ]
 node_names = [ 'node', 'content', 'listParent' ]
@@ -196,13 +139,56 @@ def union_regions(regions):
   """Returns the union of sublime.Region instances (using their term 'cover')"""
   return reduce((lambda maybe,region: region if maybe == None else maybe.cover(region)),regions,None)
 
+def expand_region(region, str, num_lines):
+  begin = region.begin()
+  end = region.end()
+
+  # TODO: Windows?
+
+  # expand to the line
+  begin = str.rfind('\n', 0, begin) + 1
+  end = str.find('\n', end, len(str))
+
+  for x in range(num_lines):
+    if begin > 1:
+      begin = str.rfind('\n', 0, begin - 2 ) + 1
+    if end < len(str) - 1 and end != -1:
+      end = str.find('\n', end + 1, len(str))
+
+  if begin == -1:
+    begin = 0
+  if end == -1:
+    end = len(str)
+
+  return sublime.Region(begin, end)
+
+def collapse_expanded_regions(regions, str, num_lines):
+  current = None
+  result = []
+
+  for region in regions:
+    expanded_region = expand_region(region, str, num_lines)
+    if current:
+      if current['expanded_region'].intersects(expanded_region):
+        current['expanded_region'] = current['expanded_region'].cover(expanded_region)
+        current['regions'].append(region)
+      else:
+        result.append(current)
+        current = {'expanded_region': expanded_region, 'regions': [region]}
+    else:
+      current = {'expanded_region': expanded_region, 'regions': [region]}
+
+  if current:
+    result.append(current)
+  return result
+
 def is_node_js(view):
   """Whether we're handling things in a node.js or module context"""
   return (not view.find('\n\'use strict\';\n', 0).empty()) and (not view.find(' = require\\( \'', 0).empty())
 
 def load_file(path):
   """Loads a file as a string"""
-  with open(path, 'r') as content_file:
+  with open(path, 'r', encoding='utf8') as content_file:
     content = content_file.read()
   return content
 
@@ -348,7 +334,50 @@ def try_import_name(name, view, edit):
   else:
     view.window().status_message('contains import for: ' + name)
 
+def show_lint_output(output):
+  lines = output.splitlines()
+  output_view = sublime.active_window().create_output_panel('phetlint')
+  clear_goto_region(output_view.id())
 
+  current_file = None
+  for line in lines:
+    match = re.search('^ +([0-9]+):([0-9]+)', line )
+    if len(line) > 0 and line[0] == '/':
+      current_file = line
+      output_view.run_command('phet_internal_append_result', {'str': line + '\n'})
+    elif match:
+      row = int(match.group(1)) - 1
+      col = int(match.group(2)) - 1
+      output_view.run_command('phet_internal_append_search_result_row_col', {'str': line, 'to_file': current_file, 'row': row, 'col': col})
+      output_view.run_command('phet_internal_append_result', {'str': '\n'})
+    else:
+      output_view.run_command('phet_internal_append_result', {'str': line + '\n'})
+
+  sublime.active_window().run_command('show_panel', {"panel": "output.phetlint"})
+
+abort_search = False
+
+def threaded_for_js_files(repos, git_root, on_path, on_done):
+  def thread_target(repos, git_root, on_path, on_done):
+    global abort_search
+    for repo in repos:
+      # TODO: git root should be a setting? or get from the active window instead
+      repo_path = os.path.join(git_root, repo + '/js')
+      for root, dirs, files in os.walk(repo_path):
+        is_phet_io_dir = 'js/phet-io' in root
+        for name in files:
+          if '-baseline.js' in name or '-overrides.js' in name or '-types.js' in name:
+            continue
+          path = os.path.join(root, name)
+          if abort_search:
+            abort_search = True
+            return
+          on_path(path)
+    on_done()
+  thread = threading.Thread(target=thread_target, args=(repos, git_root, on_path, on_done))
+  thread.start()
+  # returns immediately after the thread starts
+  return thread
 
 
 class PhetInternalImportCommand(sublime_plugin.TextCommand):
@@ -361,21 +390,162 @@ class PhetInternalGoToRepoCommand(sublime_plugin.TextCommand):
     view = self.view
     view.window().open_file(get_git_root(view) + '/' + repo + '/README.md', sublime.TRANSIENT)
 
+class PhetInternalAppendResult(sublime_plugin.TextCommand):
+  def run(self, edit, str):
+    view = self.view
+    view.set_read_only(False)
+    view.insert(edit, view.size(), str)
+    view.set_read_only(True)
 
+class PhetInternalAppendSearchResultRegion(sublime_plugin.TextCommand):
+  def run(self, edit, str, to_file, start_index, end_index):
+    view = self.view
+    view.set_read_only(False)
+    start = view.size()
+    view.insert(edit, start, str)
+    end = view.size()
+    find_region = sublime.Region(start, end)
 
+    view.add_regions('phet_find_result', view.get_regions('phet_find_result') + [find_region], 'string')
+
+    view.set_read_only(True)
+    push_goto_region(view.id(), find_region, to_file, sublime.Region(start_index, end_index))
+
+class PhetInternalAppendSearchResultRowCol(sublime_plugin.TextCommand):
+  def run(self, edit, str, to_file, row, col):
+    view = self.view
+    view.set_read_only(False)
+    start = view.size()
+    view.insert(edit, start, str)
+    end = view.size()
+    find_region = sublime.Region(start, end)
+
+    # TODO: set our own sytax and colors, but for now just borrow this
+    # view.add_regions('phet_find_result', view.get_regions('phet_find_result') + [find_region], 'string', flags=(sublime.DRAW_NO_FILL))
+    view.add_regions('phet_find_result', view.get_regions('phet_find_result') + [find_region], 'string')
+    # view.add_regions('phet_find_result', view.get_regions('phet_find_result') + [find_region], 'constant')
+    # view.add_regions('phet_find_result', view.get_regions('phet_find_result') + [find_region], 'keyword')
+    view.set_read_only(True)
+    push_goto_region(view.id(), find_region, to_file, (row, col))
+
+class PhetInternalSearch(sublime_plugin.TextCommand):
+  def run(self, edit, pattern):
+    view = self.view
+
+    output_view = sublime.active_window().create_output_panel('phetfind')
+    output_view.set_syntax_file('Packages/phet-plugin/phet-find-results.tmLanguage')
+    clear_goto_region(output_view.id())
+
+    output_view.run_command('phet_internal_append_result', {'str': 'Searching...\n\n'})
+    sublime.active_window().run_command('show_panel', {"panel": "output.phetfind"})
+
+    expr = re.compile(pattern)
+
+    def regions_from_string(str):
+      regions = []
+      for match in expr.finditer(str):
+        regions.append(sublime.Region(match.start(), match.end()))
+      return regions
+
+    def on_path(path):
+      file_string = load_file(path)
+      regions = regions_from_string(file_string)
+      if regions:
+        # TODO windows
+        display_name = path[path.rfind('/')+1:]
+        if '.js' in display_name:
+          display_name = display_name[:display_name.find('.js')]
+
+        output_view.run_command('phet_internal_append_result', {'str': display_name + ' ' + path + ':\n\n'})
+
+        expanded_region_data = collapse_expanded_regions(regions, file_string, 2)
+
+        for entry in expanded_region_data:
+          expanded_region = entry['expanded_region']
+          sub_regions = entry['regions']
+
+          if sub_regions[0].begin() > expanded_region.begin():
+            output_view.run_command('phet_internal_append_result', {'str': file_string[expanded_region.begin():sub_regions[0].begin()]})
+          for i in range(len(sub_regions)):
+            sub_region = sub_regions[i]
+            output_view.run_command('phet_internal_append_search_result_region', {'str': file_string[sub_region.begin():sub_region.end()], 'to_file': path, 'start_index': sub_region.begin(), 'end_index': sub_region.end()})
+            if i + 1 < len(sub_regions):
+              next_sub_region = sub_regions[i + 1]
+              if sub_region.end() < next_sub_region.begin():
+                output_view.run_command('phet_internal_append_result', {'str': file_string[sub_region.end():next_sub_region.begin()]})
+          last_sub_region = sub_regions[len(sub_regions) - 1]
+          if last_sub_region.end() < expanded_region.end():
+            output_view.run_command('phet_internal_append_result', {'str': file_string[last_sub_region.end():expanded_region.end()]})
+
+          output_view.run_command('phet_internal_append_result', {'str': '\n\n'})
+
+    def on_done():
+      output_view.run_command('phet_internal_append_result', {'str': 'Done\n'})
+
+    repos = get_active_repos(view)
+    preferred_repo = get_repo(view)
+    repos.remove(preferred_repo)
+    repos.insert(0, preferred_repo)
+
+    threaded_for_js_files(repos, get_git_root(view), on_path, on_done)
 
 
 class PhetDevCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     view = self.view
-    print('test')
+    view.run_command('phet_internal_search', {'pattern': 'constraintBounds'})
+
+class PhetFindCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+
+    if len(view.sel()):
+      view.run_command('phet_internal_search', {'pattern': re.escape(view.substr(view.word(view.sel()[0])))})
+
+class PhetFindRegexCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+
+    def on_done(str):
+      view.run_command('phet_internal_search', {'pattern': str})
+
+    view.window().show_input_panel('Find regex', '', on_done, None, None)
+
+class PhetShowFindCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+
+    sublime.active_window().run_command('show_panel', {"panel": "output.phetfind"})
+
+class PhetWipeFindCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+
+    output_view = sublime.active_window().create_output_panel('phetfind')
+    output_view.erase(edit, sublime.Region(0,output_view.size()))
+    clear_goto_region(output_view.id())
+
+class PhetAbortFindCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+
+    abort_search = True;
+
+    output_view = sublime.active_window().create_output_panel('phetfind')
+    output_view.erase(edit, sublime.Region(0,output_view.size()))
+    clear_goto_region(output_view.id())
 
 class PhetLintCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     view = self.view
     repo = get_repo(view)
     if repo:
-      execute_and_show(view, 'grunt', ['lint', '--no-color'], get_git_root(view) + '/' + repo)
+      execute('grunt', ['lint', '--no-color'], get_git_root(view) + '/' + repo, show_lint_output)
+
+class PhetLintEverythingCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    view = self.view
+    execute('grunt', ['lint-everything', '--no-color'], get_git_root(view) + '/perennial', show_lint_output)
 
 class PhetUpdateCommand(sublime_plugin.TextCommand):
   def run(self, edit):
@@ -499,3 +669,37 @@ class PhetGoToRepoCommand(sublime_plugin.TextCommand):
       if index >= 0:
         view.run_command('phet_internal_go_to_repo', {"repo": active_repos[index]})
     view.window().show_quick_panel(active_repos, on_done)
+
+class PhetEventListener(sublime_plugin.EventListener):
+  def on_load(self, view):
+    id = view.id()
+    if id in load_actions:
+      load_actions[id]()
+      del load_actions[id]
+  def on_selection_modified_async(self, view):
+    for region in view.sel():
+      entry = lookup_goto_region(view.id(), region.begin())
+      if entry:
+        new_view = sublime.active_window().open_file(entry['to_file'], sublime.TRANSIENT)
+        def on_loaded():
+          to = entry['to']
+          if isinstance(to, sublime.Region):
+            to_region = to
+          else:
+            point = new_view.text_point(to[0], to[1])
+            to_region = sublime.Region(point, point)
+          new_view.sel().clear()
+          new_view.sel().add(to_region)
+          if new_view.window():
+            new_view.window().focus_view(new_view)
+            new_view.window().run_command('focus_neighboring_group')
+          sublime.active_window().focus_view(new_view)
+          sublime.set_timeout(lambda: new_view.window().focus_view(new_view), 10)
+          new_view.show_at_center(to_region)
+        if new_view.is_loading():
+          load_actions[new_view.id()] = on_loaded
+        else:
+          on_loaded()
+
+
+
