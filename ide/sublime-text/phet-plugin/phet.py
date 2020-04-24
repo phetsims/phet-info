@@ -55,6 +55,9 @@ from functools import reduce
 # sublime.log_commands(True)
 # sublime.log_commands(False)
 
+linesep = os.linesep
+pathsep = os.path.sep
+
 goto_region_dict = {}
 
 def clear_goto_region(id):
@@ -132,12 +135,19 @@ def get_git_root(view):
 def get_relative_to_root(view, path):
   return os.path.relpath(path, get_git_root(view))
 
+def path_split(path):
+  splits = os.path.split(path)
+  if splits[0]:
+    return path_split(splits[0]) + [splits[1]]
+  else:
+    return [splits[1]]
+
 def get_repo(view):
   relative_path = get_relative_to_root(view, view.file_name())
   if relative_path[0] == '.':
     return None
   else:
-    return relative_path.split('/')[0]
+    return path_split(relative_path)[0]
 
 def count_up_directory(path):
   """Returns a count of ../, for determining what the best path is to import"""
@@ -501,7 +511,8 @@ class PhetInternalSearch(sublime_plugin.TextCommand):
 class PhetDevCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     view = self.view
-    view.run_command('phet_internal_search', {'pattern': 'constraintBounds'})
+
+    print(get_repo(view))
 
 class PhetFindCommand(sublime_plugin.TextCommand):
   def run(self, edit):
