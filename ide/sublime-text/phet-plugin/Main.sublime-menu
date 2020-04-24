@@ -1,0 +1,49 @@
+[
+  {
+    "id": "tools",
+    "children": [
+      {
+        "caption": "PhET",
+        "children": [
+          {
+            "caption": "Find",
+            "children": [
+              { "caption": "Find", "command": "phet_find" },
+              { "caption": "Find Regex", "command": "phet_find_regex" },
+              { "caption": "Show Find", "command": "phet_show_find" },
+              { "caption": "Wipe Find", "command": "phet_wipe_find" },
+              { "caption": "Abort Find", "command": "phet_abort_find" }
+            ]
+          },
+          {
+            "caption": "Code",
+            "children": [
+              { "caption": "Import", "command": "phet_import" },
+              { "caption": "Sort Imports", "command": "phet_sort_imports" },
+              { "caption": "Document Function", "command": "phet_document_function" },
+              { "caption": "Remove Unused Imports", "command": "phet_remove_unused_imports" },
+              { "caption": "Clean", "command": "phet_clean" },
+            ]
+          },
+          {
+            "caption": "Navigation",
+            "children": [
+              { "caption": "Open Phetmarks", "command": "phet_open_phetmarks" },
+              { "caption": "Open Issues", "command": "phet_open_issues" },
+              { "caption": "Open GitHub", "command": "phet_open_github" },
+              { "caption": "Open Sim", "command": "phet_open_sim" },
+              { "caption": "Open Built Sim", "command": "phet_open_built_sim" },
+              { "caption": "Go to repo", "command": "phet_go_to_repo" },
+            ]
+          },
+          { "caption": "-" },
+          { "caption": "Grunt", "command": "phet_grunt" },
+          { "caption": "Update", "command": "phet_update" },
+          { "caption": "-" },
+          { "caption": "Lint", "command": "phet_lint" },
+          { "caption": "Lint Everything", "command": "phet_lint_everything" }
+        ]
+      }
+    ]
+  }
+]
