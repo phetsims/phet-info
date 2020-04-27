@@ -92,6 +92,7 @@ Other:
     * `main.js` file
     * Screens/Views/Models? 
     * Namespace file
+  - [ ] change entry in responsible_dev.md
   - [ ] Make sure to update the title in the `*en.json` string file and update its usage in the main js file
   - [ ] Run `grunt modulify`
   - [ ] update usages of the Namespace file
