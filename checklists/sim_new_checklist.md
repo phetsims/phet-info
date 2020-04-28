@@ -31,7 +31,6 @@
 - [ ] **Post-publication items**
   - [ ] Share new features, design challenges, and treats with group!
   - [ ] Email announcement
-  - [ ] Add to Edmodo
   - [ ] Deliver to [Legends of Learning](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=0)
   - [ ] Sim primer (create issue, publish ideally within 1 month of live sim)
   - [ ] Hold postmortem if applicable (Date: //)
