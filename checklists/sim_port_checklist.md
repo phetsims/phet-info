@@ -24,6 +24,7 @@
 - [ ] **Pre-publication items** 
   - [ ] Auxilary screenshots (up to 3 additional)
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
+  - [ ] Accessibility features
   - [ ] Email announcement language
   - [ ] Teacher Guide created, uploaded, and added to sim design folder
   - [ ] Sim primer draft
@@ -33,8 +34,6 @@
   - [ ] Share new features, design challenges, and treats with group!
   - [ ] Review legacy gold star activities, copy over if appropriate
   - [ ] Email announcement language
-  - [ ] Add to Edmodo
-  - [ ] Add to [Gooru](http://gooru.org/PhET/content/resources), remove legacy version (signed in as phethelp)
   - [ ] Deliver to [Legends of Learning](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=0)
   - [ ] Sim primer (create issue, publish ideally within 1 month of live sim)
   - [ ] Hold postmortem if applicable (Date: //) 
