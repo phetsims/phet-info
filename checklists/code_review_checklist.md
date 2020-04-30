@@ -60,15 +60,13 @@ such as primary model and view classes that exist for the duration of the sim.
 	- [ ] AXON: `Property.link` is accompanied by `Property.unlink`.
 	- [ ] AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
 	- [ ] AXON: Creation of `Multilink` is accompanied by `dispose`.
-	- [ ] AXON: `Events.on` is accompanied by `Events.off`.
 	- [ ] AXON: `Emitter.addListener` is accompanied by `Emitter.removeListener`.
-	- [ ] SCENERY: `Node.on` is accompanied by `Node.off`
 	- [ ] TANDEM: PhET-iO instrumented `PhetioObject` instances should be disposed.
 - [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls `this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly match the filename.
 
 ## **Performance**
 
-- [ ] Play with sim, identify any obvious performance issues. Examples: animation that slows down with large numbers of objects; animation that pauses or "hitches" during garbage collection. 
+- [ ] Play with sim, identify any obvious performance issues. Examples: animation that slows down with large numbers of objects; animation that pauses or "hitches" during garbage collection.
 - [ ] If the sim uses WebGL, does it have a fallback? Does the fallback perform reasonably well? (run with query parameter `webgl=false`)
 
 ## **Usability**
@@ -81,15 +79,15 @@ such as primary model and view classes that exist for the duration of the sim.
 - [ ] Are there any strings that are not internationalized, and does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter `stringTest=X`. You should see nothing but 'X' strings.)
 - [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter `stringTest=double`)
 - [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter `stringTest=long`)
-- [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter 
-`stringTest=xss`? This test passes if sim does not redirect, OK if sim crashes or fails to fully start. Only test on one 
-desktop platform.  For PhET-iO sims, additionally test `?stringTest=xss` in Studio to make sure i18n strings didn't leak 
+- [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter
+`stringTest=xss`? This test passes if sim does not redirect, OK if sim crashes or fails to fully start. Only test on one
+desktop platform.  For PhET-iO sims, additionally test `?stringTest=xss` in Studio to make sure i18n strings didn't leak
 to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
 - [ ] Use named placeholders (e.g. `"{{value}} {{units}}"`) instead of numbered placeholders (e.g. `"{0} {1}"`).
 - [ ] Make sure the string keys are all perfect, because they are difficult to change after 1.0.0 is published. Guidelines for string keys are:
-  
+
   (1) Strings keys should generally match their values. E.g.:
-  
+
   ```js
   "helloWorld": {
     value: "Hello World!"
@@ -98,22 +96,22 @@ to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
     value: "Quadratic Terms"
   }
   ```
-  
+
   (2) If a string key would be exceptionally long, use a key name that is an abbreviated form of the string value, or that captures the purpose/essence of the value. E.g.:
-  
+
   ```js
   // key is abbreviated
   "iWentToTheStore": {
     value: "I went to the store to get milk, eggs, butter, and sugar."
   },
-  
+
   // key is based on purpose
   "describeTheScreen": {
     value: "The Play Area is a small room. The Control Panel has buttons, a checkbox, and radio buttons to change conditions in the room."
   }
   ```
   (3) If string key names would collide, use your judgment to disambiguate. E.g.:
-  
+
   ```js
   "simplifyTitle": {
      value: "Simplify!"
@@ -122,17 +120,17 @@ to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
      value: "simplify"
   }
   ```
-  
+
   (4) String keys for screen names should have the general form `"screen.{{screenName}}"`. E.g.:
-  
+
   ```js
     "screen.explore": {
       "value": "Explore"
     },
   ```
-  
+
   (5) String patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) should use keys that are unlikely to conflict with strings that might be needed in the future.  For example, for `"{{price}}"` consider using key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
-- [ ] If the sim was already released, make sure none of the original string keys have changed. If they have changed, make sure any changes have a good reason and have been discussed with @jbphet.  
+- [ ] If the sim was already released, make sure none of the original string keys have changed. If they have changed, make sure any changes have a good reason and have been discussed with @jbphet.
 
 ## **Repository Structure**
 
@@ -165,12 +163,12 @@ For a sim repository named “my-repo”, the general structure should look like
         README.md
   ```
   *Any images used in model.md or implementation-notes.md should be added here. Images specific to aiding with documentation do not need their own license.
-  
-- [ ] Verify that the same image file is not present in both images/ and mipmaps/. If you need a mipmap, use it for all occurences of the image.  
+
+- [ ] Verify that the same image file is not present in both images/ and mipmaps/. If you need a mipmap, use it for all occurences of the image.
 
 - [ ] Is the js/ directory properly structured?
   All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims, where the subdirectory matches the repo name).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Lab”, the general directory structure should look like this:
-  
+
   ```js
      my-repo/
         js/
@@ -202,15 +200,15 @@ For a sim repository named “my-repo”, the general structure should look like
 
 ## **Coding Conventions**
 
-This section deals with PhET coding conventions. You do not need to exhaustively check every item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET standards. 
+This section deals with PhET coding conventions. You do not need to exhaustively check every item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET standards.
 
 - [ ] Is the code formatted according to PhET conventions? See [phet-idea-code-style.xml](https://github.com/phetsims/phet-info/blob/master/ide/idea/phet-idea-codestyle.xml) for IntelliJ IDEA code style.
 - [ ] Names (types, variables, properties, Properties, functions,...) should be sufficiently descriptive and specific, and should avoid non-standard abbreviations. For example:
-  
+
   ```js
   const numPart = 100;            // incorrect
   const numberOfParticles = 100;  // correct
-  
+
   const width = 150;              // incorrect
   const beakerWidth = 150;        // correct
   ```
@@ -220,10 +218,10 @@ This section deals with PhET coding conventions. You do not need to exhaustively
 - [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default value.  This improves readability at the call site, especially when the number of parameters is large.  It also eliminates order dependency that is required by using parameters.
 
   For example, this constructor uses parameters for everything. At the call site, the semantics of the arguments are difficult to determine without consulting the constructor.
-  
+
   ```js
   class BallNode extends Node {
-  
+
     /**
      * @param {Ball} ball - model element
      * @param {Property.<boolean>} visibleProperty - is the ball visible?
@@ -235,32 +233,32 @@ This section deals with PhET coding conventions. You do not need to exhaustively
       // ...
     }
   }
-  
+
   // Call site
   const ballNode = new BallNode( ball, visibleProperty, 'blue', 'black', 2 );
   ```
   Here’s the same constructor with an appropriate use of options. The call site is easier  to read, and the order of options is flexible.
-  
+
   ```js
   class BallNode extends Node {
-  
+
     /**
      * @param {Ball} ball - model element
      * @param {Property.<boolean>} visibleProperty - is the ball visible?
      * @param {Object} [options]
      */
     constructor( ball, visibleProperty, options ) {
-  
+
       options = merge( {
         fill: 'white',  // {Color|string} fill color
         stroke: 'black', // {Color|string} stroke color
         lineWidth: 1 // {number} width of the stroke
       }, options );
-  
+
       // ...
     }
   }
-  
+
   // Call site
   const ballNode = new BallNode( ball, visibleProperty, {
     fill: 'blue',
@@ -274,14 +272,14 @@ This section deals with PhET coding conventions. You do not need to exhaustively
   Example:
   ```js
   class ParticleBoxNode extends Node {
-  
+
     /**
      * @param {ParticleBox} particleBox - model element
      * @param {Property.<boolean>} visibleProperty - are the box and its contents visible?
      * @param {Object} [options]
      */
     constructor( particleBox, visibleProperty, options ) {
-  
+
       options = merge( {
         fill: 'white',  // {Color|string} fill color
         stroke: 'black', // {Color|string} stroke color
@@ -292,20 +290,20 @@ This section deals with PhET coding conventions. You do not need to exhaustively
           lineWidth: 0.5
         },
       }, options );
-  
+
       // add particle
       this.addChild( new ParticleNode( particleBox.particle, options.particleNodeOptions ) );
       ...
     }
   }
   ```
-  
+
   A possible exception to this guideline is when the constructor API is improved by hiding the implementation details, i.e. not revealing that a sub-component exists. In that case, it may make sense to use new top-level options.  This is left to developer and reviewer discretion.
-  
+
   For more information on the history and thought process around the "nested options" pattern, please see https://github.com/phetsims/tasks/issues/730.
 
 - [ ] If references are needed to the enclosing object, such as for a closure, `self` should be defined, but it should only be used in closures.  The `self` variable should not be defined unless it is needed in a closure.  Example:
-  
+
   ```js
   const self = this;
   someProperty.link( function(){
@@ -325,10 +323,10 @@ not be used in new code.
   ```js
   // avoid
   this[ isFaceSmile ? 'smile' : 'frown' ]();
-  
+
   // OK
   isFaceSmile ? this.smile() : this.frown();
-  
+
   // OK
   if ( isFaceSmile ) {
     this.smile();
@@ -348,9 +346,9 @@ not be used in new code.
   ( foo && !(bar && fooBar)) && nowIAmConfused();
   this.fill = ( foo && bar ) ? 'red' : 'blue';
   ```
-  
+
   If the expression is only one item, the parentheses can be omitted. This is the most common use case.
-  
+
   ```js
   assert && assert( happy, 'Why aren\'t you happy?' );
   happy && smile();
@@ -368,10 +366,10 @@ not be used in new code.
 - [ ] Assertions should be used appropriately and consistently. Type checking should not just be done in code comments. Use `Array.isArray` to type check an array.
 
 - [ ] If you need to namespace an inner class, use `{{namespace}}.register`, and include a comment about why the inner class needs to be namespaced. Use the form `'{{outerClassname}}.{{innerClassname}}'` for the key. For example:
-  
+
   ```js
   const myNamespace = require(...);
-  
+
   class SlotMachineNode extends Node {
     constructor( ... ) {
       this.leverNode = new LeverNode(...);
@@ -379,20 +377,20 @@ not be used in new code.
     }
    ...
   }
-  
+
   myNamespace.register( 'SlotMachineNode', SlotMachineNode );
-  
-  class LeverNode extends Node { 
+
+  class LeverNode extends Node {
    ...
   }
-  
+
   // It was useful to be able to instantiate this in the console for testing, and we may need to do so in the future.
   myNamespace.register( 'SlotMachineNode.LeverNode', LeverNode );
-  
+
   return SlotMachineNode;
   ```
-  
-- [ ] Putting unused parameters in callbacks is up to developer discretion, as long they are correct wrt to the actual callback signature.  
+
+- [ ] Putting unused parameters in callbacks is up to developer discretion, as long they are correct wrt to the actual callback signature.
 
 For example, both of these are acceptable:
 
@@ -400,13 +398,13 @@ For example, both of these are acceptable:
 Property.multilink(
   [ styleProperty, activeProperty, colorProperty ],
   ( style, active, color ) => {
-    // some algorithm that uses style and active 
+    // some algorithm that uses style and active
 } );
 
 Property.multilink(
   [ styleProperty, activeProperty, colorProperty ],
   ( style, active ) => {
-    // some algorithm that uses style and active 
+    // some algorithm that uses style and active
 } );
 ```
 
@@ -416,13 +414,13 @@ This is not acceptable, because the 3rd parameter is incorrect.
 Property.multilink(
   [ styleProperty, activeProperty, colorProperty ],
   ( style, active, lineWidth ) => {
-    // some algorithm that uses style and active 
+    // some algorithm that uses style and active
 } );
 ```
 
 ### Documentation
 
-This section deals with PhET documention conventions. You do not need to exhaustively check every item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET standards. 
+This section deals with PhET documention conventions. You do not need to exhaustively check every item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET standards.
 
 - [ ] All classes, methods and properties are documented.
 
@@ -432,34 +430,34 @@ This section deals with PhET documention conventions. You do not need to exhaust
 
 - [ ] Differentiate between `Property` and "property" in comments. They are different things. `Property` is a type in AXON; property is any value associated with a JavaScript object. Often "field" can be used in exchange for "property" which can help with clarity.
 
-- [ ] Classes that mix in traits or mixin should use the `@mixes MyType` annotation. 
+- [ ] Classes that mix in traits or mixin should use the `@mixes MyType` annotation.
 
 - [ ] Line comments should generally be preceded by a blank line.  For example:
 
   ```js
   // Randomly choose an existing crystal to possibly bond to
   const crystal = this.crystals.get( _.random( this.crystals.length - 1 ) );
-  
+
   // Find a good configuration to have the particles move toward
   const targetConfiguration = this.getTargetConfiguration( crystal );
   ```
-  
+
 - [ ] When documenting conditionals (if/else statements), follow these guidlines:
 
     1. Comments above the first `if` in a conditional should be about the entire conditional, not just the if block.
     2. Comments should not break up sections of the conditional.
     3. If a comment is needed to describe a single block of the conditional, then add that comment just inside the block (no space between the `if`/`else if`/`else` and the comment), with a space below it as to not be confused with a comment about logic below.
-    
+
     ```js
-    
+
     // Comment about the reason to split on peppers were pickled.
     if( peterPiperPickedAJarOfPickledPeppers ){
       // if we want to explain what this `if` statement is about
-      
+
       peterAlsoHasBrine();
     }
     else {
-      
+
       // documentation about why we have no peppers. This is about the next line of code, and not the "else as a whole block."
       peterHasNoPeppers();
     }
@@ -479,7 +477,7 @@ This section deals with PhET documention conventions. You do not need to exhaust
    * The PhetDeveloper is responsible for creating code for simulations and documenting their code thoroughly.
    */
   class PhetDeveloper {
-  
+
     /**
      * @param {string} name - full name
      * @param {number} age - age, in years
@@ -487,12 +485,12 @@ This section deals with PhET documention conventions. You do not need to exhaust
      * @param {function} callback - called immediate after coffee is consumed
      * @param {Property.<number>} hoursProperty - cumulative hours worked
      * @param {string[]} friendNames - names of friends
-     * @param {Object} [options]  
+     * @param {Object} [options]
      */
     constructor( name, age, isEmployee, callback, hoursProperty, friendNames, options ) {
       ...
     }
-    
+
     ...
   }
   ```
@@ -517,23 +515,23 @@ This section deals with PhET conventions for type expressions. You do not need t
   ```js
   // @public {GameState} the current state of the game
   this.gameState = this.computeGameState();
-  
+
   // @public (read-only) the width of the container
   this.containerWidth = 150;
-  
+
   // @private the checkbox used to show particles
   this.particlesVisibleCheckbox = new Checkbox(...);
   ```
 
 - [ ] In common code repositories all options and fields should have type expressions, regardless of  their visibility, and regardless whether their type is obvious from the context. If the same examples from above appeared in common code:
-  
+
   ```js
   // @public {GameState} the current state of the game
   this.gameState = this.computeGameState();
-  
+
   // @public (read-only) {number} the width of the container
   this.containerWidth = 150;
-  
+
   // @private {Checkbox} the checkbox used to show particles
   this.particlesVisibleCheckbox = new Checkbox(...);
   ```
@@ -552,7 +550,7 @@ This section deals with PhET conventions for type expressions. You do not need t
      }
     }
   ```
-  
+
 - [ ] Type expressions for functions have a variety of possibilities, increasing in complexity depending on the case. In general note that `{function}` is not enough information. Here are some better options:
 
     1. The most basic option it to use Google Closure Type syntax, for more info see https://github.com/google/closure-compiler/wiki/Types-in-the-Closure-Type-System. This specifies the param/return types, but nothing more. Here are some examples:
@@ -560,7 +558,7 @@ This section deals with PhET conventions for type expressions. You do not need t
         * `@param {function(number)} giveMeNumberAndReturnNothing`
         * `@param {function(number, number):Vector2} getVector2`
         * `@param {function(new:Node)} createNode - a function that takes the Node constructor`
-    2. When needing to be a bit more specific, add a name to parameters of the function. Sometimes this is all that is needed for clarity on what the param does: 
+    2. When needing to be a bit more specific, add a name to parameters of the function. Sometimes this is all that is needed for clarity on what the param does:
         * `@param {function(model:MyModel, length:number, name:string): Node} getLengthNode`
         * `@param {function(aSelfExplanatoryNameForAString:string): Node} getStringNode`
     3. If (2) isn't enough, use English to explain the parameters and return values. This is easy because they are named, and can be easily mentioned:
@@ -574,12 +572,12 @@ This section deals with PhET conventions for type expressions. You do not need t
          * @returns {number}
          */
         /**
-         * @param {mySpecialCallback} callback  
+         * @param {mySpecialCallback} callback
         */
         x = function( callback) { callback( 'still chocolate' ) };
         ```
-       
-- [ ] Type expressions for anonymous Objects have a variety of possibilities, increasing in complexity depending on the case. 
+
+- [ ] Type expressions for anonymous Objects have a variety of possibilities, increasing in complexity depending on the case.
     1. When the documentation is close by, then {Object} is still acceptable. This mainly applies to options and similar patterns:
        * `@param {Object} [options] // this is great because of the extend call 5 lines down`
     2. When using an `Object` with specific properties, name them and their types like so:
@@ -596,7 +594,7 @@ This section deals with PhET conventions for type expressions. You do not need t
         * `{Object.<string, number>}` Where keys are strings, and values are numbers.
         *  `{Object.<phetioID:string, count:number>}` - naming each of these can help identify them too. Feel free to explain in English after the type expression if needed.
     5. If things are too complicated for the above cases, use a `*Def.js` file (especially is used in more than one file), or a `@typedef` declaration right above the jsdoc that uses the typedef.
-      
+
 - [ ] Look for cases where the use of type expressions involving Property subclasses are incorrect.  Because of the structure of the `Property` class hierarchy, specifying type-specific Properties (`{BooleanProperty}`, `{NumberProperty}`,...) may be incorrect, because it precludes values of type `{DerivedProperty}` and `{DynamicProperty}`.   Similarly, use of `{DerivedProperty}` and `{DynamicProperty}` precludes values of (e.g.) `{BooleanProperty}`. Especially in common code, using `{Property,<TYPE>}` is typically correct, unless some specific feature of the `Property` subclass is required.  For example, `{Property.<boolean>}` instead of `{BooleanProperty}`.
 
 #### Visibility Annotations
@@ -625,7 +623,7 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
   ```
 
 - [ ] For Line comments, the annotation can appear like this:
-  
+
   ```js
   // @public {function(listener:function)} - Adds a listener
   addListener: function( listener ) { /*...*/ }
@@ -683,15 +681,15 @@ This section may be omitted if the sim has not been instrumented for PhET-iO.
 This could be an extensive bullet. At the very least, be sure to know what amount of instrumentation this sim
  supports. Describing this further goes beyond the scope of this document.
 - [ ] PhET-iO instantiates different objects and wires up listeners that are not present in the PhET-branded simulation.
-  It needs to be tested separately for memory leaks.  To help isolate the nature of the memory leak, this test should 
-  be run separately from the PhET brand memory leak test.  Test with a colorized Data Stream, and Studio (easily 
+  It needs to be tested separately for memory leaks.  To help isolate the nature of the memory leak, this test should
+  be run separately from the PhET brand memory leak test.  Test with a colorized Data Stream, and Studio (easily
   accessed from phetmarks). Compare to testing results done by the responsible developer and previous releases.
 - [ ] Make sure unused `PhetioObject` instances are disposed, which unregisters their tandems.
-- [ ] Make sure JOIST `dt` values are used instead of `Date.now()` or other Date functions. Perhaps try 
-`phet.joist.elapsedTime`. Though this has already been mentioned, it is necessary for reproducible playback via input 
+- [ ] Make sure JOIST `dt` values are used instead of `Date.now()` or other Date functions. Perhaps try
+`phet.joist.elapsedTime`. Though this has already been mentioned, it is necessary for reproducible playback via input
 events and deserves a comment in this PhET-iO section.
 - [ ] Are random numbers using `phet.joist.random`, and all doing so after modules are declared (non-statically)?  For
 example, the following methods (and perhaps others) should not be used: `Math.random`, `_.shuffle`, `_.sample`, `_.random`.
 This also deserves re-iteration due to its effect on record/playback for PhET-iO.
-- [ ] Like JSON, keys for `undefined` values are omitted when serializing objects across frames. Consider this when 
+- [ ] Like JSON, keys for `undefined` values are omitted when serializing objects across frames. Consider this when
 determining whether `toStateObject` should use `null` or `undefined` values.
