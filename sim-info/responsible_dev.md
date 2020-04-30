@@ -29,7 +29,7 @@
 | Circuit Construction Kit: Black Box Study | @samreid | |
 | Circuit Constructor Kit: DC | @samreid | ✓ |
 | Circuit Constructor Kit: DC - Virtual Lab| @samreid | ✓ |
-| Collision Lab | @veillette | ✓ |
+| Collision Lab | @veillette |   |
 | Color Vision | @chrisklus | ✓ |
 | Concentration |  @pixelzoom  | ✓ |
 | Coulomb's Law | @zepumph | ✓ |
