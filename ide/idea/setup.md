@@ -8,7 +8,7 @@
 2. Run `npm install` (or if already existing, `npm prune` and `npm update`) under `chipper/` and `perennial/`
 3. Make a new project in the same directory where you cloned all git repos. When asked, create a "Static Web" module
     for the same directory (if in Intellij IDEA).
-4. Add you github credentials in `File > Settings > Version Control > Github`, and test your credentials with the `Test` 
+4. Add your github credentials in `File > Settings > Version Control > Github`, and test your credentials with the `Test` 
     button. (May need to hit "Create API Token")
 5. Set up version control by adding each repo to git. This can be more automatic, because `.git` dirs are found by the system
     and you just have to 'Add Roots' in the event log. See https://www.jetbrains.com/help/idea/2017.1/using-git-integration.html.
