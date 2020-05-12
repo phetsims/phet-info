@@ -43,6 +43,7 @@ test-label,FFFFFF
 type:a11y-bug,FF0077
 type:automated-testing,FF00AA
 type:bug,FF00AA
+type:documentation,A17188
 type:duplicate,EEEED1
 type:i18n,B452CD
 type:legacy-bug,CD00CD
