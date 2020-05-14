@@ -397,6 +397,21 @@ Now you can inspect the x variable which contains the allocation information.
 10. Namespaces for Unit Tests and Playground: Each unit-tests.html makes certain namespaces global (e.g. Scenery's makes window.scenery/kite/dot/axon/core for Scenery/Kite/Dot/Axon/phet-core respectively). Since unit tests don't use require.js directly (for Scenery/Kite/Dot they need to work with the standalone built-library versions), the namespaces are used to access types. For instance, "new scenery.Rectangle( ... )" is used.
 11. Playground: If it exists, it will be a tests/playground.html, and allows testing code in the console. To make code available in the console, check the 'main' file used by the playground and add a reference there. For instance, Scenery's playground.html loads 'main' as the first array argument to the inner require() statement, and saves it to window.scenery. In require.js-speak, this sets the returned value of js/main.js to window.scenery, and in Scenery's specific case it returns the library namespace used in all unit tests. In addition, the same namespaces for unit tests are used.
 12. Run `grunt lint` on the command line to check for lint errors. All code should be free of lint errors. (lint is a tool that analyzes source code to flag programming errors, bugs, stylistic errors, and suspicious constructs. PhET uses the eslint variant of lint.) 
+13. Install PhET's git hooks. These hooks will handle automatically running lint, unit tests, and other tasks. 
+
+To install PhET's git hooks, run:
+
+`${ROOT}/perennial/bin/for-each.sh active-repos git init --template=${ROOT}/phet-info/git-template-dir` 
+
+where `${ROOT}` is the absolute path of the parent directory for your local copy of PhET repositories.
+
+PhET's git hooks may use `grunt`, so you may also need to run:
+
+`${ROOT}/perennial/bin/for-each.sh active-repos npm install`
+ 
+Finally, `git init` does not overwrite files, so you may need to remove existing hooks by running:
+
+`${ROOT}/perennial/bin/for-each.sh active-repos rm .git/hooks/pre-commit`
 
 ## Performance Optimization
 
