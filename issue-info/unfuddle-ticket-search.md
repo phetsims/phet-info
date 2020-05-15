@@ -1,6 +1,6 @@
 # Searching Unfuddle for tickets related to a sim
 
-When performing ports, it is important to look over the legacy bugs/outstanding issues
+When performing ports, it is important to review open issue for the legacy sim.
 
 ## Steps:
 
