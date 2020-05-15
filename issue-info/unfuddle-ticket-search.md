@@ -6,6 +6,7 @@ When performing ports, it is important to look over the legacy bugs/outstanding 
 
 1. In Unfuddle, go to **"Tickets"** tab.
 2. Click on  **"Report Options"** upper right.
-3. On right-hand panel click **"Add Set"**.
-4. In the dropdown change **"Priority"** to **"Component"**.
-5. In place of **"anything"** type component name (the sim). 
+3. At the bottom of the right-hand panel, click **"New Report..."**.
+4. In the Criteria combo box, change **"Priority"** to **"Component"**.
+5. In the Criteria combo box, change **"anything"** to the component name (the sim or flavor name).
+6. Press the "Generate Report" button.
