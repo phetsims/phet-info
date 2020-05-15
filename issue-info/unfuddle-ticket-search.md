@@ -4,7 +4,7 @@ When performing ports, it is important to look over the legacy bugs/outstanding 
 
 ## Steps:
 
-1. Log in to Unfuddle at https://phet.unfuddle.com.
+1. Log in to Unfuddle at https://phet.unfuddle.com
 2. Select the **"Tickets"** tab.
 3. Click on  **"Report Options"** upper right.
 4. At the bottom of the right-hand panel, click **"New Report..."**.
