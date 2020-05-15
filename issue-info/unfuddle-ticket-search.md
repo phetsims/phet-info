@@ -1,8 +1,8 @@
-#Searching unfuddle for tickets related to a sim
+# Searching unfuddle for tickets related to a sim
 
 When performing ports, it is important to look over the legacy bugs/outstanding issues
 
-##Steps:
+## Steps:
 
 1. In unfuddle go to **"Tickets"** tab
 2. Click on  **"Report Options"** upper right
