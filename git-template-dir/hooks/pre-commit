@@ -2,12 +2,8 @@
 #-----------------------------------------------------------------------------------------------------------------------
 # git pre-commit hooks
 #
-# To install this and other hooks, run these commands from the root of your checkout. First it clears any pre-existing
-# commit hooks, then installs the new hooks from this directory.
-#
-# perennial/bin/for-each.sh perennial/data/active-repos rm .git/hooks/pre-commit
-# perennial/bin/for-each.sh perennial/data/active-repos git init --template=../phet-info/git-template-dir
-#
+# Please see https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing
+# for installation instructions.
 #-----------------------------------------------------------------------------------------------------------------------
 
 node ../perennial/js/scripts/hook-pre-commit.js
