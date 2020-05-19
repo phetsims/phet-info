@@ -317,7 +317,7 @@ System requirements: https://phet.colorado.edu/en/help-center/running-sims/gener
 
 ## Modularity with ES6 Modules
 
-The current iteration of PhET's simulation codebase uses native Javascript modules, which were introduced in ECMAScript 6. For PhET specifically, default exports are only used (as opposed to named exports). ES6 Modules are used to support modularization of the JavaScript code.  Information about ES6 Modules can be found (here)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules]. Examples of how it will be used by PhET can be seen in the (Example Simulation)[https://github.com/phetsims/example-sim] (specifically the source files in the js directory).
+The current iteration of PhET's simulation codebase uses native Javascript modules, which were introduced in ECMAScript 6. For PhET specifically, default exports are only used (as opposed to named exports). ES6 Modules are used to support modularization of the JavaScript code.  Information about ES6 Modules can be found [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). Examples of how it will be used by PhET can be seen in the [Example Simulation](https://github.com/phetsims/example-sim) (specifically the source files in the js directory).
 
 
 ## Layout
