@@ -30,7 +30,7 @@ PhET Interactive Simulations creates free, open source educational simulations i
 
 **[Platforms](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#platforms)**
 
-**[Modularity and RequireJS](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#modularity-and-requirejs)**
+**[Modularity with ES6 Modules](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#modularity-with-es6-modules)**
 
 **[Layout](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#layout)**
 
@@ -315,11 +315,10 @@ The simulation should be tested and run on the platforms linked below.  In our e
 
 System requirements: https://phet.colorado.edu/en/help-center/running-sims/general#q11-header
 
-## Modularity and RequireJS
+## Modularity with ES6 Modules
 
-The current implementation of JavaScript (ECMAScript 5) does not directly support modular JavaScript development.  RequireJS will be used to support modularization of the JavaScript code.  Information about RequireJS can be found at http://requirejs.org/.  Examples of how it will be used by PhET can be seen in the Example Simulation code at https://github.com/phetsims/example-sim.  Specifically, check out the config.js file, the grunt.js build file, and the source files in the js directory.
+The current iteration of PhET's simulation codebase uses native Javascript modules, which were introduced in ECMAScript 6. For PhET specifically, default exports are only used (as opposed to named exports). ES6 Modules are used to support modularization of the JavaScript code.  Information about ES6 Modules can be found (here)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules]. Examples of how it will be used by PhET can be seen in the (Example Simulation)[https://github.com/phetsims/example-sim] (specifically the source files in the js directory).
 
-PhET will consider the built-in AMD support that will be a part of ECMAScript 6 when it becomes available.
 
 ## Layout
 
