@@ -7,7 +7,7 @@ This was originally discussed in https://github.com/phetsims/chipper/issues/873.
 
 * Include a default export, placed at the end of the .js file, e.g. `export default NumberControl;`
 
-* Group all `imports` at the top of the .js file, immediately after the overview comment block, organized ala WebStorm "Organize Imports".
+* Group all `imports` at the top of the .js file, immediately after the overview comment block, organized à la WebStorm "Organize Imports".
 
 * Rename on import only if you have a name collision between imports, e.g.
 ```js
