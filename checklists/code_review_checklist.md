@@ -368,7 +368,7 @@ not be used in new code.
 - [ ] If you need to namespace an inner class, use `{{namespace}}.register`, and include a comment about why the inner class needs to be namespaced. Use the form `'{{outerClassname}}.{{innerClassname}}'` for the key. For example:
 
   ```js
-  const myNamespace = require(...);
+  import myNamespace from '...';
 
   class SlotMachineNode extends Node {
     constructor( ... ) {
