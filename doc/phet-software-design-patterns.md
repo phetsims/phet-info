@@ -28,6 +28,8 @@ For general information on many standard design patterns, see _[Learning JavaScr
 
 Author: @samreid 🚧
 
+In https://github.com/phetsims/phet-info/issues/88#issuecomment-635521296, it was proposed to remove this section from this document.
+
   - Relevant info/links:
     - https://en.wikipedia.org/wiki/Composition_over_inheritance
       - "Composition over inheritance (or composite reuse principle) in object-oriented programming (OOP) is the
