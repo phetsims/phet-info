@@ -17,7 +17,7 @@ For general information on many standard design patterns, see _[Learning JavaScr
 * [Model-View Transform](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-transform)
 * [Module](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#module)
 * [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace)
-* [Observer](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#observer) 🚧
+* [Observer](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#observer)
 * [Options and Config](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config)
 * [Scenes](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#scenes)
 * [Singleton](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#singleton)
