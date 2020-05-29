@@ -712,22 +712,146 @@ available.
 Interested developers: JG, DB, CK
 
 ## Observer
+Author: @brandonLi8
 
-Author: 🚧
+PhET widely uses the observer pattern described in https://en.wikipedia.org/wiki/Observer_pattern throughout its entire code base.
 
-A standard pattern described in https://en.wikipedia.org/wiki/Observer_pattern
+### [Property](https://github.com/phetsims/axon/blob/master/js/Property.js)
+  Property is our most basic and simplest form of the Observer pattern. It is used as a wrapper of a Javascript field, called its value. Observers are notified when its value is set to a different value. Observers add listeners through the `link` and `lazyLink` methods and remove listeners through the `unlink` method.
 
-Very important pattern for new PhET developers
+  In general, with PhET simulation code, it is encouraged to use the many subtypes of Property, which depend on the type of its internal value (ie. the values of `NumberProperty` are numbers). Some other common sub-types that are used are `StringProperty`, `BooleanProperty`, `Vector2Property`, etc.
 
-* `Property`, `DerivedProperty`, `Multilink`, `Emitter`, `Events`
-* role in MVC
-* role in PhET-iO
+  #### Role in MVC
+  Please see the [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc) section of this document for context.
 
-NOTE: when this gets fleshed out, scenery input system, options callbacks should be passed the SCENERY/Event from their
-input listeners.
+  In short, the observer pattern acts as a key communicator within the model-view hierarchy of PhET simulations. The model is oblivious to the view, so the model uses the observer pattern for the view (which has a reference to the model) to observe the state of the model and correctly render a mirrored view representation.
 
-NOTE: the author of this section should include patterns/strategies for how to identify the notifying Property in
-DerivedProperty and Multilink; see comments in expressed in https://github.com/phetsims/axon/issues/259.
+  See for example:
+  ```js
+  // model
+  class Ball {
+    constructor( ... ) {
+      ...
+
+      // @public {Vector2Property} - the position (coordinates) of the Ball, in meters.
+      this.positionProperty = new Vector2Property( new Vector2( ... ) /** the initial wrapped value of the Property */ );
+    }
+  }
+
+  // view
+  class BallNode extends Node {
+
+    constructor( ball, ... ) {
+      ...
+
+      // Observe when the ball's position changes through the Property API.
+      ball.positionProperty.link( position => { // position is the current value of ball.positionProperty
+        this.center = modelViewTransform.modelToViewPosition( position );
+      } );
+    }
+  }
+  ```
+
+  In this example you can see a how the Ball view updates itself by observing the `positionProperty` of the ball model. If you were to call
+  ```js
+  ball.positionProperty.value = new Vector( ... );
+  ```
+  or 
+  ```js
+  ball.positionProperty.set( new Vector( ... ) );
+  ```
+  its listeners will be invoked.
+
+  #### Other Notes
+  - Ensure that you aren't causing any memory leaks. Property holds references to its listeners, so, in the case above, if you were to dispose `BallNode` it would be kept by the Property and wouldn't be garbage collected. Reference the [Dispose](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dispose) section.
+  - Generally, listeners don't normally set the Property that it is listening too. This is called a reentrant:
+    ```js
+    const massProperty = new NumberProperty( 4 );
+
+    massProperty.lazyLink( mass => {
+      massProperty.value = 5; // Reentrant, would cause an assertion error.
+    } );
+    ```
+    If, however, it is absolutely necessary to set the property value, you can pass the `reentrant: true` option to the Property instance.
+  - In the examples above, the names of Properties are suffixed with `Property` (ie. `massProperty`, `positionProperty`, etc.). We try to be verbose with this practice to emphasize a distinction between a normal javascript field and a wrapped Property.
+  
+### [DerivedProperty](https://github.com/phetsims/axon/blob/master/js/DerivedProperty.js)
+  DerivedProperty is another Property sub-type, but unlike other subtypes (which are mostly for type-specific values), DerivedProperty is a generic Property whose value is determined based on other Properties, called its dependencies.
+
+  It is best to explain with an example:
+  ```js
+  this.forceProperty = new DerivedProperty( [ this.massProperty, this.accelerationProperty ], ( mass, acceleration ) => {
+    return mass * acceleration; // F = m*a
+  } );
+  ```
+  In this example, `[ this.massProperty, this.accelerationProperty ]` is the dependencies of the DerivedProperty, and the second parameter (the lambda) is the derivation function.
+
+  If the `massProperty` OR the `accelerationProperty` is set to a different value, then its value is recomputed based on what the derivation function returns, which is passed the values of the dependencies in corresponding order.
+
+  DerivedProperty usually has the same role in the mvc hierarchy, as outlined [above](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#role-in-mvc). It is still a subtype of Property, so observers are notified when its value changes and observers are added through `link` and `lazyLink` methods. However, note that the value of a DerivedProperty instance cannot be set externally.
+
+  #### Other Notes
+  - All Properties and its subclasses use [validate](https://github.com/phetsims/axon/blob/master/js/validate.js), meaning the [ValidatorDef](https://github.com/phetsims/axon/blob/master/js/ValidatorDef.js.) options are apart of its API. 
+  
+    For type-specific subclasses like `NumberProperty`, these are set for you. However, this is needed for DerivedProperty. So for the example above, the declaration should look like
+    ```js
+      this.forceProperty = new DerivedProperty( [ this.massProperty, this.accelerationProperty ], ( mass, acceleration ) => {
+        return mass * acceleration; // F = m*a
+      }, {
+        ...
+        valueType: 'number',
+        isValidValue: value => value >= 0 // force must be positive
+      } );
+    ```
+
+### [Multilink](https://github.com/phetsims/axon/blob/master/js/Multilink.js)
+  Multilink is a convenience class that is used to observe multiple Properties with the same observer functionality. Similar to DerivedProperty, it has its "dependencies" of Properties, and when any dependency's value changes, the observer is invoked with the values of the dependencies in corresponding order. However, it is *not* a subclass of Property and doesn't conform to the Property API.
+
+  Note that Multilinks are not created through its native constructor. Rather, they are created through static creator methods of Property (`Property.multilink` and `Property.unmultilink`).
+
+  #### Other Notes
+   - In some use cases of `Multilink` and `DerivedProperty`, the observer needs to know which Property caused the notification. One solution is to add independent listeners to each dependency and turn the DerivedProperty into a Property that is modified by each listener. Please reference https://github.com/phetsims/axon/issues/259.
+
+### [ObservableArray](https://github.com/phetsims/axon/blob/master/js/ObservableArray.js)
+
+ObservableArray is another common iteration of the Observer pattern. ObservableArrays are a wrapper class of an array that notifies observers when items are added or removed from the Array. Its API closely resembles the prototype of native arrays (it contains a `push`, `forEach`, `map`, etc. methods).
+
+  #### Role in MVC
+  Like `Property`, `ObservableArray` can act as a key communicator within the model-view hierarchy of PhET simulations.
+
+  One common pattern is:
+  ```js
+  // model
+  // @public {ObservableArray.<Cart>}
+  this.carts = new ObservableArray();
+  
+
+  // view
+  this.carts.addItemAddedListener( cart => {
+    this.addChild( new CartNode( cart ) );
+  } );
+  ```
+
+  Then, wherever `this.carts.push( new Cart() )` is called, a new CartNode is added through the observer.
+
+  As a reminder from above, observers are referenced as a listener in the ObservableArray, so be sure to call `removeItemAddedListener()` to release listeners when needed.
+
+### [Emitter](https://github.com/phetsims/axon/blob/master/js/Emitter.js)
+  You may see `Emitters` used in the shared common code between simulation. Emitters are a generic event-based class that follows the observer pattern to allow clients to subscribe (through the `addListener` method) to a single specific event.
+
+  Usually, Emitters are not needed in sim-specific code, and most of PhET's observing can be achieved with the classes outlined above.
+
+### Events
+  Another form of PhET's version of the Observer pattern is through user-triggered events, such as dragging, clicking (pressing), etc. This is all done through the scenery input system.
+
+  Scenery Nodes support `FireListener`, `DragListener`, `PressListener`, etc. Listeners subscribe to when the user does a specified event, which may alter the simulation. Listeners are often passed a [SceneryEvent](https://github.com/phetsims/scenery/blob/master/js/input/SceneryEvent.js).
+
+  #### Role in MVC
+  View classes observing scenery input events are a key communicator in the model-view hierarchy. For instance, user input may propagate and affect model properties or may create new model objects, as described in the [creator-pattern](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-with-drag-forwarding) section. 
+
+
+  As a reminder from above, Input Listeners (such as `DragListener`) are internally referenced in Node, so be sure to call `removeInputListener()` to release listeners if needed.
+
 
 ## Options and Config
 
