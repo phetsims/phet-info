@@ -693,3 +693,5 @@ example, the following methods (and perhaps others) should not be used: `Math.ra
 This also deserves re-iteration due to its effect on record/playback for PhET-iO.
 - [ ] Like JSON, keys for `undefined` values are omitted when serializing objects across frames. Consider this when
 determining whether `toStateObject` should use `null` or `undefined` values.
+- [ ] PhET prefers to use the term "position" to refer to the physical (x,y) position of objects.  This applies to both 
+brands, but is more important for the PhET-iO API.  See https://github.com/phetsims/phet-info/issues/126 
