@@ -134,6 +134,7 @@ to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
 
 ## **Repository Structure**
 
+- [ ] The repository name should correspond to the sim title. For example, if the sim title is "Wave Interference", then the repository name should be "wave-interference".
 - [ ] Are all required files and directories present?
 For a sim repository named “my-repo”, the general structure should look like this (where assets/, images/, mipmaps/ or sounds/ may be omitted if the sim doesn’t have those types of resource files).
 
