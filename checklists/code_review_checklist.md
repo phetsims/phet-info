@@ -77,8 +77,7 @@ such as primary model and view classes that exist for the duration of the sim.
 
 ## **Internationalization**
 - [ ] Are there any strings that are not internationalized, and does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter `stringTest=X`. You should see nothing but 'X' strings.)
-- [ ] Does the sim layout gracefully handle internationalized strings that are twice as long as the English strings? (run with query parameter `stringTest=double`)
-- [ ] Does the sim layout gracefully handle internationalized strings that are exceptionally long? (run with query parameter `stringTest=long`)
+- [ ] Does the sim layout gracefully handle internationalized strings that are longer than the English strings? (run with query parameters `stringTest=double` and `stringTest=long`)
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter
 `stringTest=xss`? This test passes if sim does not redirect, OK if sim crashes or fails to fully start. Only test on one
 desktop platform.  For PhET-iO sims, additionally test `?stringTest=xss` in Studio to make sure i18n strings didn't leak
