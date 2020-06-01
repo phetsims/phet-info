@@ -82,6 +82,7 @@ such as primary model and view classes that exist for the duration of the sim.
 `stringTest=xss`? This test passes if sim does not redirect, OK if sim crashes or fails to fully start. Only test on one
 desktop platform.  For PhET-iO sims, additionally test `?stringTest=xss` in Studio to make sure i18n strings didn't leak
 to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
+- [ ] Avoid using concatenation to create strings that will be visibile in the user interface. Use `StringUtils.fillIn` and a string pattern to ensure that strings are properly localized. 
 - [ ] Use named placeholders (e.g. `"{{value}} {{units}}"`) instead of numbered placeholders (e.g. `"{0} {1}"`).
 - [ ] Make sure the string keys are all perfect, because they are difficult to change after 1.0.0 is published. Guidelines for string keys are:
 
