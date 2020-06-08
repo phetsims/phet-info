@@ -279,8 +279,8 @@ class MyAddChildAndLinkNode extends Node{
     this.disposeMyAddChildAndLinkNode = ()=>{
       aProperty.unlink( aFunction);
 
-      // Because aNewNode has a reference back to its parent (aNode). Note there are many ways that this reference
-      // could be removed.
+      // Because aNewNode has a reference back to its parent (aNode). 
+      // Note there are many ways that this reference could be removed.
       aNode.removeChild( aNewNode);
     }
   }
@@ -734,7 +734,7 @@ PhET widely uses the observer pattern described in https://en.wikipedia.org/wiki
       ...
 
       // @public {Vector2Property} - the position (coordinates) of the Ball, in meters.
-      this.positionProperty = new Vector2Property( new Vector2( ... ) /** the initial wrapped value of the Property */ );
+      this.positionProperty = new Vector2Property( new Vector2( ... ) );
     }
   }
 
@@ -745,7 +745,7 @@ PhET widely uses the observer pattern described in https://en.wikipedia.org/wiki
       ...
 
       // Observe when the ball's position changes through the Property API.
-      ball.positionProperty.link( position => { // position is the current value of ball.positionProperty
+      ball.positionProperty.link( position => {
         this.center = modelViewTransform.modelToViewPosition( position );
       } );
     }
@@ -780,9 +780,10 @@ PhET widely uses the observer pattern described in https://en.wikipedia.org/wiki
 
   It is best to explain with an example:
   ```js
-  this.forceProperty = new DerivedProperty( [ this.massProperty, this.accelerationProperty ], ( mass, acceleration ) => {
-    return mass * acceleration; // F = m*a
-  } );
+  this.forceProperty = new DerivedProperty( 
+    [ this.massProperty, this.accelerationProperty ], 
+    ( mass, acceleration ) => mass * acceleration // F = m*a
+  );
   ```
   In this example, `[ this.massProperty, this.accelerationProperty ]` is the dependencies of the DerivedProperty, and the second parameter (the lambda) is the derivation function.
 
@@ -795,9 +796,10 @@ PhET widely uses the observer pattern described in https://en.wikipedia.org/wiki
   
     For type-specific subclasses like `NumberProperty`, these are set for you. However, this is needed for DerivedProperty. So for the example above, the declaration should look like
     ```js
-      this.forceProperty = new DerivedProperty( [ this.massProperty, this.accelerationProperty ], ( mass, acceleration ) => {
-        return mass * acceleration; // F = m*a
-      }, {
+      this.forceProperty = new DerivedProperty( 
+        [ this.massProperty, this.accelerationProperty ], 
+        ( mass, acceleration ) => mass * acceleration, // F = m*a
+      {
         ...
         valueType: 'number',
         isValidValue: value => value >= 0 // force must be positive
@@ -827,9 +829,7 @@ ObservableArray is another common iteration of the Observer pattern. ObservableA
   
 
   // view
-  this.carts.addItemAddedListener( cart => {
-    this.addChild( new CartNode( cart ) );
-  } );
+  this.carts.addItemAddedListener( cart => this.addChild( new CartNode( cart ) ) } );
   ```
 
   Then, wherever `this.carts.push( new Cart() )` is called, a new CartNode is added through the observer.
