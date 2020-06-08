@@ -26,7 +26,7 @@ For general information on many standard design patterns, see _[Learning JavaScr
 
 ## Composition and Inheritance
 
-Author: @samreid 🚧
+Author: 🚧
 
 In https://github.com/phetsims/phet-info/issues/88#issuecomment-635521296, it was proposed to remove this section from this document.
 
