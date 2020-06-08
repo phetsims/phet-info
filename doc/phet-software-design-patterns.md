@@ -7,7 +7,6 @@ For general information on many standard design patterns, see _[Learning JavaScr
 
 ## Table of Contents
 
-* [Composition and Inheritance](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#composition-and-inheritance) 🚧
 * [Creator](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-with-drag-forwarding)
 * [Dependency Injection](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dependency-injection)
 * [Dispose](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dispose)
@@ -23,27 +22,6 @@ For general information on many standard design patterns, see _[Learning JavaScr
 * [Singleton](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#singleton)
 * [State Machine](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#state-machine)
 * [Strategy](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#strategy)
-
-## Composition and Inheritance
-
-Author: 🚧
-
-In https://github.com/phetsims/phet-info/issues/88#issuecomment-635521296, it was proposed to remove this section from this document.
-
-  - Relevant info/links:
-    - https://en.wikipedia.org/wiki/Composition_over_inheritance
-      - "Composition over inheritance (or composite reuse principle) in object-oriented programming (OOP) is the
-      principle that classes should achieve polymorphic behavior and code reuse by their composition (by containing
-      instances of other classes that implement the desired functionality) rather than inheritance from a base or parent
-      class."
-    - Chrome's optimization makes it so that sims would be faster if we used composition over inheritance.
-    - Composition is generally more flexible.
-  - If what you are trying to model can easily be described by composition, you should use composition.
-  - If composition produces numerous forwarding calls, it indicates that perhaps inheritance should be used instead.
-    - The forwarding calls produced by composition can be beneficial though, they are explicit and protect things things
-    that need to stay private.
-  - Numerous forwarding calls can increase the memory impact, especially on types that are instantiated many many times
-  by a simulation (like Vector2).
 
 ## Creator (with Drag Forwarding)
 (formerly known as the Model Element Creator Pattern)
