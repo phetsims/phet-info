@@ -789,7 +789,7 @@ PhET widely uses the observer pattern described in https://en.wikipedia.org/wiki
 
   If the `massProperty` OR the `accelerationProperty` is set to a different value, then its value is recomputed based on what the derivation function returns, which is passed the values of the dependencies in corresponding order.
 
-  DerivedProperty usually has the same role in the mvc hierarchy, as outlined [above](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#role-in-mvc). It is still a subtype of Property, so observers are notified when its value changes and observers are added through `link` and `lazyLink` methods. However, note that the value of a DerivedProperty instance cannot be set externally.
+  DerivedProperty usually has the same role in the MVC pattern, as outlined [above](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#role-in-mvc). It is still a subtype of Property, so observers are notified when its value changes and observers are added through `link` and `lazyLink` methods. However, note that the value of a DerivedProperty instance cannot be set externally.
 
   ##### Other Notes
   - All Properties and its subclasses use [validate](https://github.com/phetsims/axon/blob/master/js/validate.js), meaning the [ValidatorDef](https://github.com/phetsims/axon/blob/master/js/ValidatorDef.js.) options are apart of its API. 
@@ -847,7 +847,7 @@ ObservableArray is another common iteration of the Observer pattern. ObservableA
   Scenery Nodes support `FireListener`, `DragListener`, `PressListener`, etc. Listeners subscribe to when the user does a specified event, which may alter the simulation. Listeners are often passed a [SceneryEvent](https://github.com/phetsims/scenery/blob/master/js/input/SceneryEvent.js).
 
   ##### Role in MVC
-  View classes observing scenery input events are a key communicator in the model-view hierarchy. For instance, user input may propagate and affect model properties or may create new model objects, as described in the [creator-pattern](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-with-drag-forwarding) section. 
+  View classes observing scenery input events are a key communicator in the model-view hierarchy. For instance, user input may propagate and affect model properties or may create new model objects, as described in the [Creator pattern](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-with-drag-forwarding) section. 
 
 
   As a reminder from above, Input Listeners (such as `DragListener`) are internally referenced in Node, so be sure to call `removeInputListener()` to release listeners if needed.
