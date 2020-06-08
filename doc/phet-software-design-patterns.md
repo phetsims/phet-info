@@ -837,7 +837,7 @@ ObservableArray is another common iteration of the Observer pattern. ObservableA
   As a reminder from above, observers are referenced as a listener in the ObservableArray, so be sure to call `removeItemAddedListener()` to release listeners when needed.
 
 #### [Emitter](https://github.com/phetsims/axon/blob/master/js/Emitter.js)
-  You may see `Emitters` used in the shared common code between simulation. Emitters are a generic event-based class that follows the observer pattern to allow clients to subscribe (through the `addListener` method) to a single specific event.
+  You may see `Emitters` used in the common code shared between simulations. Emitters are a generic event-based class that follows the observer pattern to allow clients to subscribe (through the `addListener` method) to a single specific event.
 
   Usually, Emitters are not needed in sim-specific code, and most of PhET's observing can be achieved with the classes outlined above.
 
