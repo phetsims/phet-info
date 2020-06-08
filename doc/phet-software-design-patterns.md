@@ -702,7 +702,7 @@ PhET widely uses the observer pattern described in https://en.wikipedia.org/wiki
   ##### Role in MVC
   Please see the [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc) section of this document for context.
 
-  In short, the observer pattern acts as a key communicator within the model-view hierarchy of PhET simulations. The model is oblivious to the view, so the model uses the observer pattern for the view (which has a reference to the model) to observe the state of the model and correctly render a mirrored view representation.
+  In short, the observer pattern acts as a key communicator within the model-view hierarchy of PhET simulations. The model is oblivious to the view, so the view uses the observer pattern for the model to observe the state of the model and correctly render a mirrored view representation.
 
   See for example:
   ```js
@@ -787,8 +787,6 @@ PhET widely uses the observer pattern described in https://en.wikipedia.org/wiki
 #### [Multilink](https://github.com/phetsims/axon/blob/master/js/Multilink.js)
   Multilink is a convenience class that is used to observe multiple Properties with the same observer functionality. Similar to DerivedProperty, it has its "dependencies" of Properties, and when any dependency's value changes, the observer is invoked with the values of the dependencies in corresponding order. However, it is *not* a subclass of Property and doesn't conform to the Property API.
 
-  Note that Multilinks are not created through its native constructor. Rather, they are created through static creator methods of Property (`Property.multilink` and `Property.unmultilink`).
-
   ##### Other Notes
    - In some use cases of `Multilink` and `DerivedProperty`, the observer needs to know which Property caused the notification. One solution is to add independent listeners to each dependency and turn the DerivedProperty into a Property that is modified by each listener. Please reference https://github.com/phetsims/axon/issues/259.
 
@@ -817,9 +815,7 @@ ObservableArray is another common iteration of the Observer pattern. ObservableA
 #### [Emitter](https://github.com/phetsims/axon/blob/master/js/Emitter.js)
   You may see `Emitters` used in the common code shared between simulations. Emitters are a generic event-based class that follows the observer pattern to allow clients to subscribe (through the `addListener` method) to a single specific event.
 
-  Usually, Emitters are not needed in sim-specific code, and most of PhET's observing can be achieved with the classes outlined above.
-
-#### Events
+#### Input Events
   Another form of PhET's version of the Observer pattern is through user-triggered events, such as dragging, clicking (pressing), etc. This is all done through the scenery input system.
 
   Scenery Nodes support `FireListener`, `DragListener`, `PressListener`, etc. Listeners subscribe to when the user does a specified event, which may alter the simulation. Listeners are often passed a [SceneryEvent](https://github.com/phetsims/scenery/blob/master/js/input/SceneryEvent.js).
