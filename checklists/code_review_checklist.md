@@ -60,7 +60,7 @@ such as primary model and view classes that exist for the duration of the sim.
 	- [ ] AXON: `Property.link` is accompanied by `Property.unlink`.
 	- [ ] AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
 	- [ ] AXON: Creation of `Multilink` is accompanied by `dispose`.
-	- [ ] AXON: `Emitter.addListener` is accompanied by `Emitter.removeListener`.
+	- [ ] AXON: Creation of `Emitter` is accompanied by `dispose`, and/or `Emitter.addListener` is accompanied by `Emitter.removeListener`.
 	- [ ] TANDEM: PhET-iO instrumented `PhetioObject` instances should be disposed.
 - [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls `this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly match the filename.
 
