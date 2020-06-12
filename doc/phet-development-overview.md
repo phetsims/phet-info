@@ -104,7 +104,8 @@ git clone https://github.com/phetsims/utterance-queue.git
 7. Run `npm config set save false` so that package-lock.json files are not created.
 
 Now you can test modifying the simulation code and see the changes by refreshing the browser.
-You can also use this to test on remote devices after looking up your ip address
+You can also use this to test on remote devices after looking up your ip address. If developing on Chrome, note that 
+it can be helpful to set "Disable cache (while DevTools is open)" (see the devtools settings). 
 Questions should be directed to the Devloping Interactive Simulations in HTML5 Google Group.
 
 ## Getting Started (for macOS)
@@ -177,7 +178,8 @@ Questions should be directed to the Developing Interactive Simulations in HTML5 
 7. Run `npm config set save false` so that package-lock.json files are not created.
 
 Now you can test modifying the simulation code and see the changes by refreshing the browser.
-You can also use this to test on remote devices after looking up your ip address
+You can also use this to test on remote devices after looking up your ip address. If developing on Chrome, note that 
+it can be helpful to set "Disable cache (while DevTools is open)" (see the devtools settings).
 Questions should be directed to the Devloping Interactive Simulations in HTML5 Google Group.
 
 ## Creating a New Sim
