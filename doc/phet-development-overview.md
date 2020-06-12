@@ -96,8 +96,8 @@ git clone https://github.com/phetsims/utterance-queue.git
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install http-server -g`  
   b. Change into the phetsims directory (if you were not already there).  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd phetsims/`  
-  c. Run the http server program  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`http-server`  
+  c. Run the http server program (with caching turned off to help with iteration) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`http-server -c-1`  
 5. Open a browser to the path for one of the simulations: http://localhost:8080/example-sim/example-sim_en.html
 6. For building the simulations, install the grunt command line utility (may require sudo):  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install -g grunt-cli`
@@ -166,8 +166,8 @@ If that yields an error like “Please try running this command again as root/Ad
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`sudo npm install http-server -g`  
   b. Change into the phetsims directory (if you were not already there).  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd phetsims/`  
-  c. Run the http server program  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`http-server`  
+  c. Run the http server program  (with caching turned off to help with iteration) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`http-server -c-1`  
 5. Open a browser to the path for one of the simulations: http://localhost:8080/example-sim/build/phet/example-sim_en_phet.html
 6. For building the simulations, install the grunt command line utility (may require sudo):  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install -g grunt-cli`  
