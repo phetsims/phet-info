@@ -257,7 +257,7 @@ class MyAddChildAndLinkNode extends Node{
     this.disposeMyAddChildAndLinkNode = ()=>{
       aProperty.unlink( aFunction);
 
-      // Because aNewNode has a reference back to its parent (aNode). 
+      // Because aNewNode has a reference back to its parent (aNode).
       // Note there are many ways that this reference could be removed.
       aNode.removeChild( aNewNode);
     }
@@ -656,10 +656,10 @@ available on `window` (e.g. built forms of dot/kite/scenery and other related ut
 having the same name (name collision). In addition another "alternative" would be to not give access to runtime objects,
 but this would make debugging much more difficult.
 
-In addition, namespaces can be used as a workaround for circular dependencies. Since requireJS does not do well with
-circular dependencies, two types can refer to each other through the namespace.
+In addition, namespaces can be used as a workaround for circular dependencies. Occasionally this is needed when modules
+run into circular dependency issues.
 
-For our uses, each repository generally has one namespace (available via requireJS) at the top level, e.g.
+For our uses, each repository generally has one namespace at the top level, e.g.
 `molecule-shapes/js/moleculeShapes.js` (generally camel-cased) would contain:
 ```js
 import Namespace from '../../phet-core/js/Namespace.js';
@@ -734,7 +734,7 @@ PhET widely uses the observer pattern described in https://en.wikipedia.org/wiki
   ```js
   ball.positionProperty.value = new Vector( ... );
   ```
-  or 
+  or
   ```js
   ball.positionProperty.set( new Vector( ... ) );
   ```
@@ -752,14 +752,14 @@ PhET widely uses the observer pattern described in https://en.wikipedia.org/wiki
     ```
     If, however, it is absolutely necessary to set the property value, you can pass the `reentrant: true` option to the Property instance.
   - In the examples above, the names of Properties are suffixed with `Property` (ie. `massProperty`, `positionProperty`, etc.). We try to be verbose with this practice to emphasize a distinction between a normal javascript field and a wrapped Property.
-  
+
 #### [DerivedProperty](https://github.com/phetsims/axon/blob/master/js/DerivedProperty.js)
   DerivedProperty is another Property sub-type, but unlike other subtypes (which are mostly for type-specific values), DerivedProperty is a generic Property whose value is determined based on other Properties, called its dependencies.
 
   It is best to explain with an example:
   ```js
-  this.forceProperty = new DerivedProperty( 
-    [ this.massProperty, this.accelerationProperty ], 
+  this.forceProperty = new DerivedProperty(
+    [ this.massProperty, this.accelerationProperty ],
     ( mass, acceleration ) => mass * acceleration // F = m*a
   );
   ```
@@ -770,12 +770,12 @@ PhET widely uses the observer pattern described in https://en.wikipedia.org/wiki
   DerivedProperty usually has the same role in the MVC pattern, as outlined [above](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#role-in-mvc). It is still a subtype of Property, so observers are notified when its value changes and observers are added through `link` and `lazyLink` methods. However, note that the value of a DerivedProperty instance cannot be set externally.
 
   ##### Other Notes
-  - All Properties and its subclasses use [validate](https://github.com/phetsims/axon/blob/master/js/validate.js), meaning the [ValidatorDef](https://github.com/phetsims/axon/blob/master/js/ValidatorDef.js.) options are apart of its API. 
-  
+  - All Properties and its subclasses use [validate](https://github.com/phetsims/axon/blob/master/js/validate.js), meaning the [ValidatorDef](https://github.com/phetsims/axon/blob/master/js/ValidatorDef.js.) options are apart of its API.
+
     For type-specific subclasses like `NumberProperty`, these are set for you. However, this is needed for DerivedProperty. So for the example above, the declaration should look like
     ```js
-      this.forceProperty = new DerivedProperty( 
-        [ this.massProperty, this.accelerationProperty ], 
+      this.forceProperty = new DerivedProperty(
+        [ this.massProperty, this.accelerationProperty ],
         ( mass, acceleration ) => mass * acceleration, // F = m*a
       {
         ...
@@ -802,7 +802,7 @@ ObservableArray is another common iteration of the Observer pattern. ObservableA
   // model
   // @public {ObservableArray.<Cart>}
   this.carts = new ObservableArray();
-  
+
 
   // view
   this.carts.addItemAddedListener( cart => this.addChild( new CartNode( cart ) ) } );
@@ -821,7 +821,7 @@ ObservableArray is another common iteration of the Observer pattern. ObservableA
   Scenery Nodes support `FireListener`, `DragListener`, `PressListener`, etc. Listeners subscribe to when the user does a specified event, which may alter the simulation. Listeners are often passed a [SceneryEvent](https://github.com/phetsims/scenery/blob/master/js/input/SceneryEvent.js).
 
   ##### Role in MVC
-  View classes observing scenery input events are a key communicator in the model-view hierarchy. For instance, user input may propagate and affect model properties or may create new model objects, as described in the [Creator pattern](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-with-drag-forwarding) section. 
+  View classes observing scenery input events are a key communicator in the model-view hierarchy. For instance, user input may propagate and affect model properties or may create new model objects, as described in the [Creator pattern](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-with-drag-forwarding) section.
 
 
   As a reminder from above, Input Listeners (such as `DragListener`) are internally referenced in Node, so be sure to call `removeInputListener()` to release listeners if needed.
@@ -1012,21 +1012,21 @@ import namespaceName from '../namespaceName.js';
 
 class Singleton {
 
-  constructor( x ) {  
+  constructor( x ) {
     this.x = x;
     this.initialized = false
   }
-  
+
   getX() {
     assert && assert( this.initialized, 'this should only be called after initialization' );
     return this.x;
   }
-  
+
   setX( x ) {
     assert && assert( this.initialized, 'this should only be called after initialization' );
     this.x = x;
   }
-  
+
   initialize( x ) {
     assert && assert( !this.initialized, 'this should only be initialized once' );
     this.initialized = true;
@@ -1058,7 +1058,7 @@ const ExampleConstants = {
   printMessage() {
     console.log( 'I\'ll say this as many times as you\'d like.' );
   },
-  
+
   CONSTANT_NUMBER_ONE: 1,
   CONSTANT_NUMBER_ONE: 2,
 };
