@@ -113,3 +113,4 @@
 | Wave on a String |  @jonathanolson  | ✓ |
 | Waves Intro | @samreid | ✓ |
 | Wilder | @jonathanolson |  |
+| X-ray Diffraction | @holdentodd |  |
