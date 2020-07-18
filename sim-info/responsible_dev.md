@@ -48,6 +48,7 @@
 | Faraday's Law |  @jbphet  | ✓ |
 | Fluid Pressure and Flow | @zepumph | |
 | Forces and Motion: Basics |  @jessegreenberg | ✓ |
+| Fourier: Making Waves |  @pixelzoom | ✓ |
 | Fraction Comparison | @samreid |
 | Fraction Matcher | @jonathanolson | ✓ |
 | Fractions: Equality | @jonathanolson | ✓ |
