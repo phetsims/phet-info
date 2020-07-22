@@ -153,7 +153,8 @@ Otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
 - Push the change to the common branch (e.g. `git push origin chains-1.2`)
 - If you didn't build it before, run `grunt` in the sim repo.
 - Copy the dependencies.json from the build directory to the top-level directory in the sim. Older sims had it at `build/dependencies.json`. Newer (chipper 2.0) sims will have it at `build/phet/dependencies.json`.
-- `git add dependencies.json` and commit it mentioning the issue for the maintenance release.
+- `git add dependencies.json`
+- `git commit -m {{MESSAGE}}`, where `{{MESSAGE}}` include the GitHub issue URL(s) for the maintenace release.
 - `git push origin {{BRANCH}}`.
 
 This will ensure that the top level dependencies.json will properly reference the common-code fixed SHA, and that we'll always have a consistent common code branch for the sim branch.
