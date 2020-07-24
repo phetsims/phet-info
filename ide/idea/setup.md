@@ -30,23 +30,11 @@ selected, and check `Prefer Strict mode`.
     * Additional Rules Dir should be `chipper/eslint/rules`
     * [Here is a picture for a mac](https://cloud.githubusercontent.com/assets/6856943/26806694/876bdad6-4a0f-11e7-9096-e734bf70be6e.png)
 11. (Optional) Enable Nodejs coding assistance. `File > Settings > Language & Frameworks > Node.js and NPM`. Coding Assistance section. "Node.js Core is disabled" Enable it. This is handy if working on build tools/ node often.
-12. Set up external tools for automatic import of require statement.
-    * On Mac
-        * preferences -> tools -> external tools:
-        * program: grunt
-        * parameters: insert-require-statement --file=$FilePath$ --name=$SelectedText$ --searchPath=/Users/samreid/github
-        * working directory: /Users/samreid/github/circuit-construction-kit-dc
-    * On Windows (unconfirmed if this works on Mac)
-        * File -> Settings -> Tools -> External Tools . . . add new tool
-        * Name it what ever you want
-        * Program: `C:\Program Files\nodejs\node.exe`
-        * Parameters: `C:\Users\{{USER_NAME}}\AppData\Roaming\npm\node_modules\grunt-cli\bin\grunt insert-require-statement --file=$FilePath$ --name=$SelectedText$ --searchPath={{PATH_TO_GIT_REPOS_DIR (like E:\Zepumph\Programming\PHET\git\)}}`
-        * Working Directory: E:\Zepumph\Programming\PHET\git\faradays-law
-13. Some inspections don't mesh well with the way our code base is setup, we can turn them off:
+12. Some inspections don't mesh well with the way our code base is setup, we can turn them off:
     * Go to File > Settings > Editor > Inspections.
     * When using `@extends` with `inherit` calls, you can get the entire constructor flagged with the warning: 
     "Cyclic inheritance involving {TYPE}" -- Turn it off with JavaScript > General Closure compiler syntax.
-14. Further resources:
+13. Further resources:
     * [Here is a list of default keyboard shortcuts for windows and mac](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
 
 ## Preferences
