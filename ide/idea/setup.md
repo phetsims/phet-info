@@ -42,18 +42,11 @@ selected, and check `Prefer Strict mode`.
         * Program: `C:\Program Files\nodejs\node.exe`
         * Parameters: `C:\Users\{{USER_NAME}}\AppData\Roaming\npm\node_modules\grunt-cli\bin\grunt insert-require-statement --file=$FilePath$ --name=$SelectedText$ --searchPath={{PATH_TO_GIT_REPOS_DIR (like E:\Zepumph\Programming\PHET\git\)}}`
         * Working Directory: E:\Zepumph\Programming\PHET\git\faradays-law
-13. Automatically `grunt lint-everything` on each commit
-    * Preferences > Tools > External Tools, press the '+' button to add a tool with these values:
-        * name: grunt-lint-everything
-        * program: grunt
-        * arguments: lint-everything
-        * working directory: {{PATH_TO_CHECKOUT}}/perennial
-    * Then in the commit changes dialog, select "After Commit" "Run Tool" "grunt-lint-everything"
-14. Some inspections don't mesh well with the way our code base is setup, we can turn them off:
+13. Some inspections don't mesh well with the way our code base is setup, we can turn them off:
     * Go to File > Settings > Editor > Inspections.
     * When using `@extends` with `inherit` calls, you can get the entire constructor flagged with the warning: 
     "Cyclic inheritance involving {TYPE}" -- Turn it off with JavaScript > General Closure compiler syntax.
-15. Further resources:
+14. Further resources:
     * [Here is a list of default keyboard shortcuts for windows and mac](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
 
 ## Preferences
