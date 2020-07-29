@@ -173,7 +173,7 @@ Prototypes are defined as sims that are deemed worthy of early release to the pu
 - Testing will not be as thorough as a production RC and will focus on "normal" usability and pedagogical accuracy. Issues found in testing that go beyond these categories will still be documented, but will usually not be addressed for the prototype deployment.
 - Once the sim has passed the prototype test, it will be published in the normal manner. However:
   - The prototype sim will be published at the appropriate "latest" link, but the sim's page on phet.colorado.edu **WILL NOT** be made visible.
-  - It is understood that if a sim has been deployed as a prototype, the first production deploy will in general have the version schema "1.N.0" where N is >= 1.
+  - It is understood that if a sim has been deployed as a prototype, the first non-prototype production deploy will in general have the version schema "1.N.0" where N is >= 1.
 - When cost-effective, maintainence releases can be peformed on a prototype release branch. When not cost-effective, a new version of a prototype may require a new release branch.
 
 *Note: This process was chosen for prototype deployments so that they follow a well-established process and leave a documentation trail (github test issues, test matrices, etc). In addition, following this process only requires a change in our internal semantics of the meaning behind a "1.0.0" release. Since the prototype deploys are indeed a "release candidate", it seemed appropriate to follow this process.*
