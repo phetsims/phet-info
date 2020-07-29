@@ -165,20 +165,20 @@ This would usually be followed by 1+ RC deployments and then a production deploy
 
 ## Prototype deployments
 
-Prototypes are defined as sims that are deemed worthy of early release to the public before they have gone through the full production process. In general, these sims will be ports of popular sims that are not yet in HTML5. 
+A prototype is defined as a sim version that is deemed worthy of early release to the public before it has gone through the full production process. Prototypes will typically be published for legacy sims that are not yet available in HTML5. 
 
-Prototypes will follow the process for [RC/production deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches) with the following differences:
+Prototypes will follow the process for [RC/production deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches), with the following differences:
 
 - When the RC test issue is created:
   - Use the [prototype testing template](https://github.com/phetsims/QA/blob/master/issue-templates/prototype-test-template.md).
   - Issue title format is "Prototype test: ${{SIM}} {{VERSION}}", for example "Prototype test: Natural Selection 1.0.0-rc.1".
   - Label the issue `QA:prototype-test`.
 - Testing will not be as thorough as a production RC and will focus on "normal" usability and pedagogical accuracy. Issues found in testing that go beyond these categories will still be documented, but will usually not be addressed for the prototype deployment.
-- A prototype will be deemed "ready for release" when the developer and design team agree that the sim is in a feature-complete state with acceptable performance. In general, the prototype release will occur before formal code review and production-level QA testing.
+- A prototype will be deemed "ready for release" when the design team agrees that the sim is feature-complete and performance is acceptable. In general, the prototype release will occur before formal code review and production-level QA testing.
 - It is understood that known issues may be present in prototypes. These will generally be of the nature of "polish" issues, but pedagogical issues will generally be considered "showstoppers".
-- Once the sim has passed the prototype test, it will be published in the normal manner. However:
-  - The prototype sim will be published at the appropriate "latest" link, but the sim's page on phet.colorado.edu **WILL NOT** be made visible.
-  - It is understood that if a sim has been deployed as a prototype, the first non-prototype production deploy will in general have the version schema "1.N.0" where N is >= 1. For example, if we had 2 prototypes with versions 1.0.0 and 1.1.0, then the first version visible at phet.colorado.edu would be 1.2.0.
+- Once the prototype has passed QA testing, it will be published in same manner as a "production" deployment. However:
+  - The prototype will be published at the appropriate "latest" link, but the sim's page on phet.colorado.edu **WILL NOT** be made visible.
+  - It is understood that if a sim has been deployed as a prototype, the first version visible at phet.colorado.edu will have the version schema "1.N.0", where N is >= 1. For example, if we had 2 prototypes with versions 1.0.0 and 1.1.0, then the first version visible at phet.colorado.edu would be 1.2.0.
 - When cost-effective, maintainence releases can be peformed on a prototype release branch. When not cost-effective, a new version of a prototype may require a new release branch.
 
 *Note: This process was chosen for prototype deployments so that they follow a well-established process and leave a documentation trail (github test issues, test matrices, etc). In addition, following this process only requires a change in our internal semantics of the meaning behind a "1.0.0" release. Since the prototype deploys are indeed a "release candidate", it seemed appropriate to follow this process.*
