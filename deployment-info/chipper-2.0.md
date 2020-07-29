@@ -163,7 +163,7 @@ This will ensure that the top level dependencies.json will properly reference th
 
 This would usually be followed by 1+ RC deployments and then a production deployment.
 
-## Prototype deployment
+## Prototype deployments
 
 Prototypes are defined as sims that are deemed worthy of early release to the public before they have gone through the full production process. In general, these sims will be ports of popular sims that are not yet in HTML5. The prototype deployment process will follow the established process of RC and production deploys with the following differences:
 
@@ -179,7 +179,7 @@ Prototypes are defined as sims that are deemed worthy of early release to the pu
 *Note: This process was chosen for prototype deployments so that they follow a well-established process and leave a documentation trail (github test issues, test matrices, etc). In addition, following this process only requires a change in our internal semantics of the meaning behind a "1.0.0" release. Since the prototype deploys are indeed a "release candidate", it seemed appropriate to follow this process.*
 
 
-# Deploying wrappers
+## PhET-iO Wrapper deployments
 
 `grunt wrapper` in a wrapper directory (e.g. phet-io-wrapper-sonification) should deploy the whole thing. Follow the prompts.
 
