@@ -163,6 +163,22 @@ This will ensure that the top level dependencies.json will properly reference th
 
 This would usually be followed by 1+ RC deployments and then a production deployment.
 
+## Prototype deployment
+
+Prototype deployments are defined as sims that are deemed worthy of early release to the public before they have gone through the full production process. In general, these sims will be ports of popular sims that are not yet in HTML5. The prototype deployment process will follow the established process of RC and production deploys with the following differences:
+
+- Prototype sims will be deemed ready for release when the developer and design team agree the sim is in a feature complete state with acceptable performance, in general the prototype release will occur before formal code review and production level QA testing
+- It is understood that known issues will likely be present in prototype RC, these will generally be of the nature of polish issues, but pedagogical issues will generally be considered "showstoppers"
+- When the RC test issue is created it should be labeled `QA:prototype-test` and use the (prototype testing template)[https://github.com/phetsims/QA/blob/master/issue-templates/prototype-test-template.md]
+- Testing will not be as thorough as a production RC and focus on "normal" usability and pedagogical accuracy. Issues found in testing that go beyond these categories will still be documented but will usually not be addressed for the prototype deployment.
+- Once the sim has passed the prototype test it will be published in the normal manner, however:
+  - The prototype sim will be published at the appropriate "latest" link, but the sim page **WILL NOT** be made visible
+  - It is understood that if a sim has been deployed as a prototype, the first production deploy will in general have the version schema 1.N.0 where N is >= 1
+- When cost effective, maintainence releases can be peformed on the prototype deployment
+
+*Note: this process was chosen for prototype deployments so they follow a well established process and leave a documentation trail (github test issues, test matrices, etc). In addition, following this process only requires a change in our internal semantics of the meaning behind a "1.0.0" release. Since the prototype deploys are indeed a "release candidate" it seemed appropriate to follow this process.*
+
+
 # Deploying wrappers
 
 `grunt wrapper` in a wrapper directory (e.g. phet-io-wrapper-sonification) should deploy the whole thing. Follow the prompts.
