@@ -165,7 +165,7 @@ This would usually be followed by 1+ RC deployments and then a production deploy
 
 ## Prototype deployments
 
-Prototypes are defined as sims that are deemed worthy of early release to the public before they have gone through the full production process. In general, these sims will be ports of popular sims that are not yet in HTML5. The prototype deployment process will follow the established process of RC and production deploys with the following differences:
+Prototypes are defined as sims that are deemed worthy of early release to the public before they have gone through the full production process. In general, these sims will be ports of popular sims that are not yet in HTML5. The prototype deployment process will follow the process [RC/production deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches) with the following differences:
 
 - Prototype sims will be deemed ready for release when the developer and design team agree the sim is in a feature-complete state with acceptable performance. In general, the prototype release will occur before formal code review and production level QA testing.
 - It is understood that known issues will likely be present in prototypes. These will generally be of the nature of "polish" issues, but pedagogical issues will generally be considered "showstoppers".
