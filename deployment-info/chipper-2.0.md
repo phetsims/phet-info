@@ -169,7 +169,7 @@ Prototypes are defined as sims that are deemed worthy of early release to the pu
 
 - Prototype sims will be deemed ready for release when the developer and design team agree the sim is in a feature-complete state with acceptable performance. In general, the prototype release will occur before formal code review and production level QA testing.
 - It is understood that known issues will likely be present in prototypes. These will generally be of the nature of "polish" issues, but pedagogical issues will generally be considered "showstoppers".
-- When the RC test issue is created, it should be labeled `QA:prototype-test` and use the [prototype testing template](https://github.com/phetsims/QA/blob/master/issue-templates/prototype-test-template.md).
+- When the RC test issue is created, it should be labeled `QA:prototype-test` and use the [prototype testing template](https://github.com/phetsims/QA/blob/master/issue-templates/prototype-test-template.md).  The title of the issue should have the format "Prototype test: ${{SIM}} {{VERSION}}", for example "Prototype test: Natural Selection 1.0.0-rc.1".
 - Testing will not be as thorough as a production RC and will focus on "normal" usability and pedagogical accuracy. Issues found in testing that go beyond these categories will still be documented, but will usually not be addressed for the prototype deployment.
 - Once the sim has passed the prototype test it will be published in the normal manner, however:
   - The prototype sim will be published at the appropriate "latest" link, but the sim's page on phet.colorado.edu **WILL NOT** be made visible.
