@@ -171,7 +171,7 @@ Prototypes will follow the process for [RC/production deployments](https://githu
 
 - When the RC test issue is created:
   - Use the [prototype testing template](https://github.com/phetsims/QA/blob/master/issue-templates/prototype-test-template.md).
-  - The title of the issue should have the format "Prototype test: ${{SIM}} {{VERSION}}", for example "Prototype test: Natural Selection 1.0.0-rc.1".
+  - Issue title format is "Prototype test: ${{SIM}} {{VERSION}}", for example "Prototype test: Natural Selection 1.0.0-rc.1".
   - Label the issue `QA:prototype-test`.
 - Testing will not be as thorough as a production RC and will focus on "normal" usability and pedagogical accuracy. Issues found in testing that go beyond these categories will still be documented, but will usually not be addressed for the prototype deployment.
 - A prototype will be deemed "ready for release" when the developer and design team agree that the sim is in a feature-complete state with acceptable performance. In general, the prototype release will occur before formal code review and production-level QA testing.
