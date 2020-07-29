@@ -7,8 +7,6 @@
 
 Chipper 2.0 also adds the `--debugHTML` option to builds (will build another version with the `_debug` suffix), and has the `-allHTML` option (not relevant for the phet-io brand). Additionally, it is possible to build a sim with a one-off version identifier with `--oneOff={{ONE_OFF_NAME}}`, which will be included in the version identifier. This is a build flag, and is not provided to deployment tasks.
 
-Most other build options should be preserved, and apply to all brands that are built.
-
 # Updating supported brands
 
 In each sim's package.json, it lists the brands that are supported. When a phet-io sim is instrumented, it should be added as a supported brand in package.json. The files under perennial/data (simulation lists, based on phet-io or other support) will be automatically updated by a process running on bayes (grunt generate-data).
@@ -176,7 +174,7 @@ Prototypes will follow the process for [RC/production deployments](https://githu
 - Testing will not be as thorough as a production RC and will focus on "normal" usability and pedagogical accuracy. Issues found in testing that go beyond these categories will still be documented, but will usually not be addressed for the prototype deployment.
 - A prototype will be deemed "ready for release" when the design team agrees that the sim is feature-complete and performance is acceptable. In general, the prototype release will occur before formal code review and production-level QA testing.
 - It is understood that known issues may be present in prototypes. These will generally be of the nature of "polish" issues, but pedagogical issues will generally be considered "showstoppers".
-- Once the prototype has passed QA testing, it will be published in same manner as a "production" deployment. However:
+- Once the prototype has passed QA testing, it will be published in the same manner as a "production" deployment. However:
   - The prototype will be published at the appropriate "latest" link, but the sim's page on phet.colorado.edu **WILL NOT** be made visible.
   - It is understood that if a sim has been deployed as a prototype, the first version visible at phet.colorado.edu will have the version schema "1.N.0", where N is >= 1. For example, if we had 2 prototypes with versions 1.0.0 and 1.1.0, then the first version visible at phet.colorado.edu would be 1.2.0.
 - When cost-effective, maintainence releases can be peformed on a prototype release branch. When not cost-effective, a new version of a prototype may require a new release branch.
