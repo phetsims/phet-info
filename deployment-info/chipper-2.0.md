@@ -177,7 +177,7 @@ Prototypes will follow the process for [RC/production deployments](https://githu
 - Once the prototype has passed QA testing, it will be published in the same manner as a "production" deployment. However:
   - The prototype will be published at the appropriate "latest" link, but the sim's page on phet.colorado.edu **WILL NOT** be made visible.
   - It is understood that if a sim has been deployed as a prototype, the first version visible at phet.colorado.edu will have the version schema "1.N.0", where N is >= 1. For example, if we had 2 prototypes with versions 1.0.0 and 1.1.0, then the first version visible at phet.colorado.edu would be 1.2.0.
-- When cost-effective, maintainence releases can be peformed on a prototype release branch. When not cost-effective, a new version of a prototype may require a new release branch.
+- When cost-effective, maintainence releases can be performed on a prototype release branch. When not cost-effective, a new version of a prototype may require a new release branch.
 
 *Note: This process was chosen for prototype deployments so that they follow a well-established process and leave a documentation trail (github test issues, test matrices, etc). In addition, following this process only requires a change in our internal semantics of the meaning behind a "1.0.0" release. Since the prototype deploys are indeed a "release candidate", it seemed appropriate to follow this process.*
 
