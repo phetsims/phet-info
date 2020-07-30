@@ -7,10 +7,11 @@
 - [ ]  Identify internal and any client iO requirements
 
 ### Initial meeting
-If a retrofit, prior to initial meeting, the developer
-- [ ]  Performs preliminary assessment of state of the code (does it conform to newer code standards)
-- [ ]  Reviews open issues in the repo
-    
+Prior to initial meeting:
+  - [ ] If a retrofit, the developer:
+    - [ ] Performs preliminary assessment of state of the code (does it conform to newer code standards)
+    - [ ] Reviews open issues in the repo
+  - [ ] Developer performs a "best guess" initial instrumentation to populate Studio with something. This involves at least passing tandems to all/most model Properties and  `Tandem.REQUIRED` elements.
 Brief initial meeting (developer and designer):
 - [ ] Identify the broad goals
 - [ ] Identify which requirements/goals will be hard and most important (ie set intial bunny population)
