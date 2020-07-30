@@ -6,22 +6,28 @@
 - [ ]  Create a google doc for documenting requirements
 - [ ]  Identify internal and any client iO requirements
 
+### Before touching any code
+- [ ] If this is a retrofit, create a baseline dev version. This baseline can help along the instrumentation process.
+
 ### Initial meeting
 Prior to initial meeting:
   - [ ] If a retrofit, the developer:
     - [ ] Performs preliminary assessment of state of the code (does it conform to newer code standards)
     - [ ] Reviews open issues in the repo
-  - [ ] Developer performs a "best guess" initial instrumentation to populate Studio with something. This involves at least passing tandems to all/most model Properties and  `Tandem.REQUIRED` elements.
+  - [ ] Developer performs a "best guess" initial instrumentation to populate Studio with something. This involves at least passing tandems to many model Properties and  `Tandem.REQUIRED` elements.
 
 Brief initial meeting (developer and designer):
 - [ ] Identify the broad goals
 - [ ] Identify which requirements/goals will be hard and most important (ie set intial bunny population)
 - [ ] Are some of the requirements desirable for PhET brand (eg via query parameters)
 - [ ] Create a preliminary schedule (milestones) with google calendar reminders
+- [ ] Evaluate any client requirements, and work these into the design document.
     
  ## Development
  If a retrofit
-- [ ] Developer should perform a thorough code review
+- [ ] Developer should perform a thorough code review. 
+  - [ ] Prefer common code UI to custom implementations
+  - [ ] Deprecated code should not be used; use latest common code components instead. Most likely these have better PhET-iO instrumentation.
 - [ ] Instrumentation and code review commits should be separate
  
  ### Intitial development
