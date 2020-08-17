@@ -1,3 +1,23 @@
+Table of Contents
+
+* [Building simulation](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#building-simulations)
+* [Updating supported brands](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#updating-supported-brands)
+* [Building standalone repositories](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#building-standalone-repositories)
+* [Building wrapper repositories](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#building-standalone-repositories)
+* [Deploying simulations](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#deploying-simulations)
+  * [If working off campus, install the VPN](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#if-working-off-campus-install-the-vpn)
+  * [Configure build-local.json settings](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#configure-remote-bashrc)
+  * [Configure remote ~/.bashrc](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#configure-remote-bashrc)
+  * [Configure an RSA key](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#configure-an-rsa-key)
+  * [Dev deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#dev-deployments)
+  * [One-off deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#one-off-deployments)
+  * [RC/production deployments and release branches](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches)
+    * [If the release branch does not yet exist](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#if-the-release-branch-does-not-yet-exist)
+    * [RC/production deployment on an existing branch](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployment-on-an-existing-branch)
+    * [Manual maintenance patching](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#manual-maintenance-patching)
+  * [Prototype deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#prototype-deployments)
+  * [PhET-iO Wrapper deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#phet-io-wrapper-deployments)
+* [Deploying pre-chipper-2.0 things](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#deploying-pre-chipper-20-things)
 
 # Building simulations
 
