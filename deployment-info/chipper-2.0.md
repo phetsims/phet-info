@@ -1,4 +1,4 @@
-Table of Contents
+# Table of Contents
 
 * [Building simulation](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#building-simulations)
 * [Updating supported brands](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#updating-supported-brands)
