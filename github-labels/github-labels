@@ -33,7 +33,7 @@ priority:4-low,c7def8
 priority:5-deferred,FFFAFA
 project:master-checklist,42426F
 project:requires-kathy,0000FF
-status:blocks-publication,00FFCC
+status:blocks-publication,FF007F
 status:blocks-sim-publication,00ff6e
 status:fixed-awaiting-deploy,006b75
 status:on-hold,F0FFF0
