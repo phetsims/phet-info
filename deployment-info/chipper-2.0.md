@@ -1,3 +1,5 @@
+# Deployment Info for chipper 2.0
+
 # Table of Contents
 
 * [Building simulation](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#building-simulations)
