@@ -639,7 +639,7 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 - [ ] `DOT/Utils.toFixed` or `DOT/Utils.toFixedNumber` should be used instead of `toFixed`. JavaScript's `toFixed` is notoriously buggy. Behavior differs depending on browser, because the spec doesn't specify whether to round or floor.
 
 ## IE11
-- [ ] IE is not longer supported. With that in mind remove IE-specific workarounds
+- [ ] IE is no longer supported. With that in mind remove IE-specific workarounds
 
 ## **Organization, Readability, and Maintainability**
 
