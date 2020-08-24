@@ -53,15 +53,15 @@ If any of these items fail, pause code review.
 there a call to that component’s `dispose` function, or is it obvious why it isn't necessary, or is there documentation
 about why `dispose` isn't called?  An example of why no call to `dispose` is needed is if the component is used in
 a `ScreenView` that would never be removed from the scene graph.
-- [ ] Are there leaks due to registering observers or listeners? The following guidelines should be followed unless
-there it is obviously no need to unlink, or documentation (in-line or in the implementation nodes)added about why
-following them is not necessary.  Unlink is not needed for Properties contained in classes that are never disposed of,
-such as primary model and view classes that exist for the duration of the sim.
-	- [ ] AXON: `Property.link` is accompanied by `Property.unlink`.
-	- [ ] AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
-	- [ ] AXON: Creation of `Multilink` is accompanied by `dispose`.
-	- [ ] AXON: Creation of `Emitter` is accompanied by `dispose`, and/or `Emitter.addListener` is accompanied by `Emitter.removeListener`.
-	- [ ] TANDEM: PhET-iO instrumented `PhetioObject` instances should be disposed.
+- [ ] Are there leaks due to registering observers or listeners? The following guidelines should be followed unless documentation (in-line or in implementation-notes.md) describes why following them is not necessary.
+  * AXON: `Property.link` or `lazyLink` is accompanied by `unlink`.
+  * AXON: `Property.multilink` is accompanied by `unmultilink`.
+  * AXON: Creation of `Multilink` is accompanied by `dispose`.
+  * AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
+  * AXON: `Emitter.addListener` is accompanied by `removeListener`.
+  * AXON: `ObservableArray.addItem*Listener` is accompanied by `removeItem*Listener`
+  * SCENERY: `Node.addInputListener` is accompanied by `removeInputListener`
+  * TANDEM: Creation of an instrumented `PhetioObject` is accompanied by `dispose`.
 - [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls `this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly match the filename.
 
 ## **Performance**
