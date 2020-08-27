@@ -26,7 +26,6 @@
 
 The following standard GitHub issues should exist. If any of these issues is missing, or have not been completed, pause code review until the issues have been created and addressed by the responsible dev.
 
-GitHub issues should exist that document:
 - [ ] results of memory testing for `brands=phet`
 - [ ] results of memory testing for `brands=phet-io` (if the sim is instrumented for PhET-iO)
 - [ ] performance testing and sign-off
