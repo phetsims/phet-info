@@ -334,6 +334,22 @@ The simulation should scale isometrically such that all portions are visible at 
 
 A minification and unification process is implemented in our repo https://github.com/phetsims/chipper. This can be used to create a single-file HTML that contains all images and audio, and is suitable for download for offline usage.
 
+Here's an example of how to compile example-sim into a single HTML file. Other sims would be compiled similarily. This assumes that you have all of example-sim's dependencies checked out in your local working copy.
+
+```
+% cd example-sim
+% npm install
+% grunt build --brands=adapted-from-phet
+% cd build/adapted-from-phet
+% ls
+dependencies.json
+example-sim-128.png
+example-sim-600.png
+example-sim_all_adapted-from-phet_debug.html
+example-sim_en_adapted-from-phet.html
+xhtml/
+```
+
 ## Offline Operation
 
 It is a requirement that all PhET simulations can be downloaded and run off line in all identified browsers from the file:// URL.  PhET’s chipper build process (described above) produces a single file that can be downloaded for offline use.  Please make sure you are not using any APIs that prevent launching and running properly when offline using file:// URL., and test that offline operation works properly for your simulation.
