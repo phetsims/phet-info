@@ -80,7 +80,7 @@
 | Molecule Polarity | @pixelzoom | ✓ |
 | Molecule Shapes |  @jonathanolson  | ✓ |
 | Molecule Shapes: Basics |  @jonathanolson  | ✓ |
-| Natural Selection | @pixelzoom | |
+| Natural Selection | @pixelzoom | ✓ |
 | Neuron |  @jbphet  | ✓ |
 | Normal Modes | @jonathanolson |  |
 | Number Line: Distance |  @jbphet  |  |
