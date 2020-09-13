@@ -1,5 +1,6 @@
 .idea/
 build/
+build-phet-io-api/
 node_modules/
 *.iml
 .DS_Store
