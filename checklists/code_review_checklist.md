@@ -196,7 +196,8 @@ For a sim repository named “my-repo”, the general structure should look like
 - [ ] Are there any GitHub branches that are no longer needed and should be deleted?
 - [ ] Does `model.md` adequately describe the model, in terms appropriate for teachers?
 - [ ] Does `implementation-notes.md` adequately describe the implementation, with an overview that will be useful to future maintainers?
-- [ ] Sim-specific query parameters (if any) should be identified and documented in one .js file in js/common/ or js/ (if there is no common/). The .js file should be named `{{PREFIX}}QueryParameters.js`, for example ArithmeticQueryParameters.js for the aritmetic repository, or FBQueryParameters.js for Function Builder (where the `FB` prefix is used).  Query parameters that are public-facing should be identified using `public: true` in the schema. 
+- [ ] Sim-specific query parameters (if any) should be identified and documented in one .js file in js/common/ or js/ (if there is no common/). The .js file should be named `{{PREFIX}}QueryParameters.js`, for example ArithmeticQueryParameters.js for the aritmetic repository, or FBQueryParameters.js for Function Builder (where the `FB` prefix is used).  
+- [ ] Query parameters that are public-facing should be identified using `public: true` in the schema. 
 
 ## **Coding Conventions**
 
