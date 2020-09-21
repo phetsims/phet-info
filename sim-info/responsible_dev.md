@@ -18,7 +18,7 @@
 | Blackbody Spectrum  | @jbphet  | ✓ |
 | Blast | @samreid |  |
 | Build a Fraction | @jonathanolson | ✓ |
-| Build a Molecule | @jonathanolson |  |
+| Build a Molecule | @denz1994 |  |
 | Build an Atom  | @jbphet  | ✓ |
 | Buoyancy | @jonathanolson | |
 | Calculus Grapher | @jonathanolson | |
