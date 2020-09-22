@@ -80,6 +80,7 @@
 | Molecule Polarity | @pixelzoom | ✓ |
 | Molecule Shapes |  @jonathanolson  | ✓ |
 | Molecule Shapes: Basics |  @jonathanolson  | ✓ |
+| My Solar System |  @jonathanolson  | ✓ |
 | Natural Selection | @pixelzoom | ✓ |
 | Neuron |  @jbphet  | ✓ |
 | Normal Modes | @jonathanolson |  |
