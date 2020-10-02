@@ -801,7 +801,7 @@ ObservableArray is another common iteration of the Observer pattern. ObservableA
   ```js
   // model
   // @public {ObservableArray.<Cart>}
-  this.carts = new ObservableArray();
+  this.carts = createObservableArray();
 
 
   // view
