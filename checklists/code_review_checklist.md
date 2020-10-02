@@ -81,7 +81,7 @@ a `ScreenView` that would never be removed from the scene graph.
 `stringTest=xss`? This test passes if sim does not redirect, OK if sim crashes or fails to fully start. Only test on one
 desktop platform.  For PhET-iO sims, additionally test `?stringTest=xss` in Studio to make sure i18n strings didn't leak
 to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
-- [ ] Avoid using concatenation to create strings that will be visible in the user interface. Use `StringUtils.fillIn` and a string pattern to ensure that strings are properly localized. 
+- [ ] Avoid using concatenation to create strings that will be visible in the user interface. Use `StringUtils.fillIn` and a string pattern to ensure that strings are properly localized.
 - [ ] Use named placeholders (e.g. `"{{value}} {{units}}"`) instead of numbered placeholders (e.g. `"{0} {1}"`).
 - [ ] Make sure the string keys are all perfect, because they are difficult to change after 1.0.0 is published. Guidelines for string keys are:
 
@@ -196,8 +196,8 @@ For a sim repository named “my-repo”, the general structure should look like
 - [ ] Are there any GitHub branches that are no longer needed and should be deleted?
 - [ ] Does `model.md` adequately describe the model, in terms appropriate for teachers?
 - [ ] Does `implementation-notes.md` adequately describe the implementation, with an overview that will be useful to future maintainers?
-- [ ] Sim-specific query parameters (if any) should be identified and documented in one .js file in js/common/ or js/ (if there is no common/). The .js file should be named `{{PREFIX}}QueryParameters.js`, for example ArithmeticQueryParameters.js for the aritmetic repository, or FBQueryParameters.js for Function Builder (where the `FB` prefix is used).  
-- [ ] Query parameters that are public-facing should be identified using `public: true` in the schema. 
+- [ ] Sim-specific query parameters (if any) should be identified and documented in one .js file in js/common/ or js/ (if there is no common/). The .js file should be named `{{PREFIX}}QueryParameters.js`, for example ArithmeticQueryParameters.js for the aritmetic repository, or FBQueryParameters.js for Function Builder (where the `FB` prefix is used).
+- [ ] Query parameters that are public-facing should be identified using `public: true` in the schema.
 
 ## **Coding Conventions**
 
@@ -418,6 +418,8 @@ Property.multilink(
     // some algorithm that uses style and active
 } );
 ```
+
+- [ ] ES5 getters/setters defined in sims should be used judiciously when a Property exists, only when the benefit of conciseness outweighs the potential loss of readability. If ES5 getters/setters exist, try to not mix usage of them with Property access.
 
 ### Documentation
 
@@ -693,5 +695,5 @@ example, the following methods (and perhaps others) should not be used: `Math.ra
 This also deserves re-iteration due to its effect on record/playback for PhET-iO.
 - [ ] Like JSON, keys for `undefined` values are omitted when serializing objects across frames. Consider this when
 determining whether `toStateObject` should use `null` or `undefined` values.
-- [ ] PhET prefers to use the term "position" to refer to the physical (x,y) position of objects.  This applies to both 
-brands, but is more important for the PhET-iO API.  See https://github.com/phetsims/phet-info/issues/126 
+- [ ] PhET prefers to use the term "position" to refer to the physical (x,y) position of objects.  This applies to both
+brands, but is more important for the PhET-iO API.  See https://github.com/phetsims/phet-info/issues/126
