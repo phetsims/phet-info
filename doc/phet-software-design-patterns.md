@@ -790,27 +790,27 @@ PhET widely uses the observer pattern described in https://en.wikipedia.org/wiki
   ##### Other Notes
    - In some use cases of `Multilink` and `DerivedProperty`, the observer needs to know which Property caused the notification. One solution is to add independent listeners to each dependency and turn the DerivedProperty into a Property that is modified by each listener. Please reference https://github.com/phetsims/axon/issues/259.
 
-#### [ObservableArray](https://github.com/phetsims/axon/blob/master/js/ObservableArray.js)
+#### [ObservableArrayDef](https://github.com/phetsims/axon/blob/master/js/createObservableArray.js)
 
-ObservableArray is another common iteration of the Observer pattern. ObservableArrays are a wrapper class of an array that notifies observers when items are added or removed from the Array. Its API closely resembles the prototype of native arrays (it contains a `push`, `forEach`, `map`, etc. methods).
+ObservableArrayDef is another common iteration of the Observer pattern. ObservableArrayDefs are created via createObservableArray,
+and are a Proxy wrapper over an Array that notifies observers when items are added or removed from the Array.
 
   ##### Role in MVC
-  Like `Property`, `ObservableArray` can act as a key communicator within the model-view hierarchy of PhET simulations.
+  Like `Property`, `ObservableArrayDef` can act as a key communicator within the model-view hierarchy of PhET simulations.
 
   One common pattern is:
   ```js
   // model
-  // @public {ObservableArray.<Cart>}
+  // @public {ObservableArrayDef.<Cart>}
   this.carts = createObservableArray();
 
-
   // view
-  this.carts.addItemAddedListener( cart => this.addChild( new CartNode( cart ) ) } );
+  this.carts.elementAddedEmitter.addListener( cart => this.addChild( new CartNode( cart ) ) );
   ```
 
   Then, wherever `this.carts.push( new Cart() )` is called, a new CartNode is added through the observer.
 
-  As a reminder from above, observers are referenced as a listener in the ObservableArray, so be sure to call `removeItemAddedListener()` to release listeners when needed.
+  As a reminder from above, observers are referenced as a listener in the ObservableArrayDef, so be sure to call `elementAddedEmitter.removeListener` to release listeners when needed.
 
 #### [Emitter](https://github.com/phetsims/axon/blob/master/js/Emitter.js)
   You may see `Emitters` used in the common code shared between simulations. Emitters are a generic event-based class that follows the observer pattern to allow clients to subscribe (through the `addListener` method) to a single specific event.
