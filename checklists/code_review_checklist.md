@@ -58,7 +58,7 @@ a `ScreenView` that would never be removed from the scene graph.
   * AXON: Creation of `Multilink` is accompanied by `dispose`.
   * AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
   * AXON: `Emitter.addListener` is accompanied by `removeListener`.
-  * AXON: `ObservableArray.addItem*Listener` is accompanied by `removeItem*Listener`
+  * AXON: `ObservableArrayDef.element*Emitter.addListener` is accompanied by `ObservableArrayDef.element*Emitter.removeListener`
   * SCENERY: `Node.addInputListener` is accompanied by `removeInputListener`
   * TANDEM: Creation of an instrumented `PhetioObject` is accompanied by `dispose`.
 - [ ] Do all types that require a `dispose` function have one? This should expose a public `dispose` function that calls `this.disposeMyType()`, where `disposeMyType` is a private function declared in the constructor.  `MyType` should exactly match the filename.
