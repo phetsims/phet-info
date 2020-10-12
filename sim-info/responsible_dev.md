@@ -36,6 +36,7 @@
 | Curve Fitting | @jonathanolson | ✓ |
 | Density | @jonathanolson | |
 | Diffusion | @pixelzoom | ✓ |
+| Eating, Exercise, and Energy | @samreid |   |
 | Energy Forms and Changes | @chrisklus | ✓ |
 | Energy Skate Park |  @jessegreenberg  | |
 | Energy Skate Park: Basics |  @samreid  | ✓ |
