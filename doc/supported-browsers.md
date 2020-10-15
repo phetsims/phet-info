@@ -15,8 +15,4 @@ Below is a list of currently supported browsers for HTML5 PhET simulations
 ### 5. Edge latest version
 - **Note** although we officially support Edge, this browser is not regularly tested since it is derived from Chrome
  
-  
-  
-
-*although other browsers may work IE11 is specifically NOT supported*
 
