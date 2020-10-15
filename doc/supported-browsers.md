@@ -2,7 +2,7 @@
 
 Below is a list of currently supported browsers for HTML5 PhET simulations 
 - This document is regularly updated. **Last update: 10/14/2020**
-- *Although other browsers not on this list may work IE11 is specifically NOT supported and will fail*
+- *Although other browsers not on this list may work, IE11 and older are specifically NOT supported and will fail*
 
 ### 1. Mobile Safari 13 and newer
 
