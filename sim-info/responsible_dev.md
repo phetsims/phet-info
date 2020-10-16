@@ -105,7 +105,6 @@
 | Simula Rasa | @pixelzoom | |
 | States of Matter |  @jbphet  | ✓ |
 | States of Matter: Basics |  @jbphet  | ✓ |
-| Sugar and Salt Solutions | @samreid | |
 | Trig Tour |  @jessegreenberg  | ✓ |
 | Under Pressure |  @samreid  | ✓ |
 | Unit Rates |  @pixelzoom  | ✓ |
