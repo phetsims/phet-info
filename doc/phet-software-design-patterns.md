@@ -405,7 +405,7 @@ Creating and using mixins and traits will look similar. Both will have
   - If necessary, the mixin/trait should have a `dispose{{Name}}` method that handles disposal, to be called by the
   type using the mixin/trait when it is disposed. Method should not be named `dispose` to avoid overriding the `dispose`
   method of the mixing type.
-  - The class using the mixin/trait will have `@mixes {{Name}}` annotation at the constructor.
+  - The class using the mixin/trait will have `@mixes Name` annotation at the constructor.
 
 The only difference is traits should have assertions in the `mixInto` method to verify the class and requirements.
 
