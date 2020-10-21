@@ -16,14 +16,14 @@
 | Beer's Law Lab  | @pixelzoom  | ✓ |
 | Bending Light  | @samreid  | ✓ |
 | Blackbody Spectrum  | @jbphet  | ✓ |
-| Blast | @samreid |  |
+| Blast | @samreid | N/A |
 | Build a Fraction | @jonathanolson | ✓ |
 | Build a Molecule | @denz1994 | ✓ |
 | Build an Atom  | @jbphet  | ✓ |
 | Buoyancy | @jonathanolson | |
 | Calculus Grapher | @jonathanolson | |
 | Capacitor Lab: Basics | @denz1994 | ✓ |
-| Chains |  | ✓ |
+| Chains |  | N/A |
 | Charges And Fields | @jonathanolson  | ✓ |
 | Circuit Construction Kit: AC | @samreid | |
 | Circuit Construction Kit: Black Box Study | @samreid | |
@@ -102,7 +102,7 @@
 | Reactants, Products and Leftovers |  @pixelzoom  | ✓ |
 | Resistance in a Wire |  @zepumph  | ✓ |
 | Rutherford Scattering |  @jessegreenberg  | ✓ |
-| Simula Rasa | @pixelzoom | |
+| Simula Rasa | @pixelzoom | N/A |
 | States of Matter |  @jbphet  | ✓ |
 | States of Matter: Basics |  @jbphet  | ✓ |
 | Trig Tour |  @jessegreenberg  | ✓ |
@@ -113,5 +113,5 @@
 | Wave Interference | @samreid | ✓ |
 | Wave on a String |  @jonathanolson  | ✓ |
 | Waves Intro | @samreid | ✓ |
-| Wilder | @jonathanolson |  |
+| Wilder | @jonathanolson | N/A |
 | X-ray Diffraction | @heldentodd |  |
