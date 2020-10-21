@@ -94,7 +94,7 @@
 | Pendulum Lab | @jonathanolson | ✓ |
 | pH Scale |  @pixelzoom  | ✓ |
 | pH Scale: Basics |  @pixelzoom  | ✓ |
-| PhET-iO Test Sim |  @chrisklus | |
+| PhET-iO Test Sim |  @chrisklus | N/A |
 | Plinko Probability | @chrisklus  | ✓ |
 | Projectile Motion | @jbphet  | ✓ |
 | Proportion Playground |  @jonathanolson  | ✓ |
