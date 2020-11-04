@@ -20,8 +20,8 @@ have been introduced during instrumentation, or were pre-existing.  This also cr
 for memory-leaks, sim size, performance, etc. Document the dev version in the sim's PhET-iO Github issue.
 - [ ] Developer to gather knowledge about the instrumentation process. These topics are crucial to understanding before
  attempting to outfit a simulation with PhET-iO:
-  - [ ] A general overview of PhET-iO, please read the [Overview section](https://github.com/phetsims/phet-io/blob/master/doc/phet-io-instrumentation-guide.md#overview).
-  - [ ] Make sure you understand what is contained in PhET-iO API, see [API Management](https://github.com/phetsims/phet-io/blob/master/doc/phet-io-instrumentation-guide.md#api-management).
+  - [ ] A general overview of PhET-iO, please read the [Overview section](https://github.com/phetsims/phet-io/blob/master/doc/phet-io-instrumentation-technical-guide.md#overview).
+  - [ ] Make sure you understand what is contained in PhET-iO API, see [API Management](https://github.com/phetsims/phet-io/blob/master/doc/phet-io-instrumentation-technical-guide.md#api-management).
 - [ ] Design review: PhET-iO instrumentation provides an opportunity to review the condition of the sim, and make improvements to both the UX and code base.  With a designer:
   - [ ] Review open GitHub issues. Identify issues that should be addressed during instrumentation.
   - [ ] Identify places where the sim should be brought up to PhET UX standards.
@@ -68,7 +68,7 @@ play with in Studio. Use your judgement!
  
 ### Initial development
 
-- [ ] During this step, please consult with the [PhET-iO Instrumentation Guide](https://github.com/phetsims/phet-io/blob/master/doc/phet-io-instrumentation-guide.md)
+- [ ] During this step, please consult with the [PhET-iO Instrumentation Guide](https://github.com/phetsims/phet-io/blob/master/doc/phet-io-instrumentation-technical-guide.md)
  to do the sim instrumentation. Create a separate github issue called "PhET-iO Instrumentation Implementation" and copy 
  the appropriate checklist from that guide into it.
 - [ ] New Sim --  build out according to initial requirements.
@@ -97,7 +97,7 @@ time to turn validation back on (by removing the query paramater or package.json
 - [ ] Conduct a dev test with QA. The PhET-iO publication process is often quite different because it can be client-driven. 
 - [ ] After initial dev test, further publications may be necessary depending on the specific use. Talk to the designer or project lead for more information. 
 - [ ] If delivering a dev version to the client see 
-[Initial dev release to client](https://github.com/phetsims/phet-io/blob/master/doc/phet-io-instrumentation-guide.md#initial-dev-release-to-client) 
+[Initial dev release to client](https://github.com/phetsims/phet-io/blob/master/doc/phet-io-instrumentation-technical-guide.md#initial-dev-release-to-client) 
 (Note: you may be able to combine the initial dev test with one needed for this step). 
 - [ ] If moving on to RC, create a QA RC test template issue and include the PhET-iO section.
 - [ ] Please make changes or create an issue if you find these instructions to be incomplete, inconsistent, or incorrect.
