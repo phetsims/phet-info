@@ -678,7 +678,7 @@ This section may be omitted if the sim has not been instrumented for a11y.
 
 This section may be omitted if the sim has not been instrumented for PhET-iO.
 
-- [ ] Does instrumentation follow the conventions described in [PhET-iO Instrumentation Guide](https://github.com/phetsims/phet-io/blob/master/doc/phet-io-instrumentation-guide.md)?
+- [ ] Does instrumentation follow the conventions described in [PhET-iO Instrumentation Guide](https://github.com/phetsims/phet-io/blob/master/doc/phet-io-instrumentation-technical-guide.md)?
 This could be an extensive bullet. At the very least, be sure to know what amount of instrumentation this sim
  supports. Describing this further goes beyond the scope of this document.
 - [ ] PhET-iO instantiates different objects and wires up listeners that are not present in the PhET-branded simulation.
