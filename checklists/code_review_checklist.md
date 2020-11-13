@@ -676,7 +676,7 @@ This section may be omitted if the sim has not been instrumented for a11y.
 
 ## **PhET-iO**
 
-This section may be omitted if the sim has not been instrumented for PhET-iO.
+This section may be omitted if the sim has not been instrumented for PhET-iO, but is likely good to glance at no matter.
 
 - [ ] Does instrumentation follow the conventions described in [PhET-iO Instrumentation Guide](https://github.com/phetsims/phet-io/blob/master/doc/phet-io-instrumentation-technical-guide.md)?
 This could be an extensive bullet. At the very least, be sure to know what amount of instrumentation this sim
@@ -696,3 +696,4 @@ This also deserves re-iteration due to its effect on record/playback for PhET-iO
 determining whether `toStateObject` should use `null` or `undefined` values.
 - [ ] PhET prefers to use the term "position" to refer to the physical (x,y) position of objects.  This applies to both
 brands, but is more important for the PhET-iO API.  See https://github.com/phetsims/phet-info/issues/126
+- [ ] Are your IOType state methods violating the API of the core type by accessing private fields?
