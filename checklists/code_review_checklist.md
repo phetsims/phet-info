@@ -697,3 +697,5 @@ determining whether `toStateObject` should use `null` or `undefined` values.
 - [ ] PhET prefers to use the term "position" to refer to the physical (x,y) position of objects.  This applies to both
 brands, but is more important for the PhET-iO API.  See https://github.com/phetsims/phet-info/issues/126
 - [ ] Are your IOType state methods violating the API of the core type by accessing private fields?
+- [ ] When defining a boolean Property to indicate whether something is enabled, use `AXON/EnabledProperty`.  This 
+should be done in both the model and the view.
