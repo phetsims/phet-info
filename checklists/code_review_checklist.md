@@ -641,6 +641,7 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 
 ## IE11
 - [ ] IE is no longer supported. With that in mind remove IE-specific workarounds
+- [ ] Use `string.includes` and `string.startsWith` where possible.
 
 ## **Organization, Readability, and Maintainability**
 
