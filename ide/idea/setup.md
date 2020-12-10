@@ -34,7 +34,12 @@ selected, and check `Prefer Strict mode`.
     * Go to File > Settings > Editor > Inspections.
     * When using `@extends` with `inherit` calls, you can get the entire constructor flagged with the warning: 
     "Cyclic inheritance involving {TYPE}" -- Turn it off with JavaScript > General Closure compiler syntax.
-13. Further resources:
+13. We as a project prefer to use `@returns` over `@return` in jsdoc (there is even a lint rule for this), see 
+    https://github.com/phetsims/chipper/issues/557. To get Webstorm to auto fillin `@returns` when using the `/**[Enter]` 
+    template, follow these instructions: https://youtrack.jetbrains.com/issue/WEB-7516#comment=27-611256. Basically type
+    `@retur` in a jsdoc comment and then select manually `returns` from the dialog that pops up. Webstorm will remember you
+    selection.
+14. Further resources:
     * [Here is a list of default keyboard shortcuts for windows and mac](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
 
 ## Preferences
