@@ -56,7 +56,7 @@
   - [ ] Mark the sim as published in [responsible_dev.md](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md)
 
 ## QA
-- [ ] *If a Port: **Legacy sim tested for bugs**; issues reported in repo
+- [ ] *If a Port:* **Legacy sim tested for bugs**; issues reported in repo
 - [ ] **Dev testing started** (Date: //)
 - [ ] **Dev testing completed** (Date: //)
 - [ ] **First RC published** (Date: //)
