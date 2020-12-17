@@ -28,7 +28,8 @@
   - [ ] Teacher Guide created, uploaded, and added to sim design folder
   - [ ] [LoL icons](https://docs.google.com/document/d/1GmLNE31gs8hQYGze3xwmN9k7B6gu7lQ7wJe2phqdH9Y/edit) for each screen created and uploaded to Drive
   - [ ] [LoL metadata](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=562591429) for each screen (description, vocab words, questions for before/after sim use)
-- [ ] **Make sim visible on website** and clear "Metadata caches" on the [Basic Administration Caches](https://phet.colorado.edu/?wicket:bookmarkablePage=:edu.colorado.phet.website.admin.AdminCachesPage) page
+- [ ] **Make sim visible on website** 
+   - [ ] Clear "Metadata caches" on the [Basic Administration Caches](https://phet.colorado.edu/?wicket:bookmarkablePage=:edu.colorado.phet.website.admin.AdminCachesPage) page
 - [ ] **Post-publication items**
   - [ ] *If a Port:* Review legacy gold star activities, copy over if appropriate
   - [ ] Share new features, design challenges, and treats with group!
