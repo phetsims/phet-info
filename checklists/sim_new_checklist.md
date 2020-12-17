@@ -5,6 +5,7 @@
   - [ ] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) using phet-docs account
   - [ ] Place design doc in the sim folder
 - [ ] **Sim suggestions doc reviewed** [suggestions doc](https://phet.unfuddle.com/a#/projects/9404/notebooks/3863/pages/105821)
+   - [ ] *If port:* Unfuddle tickets reviewed ([searching tickets](https://github.com/phetsims/phet-info/blob/master/issue-info/unfuddle-ticket-search.md))
 - [ ] **Learning goals and standards identified** (Date: //)
 - [ ] **Design concept complete**  (Date: //)
 - [ ] **Wireframes complete** (Date: //)
@@ -25,14 +26,14 @@
   - [ ] Accessibility features
   - [ ] Email announcement language
   - [ ] Teacher Guide created, uploaded, and added to sim design folder
-  - [ ] Sim primer draft
   - [ ] [LoL icons](https://docs.google.com/document/d/1GmLNE31gs8hQYGze3xwmN9k7B6gu7lQ7wJe2phqdH9Y/edit) for each screen created and uploaded to Drive
   - [ ] [LoL metadata](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=562591429) for each screen (description, vocab words, questions for before/after sim use)
 - [ ] **Post-publication items**
+  - [ ] *If port:* Review legacy gold star activities, copy over if appropriate
   - [ ] Share new features, design challenges, and treats with group!
   - [ ] Email announcement
   - [ ] Deliver to [Legends of Learning](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=0)
-  - [ ] Sim primer (create issue, publish ideally within 1 month of live sim)
+  - [ ] Create Sim primer issue
   - [ ] Hold postmortem if applicable (Date: //)
 
 ## Implementation
@@ -53,6 +54,7 @@
   - [ ] Mark the sim as published in [responsible_dev.md](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md)
 
 ## QA
+- [ ] *If port: **Legacy sim tested for bugs**; issues reported in repo
 - [ ] **Dev testing started** (Date: //)
 - [ ] **Dev testing completed** (Date: //)
 - [ ] **First RC published** (Date: //)
