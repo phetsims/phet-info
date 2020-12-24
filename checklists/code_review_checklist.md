@@ -180,9 +180,9 @@ For a sim repository named “my-repo”, the general structure should look like
            lab/
               model/
               view/
-           my-repo-config.js
            my-repo-main.js
            myRepo.js
+	   myRepoStrings.js
    ```
 
 - [ ] Do filenames use an appropriate prefix? Some filenames may be prefixed with the repository name, e.g. `MolarityConstants.js` in molarity.  If the repository name is long, the developer may choose to abbreviate the repository name, e.g. `EEConstants.js` in expression-exchange. If the abbreviation is already used by another respository, then the full name must be used. For example, if the "EE" abbreviation is already used by expression-exchange, then it should not be used in equality-explorer.  Whichever convention is used, it should be used consistently within a repository - don't mix abbreviations and full names.
