@@ -316,9 +316,6 @@ This section deals with PhET coding conventions. You do not need to exhaustively
 lines to optimize readability.  It is OK for require statements or other structured patterns to exceed 120 columns.
 Use your judgment!
 
-- [ ] Use `class` and `extends` for defining classes and implementing inheritance. `PHET_CORE/inherit` was a pre-ES6 implementation of inheritance that is specific to PhET and has been supplanted by `class` and `extends`. `inherit` should
-not be used in new code.
-
 - [ ] Functions should be invoked using the dot operator rather than the bracket operator.  For more details, please see https://github.com/phetsims/gravity-and-orbits/issues/9. For example:
   ```js
   // avoid
@@ -469,8 +466,6 @@ This section deals with PhET documention conventions. You do not need to exhaust
 
 
 - [ ] Do the `@author` annotations seem correct?
-
-- [ ] ES5 (`inherit`) constructors should be annotated with `@constructor`.  ES6 (`class`) constructors should _not_ be annotated with `@constructor`.
 
 - [ ] Constructor and function documentation.  Parameter types and names should be clearly specified for each constructor and function using `@param` annotations.  The description for each parameter should follow a hyphen.  Primitive types should use lower case. For example:
 
