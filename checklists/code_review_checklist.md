@@ -512,6 +512,7 @@ This section deals with PhET documention conventions. You do not need to exhaust
 /**
  * Updates this node.
  * @abstract
+ * @protected
  */
  update() {
    throw new Error( 'update must be implemented by subclass' );
