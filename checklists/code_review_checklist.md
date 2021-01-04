@@ -3,6 +3,7 @@
 * Delete the Table of Contents section, since the links will be incorrect.
 * Delete items and sections that are not relevant.
 * Replace {{GITHUB_ISSUE_LINK}} with links to GitHub issue.
+* Fill in (or delete) the "Specific Instructions" section.
 
 ---
 
@@ -27,6 +28,10 @@
 * [IE11](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#ie11)
 * [Organization, Readability, and Maintainability](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#organization-readability-and-maintainability)
 * [PhET-iO](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#phet-io)
+
+## Specific Instructions
+
+_Provide any specific instructions here. For example: shared or common code that also needs to be reviewed, files that can be skipped, best place to start,...  If there are no specific instructions, then delete this section._
 
 ## GitHub Issues
 
