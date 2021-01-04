@@ -363,7 +363,7 @@ Use your judgment!
   const thoughts = happy ? 'I am happy' : 'I am not happy :(';
   ```
 
-- [ ] Naming for Property values:  All `AXON/Property` instances should be declared with the suffix `Property`.  For example, if a visible property is added, it should have the name `visibleProperty` instead of simply `visible`.  This will help to avoid confusion with non-Property definitions.
+- [ ] Naming for Property values:  All `AXON/Property` instances should be declared with the suffix `Property`.  For example, if a visible property is added, it should have the name `visibleProperty` instead of simply `visible`.  This will help to avoid confusion with non-Property definitions. Identify violations by searching for regular expression "= new .*Property".
 
 - [ ] Properties should use type-specific subclasses where appropriate (.e.g BooleanProperty, NumberProperty, StringProperty) or provide documentation as to why they are not.
 
