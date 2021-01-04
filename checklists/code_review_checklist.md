@@ -365,7 +365,7 @@ Use your judgment!
 
 - [ ] Naming for Property values:  All `AXON/Property` instances should be declared with the suffix `Property`.  For example, if a visible property is added, it should have the name `visibleProperty` instead of simply `visible`.  This will help to avoid confusion with non-Property definitions. Identify violations by searching for regular expression "= new .*Property".
 
-- [ ] Properties should use type-specific subclasses where appropriate (.e.g BooleanProperty, NumberProperty, StringProperty) or provide documentation as to why they are not.
+- [ ] Properties should use type-specific subclasses where appropriate (e.g. BooleanProperty, NumberProperty, StringProperty) or provide documentation as to why they are not.
 
 - [ ] Are `Validator` validation options (`valueType`, `validValues`, etc...) utilized? These are supported in a number of core types like `Emitter` and `Property`. Is their presence or lack thereof properly documented?
 
@@ -438,7 +438,7 @@ This section deals with PhET documention conventions. You do not need to exhaust
 
 - [ ] The HTML5/CSS3/JavaScript source code must be reasonably well documented.  This is difficult to specify precisely, but the idea is that someone who is moderately experienced with HTML5/CSS3/JavaScript can quickly understand the general function of the source code as well as the overall flow of the code by reading through the comments.  For an example of the type of documentation that is required, please see the example-sim repository.
 
-- [ ] Differentiate between `Property` and "property" in comments. They are different things. `Property` is a type in AXON; property is any value associated with a JavaScript object. Often "field" can be used in exchange for "property" which can help with clarity.
+- [ ] Differentiate between `Property` and "property" in comments. They are different things. `Property` is a type in AXON; property is any value associated with a JavaScript object. Often "field" can be used in exchange for "property" which can help with clarity. Search for "property" to identify violations.
 
 - [ ] Classes that mix in traits or mixin should use the `@mixes MyType` annotation.
 
