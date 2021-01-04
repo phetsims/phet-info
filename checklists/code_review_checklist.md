@@ -2,7 +2,7 @@
 * Copy this checklist to a GitHub issue titled "Code Review" and labeled `dev:code-review`. 
 * Delete the **Table of Contents** section, since the links will be incorrect.
 * Delete items and sections that are not relevant.
-* Replace {{GITHUB_ISSUE_LINK}} with links to GitHub issue.
+* Replace {{GITHUB_ISSUE_LINK}} with links to GitHub issues.
 * Fill in (or delete) the **Specific Instructions** section.
 
 ---
