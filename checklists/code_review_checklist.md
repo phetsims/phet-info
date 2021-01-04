@@ -10,7 +10,7 @@
 
 * Mark failed items with ❌
 * Call attention to items with ⚠️
-* Mark items that are not applicable with "N/A"
+* Mark items that are not applicable with **N/A**
 
 ## Table of Contents
 * [Build and Run Check](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#build-and-run-checks)
