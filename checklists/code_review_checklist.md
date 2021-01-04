@@ -52,7 +52,7 @@ If any of these items fail, pause code review.
 
 ## **Memory Leaks**
 
-- [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.) Test on a version built using `grunt --minify.mangle=false`. Compare to testing results done by the responsible developer.
+- [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (Describing this process is beyond the scope of this document.) Test on a version built using `grunt --minify.mangle=false`. Compare to testing results done by the responsible developer. Results can be found in {{GITHUB_ISSUE_LINK}}.
 - [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is
 there a call to that component’s `dispose` function, or is it obvious why it isn't necessary, or is there documentation
 about why `dispose` isn't called?  An example of why no call to `dispose` is needed is if the component is used in
