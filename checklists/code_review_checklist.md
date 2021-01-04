@@ -506,7 +506,17 @@ This section deals with PhET documention conventions. You do not need to exhaust
 - [ ] For most functions, the same form as above should be used, with a `@returns` annotation which identifies the return type and the meaning of the returned value.  Functions should also document any side effects.  For extremely simple functions that are just a few lines of simple code, an abbreviated line-comment can be used, for example: `// Computes {Number} distance based on {Foo} foo.`
 
 
-- [ ] Abstract methods (normally implemented with an error) should be marked with `@abstract` jsdoc.
+- [ ] Abstract methods should be annotated with `@abstract` and should typically throw an Error. For example:
+
+```js
+/**
+ * Updates this node.
+ * @abstract
+ */
+ update() {
+   throw new Error( 'update must be implemented by subclass' );
+ }
+```
 
 #### Type Expressions
 
