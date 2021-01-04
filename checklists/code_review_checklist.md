@@ -31,7 +31,7 @@
 
 ## Specific Instructions
 
-_Provide specific instructions here. For example: known problems, files that can be skipped, code that is not completed, shared or common code that also needs to be reviewed,...  If there are no specific instructions, then delete this section._
+_Provide specific instructions here. For example: known problems that will fail CRC items, files that can be skipped, code that is not completed, shared or common code that also needs to be reviewed,...  If there are no specific instructions, then delete this section._
 
 ## GitHub Issues
 
