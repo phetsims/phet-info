@@ -9,8 +9,8 @@
 
 # PhET Code-Review Checklist (a.k.a "CRC")
 
-* Mark failed items with ❌
-* Call attention to items with ⚠️
+* Mark failed items with ❌, and note any related GitHub issues.
+* Call attention to items with ⚠️, and note any related GitHub issues.
 * Mark items that are not applicable with **N/A**
 
 ## Table of Contents
