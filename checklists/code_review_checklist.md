@@ -30,7 +30,7 @@
 
 ## GitHub Issues
 
-The following standard GitHub issues should exist. _If any of these issues is missing, or have not been completed, pause code review until the issues have been created and addressed by the responsible dev._
+The following standard GitHub issues should exist. _If these issues are missing, or have not been completed, pause code review until the issues have been created and addressed by the responsible dev._
 
 - [ ] results of memory testing for `brands=phet`, see {{GITHUB_ISSUE_LINK}}
 - [ ] results of memory testing for `brands=phet-io` (if the sim is instrumented for PhET-iO), see {{GITHUB_ISSUE_LINK}}
