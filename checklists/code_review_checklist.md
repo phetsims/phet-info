@@ -1,4 +1,10 @@
-*NOTE! Prior to doing a code review, copy this checklist to a GitHub issue for the repository being reviewed. Delete the Table of Contents section, since the links will be incorrect.*
+**NOTE! To begin a code review:**
+* Copy this checklist to a GitHub issue titled "Code Review" for the repository being reviewed. 
+* Delete the Table of Contents section, since the links will be incorrect.
+* Delete items and sections that are not relevant.
+* Replace {{GITHUB_ISSUE_LINK}} with links to GitHub issue.
+
+---
 
 # PhET Code-Review Checklist (a.k.a "CRC")
 
@@ -26,11 +32,11 @@
 
 The following standard GitHub issues should exist. If any of these issues is missing, or have not been completed, pause code review until the issues have been created and addressed by the responsible dev.
 
-- [ ] results of memory testing for `brands=phet`
-- [ ] results of memory testing for `brands=phet-io` (if the sim is instrumented for PhET-iO)
-- [ ] performance testing and sign-off
-- [ ] review of pointer areas
-- [ ] credits (will not be completed until after RC testing)
+- [ ] results of memory testing for `brands=phet`, see {{GITHUB_ISSUE_LINK}}
+- [ ] results of memory testing for `brands=phet-io` (if the sim is instrumented for PhET-iO), see {{GITHUB_ISSUE_LINK}}
+- [ ] performance testing and sign-off, see {{GITHUB_ISSUE_LINK}}
+- [ ] review of pointer areas, see {{GITHUB_ISSUE_LINK}}
+- [ ] credits (will not be completed until after RC testing), see {{GITHUB_ISSUE_LINK}}
 
 ## **Build and Run Checks**
 
