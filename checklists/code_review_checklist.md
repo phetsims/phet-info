@@ -1,9 +1,9 @@
 **To begin a code review:**
 * Copy this checklist to a GitHub issue titled "Code Review". 
-* Delete the Table of Contents section, since the links will be incorrect.
+* Delete the **Table of Contents** section, since the links will be incorrect.
 * Delete items and sections that are not relevant.
 * Replace {{GITHUB_ISSUE_LINK}} with links to GitHub issue.
-* Fill in (or delete) the "Specific Instructions" section.
+* Fill in (or delete) the **Specific Instructions** section.
 
 ---
 
