@@ -26,6 +26,7 @@
 | Chains |  | N/A |
 | Charges And Fields | @jonathanolson  | ✓ |
 | Circuit Construction Kit: AC | @samreid | |
+| Circuit Construction Kit: AC - Virtual Lab | @samreid | |
 | Circuit Construction Kit: Black Box Study | @samreid | |
 | Circuit Constructor Kit: DC | @samreid | ✓ |
 | Circuit Constructor Kit: DC - Virtual Lab| @samreid | ✓ |
