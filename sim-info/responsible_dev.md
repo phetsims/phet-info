@@ -18,7 +18,7 @@
 | Blackbody Spectrum  | @jbphet  | ✓ |
 | Blast | @samreid | N/A |
 | Build a Fraction | @jonathanolson | ✓ |
-| Build a Molecule | @denz1994 | ✓ |
+| Build a Molecule | @jonathanolson | ✓ |
 | Build an Atom  | @jbphet  | ✓ |
 | Buoyancy | @jonathanolson | |
 | Calculus Grapher | @jonathanolson | |
@@ -74,8 +74,8 @@
 | John Travoltage |  @samreid  | ✓ |
 | Least-Squares Regression |  @jonathanolson  | ✓ |
 | Make a Ten |  @jonathanolson  | ✓ |
-| Masses and Springs | @Denz1994 | ✓ |
-| Masses and Springs: Basics | @Denz1994 | ✓ |
+| Masses and Springs | @chrisklus | ✓ |
+| Masses and Springs: Basics | @chrisklus | ✓ |
 | Models of the Hydrogen Atom | @pixelzoom | |
 | Molarity | @zepumph | ✓ |
 | Molecules and Light | @jessegreenberg | ✓ |
