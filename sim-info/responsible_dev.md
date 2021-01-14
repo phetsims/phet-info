@@ -22,7 +22,7 @@
 | Build an Atom  | @jbphet  | ✓ |
 | Buoyancy | @jonathanolson | |
 | Calculus Grapher | @jonathanolson | |
-| Capacitor Lab: Basics | @denz1994 | ✓ |
+| Capacitor Lab: Basics | @jonathanolson | ✓ |
 | Chains |  | N/A |
 | Charges And Fields | @jonathanolson  | ✓ |
 | Circuit Construction Kit: AC | @samreid | |
