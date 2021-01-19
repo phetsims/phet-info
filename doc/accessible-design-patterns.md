@@ -34,6 +34,10 @@ Although describers don't need to be the only place where `StringUtils.fillIn` i
 they can cover the majority of the usages, as well as keeping track of the model and custom state needed to create these
 descriptions.
 
+In general, Describer types need a fair bit of information from the model, and sometime the view-state to fill in 
+description. It is cleanest to pass as much information into the constructor, limiting the number of arguments needed 
+for individual functions. See https://github.com/phetsims/ratio-and-proportion/issues/334.
+
 #### `*DescriptionNode.js`
 
 When a Node is created who's sole purpose is to provide descriptions to the PDOM, then suffix that node with 
