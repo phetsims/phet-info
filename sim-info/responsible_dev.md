@@ -40,7 +40,7 @@
 | Eating, Exercise, and Energy | @samreid |   |
 | Energy Forms and Changes | @chrisklus | ✓ |
 | Energy Skate Park |  @jessegreenberg  | ✓ |
-| Energy Skate Park: Basics |  @samreid  | ✓ |
+| Energy Skate Park: Basics |  @jessegreenberg  | ✓ |
 | Equality Explorer | @pixelzoom | ✓ |
 | Equality Explorer: Basics | @pixelzoom | ✓ |
 | Equality Explorer: Two Variables | @pixelzoom | ✓ |
