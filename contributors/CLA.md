@@ -1,9 +1,14 @@
-Contributor License Agreements for the project can be found here:
+Any individual, party, or institution that wishes to contribute to the PhET project will need to provide a signed Contributor Licensce Agreement (CLA)
 
- https://phet.unfuddle.com/a#/projects/9404/notebooks/17995/attachments
- 
- **File Naming Convention**
+Signed Contributor License Agreements for contributors to the project can be found here:
+
+https://phet.unfuddle.com/a#/projects/9404/notebooks/17995/attachments
+
+#### File Naming Convention
  
  YearContributionsBegan_LastName_FirstName_Affiliation_githubUsername-CLA
+ 
+ #### Original Word versons of the CLA
+ https://github.com/phetsims/special-ops/tree/master/CLA-files
  
  
