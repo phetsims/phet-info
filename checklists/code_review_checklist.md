@@ -708,7 +708,7 @@ This could be an extensive bullet. At the very least, be sure to know what amoun
 - [ ] Make sure JOIST `dt` values are used instead of `Date.now()` or other Date functions. Perhaps try
 `phet.joist.elapsedTime`. Though this has already been mentioned, it is necessary for reproducible playback via input
 events and deserves a comment in this PhET-iO section.
-- [ ] Are random numbers using `phet.joist.random`, and all doing so after modules are declared (non-statically)?  For
+- [ ] Are random numbers using `DOT/dotRandom` as an imported module (not a global), and all doing so after modules are declared (non-statically)?  For
 example, the following methods (and perhaps others) should not be used: `Math.random`, `_.shuffle`, `_.sample`, `_.random`.
 This also deserves re-iteration due to its effect on record/playback for PhET-iO.
 - [ ] Like JSON, keys for `undefined` values are omitted when serializing objects across frames. Consider this when
