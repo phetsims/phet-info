@@ -590,7 +590,7 @@ The shortest possible relative path should be used, and the imports should be so
 
 It's possible to declare circular dependencies, but directly invoking and running code from both parts of the circular dependency at load time will not work.
 
-Some code is loaded in our "preloads" section, and is available through the global `phet` object, like `phet.joist.random`. These do not need any import statements to work, and should be available for all module-based code.
+Some code is loaded in our "preloads" section, and is available through the global `phet` object, like `phet.chipper.queryParameters`. These do not need any import statements to work, and should be available for all module-based code.
 
 #### Anatomy of a module:
 
