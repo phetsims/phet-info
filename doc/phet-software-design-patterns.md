@@ -850,6 +850,10 @@ mindful of the option naming to make sure that you don't cause name collisions. 
 Try to keep related options groups together, both for instantiation and `merge` statements. For examples, if you
 have several options related to a11y, keep them together, don't interleave them with other options.
 
+In some cases, it is important to keep track of whether an option was passed in (and hence externally managed) or 
+not passed in (and hence locally managed).  Locally managed components may require disposal, etc. For example, see 
+NumberProperty and its usage of whether RangeProperty is passed in as an option.
+
 ### Nesting
 
 If using composition for your class, and you want to pass options into a subcomponent, you can nest
