@@ -688,7 +688,7 @@ This section may be omitted if the sim has not been instrumented for a11y.
 - [ ] Are accessibility features integrated well into the code. They should be added in a maintainable way, even if that requires upfront refactoring.
 - [ ] Are accessible design patterns used, see [accessible-design-patterns.md](https://github.com/phetsims/phet-info/blob/master/doc/accessible-design-patterns.md)
 - [ ] Does resetting the simulation also reset the entire PDOM?
-- [ ] Is `Node.accessibleOrder` used appropriately to maintain visual and PDOM layout balance?
+- [ ] Is `Node.pdomOrder` used appropriately to maintain visual and PDOM layout balance?
 - [ ] Make sure accessibility strings aren't being adjusted with ascii specific javascript methods like `toUpperCase()`. Remember that one day these strings will be translatable
 - [ ] Make sure for accessibility strings that all end of sentence periods do not have a leading space before it. Some screen readers will read these as "dot." This can occur often when a clause is conditionally added.
 - [ ] Does this sim use specific keyboard shortcuts that overlap with global shortcuts? This includes the use of modifier keys like in https://github.com/phetsims/ratio-and-proportion/issues/287
