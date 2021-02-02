@@ -50,20 +50,20 @@ and you can get information out of it, as the PDOM is updated in real time in re
 ## Overall Code structure
 Note: a11y is a synonym for accessibility.
 
-* `ParallelDOM.js` is a trait that is added to `Node.js`, so `Node` is already set up with a11y specific
+* `ParallelDOM.js` is a trait that is added to `Node.js`, so `Node` is already set up with pdom specific
 options to provide PDOM descriptions.
 
-* The DAG features of the a11y side of Scenery are handled the same way as graphical `Node`s in Scenery. Each `Node`
+* The DAG features of the pdom side of Scenery are handled the same way as graphical `Node`s in Scenery. Each `Node`
 with the `ParallelDOM` trait added to its prototype has N `PDOMInstance`s based on the number of times it has been added
 to the scene graph. The PDOM elements of each `Node` are created and handled with `PDOMPeer`. There is a 1x1
 relationship of `PDOMInstance` and `PDOMPeer`.
 
-## Basic Example - adding a11y features to a `Node`
+## Basic Example - adding pdom features to a `Node`
 The primary to add a `Node` to the PDOM is through options passed through to `Node.js`. First off, each
 `Node` that wants content in the PDOM will need an HTML element in the PDOM to represent it. To do this, use the
 `tagName` option:
 ```js
-var a11yNode = new Node( {
+var pdomNode = new Node( {
   tagName: 'p'
 } );
 ```
@@ -71,7 +71,7 @@ The above code snippet will create a node that is a `<p>` tag in the PDOM. To gi
 `innerContent` option.
 
 ```js
-a11yNode.innerContent = 'I am a p tag in the PDOM!';
+pdomNode.innerContent = 'I am a p tag in the PDOM!';
 ```
 
 Just like other Node options, you can pass them into an options object, `mutate` call, and by using getters/setters.
@@ -84,7 +84,7 @@ Now the PDOM will look like:
 Each Node can have more than one `HTMLElement` in the PDOM. Up to four `HTMLElements` can be used as needed to display
 the Node appropriately in the PDOM.
   * The "primary sibling" is controlled via the `tagName` option, and is the main `HTMLElement` for the `Node`. If this
-  `Node` has accessible listeners added to it, this element is where those listeners are added.
+  `Node` has PDOM listeners added to it, this element is where those listeners are added.
   *  The "label sibling" and "description sibling" are there as siblings to the primary in the PDOM. They are flexible
   and can be used for any content. In general though, they are named as they are because PhET often has a label and
   description next to an interactive element. This pattern is seen throughout PhET PDOM code.
@@ -141,8 +141,8 @@ this.addInputListener( {
 
 ### Implementing Descriptions
 To implement PDOM descriptions, follow these thoughts:
-  * When adding options to `Node`, separate accessibility specific options in their own block, labelling them
-  with an `// a11y` comment.
+  * When adding options to `Node`, separate pdom-specific options in their own block, labelling them
+  with an `// pdom` comment.
   * Understand [Accessible Name](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
   The short article above describes very simply and briefly the different ways an element gets an accessible name.
       * element's content: Example `<button>my button</button>`. The inner text within the button's opening and
@@ -186,13 +186,8 @@ because the attribute is monitored by the assistive technology, and only is read
 or being interacted with. Whereas aria-live alerts are read no matter where the virtual cursor is.
 
 ## Handling a11y specific strings
-  * These strings are not YET translatable, but they will be, so please treat usages as similarly to strings of
-  the `strings!` plugin as possible so that it is easier to transfer them over to translatable strings, think means:
-    * Name a11y strings without `String` at the end of the key
-    * declare all a11y strings at the top of the file (like their own module)
-    * have `var`s that end in `String` when declaring strings
-    * string keys should hold an object with a "`value`" key that stores the a11y string.
-  * Create an `{{SIM}}A11yStrings.js` file.
+  * These strings are not YET translatable, but they will be. For now make sure that all a11y-related strings are nested
+under the "a11y" object in the `*en.json` string file in your repo. See other sims with that key as examples. 
 
 ## In Conclusion
 
