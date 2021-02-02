@@ -1,6 +1,6 @@
 
 
-# How To Add Accessible Interactive Descriptions To A Sim
+# How To Add Accessible Interactive Description To A Sim
 
 ## Understand the Goal
   * What features are you trying to implement? The majority of this document (as of this writing) deals with PDOM descriptions.
@@ -24,8 +24,8 @@ a keyboard to tab navigate.
 
 For more information, see the "Resources for further understanding" below.
 
-## What does "Interactive Descriptions" mean?
-Interactive descriptions is an accessibility feature that PhET has developed, larger tailored towards screen reader
+## What does "Interactive Description" mean?
+Interactive Description is an accessibility feature that PhET has developed, larger tailored towards screen reader
 accessibility. It has the following components (with their implementation in parens):
   * State Descriptions (PDOM)
     a. Static States
