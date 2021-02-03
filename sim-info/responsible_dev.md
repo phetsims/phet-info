@@ -78,13 +78,27 @@
 | Masses and Springs: Basics | @chrisklus | ✓ |
 | Models of the Hydrogen Atom | @pixelzoom | |
 | Molarity | @zepumph | ✓ |
-| Molecules and Light | @jessegreenberg | ✓ | | Molecule Polarity | @pixelzoom | ✓ | | Molecule Shapes | @jonathanolson
-| ✓ | | Molecule Shapes: Basics | @jonathanolson | ✓ | | My Solar System | @jonathanolson | | | Natural Selection |
-@pixelzoom | ✓ | | Neuron | @jbphet | ✓ | | Normal Modes | @issamali67 | | | Number Line: Distance | @jbphet | | |
-Number Line: Integers | @jbphet | ✓ | | Number Line: Operations | @jbphet | ✓ | | Number Play | @chrisklus | | | Ohm's
-Law| @zepumph | ✓ | | Optics Lab | @veillette| | | Pendulum Lab | @jonathanolson | ✓ | | pH Scale | @pixelzoom | ✓ | |
-pH Scale: Basics | @pixelzoom | ✓ | | PhET-iO Test Sim | @chrisklus | N/A | | Plinko Probability | @chrisklus | ✓ | |
-Projectile Motion | @jbphet | ✓ | | Proportion Playground | @jonathanolson | ✓ |
+| Molecules and Light | @jessegreenberg | ✓ |
+| Molecule Polarity | @pixelzoom | ✓ |
+| Molecule Shapes |  @jonathanolson  | ✓ |
+| Molecule Shapes: Basics |  @jonathanolson  | ✓ |
+| My Solar System |  @jonathanolson  |  |
+| Natural Selection | @pixelzoom | ✓ |
+| Neuron |  @jbphet  | ✓ |
+| Normal Modes | @issamali67 |  |
+| Number Line: Distance |  @jbphet  |  |
+| Number Line: Integers |  @jbphet  | ✓ |
+| Number Line: Operations |  @jbphet  | ✓ |
+| Number Play | @chrisklus |  |
+| Ohm's Law|  @zepumph  | ✓ |
+| Optics Lab | @veillette| |
+| Pendulum Lab | @jonathanolson | ✓ |
+| pH Scale |  @pixelzoom  | ✓ |
+| pH Scale: Basics |  @pixelzoom  | ✓ |
+| PhET-iO Test Sim |  @chrisklus | N/A |
+| Plinko Probability | @chrisklus  | ✓ |
+| Projectile Motion | @jbphet  | ✓ |
+| Proportion Playground |  @jonathanolson  | ✓ |
 | Ratio and Proportion | @zepumph | |
 | Reactants, Products and Leftovers |  @pixelzoom  | ✓ |
 | Resistance in a Wire |  @zepumph  | ✓ |
