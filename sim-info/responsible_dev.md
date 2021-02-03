@@ -85,7 +85,7 @@
 | My Solar System |  @jonathanolson  |  |
 | Natural Selection | @pixelzoom | ✓ |
 | Neuron |  @jbphet  | ✓ |
-| Normal Modes | @jonathanolson |  |
+| Normal Modes | @issamali67 |  |
 | Number Line: Distance |  @jbphet  |  |
 | Number Line: Integers |  @jbphet  | ✓ |
 | Number Line: Operations |  @jbphet  |  |
