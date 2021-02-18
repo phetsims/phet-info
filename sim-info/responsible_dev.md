@@ -71,7 +71,7 @@
 | Gravity Force Lab: Basics | @zepumph | ✓ |
 | Hooke's Law | @pixelzoom | ✓ |
 | Isotopes and Atomic Mass | @jbphet | ✓ |
-| John Travoltage |  @samreid  | ✓ |
+| John Travoltage |  @jessegreenberg  | ✓ |
 | Least-Squares Regression |  @jonathanolson  | ✓ |
 | Make a Ten |  @jonathanolson  | ✓ |
 | Masses and Springs | @chrisklus | ✓ |
