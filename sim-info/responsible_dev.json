@@ -1,0 +1,1150 @@
+[
+  {
+    "repo": "a11y-research",
+    "responsibleDevs": [
+      "@jessegreenberg"
+    ]
+  },
+  {
+    "repo": "acid-base-solutions",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "aqua",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "area-builder",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "area-model-algebra",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "area-model-common",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "area-model-decimals",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "area-model-introduction",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "area-model-multiplication",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "arithmetic",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "assert",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "atomic-interactions",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "axon",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "babel",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "balancing-act",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "balancing-chemical-equations",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "balloons-and-static-electricity",
+    "responsibleDevs": [
+      "@jessegreenberg"
+    ]
+  },
+  {
+    "repo": "bamboo",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "beaker",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "beers-law-lab",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "bending-light",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "binder",
+    "responsibleDevs": [
+      "@chrisklus"
+    ]
+  },
+  {
+    "repo": "blackbody-spectrum",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "blast",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "brand",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "build-a-fraction",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "build-a-molecule",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "build-an-atom",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "bumper",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "buoyancy",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "calculus-grapher",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "capacitor-lab-basics",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "chains",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "charges-and-fields",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "chipper",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "circuit-construction-ios-app",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "circuit-construction-kit-ac",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "circuit-construction-kit-ac-virtual-lab",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "circuit-construction-kit-basics",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "circuit-construction-kit-black-box-study",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "circuit-construction-kit-common",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "circuit-construction-kit-dc",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "circuit-construction-kit-dc-virtual-lab",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "collision-lab",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "color-vision",
+    "responsibleDevs": [
+      "@chrisklus"
+    ]
+  },
+  {
+    "repo": "concentration",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "coulombs-law",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "curve-fitting",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "decaf",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "density",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "density-buoyancy-common",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "diffusion",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "dot",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "eating-exercise-and-energy",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "energy-forms-and-changes",
+    "responsibleDevs": [
+      "@chrisklus",
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "energy-skate-park",
+    "responsibleDevs": [
+      "@jessegreenberg"
+    ]
+  },
+  {
+    "repo": "energy-skate-park-basics",
+    "responsibleDevs": [
+      "@jessegreenberg"
+    ]
+  },
+  {
+    "repo": "equality-explorer",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "equality-explorer-basics",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "equality-explorer-two-variables",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "estimation",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "example-sim",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "expression-exchange",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "faradays-law",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "fluid-pressure-and-flow",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "forces-and-motion-basics",
+    "responsibleDevs": [
+      "@jessegreenberg"
+    ]
+  },
+  {
+    "repo": "fourier-making-waves",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "fraction-comparison",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "fraction-matcher",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "fractions-common",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "fractions-equality",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "fractions-intro",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "fractions-mixed-numbers",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "friction",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "function-builder",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "function-builder-basics",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "gas-properties",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "gases-intro",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "gene-expression-essentials",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "graphing-lines",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "graphing-quadratics",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "graphing-slope-intercept",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "gravity-and-orbits",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "gravity-force-lab",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "gravity-force-lab-basics",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "greenhouse-effect",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "griddle",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "hookes-law",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "installer-builder",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "interaction-dashboard",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "inverse-square-law-common",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "isotopes-and-atomic-mass",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "java-nuclear-physics",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "john-travoltage",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "joist",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "kite",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "least-squares-regression",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "make-a-ten",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "masses-and-springs",
+    "responsibleDevs": [
+      "@chrisklus"
+    ]
+  },
+  {
+    "repo": "masses-and-springs-basics",
+    "responsibleDevs": [
+      "@chrisklus"
+    ]
+  },
+  {
+    "repo": "mobius",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "models-of-the-hydrogen-atom",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "molarity",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "molecule-polarity",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "molecule-shapes",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "molecule-shapes-basics",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "molecules-and-light",
+    "responsibleDevs": [
+      "@jessegreenberg"
+    ]
+  },
+  {
+    "repo": "my-solar-system",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "natural-selection",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "neuron",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "nitroglycerin",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "normal-modes",
+    "responsibleDevs": [
+      "@issamali67"
+    ]
+  },
+  {
+    "repo": "number-line-common",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "number-line-distance",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "number-line-integers",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "number-line-operations",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "number-play",
+    "responsibleDevs": [
+      "@chrisklus"
+    ]
+  },
+  {
+    "repo": "ohms-law",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "optics-lab",
+    "responsibleDevs": [
+      "@veillette"
+    ]
+  },
+  {
+    "repo": "pendulum-lab",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "perennial",
+    "responsibleDevs": [
+      "@mattpen",
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "ph-scale",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "ph-scale-basics",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "phet-android-app",
+    "responsibleDevs": [
+      "@mattpen"
+    ]
+  },
+  {
+    "repo": "phet-core",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "phet-info",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "phet-io",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "phet-io-client-guides",
+    "responsibleDevs": [
+      "@chrisklus"
+    ]
+  },
+  {
+    "repo": "phet-io-test-sim",
+    "responsibleDevs": [
+      "@chrisklus"
+    ]
+  },
+  {
+    "repo": "phet-io-website",
+    "responsibleDevs": [
+      "@chrisklus"
+    ]
+  },
+  {
+    "repo": "phet-io-wrapper-arithmetic",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "phet-io-wrapper-classroom-activity",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "phet-io-wrapper-haptics",
+    "responsibleDevs": [
+      "@jessegreenberg"
+    ]
+  },
+  {
+    "repo": "phet-io-wrapper-hookes-law-energy",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "phet-io-wrapper-lab-book",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "phet-io-wrappers",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "phet-ios-app",
+    "responsibleDevs": [
+      "@mattpen"
+    ]
+  },
+  {
+    "repo": "phet-ios-vibtest-app",
+    "responsibleDevs": [
+      "@jessegreenberg"
+    ]
+  },
+  {
+    "repo": "phet-office-add-in",
+    "responsibleDevs": [
+      "@oliver-phet"
+    ]
+  },
+  {
+    "repo": "phet-overview",
+    "responsibleDevs": [
+      "@kathy-phet"
+    ]
+  },
+  {
+    "repo": "phet-partnerships",
+    "responsibleDevs": [
+      "@kathy-phet"
+    ]
+  },
+  {
+    "repo": "phet-sublime-plugin",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "phetcommon",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "phetmarks",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "plinko-probability",
+    "responsibleDevs": [
+      "@chrisklus"
+    ]
+  },
+  {
+    "repo": "projectile-motion",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "proportion-playground",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "protein-synthesis",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "QA",
+    "responsibleDevs": [
+      "@KatieWoe"
+    ]
+  },
+  {
+    "repo": "query-string-machine",
+    "responsibleDevs": [
+      "@chrisklus"
+    ]
+  },
+  {
+    "repo": "ratio-and-proportion",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "reactants-products-and-leftovers",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "resistance-in-a-wire",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "rosetta",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "rutherford-scattering",
+    "responsibleDevs": [
+      "@jessegreenberg"
+    ]
+  },
+  {
+    "repo": "scenery",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "scenery-phet",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "sherpa",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "shred",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "simula-rasa",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "smithers",
+    "responsibleDevs": [
+      "@mattpen"
+    ]
+  },
+  {
+    "repo": "special-ops",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "states-of-matter",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "states-of-matter-basics",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "studio",
+    "responsibleDevs": [
+      "@chrisklus"
+    ]
+  },
+  {
+    "repo": "sugar-and-salt-solutions",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "sun",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "tambo",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "tandem",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "tangible",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "tappi",
+    "responsibleDevs": [
+      "@jessegreenberg"
+    ]
+  },
+  {
+    "repo": "tasks",
+    "responsibleDevs": [
+      "@zepumph"
+    ]
+  },
+  {
+    "repo": "trig-tour",
+    "responsibleDevs": [
+      "@jessegreenberg"
+    ]
+  },
+  {
+    "repo": "twixt",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "under-pressure",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "unit-rates",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "utterance-queue",
+    "responsibleDevs": [
+      "@jessegreenberg"
+    ]
+  },
+  {
+    "repo": "vector-addition",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "vector-addition-equations",
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
+  {
+    "repo": "vegas",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "vibe",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "wave-interference",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "wave-on-a-string",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "waves-intro",
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
+  {
+    "repo": "website",
+    "responsibleDevs": [
+      "@mattpen"
+    ]
+  },
+  {
+    "repo": "website-docker",
+    "responsibleDevs": [
+      "@mattpen"
+    ]
+  },
+  {
+    "repo": "website-meteor",
+    "responsibleDevs": [
+      "@mattpen"
+    ]
+  },
+  {
+    "repo": "weddell",
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  {
+    "repo": "wilder",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  },
+  {
+    "repo": "xray-diffraction",
+    "responsibleDevs": [
+      "@heldentodd"
+    ]
+  },
+  {
+    "repo": "yotta",
+    "responsibleDevs": [
+      "@jonathanolson"
+    ]
+  }
+]
