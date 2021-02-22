@@ -1,4 +1,4 @@
-# Delete Repo Checklist
+# Delete/Archive Repo Checklist
 
 ## Before using this checklist:
 Decide whether the repo is being (a) deleted (b) archived or (c) removed from active-repos.
