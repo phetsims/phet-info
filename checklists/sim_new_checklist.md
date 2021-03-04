@@ -1,4 +1,4 @@
-# {{SIM_NAME}} master checklist
+# {{SIM_NAME}} main checklist
 
 ## Design
 - [ ] **Sim folder and design doc created** (Date: //)
