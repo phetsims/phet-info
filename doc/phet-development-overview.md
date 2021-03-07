@@ -308,9 +308,9 @@ To improve the readability and maintainability of PhET Simulation code, we have 
 
 * The PhET Code Review Checklist is available at https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md provides additional steps to make sure a simulation is well written.  This checklist is used for publication of any new PhET simulation to make sure they are consistent and maintainable.  It enumerates steps including but not limited to coding style.
 
-* The chipper eslint task, which reports linting errors for the sim during the build task
+* We use ESLint to lint our code. See https://github.com/phetsims/chipper/blob/master/eslint/README.md.
 
-* An IntelliJ IDEA code formatting style, which can be used to automatically indent and format the code.  Our example-sim also shows how to use  our libraries idiomatically as well as a good example of code commenting + documentation.
+* An [IntelliJ IDEA formatting XML file](https://github.com/phetsims/phet-info/blob/master/ide/idea/phet-idea-codestyle.xml) to automatically format code. This is the ground truth for how PhET code should be formatted. Our example-sim also shows how to use our libraries idiomatically as well as a good example of code commenting + documentation.
 
 We also tend to agree with most of the guidelines set out in [idiomatic.js](https://github.com/rwldrn/idiomatic.js/).
 
