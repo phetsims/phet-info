@@ -92,12 +92,16 @@ git clone https://github.com/phetsims/utterance-queue.git
 
 3. Download & install node+npm from https://nodejs.org/en/
 4. Launch a node server program on your development machine
-  a. Install the http-server as a command line program. Use a different command prompt than the one above since the one above will not have the new path for npm
+
+(a) Install the http-server as a command line program. Use a different command prompt than the one above since the one above will not have the new path for npm
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install http-server -g`
-  b. Change into the phetsims directory (if you were not already there).
+
+(b) Change into the phetsims directory (if you were not already there).
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd phetsims/`
-  c. Run the http server program (with caching turned off to help with iteration)
+
+(c) Run the http server program (with caching turned off to help with iteration)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`http-server -c-1`
+
 5. Open a browser to the path for one of the simulations: http://localhost:8080/example-sim/example-sim_en.html
 6. For building the simulations, install the grunt command line utility (may require sudo):
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install -g grunt-cli`
