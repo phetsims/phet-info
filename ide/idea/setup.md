@@ -41,7 +41,8 @@ selected, and check `Prefer Strict mode`.
     selection.
 14. Further resources:
     * [Here is a list of default keyboard shortcuts for windows and mac](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
-
+    * [Learn how to use multiple cursors!](https://www.jetbrains.com/webstorm/guide/tips/multi-cursor/)
+    
 ## Preferences
 These may not be required, but are settings that other developers have found useful for their coding style. Use at your
 own risk!
