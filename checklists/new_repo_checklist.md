@@ -3,7 +3,7 @@
 These steps contain the following placeholders that you'll need to fill in:
 
 - `{{AUTHOR}}}` - the name that will appear in `@author` code annotations, e.g. `Jane Doe`
-- `{{REPO}}` - the repository name, e.g. `gas-properties`
+- `{{REPO}}` - the repository name, e.g. `gas-properties`. This should be composed of lower-case characters and dashes, and should have <=214 characters (see naming constraints in https://docs.npmjs.com/cli/v7/configuring-npm/package-json).
 - `{{TITLE}}` - the simulation's title, e.g. `Gas Properties`
 
 ## Steps to create a new simulation repo
@@ -87,10 +87,10 @@ Other:
 - [ ] If applicable, "refresh perennial" on phettest.
 
 ### If this is a simulation. . .
-  - [ ] Rename many files:   
+  - [ ] Rename many files:
     * `*en.json` string file
     * `main.js` file
-    * Screens/Views/Models? 
+    * Screens/Views/Models?
     * Namespace file
   - [ ] change entry in responsible_dev.md
   - [ ] Make sure to update the title in the `*en.json` string file and update its usage in the main js file
