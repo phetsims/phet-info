@@ -49,7 +49,7 @@
 - [ ] **Sim is "feature complete"** (Date: //)
 - [ ] **Code review completed** (Date: //)
 - [ ] **Pre-publication items**
-  - [ ] Main screenshot (read [this](https://github.com/phetsims/QA/blob/master/doc/qa-book.md#screenshots))
+  - [ ] Main screenshot (read [this](https://github.com/phetsims/QA/blob/master/documentation/qa-book.md#screenshots))
   - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks)
   - [ ] Add CT tests for public query parameters
 - [ ] **Published** (Date: //)
