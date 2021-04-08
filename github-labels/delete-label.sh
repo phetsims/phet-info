@@ -16,7 +16,7 @@ fi
 binDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 creds=`node ${binDir}/printGithubAuthorization.js`
 
-./update-repos-list.sh
+node ./update-repos-list.js
 
 echo 'For each repo, this script should print "204 No Content" to indicate success'
 
