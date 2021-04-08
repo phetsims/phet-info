@@ -6,5 +6,5 @@
 module.exports = {
 
   // Use all of the default rules from eslint file for node code.
-  'extends': '../../chipper/eslint/node_eslintrc.js'
+  extends: '../chipper/eslint/node_eslintrc.js'
 };
