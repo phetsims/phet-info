@@ -40,15 +40,11 @@ status:on-hold,F0FFF0
 status:ready-for-qa,00cc00
 status:ready-for-review,3E766D
 status:ready-to-cherry-pick,137556
-test-label,FFFFFF
 type:a11y-bug,FF0077
 type:automated-testing,FF00AA
 type:bug,FF00AA
 type:documentation,A17188
 type:duplicate,EEEED1
-type:epic,4B0082
-type:epic,4B0082
-type:epic,4B0082
 type:epic,4B0082
 type:i18n,B452CD
 type:legacy-bug,CD00CD
@@ -58,8 +54,6 @@ type:multitouch,72587F
 type:performance,8B1C62
 type:quarterly,735DA6
 type:question,EDCB62
-type:suggestion,ffd966
-type:suggestion,ffd966
 type:suggestion,ffd966
 type:user-feedback,EDE162
 type:wontfix,ffffff
