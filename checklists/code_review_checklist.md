@@ -686,7 +686,7 @@ This section may be omitted if the sim has not been instrumented for a11y.
 - [ ] Does the sim pass an accessibility fuzz test? (run with query parameters `fuzzBoard&ea`)
 - [ ] Run the accessible HTML through an [HTML validator](https://validator.w3.org/nu/#textarea), does the HTML pass?
 - [ ] Are accessibility features integrated well into the code. They should be added in a maintainable way, even if that requires upfront refactoring.
-- [ ] Are accessible design patterns used, see [accessible-design-patterns.md](https://github.com/phetsims/phet-info/blob/master/doc/accessible-design-patterns.md)
+- [ ] If applicable, are good design patterns used for interactive description, see [interactive-description-technical-guide.md](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md)
 - [ ] Does resetting the simulation also reset the entire PDOM?
 - [ ] Is `Node.pdomOrder` used appropriately to maintain visual and PDOM layout balance?
 - [ ] Make sure accessibility strings aren't being adjusted with ascii specific javascript methods like `toUpperCase()`. Remember that one day these strings will be translatable
