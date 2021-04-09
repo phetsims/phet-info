@@ -1,19 +1,19 @@
-# How To Add Accessible Interactive Description To A Sim
+# Interactive Description Technical Guide
 
-## Understand the Goal
+## Prerequisites
 
-* What features are you trying to implement? The majority of this document (as of this writing) deals with PDOM
-  descriptions.
+* Before reading this documentation, please see scenery's accessibility-related documention
+  at `/scenery/doc/accessibility.html'`. This includes an overview of web accessibility key features required for
+  Interactive Description implementation.
+* Note: "a11y" is a synonym for "accessibility".
 
-## Accessibility Basics
+### Understand the Goal
 
-### Web
+What features are you trying to implement? The majority of this document (as of this writing) deals with Interactive
+Description, but there are many other accessibility-related features that are supported by phetsims like sound,
+sonification, pan and zoom, voicing, and interactive highlights.
 
-Assistive technology accesses
-an [Accessibility Tree](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree)
-in order to get then information that it can pass along to users of assistive technology. For web pages and web
-applications, the Document Object Model (DOM) is what provides the Accessibility Tree with the information that users
-need.
+### Accessibility Basics
 
 In general, PhET tries to use the same best practices as are used in traditional web applications and content.
 
@@ -33,16 +33,20 @@ For more information, see the "Resources for further understanding" below.
 Interactive Description is an accessibility feature that PhET has developed, larger tailored towards screen reader
 accessibility. It has the following components (with their implementation in parens):
 
-* State Descriptions (PDOM)
-  a. Static States b. Dynamic States
-* Responsive Descriptions a. Object Responses (UtteranceQueue/PDOM/Both)
-  b. Context Responses (UtteranceQueue)
+* State Description (PDOM)
+    * Static States
+    * Dynamic States
+* Responsive Description
+    * Object Responses (UtteranceQueue/PDOM/Both)
+    * Context Responses (UtteranceQueue)
 * Alternative Input:
-  keyboard (PDOM)
-  mobile (PDOM)
-  switch (PDOM)
+    * keyboard (PDOM)
+    * mobile (PDOM)
+    * switch (PDOM)
 
-## Understanding the PDOM
+## Understanding each technology
+
+### Parallel DOM
 
 The traditional renderings of PhET sims (svg, canvas, webgl) hold very little semantic data as to what is inside the
 rendered graphic. They are a single, graphical element in HTML. The PDOM ( parallel DOM (Document Object Model))
@@ -54,67 +58,100 @@ and you can get information out of it, as the PDOM is updated in real time in re
 
 ## Overall Code structure
 
-Note: a11y is a synonym for accessibility.
+* `ParallelDOM.js` is a trait that is added to `Node.js`, so `Node` is already set up with pdom-specific options to
+  provide Interactive Description.
 
-* `ParallelDOM.js` is a trait that is added to `Node.js`, so `Node` is already set up with pdom specific options to
-  provide PDOM descriptions.
+* The implementation and DAG features of the PDOM-side of scenery are handled the same way as graphical `Node`s in
+  Scenery. Each `Node`  with the `ParallelDOM` trait added to its prototype has N `PDOMInstance`s based on the number of
+  times it has been added to the scene graph. The PDOM elements of each `Node` are created and handled with `PDOMPeer`.
+  There is a 1x1 relationship of `PDOMInstance` and `PDOMPeer`.
 
-* The DAG features of the pdom side of Scenery are handled the same way as graphical `Node`s in Scenery. Each `Node`
-  with the `ParallelDOM` trait added to its prototype has N `PDOMInstance`s based on the number of times it has been
-  added to the scene graph. The PDOM elements of each `Node` are created and handled with `PDOMPeer`. There is a 1x1
-  relationship of `PDOMInstance` and `PDOMPeer`.
+For more information please see `/scenery/doc/accessibility.html'`.
 
-## Basic Example - adding pdom features to a `Node`
+### UtteranceQueue
 
-The primary to add a `Node` to the PDOM is through options passed through to `Node.js`. First off, each
-`Node` that wants content in the PDOM will need an HTML element in the PDOM to represent it. To do this, use the
-`tagName` option:
+The "Interactive" portion of "Interactive Description" is largely centered around `aria-live`. This feature of web
+accessibility allows a webpage to "push" an "alert" (eager description) to a screen reader to be read immediately. There
+are two types of aria-live alerts: "polite" and "assertive". Assertive will interrupt whatever is being said by the
+screen reader currently. Most alerts (and the default) in the project are polite.
 
-```js
-var pdomNode = new Node( {
-  tagName: 'p'
-} );
-```
+Every `Display` has an `UtteranceuQueue` instance that is wired to alert to aria-live elements for screen readers.
+`UtteranceQueue` takes `Utterance` instances and queues them in standard ways that the accessibility team has found
+works well across our supported browsers and screen readers.
 
-The above code snippet will create a node that is a `<p>` tag in the PDOM. To give content to this `<p>`, use the
-`innerContent` option.
+In general, the way that interactive alerts work in PhET sims is like so:
 
 ```js
-pdomNode.innerContent = 'I am a p tag in the PDOM!';
+const massUtterance = new Utterance();
+
+// somewhere else, like in an input listener
+massUtterance.alert = getMassChangedResponse();
+phet.joist.sim.utteranceQueue.addToBack( this.massUtterance )
 ```
 
-Just like other Node options, you can pass them into an options object, `mutate` call, and by using getters/setters. Now
-the PDOM will look like:
+There are a variety of options in `Utterance` used to hone the output of alerts. Common problems include a build up of
+too many alerts, and alerts that occur with too much or too little time between it and the interaction.
 
-```html
-<p>I am a p tag in the PDOM</p>
-```
+## Implementation
 
-## PDOM Representation for a single Node
+### Getting started
 
-Each Node can have more than one `HTMLElement` in the PDOM. Up to four `HTMLElements` can be used as needed to display
-the Node appropriately in the PDOM.
+When beginning PDOM work in a simulation, add `"supportsInteractiveDescription": true` to the sim's package.json. Then
+regenerate the lists to add the simulation to perennial/data/interactive-description list, and generate an a11y-view
+HTML document to assist with development (`grunt generate-a11y-view-html`). Accessibility features are hidden behind
+an `?supportsDescription` query parameter. You can elect to develop by adding this query parameter, but it is not
+recommended.
 
-* The "primary sibling" is controlled via the `tagName` option, and is the main `HTMLElement` for the `Node`. If this
-  `Node` has PDOM listeners added to it, this element is where those listeners are added.
-* The "label sibling" and "description sibling" are there as siblings to the primary in the PDOM. They are flexible and
-  can be used for any content. In general though, they are named as they are because PhET often has a label and
-  description next to an interactive element. This pattern is seen throughout PhET PDOM code.
-* Each sibling can only be one `HTMLElement`.
-* The "container" is the fourth element, and can optionally be added to contain all of the siblings.
+### The a11y-view
 
-## Keyboard Navigation
+The 'A11y view' is an HTML page that runs the simulation in an iframe and shows an up-to-date copy of the PDOM next to
+the sim. It can be used to assist in development of accessibility features by allowing you to see the accessible labels,
+descriptions, and alerts without requiring screen reader testing. This should be generated by Bayes, but it can be
+generated manually with `grunt generate-a11y-view-html` in the sim repo.
 
-Keyboard navigation is gained by making the primary sibling an interactive `HTMLElement`. Any visible, interactive
-element in the PDOM will be tab navigable, and its corresponding `Node` in the sim will highlight. You can toggle the
-focusability of a Node with the `focsuable` option.
+### Populating the PDOM
 
-### Focus Highlight
+The first thing to do is to create the PDOM content for the simulation. This are often referred to as "state
+description". In general, the process looks like this:
 
-There are a number of options to alter the focus highlight, see usages in the project of `focusHighlight` option for
-those patterns. You can also set a `groupFocusHighlight` to highlight a container.
+* Understand the design for your work
+* Determine where visual objects can map directly to elements in the PDOM, and provide options to them. Otherwise, you
+  will need to create different Node structure to satisfy the design of the PDOM.
+* Passing `tagName` will add them to the PDOM, but use all ParallelDOM options to create the structure needed. The
+  options to be used most often will be `accessibleName`, and `helpText`, as almost all interactive components will have
+  these. See notes below about setting accessibleName
+* Make sure that the keyboard navigation order is correct for interactive elements 
 
-### Input Listeners
+### Accessible Order for PhET Sims
+
+The PDOM in PhET sims are specific and designed to give the most semantic and pedagogical information possible. These
+priorities can differ from those displayed in the visual simulation. We use `Node.pdomOrder` to help manage this
+discrepancy. As a PhET Developer, please use the following guide to develop the PDOM ordering in the PDOM versus the
+traditional rendering order of the scene graph. Each item in the list is ranked, such that you should start with item 1,
+and then if that doesn't work for your situation, try the next item down.
+
+NOTE: This list was created with a mindset of instrumenting a simulation with Interacitve Description. If a new sim is
+being created, then likely this list is irrelevant because the design process from the beginning will be focused on this
+feature and visual sim development together.
+
+1. Add alternative input to the simulation, see if order is correct. If not. . .
+2. use `setPDOMOrder` on local children, if not. . .
+3. Change z-order in the scene graph structure to get the order correct, if there is not an overriding constraint from
+   the visible rendering order, if not. . .
+4. Discuss with the design team to inform them the order is unnatural OR we may decide another order based on
+   simplifying implementation--revise desired order. if not. . .
+5. use `setPDOMOrder` on descendants (can be local vars like `controlPanel.flashlight.button.label`). This is not
+   recommended.
+
+If `setPDOMOrder` is needed on Nodes that are not descendants, then likely there is a structural issue that needs to be
+addressed fully, rather than hacked at by using `Node.setPDOMOrder`, although the setter will accept any `Node` in the
+scene graph.
+
+### Add alternative-input input listeners
+
+This step builds out input functionality to support alternative input. Many common code components already have this 
+support. For sim specific components, work with your designer to design the best keyboard interaction possible. Note that
+this will not always map directly to the mouse/touch interaction.
 
 PDOM input listeners are set up in the same way as general PhET listeners. See `Input.js` for full documentation. There
 are specific events to subscribe to for events from the PDOM. Common code listeners, like `PressListener`, are already
@@ -122,7 +159,7 @@ set up to support events from the PDOM. If implementing a custom listener, you w
 appropriate event (which is different depending on the primary sibling `HTMLElement`). Make sure to work with an
 accessibility designer to ensure that your component is accessible for all desired features. Explaining the many
 difficulties embodied in that warning is beyond the scope of this document. Here is a basic example of how to support a
-custom button with PDOM support.
+custom button with PDOM support. 
 
 ```js
 
@@ -146,17 +183,13 @@ this.addInputListener( {
 } );
 ```
 
-## Descriptions
+Also see `GrabDragInteraction.js` and `KeyboardDragListener.js` for common code keyboard-interaction input listeners.
 
-"Descriptions" is a vague word. For the purposes of this document. It refers to the feature set that provides screen
-reader support for PhET sims. This includes everything in the PDOM, as well as aria-live alerts via the `UtteranceQueue`
-.
+### Implementing Interactive Description
 
-### Implementing Descriptions
+To implement interactive description, follow these thoughts:
 
-To implement PDOM descriptions, follow these thoughts:
-
-* When adding options to `Node`, separate pdom-specific options in their own block, labelling them with an `// pdom`
+* When adding options to `Node`, separate pdom-specific options in their own block, labelling them with a `// pdom`
   comment.
 * Understand [Accessible Name](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
   The short article above describes very simply and briefly the different ways an element gets an accessible name.
@@ -183,7 +216,7 @@ To implement PDOM descriptions, follow these thoughts:
 
 * `UtteranceQueue` is a type set up to emit live descriptions on demand. This is most often implemented based on model
   changes. For PDOM accessibility, the word "alerts" means aria-live support via `UtteranceQueue`.
-    
+
     ```js
     import utteranceQueue from '../../utterance-queue/js/utteranceQueue.js';
     
@@ -199,17 +232,69 @@ To implement PDOM descriptions, follow these thoughts:
   multiple alerts, cycling each time the `Utterance` is emitted. It is also possible to clear out stale usages of the
   same `Utterance`. For more info see `Utterance`.
 
+#### Alerting a freely movable object
+
+For example book in Friction, magnet in Faraday's Law, or balloon in BASE.
+
+* Make sure that the object has the "application" aria role
+* Alert updates/position on the end drag call of the listener for the object. Implementing your own alerts based on
+  the `keyup`/`keydown` can work, but will likely emit too many events to UtteranceQueue. Furthermore, alerting based on
+  the model when you know that user input is occurring will not alert, since most screen readers won't alert while a
+  user has keys pressed.
+
 ### Aria Value Text
 
-(aka `aria-valuetext`) is an attribute that is supported by interactive elements (like `input`). This in correlation
-with alerts is how phetsims communicate the majority of their dynamic content. `aria-valuetext` is often preferred
+(aka `aria-valuetext`) is an attribute that is supported by interactive elements (like `input`). This, in correlation
+with alerts, is how phetsims communicate the majority of their dynamic content. `aria-valuetext` is often preferred
 because the attribute is monitored by the assistive technology, and only is read if that interactive element is focused
 or being interacted with. Whereas aria-live alerts are read no matter where the virtual cursor is.
 
-## Handling a11y specific strings
+### Handling a11y specific strings
 
 * These strings are not YET translatable, but they will be. For now make sure that all a11y-related strings are nested
   under the "a11y" object in the `*en.json` string file in your repo. See other sims with that key as examples.
+
+### Naming Types
+
+#### `*Describer.js`
+
+Dynamic descriptions require a large amount of string formation based on model state. In general housing that logic in
+a `*Describer.js` type is helpful and idiomatic, where `*` is the purpose this particular describer has. Try not to make
+a single general describer that has too much responsibility, for example `MolarityDescriber`
+in https://github.com/phetsims/molarity/issues/79
+
+Although describers don't need to be the only place where `StringUtils.fillIn` is used for accessible descriptions, they
+can cover the majority of the usages, as well as keeping track of the model and custom state needed to create these
+descriptions.
+
+In general, Describer types need a fair bit of information from the model, and sometime the view-state to fill in
+description. It is cleanest to pass as much information into the constructor, limiting the number of arguments needed
+for individual functions. See https://github.com/phetsims/ratio-and-proportion/issues/334.
+
+#### `*DescriptionNode.js`
+
+When a Node is created who's sole purpose is to provide descriptions to the PDOM, then suffix that node with
+`DescriptionNode.js`. For example, see `MolarityBeakerDescriptionNode.js`. There are also cases where this is
+called `*PDOMNode.js`.
+
+#### `*AlertManager.js`
+
+In some sims it makes sense to have a single file to in do most or all of the interfacing with `utteranceQueue`. While
+it is not required to only call utteranceQueue from a single place, it can be a nice organizational tool for the
+interactive description outfitting toolbox. For example `MolarityAlertManager` is the sole alerting file in the sim.
+
+### Other misc notes for PhET Devs
+
+* As a sim developer, it is your responsibility to make sure that each interactive element has an Accessible Name.
+* Conventionally, it is preferred to specify PDOM parameters as options whenever possible, and only use the setters if
+  the situation requires it. Please label PDOM specific options separately with a `// pdom` comment as a header.
+* The HTML of the PDOM acts as just another input/output modality to a PhET sim's model. You can interact with it to
+  control the simulation, and you can get information out of it, as the PDOM can be updated in real time in response to
+  changes in the simulation.
+* About aria-labelledby: In a PhET Sim one might want to associate a heading element with a region or group. For
+  example, an H2 heading is associated with the Play Area region through an `aria-labelledby` attribute. With this
+  association the H2's content, "Play Area", provides the region with an accessible name in the Accessibility Tree which
+  is accessed by assistive technology.
 
 ## In Conclusion
 
