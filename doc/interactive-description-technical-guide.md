@@ -1,5 +1,30 @@
 # Interactive Description Technical Guide
 
+### Table Of Contents
+* [Prerequisites](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#prerequisites)
+    * [Understand the Goal](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#understand-the-goal)
+    * [Accessibility Basics](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#accessibility-basics)
+    * [Assistive Technology](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#assistive-technology)
+* [What does "Interactive Description" mean?](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#what-does-interactive-description-mean)
+* [Understanding each technology](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#understanding-each-technology)
+    * [Overall Code structure](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#overall-code-structure)
+    * [Parallel DOM](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#parallel-dom)
+    * [UtteranceQueue](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#utterancequeue)
+* [Implementation](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#implementation)
+    * [Getting started](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#getting-started)
+    * [The a11y-view](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#the-a11y-view)
+    * [Populating the PDOM](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#populating-the-pdom)
+    * [PDOM Order for PhET Sims](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#pdom-order-for-phet-sims)
+    * [Add alternative-input input listeners](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#add-alternative-input-input-listeners)
+    * [Implementing Interactive Description](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#implementing-interactive-description)
+    * [Interactive Alerts](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#interactive-alerts)
+    * [Aria Value Text](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#aria-value-text)
+    * [Handling a11y specific strings](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#handling-a11y-specific-strings)
+    * [Naming Types](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#naming-types)
+    * [Other misc notes for PhET Devs](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#other-misc-notes-for-phet-devs)
+* [In Conclusion](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#in-conclusion)
+* [Resources for further understanding](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#resources-for-further-understanding)
+
 ## Prerequisites
 
 * Before reading this documentation, please see scenery's accessibility-related documention
@@ -46,17 +71,8 @@ accessibility. It has the following components (with their implementation in par
 
 ## Understanding each technology
 
-### Parallel DOM
 
-The traditional renderings of PhET sims (svg, canvas, webgl) hold very little semantic data as to what is inside the
-rendered graphic. They are a single, graphical element in HTML. The PDOM ( parallel DOM (Document Object Model))
-pulls semantic data from the `Scenery` scene graph and adds it to a separate HTML structure that is accessible to
-assistive technologies. When we say PDOM, think an HTML manifestation of the graphical `Node` content in the phetsim.
-
-This HTML acts as just another output modality to the phet model. You can interact with it to control the simulation,
-and you can get information out of it, as the PDOM is updated in real time in response to changes in the model.
-
-## Overall Code structure
+### Overall Code structure
 
 * `ParallelDOM.js` is a trait that is added to `Node.js`, so `Node` is already set up with pdom-specific options to
   provide Interactive Description.
@@ -67,6 +83,17 @@ and you can get information out of it, as the PDOM is updated in real time in re
   There is a 1x1 relationship of `PDOMInstance` and `PDOMPeer`.
 
 For more information please see `/scenery/doc/accessibility.html'`.
+
+
+### Parallel DOM
+
+The traditional renderings of PhET sims (svg, canvas, webgl) hold very little semantic data as to what is inside the
+rendered graphic. They are a single, graphical element in HTML. The PDOM ( parallel DOM (Document Object Model))
+pulls semantic data from the `Scenery` scene graph and adds it to a separate HTML structure that is accessible to
+assistive technologies. When we say PDOM, think an HTML manifestation of the graphical `Node` content in the phetsim.
+
+This HTML acts as just another output modality to the phet model. You can interact with it to control the simulation,
+and you can get information out of it, as the PDOM is updated in real time in response to changes in the model.
 
 ### UtteranceQueue
 
