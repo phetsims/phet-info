@@ -120,21 +120,40 @@ description". In general, the process looks like this:
 * Passing `tagName` will add them to the PDOM, but use all ParallelDOM options to create the structure needed. The
   options to be used most often will be `accessibleName`, and `helpText`, as almost all interactive components will have
   these. See notes below about setting accessibleName
-* Make sure that the keyboard navigation order is correct for interactive elements 
+* Make sure that the keyboard navigation order is correct for interactive elements
+* Note: at this time, there is no support for automatically setting heading levels within Node structure, but if this
+  would be valuable to you, please let the Interactive Description feature leads (@jessegreenberg and @zepumph) know,
+  and note in https://github.com/phetsims/scenery/issues/855.
 
-### Accessible Order for PhET Sims
+### PDOM Order for PhET Sims
 
-The PDOM in PhET sims are specific and designed to give the most semantic and pedagogical information possible. These
-priorities can differ from those displayed in the visual simulation. We use `Node.pdomOrder` to help manage this
-discrepancy. As a PhET Developer, please use the following guide to develop the PDOM ordering in the PDOM versus the
-traditional rendering order of the scene graph. Each item in the list is ranked, such that you should start with item 1,
-and then if that doesn't work for your situation, try the next item down.
+PhET's design for the Parallel DOM is largely based on each screen. Within each screen, there is a _Screen Summary_,
+_Play Area_, and _Control Area_. `ScreenView` has pdom "section" Nodes built into the type. Use children or `pdomOrder`
+to set PDOM content into the designed sections associated with the PDOM. For example, if you had a Node that was
+entirely PDOM content, and no visual content, you could add that directly to the Play Area as a child:
+
+```js
+// in a sim's ScreenView. . . 
+const aNodeInThePlayArea = new Node( {
+  tagName: 'p',
+  innerContent: 'This is a part of the playArea'
+} );
+this.playAreaNode.addChild( aNodeInThePlayArea );
+```
+
+NOTE: Nodes must be connected to the scene graph for `pdomOrder` to work. Thus `pdomOrder` cannot be used in exchange
+for setting a Node as a child, but can be used in addition.
+
+Rendering priorities in the PDOM can differ from those displayed in the visual simulation. We use `Node.pdomOrder` to
+help manage this discrepancy. As a PhET Developer, please use the following guide to develop the PDOM ordering in the
+PDOM versus the traditional rendering order of the scene graph. Each item in the list is ranked, such that you should
+start with item 1, and then if that doesn't work for your situation, try the next item down.
 
 NOTE: This list was created with a mindset of instrumenting a simulation with Interacitve Description. If a new sim is
 being created, then likely this list is irrelevant because the design process from the beginning will be focused on this
 feature and visual sim development together.
 
-1. Add alternative input to the simulation, see if order is correct. If not. . .
+1. Add alternative input to the simulation, see if order is correct based on the scene graph structure. If not. . .
 2. use `setPDOMOrder` on local children, if not. . .
 3. Change z-order in the scene graph structure to get the order correct, if there is not an overriding constraint from
    the visible rendering order, if not. . .
@@ -147,11 +166,13 @@ If `setPDOMOrder` is needed on Nodes that are not descendants, then likely there
 addressed fully, rather than hacked at by using `Node.setPDOMOrder`, although the setter will accept any `Node` in the
 scene graph.
 
+Please see `Node.setPDOMOrder` for more documentation and usage examples of `pdomOrder`.
+
 ### Add alternative-input input listeners
 
-This step builds out input functionality to support alternative input. Many common code components already have this 
-support. For sim specific components, work with your designer to design the best keyboard interaction possible. Note that
-this will not always map directly to the mouse/touch interaction.
+This step builds out input functionality to support alternative input. Many common code components already have this
+support. For sim specific components, work with your designer to design the best keyboard interaction possible. Note
+that this will not always map directly to the mouse/touch interaction.
 
 PDOM input listeners are set up in the same way as general PhET listeners. See `Input.js` for full documentation. There
 are specific events to subscribe to for events from the PDOM. Common code listeners, like `PressListener`, are already
@@ -159,7 +180,7 @@ set up to support events from the PDOM. If implementing a custom listener, you w
 appropriate event (which is different depending on the primary sibling `HTMLElement`). Make sure to work with an
 accessibility designer to ensure that your component is accessible for all desired features. Explaining the many
 difficulties embodied in that warning is beyond the scope of this document. Here is a basic example of how to support a
-custom button with PDOM support. 
+custom button with PDOM support.
 
 ```js
 
