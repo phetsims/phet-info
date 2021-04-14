@@ -55,7 +55,7 @@ For more information, see the "Resources for further understanding" below.
 
 ## What does "Interactive Description" mean?
 
-Interactive Description is an accessibility feature that PhET has developed, larger tailored towards screen reader
+Interactive Description is an accessibility feature that PhET has developed, largely tailored towards screen reader
 accessibility. It has the following components (with their implementation in parens):
 
 * State Description (PDOM)
@@ -262,7 +262,7 @@ To implement interactive description, follow these thoughts:
 
 ### Interactive Alerts
 
-* `UtteranceQueue` is a type set up to emit live descriptions on demand. This is most often implemented based on model
+* `UtteranceQueue` is a type set up to emit live event based descriptions. This is most often implemented based on model
   changes. For PDOM accessibility, the word "alerts" means aria-live support via `UtteranceQueue`.
 
     ```js
