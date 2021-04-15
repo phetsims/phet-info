@@ -62,6 +62,7 @@
 | Gas Properties | @pixelzoom | ✓ |
 | Gases Intro | @pixelzoom | ✓ |
 | Gene Expression Essentials | @jbphet | ✓ |
+| Geometric Optics | @veillette | |
 | Greenhouse Effect | @jbphet  | |
 | Graphing Lines | @pixelzoom  | ✓ |
 | Graphing Quadratics | @pixelzoom | ✓ |
