@@ -1,6 +1,7 @@
 # Interactive Description Technical Guide
 
 ### Table Of Contents
+
 * [Prerequisites](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#prerequisites)
     * [Understand the Goal](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#understand-the-goal)
     * [Accessibility Basics](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#accessibility-basics)
@@ -71,7 +72,6 @@ accessibility. It has the following components (with their implementation in par
 
 ## Understanding each technology
 
-
 ### Overall Code structure
 
 * `ParallelDOM.js` is a trait that is added to `Node.js`, so `Node` is already set up with pdom-specific options to
@@ -83,7 +83,6 @@ accessibility. It has the following components (with their implementation in par
   There is a 1x1 relationship of `PDOMInstance` and `PDOMPeer`.
 
 For more information please see `/scenery/doc/accessibility.html'`.
-
 
 ### Parallel DOM
 
@@ -123,11 +122,11 @@ too many alerts, and alerts that occur with too much or too little time between 
 
 ### Getting started
 
-When beginning PDOM work in a simulation, add `"supportsInteractiveDescription": true` to the sim's package.json. Then
-regenerate the lists to add the simulation to perennial/data/interactive-description list, and generate an a11y-view
-HTML document to assist with development (`grunt generate-a11y-view-html`). Accessibility features are hidden behind
-an `?supportsDescription` query parameter. You can elect to develop by adding this query parameter, but it is not
-recommended.
+When beginning PDOM work in a simulation, add `"supportsInteractiveDescription": true` to the sim's package.json under
+`phet.features`. Then regenerate the lists to add the simulation to perennial/data/interactive-description list, and
+generate an a11y-view HTML document to assist with development (`grunt generate-a11y-view-html`). Accessibility features
+are hidden behind an `?supportsDescription` query parameter. You can elect to develop by adding this query parameter,
+but it is not recommended.
 
 ### The a11y-view
 
