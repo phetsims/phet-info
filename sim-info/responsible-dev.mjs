@@ -9,10 +9,11 @@ import fs from 'fs'; // eslint-disable-line
  *
  * @author Sam Reid (PhET Interactive Simulations)
  */
-const entries = JSON.parse( fs.readFileSync( './phet-info/sim-info/responsible_dev.json', 'utf8' ) );
+const responsibleDevObject = JSON.parse( fs.readFileSync( './phet-info/sim-info/responsible_dev.json', 'utf8' ) );
 const devs = [];
-entries.forEach( entry => {
-  entry.responsibleDevs.forEach( repoDev => {
+const repos = Object.keys( responsibleDevObject );
+repos.forEach( repoName => {
+  responsibleDevObject[ repoName ].responsibleDevs.forEach( repoDev => {
     if ( !devs.includes( repoDev ) ) {
       devs.push( repoDev );
     }
@@ -21,9 +22,9 @@ entries.forEach( entry => {
 devs.sort();
 
 const devReport = dev => {
-  const repos = entries.filter( entry => entry.responsibleDevs.includes( dev ) ).map( entry => entry.repo );
-  const repoNotes = repos.map( repo => `* ${repo}` ).join( '\n' );
-  return '## '+dev + '\n' + repoNotes;
+  const reposForDev = repos.filter( repo => responsibleDevObject[ repo ].responsibleDevs.includes( dev ) );
+  const repoNotes = reposForDev.map( repo => `* ${repo}` ).join( '\n' );
+  return '## ' + dev + '\n' + repoNotes;
 };
 const report = devs.sort().map( devReport ).join( '\n\n' );
 console.log( report );
