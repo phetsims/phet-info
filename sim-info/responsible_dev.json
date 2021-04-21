@@ -1,1143 +1,953 @@
-[
-  {
-    "repo": "a11y-research",
+{
+  "a11y-research": {
     "responsibleDevs": [
       "@jessegreenberg"
     ]
   },
-  {
-    "repo": "acid-base-solutions",
+  "acid-base-solutions": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "aqua",
+  "aqua": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "area-builder",
+  "area-builder": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "area-model-algebra",
+  "area-model-algebra": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "area-model-common",
+  "area-model-common": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "area-model-decimals",
+  "area-model-decimals": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "area-model-introduction",
+  "area-model-introduction": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "area-model-multiplication",
+  "area-model-multiplication": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "arithmetic",
+  "arithmetic": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "assert",
+  "assert": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "atomic-interactions",
+  "atomic-interactions": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "axon",
+  "axon": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "babel",
+  "babel": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "balancing-act",
+  "balancing-act": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "balancing-chemical-equations",
+  "balancing-chemical-equations": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "balloons-and-static-electricity",
+  "balloons-and-static-electricity": {
     "responsibleDevs": [
       "@jessegreenberg"
     ]
   },
-  {
-    "repo": "bamboo",
+  "bamboo": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "beaker",
+  "beaker": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "beers-law-lab",
+  "beers-law-lab": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "bending-light",
+  "bending-light": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "binder",
+  "binder": {
     "responsibleDevs": [
       "@chrisklus"
     ]
   },
-  {
-    "repo": "blackbody-spectrum",
+  "blackbody-spectrum": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "blast",
+  "blast": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "brand",
+  "brand": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "build-a-fraction",
+  "build-a-fraction": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "build-a-molecule",
+  "build-a-molecule": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "build-an-atom",
+  "build-an-atom": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "bumper",
+  "bumper": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "buoyancy",
+  "buoyancy": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "calculus-grapher",
+  "calculus-grapher": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "capacitor-lab-basics",
+  "capacitor-lab-basics": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "chains",
+  "chains": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "charges-and-fields",
+  "charges-and-fields": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "chipper",
+  "chipper": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "circuit-construction-ios-app",
+  "circuit-construction-ios-app": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "circuit-construction-kit-ac",
+  "circuit-construction-kit-ac": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "circuit-construction-kit-ac-virtual-lab",
+  "circuit-construction-kit-ac-virtual-lab": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "circuit-construction-kit-basics",
+  "circuit-construction-kit-basics": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "circuit-construction-kit-black-box-study",
+  "circuit-construction-kit-black-box-study": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "circuit-construction-kit-common",
+  "circuit-construction-kit-common": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "circuit-construction-kit-dc",
+  "circuit-construction-kit-dc": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "circuit-construction-kit-dc-virtual-lab",
+  "circuit-construction-kit-dc-virtual-lab": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "collision-lab",
+  "collision-lab": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "color-vision",
+  "color-vision": {
     "responsibleDevs": [
       "@chrisklus"
     ]
   },
-  {
-    "repo": "concentration",
+  "concentration": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "coulombs-law",
+  "coulombs-law": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "curve-fitting",
+  "curve-fitting": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "decaf",
+  "decaf": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "density",
+  "density": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "density-buoyancy-common",
+  "density-buoyancy-common": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "diffusion",
+  "diffusion": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "dot",
+  "dot": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "eating-exercise-and-energy",
+  "eating-exercise-and-energy": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "energy-forms-and-changes",
+  "energy-forms-and-changes": {
     "responsibleDevs": [
       "@chrisklus"
     ]
   },
-  {
-    "repo": "energy-skate-park",
+  "energy-skate-park": {
     "responsibleDevs": [
       "@jessegreenberg"
     ]
   },
-  {
-    "repo": "energy-skate-park-basics",
+  "energy-skate-park-basics": {
     "responsibleDevs": [
       "@jessegreenberg"
     ]
   },
-  {
-    "repo": "equality-explorer",
+  "equality-explorer": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "equality-explorer-basics",
+  "equality-explorer-basics": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "equality-explorer-two-variables",
+  "equality-explorer-two-variables": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "estimation",
+  "estimation": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "example-sim",
+  "example-sim": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "expression-exchange",
+  "expression-exchange": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "faradays-law",
+  "faradays-law": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "fluid-pressure-and-flow",
+  "fluid-pressure-and-flow": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "forces-and-motion-basics",
+  "forces-and-motion-basics": {
     "responsibleDevs": [
       "@jessegreenberg"
     ]
   },
-  {
-    "repo": "fourier-making-waves",
+  "fourier-making-waves": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "fraction-comparison",
+  "fraction-comparison": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "fraction-matcher",
+  "fraction-matcher": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "fractions-common",
+  "fractions-common": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "fractions-equality",
+  "fractions-equality": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "fractions-intro",
+  "fractions-intro": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "fractions-mixed-numbers",
+  "fractions-mixed-numbers": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "friction",
+  "friction": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "function-builder",
+  "function-builder": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "function-builder-basics",
+  "function-builder-basics": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "gas-properties",
+  "gas-properties": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "gases-intro",
+  "gases-intro": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "gene-expression-essentials",
+  "gene-expression-essentials": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "graphing-lines",
+  "graphing-lines": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "graphing-quadratics",
+  "graphing-quadratics": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "graphing-slope-intercept",
+  "graphing-slope-intercept": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "gravity-and-orbits",
+  "gravity-and-orbits": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "gravity-force-lab",
+  "gravity-force-lab": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "gravity-force-lab-basics",
+  "gravity-force-lab-basics": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "greenhouse-effect",
+  "greenhouse-effect": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "griddle",
+  "griddle": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "hookes-law",
+  "hookes-law": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "installer-builder",
+  "installer-builder": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "interaction-dashboard",
+  "interaction-dashboard": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "inverse-square-law-common",
+  "inverse-square-law-common": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "isotopes-and-atomic-mass",
+  "isotopes-and-atomic-mass": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "john-travoltage",
+  "john-travoltage": {
     "responsibleDevs": [
       "@jessegreenberg"
     ]
   },
-  {
-    "repo": "joist",
+  "joist": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "kite",
+  "kite": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "least-squares-regression",
+  "least-squares-regression": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "make-a-ten",
+  "make-a-ten": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "masses-and-springs",
+  "masses-and-springs": {
     "responsibleDevs": [
       "@chrisklus"
     ]
   },
-  {
-    "repo": "masses-and-springs-basics",
+  "masses-and-springs-basics": {
     "responsibleDevs": [
       "@chrisklus"
     ]
   },
-  {
-    "repo": "mobius",
+  "mobius": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "models-of-the-hydrogen-atom",
+  "models-of-the-hydrogen-atom": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "molarity",
+  "molarity": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "molecule-polarity",
+  "molecule-polarity": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "molecule-shapes",
+  "molecule-shapes": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "molecule-shapes-basics",
+  "molecule-shapes-basics": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "molecules-and-light",
+  "molecules-and-light": {
     "responsibleDevs": [
       "@jessegreenberg"
     ]
   },
-  {
-    "repo": "my-solar-system",
+  "my-solar-system": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "natural-selection",
+  "natural-selection": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "neuron",
+  "neuron": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "nitroglycerin",
+  "nitroglycerin": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "normal-modes",
+  "normal-modes": {
     "responsibleDevs": [
       "@issamali67"
     ]
   },
-  {
-    "repo": "number-line-common",
+  "number-line-common": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "number-line-distance",
+  "number-line-distance": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "number-line-integers",
+  "number-line-integers": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "number-line-operations",
+  "number-line-operations": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "number-play",
+  "number-play": {
     "responsibleDevs": [
       "@chrisklus"
     ]
   },
-  {
-    "repo": "ohms-law",
+  "ohms-law": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "optics-lab",
+  "optics-lab": {
     "responsibleDevs": [
       "@veillette"
     ]
   },
-  {
-    "repo": "pendulum-lab",
+  "pendulum-lab": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "perennial",
+  "perennial": {
     "responsibleDevs": [
       "@mattpen",
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "ph-scale",
+  "ph-scale": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "ph-scale-basics",
+  "ph-scale-basics": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "phet-android-app",
+  "phet-android-app": {
     "responsibleDevs": [
       "@mattpen"
     ]
   },
-  {
-    "repo": "phet-core",
+  "phet-core": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "phet-info",
+  "phet-info": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "phet-io",
+  "phet-io": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "phet-io-client-guides",
+  "phet-io-client-guides": {
     "responsibleDevs": [
       "@chrisklus"
     ]
   },
-  {
-    "repo": "phet-io-test-sim",
+  "phet-io-test-sim": {
     "responsibleDevs": [
       "@chrisklus"
     ]
   },
-  {
-    "repo": "phet-io-website",
+  "phet-io-website": {
     "responsibleDevs": [
       "@chrisklus"
     ]
   },
-  {
-    "repo": "phet-io-wrapper-arithmetic",
+  "phet-io-wrapper-arithmetic": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "phet-io-wrapper-classroom-activity",
+  "phet-io-wrapper-classroom-activity": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "phet-io-wrapper-haptics",
+  "phet-io-wrapper-haptics": {
     "responsibleDevs": [
       "@jessegreenberg"
     ]
   },
-  {
-    "repo": "phet-io-wrapper-hookes-law-energy",
+  "phet-io-wrapper-hookes-law-energy": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "phet-io-wrapper-lab-book",
+  "phet-io-wrapper-lab-book": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "phet-io-wrappers",
+  "phet-io-wrappers": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "phet-ios-app",
+  "phet-ios-app": {
     "responsibleDevs": [
       "@mattpen"
     ]
   },
-  {
-    "repo": "phet-ios-vibtest-app",
+  "phet-ios-vibtest-app": {
     "responsibleDevs": [
       "@jessegreenberg"
     ]
   },
-  {
-    "repo": "phet-office-add-in",
+  "phet-office-add-in": {
     "responsibleDevs": [
       "@oliver-phet"
     ]
   },
-  {
-    "repo": "phet-overview",
+  "phet-overview": {
     "responsibleDevs": [
       "@kathy-phet"
     ]
   },
-  {
-    "repo": "phet-partnerships",
+  "phet-partnerships": {
     "responsibleDevs": [
       "@kathy-phet"
     ]
   },
-  {
-    "repo": "phet-sublime-plugin",
+  "phet-sublime-plugin": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "phetcommon",
+  "phetcommon": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "phetmarks",
+  "phetmarks": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "plinko-probability",
+  "plinko-probability": {
     "responsibleDevs": [
       "@chrisklus"
     ]
   },
-  {
-    "repo": "projectile-motion",
+  "projectile-motion": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "proportion-playground",
+  "proportion-playground": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "protein-synthesis",
+  "protein-synthesis": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "QA",
+  "QA": {
     "responsibleDevs": [
       "@KatieWoe"
     ]
   },
-  {
-    "repo": "query-string-machine",
+  "query-string-machine": {
     "responsibleDevs": [
       "@chrisklus"
     ]
   },
-  {
-    "repo": "ratio-and-proportion",
+  "ratio-and-proportion": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "reactants-products-and-leftovers",
+  "reactants-products-and-leftovers": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "resistance-in-a-wire",
+  "resistance-in-a-wire": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "rosetta",
+  "rosetta": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "rutherford-scattering",
+  "rutherford-scattering": {
     "responsibleDevs": [
       "@jessegreenberg"
     ]
   },
-  {
-    "repo": "scenery",
+  "scenery": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "scenery-phet",
+  "scenery-phet": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "sherpa",
+  "sherpa": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "shred",
+  "shred": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "simula-rasa",
+  "simula-rasa": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "smithers",
+  "smithers": {
     "responsibleDevs": [
       "@mattpen"
     ]
   },
-  {
-    "repo": "special-ops",
+  "special-ops": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "states-of-matter",
+  "states-of-matter": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "states-of-matter-basics",
+  "states-of-matter-basics": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "studio",
+  "studio": {
     "responsibleDevs": [
       "@chrisklus"
     ]
   },
-  {
-    "repo": "sugar-and-salt-solutions",
+  "sugar-and-salt-solutions": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "sun",
+  "sun": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "tambo",
+  "tambo": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "tandem",
+  "tandem": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "tangible",
+  "tangible": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "tappi",
+  "tappi": {
     "responsibleDevs": [
       "@jessegreenberg"
     ]
   },
-  {
-    "repo": "tasks",
+  "tasks": {
     "responsibleDevs": [
       "@zepumph"
     ]
   },
-  {
-    "repo": "trig-tour",
+  "trig-tour": {
     "responsibleDevs": [
       "@jessegreenberg"
     ]
   },
-  {
-    "repo": "twixt",
+  "twixt": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "under-pressure",
+  "under-pressure": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "unit-rates",
+  "unit-rates": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "utterance-queue",
+  "utterance-queue": {
     "responsibleDevs": [
       "@jessegreenberg"
     ]
   },
-  {
-    "repo": "vector-addition",
+  "vector-addition": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "vector-addition-equations",
+  "vector-addition-equations": {
     "responsibleDevs": [
       "@pixelzoom"
     ]
   },
-  {
-    "repo": "vegas",
+  "vegas": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "vibe",
+  "vibe": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "wave-interference",
+  "wave-interference": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "wave-on-a-string",
+  "wave-on-a-string": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "waves-intro",
+  "waves-intro": {
     "responsibleDevs": [
       "@samreid"
     ]
   },
-  {
-    "repo": "website",
+  "website": {
     "responsibleDevs": [
       "@mattpen"
     ]
   },
-  {
-    "repo": "website-docker",
+  "website-docker": {
     "responsibleDevs": [
       "@mattpen"
     ]
   },
-  {
-    "repo": "website-meteor",
+  "website-meteor": {
     "responsibleDevs": [
       "@mattpen"
     ]
   },
-  {
-    "repo": "weddell",
+  "weddell": {
     "responsibleDevs": [
       "@jbphet"
     ]
   },
-  {
-    "repo": "wilder",
+  "wilder": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   },
-  {
-    "repo": "xray-diffraction",
+  "xray-diffraction": {
     "responsibleDevs": [
       "@heldentodd"
     ]
   },
-  {
-    "repo": "yotta",
+  "yotta": {
     "responsibleDevs": [
       "@jonathanolson"
     ]
   }
-]
+}
