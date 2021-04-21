@@ -314,6 +314,11 @@
       "@jbphet"
     ]
   },
+  "faraday": {
+    "responsibleDevs": [
+      "@pixelzoom"
+    ]
+  },
   "faradays-law": {
     "responsibleDevs": [
       "@jbphet"
@@ -394,6 +399,11 @@
       "@jbphet"
     ]
   },
+  "geometric-optics": {
+    "responsibleDevs": [
+      "@veillette"
+    ]
+  },
   "graphing-lines": {
     "responsibleDevs": [
       "@pixelzoom"
@@ -437,11 +447,6 @@
   "hookes-law": {
     "responsibleDevs": [
       "@pixelzoom"
-    ]
-  },
-  "installer-builder": {
-    "responsibleDevs": [
-      "@jbphet"
     ]
   },
   "interaction-dashboard": {
@@ -690,11 +695,6 @@
       "@oliver-phet"
     ]
   },
-  "phet-overview": {
-    "responsibleDevs": [
-      "@kathy-phet"
-    ]
-  },
   "phet-partnerships": {
     "responsibleDevs": [
       "@kathy-phet"
@@ -770,6 +770,11 @@
       "@jessegreenberg"
     ]
   },
+  "seasons": {
+    "responsibleDevs": [
+      "@samreid"
+    ]
+  },
   "scenery": {
     "responsibleDevs": [
       "@jonathanolson"
@@ -786,6 +791,11 @@
     ]
   },
   "shred": {
+    "responsibleDevs": [
+      "@jbphet"
+    ]
+  },
+  "skiffle": {
     "responsibleDevs": [
       "@jbphet"
     ]

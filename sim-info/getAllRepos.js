@@ -44,11 +44,11 @@ const getSomeRepos = async pageNumber => {
 /**
  * @returns {Promise<string[]>}
  */
-module.exports = async function() {
+module.exports = async () => {
   let repos = [];
 
   for ( let i = 1; i < 5; i++ ) {
     repos = repos.concat( await getSomeRepos( i ) );
   }
-  return repos;
+  return repos.sort();
 };

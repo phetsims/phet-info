@@ -19,10 +19,13 @@ const fs = require( 'fs' );
   // {string[]} - all repos on github
   const reposFromGithub = await getAllRepos();
 
+  let someDiscrepancy = false;
+
   for ( let i = 0; i < reposFromGithub.length; i++ ) {
     const repoInGithub = reposFromGithub[ i ];
     if ( !reposFromJSON.hasOwnProperty( repoInGithub ) ) {
       console.log( `must add ${repoInGithub} to responsible dev list` );
+      someDiscrepancy = true;
     }
   }
 
@@ -30,6 +33,11 @@ const fs = require( 'fs' );
     const repoInJSON = reposInJSON[ i ];
     if ( !reposFromGithub.includes( repoInJSON ) ) {
       console.log( `must remove ${repoInJSON} from responsible dev list as it is not on github` );
+      someDiscrepancy = true;
     }
+  }
+
+  if ( !someDiscrepancy ) {
+    console.log( 'No discrepancies found between responsible_dev.json and github.' );
   }
 } )();
