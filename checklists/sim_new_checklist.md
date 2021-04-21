@@ -40,7 +40,7 @@
 
 ## Implementation
 - [ ] **Repository created** (Date: //)
-  - [ ] Simulation added to [responsible_dev.md](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md)
+  - [ ] Simulation added to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json)
   - [ ] Use `grunt create-sim` in perennial (see `--help` for arguments) to create the repository structure
   - [ ] Collaborators added (Developer team, QA team, designers, etc)
   - [ ] standard GitHub label set applied
@@ -53,7 +53,6 @@
   - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks)
   - [ ] Add CT tests for public query parameters
 - [ ] **Published** (Date: //)
-  - [ ] Mark the sim as published in [responsible_dev.md](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md)
 
 ## QA
 - [ ] *If a Port:* **Legacy sim tested for bugs**; issues reported in repo
