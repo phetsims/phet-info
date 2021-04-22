@@ -72,6 +72,7 @@ Other:
 - [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and run `clone-missing-repos.sh` at your convenience."
 - [ ] Apply GitHub labels. See [github-labels/README.md](https://github.com/phetsims/phet-info/blob/master/github-labels/README.md).
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
+- [ ] Add the sim to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json).
 
 ## Steps for renaming a repo
 - [ ] Make sure all commits are pushed to that repo.
@@ -83,6 +84,7 @@ Other:
   * `name`
   * `repository.url`
   * `phet.requirejsNamespace`
+- [ ] Change entry in [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json).
 - [ ] Notify Slack channel dev-public that the repo has been renamed. E.g. "I just renamed repository {{OLD_REPO}} to {{NEW_REPO}}. Please pull perennial and run `clone-missing-repos.sh` at your convenience."
 - [ ] If applicable, "refresh perennial" on phettest.
 
@@ -92,7 +94,6 @@ Other:
     * `main.js` file
     * Screens/Views/Models?
     * Namespace file
-  - [ ] change entry in responsible_dev.json
   - [ ] Make sure to update the title in the `*en.json` string file and update its usage in the main js file
   - [ ] Run `grunt modulify`
   - [ ] update usages of the Namespace file
