@@ -47,9 +47,11 @@
   - [ ] repository added to perennial/data/active-repos
 - [ ] **Development started** (Date: //)
 - [ ] **Sim is "feature complete"** (Date: //)
-- [ ] **Sim dev test completed** (Date: //)
+- [ ] **Code review checklist completed"** (Date: //)
+- [ ] **Sim team sign-off** (Date: //)
 - [ ] **Code review completed** (Date: //)
-- [ ] **Sim dev & RC tests completed** (Date: //)
+- [ ] **Sim dev test completed** (Date: //)
+- [ ] **Sim RC tests completed** (Date: //)
 - [ ] **Pre-publication items**
   - [ ] Main screenshot (read [this](https://github.com/phetsims/QA/blob/master/documentation/qa-book.md#screenshots))
   - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks)
