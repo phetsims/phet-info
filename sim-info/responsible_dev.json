@@ -508,19 +508,25 @@
     "responsibleDevs": [
       "@samreid"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "gravity-force-lab": {
     "responsibleDevs": [
       "@zepumph"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "gravity-force-lab-basics": {
     "responsibleDevs": [
       "@zepumph"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "greenhouse-effect": {
     "responsibleDevs": [
@@ -677,31 +683,41 @@
     "responsibleDevs": [
       "@jbphet"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@amanda-phet"
+    ]
   },
   "number-line-distance": {
     "responsibleDevs": [
       "@jbphet"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@amanda-phet"
+    ]
   },
   "number-line-integers": {
     "responsibleDevs": [
       "@jbphet"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@amanda-phet"
+    ]
   },
   "number-line-operations": {
     "responsibleDevs": [
       "@jbphet"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@amanda-phet"
+    ]
   },
   "number-play": {
     "responsibleDevs": [
       "@chrisklus"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@amanda-phet"
+    ]
   },
   "ohms-law": {
     "responsibleDevs": [
