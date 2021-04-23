@@ -5,7 +5,7 @@ import fs from 'fs'; // eslint-disable-line
 /**
  * List repos per developer
  * cd root
- * node phet-info/sim-info/responsible-dev.mjs
+ * node phet-info/sim-info/printReposPerDev.mjs
  *
  * @author Sam Reid (PhET Interactive Simulations)
  */
