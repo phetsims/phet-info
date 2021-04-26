@@ -1,9 +1,13 @@
 // Copyright 2021, University of Colorado Boulder
 
 /**
- * usage:
- * cd root;
+ * Determine whether all PhET GitHub repos are represented in responsible_dev.json
+ *
+ * Usage:
+ * cd root
  * node ./phet-info/sim-info/areAllReposInFile.js
+ *
+ * @author Michael Kauzmann (PhET Interactive Simulations)
  */
 const getAllRepos = require( './getAllRepos' );
 const fs = require( 'fs' );
