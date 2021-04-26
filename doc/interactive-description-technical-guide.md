@@ -29,7 +29,7 @@
 ## Prerequisites
 
 * Before reading this documentation, please see scenery's accessibility-related documention
-  at `/scenery/doc/accessibility.html'`. This includes an overview of web accessibility key features required for
+  at `/scenery/doc/accessibility.html`. This includes an overview of web accessibility key features required for
   Interactive Description implementation.
 * Note: "a11y" is a synonym for "accessibility".
 
