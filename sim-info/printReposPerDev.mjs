@@ -4,6 +4,8 @@ import fs from 'fs'; // eslint-disable-line
 
 /**
  * List repos per developer
+ *
+ * Usage:
  * cd root
  * node phet-info/sim-info/printReposPerDev.mjs
  *

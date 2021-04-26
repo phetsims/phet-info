@@ -3,6 +3,10 @@
 /**
  * Get all repos in phetsims that are not archived, disabled, or forks. This probably won't work unless you have
  * admin privileges to read all repos.
+ *
+ * This is not intended to be run directly. It's used by areAllReposInFile.js.
+ *
+ * @author Michael Kauzmann (PhET Interactive Simulations)
  */
 
 const buildLocal = require( '../../perennial/js/common/buildLocal' );
