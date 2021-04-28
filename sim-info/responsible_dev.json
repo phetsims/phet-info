@@ -105,7 +105,9 @@
     "responsibleDevs": [
       "@jbphet"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@DianaTavares"
+    ]
   },
   "balancing-chemical-equations": {
     "responsibleDevs": [
@@ -119,7 +121,9 @@
     "responsibleDevs": [
       "@jessegreenberg"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "bamboo": {
     "responsibleDevs": [
@@ -195,7 +199,9 @@
     "responsibleDevs": [
       "@jbphet"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@DianaTavares"
+    ]
   },
   "bumper": {
     "responsibleDevs": [
@@ -321,7 +327,9 @@
     "responsibleDevs": [
       "@chrisklus"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@DianaTavares"
+    ]
   },
   "concentration": {
     "responsibleDevs": [
@@ -471,19 +479,25 @@
     "responsibleDevs": [
       "@jbphet"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "fluid-pressure-and-flow": {
     "responsibleDevs": [
       "@zepumph"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@DianaTavares"
+    ]
   },
   "forces-and-motion-basics": {
     "responsibleDevs": [
       "@jessegreenberg"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "fourier-making-waves": {
     "responsibleDevs": [
@@ -545,7 +559,9 @@
     "responsibleDevs": [
       "@zepumph"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "function-builder": {
     "responsibleDevs": [
@@ -583,7 +599,9 @@
     "responsibleDevs": [
       "@jbphet"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "geometric-optics": {
     "responsibleDevs": [
@@ -684,13 +702,17 @@
     "responsibleDevs": [
       "@jbphet"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "john-travoltage": {
     "responsibleDevs": [
       "@jessegreenberg"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "joist": {
     "responsibleDevs": [
@@ -746,13 +768,17 @@
     "responsibleDevs": [
       "@pixelzoom"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "molarity": {
     "responsibleDevs": [
       "@zepumph"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "molecule-polarity": {
     "responsibleDevs": [
@@ -806,7 +832,9 @@
     "responsibleDevs": [
       "@jbphet"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "nitroglycerin": {
     "responsibleDevs": [
@@ -867,14 +895,18 @@
     "responsibleDevs": [
       "@jbphet"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@DianaTavares"
+    ]
   },
   "optics-lab": {
     "responsibleDevs": [
       "@veillette",
       "@jbphet"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "pendulum-lab": {
     "responsibleDevs": [
@@ -1081,13 +1113,17 @@
     "responsibleDevs": [
       "@pixelzoom"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "resistance-in-a-wire": {
     "responsibleDevs": [
       "@jbphet"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@DianaTavares"
+    ]
   },
   "rosetta": {
     "responsibleDevs": [
@@ -1099,7 +1135,9 @@
     "responsibleDevs": [
       "@jessegreenberg"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
   },
   "seasons": {
     "responsibleDevs": [
@@ -1181,7 +1219,9 @@
     "responsibleDevs": [
       "@samreid"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@amanda-phet"
+    ]
   },
   "sun": {
     "responsibleDevs": [
@@ -1237,7 +1277,9 @@
     "responsibleDevs": [
       "@samreid"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@DianaTavares"
+    ]
   },
   "unit-rates": {
     "responsibleDevs": [
