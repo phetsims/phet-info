@@ -7,6 +7,8 @@ Sim Info
 should have a responsibleDev, someone in charge of maintaining the code/files inside that repo. This file should be
 maintained manually.
 
+[responsible_dev.md](./responsible_dev.md) is a generated markdown file of the json data. see [./generateMarkdownOutput.mjs](./generateMarkdownOutput.mjs)
+
 ------------------
 
 To print out a list, by developer, of all repos a dev is responsible for:
