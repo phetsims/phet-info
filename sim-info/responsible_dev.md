@@ -3,6 +3,7 @@
 
 NOTE: This file is generated, do not edit directly. It is created from `responsible_dev.json`, see `./generateMarkdownOutput.mjs`.
 
+
 | Simulation  | Developer | Designer |
 | :---------- | :------------- | :------------- |
 | a11y-research | @jessegreenberg |  | 
