@@ -17,7 +17,7 @@
     * [Populating the PDOM](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#populating-the-pdom)
     * [PDOM Order for PhET Sims](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#pdom-order-for-phet-sims)
     * [Add alternative-input input listeners](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#add-alternative-input-input-listeners)
-    * [Implementing Interactive Description](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#implementing-interactive-description)
+    * [Web Accessibility Toolkit](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#web-accessibility-toolkit)
     * [Interactive Alerts](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#interactive-alerts)
     * [Aria Value Text](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#aria-value-text)
     * [Handling a11y specific strings](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#handling-a11y-specific-strings)
@@ -59,13 +59,19 @@ For more information, see the "Resources for further understanding" below.
 Interactive Description is an accessibility feature that PhET has developed, largely tailored towards screen reader
 accessibility. It has the following components (with their implementation in parens):
 
-* State Description (PDOM)
-    * Static States
-    * Dynamic States
-* Responsive Description
-    * Object Responses (UtteranceQueue/PDOM/Both)
-    * Context Responses (UtteranceQueue)
-* Alternative Input:
+* State Description (PDOM) - description about the state of objects in the sim.
+    * Static States - unchanging content either describing objects in the sim, or giving hints about interactions.
+    * Dynamic States - description that depends on the model or view values, and so dynamically will change with that
+      sim content.
+* Responsive Description - description given in response to a change in the sim. This is often not directly from the
+  PDOM, but instead via technology that will push verbal description directly to the user (like an aria-live alert).
+    * Object Responses (UtteranceQueue/PDOM/Both) - a response from an object change, most like stating how that object
+      changed, or what its new value is.
+    * Context Responses (UtteranceQueue) - Often emitted immediately after an object response, a context response is
+      description about the larger context of the sim. This may be the resulting effect that the object change had.
+* Alternative Input - ways of interacting with the sim through the PDOM. This largely is classified as the technology
+  that can interface with HTML in general, but cannot with SVG, WebGL, or Canvas as used by the primary input system in
+  scenery (mouse/touch/pen).
     * keyboard (PDOM)
     * mobile (PDOM)
     * switch (PDOM)
@@ -185,8 +191,9 @@ feature and visual sim development together.
    the visible rendering order, if not. . .
 4. Discuss with the design team to inform them the order is unnatural OR we may decide another order based on
    simplifying implementation--revise desired order. if not. . .
-5. use `setPDOMOrder` on descendants (can be local vars like `controlPanel.flashlight.button.label`). This is not
-   recommended.
+5. use `setPDOMOrder` on children or descendants from the parent type (perhaps with local vars like
+   `controlPanel.flashlight.button.label`). This is not recommended, and it most likely only needed for retrofitting 
+   sims with complicated ScreenView hierarchies.
 
 If `setPDOMOrder` is needed on Nodes that are not descendants, then likely there is a structural issue that needs to be
 addressed fully, rather than hacked at by using `Node.setPDOMOrder`, although the setter will accept any `Node` in the
@@ -232,9 +239,9 @@ this.addInputListener( {
 
 Also see `GrabDragInteraction.js` and `KeyboardDragListener.js` for common code keyboard-interaction input listeners.
 
-### Implementing Interactive Description
+### Web Accessibility Toolkit
 
-To implement interactive description, follow these thoughts:
+To implement interactive description with best practices . . .
 
 * When adding options to `Node`, separate pdom-specific options in their own block, labelling them with a `// pdom`
   comment.
@@ -256,13 +263,14 @@ To implement interactive description, follow these thoughts:
       a heading element with a region or group. For example, an H2 heading is associated with the Play Area region
       through an `aria-labelledby` attribute. With this association the H2's content, "Play Area", provides the region
       with an accessible name in the _Accessibility Tree_ which is accessed by assistive technology.
-* This is where you are piecing together all of the individual nodes.
 * For a full list of available options, see `ParallelDOM.js`.
 
 ### Interactive Alerts
 
 * `UtteranceQueue` is a type set up to emit live event based descriptions. This is most often implemented based on model
   changes. For PDOM accessibility, the word "alerts" means aria-live support via `UtteranceQueue`.
+
+<!-- TODO: update this utteranceQueue import once the pattern is solidified, see https://github.com/phetsims/utterance-queue/issues/13-->
 
     ```js
     import utteranceQueue from '../../utterance-queue/js/utteranceQueue.js';
