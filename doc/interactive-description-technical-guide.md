@@ -65,8 +65,8 @@ accessibility. It has the following components (with their implementation in par
       sim content.
 * Responsive Description - description given in response to a change in the sim. This is often not directly from the
   PDOM, but instead via technology that will push verbal description directly to the user (like an aria-live alert).
-    * Object Responses (UtteranceQueue/PDOM/Both) - a response from an object change, most like stating how that object
-      changed, or what its new value is.
+    * Object Responses (UtteranceQueue/aria-valuetext/PDOM) - a response from an object change, most like stating how
+      that object changed, or what its new value is.
     * Context Responses (UtteranceQueue) - Often emitted immediately after an object response, a context response is
       description about the larger context of the sim. This may be the resulting effect that the object change had.
 * Alternative Input - ways of interacting with the sim through the PDOM. This largely is classified as the technology
@@ -192,7 +192,7 @@ feature and visual sim development together.
 4. Discuss with the design team to inform them the order is unnatural OR we may decide another order based on
    simplifying implementation--revise desired order. if not. . .
 5. use `setPDOMOrder` on children or descendants from the parent type (perhaps with local vars like
-   `controlPanel.flashlight.button.label`). This is not recommended, and it most likely only needed for retrofitting 
+   `controlPanel.flashlight.button.label`). This is not recommended, and it most likely only needed for retrofitting
    sims with complicated ScreenView hierarchies.
 
 If `setPDOMOrder` is needed on Nodes that are not descendants, then likely there is a structural issue that needs to be
