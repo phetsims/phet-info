@@ -88,6 +88,7 @@ git clone https://github.com/phetsims/sun.git
 git clone https://github.com/phetsims/tambo.git
 git clone https://github.com/phetsims/tandem.git
 git clone https://github.com/phetsims/utterance-queue.git
+git clone https://github.com/phetsims/twixt.git
 ```
 
 3. Download & install node+npm from https://nodejs.org/en/
