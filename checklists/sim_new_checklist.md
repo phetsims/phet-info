@@ -56,7 +56,7 @@
 - [ ] **Sim RC tests completed** (Date: //)
 - [ ] **Pre-publication items**
   - [ ] Main screenshot (read [this](https://github.com/phetsims/QA/blob/master/documentation/qa-book.md#screenshots))
-  - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks)
+  - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/joist/blob/master/js/CreditsNode.js))
   - [ ] Add CT tests for public query parameters
 - [ ] **Published** (Date: //)
 
