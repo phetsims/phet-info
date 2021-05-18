@@ -29,7 +29,7 @@
 ## Prerequisites
 
 * Before reading this documentation, please see scenery's accessibility-related documention
-  at `/scenery/doc/accessibility.html`. This includes an overview of web accessibility key features required for
+  at `/scenery/doc/accessibility/accessibility.html`. This includes an overview of web accessibility key features required for
   Interactive Description implementation.
 * Note: "a11y" is a synonym for "accessibility".
 
@@ -88,7 +88,7 @@ accessibility. It has the following components (with their implementation in par
   times it has been added to the scene graph. The PDOM elements of each `Node` are created and handled with `PDOMPeer`.
   There is a 1x1 relationship of `PDOMInstance` and `PDOMPeer`.
 
-For more information please see `/scenery/doc/accessibility.html'`.
+For more information please see `/scenery/doc/accessibility/accessibility.html'`.
 
 ### Parallel DOM
 
