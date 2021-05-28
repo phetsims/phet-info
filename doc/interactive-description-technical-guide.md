@@ -59,6 +59,12 @@ For more information, see the "Resources for further understanding" below.
 Interactive Description is an accessibility feature that PhET has developed, largely tailored towards screen reader
 accessibility. It has the following components (with their implementation in parens):
 
+* Alternative Input - ways of interacting with the sim through the PDOM. This largely is classified as the technology
+  that can interface with HTML in general, but cannot with SVG, WebGL, or Canvas as used by the primary input system in
+  scenery (mouse/touch/pen).
+    * keyboard (PDOM)
+    * mobile (PDOM)
+    * switch (PDOM)
 * State Description (PDOM) - description about the state of objects in the sim.
     * Static States - unchanging content either describing objects in the sim, or giving hints about interactions.
     * Dynamic States - description that depends on the model or view values, and so dynamically will change with that
@@ -69,12 +75,6 @@ accessibility. It has the following components (with their implementation in par
       that object changed, or what its new value is.
     * Context Responses (UtteranceQueue) - Often emitted immediately after an object response, a context response is
       description about the larger context of the sim. This may be the resulting effect that the object change had.
-* Alternative Input - ways of interacting with the sim through the PDOM. This largely is classified as the technology
-  that can interface with HTML in general, but cannot with SVG, WebGL, or Canvas as used by the primary input system in
-  scenery (mouse/touch/pen).
-    * keyboard (PDOM)
-    * mobile (PDOM)
-    * switch (PDOM)
 
 ## Understanding each technology
 
