@@ -426,11 +426,21 @@ Property.multilink(
 } );
 ```
 
-- [ ] ES5 getters/setters defined in sims should be used judiciously when a Property exists, only when the benefit of conciseness outweighs the potential loss of readability. If ES5 getters/setters exist, try to not mix usage of them with Property access.
+- [ ] ES5 getters/setters defined in sims should be used judiciously when a Property exists, only when the benefit of 
+  conciseness outweighs the potential loss of readability. If ES5 getters/setters exist, try to not mix usage of them
+  with Property access.
+
+- [ ] The model and view code should be written such that it makes no assumptions about the animation frame rate this it
+  will encounter.  The default max dt (delta time) value is defined in `Screen.js`, and smaller values should be used if
+  the default is too large.  There is no minimum value for dt, which implies that there is no maximum supported frame
+  rate.  The sim should be able to handle this.  For an example of a problem that resulted from assuming that a max rate
+  of 60 FPS would be the norm, please see [this GitHub issue](https://github.com/phetsims/states-of-matter/issues/354).
 
 ### Documentation
 
-This section deals with PhET documention conventions. You do not need to exhaustively check every item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET standards.
+This section deals with PhET documentation conventions. You do not need to exhaustively check every item in this
+section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code
+generally meets PhET standards.
 
 - [ ] All classes, methods and properties are documented.
 
