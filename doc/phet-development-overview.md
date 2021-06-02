@@ -64,10 +64,10 @@ In order to get the code for an existing PhET simulation, you will need to follo
 (a) Open Git Bash (from the link on your desktop or through the Start menu)
 
 (b) Create a directory for your development:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`mkdir phetsims`
+`mkdir phetsims`
 
 (c) Change directory to phetsims:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd phetsims`
+`cd phetsims`
 
 (d) Run these git clone commands:
 
@@ -99,17 +99,17 @@ git clone https://github.com/phetsims/utterance-queue.git
 4. Launch a node server program on your development machine
 
 (a) Install the http-server as a command line program. Use a different command prompt than the one above since the one above will not have the new path for npm
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install http-server -g`
+`npm install http-server -g`
 
 (b) Change into the phetsims directory (if you were not already there).
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd phetsims/`
+`cd phetsims/`
 
 (c) Run the http server program (with caching turned off to help with iteration)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`http-server -c-1`
+`http-server -c-1`
 
 5. Open a browser to the path for one of the simulations: http://localhost:8080/example-sim/example-sim_en.html
 6. For building the simulations, install the grunt command line utility (may require sudo):
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install -g grunt-cli`
+`npm install -g grunt-cli`
 7. Run `npm config set save false` so that package-lock.json files are not created.
 
 Now you can test modifying the simulation code and see the changes by refreshing the browser.
@@ -125,21 +125,21 @@ In order to get the code for an existing PhET simulation, you will need to follo
 
 1. Download and install Git from http://git-scm.com/downloads
   a. You may need to allow the system to run apps downloaded from anywhere
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i. Open the Apple menu
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii. System preferences
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii. Security & Privacy
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv. Click the lock to make changes
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v. Allow apps downloaded from “anywhere”
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vi. After you have installed git, you can restore the prior security settings
+i. Open the Apple menu
+ii. System preferences
+iii. Security & Privacy
+iv. Click the lock to make changes
+v. Allow apps downloaded from “anywhere”
+vi. After you have installed git, you can restore the prior security settings
 2. Use Git to check out the code for PhET Libraries and Simulations
   a. Open the “Terminal” application
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i. Click the search icon (magnifying glass) in the top right of the desktop
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii. Type “Terminal”
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii. Click on the terminal icon
+i. Click the search icon (magnifying glass) in the top right of the desktop
+ii. Type “Terminal”
+iii. Click on the terminal icon
   a. Create a directory for your development:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`mkdir phetsims`
+`mkdir phetsims`
   b. Change directory to phetsims:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd phetsims`
+`cd phetsims`
   d. Run these git clone commands:
 
 ```
@@ -171,16 +171,16 @@ When running the first git clone command, it may show a dialog that says: The �
 3. Download & install node+npm from http://nodejs.org/en
 4. Launch a node server program on your development machine
   a. Install the http-server as a command line program using the Terminal
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install http-server -g`
+`npm install http-server -g`
 If that yields an error like “Please try running this command again as root/Administrator.” then run using the sudo command like so:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`sudo npm install http-server -g`
+`sudo npm install http-server -g`
   b. Change into the phetsims directory (if you were not already there).
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd phetsims/`
+`cd phetsims/`
   c. Run the http server program  (with caching turned off to help with iteration)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`http-server -c-1`
+`http-server -c-1`
 5. Open a browser to the path for one of the simulations: http://localhost:8080/example-sim/build/phet/example-sim_en_phet.html
 6. For building the simulations, install the grunt command line utility (may require sudo):
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install -g grunt-cli`
+`npm install -g grunt-cli`
 Now you can test modifying the simulation code and see the changes by refreshing the browser http://localhost:8080/example-sim/example-sim_en.html.
 You can also use this to test on remote devices after looking up your ip address.
 Questions should be directed to the Developing Interactive Simulations in HTML5 Google Group.
@@ -196,18 +196,18 @@ Questions should be directed to the Devloping Interactive Simulations in HTML5 G
 After checking out the dependencies and installing grunt-cli in the preceding instructions, you can create your own simulation using the template.
 
 1. Check out the template sim, called ‘simula-rasa’ using this git clone command:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd phetsims`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`git clone https://github.com/phetsims/simula-rasa.git`
+`cd phetsims`
+`git clone https://github.com/phetsims/simula-rasa.git`
 2. Install the chipper dependencies:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd chipper`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install`
+`cd chipper`
+`npm install`
 3. Install the perennial dependencies:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd ../perennial`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install`
+`cd ../perennial`
+`npm install`
 4. Use the perennial ‘grunt’ task to create a new sim, like so (still in the perennial directory):
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`grunt create-sim --repo=NAME --author=AUTHOR`
+`grunt create-sim --repo=NAME --author=AUTHOR`
 For instance, if the simulation is going to be named Acceleration Lab and the author is Jane Doe, then you could put:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`grunt create-sim --repo=acceleration-lab --author="Jane Doe"`
+`grunt create-sim --repo=acceleration-lab --author="Jane Doe"`
 5. Test the created simulation in the browser and make sure it launches.  It should be a blank simulation.  Write to the Developing Interactive Simulations in HTML5 Google Group if you run into problems.
 
 ## Building and Testing (Windows and macOS)
@@ -268,8 +268,8 @@ Below is a list of some of the repositories that contain libraries and framework
 Our example-sim repository README.md includes a list of git clone commands that will check out the example simulation and all of its dependencies: https://github.com/phetsims/example-sim
 
 And to clone some of our in-development sims:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`git clone git://github.com/phetsims/forces-and-motion-basics.git`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`git clone git://github.com/phetsims/build-an-atom.git`
+`git clone git://github.com/phetsims/forces-and-motion-basics.git`
+`git clone git://github.com/phetsims/build-an-atom.git`
 
 All repositories should be cloned into the same directory so that relative paths will work.
 
@@ -388,8 +388,8 @@ The steps to create a fully functional PhET simulation, given an existing Java/F
 2. Simulation & User Interface Testing
 	a. Testing on our supported platforms and identification of problems on different browsers
 	b. Performance must be sufficiently fast on all supported platforms.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i. The simulation should start in <8 seconds on iPad3
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii. We strive for a steady 60fps on iPad3 when possible
+i. The simulation should start in <8 seconds on iPad3
+ii. We strive for a steady 60fps on iPad3 when possible
   c. The simulation should be tested with assertions enabled: `?ea`
   d. The simulation should be tested for touch areas: `?showPointerAreas`
 3. Code review
