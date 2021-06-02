@@ -57,14 +57,19 @@ In order to get the code for an existing PhET simulation, you will need to follo
 ### Checking out the code and running it in development mode
 
 1. Download and install Git from http://git-scm.com/downloads
-  a. Choose the option to create a desktop icon for “git bash”, if it is not already selected.
+
+(a) Choose the option to create a desktop icon for “git bash”, if it is not already selected.
 2. Use Git to check out the code for PhET Libraries and Simulations
-  a. Open Git Bash (from the link on your desktop or through the Start menu)
-  b. Create a directory for your development:
+
+(a) Open Git Bash (from the link on your desktop or through the Start menu)
+
+(b) Create a directory for your development:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`mkdir phetsims`
-  c. Change directory to phetsims:
+
+(c) Change directory to phetsims:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd phetsims`
-  d. Run these git clone commands:
+
+(d) Run these git clone commands:
 
 ```
 git clone https://github.com/phetsims/example-sim.git
@@ -110,7 +115,7 @@ git clone https://github.com/phetsims/utterance-queue.git
 Now you can test modifying the simulation code and see the changes by refreshing the browser.
 You can also use this to test on remote devices after looking up your ip address. If developing on Chrome, note that
 it can be helpful to set "Disable cache (while DevTools is open)" (see the devtools settings).
-Questions should be directed to the Devloping Interactive Simulations in HTML5 Google Group.
+Questions should be directed to the Developing Interactive Simulations in HTML5 Google Group.
 
 ## Getting Started (for macOS)
 
