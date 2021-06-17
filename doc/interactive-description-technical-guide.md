@@ -185,13 +185,17 @@ NOTE: This list was created with a mindset of instrumenting a simulation with In
 being created, then likely this list is irrelevant because the design process from the beginning will be focused on this
 feature and visual sim development together.
 
-1. Add alternative input to the simulation, see if order is correct based on the scene graph structure. If not. . .
-2. use `setPDOMOrder` on local children, if not. . .
-3. Change z-order in the scene graph structure to get the order correct, if there is not an overriding constraint from
+1. For top level Nodes like the ScreenView, PlayAreaNode and ControlAreaNode, set the order eagerly with pdomOrder.
+   This makes the navigation order for the screen explicit, easy to find, and locks the navigation order so that
+   it doesn't change accidentally if the order or structure of the ScreenView changes. For lower level nodes, prefer
+   the following.
+2. Add alternative input to the simulation, see if order is correct based on the scene graph structure. If not. . .
+3. use `setPDOMOrder` on local children, if not. . .
+4. Change z-order in the scene graph structure to get the order correct, if there is not an overriding constraint from
    the visible rendering order, if not. . .
-4. Discuss with the design team to inform them the order is unnatural OR we may decide another order based on
+5. Discuss with the design team to inform them the order is unnatural OR we may decide another order based on
    simplifying implementation--revise desired order. if not. . .
-5. use `setPDOMOrder` on children or descendants from the parent type (perhaps with local vars like
+6. use `setPDOMOrder` on children or descendants from the parent type (perhaps with local vars like
    `controlPanel.flashlight.button.label`). This is not recommended, and it most likely only needed for retrofitting
    sims with complicated ScreenView hierarchies.
 
