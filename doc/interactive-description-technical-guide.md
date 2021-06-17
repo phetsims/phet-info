@@ -134,6 +134,10 @@ generate an a11y-view HTML document to assist with development (`grunt generate-
 are hidden behind an `?supportsDescription` query parameter. You can elect to develop by adding this query parameter,
 but it is not recommended.
 
+Beware that some OS and browsers do not enable keyboard navigation by default. In particular macOS does not enable
+keyboard navigation for many applications unless specifically requested. Before starting, make sure keyboard navigation
+is enabled. Here is a link to macOS documentation about how to enable: https://support.apple.com/guide/mac-help/use-your-keyboard-like-a-mouse-mchlp1399/mac
+
 ### The a11y-view
 
 The 'A11y view' is an HTML page that runs the simulation in an iframe and shows an up-to-date copy of the PDOM next to
