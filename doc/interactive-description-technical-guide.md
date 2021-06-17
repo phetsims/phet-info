@@ -189,10 +189,10 @@ NOTE: This list was created with a mindset of instrumenting a simulation with In
 being created, then likely this list is irrelevant because the design process from the beginning will be focused on this
 feature and visual sim development together.
 
-1. For top level Nodes like the ScreenView, PlayAreaNode and ControlAreaNode, set the order eagerly with pdomOrder.
-   This makes the navigation order for the screen explicit, easy to find, and locks the navigation order so that
-   it doesn't change accidentally if the order or structure of the ScreenView changes. For lower level nodes, prefer
-   the following.
+1. In general, define the PDOM order for components. This makes it clear what the intended traversal order is and 
+   keeps it stable as changes are made to the sim. Often, rendering order needs to be different from PDOM order
+   so for many components you cannot use the default children order. The exception to this is when you know that
+   the order of children should always match the order of traversal. 
 2. Add alternative input to the simulation, see if order is correct based on the scene graph structure. If not. . .
 3. use `setPDOMOrder` on local children, if not. . .
 4. Change z-order in the scene graph structure to get the order correct, if there is not an overriding constraint from
