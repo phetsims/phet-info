@@ -46,7 +46,7 @@ const getSomeRepos = async pageNumber => {
 };
 
 /**
- * @returns {Promise<string[]>}
+ * @returns {Promise.<string[]>}
  */
 module.exports = async () => {
   let repos = [];
