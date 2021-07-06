@@ -164,9 +164,11 @@ description". In general, the process looks like this:
 ### PDOM Order for PhET Sims
 
 PhET's design for the Parallel DOM is largely based on each screen. Within each screen, there is a _Screen Summary_,
-_Play Area_, and _Control Area_. `ScreenView` has pdom "section" Nodes built into the type. Use children or `pdomOrder`
-to set PDOM content into the designed sections associated with the PDOM. For example, if you had a Node that was
-entirely PDOM content, and no visual content, you could add that directly to the Play Area as a child:
+_Play Area_, and _Control Area_. `ScreenView` has pdom "section" Nodes built into the type. This designed order is key
+to the layout and ordering within the PDOM. In general, this will most likely be different from the rendering order.
+Use `children` and/or `pdomOrder` to set PDOM content into the designed sections associated with the PDOM. For example, 
+if you had a Node that was entirely PDOM content, and no visual content, you could add that directly to the Play Area 
+as a child:
 
 ```js
 // in a sim's ScreenView. . . 
@@ -177,6 +179,10 @@ const aNodeInThePlayArea = new Node( {
 this.playAreaNode.addChild( aNodeInThePlayArea );
 ```
 
+Every `ScreenView` should declare a `pdomOrder` separate from its children. This convention is because top-level Nodes
+will almost always differ in PDOM/visual layout, and using children is heavily prone to sneaker regressions due to 
+child-order refactoring.
+
 NOTE: Nodes must be connected to the scene graph for `pdomOrder` to work. Thus `pdomOrder` cannot be used in exchange
 for setting a Node as a child, but can be used in addition.
 
@@ -185,27 +191,26 @@ help manage this discrepancy. As a PhET Developer, please use the following guid
 PDOM versus the traditional rendering order of the scene graph. Each item in the list is ranked, such that you should
 start with item 1, and then if that doesn't work for your situation, try the next item down.
 
-NOTE: This list was created with a mindset of instrumenting a simulation with Interacitve Description. If a new sim is
-being created, then likely this list is irrelevant because the design process from the beginning will be focused on this
-feature and visual sim development together.
-
-1. In general, define the PDOM order for components. This makes it clear what the intended traversal order is and 
-   keeps it stable as changes are made to the sim. Often, rendering order needs to be different from PDOM order
+1. In general, define the PDOM order for components with `pdomOrder`. This makes it clear what the intended traversal 
+   order is and keeps it stable as changes are made to the sim. Often, rendering order needs to be different from PDOM order
    so for many components you cannot use the default children order. The exception to this is when you know that
    the order of children should always match the order of traversal. 
-2. Add alternative input to the simulation, see if order is correct based on the scene graph structure. If not. . .
-3. use `setPDOMOrder` on local children, if not. . .
-4. Change z-order in the scene graph structure to get the order correct, if there is not an overriding constraint from
+2. After adding alternative input to the simulation, see if order is correct based on the scene graph structure already in place. If not. . .
+3. Change z-order in the scene graph structure to get the order correct, if there is not an overriding constraint from
    the visible rendering order, if not. . .
-5. Discuss with the design team to inform them the order is unnatural OR we may decide another order based on
+4. Discuss with the design team to inform them the order is unnatural OR we may decide another order based on
    simplifying implementation--revise desired order. if not. . .
-6. use `setPDOMOrder` on children or descendants from the parent type (perhaps with local vars like
+5. use `setPDOMOrder` on children or descendants from the parent type (perhaps with local vars like
    `controlPanel.flashlight.button.label`). This is not recommended, and it most likely only needed for retrofitting
-   sims with complicated ScreenView hierarchies.
+   sims with complicated `ScreenView` hierarchies.
 
 If `setPDOMOrder` is needed on Nodes that are not descendants, then likely there is a structural issue that needs to be
-addressed fully, rather than hacked at by using `Node.setPDOMOrder`, although the setter will accept any `Node` in the
-scene graph.
+addressed fully, rather than hacked at by using `Node.setPDOMOrder`. Although the setter will accept any `Node` in the
+scene graph, it is not the cleanest practice.
+
+NOTE: This list was created with a mindset of instrumenting a simulation with Interacitve Description. If a new sim is
+being created, then this list could be irrelevant because the design process from the beginning will be focused on this
+feature and visual sim development together.
 
 Please see `Node.setPDOMOrder` for more documentation and usage examples of `pdomOrder`.
 
