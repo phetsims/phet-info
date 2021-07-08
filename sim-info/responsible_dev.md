@@ -33,6 +33,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | brand | @zepumph |  | 
 | build-a-fraction | @jonathanolson | @amanda-phet | 
 | build-a-molecule | @jonathanolson | @arouinfar | 
+| build-a-nucleus | @Luisav1 |  | 
 | build-an-atom | @jbphet | @DianaTavares | 
 | bumper | @jonathanolson |  | 
 | buoyancy | @jonathanolson | @DianaTavares | 
