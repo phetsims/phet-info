@@ -198,7 +198,8 @@
   "build-a-nucleus": {
     "responsibleDevs": [
       "@Luisav1"
-    ]
+    ],
+    "responsibleDesigners": []
   },
   "build-an-atom": {
     "responsibleDevs": [
