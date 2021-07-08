@@ -154,7 +154,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | projectile-motion | @jbphet | @arouinfar | 
 | proportion-playground | @jonathanolson | @amanda-phet | 
 | protein-synthesis | @samreid |  | 
-| QA | @KatieWoe |  | 
+| qa | @KatieWoe |  | 
 | query-string-machine | @chrisklus |  | 
 | ratio-and-proportion | @zepumph | @BLFiedler | 
 | reactants-products-and-leftovers | @pixelzoom | @arouinfar | 
