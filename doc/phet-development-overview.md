@@ -433,14 +433,6 @@ checkout. First it clears any pre-existing commit hooks, then installs the new h
 perennial/bin/for-each.sh active-repos rm .git/hooks/pre-commit
 perennial/bin/for-each.sh active-repos git init --template=../phet-info/git-template-dir
 ```
-The git hooks may run unit tests in the repo which require a configuration that
-is specified in `~/.phet/build-local.json`. Describing all the entries of `build-local.json`
-is beyond the scope of this document, but to successfully commit with these hooks to repos with
-unit tests your `build-local.json` will require key `localTestingURL`. If you followed steps in this
-document to install `http-server`, the entry would look like
-```
-"localTestingURL": "http://localhost:/8080"
-```
 
 Getting to optimal performance on all supported platforms can be tricky--this section enumerates possible optimizations strategies:
 1. Consider using WebGL.
