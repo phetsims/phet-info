@@ -18,7 +18,7 @@ for creating a personal access token. Under "Select Scopes", the token should be
 symbol, e.g. FF00AA.
 
 #### To change the text and/or color of a label
-1. Update the desired label, following the [labeling-scheme](labeling-scheme.md)
+1. Update the desired label in [github-labels](github-labels), following the [labeling-scheme](labeling-scheme.md)
 2. Run `./change-label.sh {{old-label-name}} {{new-label-name}} {{new-label-color}}`.  `new-label-color` should be the
 hexcode with no # symbol, e.g. `FF00AA`.
 
