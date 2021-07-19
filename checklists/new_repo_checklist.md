@@ -28,7 +28,7 @@ In your working copy of the sim repo:
 
 At https://github.com/phetsims/{{REPO}}:
 - [ ] Go to Settings => Manage Access => Invite teams or people, add the teams used in another public sims (currently Design, Development, and Quality Assurance) with "Write" permissions.
-- [ ] Create a Master Checklist issue using template [sim_new_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/sim_new_checklist.md). Use "{{TITLE}} Master Checklist" as the issue name. Assign to @ariel-phet.
+- [ ] Create a Sim Checklist issue using template [sim_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/sim_checklist.md). Use "{{TITLE}} Master Checklist" as the issue name. Assign to @ariel-phet.
 
 In your working copy of perennial repo:
 - [ ] Add the new repo to `perennial/data/active-repos`. Commit and push. After a few minutes, an automated process should update the other files under perennial/data/. Pull perennial so you can find the sim in phetmarks.
