@@ -139,7 +139,7 @@ to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
   ```
 
   (5) String patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) should use keys that are unlikely to conflict with strings that might be needed in the future.  For example, for `"{{price}}"` consider using key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
-- [ ] If the sim was already released, make sure none of the original string keys have changed. If they have changed, make sure any changes have a good reason and have been discussed with @jbphet.
+- [ ] If the sim was already released, make sure none of the original string keys have changed. If they have changed, make sure any changes have a good reason and have been discussed with @jbphet (it is likely that an issue like https://github.com/phetsims/gravity-force-lab/issues/166 should be created).
 
 ## **Repository Structure**
 
