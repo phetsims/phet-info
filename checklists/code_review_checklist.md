@@ -147,22 +147,22 @@ to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
 - [ ] Are all required files and directories present?
 For a sim repository named “my-repo”, the general structure should look like this (where assets/, images/, mipmaps/ or sounds/ may be omitted if the sim doesn’t have those types of resource files).
 
-  ```js
-     my-repo/
-        assets/
-        doc/
-           images/
-                 *see annotation
-           model.md
-           implementation-notes.md
-        images/
-           license.json
-        js/
-           (see section below)
-	mipmaps/
-	   license.json
+  ```
+  my-repo/
+    assets/
+    doc/
+      images/
+        *see annotation
+      model.md
+      implementation-notes.md
+    images/
+      license.json
+    js/
+      (see section below)
+    mipmaps/
+      license.json
     sound/
-	   license.json
+      license.json
     dependencies.json
     .gitignore
     my-repo_en.html
@@ -179,22 +179,22 @@ For a sim repository named “my-repo”, the general structure should look like
 - [ ] Is the js/ directory properly structured?
   All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also applies for single-screen sims, where the subdirectory matches the repo name).  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/ subdirectories for each screen and common/.  For example, for a sim with screens “Introduction” and “Lab”, the general directory structure should look like this:
 
-  ```js
-     my-repo/
-        js/
-           common/
-              model/
-              view/
-           introduction/
-              model/
-              view/
-           lab/
-              model/
-              view/
-           my-repo-main.js
-           myRepo.js
-	   myRepoStrings.js
-   ```
+  ```
+  my-repo/
+    js/
+    common/
+      model/
+      view/
+    introduction/
+      model/
+      view/
+    lab/
+      model/
+      view/
+    my-repo-main.js
+    myRepo.js
+    myRepoStrings.js
+  ```
 
 - [ ] Do filenames use an appropriate prefix? Some filenames may be prefixed with the repository name, e.g. `MolarityConstants.js` in molarity.  If the repository name is long, the developer may choose to abbreviate the repository name, e.g. `EEConstants.js` in expression-exchange. If the abbreviation is already used by another respository, then the full name must be used. For example, if the "EE" abbreviation is already used by expression-exchange, then it should not be used in equality-explorer.  Whichever convention is used, it should be used consistently within a repository - don't mix abbreviations and full names.
 - [ ] Is there a file in assets/ for every resource file in sound/ and images/? Note that there is *not necessarily* a 1:1 correspondence between asset and resource files; for example, several related images may be in the same .ai file. Check license.json for possible documentation of why some reesources might not have a corresponding asset file.
