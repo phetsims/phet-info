@@ -161,16 +161,16 @@ For a sim repository named “my-repo”, the general structure should look like
            (see section below)
 	mipmaps/
 	   license.json
-        sound/
+    sound/
 	   license.json
-        dependencies.json
-        .gitignore
-        my-repo_en.html
-        my-repo-strings_en.json
-        Gruntfile.js
-        LICENSE
-        package.json
-        README.md
+    dependencies.json
+    .gitignore
+    my-repo_en.html
+    my-repo-strings_en.json
+    Gruntfile.js
+    LICENSE
+    package.json
+    README.md
   ```
   *Any images used in model.md or implementation-notes.md should be added here. Images specific to aiding with documentation do not need their own license.
 
