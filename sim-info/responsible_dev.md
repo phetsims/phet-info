@@ -1,7 +1,7 @@
 
 ## HTML5 Sim and Common Code Repos - Developer/Designer Responsibility List
 
-NOTE: This file is generated, do not edit directly. It is created from `responsible_dev.json`, see `./generateMarkdownOutput.mjs`.
+NOTE: This file is generated, do not edit directly. It is created from `responsible_dev.json`, see `./generateMarkdownOutput.mjs`. This generated file is updated nightly, see `perennial/bin/daily-grunt-work.sh`.
 
 
 | Simulation  | Developer | Designer |
