@@ -206,11 +206,14 @@ After checking out the dependencies and installing grunt-cli in the preceding in
 3. Install the perennial dependencies:
 `cd ../perennial`
 `npm install`
-4. Use the perennial ‘grunt’ task to create a new sim, like so (still in the perennial directory):
+4. Install the perennial-alias dependencies:
+   `cd ../perennial-alias`
+   `npm install`
+5. Use the perennial ‘grunt’ task to create a new sim, like so (still in the perennial directory):
 `grunt create-sim --repo=NAME --author=AUTHOR`
 For instance, if the simulation is going to be named Acceleration Lab and the author is Jane Doe, then you could put:
 `grunt create-sim --repo=acceleration-lab --author="Jane Doe"`
-5. Test the created simulation in the browser and make sure it launches.  It should be a blank simulation.  Write to the Developing Interactive Simulations in HTML5 Google Group if you run into problems.
+6. Test the created simulation in the browser and make sure it launches.  It should be a blank simulation.  Write to the Developing Interactive Simulations in HTML5 Google Group if you run into problems.
 
 ## Building and Testing (Windows and macOS)
 
