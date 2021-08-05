@@ -43,7 +43,7 @@ Repositories like phet-io-wrapper-sonification can also be built with `grunt`, p
 
 # Deploying simulations
 
-If you haven't run perennial commands in a while, `npm prune` and `npm update` under perennial will probably be needed. I'll notify for any further module changes.
+If you haven't run perennial commands in a while, `npm prune` and `npm update` under perennial, perennial-alias and chipper may be needed. I'll notify for any further module changes.
 
 Note that all perennial commands (including those for dev/rc/production deployments) can be run from newer (as of sometime December 2017) simulations from the simulation directory. For instance, `grunt checkout-shas` now lives in perennial, but newer chipper SHAs will detect this and spawn the correct perennial grunt task. It will add a `--repo={{REPO}}` command line flag to the perennial command so that it knows which repository is the target.
 
