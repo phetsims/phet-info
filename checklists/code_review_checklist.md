@@ -394,7 +394,10 @@ Use your judgment!
 
 - [ ] Are `Validator` validation options (`valueType`, `validValues`, etc...) utilized? These are supported in a number of core types like `Emitter` and `Property`. Is their presence or lack thereof properly documented?
 
-- [ ] Files should be named like `CapitalizedCamelCasing.js` when returning a constructor, or `lowerCaseCamelCasing.js` when returning a non-constructor function or singleton.  When returning a constructor or singleton, the constructor name should match the filename.
+- [ ] Files should be named like `CapitalizedCamelCasing.js` when returning a constructor, or `lowerCaseCamelCasing.js` 
+when returning a non-constructor function or singleton.  When returning a constructor or singleton, the constructor name 
+should match the filename.  Where singletons are treated like classes with static attributes (like SimulaRasaConstants or SimulaRasaColors),
+uppercase should be used.
 
 - [ ] Assertions should be used appropriately and consistently. Type checking should not just be done in code comments. Use `Array.isArray` to type check an array.
 
