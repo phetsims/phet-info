@@ -9,9 +9,9 @@
 
 # PhET Code-Review Checklist (a.k.a "CRC")
 
-* Mark failed items with ❌ and note any related GitHub issues.
-* Call attention to items with ⚠️ and note any related GitHub issues.
-* Mark items that are not applicable with **N/A**
+* The responsible dev is responsible for removing the irrelevant parts
+* A checked-off item doesn't mean "no problem here", it means "it was reviewed"
+* Problems can be noted in side issues that reference this issue, or through `// REVIEW` comments in the code
 
 ## Table of Contents
 * [Build and Run Check](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#build-and-run-checks)
