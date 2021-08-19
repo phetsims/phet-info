@@ -155,6 +155,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | proportion-playground | @jonathanolson | @amanda-phet | 
 | protein-synthesis | @samreid |  | 
 | qa | @KatieWoe |  | 
+| quadrilateral | @jessegreenberg |  | 
 | query-string-machine | @chrisklus |  | 
 | ratio-and-proportion | @zepumph | @BLFiedler | 
 | reactants-products-and-leftovers | @pixelzoom | @arouinfar | 
