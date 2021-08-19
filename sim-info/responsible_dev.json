@@ -1101,6 +1101,12 @@
     ],
     "responsibleDesigners": []
   },
+  "quadrilateral": {
+    "responsibleDevs": [
+      "@jessegreenberg"
+    ],
+    "responsibleDesigners": []
+  },
   "query-string-machine": {
     "responsibleDevs": [
       "@chrisklus"
