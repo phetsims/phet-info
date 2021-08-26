@@ -720,7 +720,7 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 ## **Accessibility**
 
 This section may be omitted if the sim has not been instrumented with accessibility features. Accessibility includes
-various features, important aspects are organized below.
+various features, not all are always include. Ignore sections that do not apply.
 
 ### General
 - [ ] Are accessibility features integrated well into the code. They should be added in a maintainable way, even if that requires upfront refactoring.
