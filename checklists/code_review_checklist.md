@@ -719,17 +719,23 @@ Because JavaScript lacks visibility modifiers (public, protected, private), PhET
 
 ## **Accessibility**
 
-This section may be omitted if the sim has not been instrumented for a11y.
+This section may be omitted if the sim has not been instrumented with accessibility features. Accessibility includes
+various features, important aspects are organized below.
 
-- [ ] Does the sim pass an accessibility fuzz test? (run with query parameters `fuzzBoard&ea`)
-- [ ] Run the accessible HTML through an [HTML validator](https://validator.w3.org/nu/#textarea), does the HTML pass?
+### General
 - [ ] Are accessibility features integrated well into the code. They should be added in a maintainable way, even if that requires upfront refactoring.
+
+### Alternative Input
+- [ ] Does the sim pass an accessibility fuzz test? (run with query parameters `fuzzBoard&ea`)
+- [ ] Does this sim use specific keyboard shortcuts that overlap with global shortcuts? This includes the use of modifier keys like in https://github.com/phetsims/ratio-and-proportion/issues/287
+
+### Interactive Description
+- [ ] Run the entire built sim HTML file through an [HTML validator](https://validator.w3.org/nu/#textarea), does the HTML pass?
 - [ ] If applicable, are good design patterns used for interactive description, see [interactive-description-technical-guide.md](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md)
 - [ ] Does resetting the simulation also reset the entire PDOM?
 - [ ] Is `Node.pdomOrder` used appropriately to maintain visual and PDOM layout balance?
 - [ ] Make sure accessibility strings aren't being adjusted with ascii specific javascript methods like `toUpperCase()`. Remember that one day these strings will be translatable
 - [ ] Make sure for accessibility strings that all end of sentence periods do not have a leading space before it. Some screen readers will read these as "dot." This can occur often when a clause is conditionally added.
-- [ ] Does this sim use specific keyboard shortcuts that overlap with global shortcuts? This includes the use of modifier keys like in https://github.com/phetsims/ratio-and-proportion/issues/287
 
 ## **PhET-iO**
 
