@@ -36,6 +36,7 @@ In your working copy of perennial repo:
 Other:
 - [ ] Navigate to https://bayes.colorado.edu/dev/phettest/ and click the "Refresh Perennial" button. If you do not know the password, please ask another developer.
 - [ ] Apply GitHub labels. See [github-labels/README.md](https://github.com/phetsims/phet-info/blob/master/github-labels/README.md).
+- [ ] Apply branch protection rules. Use [This script to do so](https://github.com/phetsims/perennial/blob/master/js/scripts/protect-branches-for-repo.js).
 - [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and run `clone-missing-repos.sh` at your convenience."
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
 - [ ] Follow any remaining "Implementation" tasks in the Master Checklist issue that you created above.
@@ -71,6 +72,7 @@ If this repo is a common code dependency for all sims:
 Other:
 - [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and run `clone-missing-repos.sh` at your convenience."
 - [ ] Apply GitHub labels. See [github-labels/README.md](https://github.com/phetsims/phet-info/blob/master/github-labels/README.md).
+- [ ] Apply branch protection rules. Use [This script to do so](https://github.com/phetsims/perennial/blob/master/js/scripts/protect-branches-for-repo.js).
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
 - [ ] Add the sim to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json).
 
