@@ -458,7 +458,7 @@ https://github.com/phetsims/color-vision/issues/37
 
 To embed a simulation in your website, use an iframe like so:
 
-<iframe src="http://phet.colorado.edu/sims/html/forces-and-motion-basics/latest/forces-and-motion-basics_en.html" width="834" height="504"></iframe>
+<iframe src="https://phet.colorado.edu/sims/html/forces-and-motion-basics/latest/forces-and-motion-basics_en.html" width="834" height="504"></iframe>
 
 The aspect ratio 834x504 is used for new simulations, because it matches the aspect ratio available on popular devices.
 
