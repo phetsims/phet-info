@@ -335,6 +335,9 @@ Although describers don't need to be the only place where `StringUtils.fillIn` i
 can cover the majority of the usages, as well as keeping track of the model and custom state needed to create these
 descriptions.
 
+It is best practice to never call to an UtteranceQueue from a Describer file. This goes beyond the scope of what it 
+should be doing. Instead, Describer types just return strings that can then be used for alerts in UtteranceQueue instances.
+
 In general, Describer types need a fair bit of information from the model, and sometime the view-state to fill in
 description. It is cleanest to pass as much information into the constructor, limiting the number of arguments needed
 for individual functions. See https://github.com/phetsims/ratio-and-proportion/issues/334.
@@ -345,11 +348,16 @@ When a Node is created who's sole purpose is to provide descriptions to the PDOM
 `DescriptionNode.js`. For example, see `MolarityBeakerDescriptionNode.js`. There are also cases where this is
 called `*PDOMNode.js`.
 
-#### `*AlertManager.js`
+#### `Alerter.js`
 
-In some sims it makes sense to have a single file to in do most or all of the interfacing with `utteranceQueue`. While
-it is not required to only call utteranceQueue from a single place, it can be a nice organizational tool for the
-interactive description outfitting toolbox. For example `MolarityAlertManager` is the sole alerting file in the sim.
+`Alerter.js` is the base type for classes that want to consolidate code that alerts. This can be for interactive 
+description, voicing, or both. `Alerter.js` is set up to be a base type to alert description utterances via the Node api
+for it (via ParallelDOM.js). Extend this type to factor out calls to utteranceQueues that do a specific task.
+
+In some sims it makes sense to have a single file to in do most or all of the interfacing with alerting `utteranceQueue` 
+instances. While it is not required to only call on utteranceQueues from a single place, it can be a nice organizational 
+tool for the interactive description (and or voicing) outfitting toolbox. For example `MolarityAlertManager` is the sole 
+alerting file in the sim. In this case, the `*AlertManager.js` should still extend `Alerter.js`.
 
 ### Other misc notes for PhET Devs
 
