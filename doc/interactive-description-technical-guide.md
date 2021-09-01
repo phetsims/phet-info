@@ -29,8 +29,8 @@
 ## Prerequisites
 
 * Before reading this documentation, please see scenery's accessibility-related documention
-  at `/scenery/doc/accessibility/accessibility.html`. This includes an overview of web accessibility key features required for
-  Interactive Description implementation.
+  at `/scenery/doc/accessibility/accessibility.html`. This includes an overview of web accessibility key features
+  required for Interactive Description implementation.
 * Note: "a11y" is a synonym for "accessibility".
 
 ### Understand the Goal
@@ -107,18 +107,23 @@ accessibility allows a webpage to "push" an "alert" (eager description) to a scr
 are two types of aria-live alerts: "polite" and "assertive". Assertive will interrupt whatever is being said by the
 screen reader currently. Most alerts (and the default) in the project are polite.
 
-Every `Display` has an `UtteranceuQueue` instance that is wired to alert to aria-live elements for screen readers.
+Every `Display` has an `UtteranceQueue` instance that is wired to alert to aria-live elements for screen readers.
 `UtteranceQueue` takes `Utterance` instances and queues them in standard ways that the accessibility team has found
 works well across our supported browsers and screen readers.
 
-In general, the way that interactive alerts work in PhET sims is like so:
+In general, the way that interactive description "alerts" work in PhET sims is like so:
 
 ```js
 const massUtterance = new Utterance();
 
+const myNode = new Node();
+
+// Node must be connected to a Display to alert
+this.addChild( myNode );
+
 // somewhere else, like in an input listener
 massUtterance.alert = getMassChangedResponse();
-phet.joist.sim.utteranceQueue.addToBack( this.massUtterance )
+myNode.alertDescriptionUtterance( this.massUtterance )
 ```
 
 There are a variety of options in `Utterance` used to hone the output of alerts. Common problems include a build up of
@@ -136,7 +141,8 @@ but it is not recommended.
 
 Beware that some OS and browsers do not enable keyboard navigation by default. In particular macOS does not enable
 keyboard navigation for many applications unless specifically requested. Before starting, make sure keyboard navigation
-is enabled. Here is a link to macOS documentation about how to enable: https://support.apple.com/guide/mac-help/use-your-keyboard-like-a-mouse-mchlp1399/mac
+is enabled. Here is a link to macOS documentation about how to
+enable: https://support.apple.com/guide/mac-help/use-your-keyboard-like-a-mouse-mchlp1399/mac
 
 ### The a11y-view
 
@@ -166,9 +172,9 @@ description". In general, the process looks like this:
 PhET's design for the Parallel DOM is largely based on each screen. Within each screen, there is a _Screen Summary_,
 _Play Area_, and _Control Area_. `ScreenView` has pdom "section" Nodes built into the type. This designed order is key
 to the layout and ordering within the PDOM. In general, this will most likely be different from the rendering order.
-Use `children` and/or `pdomOrder` to set PDOM content into the designed sections associated with the PDOM. For example, 
-if you had a Node that was entirely PDOM content, and no visual content, you could add that directly to the Play Area 
-as a child:
+Use `children` and/or `pdomOrder` to set PDOM content into the designed sections associated with the PDOM. For example,
+if you had a Node that was entirely PDOM content, and no visual content, you could add that directly to the Play Area as
+a child:
 
 ```js
 // in a sim's ScreenView. . . 
@@ -180,7 +186,7 @@ this.playAreaNode.addChild( aNodeInThePlayArea );
 ```
 
 Every `ScreenView` should declare a `pdomOrder` separate from its children. This convention is because top-level Nodes
-will almost always differ in PDOM/visual layout, and using children is heavily prone to sneaker regressions due to 
+will almost always differ in PDOM/visual layout, and using children is heavily prone to sneaker regressions due to
 child-order refactoring.
 
 NOTE: Nodes must be connected to the scene graph for `pdomOrder` to work. Thus `pdomOrder` cannot be used in exchange
@@ -191,11 +197,12 @@ help manage this discrepancy. As a PhET Developer, please use the following guid
 PDOM versus the traditional rendering order of the scene graph. Each item in the list is ranked, such that you should
 start with item 1, and then if that doesn't work for your situation, try the next item down.
 
-1. In general, define the PDOM order for components with `pdomOrder`. This makes it clear what the intended traversal 
-   order is and keeps it stable as changes are made to the sim. Often, rendering order needs to be different from PDOM order
-   so for many components you cannot use the default children order. The exception to this is when you know that
-   the order of children should always match the order of traversal. 
-2. After adding alternative input to the simulation, see if order is correct based on the scene graph structure already in place. If not. . .
+1. In general, define the PDOM order for components with `pdomOrder`. This makes it clear what the intended traversal
+   order is and keeps it stable as changes are made to the sim. Often, rendering order needs to be different from PDOM
+   order so for many components you cannot use the default children order. The exception to this is when you know that
+   the order of children should always match the order of traversal.
+2. After adding alternative input to the simulation, see if order is correct based on the scene graph structure already
+   in place. If not. . .
 3. Change z-order in the scene graph structure to get the order correct, if there is not an overriding constraint from
    the visible rendering order, if not. . .
 4. Discuss with the design team to inform them the order is unnatural OR we may decide another order based on
@@ -335,8 +342,9 @@ Although describers don't need to be the only place where `StringUtils.fillIn` i
 can cover the majority of the usages, as well as keeping track of the model and custom state needed to create these
 descriptions.
 
-It is best practice to never call to an UtteranceQueue from a Describer file. This goes beyond the scope of what it 
-should be doing. Instead, Describer types just return strings that can then be used for alerts in UtteranceQueue instances.
+It is best practice to never call to an UtteranceQueue from a Describer file. This goes beyond the scope of what it
+should be doing. Instead, Describer types just return strings that can then be used for alerts in UtteranceQueue
+instances.
 
 In general, Describer types need a fair bit of information from the model, and sometime the view-state to fill in
 description. It is cleanest to pass as much information into the constructor, limiting the number of arguments needed
@@ -350,13 +358,13 @@ called `*PDOMNode.js`.
 
 #### `Alerter.js`
 
-`Alerter.js` is the base type for classes that want to consolidate code that alerts. This can be for interactive 
+`Alerter.js` is the base type for classes that want to consolidate code that alerts. This can be for interactive
 description, voicing, or both. `Alerter.js` is set up to be a base type to alert description utterances via the Node api
 for it (via ParallelDOM.js). Extend this type to factor out calls to utteranceQueues that do a specific task.
 
-In some sims it makes sense to have a single file to in do most or all of the interfacing with alerting `utteranceQueue` 
-instances. While it is not required to only call on utteranceQueues from a single place, it can be a nice organizational 
-tool for the interactive description (and or voicing) outfitting toolbox. For example `MolarityAlertManager` is the sole 
+In some sims it makes sense to have a single file to in do most or all of the interfacing with alerting `utteranceQueue`
+instances. While it is not required to only call on utteranceQueues from a single place, it can be a nice organizational
+tool for the interactive description (and or voicing) outfitting toolbox. For example `MolarityAlertManager` is the sole
 alerting file in the sim. In this case, the `*AlertManager.js` should still extend `Alerter.js`.
 
 ### Other misc notes for PhET Devs
