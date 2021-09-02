@@ -120,7 +120,7 @@ for phet-io versions. Ask a PhET developer for credentials.
         make sure the sim page appears correctly on the website. Talk to @jonathanolson or @jbphet if it has not appeared after marking the sim and project visible.
       - When viewing the website you may encounter stale content due to the varnish cache.  There are two ways to avoid this:
         - To check a small number of issues, add a unique parameter to the end of every query. You must change it every time you 
-          refresh the url. Example: `http://phet.colorado.edu/sims/html/example-sim/latest/example-sim_en.html?test-parameter1`
+          refresh the url. Example: `https://phet.colorado.edu/sims/html/example-sim/latest/example-sim_en.html?test-parameter1`
         - To avoid the cache permanently, you need to add a cookie with the name `NO-CACHE` and with an arbitrary or 
           empty value. Cookie usage cannot be covered in entirety here. To use cookies with `curl` 
           see [this answer](http://stackoverflow.com/a/7186160/2496827). To add custom cookies in 

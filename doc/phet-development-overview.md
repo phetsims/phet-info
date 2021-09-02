@@ -286,8 +286,8 @@ Also note that this will check out the ‘master’ branch of all of our depende
 
 The master branch of the PhET simulation and library repositories is constantly under development and not guaranteed to be stable. It is our intent that the master branch of simulations + libraries will build and run properly, but sometimes the code goes through intermediate states where errors can be introduced. On the other hand, our published simulations have been rigorously tested across 18+ platforms and are the most stable option. If you are adapting a PhET simulation, or would like to access simulation code that corresponds directly to one of our published versions, then you will need to check out specific SHA revisions in all of the appropriate repositories. Checking out these fixed, tested revisions is also important when working on a release-candidate branch of a simulation. Here are the instructions:
 
-1. First, identify the version for which you want to check out the source code, for example: http://phet.colorado.edu/sims/html/area-builder/latest/area-builder_en.html
-2. Navigate to a file named dependencies.json at the same path, for example: http://phet.colorado.edu/sims/html/area-builder/latest/dependencies.json
+1. First, identify the version for which you want to check out the source code, for example: https://phet.colorado.edu/sims/html/area-builder/latest/area-builder_en.html
+2. Navigate to a file named dependencies.json at the same path, for example: https://phet.colorado.edu/sims/html/area-builder/latest/dependencies.json
 3. Download the dependencies.json file to the root of the simulation directory.
 4. Open a command prompt and cd into the root of the simulation directory.
 5. Run `grunt checkout-shas`.  This step will read from the dependencies.json file and check out all of the SHAs corresponding to the entries in the file.
@@ -303,7 +303,7 @@ Now you can use the published source code. To restore each branch to master, you
 
 ## Original Java/Flash Source Code
 
-Follow the directions at this link to get the source code for original Java and Flash version of the simulations: http://phet.colorado.edu/en/about/source-code
+Follow the directions at this link to get the source code for original Java and Flash version of the simulations: https://phet.colorado.edu/en/about/source-code
 
 After checking it out (could take 30+ minutes), the source code for the simulations are located in (for example):
 svn-checkout/trunk/simulations-java/simulations/forces-and-motion-basics
@@ -374,7 +374,7 @@ It is a requirement that all PhET simulations can be downloaded and run off line
 ## Published Versions
 
 Here is a link to some published sims, so that you can see a demonstration of how some things should look and behave:
-http://phet.colorado.edu/en/simulations/category/html
+https://phet.colorado.edu/en/simulations/category/html
 
 
 ## Development Process and Checklist
