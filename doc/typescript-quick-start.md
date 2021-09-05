@@ -38,3 +38,4 @@ the axon typescript branch, but do not commit any code to master that depends on
 much value it can provide.
 5. phettest and CT provide TypeScript support, but do not yet have a good user experience for showing TypeErrors etc.
 And it is not well-vetted.
+6. Please make sure you are using the commit hooks.  That will help us prevent from committing type errors.
