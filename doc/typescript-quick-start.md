@@ -39,3 +39,7 @@ much value it can provide.
 5. phettest and CT provide TypeScript support, but do not yet have a good user experience for showing TypeErrors etc.
 And it is not well-vetted.
 6. Please make sure you are using the commit hooks.  That will help us prevent from committing type errors.
+7. We currently have "strict" turned off.  This can be enabled on a repo-by-repo basis.  It may be difficult to get 100%
+strict coverage for our legacy code, but it should be enabled for new simulations.  You can see all of the options by
+tracing through the tsconfig files.
+9. Ambient type definitions are provided in chipper/phet-types.d.ts
