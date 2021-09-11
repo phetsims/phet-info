@@ -1065,6 +1065,12 @@
     ],
     "responsibleDesigners": []
   },
+  "phettest": {
+    "responsibleDevs": [
+      "@zepumph"
+    ],
+    "responsibleDesigners": []
+  },
   "plinko-probability": {
     "responsibleDevs": [
       "@chrisklus"
