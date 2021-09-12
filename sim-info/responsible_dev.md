@@ -150,6 +150,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phet-sublime-plugin | @jonathanolson |  | 
 | phetcommon | @zepumph |  | 
 | phetmarks | @jonathanolson |  | 
+| phettest | @zepumph |  | 
 | plinko-probability | @chrisklus | @amanda-phet | 
 | projectile-motion | @jbphet | @arouinfar | 
 | proportion-playground | @jonathanolson | @amanda-phet | 
