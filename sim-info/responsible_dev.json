@@ -353,6 +353,14 @@
       "@arouinfar"
     ]
   },
+  "counting-common": {
+    "responsibleDevs": [
+      "@chrisklus"
+    ],
+    "responsibleDesigners": [
+      "@amanda-phet"
+    ]
+  },
   "curve-fitting": {
     "responsibleDevs": [
       "@jonathanolson"
