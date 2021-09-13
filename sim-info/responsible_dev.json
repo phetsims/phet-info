@@ -1391,6 +1391,12 @@
     ],
     "responsibleDesigners": []
   },
+  "website-scenery": {
+    "responsibleDevs": [
+      "@chrisklus"
+    ],
+    "responsibleDesigners": []
+  },
   "weddell": {
     "responsibleDevs": [
       "@jbphet"
