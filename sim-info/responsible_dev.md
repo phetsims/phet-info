@@ -54,6 +54,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | color-vision | @chrisklus | @DianaTavares | 
 | concentration | @pixelzoom | @arouinfar | 
 | coulombs-law | @zepumph | @arouinfar | 
+| counting-common | @chrisklus | @amanda-phet | 
 | curve-fitting | @jonathanolson | @amanda-phet | 
 | decaf | @samreid |  | 
 | density | @jonathanolson | @DianaTavares | 
@@ -197,6 +198,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | website | @mattpen |  | 
 | website-docker | @mattpen |  | 
 | website-meteor | @mattpen |  | 
+| website-scenery | @chrisklus |  | 
 | weddell | @jbphet |  | 
 | wilder | @jonathanolson |  | 
 | xray-diffraction | @heldentodd,@pixelzoom |  | 
