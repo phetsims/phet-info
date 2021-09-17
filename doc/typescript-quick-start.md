@@ -42,4 +42,10 @@ And it is not well-vetted.
 7. We currently have "strict" turned off.  This can be enabled on a repo-by-repo basis.  It may be difficult to get 100%
 strict coverage for our legacy code, but it should be enabled for new simulations.  You can see all of the options by
 tracing through the tsconfig files.
-9. Ambient type definitions are provided in chipper/phet-types.d.ts
+8. Ambient type definitions are provided in chipper/phet-types.d.ts
+
+### About Strings
+Chipper's `grunt update` creates a *.js file for the simulation strings module and requires string accesses via a particular
+pattern (so we can see which strings were used).  TypeScript flags type errors because it thinks the string module is Object
+rather than `any`.  For now, I'm using the js-style strings with ts-ignore statements.  We will need to figure out a better way
+in https://github.com/phetsims/chipper/issues/1053
