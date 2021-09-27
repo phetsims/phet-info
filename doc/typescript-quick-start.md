@@ -8,6 +8,8 @@ Please be aware of open issues in https://github.com/phetsims/chipper/issues?q=i
 1. Clone missing repos.  This makes sure you have everything.
 2. Pull everything.  This makes sure you have the latest version of everything.
 3. `npm install` in chipper. This makes sure you have the TypeScript compiler, which is called `tsc`
+4. Mark chipper/dist as excluded from your IDE.  You can do this eagerly now, or wait until chipper/dist is created by a
+compilation step below.
 
 ### Converting a Repo to TypeScript
 1. Go to package.json and add `"typescript": true` in the phet section.  That enables the TypeScript step in the build tools.
