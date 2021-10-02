@@ -31,6 +31,10 @@ The compiler is also configured for incremental compilation.  This means subsequ
 2. In your sim repo, run `tsc --build --watch`.  This will watch for any changes in the project or its dependecies and auto-recompile
 3. I have not yet experimented with having the IDE do the builds, but maybe that will be more efficient.
 
+### Process Changes
+1. TypeScript sims need to be compiled before generating their API using `grunt generate-phet-io-api`
+2. New sims need to be tracked in chipper/tsconfig/all/tsconfig.json
+
 ### Caveats
 1. For now, please leave the phet-io-overrides.js file, strings file and namespace file as *.js.  The build tools are not set to do those in TypeScript yet.
 2. This is an evolving project in the early phases.  There will be growing pains. Discover problems, look for solutions!
