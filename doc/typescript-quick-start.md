@@ -10,6 +10,7 @@ Please be aware of open issues in https://github.com/phetsims/chipper/issues?q=i
 3. `npm install` in chipper. This makes sure you have the TypeScript compiler, which is called `tsc`
 4. Mark chipper/dist as excluded from your IDE.  You can do this eagerly now, or wait until chipper/dist is created by a
 compilation step below.
+5. Update the code style file from phet-info/ide/idea/phet-idea-codestyle.xml which was last updated April 2021
 
 ### Converting a Repo to TypeScript
 1. Go to package.json and add `"typescript": true` in the phet section.  That enables the TypeScript step in the build tools.
