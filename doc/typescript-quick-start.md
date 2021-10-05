@@ -33,6 +33,7 @@ The compiler is also configured for incremental compilation.  This means subsequ
 1. Install tsc globally (with the same version as chipper/package.json), or set an alias like `alias tsc = node /path/chipper/node_modules/typescript/bin/tsc`.  The latter will make sure you always have right version of typescript.
 2. In your sim repo, run `tsc --build --watch`.  This will watch for any changes in the project or its dependecies and auto-recompile
 3. I have not yet experimented with having the IDE do the builds, but maybe that will be more efficient.
+4. To compile all sims and common code, use this `tsc --build` from chipper/tsconfig/all. Can be combined with `--watch`
 
 ### Process Changes
 1. TypeScript sims need to be compiled before generating their API using `grunt generate-phet-io-api`
