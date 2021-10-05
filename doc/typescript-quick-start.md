@@ -52,6 +52,7 @@ And it is not well-vetted.
 7. We currently have "strict" turned on in tsconfig-core.json. Individual repos may want to temporarily disable this when
 porting to TypeScript. New simulations should prefer strict:true.
 8. Ambient type definitions are provided in chipper/phet-types.d.ts
+9. Transitive dependencies are not tracked correctly in the build system.  This bug has been reported to TypeScript. Details in https://github.com/phetsims/chipper/issues/1067
 
 ### About Strings
 Chipper's `grunt update` creates a *.js file for the simulation strings module and requires string accesses via a particular
