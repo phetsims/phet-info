@@ -42,6 +42,7 @@ Other:
 - [ ] Follow any remaining "Implementation" tasks in the Master Checklist issue that you created above.
 - [ ] If applicable, add any needed dependencies to `phetLibs` in package.json. If you change package.json, run `grunt update`.
 - [ ] Add the sim to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json).
+- [ ] Add the sim to chipper/tsconfig/all/tsconfig.json
 
 ## Steps to create a different type of repo
 
@@ -75,6 +76,7 @@ Other:
 - [ ] Apply branch protection rules. Use [This script to do so](https://github.com/phetsims/perennial/blob/master/js/scripts/protect-branches-for-repo.js).
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
 - [ ] Add the sim to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json).
+- [ ] Add the sim to chipper/tsconfig/all/tsconfig.json
 
 ## Steps for renaming a repo
 - [ ] Make sure all commits are pushed to that repo.
@@ -89,6 +91,7 @@ Other:
 - [ ] Change entry in [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json).
 - [ ] Notify Slack channel dev-public that the repo has been renamed. E.g. "I just renamed repository {{OLD_REPO}} to {{NEW_REPO}}. Please pull perennial and run `clone-missing-repos.sh` at your convenience."
 - [ ] If applicable, "refresh perennial" on phettest.
+- [ ] Add the sim to chipper/tsconfig/all/tsconfig.json
 
 ### If this is a simulation. . .
   - [ ] Rename many files:

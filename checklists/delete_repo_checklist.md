@@ -28,5 +28,6 @@ Decide whether the repo is being (a) deleted (b) archived or (c) removed from ac
 - [ ] The repo should be removed from active-repos, ideally a few minutes before archiving/deleting (so automated processes do not try to pull it)
 - [ ] In general, removing the repo should not break much, if empty rows in CT are a concern,restart CT
 - [ ] If archiving, update the repo's README.md file to indicate why it is archived
+- [ ] Remove from chipper/tsconfig/all/tsconfig.json (if present)
 
 We should explicitly state whether something needs to be done to delete the directory from aqua, build-server, and phettest, or whether these directories get automatically deleted, or just hang around forever with no consequences
