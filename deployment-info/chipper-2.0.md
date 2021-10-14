@@ -19,6 +19,7 @@
     * [Manual maintenance patching](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#manual-maintenance-patching)
   * [Prototype deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#prototype-deployments)
   * [PhET-iO Wrapper deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#phet-io-wrapper-deployments)
+* [Branch Protections](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#branch-protections)
 * [Deploying pre-chipper-2.0 things](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#deploying-pre-chipper-20-things)
 
 # Building simulations
@@ -207,6 +208,17 @@ Prototypes will follow the process for [RC/production deployments](https://githu
 ## PhET-iO Wrapper deployments
 
 `grunt wrapper` in a wrapper directory (e.g. phet-io-wrapper-sonification) should deploy the whole thing. Follow the prompts.
+
+# Branch Protections
+
+Production branches are "protected" on github so that they cannot be deleted unless absolutely necessary. This includes all branches used in deployed sims in the simulation and common code repositories. Branches are protected by "rules" where each rule has an `fnmatch` pattern string. Branches with names matching the pattern cannot be deleted. If you must delete a branch you need to delete the protection rule, delete the branch, and then add the protection rule back. The steps for this are:
+1. Delete the branch rule. Go to https://github.com/phetsims/{{SIM-NAME}}/settings/branches. Find the rule that is protecting the branch you want to delete and delete it. For example, if you need to delete the `1.1` branch you can delete the Branch protection rule with the pattern `*[0-9].[0-9]*`.
+2. Delete the branch.
+3. Add the rule back. Use [This script to do so](https://github.com/phetsims/perennial/blob/master/js/scripts/protect-branches-for-repo.js). For example, you can run this to add back protection rules to john-travoltage.
+  ```
+  node perennial/js/scripts/protect-branches-for-repo.js john-travoltage
+  ```
+
 
 # Deploying pre-chipper-2.0 things
 
