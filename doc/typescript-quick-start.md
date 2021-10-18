@@ -57,7 +57,7 @@ porting to TypeScript. New simulations should prefer strict:true.
 11. Gravity and Orbits, Bending Light, and Circuit Construction Kit Common have been written in TypeScript, and are all
 at approximately equal levels, and can be used for reference. However, please do not use any reference of code marked with
 `@ts-ignore` or `any`.  Those markers mean (a) I wasn't sure what to do, (b) common code is not ready to support it yet or (c) I haven't
-taken the time to properly type it yet.
+taken the time to properly type it yet.  I also recommend avoiding `!` non-null coercion if you can help it.
 
 ### About Strings
 Chipper's `grunt update` creates a *.js file for the simulation strings module and requires string accesses via a particular
