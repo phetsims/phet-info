@@ -10,8 +10,8 @@ Please be aware of open issues in https://github.com/phetsims/chipper/issues?q=i
 3. `npm install` in chipper. This makes sure you have the TypeScript compiler, which is called `tsc`
 4. Mark chipper/dist as excluded from your IDE.  You can do this eagerly now, or wait until chipper/dist is created by a
 compilation step below.
-5. Update the code style file from phet-info/ide/idea/phet-idea-codestyle.xml which was last updated April 2021
-6. Turn on TypeScript support in WebStorm, at one point this was  Languages & Frameworks -> TypeScript -> check TypeScript language services.
+5. Update the code style file from phet-info/ide/idea/phet-idea-codestyle.xml which was last updated October 15, 2021
+6. Turn on TypeScript support in WebStorm, at one point this was Languages & Frameworks -> TypeScript -> check TypeScript language services.
 Sublime also has an officially supported plugin.
 
 ### Converting a Repo to TypeScript
@@ -34,33 +34,28 @@ The compiler is also configured for incremental compilation.  This means subsequ
 2. In your sim repo, run `tsc --build --watch`.  This will watch for any changes in the project or its dependecies and auto-recompile
 3. I have not yet experimented with having the IDE do the builds, but maybe that will be more efficient.
 4. To compile all sims and common code, use this `tsc --build` from chipper/tsconfig/all. Can be combined with `--watch`
+5. `tsc -b` is a shortcut for `tsc --build`
 
 ### Process Changes
 1. TypeScript sims need to be compiled before generating their API using `grunt generate-phet-io-api`
 2. New sims need to be tracked in chipper/tsconfig/all/tsconfig.json
 
 ### Caveats
-1. For now, please leave the phet-io-overrides.js file, strings file and namespace file as *.js.  The build tools are not set to do those in TypeScript yet.
-2. This is an evolving project in the early phases.  There will be growing pains. Discover problems, look for solutions!
-3. Please do not convert common code to TypeScript until we have safe RC SHAs for Fourier and Density.  If you want to leverage generics in Property, you can use
-the axon typescript branch, but do not commit any code to master that depends on it.  You could work in a typescript branch for now.
-4. We may one day abandon TypeScript, but before we consider that, let's make sure to give it a fair trial and see how
-much value it can provide.
+1. This is an evolving project in the early phases.  There will be growing pains. Discover problems, look for solutions!
+2. TypeScript seems like a great opportunity to increase efficiency/sanity and reduce bugs/stress. If the value it provides
+does not outweigh the costs of added complexity and compilation time, then we will abandon it. But before we consider that,
+let's give it a fair trial and see how much value it can provide.
+3. For now, please leave the phet-io-overrides.js file, strings file and namespace file as *.js.  The build tools are not set to do those in TypeScript yet.
+4. Please do not convert common code to TypeScript approved by the team.  Some common code repos have a "typescript" branch
+for investigation.
 5. phettest and CT provide TypeScript support, but do not yet have a good user experience for showing TypeErrors etc.
 And it is not well-vetted.
-6. Please make sure you are using the commit hooks.  That will help us prevent from committing type errors.
-7. We currently have "strict" turned on in tsconfig-core.json. Individual repos may want to temporarily disable this when
-porting to TypeScript. New simulations should prefer strict:true.
-8. Ambient type definitions are provided in chipper/phet-types.d.ts
-9. Transitive dependencies are not tracked correctly in the build system.  This bug has been reported to TypeScript. Details in https://github.com/phetsims/chipper/issues/1067
-10. Some common code repos include code outside their directory.  This problem is described in https://github.com/phetsims/chipper/issues/1096
-11. Gravity and Orbits, Bending Light, and Circuit Construction Kit Common have been written in TypeScript, and are all
-at approximately equal levels, and can be used for reference. However, please do not use any reference of code marked with
+6. Please make sure you are using the commit hooks, which are configured to run type checks on typescript repos.
+7. Ambient type definitions are provided in chipper/phet-types.d.ts
+8. Transitive dependencies are not always tracked correctly in the build system.  This bug has been reported to TypeScript. Details in https://github.com/phetsims/chipper/issues/1067
+9. Some common code repos include code outside their directory.  This problem is described in https://github.com/phetsims/chipper/issues/1096
+10. Gravity and Orbits, Bending Light, and Circuit Construction Kit Common have been written in TypeScript, and are all
+at approximately equal levels, and can be used for reference. For instance, see how these sims have a d.ts file for strings.
+However, please do not use any reference of code marked with
 `@ts-ignore` or `any`.  Those markers mean (a) I wasn't sure what to do, (b) common code is not ready to support it yet or (c) I haven't
 taken the time to properly type it yet.  I also recommend avoiding `!` non-null coercion if you can help it.
-
-### About Strings
-Chipper's `grunt update` creates a *.js file for the simulation strings module and requires string accesses via a particular
-pattern (so we can see which strings were used).  TypeScript flags type errors because it thinks the string module is Object
-rather than `any`.  For now, I'm using the js-style strings with ts-ignore statements.  We will need to figure out a better way
-in https://github.com/phetsims/chipper/issues/1053
