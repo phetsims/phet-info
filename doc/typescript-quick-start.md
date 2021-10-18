@@ -2,7 +2,12 @@
 
 These are the basic steps and summary for converting a repo to TypeScript, how to use it, and summary of some workflows,
 known problems, etc.
-Please be aware of open issues in https://github.com/phetsims/chipper/issues?q=is%3Aissue+is%3Aopen+label%3Achipper%3Atypescript
+
+* This is an evolving project in the early phases. There will be growing pains. Discover problems, look for solutions!
+* TypeScript seems like a great opportunity to increase efficiency/sanity and reduce bugs/stress. If the value it provides
+   does not outweigh the costs of added complexity and compilation time, then we will abandon it. But before we consider that,
+   let's give it a fair trial and see how much value it can provide.
+* Please be aware of caveats listed below, as well as open issues in https://github.com/phetsims/chipper/issues?q=is%3Aissue+is%3Aopen+label%3Achipper%3Atypescript
 
 ### Getting started
 1. Clone missing repos.  This makes sure you have everything.
@@ -40,21 +45,17 @@ The compiler is also configured for incremental compilation.  This means subsequ
 1. TypeScript sims need to be compiled before generating their API using `grunt generate-phet-io-api`
 2. New sims need to be tracked in chipper/tsconfig/all/tsconfig.json
 
-### Caveats
-1. This is an evolving project in the early phases.  There will be growing pains. Discover problems, look for solutions!
-2. TypeScript seems like a great opportunity to increase efficiency/sanity and reduce bugs/stress. If the value it provides
-does not outweigh the costs of added complexity and compilation time, then we will abandon it. But before we consider that,
-let's give it a fair trial and see how much value it can provide.
-3. For now, please leave the phet-io-overrides.js file, strings file and namespace file as *.js.  The build tools are not set to do those in TypeScript yet.
-4. Please do not convert common code to TypeScript approved by the team.  Some common code repos have a "typescript" branch
-for investigation.
-5. phettest and CT provide TypeScript support, but do not yet have a good user experience for showing TypeErrors etc.
+### Caveats and Notes
+1. For now, please leave the phet-io-overrides.js file, strings file and namespace file as *.js.  The build tools are not set to do those in TypeScript yet.
+2. Please do not convert common code to TypeScript until that phase is approved by the team.  Some common code repos have a "typescript" branch
+for investigation in the meantime.
+3. phettest and CT provide TypeScript support, but do not yet have a good user experience for showing TypeErrors etc.
 And it is not well-vetted.
-6. Please make sure you are using the commit hooks, which are configured to run type checks on typescript repos.
-7. Ambient type definitions are provided in chipper/phet-types.d.ts
-8. Transitive dependencies are not always tracked correctly in the build system.  This bug has been reported to TypeScript. Details in https://github.com/phetsims/chipper/issues/1067
-9. Some common code repos include code outside their directory.  This problem is described in https://github.com/phetsims/chipper/issues/1096
-10. Gravity and Orbits, Bending Light, and Circuit Construction Kit Common have been written in TypeScript, and are all
+4. Please make sure you are using the commit hooks, which are configured to run type checks on typescript repos.
+5. Ambient type definitions are provided in chipper/phet-types.d.ts
+6. Transitive dependencies are not always tracked correctly in the build system.  This bug has been reported to TypeScript. Details in https://github.com/phetsims/chipper/issues/1067
+7. Some common code repos include code outside their directory.  This problem is described in https://github.com/phetsims/chipper/issues/1096
+8. Gravity and Orbits, Bending Light, and Circuit Construction Kit Common have been written in TypeScript, and are all
 at approximately equal levels, and can be used for reference. For instance, see how these sims have a d.ts file for strings.
 However, please do not use any reference of code marked with
 `@ts-ignore` or `any`.  Those markers mean (a) I wasn't sure what to do, (b) common code is not ready to support it yet or (c) I haven't
