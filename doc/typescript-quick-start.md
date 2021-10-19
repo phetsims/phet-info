@@ -39,15 +39,30 @@ The compiler is also configured for incremental compilation.  This means subsequ
 `tsc` is a program that comes bundled with the npm module `typescript`. Alternatively, you can set an
 alias like `alias tsc = node /path/chipper/node_modules/typescript/bin/tsc`, which would make sure you are always using
 the same version of typescript as in chipper.
-2. In your sim repo, run `tsc --build --watch`.  This will watch for any changes in the project or its dependecies and auto-recompile
+2. Start a watch process by `cd chipper/tsconfig/all` and `tsc -b --watch`.  This will will watch for any file changes
+and auto-recompile
 3. I have not yet experimented with having the IDE do the builds, but maybe that will be more efficient.
-4. To compile all sims and common code, `cd chipper/tsconfig/all` and run `tsc --build`. Can be combined with `--watch`
-which will run a process that watches for file changes and trigger a recompilation on file change.
-5.`tsc -b` is a shortcut for `tsc --build`
 
 ### Process Changes
 1. TypeScript sims need to be compiled before generating their API using `grunt generate-phet-io-api`
 2. New sims need to be tracked in chipper/tsconfig/all/tsconfig.json
+
+### Porting from JavaScript
+1. I have found it efficient to convert a single file (or a small batch of related files) at a time.  Rename the file
+from *.js to *.ts, fix any errors, wait for the watch process to compile, and run to test in the browser.  As you get
+more skilled, you can convert more and more at once.
+2. WebStorm provides helpful shortcuts.  For constructor parameters, you can promote constructor JSDoc params to types
+via Option+Enter then "Annotate with Type from JSDoc".  You can automatically promote variables to class attributes with
+Option+Enter then "Declare property [...]"
+3. After all class attributes have been declared as class properties, you can mark each as `private readonly` then the
+compiler will tell you where that needs to be relaxed.
+4. Try to minimize their use as much as possible, but use `any` and `// @ts-ignore` to get past any insurmountable problems.
+5. For pro users, once you are familiar with porting files, if you want to port more than one at a time, you can
+use a command like this, but keep in mind you need to make sure they are `git mv` and not just `mv`.  You could update the command
+or follow directions like https://github.com/phetsims/chipper/issues/1120#issuecomment-947090489
+```
+find . -name "*.js" ! -iname "*phet-io-overrides.js"  -exec bash -c 'mv "$1" "${1%.js}".ts' - '{}' \;
+```
 
 ### Caveats and Notes
 1. For now, please leave the phet-io-overrides.js file, strings file and namespace file as *.js.  The build tools are not set to do those in TypeScript yet.
