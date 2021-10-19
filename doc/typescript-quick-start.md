@@ -35,11 +35,13 @@ The compiler is also configured for incremental compilation.  This means subsequ
 5. Try creating a type error like `const x:string=7` and see what happens.
 
 ### Toward more efficient iteration
-1. Install tsc globally (with the same version as chipper/package.json), or set an alias like `alias tsc = node /path/chipper/node_modules/typescript/bin/tsc`.  The latter will make sure you always have right version of typescript.
-2. In your sim repo, run `tsc --build --watch`.  This will watch for any changes in the project or its dependecies and auto-recompile
-3. I have not yet experimented with having the IDE do the builds, but maybe that will be more efficient.
-4. To compile all sims and common code, use this `tsc --build` from chipper/tsconfig/all. Can be combined with `--watch`
-5. `tsc -b` is a shortcut for `tsc --build`
+1. Install typescript globally (with the same version as chipper/package.json via `npm install -g typescript@4.4.2`), or set an
+alias like `alias tsc = node /path/chipper/node_modules/typescript/bin/tsc`.  The latter will make sure you always have
+right version of typescript.
+3. In your sim repo, run `tsc --build --watch`.  This will watch for any changes in the project or its dependecies and auto-recompile
+4. I have not yet experimented with having the IDE do the builds, but maybe that will be more efficient.
+5. To compile all sims and common code, use this `tsc --build` from chipper/tsconfig/all. Can be combined with `--watch`
+6. `tsc -b` is a shortcut for `tsc --build`
 
 ### Process Changes
 1. TypeScript sims need to be compiled before generating their API using `grunt generate-phet-io-api`
