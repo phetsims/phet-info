@@ -13,8 +13,7 @@ known problems, etc.
 1. Clone missing repos.  This makes sure you have everything.
 2. Pull everything.  This makes sure you have the latest version of everything.
 3. `npm install` in chipper. This makes sure you have the TypeScript compiler, which is called `tsc`
-4. Mark chipper/dist as excluded from your IDE.  You can do this eagerly now, or wait until chipper/dist is created by a
-compilation step below.
+4. Mark chipper/dist/ as excluded from your IDE.  You can create that directory eagerly now, or wait until chipper/dist/ is created by a compilation step below. Compiled code will be written to chipper/dist/.
 5. Update the code style file from phet-info/ide/idea/phet-idea-codestyle.xml which was last updated October 15, 2021
 6. Turn on TypeScript support in WebStorm, at one point this was Languages & Frameworks -> TypeScript -> check TypeScript language services.
 Sublime also has an officially supported plugin.
