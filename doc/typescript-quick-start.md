@@ -25,7 +25,7 @@ Sublime also has an officially supported plugin.
 Congratulations!  Now the repo is typescript-capable.
 
 ### Experiment with your new TypeScript repo
-1. Compile the source and its dependencies via `grunt output-js-project`.  This compiles the sim and its dependencies to chipper/dist.
+1. Compile the source and its dependencies via `grunt output-js-project`.  This compiles the sim and its dependencies to chipper/dist/.
 It uses "Project References" (tsc --build) to trace the dependencies.
 The compiler is also configured for incremental compilation.  This means subsequent compiles will be much faster than the first compile.
 2. Open the sim in the browser via phetmarks
