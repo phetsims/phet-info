@@ -14,9 +14,9 @@ Follow these steps to add support for alternative input to a simulation.
 
 3. For non-`LayoutBox` parent Nodes, explicitly set `this.pdomOrder` at the end of constructor. Do not rely on scenery’s
    default ordering, which corresponds to the order that children are added. It’s better to decouple rendering order and
-   traversal order by explicitly setting `this.pdomOrder`. Note that most of the work here is in ScreenView subclasses.
+   traversal order by explicitly setting `this.pdomOrder`. Note that most of the work here is in `ScreenView` subclasses.
 
-4. For `LayoutBox` Nodes do nothing. The layout order and traversal order are typically the same.
+4. For `LayoutBox` Nodes do nothing. There is a good match between layout order and traversal order; they are typically the same.
 
 5. If you need to augment `this.pdomOrder` in a subclass, read about the numerous pitfalls
    in https://github.com/phetsims/scenery/issues/1308.
