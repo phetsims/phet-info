@@ -4,15 +4,10 @@ Follow these steps to add support for alternative input to a simulation.
 
 1. In package.json, add this to the “phet” section:
 
-```js
-"simFeatures"
-:
-{
-  "supportsInteractiveDescription"
-:
-  true
-}
-,
+```json
+"simFeatures": {
+  "supportsInteractiveDescription": true
+},
 ```
 
 2. Run `grunt update` to generate `{{REPO}}_a11y_view.html` and modify `{{REPO}}_en.html`.
@@ -45,11 +40,8 @@ You’ll also need to add these options to your Node:
 
 ```js
 // pdom options
-tagName: 'div',
-  focusable
-:
-true
-
+tagName: 'div', 
+focusable: true
 ```
 
 7. `PressListener` DOES handle keyboard input. For Nodes where you've added a `PressListener`, add these options to your
@@ -58,9 +50,7 @@ true
 ```js
 // pdom
 tagName: 'button',
-  focusable
-:
-true
+focusable: true
 ```
 
 8. There may common-code UI components for which alternative input has not been implemented. And there may be PhET
