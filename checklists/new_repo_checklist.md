@@ -31,13 +31,13 @@ At https://github.com/phetsims/{{REPO}}:
 - [ ] Create a Sim Checklist issue using template [sim_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/sim_checklist.md). Use "{{TITLE}} Master Checklist" as the issue name. Assign to @ariel-phet.
 
 In your working copy of perennial repo:
-- [ ] Add the new repo to `perennial/data/active-repos`. Commit and push. If needed immediately, run `cd perennial/ && grunt generate-data` and commit and push to update data lists. Otherwise it is done every night as part of daily grunt work.
+- [ ] Add the new repo to `perennial/data/active-repos`. Commit and push. Then pull perennial-alias so these two checkouts stay in sync. If needed immediately, run `cd perennial/ && grunt generate-data` and commit and push to update data lists. Otherwise it is done every night as part of daily grunt work.
 
 Other:
 - [ ] Navigate to https://bayes.colorado.edu/dev/phettest/ and click the "Refresh Perennial" button. If you do not know the password, please ask another developer.
 - [ ] Apply GitHub labels. See [github-labels/README.md](https://github.com/phetsims/phet-info/blob/master/github-labels/README.md).
 - [ ] Apply branch protection rules. Use [This script to do so](https://github.com/phetsims/perennial/blob/master/js/scripts/protect-branches-for-repo.js).
-- [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and run `clone-missing-repos.sh` at your convenience."
+- [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and perennial-alias and run `clone-missing-repos.sh` at your convenience."
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
 - [ ] Follow any remaining "Implementation" tasks in the Master Checklist issue that you created above.
 - [ ] If applicable, add any needed dependencies to `phetLibs` in package.json. If you change package.json, run `grunt update`.
@@ -71,7 +71,7 @@ If this repo is a common code dependency for all sims:
 - [ ] Update all sim published README files (because the "Quick Start" section has these git clone commands too).
 
 Other:
-- [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and run `clone-missing-repos.sh` at your convenience."
+- [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and perennial-alias and run `clone-missing-repos.sh` at your convenience."
 - [ ] Apply GitHub labels. See [github-labels/README.md](https://github.com/phetsims/phet-info/blob/master/github-labels/README.md).
 - [ ] Apply branch protection rules. Use [This script to do so](https://github.com/phetsims/perennial/blob/master/js/scripts/protect-branches-for-repo.js).
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
@@ -81,7 +81,7 @@ Other:
 ## Steps for renaming a repo
 - [ ] Make sure all commits are pushed to that repo.
 - [ ] On Github.com, go to repo -> Settings -> Options -> "Repository name"  and rename.
-- [ ] Rename in `perennial/data/active-repos`
+- [ ] Rename in `perennial/data/active-repos`. Push the change to perennial and then pull perennial-alias.
 - [ ] Delete the old repo
 - [ ] Run `perennial/bin/clone-missting/repos.sh`.
 - [ ] Update `package.json` accordingly. Including but not necessarily limited to:
@@ -89,7 +89,7 @@ Other:
   * `repository.url`
   * `phet.requirejsNamespace`
 - [ ] Change entry in [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json).
-- [ ] Notify Slack channel dev-public that the repo has been renamed. E.g. "I just renamed repository {{OLD_REPO}} to {{NEW_REPO}}. Please pull perennial and run `clone-missing-repos.sh` at your convenience."
+- [ ] Notify Slack channel dev-public that the repo has been renamed. E.g. "I just renamed repository {{OLD_REPO}} to {{NEW_REPO}}. Please pull perennial and perennial-alias and run `clone-missing-repos.sh` at your convenience."
 - [ ] If applicable, "refresh perennial" on phettest.
 - [ ] Add the sim to chipper/tsconfig/all/tsconfig.json
 
