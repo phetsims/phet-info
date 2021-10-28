@@ -12,7 +12,7 @@ Follow these steps to add support for alternative input to a simulation.
 
 2. Run `grunt update` to generate `{{REPO}}_a11y_view.html` and modify `{{REPO}}_en.html`.
 
-3. For `LayoutBox` Nodes do nothing. There is a good match between layout order and traversal order; they are typically the same.
+3. For `LayoutBox` (and its subclasses) there is no need to specify traversal order. There is a good match between layout order and traversal order; they are typically the same.  So for `LayoutBox`, you can do nothing.
 
 4. For non-`LayoutBox` parent Nodes, explicitly set `this.pdomOrder` at the end of constructor. Do not rely on scenery’s
    default ordering, which corresponds to the order that children are added. It’s better to decouple rendering order and
