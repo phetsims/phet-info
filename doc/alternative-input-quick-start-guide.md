@@ -16,8 +16,7 @@ Follow these steps to add support for alternative input to a simulation.
    default ordering, which corresponds to the order that children are added. It’s better to decouple rendering order and
    traversal order by explicitly setting `this.pdomOrder`. Note that most of the work here is in `ScreenView` subclasses.
 
-4. For `ScreenView`, `this.pdomOrder` cannot be set directly. There are two approaches you can use. Check with your
-sim designer to see which approach is appropriate.
+4. For `ScreenView`, `this.pdomOrder` cannot be set directly. There are two approaches you can use to specify traversal order at the ScreenView level. Check with your sim designer to see which approach is appropriate.
 
   (a) Assign Nodes to either the "Play Area" or "Control Area". Do not add Nodes directly to the ScreenView. Instead,
 use this pattern in your ScreenView constructor:
@@ -84,3 +83,4 @@ tagName: 'button'
 ## Other Resources
 
 * [Interactive Description Technical Guide](https://github.com/phetsims/phet-info/blob/4839f03214bbba21b4621f80aea8e78a9519fb43/doc/interactive-description-technical-guide.md)
+* Description of "Play Area" and "Control Area": https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#pdom-order-for-phet-sims
