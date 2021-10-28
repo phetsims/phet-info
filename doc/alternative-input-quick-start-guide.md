@@ -10,7 +10,7 @@ Follow these steps to add support for alternative input to a simulation.
 },
 ```
 
-2. In yuor sim's repository, run `grunt update`. This will generate `{{REPO}}_a11y_view.html` and modify `{{REPO}}_en.html`.
+2. In your sim's repository, run `grunt update`. This will generate `{{REPO}}_a11y_view.html` and modify `{{REPO}}_en.html`.
 
 3. For `LayoutBox` (and its subclasses) there is no need to specify traversal order. There is a good match between layout order and traversal order; they are typically the same.  So for `LayoutBox`, you can do nothing.
 
