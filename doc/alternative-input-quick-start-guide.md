@@ -1,4 +1,4 @@
-# Alternative Input - Quick Start Guide
+# Alternative Input - Quickstart Guide
 
 Follow these steps to add support for alternative input to a simulation.
 
