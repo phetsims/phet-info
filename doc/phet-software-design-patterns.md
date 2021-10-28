@@ -49,18 +49,16 @@ For disposal:
 
 A simple, working example of this pattern is implemented in scenery/examples/creator-pattern.html
 
-Simulations that use DragListener.createForwardingListener (recommended pattern)
+Examples of simulations that use `DragListener.createForwardingListener` (recommended pattern)
 * Energy Skate Park (Measuring tape)
+* Equality Explorer (Terms)
 * Fractions Suite (Pieces, fraction elements and containers)
 * Wave Interference (Tools)
 
-Simulations that use SimpleDragHandler.createForwardingListener (similar to recommended pattern)
+Examples of simulations that use `SimpleDragHandler.createForwardingListener` (similar to recommended pattern)
 * Capacitor Lab Basics (Voltmeter)
-* Circuit Construction Kit (Circuit elements and sensors)
-* Equality Explorer (Terms)
-* Fluid Pressure and Flow (Sensors)
+* Fluid Pressure and Flow (sensors, barmometer)
 * Masses and Springs (Ruler and timer)
-* Projectile Motion (Tracer and measuring tape)
 
 Deprecated solutions to this same problem:
 * Bending Light uses handleForwardedStartEvent, handleForwardedDragEvent, handleForwardedEndEvent
