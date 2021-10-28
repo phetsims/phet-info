@@ -16,12 +16,37 @@ Follow these steps to add support for alternative input to a simulation.
    default ordering, which corresponds to the order that children are added. It’s better to decouple rendering order and
    traversal order by explicitly setting `this.pdomOrder`. Note that most of the work here is in `ScreenView` subclasses.
 
-4. For `LayoutBox` Nodes do nothing. There is a good match between layout order and traversal order; they are typically the same.
+4. For `ScreenView`, `this.pdomOrder` cannot be set directly. There are two approaches you can use. Check with your
+sim designer to see which approach is appropriate.
 
-5. If you need to augment `this.pdomOrder` in a subclass, read about the numerous pitfalls
+  (a) Assign Nodes to either the "Play Area" or "Control Area". Do not add Nodes directly to the ScreenView. Instead,
+use this pattern in your ScreenView constructor:
+      
+```js
+this.pdomPlayAreaNode.children = [ ... ];
+this.pdomPlayAreaNode.pdomOrder = [ ... ];
+this.pdomControlAreaNode.children = [ ... ];
+this.pdomPControlAreaNode.pdomOrder = [ ... ];
+```
+
+  (b) In many cases, "Play Area" and "Control Area" can be ignored for the purposes of alternative input. If 
+that is appropriate for your sim, then do not add Nodes directly to the ScreenView. Instead, use this pattern
+in your ScreenView constructor:
+
+```js
+const screenViewRootNode = new Node( {
+   children: [...]
+});
+screenViewRootNode.pdomOrder = [...];
+this.addChild( screenViewRootNode );
+```
+
+6. For `LayoutBox` Nodes do nothing. There is a good match between layout order and traversal order; they are typically the same.
+
+7. If you need to augment `this.pdomOrder` in a subclass, read about the numerous pitfalls
    in https://github.com/phetsims/scenery/issues/1308.
 
-6. `DragListener` does NOT handle keyboard input. For Nodes where you’ve added a `DragListener`, you’ll need to add a
+8. `DragListener` does NOT handle keyboard input. For Nodes where you’ve added a `DragListener`, you’ll need to add a
    corresponding `KeyboardDragListener`. The options for the `DragListener` and `KeyboardDragListener` will typically be
    similar, but beware that API differences exist. Your `KeyboardDragListener` should look something like this:
 
