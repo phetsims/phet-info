@@ -46,7 +46,7 @@ this.addChild( screenViewRootNode );
    in https://github.com/phetsims/scenery/issues/1308.
 
 7. `DragListener` does NOT handle keyboard input. For Nodes where you’ve added a `DragListener`, you’ll need to add a
-   corresponding `KeyboardDragListener`. The options for the `DragListener` and `KeyboardDragListener` will typically be
+   corresponding `KeyboardDragListener`. The options for your `DragListener` and `KeyboardDragListener` will typically be
    similar, but beware that API differences exist. Your `KeyboardDragListener` should look something like this:
 
 ```js
