@@ -55,3 +55,7 @@ tagName: 'button'
 8. There may be common-code UI components for which alternative input has not been implemented. And there may be PhET
    design patterns for which alternative-input behavior has not been designed. Identify lack of alternative-input
    support, and create GitHub issues.
+
+## Other Resources
+
+* [Interactive Description Technical Guide](https://github.com/phetsims/phet-info/blob/4839f03214bbba21b4621f80aea8e78a9519fb43/doc/interactive-description-technical-guide.md)
