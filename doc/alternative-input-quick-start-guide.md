@@ -49,8 +49,7 @@ focusable: true
 
 ```js
 // pdom
-tagName: 'button',
-focusable: true
+tagName: 'button'
 ```
 
 8. There may be common-code UI components for which alternative input has not been implemented. And there may be PhET
