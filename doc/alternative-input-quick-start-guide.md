@@ -24,9 +24,9 @@ use this pattern in your ScreenView constructor:
       
 ```js
 this.pdomPlayAreaNode.children = [ ... ];
-this.pdomPlayAreaNode.pdomOrder = [ ... ];
+this.pdomPlayAreaNode.pdomOrder = [ ... ]; // decouple traversal order from rendering order
 this.pdomControlAreaNode.children = [ ... ];
-this.pdomPControlAreaNode.pdomOrder = [ ... ];
+this.pdomControlAreaNode.pdomOrder = [ ... ]; // decouple traversal order from rendering order
 ```
 
   (b) In many cases, "Play Area" and "Control Area" can be ignored for the purposes of alternative input. If 
@@ -37,7 +37,7 @@ in your ScreenView constructor:
 const screenViewRootNode = new Node( {
    children: [...]
 });
-screenViewRootNode.pdomOrder = [...];
+screenViewRootNode.pdomOrder = [...]; // decouple traversal order from rendering order
 this.addChild( screenViewRootNode );
 ```
 
