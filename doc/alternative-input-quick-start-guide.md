@@ -47,7 +47,7 @@ this.addChild( screenViewRootNode );
 
 7. `DragListener` does NOT handle keyboard input. For Nodes where you’ve added a `DragListener`, you’ll need to add a
    corresponding `KeyboardDragListener`. The options for your `DragListener` and `KeyboardDragListener` will typically be
-   similar, but beware that API differences exist. Your `KeyboardDragListener` should will something like this:
+   similar, but beware that API differences exist. Your `KeyboardDragListener` will look something like this:
 
 ```js
 // pdom - dragging using the keyboard
