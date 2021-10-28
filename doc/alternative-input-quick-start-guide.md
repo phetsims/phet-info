@@ -20,7 +20,7 @@ Follow these steps to add support for alternative input to a simulation.
 
 5. For `ScreenView`, `this.pdomOrder` cannot be set directly. There are two approaches you can use to specify traversal order at the ScreenView level. Check with your sim designer to see which approach is appropriate.
 
-  (a) Assign Nodes to either the "Play Area" or "Control Area". Do not add Nodes directly to the ScreenView. Instead,
+  (a) Add Nodes to either the "Play Area" or "Control Area". Do not add Nodes directly to the ScreenView. Instead,
 use this pattern in your ScreenView constructor:
       
 ```js
