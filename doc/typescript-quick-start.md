@@ -49,8 +49,8 @@ and auto-recompile
 3. I have not yet experimented with having the IDE do the builds, but maybe that will be more efficient.
 
 ### Process Changes
-1. TypeScript sims need to be compiled before generating their PhET-iO API using `grunt generate-phet-io-api`
-2. New sims need to be tracked in chipper/tsconfig/all/tsconfig.json
+1. TypeScript sims need to be compiled using `grunt output-js-project` before generating their PhET-iO API using `grunt generate-phet-io-api`.
+2. New sims need to be tracked in `chipper/tsconfig/all/tsconfig.json`.
 
 ### Porting from JavaScript
 1. I have found it efficient to convert a single file (or a small batch of related files) at a time.  Rename the file
