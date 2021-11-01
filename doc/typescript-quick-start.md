@@ -10,13 +10,13 @@ known problems, etc.
 * Please be aware of caveats listed below, as well as open issues in https://github.com/phetsims/chipper/issues?q=is%3Aissue+is%3Aopen+label%3Achipper%3Atypescript
 
 ### Getting started
-1. Clone missing repos.  This makes sure you have everything.
-2. Pull everything.  This makes sure you have the latest version of everything.
-3. `npm install` in chipper. This makes sure you have the TypeScript compiler, which is called `tsc`
+1. Clone missing repos by running `perennial/bin/clone-missing-repos.sh`.  This ensures that you have everything.
+2. Pull all repos by running `perennial/bin/pull-all.sh`.  This ensures that you have the latest version of everything.
+3. `npm install` in chipper. This ensures that you have the TypeScript compiler, which is called `tsc`
 4. Mark chipper/dist/ as excluded from your IDE.  You can create that directory eagerly now, or wait until chipper/dist/ is created by a compilation step below. Compiled code will be written to chipper/dist/.
-5. Update the code style file from phet-info/ide/idea/phet-idea-codestyle.xml which was last updated October 15, 2021
-6. Turn on TypeScript support in WebStorm, at one point this was Languages & Frameworks -> TypeScript -> check TypeScript language services.
-Sublime also has an officially supported plugin.
+5. Update yuor IDE to use the code style file from `phet-info/ide/idea/phet-idea-codestyle.xml`.
+6. Turn on TypeScript support in WebStorm: Preferences > Languages & Frameworks > TypeScript.
+Sublime also has an officially-supported plugin.
 
 ### Converting a Repo to TypeScript
 1. Go to package.json and add `"typescript": true` to the `"phet"` section.  That enables the TypeScript step in the build tools.
