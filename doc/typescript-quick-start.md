@@ -35,7 +35,7 @@ Congratulations!  Now the repo is typescript-capable.  You can commit these chan
 It uses "Project References" (tsc --build) to trace the dependencies.
 The compiler is also configured for incremental compilation.  This means subsequent compiles will be much faster than the first compile.
 2. Open the sim in the browser via phetmarks
-3. Convert one of the files to *.ts and add code like `const x:number=7; console.log(x);` .
+3. Rename one of the files to *.ts and add code like `const x:number=7; console.log(x);` .
 4. Compile via `grunt output-js-project` and run it in the browser.  Did it print `7`?
 5. Try creating a type error like `const x:string=7` and see what happens.
 
