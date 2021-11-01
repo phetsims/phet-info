@@ -19,9 +19,9 @@ known problems, etc.
 Sublime also has an officially supported plugin.
 
 ### Converting a Repo to TypeScript
-1. Go to package.json and add `"typescript": true` in the `"phet"` section.  That enables the TypeScript step in the build tools.
+1. Go to package.json and add `"typescript": true` to the `"phet"` section.  That enables the TypeScript step in the build tools.
 2. `grunt update`.  This updates the html to point to the built code, which will be compiled to chipper/dist
-3. Add the following type declarations to the repo's tsconfig file `"include"` array (see https://github.com/phetsims/chipper/issues/1121)
+3. Add the following type declarations to the `"include"` array in tsconfig.json (see https://github.com/phetsims/chipper/issues/1121)
 ```json
 "../chipper/phet-types.d.ts",
 "../chipper/node_modules/@types/lodash/index.d.ts",
