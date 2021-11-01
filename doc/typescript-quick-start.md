@@ -28,24 +28,24 @@ Sublime also has an officially supported plugin.
 "../chipper/node_modules/@types/qunit/index.d.ts"
 ```
 
-Congratulations!  Now the repo is typescript-capable.  You can commit these changes if you wish.
+Congratulations!  Now the repo is TypeScript-capable.  You can commit these changes if you wish.
 
 ### Experiment with your new TypeScript repo
 1. Compile the source and its dependencies via `grunt output-js-project`.  This compiles the sim and its dependencies to chipper/dist/.
-It uses "Project References" (tsc --build) to trace the dependencies.
+It uses "Project References" (`tsc --build`) to trace the dependencies.
 The compiler is also configured for incremental compilation.  This means subsequent compiles will be much faster than the first compile.
-2. Open the sim in the browser via phetmarks
+2. Open the sim in the browser via phetmarks.
 3. Rename one of the files to *.ts and add code like `const x:number=7; console.log(x);` .
 4. Compile via `grunt output-js-project` and run it in the browser.  Did it print `7`?
 5. Try creating a type error like `const x:string=7` and see what happens.
 
 ### Toward more efficient iteration
-1. Install typescript with the same version as listed in chipper/package.json. You can do this globally via `npm install -g typescript@4.4.2`.
+1. Install TypeScript with the same version as listed in chipper/package.json. You can do this globally via `npm install -g typescript@4.4.2`.
 `tsc` is a program that comes bundled with the npm module `typescript`. Alternatively, you can set an
 alias like `alias tsc = node /path/chipper/node_modules/typescript/bin/tsc`, which would make sure you are always using
 the same version of typescript as in chipper.
-2. Start a watch process by `cd chipper/tsconfig/all` and `tsc -b --watch`.  This will will watch for any file changes
-and auto-recompile
+2. Start a watch process by `cd chipper/tsconfig/all` and `tsc -b --watch`. This will will watch for any file changes
+and auto-recompile.
 3. I have not yet experimented with having the IDE do the builds, but maybe that will be more efficient.
 
 ### Process Changes
@@ -56,8 +56,8 @@ and auto-recompile
 1. I have found it efficient to convert a single file (or a small batch of related files) at a time.  Rename the file
 from *.js to *.ts, fix any errors, wait for the watch process to compile, and run to test in the browser.  As you get
 more skilled, you can convert more and more at once.
-2. WebStorm provides helpful shortcuts.  For constructor parameters, you can promote constructor JSDoc params to types
-via Option+Enter then "Annotate with Type from JSDoc".  You can automatically promote variables to class attributes with
+2. WebStorm provides helpful shortcuts. For constructor parameters, you can promote constructor JSDoc params to types
+via Option+Enter then "Annotate with Type from JSDoc". You can automatically promote variables to class attributes with
 Option+Enter then "Declare property [...]"
 3. After all class attributes have been declared as class properties, you can mark each as `private readonly` then the
 compiler will tell you where that needs to be relaxed.
