@@ -965,6 +965,12 @@
     ],
     "responsibleDesigners": []
   },
+  "phet-global-initiative": {
+    "responsibleDevs": [
+      "@kathy-phet"
+    ],
+    "responsibleDesigners": []
+  },
   "phet-info": {
     "responsibleDevs": [
       "@zepumph"
