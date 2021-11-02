@@ -119,7 +119,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | natural-selection | @pixelzoom | @amanda-phet | 
 | neuron | @jbphet | @arouinfar | 
 | nitroglycerin | @pixelzoom |  | 
-| normal-modes | @issamali67,@pixelzoom | @DianaTavares | 
+| normal-modes |  | @DianaTavares | 
 | number-line-common | @jbphet | @amanda-phet | 
 | number-line-distance | @jbphet | @amanda-phet | 
 | number-line-integers | @jbphet | @amanda-phet | 
