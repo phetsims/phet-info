@@ -133,6 +133,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | ph-scale-basics | @pixelzoom | @arouinfar | 
 | phet-android-app | @mattpen |  | 
 | phet-core | @jonathanolson |  | 
+| phet-global-initiative | @kathy-phet |  | 
 | phet-info | @zepumph |  | 
 | phet-io | @zepumph |  | 
 | phet-io-client-guides | @chrisklus |  | 
