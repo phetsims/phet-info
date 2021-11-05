@@ -250,7 +250,7 @@ We have 150+ repositories for the simulations and their dependencies, listed at:
 
 PhET Simulations are based on a Model/View separation pattern. This pattern and others used in PhET Simulations are described at https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md
 
-In the tables below, the LOC reports the total lines of code (includes comments and blank lines) to give a sense of the rough size.
+In the tables below, the LOC reports the total lines of code (includes comments and blank lines) to give a rough sense of the size.
 
 ### View
 | Repository  | LOC | Description |
