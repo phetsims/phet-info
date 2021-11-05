@@ -250,9 +250,9 @@ We have 150+ repositories for the simulations and their dependencies, listed at:
 
 PhET Simulations are based on a Model/View separation pattern. This pattern and others used in PhET Simulations are described at https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md
 
-In the tables below, the LOC reports the total lines of code (includes comments and blank lines) to give a rough sense of the size.
+The tables below depict the most significant common code libraries used by PhET Simulations. The simulations provide their own model and view implementations often building with common code components. Salient relationships between repos are identified, but many repos are cross-cutting.  For instance, nearly every repo uses [tandem](https://github.com/phetsims/tandem/) for PhET-iO support and [axon](https://github.com/phetsims/axon/) for Observer/Listeners patterns.  The LOC reports the total lines of code (includes comments and blank lines) to give a rough sense of the size.
 
-### View
+### Common Code View
 | Repository  | LOC | Description |
 | ------------- | ------------- | ---------- |
 | [joist](https://github.com/phetsims/joist/)  | 10,000  | Simulation loading, homescreen + navigation bar, screen management.  Uses some user interface components from [sun](https://github.com/phetsims/sun/). Uses [scenery](https://github.com/phetsims/scenery/) to render and process input.  Runs the animation loop.
@@ -263,9 +263,7 @@ In the tables below, the LOC reports the total lines of code (includes comments 
 | [brand](https://github.com/phetsims/brand/)  | 100  | Provides support for the main supported brands "PhET" and "PhET-iO" and hooks for clients to develop their own branding.
 | [twixt](https://github.com/phetsims/brand/)  | 2,000  | Support for tweening and animation.
 
-### Model
-
-Simulations often provide 
+### Common Code Model
 
 | Repository  | LOC | Description |
 | ------------- | ------------- | ---------- |
