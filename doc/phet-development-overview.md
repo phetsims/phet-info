@@ -237,14 +237,10 @@ http://localhost:8080/example-sim/build/phet/example-sim_en_phet.html
 
 ### Working with Git and GitHub
 
-Pulling the latest changes
-Creating an issuehttp://localhost:8080/example-sim/build/example_sim.html
-Committing
-Submitting a pull request
-
-### Submit an Issue
-
-### Using Chrome dev tools to debug a simulation
+* Pulling the latest changes
+* Creating an issue
+* Committing
+* Submitting a pull request
 
 ## Source code and Dependencies
 
