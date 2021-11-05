@@ -250,23 +250,37 @@ Submitting a pull request
 
 Our simulations and dependencies are hosted publicly on GitHub: https://github.com/phetsims
 
-We have 40+ repositories for the simulations and their dependencies, all of which can be found here: https://github.com/phetsims?tab=repositories.
+We have 150+ repositories for the simulations and their dependencies, listed at: https://github.com/orgs/phetsims/repositories.
 
-Below is a list of some of the repositories that contain libraries and frameworks upon which the individual simulations depend.
+PhET Simulations are based on a Model/View separation pattern. This pattern and others used in PhET Simulations are described at https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md
 
-* scenery: A general scene graph for rendering the graphics and handling the input. Documentation site for scenery
-* axon: for model implementation
-* assert: assertion framework for development testing
-* phet-core: inheritance, extension and other utility functions
-* phetcommon: higher-level common dependencies
-* scenery-phet: PhET-specific scenery graphics and input handlers
-* joist: Framework for application loading, launching, and handling tabs
-* dot: Mathematics framework for model & view
-* kite: Shape library
-* sun: Graphical user interface components, such as buttons, checkboxes, etc
-* sherpa: All of our 3rd party dependencies
-* chipper: Tools for developing and building simulations.
-* perennial: Maintenance tools that won't change with different versions of chipper checked out
+In the tables below, the LOC reports the total lines of code including comments and blank lines to give a sense of the rough size.
+
+### View
+| Repository  | LOC | Description |
+| ------------- | ------------- | ---------- |
+| [joist](https://github.com/phetsims/joist/blob/master/README.md)  | 10,000  | Simulation loading, homescreen + navigation bar, screen management.  Uses some user interface components from [sun](https://github.com/phetsims/sun/blob/master/README.md). Uses [scenery](https://github.com/phetsims/scenery/blob/master/README.md) to render and process input.  Runs the animation loop.
+| [sun](https://github.com/phetsims/sun/blob/master/README.md) | 13,000  | Graphical user interface components, such as buttons and checkboxes which could be useful in any application context. Built using [scenery](https://github.com/phetsims/scenery/blob/master/README.md).
+| [scenery-phet](https://github.com/phetsims/scenery-phet/blob/master/README.md)  | 25,000  | Simulation-specific components, such as probes, sensors, buckets, magnifying glasses, etc.  Built using [scenery](https://github.com/phetsims/scenery/blob/master/README.md).
+| [scenery](https://github.com/phetsims/scenery/blob/master/README.md)  | 86,000  | Foundational library for representing graphics (rendering to SVG, canvas or WebGL), handling input and generally abstraction for the browser. Shapes are represented using [kite](https://github.com/phetsims/kite/blob/master/README.md). Observer and emitter patterns use [axon](https://github.com/phetsims/axon/blob/master/README.md).
+
+### Model
+
+| Repository  | LOC | Description |
+| ------------- | ------------- | ---------- |
+| [kite](https://github.com/phetsims/kite/blob/master/README.md)  | 16,000  | Shapes and geometry. Mathematics implemented using [dot](https://github.com/phetsims/dot/blob/master/README.md)
+| [dot](https://github.com/phetsims/dot/blob/master/README.md)  | 21,000  | Mathematical objects such as Vector, Matrix, and corresponding numerical algorithms
+| [axon](https://github.com/phetsims/axon/blob/master/README.md)  | 8,000  | Data structures for the observer pattern (Property) and listener pattern (Emitters).
+| [phet-core](https://github.com/phetsims/phet-core/blob/master/README.md)  | 4,000  | Basic utility & support data structures and algorithms
+| [tandem](https://github.com/phetsims/tandem/blob/master/README.md)  | 5,000  | Simulation-side code to support PhET-iO instrumentation.
+
+### Tooling & Other
+| Repository  | LOC | Description |
+| ------------- | ------------- | ---------- |
+| [chipper](https://github.com/phetsims/chipper/blob/master/README.md)  | 10,000  | Tools for developing and building simulations.  Uses code in [perennial-alias](https://github.com/phetsims/perennial-alias/blob/master/README.md) for some tasks.
+| [perennial](https://github.com/phetsims/perennial/blob/master/README.md)  | 11,000  | Maintenance tools that won't change with different versions of chipper checked out (always runs in master).
+| [perennial-alias](https://github.com/phetsims/perennial-alias/blob/master/README.md)  | 11,000  | Copy of perennial that can run on non-master SHAs.
+| [sherpa](https://github.com/phetsims/sherpa/blob/master/README.md)  | -  | All of our 3rd party dependencies.  Must use a compatible license.
 
 ## Checking out the HTML5 code from GitHub
 
