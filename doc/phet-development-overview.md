@@ -250,7 +250,7 @@ We have 150+ repositories for the simulations and their dependencies, listed at:
 
 PhET Simulations are based on a Model/View separation pattern. This pattern and others used in PhET Simulations are described at https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md
 
-The tables below depict the most significant common code libraries used by PhET Simulations. The simulations provide their own model and view implementations often building with common code components. Salient relationships between repos are identified, but many repos are cross-cutting.  For instance, nearly every repo uses [tandem](https://github.com/phetsims/tandem/) for PhET-iO support and [axon](https://github.com/phetsims/axon/) for Observer/Listeners patterns.  The LOC reports the total lines of code (includes comments and blank lines) to give a rough sense of the size.
+The tables below depict the most significant common code libraries used by PhET Simulations. The simulations provide their own model and view implementations often building with common code components. Salient relationships between repos are identified, but many repos are cross-cutting.  For instance, nearly every repo uses [tandem](https://github.com/phetsims/tandem/) for PhET-iO support and [axon](https://github.com/phetsims/axon/) for Observer/Listeners patterns.  The LOC reports the total lines of code (includes comments and blank lines) to give a rough sense of the size.  Please note the LOC is not directly correlated to complexity--for instance, [scenery-phet](https://github.com/phetsims/scenery-phet/) has many lines of code, but is less complex because it is made up of many separate, modular components.
 
 ### Common Code View
 | Repository  | LOC | Description |
@@ -261,7 +261,7 @@ The tables below depict the most significant common code libraries used by PhET 
 | [scenery](https://github.com/phetsims/scenery/)  | 86,000  | Foundational library for representing graphics (rendering to SVG, canvas or WebGL), handling input and generally abstraction for the browser and cross-platform support. Shapes are represented using [kite](https://github.com/phetsims/kite/). Observer and emitter patterns use [axon](https://github.com/phetsims/axon/). Support for alternative input and accessibility features. 
 | [tambo](https://github.com/phetsims/tambo/)  | 6,000  | Sound effects and sonification.  Uses [axon](https://github.com/phetsims/axon/) for some observer/listeners support.
 | [brand](https://github.com/phetsims/brand/)  | 100  | Provides support for the main supported brands "PhET" and "PhET-iO" and hooks for clients to develop their own branding.
-| [twixt](https://github.com/phetsims/brand/)  | 2,000  | Support for tweening and animation.
+| [twixt](https://github.com/phetsims/brand/)  | 2,000  | Support for tweening and animation.  Can be used to animate user interface components or artwork in the view or model elements directly.
 
 ### Common Code Model
 
