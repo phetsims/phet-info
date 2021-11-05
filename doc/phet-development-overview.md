@@ -250,7 +250,7 @@ We have 150+ repositories for the simulations and their dependencies, listed at:
 
 PhET Simulations are based on a Model/View separation pattern. This pattern and others used in PhET Simulations are described at https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md
 
-In the tables below, the LOC reports the total lines of code including comments and blank lines to give a sense of the rough size.
+In the tables below, the LOC reports the total lines of code (includes comments and blank lines) to give a sense of the rough size.
 
 ### View
 | Repository  | LOC | Description |
@@ -261,6 +261,8 @@ In the tables below, the LOC reports the total lines of code including comments 
 | [scenery](https://github.com/phetsims/scenery/)  | 86,000  | Foundational library for representing graphics (rendering to SVG, canvas or WebGL), handling input and generally abstraction for the browser. Shapes are represented using [kite](https://github.com/phetsims/kite/). Observer and emitter patterns use [axon](https://github.com/phetsims/axon/).
 
 ### Model
+
+Simulations often provide 
 
 | Repository  | LOC | Description |
 | ------------- | ------------- | ---------- |
