@@ -258,7 +258,10 @@ In the tables below, the LOC reports the total lines of code (includes comments 
 | [joist](https://github.com/phetsims/joist/)  | 10,000  | Simulation loading, homescreen + navigation bar, screen management.  Uses some user interface components from [sun](https://github.com/phetsims/sun/). Uses [scenery](https://github.com/phetsims/scenery/) to render and process input.  Runs the animation loop.
 | [sun](https://github.com/phetsims/sun/) | 13,000  | Graphical user interface components, such as buttons and checkboxes which could be useful in any application context. Built using [scenery](https://github.com/phetsims/scenery/).
 | [scenery-phet](https://github.com/phetsims/scenery-phet/)  | 25,000  | Simulation-specific components, such as probes, sensors, buckets, magnifying glasses, etc.  Built using [scenery](https://github.com/phetsims/scenery/).
-| [scenery](https://github.com/phetsims/scenery/)  | 86,000  | Foundational library for representing graphics (rendering to SVG, canvas or WebGL), handling input and generally abstraction for the browser. Shapes are represented using [kite](https://github.com/phetsims/kite/). Observer and emitter patterns use [axon](https://github.com/phetsims/axon/).
+| [scenery](https://github.com/phetsims/scenery/)  | 86,000  | Foundational library for representing graphics (rendering to SVG, canvas or WebGL), handling input and generally abstraction for the browser and cross-platform support. Shapes are represented using [kite](https://github.com/phetsims/kite/). Observer and emitter patterns use [axon](https://github.com/phetsims/axon/). Support for alternative input and accessibility features. 
+| [tambo](https://github.com/phetsims/tambo/)  | 6,000  | Sound effects and sonification.  Uses [axon](https://github.com/phetsims/axon/) for some observer/listeners support.
+| [brand](https://github.com/phetsims/brand/)  | 100  | Provides support for the main supported brands "PhET" and "PhET-iO" and hooks for clients to develop their own branding.
+| [twixt](https://github.com/phetsims/brand/)  | 2,000  | Support for tweening and animation.
 
 ### Model
 
