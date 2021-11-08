@@ -14,7 +14,7 @@ known problems, etc.
 2. Pull all repos by running `perennial/bin/pull-all.sh`.  This ensures that you have the latest version of everything.
 3. `npm install` in chipper. This ensures that you have the TypeScript compiler, which is called `tsc`
 4. Mark chipper/dist/ as excluded from your IDE.  You can create that directory eagerly now, or wait until chipper/dist/ is created by a compilation step below. Compiled code will be written to chipper/dist/.
-5. Update yuor IDE to use the code style file from `phet-info/ide/idea/phet-idea-codestyle.xml`.
+5. Update your IDE to use the code style file from `phet-info/ide/idea/phet-idea-codestyle.xml`. You may need to re-import the xml file so that your IDE picks up any changes related to TypeScript. Your IDE may not stay in sync with what is checked into phet-info.   
 6. Turn on TypeScript support in WebStorm: Preferences > Languages & Frameworks > TypeScript.
 Sublime also has an officially-supported plugin.
 
