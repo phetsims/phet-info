@@ -84,3 +84,4 @@ at approximately equal levels, and can be used for reference. For instance, see 
 However, please do not use any reference of code marked with
 `@ts-ignore` or `any`.  Those markers mean (a) I wasn't sure what to do, (b) common code is not ready to support it yet or (c) I haven't
 taken the time to properly type it yet.  I also recommend avoiding `!` non-null coercion if you can help it.
+9. Conventions and patterns listed in https://github.com/phetsims/phet-info/blob/master/doc/typescript-conventions.md
