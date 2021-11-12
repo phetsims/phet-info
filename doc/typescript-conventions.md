@@ -69,5 +69,51 @@ type Cat = {
 }
 ```
 
+### Documentation for Class Properties
+
+Documentation for class properties should be placed with the declaration, not the instantiation. See, for
+example https://github.com/phetsims/geometric-optics/blob/03e5637eb16600dd329e20f32fafc3ab99922c8a/js/common/model/GeometricOpticsModel.ts
+
+```ts
+class Person {
+
+  // First and last name separate by a whitespace
+  readonly name: string;
+
+  constructor( name: string ) {
+    this.name = name;
+  }
+}
+```
+
+### Multiple Exports in One Expression
+Multiple exports should be combined into one expression.  This is advantageous for the same reason we often prefer
+to have one return statement from functions.
+
+```ts
+// Recommended
+export { CircuitElementViewType as default, CircuitElementViewTypeValues };
+
+// Not recommended
+export default CircuitElementViewType;
+export { CircuitElementViewTypeValues };
+```
+
+### Multiple Imports in One Expression
+Multiple imports from the same file should be combined into one expression.  This helps clarify that they are related.
+
+```ts
+// Preferred
+import BendingLightScreenView, { BendingLightScreenViewOptions } from '../../common/view/BendingLightScreenView.js';
+
+// Not preferred
+import BendingLightScreenView from '../../common/view/BendingLightScreenView.js';
+import { BendingLightScreenViewOptions } from '../../common/view/BendingLightScreenView.js';
+```
+If this exceeds the line limit and the WebStorm formatter wants to format it on multiple lines, please use
+`// eslint-disable-line single-line-import`
+
 ###
-Please see other notes in https://github.com/phetsims/ratio-and-proportion/issues/405 and https://github.com/phetsims/phet-info/blob/master/doc/typescript-quick-start.md 
+
+Please see other notes in https://github.com/phetsims/ratio-and-proportion/issues/405
+and https://github.com/phetsims/phet-info/blob/master/doc/typescript-quick-start.md 
