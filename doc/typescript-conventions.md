@@ -5,6 +5,12 @@ phase. Please bring things up for discussion to add here as you find new pattern
 
 ### Leveraging Type Inference
 
+See Item 19 "Avoid Cluttering Your Code with Inferable Types" in Vanderkam, which recommends (page 87):
+* Avoid writing type annotations when TypeScript can infer the same type
+* Ideally your code has type annotations in function/method signatures but not on local variables in their bodies
+* Consider using explicit annotations for object literals and function return types even when they can be inferred.  This 
+will help prevent implementation errors from surfacing in user code.
+
 TypeScript has a powerful type inference system, and we recommend to leverage that type inference in the general case.
 For example:
 
