@@ -199,7 +199,7 @@ Prototypes will follow the process for [RC/production deployments](https://githu
 - It is understood that known issues may be present in prototypes. These will generally be of the nature of "polish" issues, but pedagogical issues will generally be considered "showstoppers".
 - Once the prototype has passed QA testing, it will be published in the same manner as a "production" deployment. However:
   - The prototype will be published at the appropriate "latest" link, but the sim's page on phet.colorado.edu **WILL NOT** be made visible.
-  - After publishing the sim with `grunt production`, inform the lead designer that it's published. The lead designer will then mark the sim as a prototype on the Admin page, add the sim to the [HTML5 Prototypes Google Doc](https://docs.google.com/document/d/1d9j8OGO7qPgdL2YvdMeSbztYt7hGXiAL7hAQLXnH-bU/edit), then notify AP so that he can Tweet about it.
+  - After publishing the sim with `grunt production`, inform the lead designer that it's published. The lead designer will then mark the sim as a prototype on the Admin page, add the sim to the [HTML5 Prototypes Google Doc](https://docs.google.com/document/d/1d9j8OGO7qPgdL2YvdMeSbztYt7hGXiAL7hAQLXnH-bU/edit), then notify AP so that he can announce on social media.
   - It is understood that if a sim has been deployed as a prototype, the first version visible at phet.colorado.edu will have the version schema "1.N.0", where N is >= 1. For example, if we had 2 prototypes with versions 1.0.0 and 1.1.0, then the first version visible at phet.colorado.edu would be 1.2.0.
 - When cost-effective, maintainence releases can be performed on a prototype release branch. When not cost-effective, a new version of a prototype may require a new release branch.
 
