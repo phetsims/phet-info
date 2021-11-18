@@ -77,6 +77,19 @@ type Cat = {
 }
 ```
 
+### Initialization of Class Properties
+
+When possible, it is preferable to initialize properties where they are declared and thus avoid an explicit
+initialization statement in the constructor.
+
+```ts
+class EventCounter {
+  public numberOfEvents: number = 0;
+
+  // ...
+}
+```
+
 ### Documentation for Class Properties
 
 Documentation for class properties should be placed with the declaration, not the instantiation. See, for
