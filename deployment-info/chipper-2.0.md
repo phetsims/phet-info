@@ -189,20 +189,26 @@ This would usually be followed by 1+ RC deployments and then a production deploy
 A prototype is defined as a sim version that is deemed worthy of early release to the public before it has gone through the full production process. Prototypes will typically be published for legacy sims that are not yet available in HTML5. 
 
 How prototypes differ from production versions:
-- It is understood that known issues may be present in prototypes. These will generally be of the nature of "polish" issues, but pedagogical issues will generally be considered "showstoppers".
-- It is understood that if a sim has been deployed as a prototype, the first version visible at phet.colorado.edu will have the version schema "1.N.0", where N is >= 1. For example, if we had 2 prototypes with versions 1.0.0 and 1.1.0, then the first version visible at phet.colorado.edu would be 1.2.0.
+- A prototype release will typcially occur before formal code review and production-level QA testing.
+- Known issues may be present in prototypes. These will generally be of the nature of "polish" issues, but pedagogical issues or crashing will generally be considered "showstoppers".
 - A prototype will be published at the appropriate "latest" link, but the sim's page on phet.colorado.edu **WILL NOT** be made visible.
+- The first version of a prototype will typically be 1.0, and there may be more than one minor release of a prototype. Therefore the first version visible at phet.colorado.edu will have the version schema "1.N.0", where N is >= 1. For example, if we had 2 prototypes with versions 1.0.0 and 1.1.0, then the first version visible at phet.colorado.edu would be 1.2.0.
 
 Prototypes will follow the process for [RC/production deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches), with the following differences:
 - When the RC test issue is created:
   - Use the [prototype testing template](https://github.com/phetsims/QA/blob/master/issue-templates/prototype-test-template.md).
   - Issue title format is "Prototype test: ${{SIM}} {{VERSION}}", for example "Prototype test: Natural Selection 1.0.0-rc.1".
   - Label the issue `QA:prototype-test`.
-- Testing will not be as thorough as a production RC and will focus on "normal" usability and pedagogical accuracy. Issues found in testing that go beyond these categories will still be documented, but will usually not be addressed for the prototype deployment.
-- A prototype will be deemed "ready for release" when the design team agrees that the sim is feature-complete and performance is acceptable. In general, the prototype release will occur before formal code review and production-level QA testing.
-- Once the prototype has passed QA testing, publish the sim with `grunt production`, then:
-    - Revert README.md to unpublished by running `grunt unpublished-README`.
-    - Inform the lead designer that it's published. The lead designer will then mark the sim as a prototype on the Admin page, add the sim to the [HTML5 Prototypes Google Doc](https://docs.google.com/document/d/1d9j8OGO7qPgdL2YvdMeSbztYt7hGXiAL7hAQLXnH-bU/edit), then notify AP so that he can announce on social media.
+- Testing will not be as thorough as a production RC and will focus on "normal" usability and pedagogical accuracy. Issues found in testing that go beyond these requirements will typically be deferred.
+- A prototype will be deemed "ready for release" when the design team agrees that the feature set of the sim is acceptable, and testing has been completed.
+- Publish the prototype using `grunt production`.
+- After publishing, the developer will:
+    - Revert `README.md` to unpublished by running `grunt unpublished-README`.
+    - Inform the lead designer that the prototype is published. The lead designer will then 
+- After publishing, the designer will:
+    - Mark the sim as a prototype on the Admin page
+    - Add the sim to the [HTML5 Prototypes Google Doc](https://docs.google.com/document/d/1d9j8OGO7qPgdL2YvdMeSbztYt7hGXiAL7hAQLXnH-bU/edit)
+    - Notify AP so that he can announce on social media.
 - When cost-effective, maintainence releases can be performed on a prototype release branch. When not cost-effective, a new version of a prototype may require a new release branch.
 
 *Note: This process was chosen for prototype deployments so that they follow a well-established process and leave a documentation trail (github test issues, test matrices, etc). In addition, following this process only requires a change in our internal semantics of the meaning behind a "1.0.0" release. Since the prototype deploys are indeed a "release candidate", it seemed appropriate to follow this process.*
