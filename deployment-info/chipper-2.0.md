@@ -194,6 +194,7 @@ How prototypes differ from production versions:
 - Testing will not be as thorough as a production RC and will focus on "normal" usability and pedagogical accuracy. Issues found in testing that go beyond these requirements will typically be deferred.
 - A prototype will be published at the appropriate "latest" link, but the sim's page on phet.colorado.edu **WILL NOT** be made visible.
 - The first version of a prototype will typically be 1.0, and there may be more than one minor release of a prototype. Therefore the first version visible at phet.colorado.edu will have the version schema "1.N.0", where N is >= 1. For example, if we had 2 prototypes with versions 1.0.0 and 1.1.0, then the first version visible at phet.colorado.edu would be 1.2.0.
+- When cost-effective, maintainence releases can be performed on a prototype release branch. When not cost-effective, a new version of a prototype may require a new release branch.
 
 Prototypes will follow the process for [RC/production deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches) using `grunt production`, with the following differences:
 - When the RC test issue is created:
@@ -208,7 +209,6 @@ Prototypes will follow the process for [RC/production deployments](https://githu
     - Add the sim to the [HTML5 Prototypes Google Doc](https://docs.google.com/document/d/1d9j8OGO7qPgdL2YvdMeSbztYt7hGXiAL7hAQLXnH-bU/edit)
     - Notify AP so that he can announce on social media.
     - Notify ON so that he can announce via email.
-- When cost-effective, maintainence releases can be performed on a prototype release branch. When not cost-effective, a new version of a prototype may require a new release branch.
 
 ## PhET-iO Wrapper deployments
 
