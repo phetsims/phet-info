@@ -43,7 +43,7 @@ new Property<Laser>( new Laser() );
 
 Again, in complex or volatile cases, at the developer preference, the redundant type annotations may prove useful.
 
-### Visibility Annotations
+### Access Modifiers
 
 In TypeScript, the default visibility (if unspecified) is `public`. For methods, attributes, constructors, etc which are
 intended to be public, the visibility modifier can be omitted. Or at the developer's discretion, `public` can be
