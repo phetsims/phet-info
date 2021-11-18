@@ -207,6 +207,7 @@ Prototypes will follow the process for [RC/production deployments](https://githu
     - Mark the sim as a prototype on the [Admin page](https://phet.colorado.edu/admin/main).
     - Add the sim to the [HTML5 Prototypes Google Doc](https://docs.google.com/document/d/1d9j8OGO7qPgdL2YvdMeSbztYt7hGXiAL7hAQLXnH-bU/edit)
     - Notify AP so that he can announce on social media.
+    - Notify ON so that he can announce via email.
 - When cost-effective, maintainence releases can be performed on a prototype release branch. When not cost-effective, a new version of a prototype may require a new release branch.
 
 *Note: This process was chosen for prototype deployments so that they follow a well-established process and leave a documentation trail (github test issues, test matrices, etc). In addition, following this process only requires a change in our internal semantics of the meaning behind a "1.0.0" release. Since the prototype deploys are indeed a "release candidate", it seemed appropriate to follow this process.*
