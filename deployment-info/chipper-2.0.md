@@ -194,14 +194,13 @@ How prototypes differ from production versions:
 - A prototype will be published at the appropriate "latest" link, but the sim's page on phet.colorado.edu **WILL NOT** be made visible.
 - The first version of a prototype will typically be 1.0, and there may be more than one minor release of a prototype. Therefore the first version visible at phet.colorado.edu will have the version schema "1.N.0", where N is >= 1. For example, if we had 2 prototypes with versions 1.0.0 and 1.1.0, then the first version visible at phet.colorado.edu would be 1.2.0.
 
-Prototypes will follow the process for [RC/production deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches), with the following differences:
+Prototypes will follow the process for [RC/production deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches) using `grunt production`, with the following differences:
 - When the RC test issue is created:
   - Use the [prototype testing template](https://github.com/phetsims/QA/blob/master/issue-templates/prototype-test-template.md).
   - Issue title format is "Prototype test: ${{SIM}} {{VERSION}}", for example "Prototype test: Natural Selection 1.0.0-rc.1".
   - Label the issue `QA:prototype-test`.
 - Testing will not be as thorough as a production RC and will focus on "normal" usability and pedagogical accuracy. Issues found in testing that go beyond these requirements will typically be deferred.
 - A prototype will be deemed "ready for release" when the design team agrees that the feature set of the sim is acceptable, and testing has been completed.
-- Publish the prototype using `grunt production`.
 - After publishing, the developer will:
     - Revert `README.md` to unpublished by running `grunt unpublished-README`.
     - Inform the lead designer that the prototype is published. The lead designer will then 
