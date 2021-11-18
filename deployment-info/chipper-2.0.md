@@ -189,8 +189,9 @@ This would usually be followed by 1+ RC deployments and then a production deploy
 A prototype is defined as a sim version that is deemed worthy of early release to the public before it has gone through the full production process. Prototypes will typically be published for legacy sims that are not yet available in HTML5. 
 
 How prototypes differ from production versions:
-- A prototype release will typcially occur before formal code review and production-level QA testing.
+- A prototype is not necessarily feature-complete, and release will typcially occur before formal code review and production-level QA testing.
 - Known issues may be present in prototypes. These will generally be of the nature of "polish" issues, but pedagogical issues or crashing will generally be considered "showstoppers".
+- Testing will not be as thorough as a production RC and will focus on "normal" usability and pedagogical accuracy. Issues found in testing that go beyond these requirements will typically be deferred.
 - A prototype will be published at the appropriate "latest" link, but the sim's page on phet.colorado.edu **WILL NOT** be made visible.
 - The first version of a prototype will typically be 1.0, and there may be more than one minor release of a prototype. Therefore the first version visible at phet.colorado.edu will have the version schema "1.N.0", where N is >= 1. For example, if we had 2 prototypes with versions 1.0.0 and 1.1.0, then the first version visible at phet.colorado.edu would be 1.2.0.
 
@@ -199,8 +200,6 @@ Prototypes will follow the process for [RC/production deployments](https://githu
   - Use the [prototype testing template](https://github.com/phetsims/QA/blob/master/issue-templates/prototype-test-template.md).
   - Issue title format is "Prototype test: ${{SIM}} {{VERSION}}", for example "Prototype test: Natural Selection 1.0.0-rc.1".
   - Label the issue `QA:prototype-test`.
-- Testing will not be as thorough as a production RC and will focus on "normal" usability and pedagogical accuracy. Issues found in testing that go beyond these requirements will typically be deferred.
-- A prototype will be deemed "ready for release" when the design team agrees that the feature set of the sim is acceptable, and testing has been completed.
 - After publishing, the developer will:
     - Revert `README.md` to unpublished by running `grunt unpublished-README`.
     - Inform the lead designer that the prototype is published. The lead designer will then 
