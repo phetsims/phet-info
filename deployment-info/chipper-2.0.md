@@ -202,7 +202,7 @@ Prototypes will follow the process for [RC/production deployments](https://githu
   - Label the issue `QA:prototype-test`.
 - After publishing, the developer will:
     - Revert `README.md` to unpublished by running `grunt unpublished-README`.
-    - Inform the lead designer that the prototype is published. The lead designer will then 
+    - Inform the lead designer that the prototype is published.
 - After publishing, the designer will:
     - Mark the sim as a prototype on the Admin page
     - Add the sim to the [HTML5 Prototypes Google Doc](https://docs.google.com/document/d/1d9j8OGO7qPgdL2YvdMeSbztYt7hGXiAL7hAQLXnH-bU/edit)
