@@ -204,7 +204,7 @@ Prototypes will follow the process for [RC/production deployments](https://githu
     - Revert `README.md` to unpublished by running `grunt unpublished-README`.
     - Inform the lead designer that the prototype is published.
 - After publishing, the designer will:
-    - Mark the sim as a prototype on the Admin page
+    - Mark the sim as a prototype on the [Admin page](https://phet.colorado.edu/admin/main).
     - Add the sim to the [HTML5 Prototypes Google Doc](https://docs.google.com/document/d/1d9j8OGO7qPgdL2YvdMeSbztYt7hGXiAL7hAQLXnH-bU/edit)
     - Notify AP so that he can announce on social media.
 - When cost-effective, maintainence releases can be performed on a prototype release branch. When not cost-effective, a new version of a prototype may require a new release branch.
