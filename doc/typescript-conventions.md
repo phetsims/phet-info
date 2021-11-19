@@ -10,6 +10,8 @@ See Item 19 "Avoid Cluttering Your Code with Inferable Types" in Vanderkam, whic
 * Ideally your code has type annotations in function/method signatures but not on local variables in their bodies
 * Consider using explicit annotations for object literals and function return types even when they can be inferred.  This 
 will help prevent implementation errors from surfacing in user code.
+* It is PhET convention to provide return types to methods that are part of an interface and function declarations
+(arrow functions as args are up to dev discretion).
 
 TypeScript has a powerful type inference system, and we recommend to leverage that type inference in the general case.
 For example:
@@ -22,7 +24,7 @@ const x = 7;
 const x: number = 7;
 ```
 
-However, if there is a complicated or volatile (api hasn't stabilized) expression on the right hand side, it may be
+However, if there is a complicated or volatile (api hasn't stabilized) expression on the right-hand side, it may be
 valuable on rare occasions to specify the type manually:
 
 ```ts
@@ -43,7 +45,7 @@ new Property<Laser>( new Laser() );
 
 Again, in complex or volatile cases, at the developer preference, the redundant type annotations may prove useful.
 
-### Visibility Annotations
+### Access Modifiers
 
 In TypeScript, the default visibility (if unspecified) is `public`. For methods, attributes, constructors, etc which are
 intended to be public, the visibility modifier can be omitted. Or at the developer's discretion, `public` can be
@@ -72,6 +74,19 @@ We prefer to follow the TypeScript handbook and put semicolon delimiters in type
 type Cat = {
   person: Person; // note the semicolons
   age: number;
+}
+```
+
+### Initialization of Class Properties
+
+When possible, it is preferable to initialize properties where they are declared and thus avoid an explicit
+initialization statement in the constructor.
+
+```ts
+class EventCounter {
+  public numberOfEvents: number = 0;
+
+  // ...
 }
 ```
 
@@ -118,6 +133,13 @@ import { BendingLightScreenViewOptions } from '../../common/view/BendingLightScr
 ```
 If this exceeds the line limit and the WebStorm formatter wants to format it on multiple lines, please use
 `// eslint-disable-line single-line-import`
+
+
+### JSDoc and TSDoc
+
+It is recommended that you do not duplicate parameter and return type information in JSDoc and in Typescript types. If
+you have a need to explain one or more parameter, then add all parameters to the jsdoc and explain what you need. The
+same for `@returns`.
 
 ###
 
