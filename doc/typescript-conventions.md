@@ -47,8 +47,8 @@ Again, in complex or volatile cases, at the developer preference, the redundant 
 
 ### Access Modifiers
 
-In TypeScript, the default visibility (if unspecified) is `public`. For methods, attributes, constructors, etc which are
-intended to be public, the visibility modifier can be omitted. Or at the developer's discretion, `public` can be
+In TypeScript, the default visibility (if unspecified) is `public`. For methods, attributes, constructors, etc. which are
+intended to be public, the access modifier can be omitted. Or at the developer's discretion, `public` can be
 specified.
 
 ```ts
