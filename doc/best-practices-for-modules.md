@@ -11,7 +11,7 @@ This was originally discussed in https://github.com/phetsims/chipper/issues/873.
 
 * Rename on import only if you have a name collision between imports, e.g.
 ```js
-import SceneryLine from '../../../../scenery/js/nodes/Line.js';
+import { Line as SceneryLine } from '../../../../scenery/js/imports.js';
 import Line from '../model/Line.js';
 ```
 

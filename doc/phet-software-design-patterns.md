@@ -611,7 +611,7 @@ Putting it all together modules will usually follow this format:
  * @author Denzell Barnett (PhET Interactive Simulations)
  */
 
-import Node from '../../../scenery/js/nodes/Node.js';
+import { Node } from '../../../scenery/js/imports.js';
 import Vector2 from '../../../dot/js/Vector2.js';
 import fooRepo from '../fooRepo.js';
 
