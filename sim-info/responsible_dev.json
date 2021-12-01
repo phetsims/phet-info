@@ -619,8 +619,7 @@
   },
   "geometric-optics": {
     "responsibleDevs": [
-      "@veillette",
-      "@jbphet"
+      "@pixelzoom"
     ],
     "responsibleDesigners": [
       "@arouinfar"
