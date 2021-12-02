@@ -1,5 +1,7 @@
 # Alternative Input - Quickstart Guide
 
+@author Chris Malley (PixelZoom, Inc.)
+
 Follow these steps to add support for alternative input to a simulation.
 
 1. In your sim's package.json, add this to the “phet” section:
