@@ -6,9 +6,9 @@ Follow these steps to add support for alternative input to a simulation.
 
 1. In your sim's package.json, add `"supportsInteractiveDescription": true` to the `phet.supportsInteractiveDescription` section, like this:
 
-```json
+```
 {
-   ...,
+   ...
    "phet": {
       "simFeatures": {
          "supportsInteractiveDescription": true,
