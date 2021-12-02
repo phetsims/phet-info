@@ -4,12 +4,19 @@
 
 Follow these steps to add support for alternative input to a simulation.
 
-1. In your sim's package.json, add this to the “phet” section:
+1. In your sim's package.json, add `"supportsInteractiveDescription": true` to the `phet.supportsInteractiveDescription` section, like this:
 
 ```json
-"simFeatures": {
-  "supportsInteractiveDescription": true
-},
+{
+   ...,
+   "phet": {
+      "simFeatures": {
+         "supportsInteractiveDescription": true,
+         ...
+      }
+   },
+   ...
+}
 ```
 
 2. In your sim's repository, run `grunt update`. This will generate `{{REPO}}_a11y_view.html` and modify `{{REPO}}_en.html`.
