@@ -6,7 +6,7 @@ Follow these steps to add support for UI sound to a simulation.
 
 1. In your sim's package.json, add `"supportsSound": true` this to the “phet.simFeatures” section, like this:
 
-```json
+```
 {
    ...
    "phet": {
