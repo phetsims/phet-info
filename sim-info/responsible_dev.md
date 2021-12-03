@@ -88,7 +88,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | gas-properties | @pixelzoom | @arouinfar | 
 | gases-intro | @pixelzoom | @arouinfar | 
 | gene-expression-essentials | @jbphet | @arouinfar | 
-| geometric-optics | @veillette,@jbphet | @arouinfar | 
+| geometric-optics | @pixelzoom | @arouinfar | 
 | graphing-lines | @pixelzoom | @amanda-phet | 
 | graphing-quadratics | @pixelzoom | @amanda-phet | 
 | graphing-slope-intercept | @pixelzoom | @amanda-phet | 
