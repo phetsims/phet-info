@@ -6,9 +6,7 @@ PhET Interactive Simulations creates free, open source educational simulations i
 
 **[Overview](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#overview)**
 
-**[Getting Started (for Windows)](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#getting-started-for-windows)**
-
-**[Getting Started (for macOS)](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#getting-started-for-macos)**
+**[Getting Started](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#getting-started)**
 
 **[Creating a New Sim](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#creating-a-new-sim)**
 
