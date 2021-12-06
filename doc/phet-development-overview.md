@@ -10,17 +10,17 @@ PhET Interactive Simulations creates free, open source educational simulations i
 
 **[Creating a New Sim](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#creating-a-new-sim)**
 
-**[Building and Testing (Windows and macOS)](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#building-and-testing-windows-and-macos)**
+**[Building and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#building-and-testing)**
 
-**[Source code and dependencies](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#source-code-and-dependencies)**
+**[Source Code and Dependencies](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#source-code-and-dependencies)**
 
-**[Checking out the HTML5 code from GitHub](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#checking-out-the-html5-code-from-github)**
+**[Checking out the HTML5 Code from GitHub](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#checking-out-the-html5-code-from-github)**
 
-**[Master is Unstable: Accessing Rigorously Tested Code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#master-is-unstable-accessing-rigorously-tested-code)**
+**[Master is Unstable: Accessing Rigorously-Tested Code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#master-is-unstable-accessing-rigorously-tested-code)**
 
-**[Original Java/Flash source code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#original-javaflash-source-code)**
+**[Original Java/Flash Source Code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#original-javaflash-source-code)**
 
-**[3rd Party Dependencies](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#3rd-party-dependencies)**
+**[3rd-Party Dependencies](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#3rd-party-dependencies)**
 
 **[Licensing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#licensing)**
 
@@ -46,17 +46,17 @@ PhET Interactive Simulations creates free, open source educational simulations i
 
 **[Working with GitHub Issues](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#working-with-github-issues)**
 
-**[Embedding a Simulation in your website](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#embedding-a-simulation-in-your-website)**
+**[Embedding a Simulation in Your Website](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#embedding-a-simulation-in-your-website)**
 
 ## Getting Started
 
 ### Prerequisites
-* You will need to be able to use the command line.  This is called Terminal on Mac and Command Prompt on Windows.
+* You will need to be able to use the command line.  This is called Terminal on macOS and Command Prompt on Windows.
 * `git` is necessary to check out PhET code from GitHub.  You can download and install git from http://git-scm.com/downloads.
 On macOS, the preferred way of getting git is by installing Xcode command-line tools. The instructions for that are at 
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git.
 * `node` and `npm` are necessary to install dependencies and run build code processes. Download & install node+npm from https://nodejs.org/en/
-  * After installing, Run `npm config set save false` so that package-lock.json files are not created. 
+  * After installing, run `npm config set save false` so that package-lock.json files are not created. 
 * Create a directory where you intend to check out the PhET source code: `mkdir phetsims`
 * For building the simulations, install the grunt command line utility: `npm install -g grunt-cli` (May require `sudo` if you don't have sufficient permissions).
 * An HTTP Server is necessary to launch the simulations during development (though not necessary for built simulations). Some systems already have Apache,
@@ -96,7 +96,7 @@ git clone https://github.com/phetsims/twixt.git
 git clone https://github.com/phetsims/utterance-queue.git
 ```
 
-When running the first git clone command, Mac may show a dialog that says: The “git” command requires the command line developer tools.  Would you like to install the tools now?  In this case, press “Install”.
+When running the first `git clone` command, macOS may show a dialog that says: The “git” command requires the command line developer tools.  Would you like to install the tools now?  In this case, press “Install”.
 
 ### Transpile TypeScript
 * Change directory to the build tools: `cd chipper/`
@@ -139,7 +139,7 @@ For instance, if the simulation is going to be named Acceleration Lab and the au
 `grunt create-sim --repo=acceleration-lab --author="Jane Doe"`
 6. Test the created simulation in the browser and make sure it launches.  It should be a blank simulation.  Write to the Developing Interactive Simulations in HTML5 Google Group if you run into problems.
 
-## Building and Testing (Windows and macOS)
+## Building and Testing
 
 ### Building the Simulation with chipper
 
@@ -166,7 +166,7 @@ http://localhost:8080/example-sim/build/phet/example-sim_en_phet.html
 * Committing
 * Submitting a pull request
 
-## Source code and Dependencies
+## Source Code and Dependencies
 
 Our simulations and dependencies are hosted publicly on GitHub: https://github.com/phetsims
 
@@ -203,9 +203,9 @@ The tables below depict the most significant common code libraries used by PhET 
 | [chipper](https://github.com/phetsims/chipper/)  | 10,000  | Tools for developing and building simulations.  Uses code in [perennial-alias](https://github.com/phetsims/perennial-alias/) for some tasks.
 | [perennial](https://github.com/phetsims/perennial/)  | 11,000  | Maintenance tools that won't change with different versions of chipper checked out (always runs in master).
 | [perennial-alias](https://github.com/phetsims/perennial-alias/)  | 11,000  | Copy of perennial that can run on non-master SHAs.
-| [sherpa](https://github.com/phetsims/sherpa/)  | -  | All of our 3rd party dependencies.  Some such as font-awesome or lodash are used in every simulation and some such as numeric or three.js are sim-specific.
+| [sherpa](https://github.com/phetsims/sherpa/)  | -  | All of our 3rd-party dependencies.  Some such as font-awesome or lodash are used in every simulation and some such as numeric or three.js are sim-specific.
 
-## Checking out the HTML5 code from GitHub
+## Checking out the HTML5 Code from GitHub
 
 Our example-sim repository README.md includes a list of git clone commands that will check out the example simulation and all of its dependencies: https://github.com/phetsims/example-sim
 
@@ -219,7 +219,7 @@ Here is a full list of all phetsims repositories.  If the sim won’t launch due
 
 Also note that this will check out the ‘master’ branch of all of our dependencies, which may create breaking changes intermittently if you remain up-to-date with them. If you run into any breaking changes, please notify us immediately. Also, we recommend developing your code on a public repo such as GitHub to enable us to test and update your simulations as common dependencies are changed.
 
-## Master is Unstable: Accessing Rigorously Tested Code
+## Master is Unstable: Accessing Rigorously-Tested Code
 
 The master branch of the PhET simulation and library repositories is constantly under development and not guaranteed to be stable. It is our intent that the master branch of simulations + libraries will build and run properly, but sometimes the code goes through intermediate states where errors can be introduced. On the other hand, our published simulations have been rigorously tested across 18+ platforms and are the most stable option. If you are adapting a PhET simulation, or would like to access simulation code that corresponds directly to one of our published versions, then you will need to check out specific SHA revisions in all of the appropriate repositories. Checking out these fixed, tested revisions is also important when working on a release-candidate branch of a simulation. Here are the instructions:
 
@@ -233,7 +233,7 @@ The master branch of the PhET simulation and library repositories is constantly 
 
 Now you can use the published source code. To restore each branch to master, you can run `grunt checkout-master`.
 
-### Exceptions and caveats:
+### Exceptions and Caveats:
 
 1. Running `grunt checkout-shas` gives errors when the working copy is not committed.  These grunt commands are currently only supported for clean git repos.  Stashing may be a way around this problem.  Also, if you want to use dependencies from a different version than in the SHAs, that will have to be done as an additional manual step.
 2. When working in a branch, `grunt checkout-master` will check out the master branch and additional manual steps will be required to get back to the desired branch(es). For instance, this is an issue when working with the “adapted-from-phet” branch of brand.
@@ -245,9 +245,9 @@ Follow the directions at this link to get the source code for original Java and 
 After checking it out (could take 30+ minutes), the source code for the simulations are located in (for example):
 svn-checkout/trunk/simulations-java/simulations/forces-and-motion-basics
 
-## 3rd Party Dependencies
+## 3rd-Party Dependencies
 
-PhET Simulations use around 3 open source 3rd party dependencies for the deployed source code, and more for the build phase.  They are all included with the source code checkouts in the sherpa repository.  The libraries and licenses are described in this 3rd party dependency licensing document
+PhET Simulations use around 3 open source 3rd-party dependencies for the deployed source code, and more for the build phase.  They are all included with the source code checkouts in the sherpa repository.  The libraries and licenses are described in this 3rd-party dependency licensing document.
 
 ## Licensing
 
@@ -391,7 +391,7 @@ https://github.com/phetsims/color-vision/issues/15
 https://github.com/phetsims/fraction-matcher/issues/56
 https://github.com/phetsims/color-vision/issues/37
 
-## Embedding a Simulation in your website
+## Embedding a Simulation in Your Website
 
 To embed a simulation in your website, use an iframe like so:
 
