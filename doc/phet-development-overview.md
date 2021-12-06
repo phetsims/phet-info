@@ -10,7 +10,7 @@ PhET Interactive Simulations creates free, open source educational simulations i
 
 **[Creating a New Sim](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#creating-a-new-sim)**
 
-**[Building and Testing (Windows and macOS)](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#building-and-testing-windows-and-macos)**
+**[Building and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#building-and-testing)**
 
 **[Source code and dependencies](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#source-code-and-dependencies)**
 
@@ -139,7 +139,7 @@ For instance, if the simulation is going to be named Acceleration Lab and the au
 `grunt create-sim --repo=acceleration-lab --author="Jane Doe"`
 6. Test the created simulation in the browser and make sure it launches.  It should be a blank simulation.  Write to the Developing Interactive Simulations in HTML5 Google Group if you run into problems.
 
-## Building and Testing (Windows and macOS)
+## Building and Testing
 
 ### Building the Simulation with chipper
 
