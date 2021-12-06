@@ -12,13 +12,13 @@ PhET Interactive Simulations creates free, open source educational simulations i
 
 **[Building and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#building-and-testing)**
 
-**[Source code and dependencies](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#source-code-and-dependencies)**
+**[Source Code and Dependencies](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#source-code-and-dependencies)**
 
-**[Checking out the HTML5 code from GitHub](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#checking-out-the-html5-code-from-github)**
+**[Checking out the HTML5 Code from GitHub](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#checking-out-the-html5-code-from-github)**
 
 **[Master is Unstable: Accessing Rigorously-Tested Code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#master-is-unstable-accessing-rigorously-tested-code)**
 
-**[Original Java/Flash source code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#original-javaflash-source-code)**
+**[Original Java/Flash Source Code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#original-javaflash-source-code)**
 
 **[3rd-Party Dependencies](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#3rd-party-dependencies)**
 
@@ -46,7 +46,7 @@ PhET Interactive Simulations creates free, open source educational simulations i
 
 **[Working with GitHub Issues](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#working-with-github-issues)**
 
-**[Embedding a Simulation in your website](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#embedding-a-simulation-in-your-website)**
+**[Embedding a Simulation in Your Website](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#embedding-a-simulation-in-your-website)**
 
 ## Getting Started
 
