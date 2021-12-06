@@ -56,7 +56,7 @@ PhET Interactive Simulations creates free, open source educational simulations i
 On macOS, the preferred way of getting git is by installing Xcode command-line tools. The instructions for that are at 
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git.
 * `node` and `npm` are necessary to install dependencies and run build code processes. Download & install node+npm from https://nodejs.org/en/
-  * After installing, Run `npm config set save false` so that package-lock.json files are not created. 
+  * After installing, run `npm config set save false` so that package-lock.json files are not created. 
 * Create a directory where you intend to check out the PhET source code: `mkdir phetsims`
 * For building the simulations, install the grunt command line utility: `npm install -g grunt-cli` (May require `sudo` if you don't have sufficient permissions).
 * An HTTP Server is necessary to launch the simulations during development (though not necessary for built simulations). Some systems already have Apache,
