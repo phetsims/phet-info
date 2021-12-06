@@ -50,98 +50,27 @@ PhET Interactive Simulations creates free, open source educational simulations i
 
 **[Embedding a Simulation in your website](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#embedding-a-simulation-in-your-website)**
 
-## Getting Started (for Windows)
+## Getting Started
 
-In order to get the code for an existing PhET simulation, you will need to follow several steps (also shown in the Developing with PhET: Getting Started (on Windows) screencast):
+### Prerequisites
+* You will need to be able to use the command line.  This is called Terminal on Mac and Command Prompt on Windows.
+* `git` is necessary to check out PhET code from GitHub.  You can download and install git from http://git-scm.com/downloads.
+On macOS, the preferred way of getting git is by installing Xcode command-line tools. The instructions for that are at 
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git.
+* `node` and `npm` are necessary to install dependencies and run build code processes. Download & install node+npm from https://nodejs.org/en/
+  * After installing, Run `npm config set save false` so that package-lock.json files are not created. 
+* Create a directory where you intend to check out the PhET source code: `mkdir phetsims`
+* For building the simulations, install the grunt command line utility: `npm install -g grunt-cli` (May require `sudo` if you don't have sufficient permissions).
+* An HTTP Server is necessary to launch the simulations during development (though not necessary for built simulations). Some systems already have Apache,
+or you can install something like `npm install http-server -g`. (May require `sudo` if you don't have sufficient permissions). 
+* Serve files from the `phetsims/` directory.  For `http-server` this can be done like so:
+  * Change into the phetsims directory `cd phetsims/`
+  * Run the http server program (with caching turned off to help with iteration) `http-server -c-1`
 
-### Checking out the code and running it in development mode
+### Checking out the code
 
-1. Download and install Git from http://git-scm.com/downloads
-
-(a) Choose the option to create a desktop icon for “git bash”, if it is not already selected.
-2. Use Git to check out the code for PhET Libraries and Simulations
-
-(a) Open Git Bash (from the link on your desktop or through the Start menu)
-
-(b) Create a directory for your development:
-`mkdir phetsims`
-
-(c) Change directory to phetsims:
-`cd phetsims`
-
-(d) Run these git clone commands:
-
-```
-git clone https://github.com/phetsims/example-sim.git
-git clone https://github.com/phetsims/assert.git
-git clone https://github.com/phetsims/axon.git
-git clone https://github.com/phetsims/babel.git
-git clone https://github.com/phetsims/brand.git
-git clone https://github.com/phetsims/chipper.git
-git clone https://github.com/phetsims/dot.git
-git clone https://github.com/phetsims/joist.git
-git clone https://github.com/phetsims/kite.git
-git clone https://github.com/phetsims/perennial.git
-git clone https://github.com/phetsims/perennial.git perennial-alias
-git clone https://github.com/phetsims/phet-core.git
-git clone https://github.com/phetsims/phetcommon.git
-git clone https://github.com/phetsims/phetmarks.git
-git clone https://github.com/phetsims/query-string-machine.git
-git clone https://github.com/phetsims/scenery.git
-git clone https://github.com/phetsims/scenery-phet.git
-git clone https://github.com/phetsims/sherpa.git
-git clone https://github.com/phetsims/sun.git
-git clone https://github.com/phetsims/tambo.git
-git clone https://github.com/phetsims/tandem.git
-git clone https://github.com/phetsims/utterance-queue.git
-```
-
-3. Download & install node+npm from https://nodejs.org/en/
-4. Launch a node server program on your development machine
-
-(a) Install the http-server as a command line program. Use a different command prompt than the one above since the one above will not have the new path for npm
-`npm install http-server -g`
-
-(b) Change into the phetsims directory (if you were not already there).
-`cd phetsims/`
-
-(c) Run the http server program (with caching turned off to help with iteration)
-`http-server -c-1`
-
-5. Open a browser to the path for one of the simulations: http://localhost:8080/example-sim/example-sim_en.html
-6. For building the simulations, install the grunt command line utility (may require sudo):
-`npm install -g grunt-cli`
-7. Run `npm config set save false` so that package-lock.json files are not created.
-
-Now you can test modifying the simulation code and see the changes by refreshing the browser.
-You can also use this to test on remote devices after looking up your ip address. If developing on Chrome, note that
-it can be helpful to set "Disable cache (while DevTools is open)" (see the devtools settings).
-Questions should be directed to the Developing Interactive Simulations in HTML5 Google Group.
-
-## Getting Started (for macOS)
-
-In order to get the code for an existing PhET simulation, you will need to follow these steps:
-
-### Checking out the code and running it in development mode
-
-1. Download and install Git from http://git-scm.com/downloads
-  a. You may need to allow the system to run apps downloaded from anywhere
-i. Open the Apple menu
-ii. System preferences
-iii. Security & Privacy
-iv. Click the lock to make changes
-v. Allow apps downloaded from “anywhere”
-vi. After you have installed git, you can restore the prior security settings
-2. Use Git to check out the code for PhET Libraries and Simulations
-  a. Open the “Terminal” application
-i. Click the search icon (magnifying glass) in the top right of the desktop
-ii. Type “Terminal”
-iii. Click on the terminal icon
-  a. Create a directory for your development:
-`mkdir phetsims`
-  b. Change directory to phetsims:
-`cd phetsims`
-  d. Run these git clone commands:
+* Change directory to phetsims: `cd phetsims`
+* Run these git clone commands:
 
 ```
 git clone https://github.com/phetsims/example-sim.git
@@ -165,33 +94,30 @@ git clone https://github.com/phetsims/sherpa.git
 git clone https://github.com/phetsims/sun.git
 git clone https://github.com/phetsims/tambo.git
 git clone https://github.com/phetsims/tandem.git
+git clone https://github.com/phetsims/twixt.git
 git clone https://github.com/phetsims/utterance-queue.git
 ```
 
-When running the first git clone command, it may show a dialog that says: The “git” command requires the command line developer tools.  Would you like to install the tools now?  In this case, press “Install”.
+When running the first git clone command, Mac may show a dialog that says: The “git” command requires the command line developer tools.  Would you like to install the tools now?  In this case, press “Install”.
 
-3. Download & install node+npm from http://nodejs.org/en
-4. Launch a node server program on your development machine
-  a. Install the http-server as a command line program using the Terminal
-`npm install http-server -g`
-If that yields an error like “Please try running this command again as root/Administrator.” then run using the sudo command like so:
-`sudo npm install http-server -g`
-  b. Change into the phetsims directory (if you were not already there).
-`cd phetsims/`
-  c. Run the http server program  (with caching turned off to help with iteration)
-`http-server -c-1`
-5. Open a browser to the path for one of the simulations: http://localhost:8080/example-sim/build/phet/example-sim_en_phet.html
-6. For building the simulations, install the grunt command line utility (may require sudo):
-`npm install -g grunt-cli`
-Now you can test modifying the simulation code and see the changes by refreshing the browser http://localhost:8080/example-sim/example-sim_en.html.
-You can also use this to test on remote devices after looking up your ip address.
-Questions should be directed to the Developing Interactive Simulations in HTML5 Google Group.
-7. Run `npm config set save false` so that package-lock.json files are not created.
+### Transpile TypeScript
+* Change directory to the build tools: `cd chipper/`
+* Run the TypeScript transpiler: `node js/scripts/transpile.js --watch` which starts a process that will auto-transpile when files change.
+* For more details about TypeScript, please see [PhET's TypeScript Quick Start Guide](https://github.com/phetsims/phet-info/blob/master/doc/typescript-quick-start.md)
 
+### View in the Browser
+* Open a browser to the path for one of the simulations: http://localhost:8080/example-sim/example-sim_en.html?brand=adapted-from-phet (port or path may depend on your HTTP server configuration)
 Now you can test modifying the simulation code and see the changes by refreshing the browser.
-You can also use this to test on remote devices after looking up your ip address. If developing on Chrome, note that
-it can be helpful to set "Disable cache (while DevTools is open)" (see the devtools settings).
-Questions should be directed to the Devloping Interactive Simulations in HTML5 Google Group.
+* You can also use this to test on remote devices after looking up your ip address. If developing on Chrome, note that
+  it can be helpful to set "Disable cache (while DevTools is open)" (see the devtools settings).
+
+### Build Standalone Simulations
+* Change to the directory of the simulation you are working on, such as `cd example-sim/`
+* Run `grunt --brands=adapted-from-phet`
+* Open a browser to the path for one of the simulations: http://localhost:8080/example-sim/build/adapted-from-phet/example-sim_en_adapted-from-phet.html (port or path may depend on your HTTP server configuration)
+
+### Questions
+* Questions should be directed to the Developing Interactive Simulations in HTML5 Google Group: https://groups.google.com/g/developing-interactive-simulations-in-html5 
 
 ## Creating a New Sim
 
