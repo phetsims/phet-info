@@ -51,7 +51,7 @@ PhET Interactive Simulations creates free, open source educational simulations i
 ## Getting Started
 
 ### Prerequisites
-* You will need to be able to use the command line.  This is called Terminal on Mac and Command Prompt on Windows.
+* You will need to be able to use the command line.  This is called Terminal on macOS and Command Prompt on Windows.
 * `git` is necessary to check out PhET code from GitHub.  You can download and install git from http://git-scm.com/downloads.
 On macOS, the preferred way of getting git is by installing Xcode command-line tools. The instructions for that are at 
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git.
@@ -96,7 +96,7 @@ git clone https://github.com/phetsims/twixt.git
 git clone https://github.com/phetsims/utterance-queue.git
 ```
 
-When running the first git clone command, Mac may show a dialog that says: The “git” command requires the command line developer tools.  Would you like to install the tools now?  In this case, press “Install”.
+When running the first `git clone` command, macOS may show a dialog that says: The “git” command requires the command line developer tools.  Would you like to install the tools now?  In this case, press “Install”.
 
 ### Transpile TypeScript
 * Change directory to the build tools: `cd chipper/`
