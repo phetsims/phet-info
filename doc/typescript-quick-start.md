@@ -16,7 +16,7 @@ known problems, etc.
 4. Mark chipper/dist/ as excluded from your IDE.  You can create that directory eagerly now, or wait until chipper/dist/ is created by a compilation step below. Compiled code will be written to chipper/dist/.
 5. Update your IDE to use the code style file from `phet-info/ide/idea/phet-idea-codestyle.xml`. You may need to re-import the xml file so that your IDE picks up any changes related to TypeScript. Your IDE may not stay in sync with what is checked into phet-info.  
 6. Turn on TypeScript support in WebStorm: Preferences > Languages & Frameworks > TypeScript.  Make sure you are using your 
-system's absolute path for `chipper/node_modules/typescript`, turn on "TypeScript language service" and turn on "Recompile on Changes". Turn off "Recompile on changes".
+system's absolute path for `chipper/node_modules/typescript`, turn on "TypeScript language service" and "Show project errors". Turn off "Recompile on changes".
 7. Sublime also has an officially-supported plugin.
 
 ### Converting a Repo to TypeScript
