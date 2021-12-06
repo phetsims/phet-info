@@ -9,7 +9,7 @@ known problems, etc.
    let's give it a fair trial and see how much value it can provide.
 * Please be aware of caveats listed below, as well as open issues in https://github.com/phetsims/chipper/issues?q=is%3Aissue+is%3Aopen+label%3Achipper%3Atypescript
 
-### Getting started
+### Getting Started
 1. Clone missing repos by running `perennial/bin/clone-missing-repos.sh`.  This ensures that you have everything.
 2. Pull all repos by running `perennial/bin/pull-all.sh`.  This ensures that you have the latest version of everything.
 3. `npm install` in chipper. This ensures that you have the TypeScript compiler, which is called `tsc`
