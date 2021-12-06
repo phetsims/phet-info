@@ -14,9 +14,10 @@ known problems, etc.
 2. Pull all repos by running `perennial/bin/pull-all.sh`.  This ensures that you have the latest version of everything.
 3. `npm install` in chipper. This ensures that you have the TypeScript compiler, which is called `tsc`
 4. Mark chipper/dist/ as excluded from your IDE.  You can create that directory eagerly now, or wait until chipper/dist/ is created by a compilation step below. Compiled code will be written to chipper/dist/.
-5. Update your IDE to use the code style file from `phet-info/ide/idea/phet-idea-codestyle.xml`. You may need to re-import the xml file so that your IDE picks up any changes related to TypeScript. Your IDE may not stay in sync with what is checked into phet-info.   
-6. Turn on TypeScript support in WebStorm: Preferences > Languages & Frameworks > TypeScript.
-Sublime also has an officially-supported plugin.
+5. Update your IDE to use the code style file from `phet-info/ide/idea/phet-idea-codestyle.xml`. You may need to re-import the xml file so that your IDE picks up any changes related to TypeScript. Your IDE may not stay in sync with what is checked into phet-info.  
+6. Turn on TypeScript support in WebStorm: Preferences > Languages & Frameworks > TypeScript.  Make sure you are using your 
+system's absolute path for `chipper/node_modules/typescript`, turn on "TypeScript language service" and turn on "Recompile on Changes". Turn off "Recompile on changes".
+7. Sublime also has an officially-supported plugin.
 
 ### Converting a Repo to TypeScript
 1. Add the following type declarations to the `"include"` array in tsconfig.json (see https://github.com/phetsims/chipper/issues/1121)
@@ -28,23 +29,16 @@ Sublime also has an officially-supported plugin.
 
 Congratulations!  Now the repo is TypeScript-capable.  You can commit these changes if you wish.
 
-### Experiment with your new TypeScript repo
-1. Compile the source and its dependencies via `grunt output-js-project`.  This compiles the sim and its dependencies to chipper/dist/.
-It uses "Project References" (`tsc --build`) to trace the dependencies.
-The compiler is also configured for incremental compilation.  This means subsequent compiles will be much faster than the first compile.
-2. Open the sim in the browser via phetmarks.
-3. Rename one of the files to *.ts and add code like `const x:number=7; console.log(x);` .
-4. Compile via `grunt output-js-project` and run it in the browser.  Did it print `7`?
-5. Try creating a type error like `const x:string=7` and see what happens.
-
 ### Transpile TypeScript
 * Change directory to the build tools: `cd chipper/`
 * Run the TypeScript transpiler: `node js/scripts/transpile.js --watch` which starts a process that will auto-transpile when files change.
 * If you prefer to experiment with using WebStorm/IDEA File Watchers, please see https://github.com/phetsims/phet-info/blob/master/doc/typescript-webstorm-file-watcher.md
 
-### Process Changes
-1. TypeScript sims need to be compiled using `grunt output-js-project` before generating their PhET-iO API using `grunt generate-phet-io-api`.
-2. New sims need to be tracked in `chipper/tsconfig/all/tsconfig.json`.
+### Experiment with your new TypeScript repo
+1. Open the sim in the browser via phetmarks.
+2. Rename one of the files to *.ts and add code like `const x:number=7; console.log(x);` .
+3. Transpile following the instructions above and run it in the browser.  Did it print `7`?
+4. Try creating a type error like `const x:string=7` and see what happens.
 
 ### Porting from JavaScript
 1. I have found it efficient to convert a single file (or a small batch of related files) at a time.  Rename the file
@@ -65,17 +59,10 @@ find . -name "*.js" ! -iname "*phet-io-overrides.js"  -exec bash -c 'mv "$1" "${
 
 ### Caveats and Notes
 1. For now, please leave the phet-io-overrides.js file, strings file and namespace file as *.js.  The build tools are not set to do those in TypeScript yet.
-2. Please do not convert common code to TypeScript until that phase is approved by the team.  Some common code repos have a "typescript" branch
-for investigation in the meantime.
-3. phettest and CT provide TypeScript support, but do not yet have a good user experience for showing TypeErrors etc.
+2. phettest and CT provide TypeScript support, but do not yet have a good user experience for showing TypeErrors etc.
 And it is not well-vetted.
-4. Please make sure you are using the commit hooks, which are configured to run type checks on typescript repos.
-5. Ambient type definitions are provided in chipper/phet-types.d.ts
-6. Transitive dependencies are not always tracked correctly in the build system.  This bug has been reported to TypeScript. Details in https://github.com/phetsims/chipper/issues/1067
-7. Some common code repos include code outside their directory.  This problem is described in https://github.com/phetsims/chipper/issues/1096
-8. Gravity and Orbits, Bending Light, and Circuit Construction Kit Common have been written in TypeScript, and are all
-at approximately equal levels, and can be used for reference. For instance, see how these sims have a d.ts file for strings.
-However, please do not use any reference of code marked with
-`@ts-ignore` or `any`.  Those markers mean (a) I wasn't sure what to do, (b) common code is not ready to support it yet or (c) I haven't
-taken the time to properly type it yet.  I also recommend avoiding `!` non-null coercion if you can help it.
-9. Conventions and patterns listed in https://github.com/phetsims/phet-info/blob/master/doc/typescript-conventions.md
+3. Please make sure you are using the commit hooks, which are configured to run type checks on typescript repos.
+4. Ambient type definitions are provided in chipper/phet-types.d.ts
+5. Transitive dependencies are not always tracked correctly in the build system.  This bug has been reported to TypeScript. Details in https://github.com/phetsims/chipper/issues/1067
+6. Some common code repos include code outside their directory.  This problem is described in https://github.com/phetsims/chipper/issues/1096
+7. Conventions and patterns listed in https://github.com/phetsims/phet-info/blob/master/doc/typescript-conventions.md
