@@ -20,7 +20,7 @@ PhET Interactive Simulations creates free, open source educational simulations i
 
 **[Original Java/Flash source code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#original-javaflash-source-code)**
 
-**[3rd Party Dependencies](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#3rd-party-dependencies)**
+**[3rd-Party Dependencies](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#3rd-party-dependencies)**
 
 **[Licensing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#licensing)**
 
@@ -203,7 +203,7 @@ The tables below depict the most significant common code libraries used by PhET 
 | [chipper](https://github.com/phetsims/chipper/)  | 10,000  | Tools for developing and building simulations.  Uses code in [perennial-alias](https://github.com/phetsims/perennial-alias/) for some tasks.
 | [perennial](https://github.com/phetsims/perennial/)  | 11,000  | Maintenance tools that won't change with different versions of chipper checked out (always runs in master).
 | [perennial-alias](https://github.com/phetsims/perennial-alias/)  | 11,000  | Copy of perennial that can run on non-master SHAs.
-| [sherpa](https://github.com/phetsims/sherpa/)  | -  | All of our 3rd party dependencies.  Some such as font-awesome or lodash are used in every simulation and some such as numeric or three.js are sim-specific.
+| [sherpa](https://github.com/phetsims/sherpa/)  | -  | All of our 3rd-party dependencies.  Some such as font-awesome or lodash are used in every simulation and some such as numeric or three.js are sim-specific.
 
 ## Checking out the HTML5 code from GitHub
 
@@ -245,9 +245,9 @@ Follow the directions at this link to get the source code for original Java and 
 After checking it out (could take 30+ minutes), the source code for the simulations are located in (for example):
 svn-checkout/trunk/simulations-java/simulations/forces-and-motion-basics
 
-## 3rd Party Dependencies
+## 3rd-Party Dependencies
 
-PhET Simulations use around 3 open source 3rd party dependencies for the deployed source code, and more for the build phase.  They are all included with the source code checkouts in the sherpa repository.  The libraries and licenses are described in this 3rd party dependency licensing document
+PhET Simulations use around 3 open source 3rd-party dependencies for the deployed source code, and more for the build phase.  They are all included with the source code checkouts in the sherpa repository.  The libraries and licenses are described in this 3rd-party dependency licensing document.
 
 ## Licensing
 
