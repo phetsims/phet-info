@@ -16,7 +16,7 @@ PhET Interactive Simulations creates free, open source educational simulations i
 
 **[Checking out the HTML5 code from GitHub](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#checking-out-the-html5-code-from-github)**
 
-**[Master is Unstable: Accessing Rigorously Tested Code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#master-is-unstable-accessing-rigorously-tested-code)**
+**[Master is Unstable: Accessing Rigorously-Tested Code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#master-is-unstable-accessing-rigorously-tested-code)**
 
 **[Original Java/Flash source code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#original-javaflash-source-code)**
 
@@ -219,7 +219,7 @@ Here is a full list of all phetsims repositories.  If the sim won’t launch due
 
 Also note that this will check out the ‘master’ branch of all of our dependencies, which may create breaking changes intermittently if you remain up-to-date with them. If you run into any breaking changes, please notify us immediately. Also, we recommend developing your code on a public repo such as GitHub to enable us to test and update your simulations as common dependencies are changed.
 
-## Master is Unstable: Accessing Rigorously Tested Code
+## Master is Unstable: Accessing Rigorously-Tested Code
 
 The master branch of the PhET simulation and library repositories is constantly under development and not guaranteed to be stable. It is our intent that the master branch of simulations + libraries will build and run properly, but sometimes the code goes through intermediate states where errors can be introduced. On the other hand, our published simulations have been rigorously tested across 18+ platforms and are the most stable option. If you are adapting a PhET simulation, or would like to access simulation code that corresponds directly to one of our published versions, then you will need to check out specific SHA revisions in all of the appropriate repositories. Checking out these fixed, tested revisions is also important when working on a release-candidate branch of a simulation. Here are the instructions:
 
