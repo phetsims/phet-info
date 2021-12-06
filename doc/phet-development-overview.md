@@ -66,37 +66,24 @@ or you can install something like `npm install http-server -g`. (May require `su
   * Run the http server program (with caching turned off to help with iteration) `http-server -c-1`
 
 ### Checking out the code
-
 * Change directory to phetsims: `cd phetsims`
-* Run these git clone commands:
-
-```
-git clone https://github.com/phetsims/example-sim.git
-git clone https://github.com/phetsims/assert.git
-git clone https://github.com/phetsims/axon.git
-git clone https://github.com/phetsims/babel.git
-git clone https://github.com/phetsims/brand.git
-git clone https://github.com/phetsims/chipper.git
-git clone https://github.com/phetsims/dot.git
-git clone https://github.com/phetsims/joist.git
-git clone https://github.com/phetsims/kite.git
-git clone https://github.com/phetsims/perennial.git
-git clone https://github.com/phetsims/perennial.git perennial-alias
-git clone https://github.com/phetsims/phet-core.git
-git clone https://github.com/phetsims/phetcommon.git
-git clone https://github.com/phetsims/phetmarks.git
-git clone https://github.com/phetsims/query-string-machine.git
-git clone https://github.com/phetsims/scenery.git
-git clone https://github.com/phetsims/scenery-phet.git
-git clone https://github.com/phetsims/sherpa.git
-git clone https://github.com/phetsims/sun.git
-git clone https://github.com/phetsims/tambo.git
-git clone https://github.com/phetsims/tandem.git
-git clone https://github.com/phetsims/twixt.git
-git clone https://github.com/phetsims/utterance-queue.git
-```
+* Run the `git clone` commands listed in a simulation README.md file, such as https://github.com/phetsims/example-sim/blob/master/README.md
 
 When running the first `git clone` command, macOS may show a dialog that says: The “git” command requires the command line developer tools.  Would you like to install the tools now?  In this case, press “Install”.
+
+### Installing Dev Dependencies
+Install dev dependencies via `npm install` in the following directories:
+
+```
+cd chipper
+npm install
+cd ../perennial
+npm install
+cd ../perennial-alias
+npm install
+cd ../${directory of the sim you are working on}
+npm install
+```
 
 ### Transpile TypeScript
 * Change directory to the build tools: `cd chipper/`
