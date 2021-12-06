@@ -166,7 +166,7 @@ http://localhost:8080/example-sim/build/phet/example-sim_en_phet.html
 * Committing
 * Submitting a pull request
 
-## Source code and Dependencies
+## Source Code and Dependencies
 
 Our simulations and dependencies are hosted publicly on GitHub: https://github.com/phetsims
 
@@ -205,7 +205,7 @@ The tables below depict the most significant common code libraries used by PhET 
 | [perennial-alias](https://github.com/phetsims/perennial-alias/)  | 11,000  | Copy of perennial that can run on non-master SHAs.
 | [sherpa](https://github.com/phetsims/sherpa/)  | -  | All of our 3rd-party dependencies.  Some such as font-awesome or lodash are used in every simulation and some such as numeric or three.js are sim-specific.
 
-## Checking out the HTML5 code from GitHub
+## Checking out the HTML5 Code from GitHub
 
 Our example-sim repository README.md includes a list of git clone commands that will check out the example simulation and all of its dependencies: https://github.com/phetsims/example-sim
 
@@ -233,7 +233,7 @@ The master branch of the PhET simulation and library repositories is constantly 
 
 Now you can use the published source code. To restore each branch to master, you can run `grunt checkout-master`.
 
-### Exceptions and caveats:
+### Exceptions and Caveats:
 
 1. Running `grunt checkout-shas` gives errors when the working copy is not committed.  These grunt commands are currently only supported for clean git repos.  Stashing may be a way around this problem.  Also, if you want to use dependencies from a different version than in the SHAs, that will have to be done as an additional manual step.
 2. When working in a branch, `grunt checkout-master` will check out the master branch and additional manual steps will be required to get back to the desired branch(es). For instance, this is an issue when working with the “adapted-from-phet” branch of brand.
@@ -391,7 +391,7 @@ https://github.com/phetsims/color-vision/issues/15
 https://github.com/phetsims/fraction-matcher/issues/56
 https://github.com/phetsims/color-vision/issues/37
 
-## Embedding a Simulation in your website
+## Embedding a Simulation in Your Website
 
 To embed a simulation in your website, use an iframe like so:
 
