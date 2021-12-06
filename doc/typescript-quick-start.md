@@ -37,14 +37,10 @@ The compiler is also configured for incremental compilation.  This means subsequ
 4. Compile via `grunt output-js-project` and run it in the browser.  Did it print `7`?
 5. Try creating a type error like `const x:string=7` and see what happens.
 
-### Toward more efficient iteration
-1. Install TypeScript with the same version as listed in chipper/package.json. You can do this globally via `npm install -g typescript@4.4.2`.
-`tsc` is a program that comes bundled with the npm module `typescript`. Alternatively, you can set an
-alias like `alias tsc = node /path/chipper/node_modules/typescript/bin/tsc`, which would make sure you are always using
-the same version of typescript as in chipper.
-2. Start a watch process by `cd chipper/tsconfig/all` and `tsc -b --watch`. This will will watch for any file changes
-and auto-recompile.
-3. I have not yet experimented with having the IDE do the builds, but maybe that will be more efficient.
+### Transpile TypeScript
+* Change directory to the build tools: `cd chipper/`
+* Run the TypeScript transpiler: `node js/scripts/transpile.js --watch` which starts a process that will auto-transpile when files change.
+* If you prefer to experiment with using WebStorm/IDEA File Watchers, please see https://github.com/phetsims/phet-info/blob/master/doc/typescript-webstorm-file-watcher.md
 
 ### Process Changes
 1. TypeScript sims need to be compiled using `grunt output-js-project` before generating their PhET-iO API using `grunt generate-phet-io-api`.
