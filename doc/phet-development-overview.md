@@ -77,8 +77,6 @@ Install dev dependencies via `npm install` in the following directories:
 ```
 cd chipper
 npm install
-cd ../perennial
-npm install
 cd ../perennial-alias
 npm install
 cd ../${directory of the sim you are working on}
