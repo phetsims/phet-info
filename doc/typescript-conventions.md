@@ -150,7 +150,7 @@ If this exceeds the line limit and the WebStorm formatter wants to format it on 
 ### JSDoc and TSDoc
 
 It is recommended that you do not duplicate parameter and return type information in JSDoc and in Typescript types. If
-you have a need to explain one or more parameter, then add all parameters to the jsdoc and explain what you need. The
+you have a need to explain one or more parameters, then add `@param` for _all_ parameters to the JSDoc and add explanations as needed. The
 same for `@returns`.
 
 ###
