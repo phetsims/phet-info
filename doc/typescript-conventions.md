@@ -81,7 +81,7 @@ type Cat = {
 ### Initialization of Class Properties
 
 When possible, it is preferable to initialize properties where they are declared and thus avoid an explicit
-initialization statement in the constructor.
+initialization statement in the constructor. For example:
 
 ```ts
 class EventCounter {
