@@ -108,19 +108,27 @@ class Person {
 ```
 
 ### Multiple Exports
-Because we use file-by-file transpiler, we are restricted to using isolatedModules. Hence types must be exported separately from values.
-
-For example:
+PhET uses babel to do transpilation, and it only operates on a single file at a time. This means that it can’t apply code transforms that depend on understanding the full type system, and we are restricted to specifying [isolatedModules](https://www.typescriptlang.org/tsconfig#isolatedModules) in tsconfig. This in turn requires that types must be exported separately from other modules. For example:
 
 ```ts
-export { CircuitElementViewTypeValues };
-export default CircuitElementViewType;
+type NodeOption = ...;
+class Node { ... }
+
+export { NodeOptions };
+export { Node as default };
 ```
 
-When exporting multiple types or multiple values, they should be combined onto a single line.
+When exporting multiple modules, types and non-types should be combined into a single `export` statement. For example:
 
 ```ts
-export { AdapterType as default, AdapterOptions };
+type DogOptions = ...;
+type CollarOptions = ...;
+
+class Dog { ... }
+class Collar { ... }
+
+export { DogOptions, CatOptions }; 
+export { Dog as default, Collar };
 ```
 
 ### Multiple Imports in One Expression
