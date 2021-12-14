@@ -10,8 +10,9 @@ From _Effective TypeScript_ (Dan Vanderkan), page 87, Item 19, "Avoid Cluttering
 * Ideally your code has type annotations in function/method signatures but not on local variables in their bodies.
 * Consider using explicit annotations for object literals and function return types even when they can be inferred.  This 
 will help prevent implementation errors from surfacing in user code.
-* It is PhET convention to provide return types to methods that are part of an interface and function declarations
-(arrow functions as args are up to dev discretion).
+
+It is PhET convention to provide return types when declaring methods and functions.
+(Arrow functions as args are up to dev discretion.)
 
 TypeScript has a powerful type inference system, and we recommend to leverage that type inference in the general case.
 For example:
