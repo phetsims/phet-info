@@ -133,7 +133,7 @@ export { Dog as default, Collar };
 
 ### Multiple Imports in One Expression
 Multiple imports from the same file should be combined into one statement.  This helps clarify that they are related.
-This does not suffer from the same `isolatedModules` constraint as exports; all modules can be imported on the same line.
+This does not suffer from the same `isolatedModules` constraint as exports; all modules can be imported in the same statement.
 
 ```ts
 // Preferred
