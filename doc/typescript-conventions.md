@@ -61,7 +61,7 @@ class Clock {
 
 ### Enumerations
 
-Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderEnumerationsTypescriptTestModel.ts
+Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderEnumerationPatterns.ts
 
 ### Options and Config
 
