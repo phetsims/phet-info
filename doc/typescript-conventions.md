@@ -93,8 +93,7 @@ class EventCounter {
 
 ### Documentation for Class Properties
 
-Documentation for class properties should be placed with the declaration, not the instantiation. See, for
-example https://github.com/phetsims/geometric-optics/blob/03e5637eb16600dd329e20f32fafc3ab99922c8a/js/common/model/GOModel.ts
+Documentation for class properties should be placed with the declaration, not the instantiation. For example:
 
 ```ts
 class Person {
