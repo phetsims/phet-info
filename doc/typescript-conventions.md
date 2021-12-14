@@ -118,7 +118,7 @@ export { NodeOptions };
 export { Node as default };
 ```
 
-When exporting multiple modules, types and non-types should be combined into a single `export` statement. For example:
+When exporting multiple modules, all types should be combined into 1 `export statement, and all non-types should be combined into 1 `export` statement. So a .ts file should have at most 2 `export` statements. For example:
 
 ```ts
 type DogOptions = ...;
