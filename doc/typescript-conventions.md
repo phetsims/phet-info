@@ -25,16 +25,16 @@ const x = 7;
 const x: number = 7;
 ```
 
-However, if there is a complicated or volatile (api hasn't stabilized) expression on the right-hand side, it may be
-valuable on rare occasions to specify the type manually:
+However, if there is a complicated or volatile (API hasn't stabilized) expression on the right-hand side, it may be
+valuable to specify the type on the left-hand side. For example:
 
 ```ts
 // OK to specify the type manually in complex or volatile cases
 const x: number = someComplicatedExpressionOrVolatileStatementThatHasntStabilized();
 ```
 
-This same principle applies to type parameters. For instance, TypeScript can infer the parametric type of `new Property`
-based on the value of the first parameter.
+This same principle applies to generic type parameters. For instance, TypeScript can infer the parametric type of `new Property`
+based on the value of the first parameter. For example:
 
 ```ts
 // Recommended
@@ -48,7 +48,7 @@ Again, in complex or volatile cases, at the developer preference, the redundant 
 
 ### Access Modifiers
 
-In TypeScript, the default visibility (if unspecified) is `public`. For methods, attributes, constructors, etc. which are
+In TypeScript, the default access modifier (if unspecified) is `public`. For methods, attributes, constructors, etc. which are
 intended to be public, the access modifier can be omitted. Or at the developer's discretion, `public` can be
 specified.
 
