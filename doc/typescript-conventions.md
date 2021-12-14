@@ -111,7 +111,7 @@ class Person {
 PhET uses babel to do transpilation, and it only operates on a single file at a time. This means that it can’t apply code transforms that depend on understanding the full type system, and we are restricted to specifying [isolatedModules](https://www.typescriptlang.org/tsconfig#isolatedModules) in tsconfig. This in turn requires that types must be exported separately from other modules. For example:
 
 ```ts
-type NodeOption = ...;
+type NodeOptions = ...;
 class Node { ... }
 
 export { NodeOptions };
