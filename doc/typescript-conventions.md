@@ -107,21 +107,25 @@ class Person {
 }
 ```
 
-### Multiple Exports in One Expression
-Multiple exports should be combined into one expression.  This is advantageous for the same reason we often prefer
-to have one return statement from functions.
+### Multiple Exports
+Because we use file-by-file transpiler, we are restricted to using isolatedModules. Hence types must be exported separately from values.
+
+For example:
 
 ```ts
-// Recommended
-export { CircuitElementViewType as default, CircuitElementViewTypeValues };
-
-// Not recommended
-export default CircuitElementViewType;
 export { CircuitElementViewTypeValues };
+export default CircuitElementViewType;
+```
+
+When exporting multiple types or multiple values, they should be combined onto a single line.
+
+```ts
+export { AdapterType as default, AdapterOptions };
 ```
 
 ### Multiple Imports in One Expression
 Multiple imports from the same file should be combined into one expression.  This helps clarify that they are related.
+This does not suffer from the same isolatedModules constraint as exports, types and values can be imported on the same line.
 
 ```ts
 // Preferred
