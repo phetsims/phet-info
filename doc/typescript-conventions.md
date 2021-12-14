@@ -98,7 +98,7 @@ Documentation for class properties should be placed with the declaration, not th
 ```ts
 class Person {
 
-  // First and last name separate by a whitespace
+  // First and last name, separated by a whitespace
   readonly name: string;
 
   constructor( name: string ) {
