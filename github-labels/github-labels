@@ -1,3 +1,4 @@
+deprecated:meeting:developer,000000
 design:a11y,F488FA
 design:artwork,d4c5f9
 design:general,F6CCDA
@@ -17,7 +18,6 @@ dev:sonification,005C5F
 dev:typescript,0074c1
 meeting:a11y,000000
 meeting:design,000000
-meeting:developer,000000
 meeting:phet-io,000000
 meeting:sonification,000000
 meeting:status,000000
