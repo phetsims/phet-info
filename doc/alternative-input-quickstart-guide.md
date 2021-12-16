@@ -62,7 +62,7 @@ this.addChild( screenViewRootNode );
 // pdom - dragging using the keyboard
 const keyboardDragListener = new KeyboardDragListener( {
   positionProperty: widget.positionProperty,
-  dragBounds: dragBoundsProperty.value,
+  dragBoundsProperty: dragBoundsProperty,
   transform: modelViewTransform,
   dragVelocity: 100, // velocity - change in position per second
   shiftDragVelocity: 20 // finer-grained
