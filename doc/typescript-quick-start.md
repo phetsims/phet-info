@@ -66,3 +66,4 @@ And it is not well-vetted.
 5. Transitive dependencies are not always tracked correctly in the build system.  This bug has been reported to TypeScript. Details in https://github.com/phetsims/chipper/issues/1067
 6. Some common code repos include code outside their directory.  This problem is described in https://github.com/phetsims/chipper/issues/1096
 7. Conventions and patterns listed in https://github.com/phetsims/phet-info/blob/master/doc/typescript-conventions.md
+8. For certain files, when changing JS=>TS, WebStorm will say it is a rename in the commit dialog, then show a “delete + create” in the history.  This is not desirable.  For those files, a workaround is to rename the file with no content changes, then change the contents in a separate commit.  If you want a type-checking file, you can use // @ts-nocheck.  This came from https://github.com/phetsims/sun/issues/732#issuecomment-995330513
