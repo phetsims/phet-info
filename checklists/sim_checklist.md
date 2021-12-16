@@ -20,6 +20,11 @@
   - [ ] Performance acceptable
   - [ ] Carefully review ?showPointerAreas
   - [ ] No new feature requests
+- [ ] **Pre-prototype items**
+  - [ ] Auxilary screenshots (at least 1 additional)
+  - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL) as appropriate
+  - [ ] Email/Twitter announcement language
+  - [ ] Teacher Guide created, uploaded, and added to sim design folder
 - [ ] **Pre-publication items**
   - [ ] Auxilary screenshots (up to 3 additional)
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
