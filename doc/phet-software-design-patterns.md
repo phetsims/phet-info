@@ -10,7 +10,7 @@ For general information on many standard design patterns, see _[Learning JavaScr
 * [Creator](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-with-drag-forwarding)
 * [Dependency Injection](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dependency-injection)
 * [Dispose](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dispose)
-* [Enumeration](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#enumeration)
+* [EnumerationDeprecated](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#enumeration)
 * [Mixin and Trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
 * [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc)
 * [Model-View Transform](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-transform)
@@ -330,9 +330,9 @@ Author: @pixelzoom
 
 This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
 
-PhET’s preferred implementation of this pattern can be found in [Enumeration.js](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js).
+PhET’s preferred implementation of this pattern can be found in [EnumerationDeprecated.js](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js).
 Examples and coding conventions are in the comment header of that file.  See the wave-interference repository for
-exemplars of Enumeration use.  Rich enumerations are not currently supported, but may be supported in the future
+exemplars of EnumerationDeprecated use.  Rich enumerations are not currently supported, but may be supported in the future
 (see https://github.com/phetsims/phet-core/issues/50).
 
 You’ll find a couple of other patterns commonly used in PhET code. These are good to know, but should be avoided in new
@@ -1103,11 +1103,11 @@ in search of examples, these would be good places to start.
 The states which a state machine will support should be defined in an Enum.  Here is an example (this
 is from the Arithmetic sim, but has been "modernized" to meet our latest standards):
 ```js
-import Enumeration from '../../../phet-core/js/Enumeration.js';
+import EnumerationDeprecated from '../../../phet-core/js/EnumerationDeprecated.js';
 import arithmetic from '../../arithmetic.js';
 
 // @public
-const GameState = Enumeration.byKeys( [
+const GameState = EnumerationDeprecated.byKeys( [
   'SELECTING_LEVEL',
   'AWAITING_USER_INPUT',
   'DISPLAYING_CORRECT_ANSWER_FEEDBACK',

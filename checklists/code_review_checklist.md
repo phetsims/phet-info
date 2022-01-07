@@ -593,7 +593,7 @@ This section deals with PhET conventions for type expressions. You do not need t
   this.particlesVisibleCheckbox = new Checkbox(...);
   ```
 
-- [ ] Type expressions for Enumeration values should be annotated as instances of that Enumeration, see examples in https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js for more.
+- [ ] Type expressions for `EnumerationDeprecated` values should be annotated as instances of that EnumerationDeprecated, see examples in https://github.com/phetsims/phet-core/blob/master/js/EnumerationDeprecated.js for more.
   ```js
   /**
    * @param {LeftOrRight} - whichHand
