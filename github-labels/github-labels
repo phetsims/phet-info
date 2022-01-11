@@ -7,6 +7,7 @@ design:phet-io,1FFFFF
 design:polish,F6A4D5
 design:teaching-resources,F7B3DA
 dev:a11y,008080
+dev:alt-input,21f2eb
 dev:chip-away,2f4f4f
 dev:code-review,104E8B
 dev:description,59eff9
