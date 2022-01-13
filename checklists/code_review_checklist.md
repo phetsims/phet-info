@@ -464,6 +464,10 @@ Property.multilink(
   rate.  The sim should be able to handle this.  For an example of a problem that resulted from assuming that a max rate
   of 60 FPS would be the norm, please see [this GitHub issue](https://github.com/phetsims/states-of-matter/issues/354).
 
+- [ ] The PhET pattern for Enumerations should typically be deeply immutable. Mutable instances most likely 
+shouldn't be Enumerations. If you see a mutable enumeration value that isn't a bug, that's interesting and let the 
+developers know!
+
 ### Documentation
 
 This section deals with PhET documentation conventions. You do not need to exhaustively check every item in this
