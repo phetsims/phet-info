@@ -65,7 +65,7 @@ Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/Wilder
 
 ### Options and Config
 
-Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsTypescriptTestModel.ts
+Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts
 
 ### Syntax in Type Declarations
 
