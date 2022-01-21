@@ -2,6 +2,8 @@
 
 @author Chris Malley (PixelZoom, Inc.)
 
+## package.json
+
 Follow these steps to add support for alternative input to a simulation.
 
 1. In your sim's package.json, add `"supportsInteractiveDescription": true` to the `phet.supportsInteractiveDescription` section, like this:
@@ -21,16 +23,20 @@ Follow these steps to add support for alternative input to a simulation.
 
 2. In your sim's repository, run `grunt update`. This will generate `{{REPO}}_a11y_view.html` and modify `{{REPO}}_en.html`.
 
-3. For `LayoutBox` (and its subclasses) there is no need to specify traversal order. There is a good match between layout order and traversal order; they are typically the same.  So for `LayoutBox`, you can do nothing.
+## Traversal Order
 
-4. For non-`LayoutBox` classes, explicitly set `this.pdomOrder` at the end of constructor. Do not rely on scenery’s
-   default ordering, which corresponds to the order that children are added. It’s better to decouple rendering order and
-   traversal order by explicitly setting `this.pdomOrder`. Note that most of the work here is in `ScreenView` subclasses.
+Traversal order is the order in which Nodes are visited as you press the Tab key. The order is specified 
+using the `pdomOrder` option to Node. If `pdomOrder` is not specified, the default is the order in which 
+children are added to a Node.
 
-5. For `ScreenView`, `this.pdomOrder` cannot be set directly. There are two approaches you can use to specify traversal order at the ScreenView level. Check with your sim designer to see which approach is appropriate.
+For `LayoutBox` (and its subclasses) there is no need to specify traversal order. There is a good match between layout order and traversal order; they are typically the same.  So for `LayoutBox`, you can do nothing.
 
-  (a) Add Nodes to either the "Play Area" or "Control Area". Do not add Nodes directly to the ScreenView. Instead,
-use this pattern in your ScreenView constructor:
+For non-`LayoutBox` classes, it is recommended to explicitly set `this.pdomOrder` at the end of constructor. 
+Do not rely on the default ordering - it’s better to decouple rendering order and traversal order by explicitly setting `this.pdomOrder`. Note that most of the work here is typically in `ScreenView` subclasses.
+
+For `ScreenView`, `this.pdomOrder` cannot be set directly. There are two approaches you can use to specify traversal order at the ScreenView level. Check with your sim designer to see which approach is appropriate.
+
+Approach 1: Add Nodes to either the "Play Area" or "Control Area". Do not add Nodes directly to the ScreenView. Instead, use this pattern in your ScreenView constructor:
       
 ```js
 this.pdomPlayAreaNode.children = [ ... ];
@@ -39,9 +45,9 @@ this.pdomControlAreaNode.children = [ ... ];
 this.pdomControlAreaNode.pdomOrder = [ ... ]; // decouple traversal order from rendering order
 ```
 
-  (b) In many cases, "Play Area" and "Control Area" can be ignored for the purposes of alternative input. If 
-that is appropriate for your sim, then do not add Nodes directly to the ScreenView. Instead, use this pattern
-in your ScreenView constructor:
+Approach 2: In some cases (typically before descriptions are added), "Play Area" and "Control Area" can be 
+ignored for the purposes of alternative input. If that is appropriate for your sim, then do not add Nodes 
+directly to the ScreenView. Instead, use this pattern in your ScreenView constructor:
 
 ```js
 const screenViewRootNode = new Node( {
@@ -51,12 +57,30 @@ screenViewRootNode.pdomOrder = [...]; // decouple traversal order from rendering
 this.addChild( screenViewRootNode );
 ```
 
-6. If you need to augment `this.pdomOrder` in a subclass, read about the numerous pitfalls
-   in https://github.com/phetsims/scenery/issues/1308.
+If you need to augment `this.pdomOrder` in a subclass, read about the pitfalls
+in https://github.com/phetsims/scenery/issues/1308.
 
-7. `DragListener` does NOT handle keyboard input. For Nodes where you’ve added a `DragListener`, you’ll need to add a
-   corresponding `KeyboardDragListener`. The options for your `DragListener` and `KeyboardDragListener` will typically be
-   similar, but beware that API differences exist. Your `KeyboardDragListener` will look something like this:
+## Firing using the keyboard
+
+If you have a custom Node that needs to fire when the Space or Return keys are pressed, add `tagName: 'button'` to your Node's options, then use one of these approaches:
+
+```js
+this.addInputListener( new PressListener( {
+  press: () => { ... }
+} ) );
+
+this.addInputListener( {
+  click: () => { ... }
+} );
+```
+
+## Dragging using the keyboard
+
+`DragListener` does NOT handle keyboard input. For Nodes where you’ve added a `DragListener`, you’ll need to add a
+corresponding `KeyboardDragListener`. The options for your `DragListener` and `KeyboardDragListener` will typically be similar, but beware that API differences exist. Avoid duplicating code - factor out any logic that is
+needed by both `DragListener` and `KeyboardDragListener`.
+
+Your `KeyboardDragListener` will look something like this:
 
 ```js
 // pdom - dragging using the keyboard
@@ -77,17 +101,62 @@ tagName: 'div',
 focusable: true
 ```
 
-8. `PressListener` DOES handle keyboard input. For Nodes where you've added a `PressListener`, add these options to your
-   Node:
+## Hotkeys
+
+If your Node has a `KeyboardDragListener`, add hotkeys like this:
 
 ```js
-// pdom
-tagName: 'button'
+const keyboardDragListener = new KeyboardDragListener( ... );
+keyboardDragListener.addHotkeys( [
+  // Escape
+  {
+    keys: [ KeyboardUtils.KEY_ESCAPE ],
+    callback: () => { ... }
+  },
+  
+  // J+O
+  {
+    keys: [ KeyboardUtils.KEY_J, KeyboardUtils.KEY_O ],
+    callback: () => { ... }
+  }
+] );
 ```
 
-9. There may be common-code UI components for which alternative input has not been implemented. And there may be PhET
-   design patterns for which alternative-input behavior has not been designed. Identify lack of alternative-input
-   support, and create GitHub issues.
+If your Node does not have a `KeyboardDragListener`, add hotkeys like this:
+
+```js
+globalKeyStateTracker.keydownEmitter.addListener( event => {
+
+  // Make sure the event is intended for this Node.
+  if ( this.pdomDisplayed && this.enabledProperty.value ) {
+    if ( KeyboardUtils.isKeyEvent( event, KeyboardUtils.KEY_ESCAPE ) ) {
+      // Escape
+      ...
+    }
+    else if ( globalKeyStateTracker.altKeyDown && KeyboardUtils.isKeyEvent( event, KeyboardUtils.KEY_C ) ){
+      // Alt+C
+      ...
+    }
+  }
+} );
+```
+
+## Keyboard Shortcuts dialog
+
+Add `hasKeyboardHelpContent: true` to Sim constructor options in your main.js. This creates a keyboard button
+in the navigation bar, and requires each Screen to provide content for the Keyboard Shortcuts dialog. Pressing
+the keyboard button will open the Keyboard Shortcuts dialog.
+
+To provide content for the Keyboard Shortcuts dialog, add `keyboardHelpNode: {Node}` to constructor options 
+for each of your Screens.  Instructions for creating this
+Node are beyond the scope of this guide.  Programming by example is recommended, by searching for "keyboardHelpNode".  Your content will typically consist of standard descriptions (supported by common code.
+e.g. `BasicActionsKeyboardHelpSection`),
+plus custom descriptions (for sim-specific hotkeys).  Consult with your designer on the content layout. 
+
+## Not Supported? 
+
+There may be common-code UI components for which alternative input has not been implemented. And there may be PhET design patterns for which alternative-input behavior has not been designed. Identify lack of alternative-input
+support, and create GitHub issues.
 
 ## Other Resources
 
