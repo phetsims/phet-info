@@ -149,7 +149,7 @@ To make this button appear in the navigation bar, add `hasKeyboardHelpContent: t
 constructor options in your main.js or main.ts. 
 
 Each of your screens is then required to provide content for the dialog, via the 
-`keyboardHelpNode: {Node}` option to the Screen constructor. Instructions for creating this
+`keyboardHelpNode: {Node}` option to the `Screen` constructor. Instructions for creating this
 Node are beyond the scope of this guide.  Programming by example is recommended, by searching for "keyboardHelpNode".  Your content will typically consist of standard "sections" supported by common code
 (e.g. `BasicActionsKeyboardHelpSection`),
 plus custom sections for sim-specific hotkeys.  Consult with your designer about the content layout. 
