@@ -146,7 +146,7 @@ globalKeyStateTracker.keydownEmitter.addListener( event => {
 
 The Keyboard Shortcuts dialog is accessed by pressing the keyboard button in the navigation bar. 
 To make this button appear in the navigation bar, add `hasKeyboardHelpContent: true` to the Sim 
-constructor options in your main.js. 
+constructor options in your main.js or main.ts. 
 
 Each of your screens is then required to provide content for the dialog, via the 
 `keyboardHelpNode: {Node}` option to the Screen constructor. Instructions for creating this
