@@ -133,7 +133,8 @@ globalKeyStateTracker.keydownEmitter.addListener( event => {
       // Escape
       ...
     }
-    else if ( globalKeyStateTracker.altKeyDown && KeyboardUtils.isKeyEvent( event, KeyboardUtils.KEY_C ) ){
+    else if ( globalKeyStateTracker.altKeyDown && 
+              KeyboardUtils.isKeyEvent( event, KeyboardUtils.KEY_C ) ){
       // Alt+C
       ...
     }
