@@ -156,7 +156,7 @@ Node are beyond the scope of this guide.  Programming by example is recommended,
 (e.g. `BasicActionsKeyboardHelpSection`),
 plus custom sections for sim-specific hotkeys.  Consult with your designer about the content language and layout. 
 
-## Not Supported? 
+## Not Supported? Create an Issue!
 
 There may be common-code UI components for which alternative input has not been implemented. And there may be PhET design patterns for which alternative-input behavior has not been designed. Identify lack of alternative-input
 support, and create GitHub issues.
