@@ -62,7 +62,7 @@ this.addChild( screenViewRootNode );
 If you need to augment `this.pdomOrder` in a subclass, read about the pitfalls
 in https://github.com/phetsims/scenery/issues/1308.
 
-## Firing using the keyboard
+## Fire using the keyboard
 
 If you have a custom Node that needs to fire when the Space or Return keys are pressed, add `tagName: 'button'` to your Node's options, then use one of these approaches:
 
@@ -76,7 +76,7 @@ this.addInputListener( {
 } );
 ```
 
-## Dragging using the keyboard
+## Drag using the keyboard
 
 `DragListener` does NOT handle keyboard input. For Nodes where you’ve added a `DragListener`, you’ll need to add a
 corresponding `KeyboardDragListener`. The options for your `DragListener` and `KeyboardDragListener` will typically be similar, but beware that API differences exist. Avoid duplicating code - factor out any logic that is
