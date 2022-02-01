@@ -27,7 +27,7 @@ In your working copy of the sim repo:
 - [ ] `git push -u origin master`
 
 At https://github.com/phetsims/{{REPO}}:
-- [ ] Go to Settings => Manage Access => Invite teams, as appropriate. Sim repos should have the following teams added: FULL_ACCESS_DEV {Admin}, Quality Assurance {Triage}, SIMS_DESIGN {PhET Write}, SIMS_DEV {PhET Write}. For other repo types, see: [Team assignment.md](https://github.com/phetsims/phet-info/blob/master/policies/team%20assignment.md)
+- [ ] Go to Settings => Collaborators and teams, then "Add teams". See [team assignment.md](https://github.com/phetsims/phet-info/blob/master/policies/team%20assignment.md) for assignments by repo type.
 - [ ] Create a Sim Checklist issue using template [sim_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/sim_checklist.md). Use "{{TITLE}} Master Checklist" as the issue name. Assign to @ariel-phet.
 
 In your working copy of perennial repo:
