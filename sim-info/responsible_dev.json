@@ -239,6 +239,15 @@
       "@arouinfar"
     ]
   },
+  "center-and-spread": {
+    "responsibleDevs": [
+      "@samreid",
+      "@chrisklus"
+    ],
+    "responsibleDesigners": [
+      "@amanda-phet"
+    ]
+  },
   "chains": {
     "responsibleDevs": [
       "@jbphet"
