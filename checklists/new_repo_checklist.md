@@ -43,6 +43,7 @@ Other:
 - [ ] If applicable, add any needed dependencies to `phetLibs` in package.json. If you change package.json, run `grunt update`.
 - [ ] Add the sim to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json).
 - [ ] Add the sim to chipper/tsconfig/all/tsconfig.json
+- [ ] If applicable, add corresponding dependencies from `phetLibs` in package.json to "references" in tsconfig.json. 
 
 ## Steps to create a different type of repo
 
