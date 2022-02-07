@@ -197,7 +197,8 @@
   },
   "build-a-nucleus": {
     "responsibleDevs": [
-      "@Luisav1"
+      "@Luisav1",
+      "@chrisklus"
     ],
     "responsibleDesigners": []
   },
