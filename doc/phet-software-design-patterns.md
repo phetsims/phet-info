@@ -388,6 +388,25 @@ or is difficult to use.
 ### Examples
 An example of PhET mixin is phet-core/Poolable. An example of a PhET trait is scenery/Paintable.
 
+The Mixin and Trait pattern was overhauled when PhET converted to use Typescript. 
+
+For recent examples, see the following:
+* SCENERY/Paintable
+* SCENERY/Imageable
+* SCENERY/Voicing
+* SUN/AccessibleValueHandler
+
+Mixins and traits cannot mutate the constructor signature, and also cannot have private or protected members. This is
+due to the implemention which creates an anonymous class that dynamically extends the provided Type. Thus, the constructor
+signature should just pass up an `args` param using the spread operator:
+
+```js
+constructor( ...args ) {
+  super( ...args );
+}
+```
+
+<details><summary>Old, deprecated Mixin pattern</summary>
 Creating and using mixins and traits will look similar. Both will have
   - A `mixInto` method that is called on the class using the mixin/trait.
   - An `initialize{{Name}}` method that will be called in the constructor of the class using the mixin/trait.
@@ -396,7 +415,6 @@ Creating and using mixins and traits will look similar. Both will have
   method of the mixing type.
   - The class using the mixin/trait will have `@mixes Name` annotation at the constructor.
 
-The only difference is traits should have assertions in the `mixInto` method to verify the class and requirements.
 
 <details><summary>Trait Example</summary>
 
@@ -454,6 +472,7 @@ class MyClass extends SuperClass {
 // to mix MyTrait methods into the prototype, after inherit for es5 usages
 MyTrait.mixInto( MyClass );
 ```
+</details>
 </details>
 
 ## Model-View-Controller (MVC)
