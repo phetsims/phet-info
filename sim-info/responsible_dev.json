@@ -507,6 +507,13 @@
       "@arouinfar"
     ]
   },
+  "fenster": {
+    "responsibleDevs": [
+      "@jbphet",
+      "@jessegreenberg"
+    ],
+    "responsibleDesigners": []
+  },
   "fluid-pressure-and-flow": {
     "responsibleDevs": [
       "@zepumph"
