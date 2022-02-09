@@ -74,6 +74,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | expression-exchange | @jbphet | @amanda-phet | 
 | faraday | @pixelzoom |  | 
 | faradays-law | @jbphet | @arouinfar | 
+| fenster | @jbphet,@jessegreenberg |  | 
 | fluid-pressure-and-flow | @zepumph | @DianaTavares | 
 | forces-and-motion-basics | @jessegreenberg | @arouinfar | 
 | fourier-making-waves | @pixelzoom | @arouinfar | 
