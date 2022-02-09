@@ -109,7 +109,7 @@ If your Node has a `KeyboardDragListener`, add hotkeys like this:
 
 ```js
 const keyboardDragListener = new KeyboardDragListener( ... );
-keyboardDragListener.addHotkeys( [
+keyboardDragListener.hotkeys = ( [
   // Escape
   {
     keys: [ KeyboardUtils.KEY_ESCAPE ],
