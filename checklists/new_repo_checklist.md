@@ -38,6 +38,7 @@ Other:
 - [ ] Apply GitHub labels. See [github-labels/README.md](https://github.com/phetsims/phet-info/blob/master/github-labels/README.md).
 - [ ] Apply branch protection rules. Use [This script to do so](https://github.com/phetsims/perennial/blob/master/js/scripts/protect-branches-for-repo.js).
 - [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and perennial-alias and run `clone-missing-repos.sh` at your convenience."
+- [ ] On phettest, please press the button labelled "Refresh perennial, perennial-alias, and chipper".
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
 - [ ] Follow any remaining "Implementation" tasks in the Master Checklist issue that you created above.
 - [ ] If applicable, add any needed dependencies to `phetLibs` in package.json. If you change package.json, run `grunt update`.
