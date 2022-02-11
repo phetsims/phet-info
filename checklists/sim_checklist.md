@@ -4,7 +4,7 @@
 - [ ] **Sim folder and design doc created** (Date: //)
   - [ ] Create sim folder in [PhET Sim Design Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYUUhvZnlCUDF0bGc) using phet-docs account
   - [ ] Place design doc in the sim folder
-- [ ] **Sim suggestions doc reviewed** 
+- [ ] **Review user feedback** 
    - [ ] *If a Port:* [Google Form suggestions reviewed](https://docs.google.com/spreadsheets/d/1KkvutfIVwZLi5-jz_DVP3zC8jXkzF32-hzMI4ztB1uY/edit?resourcekey#gid=1610725922)
    - [ ] *If a Port:* [Unfuddle tickets reviewed](https://github.com/phetsims/phet-info/blob/master/issue-info/unfuddle-ticket-search.md)
    - [ ] *If a new sim:* [Google Form suggestions reviewed](https://docs.google.com/spreadsheets/d/1KkvutfIVwZLi5-jz_DVP3zC8jXkzF32-hzMI4ztB1uY/edit?resourcekey#gid=1610725922)
