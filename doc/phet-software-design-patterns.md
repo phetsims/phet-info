@@ -345,28 +345,55 @@ Here are some issues that have investigated trying to bring creation and disposa
 
 ## Enumeration
 
-Author: @pixelzoom
+Author: @pixelzoom and @zepumph
 
 This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
 
-PhET’s preferred implementation of this pattern can be found
-in [EnumerationDeprecated.js](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js). Examples and coding
-conventions are in the comment header of that file. See the wave-interference repository for exemplars of
-EnumerationDeprecated use. Rich enumerations are not currently supported, but may be supported in the future
-(see https://github.com/phetsims/phet-core/issues/50).
+PhET’s preferred implementation of this pattern is by declaring a class that extends 
+[EnumerationValue.js](https://github.com/phetsims/phet-core/blob/master/js/EnumerationValue.js), and declaring  
+an [Enumeration.js](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js) member on it called `enumeration. 
 
-You’ll find a couple of other patterns commonly used in PhET code. These are good to know, but should be avoided in new
-code.
 
-(1) A set of string values. For example, [Slider.js](https://github.com/phetsims/sun/blob/master/js/Slider.js) uses
-`’horizontal’` and `’vertical’` as the values for its `orientation` option. This approach results in the duplication of
-string literals throughout the code.
+```typescript
+class MyEnumeration extends EnumerationValue {
+  static VALUE_1 = new MyEnumeration();
+  static VALUE_2 = new MyEnumeration();
 
-(2) Idiomatic JavaScript implementation, as described
-in [StackOverflow](https://stackoverflow.com/questions/287903/what-is-the-preferred-syntax-for-defining-enums-in-javascript)
-. The typical implementation associates named keys with numeric values. PhET’s implementation uses string values (to
-facilitate debugging) and `Object.freeze`  to prevent unintentional modification. See for example
-[SolutionType.js](https://github.com/phetsims/acid-base-solutions/blob/master/js/common/enum/SolutionType.js).
+  // Make sure this is last, once all EnumerationValues have been declared statically.
+  static enumeration = new Enumeration( MyEnumeration );
+}
+```
+To adapt the pattern to be a rich enumeration, add prototype or static methods as needed to the class.
+
+It is acceptable to use Typescript to create a string union type as an enumeration in certain cases. It is less explicit,
+doesn't have as strong runtime-safety, and doesn't support refactoring quite as well. That said it is useful when strings
+are the best values for your enumeration:
+
+```typescript
+type LayoutType = 'upward' | 'downward';
+type MyComponentOptions = {
+  layout: LayoutType
+};
+
+// . . .
+
+const component = new MyComponent( {
+  layout: 'upward'
+} );
+```
+
+More Examples and coding conventions are best found in
+[WilderEnumerationPatterns.js](https://github.com/phetsims/wilder/blob/master/js/WilderEnumerationPatterns.js).
+
+
+#### Supporting `null`:
+In some old enumeration patterns, `null` was an acceptable value for an Enumeration. This is no longer the case. Those
+older cases should be treated as type `Enumeration|null` when converted to the new pattern.
+
+#### Vestigial patterns and usages
+
+You’ll find a couple of other patterns commonly used in PhET code. These are good to know of but shouldn't generally 
+be used in new code. `EnumerationDeprecated` is PhET's primary old pattern; please do not use it is new code.
 
 ## Mixin and Trait
 
