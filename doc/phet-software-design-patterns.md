@@ -103,9 +103,9 @@ variables instead of allowing it to instantiate them itself. For example,
 
 ```js
 class MyClass {
-    constructor() {
-        this.otherObject = new OtherObject();
-    }
+  constructor() {
+    this.otherObject = new OtherObject();
+  }
 }
 ```
 
@@ -175,8 +175,11 @@ the constructor initializes `this.mapWavelengthToAbsorptionStrategy = {}`. Then 
 allows any object inheriting Molecule to dynamically set the necessary `PhotonAbsorptionStrategy`
 
 ```js
-setPhotonAbsorptionStrategy( wavelength, strategy ) {
-  this.mapWavelengthToAbsorptionStrategy[ wavelength ] = strategy;
+class X {
+
+  setPhotonAbsorptionStrategy( wavelength, strategy ) {
+    this.mapWavelengthToAbsorptionStrategy[ wavelength ] = strategy;
+  }
 }
 ```
 
@@ -251,31 +254,31 @@ Here is an example of using this disposal method. Note that the `Property` is un
 the `Node`.
 
 ```js
-class MyAddChildAndLinkNode extends Node{
-  constructor( aNode, aProperty){
+class MyAddChildAndLinkNode extends Node {
+  constructor( aNode, aProperty ) {
 
     super();
 
     const aNewNode = new Node();
     aNode.addChild( aNewNode );
 
-    const aFunction = ()=>{ console.log( 'I love this Property.' )};
-    aProperty.link( aFunction);
+    const aFunction = () => { console.log( 'I love this Property.' )};
+    aProperty.link( aFunction );
 
-    this.disposeMyAddChildAndLinkNode = ()=>{
-      aProperty.unlink( aFunction);
+    this.disposeMyAddChildAndLinkNode = () => {
+      aProperty.unlink( aFunction );
 
       // Because aNewNode has a reference back to its parent (aNode).
       // Note there are many ways that this reference could be removed.
-      aNode.removeChild( aNewNode);
+      aNode.removeChild( aNewNode );
     }
   }
 
   /**
-  * @override
-  * @public
-  */
-  dispose(){
+   * @override
+   * @public
+   */
+  dispose() {
     this.disposeMyAddChildAndLinkNode();
     super.dispose();
   }
@@ -290,8 +293,8 @@ variables that would be needed for disposal to `@private` instance fields and mo
 method, like below.
 
 ```js
-class MyAddChildAndLinkNode extends Node{
-  constructor( aNode, aProperty){
+class MyAddChildAndLinkNode extends Node {
+  constructor( aNode, aProperty ) {
 
     super();
 
@@ -302,18 +305,18 @@ class MyAddChildAndLinkNode extends Node{
     this.aNewNode = new Node();
     this.aNode.addChild( this.aNewNode );
 
-    this.aFunction = ()=>{ console.log( 'I love this Property.' )};
-    this.aProperty.link( this.aFunction);
+    this.aFunction = () => { console.log( 'I love this Property.' )};
+    this.aProperty.link( this.aFunction );
 
   }
 
   /**
-  * @override
-  * @public
-  */
-  dispose(){
-    this.aProperty.unlink( this.aFunction);
-    this.aNode.removeChild( this.aNewNode);
+   * @override
+   * @public
+   */
+  dispose() {
+    this.aProperty.unlink( this.aFunction );
+    this.aNode.removeChild( this.aNewNode );
     super.dispose();
   }
 }
@@ -458,8 +461,10 @@ due to the implemention which creates an anonymous class that dynamically extend
 constructor signature should just pass up an `args` param using the spread operator:
 
 ```js
-constructor( ...args ) {
-  super( ...args );
+class X {
+  constructor( ...args ) {
+    super( ...args );
+  }
 }
 ```
 
@@ -684,7 +689,7 @@ imports and exports, so import statements will generally look like:
 
 ```js
     import Vector2 from '../../../dot/js/Vector2.js';
-    import Touch from '../input/Touch.js';
+import Touch from '../input/Touch.js';
 ```
 
 The shortest possible relative path should be used, and the imports should be sorted lexicographically by the import
@@ -726,7 +731,7 @@ import Vector2 from '../../../dot/js/Vector2.js';
 import fooRepo from '../fooRepo.js';
 
 class FooNode {
-  constructor( fooArgument) {
+  constructor( fooArgument ) {
     // ...
   }
 }
@@ -824,27 +829,27 @@ See for example:
 
   ```js
   // model
-  class Ball {
-    constructor( ... ) {
-      ...
+class Ball {
+  constructor( ... ) {
+  ...
 
-      // @public {Vector2Property} - the position (coordinates) of the Ball, in meters.
-      this.positionProperty = new Vector2Property( new Vector2( ... ) );
-    }
+    // @public {Vector2Property} - the position (coordinates) of the Ball, in meters.
+    this.positionProperty = new Vector2Property( new Vector2( ... ) );
   }
+}
 
-  // view
-  class BallNode extends Node {
+// view
+class BallNode extends Node {
 
-    constructor( ball, ... ) {
-      ...
+  constructor( ball, ... ) {
+  ...
 
-      // Observe when the ball's position changes through the Property API.
-      ball.positionProperty.link( position => {
-        this.center = modelViewTransform.modelToViewPosition( position );
-      } );
-    }
+    // Observe when the ball's position changes through the Property API.
+    ball.positionProperty.link( position => {
+      this.center = modelViewTransform.modelToViewPosition( position );
+    } );
   }
+}
   ```
 
 In this example you can see a how the Ball view updates itself by observing the `positionProperty` of the ball model. If
@@ -952,10 +957,10 @@ One common pattern is:
   ```js
   // model
   // @public {ObservableArrayDef.<Cart>}
-  this.carts = createObservableArray();
+this.carts = createObservableArray();
 
-  // view
-  this.carts.elementAddedEmitter.addListener( cart => this.addChild( new CartNode( cart ) ) );
+// view
+this.carts.elementAddedEmitter.addListener( cart => this.addChild( new CartNode( cart ) ) );
   ```
 
 Then, wherever `this.carts.push( new Cart() )` is called, a new CartNode is added through the observer.
@@ -1008,7 +1013,7 @@ class MyNode extends Node {
       visible: false,
       pickable: false
     }, options );
-    ...
+  ...
     super( options );
   }
 }
@@ -1039,16 +1044,17 @@ class MyNode extends Node {
       visible: false,
       pickable: false,
       hsliderOptions: {
-        endDrag: function() { console.log( 'Drag Ended') },
-        startDrag: function() { console.log( 'Drag Started') }
+        endDrag: function() { console.log( 'Drag Ended' ) },
+        startDrag: function() { console.log( 'Drag Started' ) }
       }
     }, options );
 
     var slider = new HSlider( new Property(), new Range(), options.hsliderOptions );
-    ...
+  ...
     super( options );
   }
-  ...
+
+...
 }
 ```
 
@@ -1074,10 +1080,10 @@ function Person( name, config ) {
   config = merge( {
 
     // {number} height in centimeters
-    height: required(config.height),
+    height: required( config.height ),
 
     // {number} age in years
-    age: required(config.age),
+    age: required( config.age ),
 
     favoriteColor: null, // {Color|null} favorite Color, if any
     favoriteCar: null // {Car|null} favorite Car, if any
@@ -1144,7 +1150,7 @@ class MyPanel extends Panel {
       fill: 'yellow'
       ...
     }, MyConstants.PANEL_OPTIONS );
-    ...
+  ...
   }
 }
 
@@ -1154,8 +1160,8 @@ class MyPanel extends Panel {
     options = merge( {}, MyConstants.PANEL_OPTIONS, {
       fill: 'yellow'
       ...
-    }, options);
-    ...
+    }, options );
+  ...
   }
 }
 ```
@@ -1326,33 +1332,34 @@ statement handles the incoming event. This approach hasn't been used much in PhE
 writing), so here is an example that was found on line at https://24ways.org/2018/state-machines-in-user-interfaces/.
 
 ```js
-function loginMachine(state, event) {
-       switch (state) {
-           case 'start':
-               if (event === 'SUBMIT') {
-                   return 'loading';
-               }
-               break;
-           case 'loading':
-               if (event === 'RESOLVE') {
-                   return 'success';
-               } else if (event === 'REJECT') {
-                   return 'error';
-               }
-               break;
-           case 'success':
-               // Accept no further events
-               break;
-           case 'error':
-               if (event === 'SUBMIT') {
-                   return 'loading';
-               }
-               break;
-           default:
-               // This should never occur
-               return undefined;
-       }
-   }
+function loginMachine( state, event ) {
+  switch( state ) {
+    case 'start':
+      if ( event === 'SUBMIT' ) {
+        return 'loading';
+      }
+      break;
+    case 'loading':
+      if ( event === 'RESOLVE' ) {
+        return 'success';
+      }
+      else if ( event === 'REJECT' ) {
+        return 'error';
+      }
+      break;
+    case 'success':
+      // Accept no further events
+      break;
+    case 'error':
+      if ( event === 'SUBMIT' ) {
+        return 'loading';
+      }
+      break;
+    default:
+      // This should never occur
+      return undefined;
+  }
+}
 ```
 
 Yet another approach is to use a function table, where one axis represents the states and the other represents the
@@ -1408,12 +1415,14 @@ not many variations in behavior, a simple `if` statement will often suffice (and
 example:
 
 ```js
-step( dt ){
-  if ( this.isAboveWater ){
-    this.fall( dt );
-  }
-  else{
-    this.float( dt );
+class X {
+  step( dt ) {
+    if ( this.isAboveWater ) {
+      this.fall( dt );
+    }
+    else {
+      this.float( dt );
+    }
   }
 }
 ```
@@ -1422,18 +1431,20 @@ However, if the state and behaviors start to get more complex, a strategy patter
 help to avoid duplication of code where similar behavioral changes are needed in other related classes, for instance:
 
 ```js
-step( dt ){
-  if ( this.isAboveWater ){
-    this.fall( dt );
-  }
-  else if ( this.isBelowWater ) {
-    this.floatTowardsSurface( dt );
-  }
-  else if ( this.onSurface && this.waterModel.isWindy ){
-    this.bobOnSurface( dt );
-  }
-  else{
-    this.sitCalmlyOnSurface( dt );
+class X {
+  step( dt ) {
+    if ( this.isAboveWater ) {
+      this.fall( dt );
+    }
+    else if ( this.isBelowWater ) {
+      this.floatTowardsSurface( dt );
+    }
+    else if ( this.onSurface && this.waterModel.isWindy ) {
+      this.bobOnSurface( dt );
+    }
+    else {
+      this.sitCalmlyOnSurface( dt );
+    }
   }
 }
 ```
@@ -1441,8 +1452,10 @@ step( dt ){
 versus:
 
 ```js
-step( dt ){
-  this.waterInteractionStrategy.step( dt );
+class X {
+  step( dt ) {
+    this.waterInteractionStrategy.step( dt );
+  }
 }
 ```
 
@@ -1474,17 +1487,20 @@ method in this class is intended to be overridden in all subclasses, and its pur
 of the client element. The code looks like this:
 
 ```js
-/**
- * get the next position given the current position, bounds, and amount of time
- * @param {Vector2} currentPosition
- * @param {Bounds2} bounds - allowed motion bounds of the controlled item, used in detecting whether the item would go
- * outside of the motion bounds.
- * @param {number} dt - delta time
- * @public
- */
-getNextPosition: function( currentPosition, bounds, dt ) {
-   // figure out the next position
-},
+const x = {
+  
+  /**
+   * get the next position given the current position, bounds, and amount of time
+   * @param {Vector2} currentPosition
+   * @param {Bounds2} bounds - allowed motion bounds of the controlled item, used in detecting whether the item would go
+   * outside of the motion bounds.
+   * @param {number} dt - delta time
+   * @public
+   */
+  getNextPosition: function( currentPosition, bounds, dt ) {
+    // figure out the next position
+  }
+}
 ```
 
 The various concrete subclasses of the `MotionStrategy` class implement the desired movement behavior, and are switched

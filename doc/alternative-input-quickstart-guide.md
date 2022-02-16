@@ -8,7 +8,8 @@ Get started with adding alternative input to your PhET simulation.
 
 Follow these steps to add support for alternative input to a simulation.
 
-1. In your sim's package.json, add `"supportsInteractiveDescription": true` to the `phet.supportsInteractiveDescription` section, like this:
+1. In your sim's package.json, add `"supportsInteractiveDescription": true` to the `phet.supportsInteractiveDescription`
+   section, like this:
 
 ```
 {
@@ -23,23 +24,28 @@ Follow these steps to add support for alternative input to a simulation.
 }
 ```
 
-2. In your sim's repository, run `grunt update`. This will generate `{{REPO}}_a11y_view.html` and modify `{{REPO}}_en.html`.
+2. In your sim's repository, run `grunt update`. This will generate `{{REPO}}_a11y_view.html` and
+   modify `{{REPO}}_en.html`.
 
 ## Traversal Order
 
-Traversal order is the order in which Nodes are visited as you press the Tab key. The order is specified 
-using the `pdomOrder` option to Node. If `pdomOrder` is not specified, the default is the order in which 
-children are added to a Node.
+Traversal order is the order in which Nodes are visited as you press the Tab key. The order is specified using
+the `pdomOrder` option to Node. If `pdomOrder` is not specified, the default is the order in which children are added to
+a Node.
 
-For `LayoutBox` (and its subclasses) there is no need to specify traversal order. There is a good match between layout order and traversal order; they are typically the same.  So for `LayoutBox`, you can do nothing.
+For `LayoutBox` (and its subclasses) there is no need to specify traversal order. There is a good match between layout
+order and traversal order; they are typically the same. So for `LayoutBox`, you can do nothing.
 
-For non-`LayoutBox` classes, it is recommended to explicitly set `this.pdomOrder` at the end of constructor. 
-Do not rely on the default ordering - it’s better to decouple rendering order and traversal order by explicitly setting `this.pdomOrder`. Note that most of the work here is typically in `ScreenView` subclasses.
+For non-`LayoutBox` classes, it is recommended to explicitly set `this.pdomOrder` at the end of constructor. Do not rely
+on the default ordering - it’s better to decouple rendering order and traversal order by explicitly
+setting `this.pdomOrder`. Note that most of the work here is typically in `ScreenView` subclasses.
 
-For `ScreenView`, `this.pdomOrder` cannot be set directly. There are two approaches you can use to specify traversal order at the ScreenView level. Check with your sim designer to see which approach is appropriate.
+For `ScreenView`, `this.pdomOrder` cannot be set directly. There are two approaches you can use to specify traversal
+order at the ScreenView level. Check with your sim designer to see which approach is appropriate.
 
-Approach 1: Add Nodes to either the "Play Area" or "Control Area". Do not add Nodes directly to the ScreenView. Instead, use this pattern in your ScreenView constructor:
-      
+Approach 1: Add Nodes to either the "Play Area" or "Control Area". Do not add Nodes directly to the ScreenView. Instead,
+use this pattern in your ScreenView constructor:
+
 ```js
 this.pdomPlayAreaNode.children = [ ... ];
 this.pdomPlayAreaNode.pdomOrder = [ ... ]; // decouple traversal order from rendering order
@@ -47,9 +53,9 @@ this.pdomControlAreaNode.children = [ ... ];
 this.pdomControlAreaNode.pdomOrder = [ ... ]; // decouple traversal order from rendering order
 ```
 
-Approach 2: In some cases (typically before descriptions are added), "Play Area" and "Control Area" can be 
-ignored for the purposes of alternative input. If that is appropriate for your sim, then do not add Nodes 
-directly to the ScreenView. Instead, use this pattern in your ScreenView constructor:
+Approach 2: In some cases (typically before descriptions are added), "Play Area" and "Control Area" can be ignored for
+the purposes of alternative input. If that is appropriate for your sim, then do not add Nodes directly to the
+ScreenView. Instead, use this pattern in your ScreenView constructor:
 
 ```js
 const screenViewRootNode = new Node( {
@@ -64,7 +70,8 @@ in https://github.com/phetsims/scenery/issues/1308.
 
 ## Fire using the keyboard
 
-If you have a custom Node that needs to fire when the Space or Return keys are pressed, add `tagName: 'button'` to your Node's options, then use one of these approaches:
+If you have a custom Node that needs to fire when the Space or Return keys are pressed, add `tagName: 'button'` to your
+Node's options, then use one of these approaches:
 
 ```js
 this.addInputListener( new PressListener( {
@@ -79,8 +86,9 @@ this.addInputListener( {
 ## Drag using the keyboard
 
 `DragListener` does NOT handle keyboard input. For Nodes where you’ve added a `DragListener`, you’ll need to add a
-corresponding `KeyboardDragListener`. The options for your `DragListener` and `KeyboardDragListener` will typically be similar, but beware that API differences exist. Avoid duplicating code - factor out any logic that is
-needed by both `DragListener` and `KeyboardDragListener`.
+corresponding `KeyboardDragListener`. The options for your `DragListener` and `KeyboardDragListener` will typically be
+similar, but beware that API differences exist. Avoid duplicating code - factor out any logic that is needed by
+both `DragListener` and `KeyboardDragListener`.
 
 Your `KeyboardDragListener` will look something like this:
 
@@ -146,22 +154,25 @@ globalKeyStateTracker.keydownEmitter.addListener( event => {
 
 ## Keyboard Shortcuts dialog
 
-The Keyboard Shortcuts dialog is accessed by pressing the keyboard button in the navigation bar. 
-To make this button appear in the navigation bar, add `hasKeyboardHelpContent: true` to the Sim 
-constructor options in your main.js or main.ts. 
+The Keyboard Shortcuts dialog is accessed by pressing the keyboard button in the navigation bar. To make this button
+appear in the navigation bar, add `hasKeyboardHelpContent: true` to the Sim constructor options in your main.js or
+main.ts.
 
-Each of your screens is then required to provide content for the dialog, via the 
-`keyboardHelpNode: {Node}` option to the `Screen` constructor. Instructions for creating this
-Node are beyond the scope of this guide.  Programming by example is recommended, by searching for "keyboardHelpNode".  Your content will typically consist of standard "sections" supported by common code
-(e.g. `BasicActionsKeyboardHelpSection`),
-plus custom sections for sim-specific hotkeys.  Consult with your designer about the content language and layout. 
+Each of your screens is then required to provide content for the dialog, via the
+`keyboardHelpNode: {Node}` option to the `Screen` constructor. Instructions for creating this Node are beyond the scope
+of this guide. Programming by example is recommended, by searching for "keyboardHelpNode". Your content will typically
+consist of standard "sections" supported by common code
+(e.g. `BasicActionsKeyboardHelpSection`), plus custom sections for sim-specific hotkeys. Consult with your designer
+about the content language and layout.
 
 ## Not supported? Create an issue!
 
-There may be common-code UI components for which alternative input has not been implemented. And there may be PhET design patterns for which alternative-input behavior has not been designed. Identify lack of alternative-input
-support, and create GitHub issues.
+There may be common-code UI components for which alternative input has not been implemented. And there may be PhET
+design patterns for which alternative-input behavior has not been designed. Identify lack of alternative-input support,
+and create GitHub issues.
 
 ## Other Resources
 
 * [Interactive Description Technical Guide](https://github.com/phetsims/phet-info/blob/4839f03214bbba21b4621f80aea8e78a9519fb43/doc/interactive-description-technical-guide.md)
-* Description of "Play Area" and "Control Area": https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#pdom-order-for-phet-sims
+* Description of "Play Area" and "Control
+  Area": https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#pdom-order-for-phet-sims

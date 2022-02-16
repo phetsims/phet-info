@@ -134,9 +134,9 @@ too many alerts, and alerts that occur with too much or too little time between 
 ### Getting started
 
 When beginning PDOM work in a simulation, add `"supportsInteractiveDescription": true` to the sim's package.json under
-`phet.simFeatures`. Then run `grunt update` to apply the package.json change to the top level HTML file. This
-will also generate an a11y-view HTML document to assist with development. Finally, run `grunt generate-data` to add
-the simulation to perennial/data/interactive-description list. Accessibility features are hidden behind an
+`phet.simFeatures`. Then run `grunt update` to apply the package.json change to the top level HTML file. This will also
+generate an a11y-view HTML document to assist with development. Finally, run `grunt generate-data` to add the simulation
+to perennial/data/interactive-description list. Accessibility features are hidden behind an
 `?supportsInteractiveDescription` query parameter. You can elect to develop by adding this query parameter, instead of
 modifying package.json, but it is not recommended.
 
