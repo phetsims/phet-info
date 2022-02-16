@@ -1,6 +1,8 @@
 Web Development Intern Setup
 =
 
+# TODO update this with latest information this is fairly out of date as of 2/22
+
 #### Initial machine setup:
 
 ###### Hardware Requirements
