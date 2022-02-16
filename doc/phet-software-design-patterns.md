@@ -349,10 +349,10 @@ Author: @pixelzoom and @zepumph
 
 This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
 
-PhET’s preferred implementation of this pattern is by declaring a class that extends 
+PhET’s preferred implementation of this pattern is by declaring a class that extends
 [EnumerationValue.ts](https://github.com/phetsims/phet-core/blob/master/js/EnumerationValue.ts), and declaring  
-an [Enumeration.ts](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.ts) member on it called `enumeration. 
-
+an [Enumeration.ts](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.ts) member on it called `
+enumeration.
 
 ```typescript
 class MyEnumeration extends EnumerationValue {
@@ -363,11 +363,12 @@ class MyEnumeration extends EnumerationValue {
   static enumeration = new Enumeration( MyEnumeration );
 }
 ```
+
 To adapt the pattern to be a rich enumeration, add prototype or static methods as needed to the class.
 
-It is acceptable to use Typescript to create a string union type as an enumeration in certain cases. It is less explicit,
-doesn't have as strong runtime-safety, and doesn't support refactoring quite as well. That said it is useful when strings
-are the best values for your enumeration:
+It is acceptable to use Typescript to create a string union type as an enumeration in certain cases. It is less
+explicit, doesn't have as strong runtime-safety, and doesn't support refactoring quite as well. That said it is useful
+when strings are the best values for your enumeration:
 
 ```typescript
 type LayoutType = 'upward' | 'downward';
@@ -385,15 +386,15 @@ const component = new MyComponent( {
 More Examples and coding conventions are best found in
 [WilderEnumerationPatterns.ts](https://github.com/phetsims/wilder/blob/master/js/WilderEnumerationPatterns.ts).
 
-
 #### Supporting `null`:
+
 In some old enumeration patterns, `null` was an acceptable value for an Enumeration. This is no longer the case. Those
 older cases should be treated as type `Enumeration|null` when converted to the new pattern.
 
 #### Vestigial patterns and usages
 
-You’ll find a couple of other patterns commonly used in PhET code. These are good to know of but shouldn't generally 
-be used in new code. `EnumerationDeprecated` is PhET's primary old pattern; please do not use it is new code.
+You’ll find a couple of other patterns commonly used in PhET code. These are good to know of but shouldn't generally be
+used in new code. `EnumerationDeprecated` is PhET's primary old pattern; please do not use it is new code.
 
 ## Mixin and Trait
 
