@@ -350,8 +350,8 @@ Author: @pixelzoom and @zepumph
 This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
 
 PhET’s preferred implementation of this pattern is by declaring a class that extends 
-[EnumerationValue.js](https://github.com/phetsims/phet-core/blob/master/js/EnumerationValue.js), and declaring  
-an [Enumeration.js](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.js) member on it called `enumeration. 
+[EnumerationValue.ts](https://github.com/phetsims/phet-core/blob/master/js/EnumerationValue.ts), and declaring  
+an [Enumeration.ts](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.ts) member on it called `enumeration. 
 
 
 ```typescript
@@ -383,7 +383,7 @@ const component = new MyComponent( {
 ```
 
 More Examples and coding conventions are best found in
-[WilderEnumerationPatterns.js](https://github.com/phetsims/wilder/blob/master/js/WilderEnumerationPatterns.js).
+[WilderEnumerationPatterns.ts](https://github.com/phetsims/wilder/blob/master/js/WilderEnumerationPatterns.ts).
 
 
 #### Supporting `null`:
