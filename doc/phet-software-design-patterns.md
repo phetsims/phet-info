@@ -399,6 +399,33 @@ older cases should be treated as type `Enumeration|null` when converted to the n
 You’ll find a couple of other patterns commonly used in PhET code. These are good to know of but shouldn't generally be
 used in new code. `EnumerationDeprecated` is PhET's primary old pattern; please do not use it is new code.
 
+<details><summary>Previous pattern documentation based on `EnumerationDeprecated`</summary>
+
+Author: @pixelzoom
+
+This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
+
+PhET’s preferred implementation of this pattern can be found
+in [EnumerationDeprecated.js](https://github.com/phetsims/phet-core/blob/master/js/EnumerationDeprecated.js). Examples and coding
+conventions are in the comment header of that file. See the wave-interference repository for exemplars of
+EnumerationDeprecated use. Rich enumerations are not currently supported, but may be supported in the future
+(see https://github.com/phetsims/phet-core/issues/50).
+
+You’ll find a couple of other patterns commonly used in PhET code. These are good to know, but should be avoided in new
+code.
+
+(1) A set of string values. For example, [Slider.js](https://github.com/phetsims/sun/blob/master/js/Slider.js) uses
+`’horizontal’` and `’vertical’` as the values for its `orientation` option. This approach results in the duplication of
+string literals throughout the code.
+
+(2) Idiomatic JavaScript implementation, as described
+in [StackOverflow](https://stackoverflow.com/questions/287903/what-is-the-preferred-syntax-for-defining-enums-in-javascript)
+. The typical implementation associates named keys with numeric values. PhET’s implementation uses string values (to
+facilitate debugging) and `Object.freeze`  to prevent unintentional modification. See for example
+[SolutionType.js](https://github.com/phetsims/acid-base-solutions/blob/master/js/common/enum/SolutionType.js).
+
+</details>
+
 ## Mixin and Trait
 
 Author: @jessegreenberg
