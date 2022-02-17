@@ -12,7 +12,7 @@ Osmani.
 * [Creator](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-with-drag-forwarding)
 * [Dependency Injection](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dependency-injection)
 * [Dispose](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dispose)
-* [EnumerationDeprecated](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#enumeration)
+* [Enumeration](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#enumeration)
 * [Mixin and Trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
 * [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc)
 * [Model-View Transform](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-transform)
@@ -355,7 +355,7 @@ This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated
 PhET’s preferred implementation of this pattern is by declaring a class that extends
 [EnumerationValue.ts](https://github.com/phetsims/phet-core/blob/master/js/EnumerationValue.ts), and declaring  
 an [Enumeration.ts](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.ts) member on it called `
-enumeration.
+enumeration. It was developed in typescript, but can be used in javascript as well.
 
 ```typescript
 class MyEnumeration extends EnumerationValue {
@@ -369,9 +369,9 @@ class MyEnumeration extends EnumerationValue {
 
 To adapt the pattern to be a rich enumeration, add prototype or static methods as needed to the class.
 
-It is acceptable to use Typescript to create a string union type as an enumeration in certain cases. It is less
-explicit, doesn't have as strong runtime-safety, and doesn't support refactoring quite as well. That said it is useful
-when strings are the best values for your enumeration:
+Another Enumeration strategy is to use Typescript to create a string union type as an enumeration in certain cases. In
+general is less explicit, doesn't have as much runtime-safety, and doesn't support refactoring quite as well. That said,
+it is useful when strings are the best values for your enumeration:
 
 ```typescript
 type LayoutType = 'upward' | 'downward';
@@ -386,13 +386,13 @@ const component = new MyComponent( {
 } );
 ```
 
-More Examples and coding conventions are best found in
+More Examples and coding conventions for enumerations are best found in
 [WilderEnumerationPatterns.ts](https://github.com/phetsims/wilder/blob/master/js/WilderEnumerationPatterns.ts).
 
 #### Supporting `null`:
 
-In some old enumeration patterns, `null` was an acceptable value for an Enumeration. This is no longer the case. Those
-older cases should be treated as type `Enumeration|null` when converted to the new pattern.
+In some old enumeration patterns, `null` was an acceptable value for an enumeration value. This is no longer the case.
+Those older cases should be treated as type `EnumerationValue|null` when converted to the new pattern.
 
 #### Vestigial patterns and usages
 
@@ -406,8 +406,8 @@ Author: @pixelzoom
 This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
 
 PhET’s preferred implementation of this pattern can be found
-in [EnumerationDeprecated.js](https://github.com/phetsims/phet-core/blob/master/js/EnumerationDeprecated.js). Examples and coding
-conventions are in the comment header of that file. See the wave-interference repository for exemplars of
+in [EnumerationDeprecated.js](https://github.com/phetsims/phet-core/blob/master/js/EnumerationDeprecated.js). Examples
+and coding conventions are in the comment header of that file. See the wave-interference repository for exemplars of
 EnumerationDeprecated use. Rich enumerations are not currently supported, but may be supported in the future
 (see https://github.com/phetsims/phet-core/issues/50).
 
@@ -1515,7 +1515,7 @@ of the client element. The code looks like this:
 
 ```js
 const x = {
-  
+
   /**
    * get the next position given the current position, bounds, and amount of time
    * @param {Vector2} currentPosition
