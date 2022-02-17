@@ -484,15 +484,18 @@ For recent examples, see the following:
 * SUN/AccessibleValueHandler
 
 Mixins and traits cannot mutate the constructor signature, and also cannot have private or protected members. This is
-due to the implemention which creates an anonymous class that dynamically extends the provided Type. Thus, the
-constructor signature should just pass up an `args` param using the spread operator:
+due to the implemention which creates an anonymous class that dynamically extends the provided Type. For private
+members, name them prefixed with an underscore (`_myPrivateProperty`). The constructor signature should just pass
+up an `args` param using the spread operator:
 
 ```js
-class X {
-  constructor( ...args ) {
-    super( ...args );
-  }
-}
+const Mixin = Type => {
+  return class X extends Type {
+    constructor( ...args ) {
+      super( ...args );
+    }
+  };
+};
 ```
 
 <details><summary>Old, deprecated Mixin pattern</summary>
