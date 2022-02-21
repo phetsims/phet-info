@@ -46,6 +46,19 @@
   - [ ] Create "sim primer" issue
   - [ ] Hold postmortem if applicable (Date: //)
 
+## Inclusive Features
+- [ ] Alternative Input (Started: ) (Completed: ) 
+- [ ] Pan & Zoom
+- [ ] Sound & Sonification (UI)
+- [ ] Sound & Sonification (Pedagogical) - (include link to relevant sonification design document)
+    - [ ] Sound design complete (Started: ) (Completed: ) 
+    - [ ] Development complete (Started: ) (Completed: ) 
+- [ ] Interactive Description - (link to description design & implementation checklist)
+    - [ ] Description design complete (Started: ) (Completed: ) 
+    - [ ] Development complete (Started: ) (Completed: ) 
+    - [ ] Mobile description included
+- [ ] Voicing - (include links to relevant voicing design document)
+
 ## Implementation
 - [ ] **Repository created** (Date: //)
   - [ ] Simulation added to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json)
