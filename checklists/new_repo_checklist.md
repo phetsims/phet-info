@@ -34,7 +34,7 @@ In your working copy of perennial repo:
 - [ ] Add the new repo to `perennial/data/active-repos`. Commit and push. Then pull perennial-alias so these two checkouts stay in sync. If needed immediately, run `cd perennial/ && grunt generate-data` and commit and push to update data lists. Otherwise it is done every night as part of daily grunt work.
 
 Other:
-- [ ] Navigate to https://bayes.colorado.edu/dev/phettest/ and click the "Refresh Perennial" button. If you do not know the password, please ask another developer.
+- [ ] Navigate to https://bayes.colorado.edu/dev/phettest/ and click the "Refresh perennial, perennial-alias, and chipper" button. If you do not know the password, please ask another developer.
 - [ ] Apply GitHub labels. See [github-labels/README.md](https://github.com/phetsims/phet-info/blob/master/github-labels/README.md).
 - [ ] Apply branch protection rules. Use [this script to do so](https://github.com/phetsims/perennial/blob/master/js/scripts/protect-branches-for-repo.js).
 - [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and perennial-alias and run `clone-missing-repos.sh` at your convenience."
