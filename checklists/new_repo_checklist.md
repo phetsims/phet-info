@@ -75,7 +75,7 @@ If this repo is a common code dependency for all sims:
 Other:
 - [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and perennial-alias and run `clone-missing-repos.sh` at your convenience."
 - [ ] Apply GitHub labels. See [github-labels/README.md](https://github.com/phetsims/phet-info/blob/master/github-labels/README.md).
-- [ ] Apply branch protection rules. Use [This script to do so](https://github.com/phetsims/perennial/blob/master/js/scripts/protect-branches-for-repo.js).
+- [ ] Apply branch protection rules. Use [this script to do so](https://github.com/phetsims/perennial/blob/master/js/scripts/protect-branches-for-repo.js).
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
 - [ ] Add the sim to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json).
 - [ ] Add the sim to chipper/tsconfig/all/tsconfig.json
