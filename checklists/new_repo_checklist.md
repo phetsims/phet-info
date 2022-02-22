@@ -27,7 +27,7 @@ In your working copy of the sim repo:
 - [ ] `git push -u origin master`
 
 At https://github.com/phetsims/{{REPO}}:
-- [ ] Go to Settings => Collaborators and teams, then "Add teams". See [team assignment.md](https://github.com/phetsims/phet-info/blob/master/policies/team%20assignment.md) for assignments by repo type.
+- [ ] Go to _Settings => Collaborators and teams_. Press the "Add teams" button. See [team assignment.md](https://github.com/phetsims/phet-info/blob/master/policies/team%20assignment.md) for assignments by repo type.
 - [ ] Create a Sim Checklist issue using template [sim_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/sim_checklist.md). Use "{{TITLE}} Master Checklist" as the issue name. Assign to @ariel-phet.
 
 In your working copy of perennial repo:
