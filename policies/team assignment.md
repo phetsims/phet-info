@@ -1,4 +1,4 @@
-When creating a new repo, access should be managed via adding Teams (not individual members).
+When creating a new repo, access should be managed by adding Teams, not individuals.
 
 New sim repo
 | Team              | Role       |
