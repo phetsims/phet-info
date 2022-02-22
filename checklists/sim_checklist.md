@@ -60,12 +60,7 @@
 - [ ] Voicing - (include links to relevant voicing design document)
 
 ## Implementation
-- [ ] **Repository created** (Date: //)
-  - [ ] Simulation added to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json)
-  - [ ] Use `grunt create-sim` in perennial (see `--help` for arguments) to create the repository structure
-  - [ ] Collaborators added (Developer team, QA team, designers, etc)
-  - [ ] standard GitHub label set applied
-  - [ ] repository added to perennial/data/active-repos
+- [ ] **Repository created** by following [new_repo_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/new_repo_checklist.md) (Date: //)
 - [ ] **Development started** (Date: //)
 - [ ] **Sim is "feature complete"** (Date: //)
 - [ ] **QA team "first look"** (Date: //)
