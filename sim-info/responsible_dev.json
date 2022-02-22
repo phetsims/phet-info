@@ -642,6 +642,14 @@
       "@arouinfar"
     ]
   },
+  "geometric-optics-basics": {
+    "responsibleDevs": [
+      "@pixelzoom"
+    ],
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
+  },
   "graphing-lines": {
     "responsibleDevs": [
       "@pixelzoom"
