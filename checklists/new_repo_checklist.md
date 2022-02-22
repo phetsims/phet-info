@@ -31,7 +31,7 @@ At https://github.com/phetsims/{{REPO}}:
 - [ ] Create a Sim Checklist issue using template [sim_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/sim_checklist.md). Use "{{TITLE}} Master Checklist" as the issue name. Assign to @ariel-phet.
 
 In your working copy of perennial repo:
-- [ ] Add the new repo to `perennial/data/active-repos`. Commit and push. Then pull perennial-alias so these two checkouts stay in sync. If needed immediately, run `cd perennial/ && grunt generate-data` and commit and push to update data lists. Otherwise it is done every night as part of daily grunt work.
+- [ ] Add the new repo to `perennial/data/active-repos`. Commit and push. Then pull perennial-alias so these two checkouts stay in sync. If needed immediately, run `cd perennial/ && grunt generate-data` and commit and push to update data lists. Otherwise it is done every night as part of daily grunt work.  _Note that your sim won't run in phetmarks until this is done._
 
 Other:
 - [ ] Navigate to https://bayes.colorado.edu/dev/phettest/ and click the "Refresh perennial, perennial-alias, and chipper" button. If you do not know the password, please ask another developer.
@@ -66,7 +66,7 @@ At https://github.com/phetsims/{{REPO}}:
 - [ ] Go to Settings => Collaborators and Teams, add the teams used in another public sims (currently Design, Development, and Quality Assurance) with "Write" permissions. _NOTE: If the repo is private, it is REQUIRED to add the Machine User collaborator (so automated processes can clone/pull the repo). CT will break otherwise._
 
 In your working copy of perennial repo:
-- [ ] If applicable: Add the new repo to `perennial/data/active-repos`. Commit and push. Pull perennial-alias. If needed immediately, run `cd perennial/ && grunt generate-data` and commit and push to update data lists. Otherwise it is done every night as part of daily grunt work. _Note that your sim won't run in phetmarks until this is done._
+- [ ] If applicable: Add the new repo to `perennial/data/active-repos`. Commit and push. Pull perennial-alias. If needed immediately, run `cd perennial/ && grunt generate-data` and commit and push to update data lists. Otherwise it is done every night as part of daily grunt work.
 
 If this repo is a common code dependency for all sims:
 - [ ] Add it to the list of `clone` commands in [phet-development-overview.md](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md)
