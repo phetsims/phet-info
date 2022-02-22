@@ -37,7 +37,7 @@ In your working copy of perennial repo:
 Other:
 - [ ] Navigate to https://bayes.colorado.edu/dev/phettest/ and click the "Refresh perennial, perennial-alias, and chipper" button. If you do not know the password, please ask another developer.
 - [ ] Apply GitHub labels. See [github-labels/README.md](https://github.com/phetsims/phet-info/blob/master/github-labels/README.md).
-- [ ] Apply branch protection rules. Use [this script](https://github.com/phetsims/perennial/blob/master/js/scripts/protect-branches-for-repo.js) to do so. Follow the instructions in the documentation at the top of the script.
+- [ ] Apply branch protection rules using [protect-branches-for-repo.js](https://github.com/phetsims/perennial/blob/master/js/scripts/protect-branches-for-repo.js). Follow the instructions in the documentation at the top of the script.
 - [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and perennial-alias and run `clone-missing-repos.sh` at your convenience."
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
 - [ ] Follow any remaining "Implementation" tasks in the Master Checklist issue that you created above.
