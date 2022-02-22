@@ -32,13 +32,10 @@ hexcode with no # symbol, e.g. `FF00AA`.
 
 ## FAQ
 
-* ### Why do we need the list of repos in github-labels/, could the script just depend on perennial/data/active-repos instead?
-
-    We do need two lists, because there are active repos missing from "active-repos". There are some repos, like website, which are active but very large and not collaborated on by all team members. Because active-repos is shared by the clone-missing-repos script, this creates a significant inconvenience in terms of storage.
-
 * ### Error statuses during label script execution
 
     * __200, 201, etc__ - Anything in the 200 range indicates success.
     * __400 Bad Request__ - This probably indicates a fatal error. Verify if the change did not happen as expected and contact the responsible dev if not (Matt Pennington as of 2020).
+    * __401 Unauthorized__ - This indicates that your credentials are incorrect.  Make sure your username and personal access token are entered in ~/.phet/build-local.json correctly and check the status of your PAT at https://github.com/settings/tokens.
     * __403 Forbidden__ - This indicates that the Github User that you used does not have admin access for that repo.  Make sure your username and personal access token are entered in ~/.phet/build-local.json correctly and contact any PhET Github Admin for further assistance.
     * __422 Unprocessable Entity__ - This is probably __*not*__ an error and most likely indicates that the script attempted a duplicate action. Verify if the change did not happen as expected and contact the responsible dev if not (Matt Pennington as of 2020).
