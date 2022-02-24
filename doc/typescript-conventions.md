@@ -118,25 +118,24 @@ that types must be exported separately from other modules. For example:
 
 ```ts
 type NodeOptions = ...;
+type MyEnum = ...;
 class Node { ... }
 
-export { NodeOptions };
+export { NodeOptions, MyEnum };
 export { Node as default };
 ```
 
-When exporting multiple modules, all types should be combined into 1 `export` statement, and all non-types should be
-combined into 1 `export` statement. So a .ts file should have at most 2 `export` statements. For example:
+Exports can be done at end of the file (as shown above), or at declaration sites like so:
 
 ```ts
-type DogOptions = ...;
-type CollarOptions = ...;
 
-class Dog { ... }
-class Collar { ... }
+export type DotPlotNodeOptions = ...
 
-export { DogOptions, CatOptions }; 
-export { Dog as default, Collar };
+export default class DotPlotNode extends Node {
+ // ...
+}
 ```
+
 
 ### Multiple Imports in One Expression
 
