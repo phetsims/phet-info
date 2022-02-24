@@ -772,7 +772,7 @@ export default fooRepo;
 
 It is important to note that 'using strict' should be enforced throughout the PhET codebase for preloads or non-module
 files. Strict mode is NOT needed for ES6 module files, and should not be used in them. Strict mode has the unique
-property of limiting certain javascript functionalities that may not be backward compatible between versions. To avoid
+property of limiting certain JavaScript functionalities that may not be backward compatible between versions. To avoid
 this there are three general solutions:
 
 1. Never concatenate strict files and nonstrict files.
@@ -837,7 +837,7 @@ code base.
 
 #### [Property](https://github.com/phetsims/axon/blob/master/js/Property.js)
 
-Property is our most basic and simplest form of the Observer pattern. It is used as a wrapper of a Javascript field,
+Property is our most basic and simplest form of the Observer pattern. It is used as a wrapper of a JavaScript field,
 called its value. Observers are notified when its value is set to a different value. Observers add listeners through
 the `link` and `lazyLink` methods and remove listeners through the `unlink` method.
 
@@ -913,7 +913,7 @@ its listeners will be invoked.
   If, however, it is absolutely necessary to set the property value, you can pass the `reentrant: true` option to the
   Property instance.
 - In the examples above, the names of Properties are suffixed with `Property` (ie. `massProperty`, `positionProperty`,
-  etc.). We try to be verbose with this practice to emphasize a distinction between a normal javascript field and a
+  etc.). We try to be verbose with this practice to emphasize a distinction between a normal JavaScript field and a
   wrapped Property.
 
 #### [DerivedProperty](https://github.com/phetsims/axon/blob/master/js/DerivedProperty.js)
