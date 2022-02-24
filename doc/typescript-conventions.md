@@ -174,7 +174,7 @@ guard, since `null < 50` evaluates to true. Cases like `something!.method` do no
 runtime error.
 * Consider factoring out a variable rather than repeating the non-null assertion operator several times on the same variable.
 
-###
+---
 
 Please see other notes in https://github.com/phetsims/ratio-and-proportion/issues/405
 and https://github.com/phetsims/phet-info/blob/master/doc/typescript-quick-start.md 
