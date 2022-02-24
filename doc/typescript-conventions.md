@@ -162,6 +162,17 @@ It is recommended that you do not duplicate parameter and return type informatio
 you have a need to explain one or more parameters, then add `@param` for _all_ parameters to the JSDoc and add
 explanations as needed. The same for `@returns`.
 
+### Non-null assertion operator
+The non-null assertion operator `!` indicates to the TypeScript compiler that a value can be treated as non-null and
+non-undefined. This operator should be used judiciously--it can sometimes be preferable to write code that doesn't
+require it at all (for instance, by making values that cannot ever be `null` or `undefined`). In cases where the non-null
+assertion operator is appropriate:
+* Consider adding documentation that explains why the value is not expected to be null or undefined at that point.
+* Add an assertion guard where necessary.  Cases like `if ( this.perfSyncTreeCount! > 500 ) {` require an assertion 
+guard, since `null < 50` evaluates to true. Cases like `something!.method` do not require a guard, since you already get a helpful 
+runtime error.
+* Consider factoring out a variable rather than repeating the non-null assertion operator several times on the same variable.
+
 ###
 
 Please see other notes in https://github.com/phetsims/ratio-and-proportion/issues/405
