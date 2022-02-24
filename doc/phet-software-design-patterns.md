@@ -370,7 +370,7 @@ class MyEnumeration extends EnumerationValue {
 To adapt the pattern to be a rich enumeration, add prototype or static methods as needed to the class.
 
 Another Enumeration strategy is to use TypeScript to create a string union type as an enumeration in certain cases. In
-general is less explicit, doesn't have as much runtime-safety, and doesn't support refactoring quite as well. That said,
+general, this strategy is less explicit, doesn't have as much runtime-safety, and doesn't support refactoring quite as well. That said,
 it is useful when strings are the best values for your enumeration:
 
 ```typescript
