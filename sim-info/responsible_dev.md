@@ -5,7 +5,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 
 
 | Simulation  | Developer | Designer | Features |
-| :---------- | :------------- | :------------- | :-------------: |
+| :---------- | :------------- | :------------- | :------------- |
 | a11y-research | @jessegreenberg |  |  | 
 | acid-base-solutions | @pixelzoom | @arouinfar |  | 
 | aqua | @jonathanolson |  |  | 
