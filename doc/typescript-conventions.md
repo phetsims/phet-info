@@ -163,6 +163,7 @@ you have a need to explain one or more parameters, then add `@param` for _all_ p
 explanations as needed. The same for `@returns`.
 
 ### Non-null assertion operator
+
 The non-null assertion operator `!` indicates to the TypeScript compiler that a value can be treated as non-null and
 non-undefined. This operator should be used judiciously--it can sometimes be preferable to write code that doesn't
 require it at all (for instance, by making values that cannot ever be `null` or `undefined`). In cases where the non-null
