@@ -355,7 +355,7 @@ This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated
 PhET’s preferred implementation of this pattern is by declaring a class that extends
 [EnumerationValue.ts](https://github.com/phetsims/phet-core/blob/master/js/EnumerationValue.ts), and declaring  
 an [Enumeration.ts](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.ts) member on it called `
-enumeration. It was developed in TypeScript, but can be used in javascript as well.
+enumeration. It was developed in TypeScript, but can be used in JavaScript as well.
 
 ```typescript
 class MyEnumeration extends EnumerationValue {
