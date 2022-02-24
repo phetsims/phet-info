@@ -355,7 +355,7 @@ This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated
 PhET’s preferred implementation of this pattern is by declaring a class that extends
 [EnumerationValue.ts](https://github.com/phetsims/phet-core/blob/master/js/EnumerationValue.ts), and declaring  
 an [Enumeration.ts](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.ts) member on it called `
-enumeration. It was developed in typescript, but can be used in javascript as well.
+enumeration. It was developed in TypeScript, but can be used in javascript as well.
 
 ```typescript
 class MyEnumeration extends EnumerationValue {
@@ -369,7 +369,7 @@ class MyEnumeration extends EnumerationValue {
 
 To adapt the pattern to be a rich enumeration, add prototype or static methods as needed to the class.
 
-Another Enumeration strategy is to use Typescript to create a string union type as an enumeration in certain cases. In
+Another Enumeration strategy is to use TypeScript to create a string union type as an enumeration in certain cases. In
 general is less explicit, doesn't have as much runtime-safety, and doesn't support refactoring quite as well. That said,
 it is useful when strings are the best values for your enumeration:
 
