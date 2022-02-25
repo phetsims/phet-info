@@ -165,7 +165,7 @@ explanations as needed. The same for `@returns`.
 
 The non-null assertion operator `!` indicates to the TypeScript compiler that a value can be treated as non-null and
 non-undefined. This operator should be used judiciously. It can sometimes be preferable to write code that doesn't
-require it at all (for instance, by making values that can never be `null` or `undefined`). In cases where the non-null
+require it at all (for instance, by using values that can never be `null` or `undefined`). In cases where the non-null
 assertion operator is appropriate:
 * Consider adding documentation that explains why the value is not expected to be null or undefined at that point.
 * Add an assertion guard where necessary.  Cases like `if ( this.someNumber! < 50 ) {` require an assertion 
