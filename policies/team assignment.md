@@ -6,6 +6,8 @@ New sim repo
 | FULL_ACCESS_DEV   | Admin      |
 | Quality Assurance | Triage     |
 | SIMS_DESIGN       | PhET Write |
+| Development       | Triage     |
+| Design            | Triage     |
 
 New PhET-iO repo
 | Team              | Role       |
@@ -13,6 +15,8 @@ New PhET-iO repo
 | FULL_ACCESS_DEV   | Admin      |
 | Quality Assurance | Triage     |
 | PhET-iO           | PhET Write |
+| Development       | Triage     |
+| Design            | Triage     |
 
 New browser-side common code repo
 | Team                    | Role       |
@@ -20,6 +24,8 @@ New browser-side common code repo
 | FULL_ACCESS_DEV         | Admin      |
 | Quality Assurance       | Triage     |
 | BROWSER_SIDE_COMMON_CODE| PhET Write |
+| Development       | Triage     |
+| Design            | Triage     |
 
 New server repo
 | Team              | Role       |
@@ -27,6 +33,8 @@ New server repo
 | FULL_ACCESS_DEV   | Admin      |
 | Quality Assurance | Triage     |
 | SERVER_CODE       | PhET Write |
+| Development       | Triage     |
+| Design            | Triage     |
 
 New website repo
 | Team              | Role       |
@@ -35,6 +43,8 @@ New website repo
 | Quality Assurance | Triage     |
 | WEB_DESIGN        | PhET Write |
 | WEBSITE_DEV       | PhET Write |
+| Development       | Triage     |
+| Design            | Triage     |
 
 New app repo
 | Team              | Role       |
@@ -43,3 +53,5 @@ New app repo
 | Quality Assurance | Triage     |
 | APPS_DESIGN       | PhET Write |
 | APPS_DEV          | PhET Write |
+| Development       | Triage     |
+| Design            | Triage     |
