@@ -236,7 +236,7 @@ For a sim repository named “my-repo”, the general structure should look like
 
 ## **Coding Conventions**
 
-- [ ] Are coding conventions outlined in [PhET's Coding Conventions document]() followed and adhered to? This document 
+- [ ] Are coding conventions outlined in [PhET's Coding Conventions document](https://github.com/phetsims/phet-info/blob/master/doc/coding-conventions.md) followed and adhered to? This document 
 deals with PhET coding conventions. You do not need to exhaustively check every item in this section, nor do you 
 necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET standards.
 
