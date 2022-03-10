@@ -6,7 +6,7 @@ PhET Interactive Simulations creates free, open source educational simulations i
 at the PhET website. This document explains PhET’s libraries, practices and patterns for developing interactive
 simulations in HTML5. This document is also available
 at https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md. For discussion and feedback,
-please visit the Developing Interactive Simulations in HTML5 Google Group.
+please visit the [Developing Interactive Simulations in HTML5 Google Group](https://groups.google.com/g/developing-interactive-simulations-in-html5).
 
 **[Overview](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#overview)**
 
@@ -123,8 +123,8 @@ npm install
 
 ### Questions
 
-* Questions should be directed to the Developing Interactive Simulations in HTML5 Google
-  Group: https://groups.google.com/g/developing-interactive-simulations-in-html5
+* Questions should be directed to the [Developing Interactive Simulations in HTML5 Google
+  Group](https://groups.google.com/g/developing-interactive-simulations-in-html5).
 
 ## Creating a New Sim
 
