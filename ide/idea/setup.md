@@ -32,8 +32,9 @@ get you pointed in the right direction. If you notice errors or a need for clari
     * Find your node.exe file (probably set up through the project). (May be filled in automatically)
     * Fill out ESLint package location (unless global, `chipper/node_modules/eslint`). (May be filled in automatically)
     * Configuration file: "Automatically search"
-    * Additional Rules Dir should be `chipper/eslint/rules`
-    * [Here is a picture for a mac](https://cloud.githubusercontent.com/assets/6856943/26806694/876bdad6-4a0f-11e7-9096-e734bf70be6e.png)
+    * "Additional Rules Dir" should be `chipper/eslint/rules`
+    * "Extra eslint options" needs to have `--resolve-plugins-relative-to=../chipper/`
+    * [Here is a picture for a Windows](![image](https://user-images.githubusercontent.com/6396244/157985259-def3f3f5-891f-4916-9276-c3ec7c15d1d8.png))
 11. (Optional) Enable Nodejs coding assistance. `File > Settings > Language & Frameworks > Node.js and NPM`. Coding
     Assistance section. "Node.js Core is disabled" Enable it. This is handy if working on build tools/ node often.
 12. Some inspections don't mesh well with the way our code base is setup, we can turn them off:
