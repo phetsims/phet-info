@@ -35,7 +35,7 @@ _Provide specific instructions here. For example: known problems that will fail 
 The following standard GitHub issues should exist. _If these issues are missing, or have not been completed, pause code review until the issues have been created and addressed by the responsible dev._
 
 - [ ] model.md, see {{GITHUB_ISSUE_LINK}}. Familiarize yourself with the model by reading model.md. Does it adequately describe the model, in terms appropriate for teachers? Has it been reviewed by the sim designer?
-- [ ] implementation-notes.md, see {{GITHUB_ISSUE_LINK}}. Familiarize yourself with the implementation by reading implementation-notes.md. Does it adequately describe the implementation, with an overview that will be useful to future maintainers?
+- [ ] implementation-notes.md, see {{GITHUB_ISSUE_LINK}}. Familiarize yourself with the implementation by reading implementation-notes.md. Does it provide an overview that will be useful to future maintainers?
 - [ ] results of memory testing for `brands=phet`, see {{GITHUB_ISSUE_LINK}}
 - [ ] results of memory testing for `brands=phet-io` (if the sim is instrumented for PhET-iO), see {{GITHUB_ISSUE_LINK}}
 - [ ] performance testing and sign-off, see {{GITHUB_ISSUE_LINK}}
