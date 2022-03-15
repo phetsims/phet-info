@@ -278,7 +278,7 @@ various features, not all are always include. Ignore sections that do not apply.
 
 ### Alternative Input
 - [ ] Does the sim pass an accessibility fuzz test? (run with query parameters `fuzzBoard&ea`)
-- [ ] Does this sim use specific keyboard shortcuts that overlap with global shortcuts? This includes the use of modifier keys like in https://github.com/phetsims/ratio-and-proportion/issues/287. _NOTE: There is currently no list of global shortcuts, and therefore no way to complete this checklist item. See https://github.com/phetsims/phet-info/issues/188. _
+- [ ] Does this sim use specific keyboard shortcuts that overlap with global shortcuts? This includes the use of modifier keys like in https://github.com/phetsims/ratio-and-proportion/issues/287. **NOTE: There is currently no list of global shortcuts, and therefore no way to complete this checklist item. See https://github.com/phetsims/phet-info/issues/188.**
 
 ### Interactive Description
 - [ ] Run the entire built sim HTML file through an [HTML validator](https://validator.w3.org/nu/#textarea), does the HTML pass?
