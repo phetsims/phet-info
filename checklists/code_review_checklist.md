@@ -34,12 +34,14 @@ _Provide specific instructions here. For example: known problems that will fail 
 
 The following standard GitHub issues should exist. _If these issues are missing, or have not been completed, pause code review until the issues have been created and addressed by the responsible dev._
 
+- [ ] model.md, see {{GITHUB_ISSUE_LINK}}. Familiarize yourself with the model by reading model.md. Does it adequately describe the model, in terms appropriate for teachers? Has it been reviewed by the sim designer?
+- [ ] implementation-notes.md, see {{GITHUB_ISSUE_LINK}}. Familiarize yourself with the implementation by reading implementation-notes.md. Does it adequately describe the implementation, with an overview that will be useful to future maintainers?
 - [ ] results of memory testing for `brands=phet`, see {{GITHUB_ISSUE_LINK}}
 - [ ] results of memory testing for `brands=phet-io` (if the sim is instrumented for PhET-iO), see {{GITHUB_ISSUE_LINK}}
 - [ ] performance testing and sign-off, see {{GITHUB_ISSUE_LINK}}
 - [ ] review of pointer areas, see {{GITHUB_ISSUE_LINK}}
 - [ ] credits (will not be completed until after RC testing), see {{GITHUB_ISSUE_LINK}}
-
+  
 ## **Build and Run Checks**
 
 If any of these items fail, pause code review.
@@ -220,8 +222,6 @@ For a sim repository named “my-repo”, the general structure should look like
 - [ ] Does .gitignore match the one in simula-rasa?
 - [ ] In GitHub, verify that all non-release branches have an associated issue that describes their purpose.
 - [ ] Are there any GitHub branches that are no longer needed and should be deleted?
-- [ ] Does `model.md` adequately describe the model, in terms appropriate for teachers?
-- [ ] Does `implementation-notes.md` adequately describe the implementation, with an overview that will be useful to future maintainers?
 - [ ] Sim-specific query parameters (if any) should be identified and documented in one .js file in js/common/ or js/ (if there is no common/). The .js file should be named `{{PREFIX}}QueryParameters.js`, for example ArithmeticQueryParameters.js for the aritmetic repository, or FBQueryParameters.js for Function Builder (where the `FB` prefix is used).
 - [ ] Query parameters that are public-facing should be identified using `public: true` in the schema.
 - [ ] All sims should use a color file named `MyRepoColors.js` or, if using abbreviations, `MRColors.js`, and
