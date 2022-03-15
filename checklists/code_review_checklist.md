@@ -58,7 +58,7 @@ If any of these items fail, pause code review.
 - [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is
 there a call to that component’s `dispose` function, or is it obvious why it isn't necessary, or is there documentation
 about why `dispose` isn't called?  An example of why no call to `dispose` is needed is if the component is used in
-a `ScreenView` that would never be removed from the scene graph.
+a `ScreenView` that would never be removed from the scene graph. Note that it's also acceptable (and encouraged!) to describe what needs to be disposed in implementation-notes.md. 
 - [ ] Are there leaks due to registering observers or listeners? The following guidelines should be followed unless documentation (in-line or in implementation-notes.md) describes why following them is not necessary.
   * AXON: `Property.link` or `lazyLink` is accompanied by `unlink`.
   * AXON: `Property.multilink` is accompanied by `unmultilink`.
