@@ -91,9 +91,10 @@ Other:
   * `repository.url`
   * `phet.requirejsNamespace`
 - [ ] Change entry in [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json).
-- [ ] Notify Slack channel dev-public that the repo has been renamed. E.g. "I just renamed repository {{OLD_REPO}} to {{NEW_REPO}}. Please pull perennial and perennial-alias and run `clone-missing-repos.sh` at your convenience."
 - [ ] If applicable, "refresh perennial" on phettest.
 - [ ] Add the sim to chipper/tsconfig/all/tsconfig.json
+- [ ] Remove old repo directories in `chipper/dist/js` and `chipper/dist/declarations`.
+- [ ] Notify Slack channel dev-public that the repo has been renamed. E.g. "I just renamed repository {{OLD_REPO}} to {{NEW_REPO}}. Please pull perennial and perennial-alias, run `clone-missing-repos.sh` at your convenience, and remove {{OLD_REPO}} in `chipper/dist/js` and `chipper/dist/declarations`."
 
 ### If this is a simulation. . .
   - [ ] Rename many files:
