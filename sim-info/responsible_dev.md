@@ -39,7 +39,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | buoyancy | @jonathanolson | @DianaTavares |  | 
 | calculus-grapher | @jonathanolson | @amanda-phet |  | 
 | capacitor-lab-basics | @jonathanolson | @arouinfar |  | 
-| center-and-spread | @samreid,@chrisklus | @amanda-phet | Interactive Description | 
+| center-and-variability | @samreid,@chrisklus | @amanda-phet | Interactive Description | 
 | chains | @jbphet |  |  | 
 | charges-and-fields | @jonathanolson | @arouinfar |  | 
 | chipper | @jonathanolson |  |  | 
@@ -130,7 +130,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | number-play | @chrisklus | @amanda-phet | Sound | 
 | ohms-law | @jbphet | @DianaTavares | Sound<br/>Interactive Description | 
 | optics-lab | @veillette,@jbphet | @arouinfar |  | 
-| pendulum-lab | @jonathanolson | @arouinfar |  | 
+| pendulum-lab | @jonathanolson | @arouinfar | Sound | 
 | perennial | @mattpen,@jonathanolson |  |  | 
 | ph-scale | @pixelzoom | @arouinfar |  | 
 | ph-scale-basics | @pixelzoom | @arouinfar |  | 
