@@ -18,7 +18,7 @@ get you pointed in the right direction. If you notice errors or a need for clari
 6. `File > Project Structure > Modules` lets you exclude directories from your search path. You typically want to
    exclude
    `build/` and `node_modules/` for each repository, and all of `sherpa/`.
-7. Set the right margin to appear after 120 characters. `File> Settings> Editor > CodeStyle` Set Default Options to 120.
+7. Set the right margin to appear after 120 characters. `File> Settings> Editor > Code Style` Set Default Options to 120.
 8. Import the PhET code style (located in `phet-info/ide/idea/phet-idea-codestyle.xml`).
     * On a Mac, phet-idea-codestyle.xml must be manually copied
       to `$HOME/Library/Preferences/IntelliJIdea[**version**]/codestyles/`. Restart IDEA, then you can choose it
