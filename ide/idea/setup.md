@@ -29,9 +29,9 @@ get you pointed in the right direction. If you notice errors or a need for clari
 9. Configure JavaScript level. In `File > Settings > Language & Frameworks > Javascript`, Make sure `ECMAScript 6` is
    selected, and check `Prefer Strict mode`.
 10. Configure eslint. In `File > Settings > Language & Frameworks > Javascript > Code Quality Tools > Eslint`:
-    * Find your node.exe file (probably set up through the project). (May be filled in automatically)
+    * Select "Manual ESLint configuration"
     * Fill out ESLint package location (unless global, `chipper/node_modules/eslint`). (May be filled in automatically)
-    * Configuration file: "Automatically search"
+    * Configuration file: "Automatic search"
     * "Additional Rules Dir" should be `chipper/eslint/rules`
     * "Extra eslint options" needs to have `--resolve-plugins-relative-to=../chipper/`
     * [Here is a picture for a Windows](https://user-images.githubusercontent.com/6396244/157985259-def3f3f5-891f-4916-9276-c3ec7c15d1d8.png)
