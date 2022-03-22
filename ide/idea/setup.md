@@ -26,9 +26,9 @@ get you pointed in the right direction. If you notice errors or a need for clari
     * See https://www.jetbrains.com/help/idea/2017.1/copying-code-style-settings.html. NOTE: For newer versions, you can
       press the drop-down "settings" icon to the right of the Scheme, select
       "Import Scheme", and navigate to where the code style is located (noted above).
-9. Configure JavaScript level. In `File > Settings > Language & Frameworks > Javascript`, Make sure `ECMAScript 6` is
+9. Configure JavaScript level. In `File > Settings > Language & Frameworks > JavaScript`, Make sure `ECMAScript 6` is
    selected, and check `Prefer Strict mode`.
-10. Configure eslint. In `File > Settings > Language & Frameworks > Javascript > Code Quality Tools > Eslint`:
+10. Configure eslint. In `File > Settings > Language & Frameworks > JavaScript > Code Quality Tools > ESlint`:
     * Find your node.exe file (probably set up through the project). (May be filled in automatically)
     * Fill out ESLint package location (unless global, `chipper/node_modules/eslint`). (May be filled in automatically)
     * Configuration file: "Automatically search"
