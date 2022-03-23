@@ -127,9 +127,10 @@ specifying [isolatedModules](https://www.typescriptlang.org/tsconfig#isolatedMod
 that types must be exported separately from other modules. For example:
 
 ```ts
-type NodeOptions = ...;
-type MyEnum = ...;
-class Node { ... }
+type NodeOptions = /*...*/;
+type MyEnum = /*...*/;
+
+class Node { /*...*/ }
 
 export { NodeOptions, MyEnum };
 export { Node as default };
@@ -139,7 +140,7 @@ Exports can be done at end of the file (as shown above), or at declaration sites
 
 ```ts
 
-export type DotPlotNodeOptions = ...
+export type DotPlotNodeOptions = /*...*/;
 
 export default class DotPlotNode extends Node {
   // ...
