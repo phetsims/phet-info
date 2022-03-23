@@ -61,6 +61,16 @@ class Clock {
 }
 ```
 
+The `private` modifier behaves differently than PhET's JavaScript JSDoc `@private` annotation. In typescript, this is 
+private to the class, and often in JavaScript it meant "private to the file." To get around this, it is often helpful
+to convert a function/constant/etc. that needs to use the `private` feature of the class to be a `private static` member
+of the class itself.
+
+For `readonly`, TypeScript's support also differs from how this was used in JavaScript code at PhET. At PhET it was 
+common to mark something as readonly if internal class logic changed the value, but publicly, it was readonly. To support
+this in TypeScript, create two members in the class that point to the same value/field/member, one marked as `private`, 
+and the other as `public readonly`.
+
 ### Enumerations
 
 Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderEnumerationPatterns.ts
