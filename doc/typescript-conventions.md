@@ -61,15 +61,15 @@ class Clock {
 }
 ```
 
-The `private` modifier behaves differently than PhET's JavaScript JSDoc `@private` annotation. In typescript, this is 
-private to the class, and often in JavaScript it meant "private to the file." To get around this, it is often helpful
-to convert a function/constant/etc. that needs to use the `private` feature of the class to be a `private static` member
-of the class itself.
+The `private` modifier behaves differently than PhET's JavaScript JSDoc `@private` annotation. In typescript, this is
+private to the class, and often in JavaScript it meant "private to the file." To get around this, it is often helpful to
+convert a function/constant/etc. that needs to use the `private` feature of the class to be a `private static` member of
+the class itself.
 
-For `readonly`, TypeScript's support also differs from how this was used in JavaScript code at PhET. At PhET it was 
-common to mark something as readonly if internal class logic changed the value, but publicly, it was readonly. To support
-this in TypeScript, create two members in the class that point to the same value/field/member, one marked as `private`, 
-and the other as `public readonly`.
+For `readonly`, TypeScript's support also differs from how this was used in JavaScript code at PhET. At PhET it was
+common to mark something as readonly if internal class logic changed the value, but publicly, it was readonly. To
+support this in TypeScript, create two members in the class that point to the same value/field/member, one marked
+as `private`, and the other as `public readonly`.
 
 ### Enumerations
 
@@ -142,10 +142,9 @@ Exports can be done at end of the file (as shown above), or at declaration sites
 export type DotPlotNodeOptions = ...
 
 export default class DotPlotNode extends Node {
- // ...
+  // ...
 }
 ```
-
 
 ### Multiple Imports in One Expression
 
@@ -177,11 +176,13 @@ The non-null assertion operator `!` indicates to the TypeScript compiler that a 
 non-undefined. This operator should be used judiciously. It can sometimes be preferable to write code that doesn't
 require it at all (for instance, by using values that can never be `null` or `undefined`). In cases where the non-null
 assertion operator is appropriate:
+
 * Consider adding documentation that explains why the value is not expected to be null or undefined at that point.
-* Add an assertion guard where necessary.  Cases like `if ( this.someNumber! < 50 ) {` require an assertion 
-guard, since `null < 50` evaluates to true. Cases like `something!.method` do not require a guard, since you already get a helpful 
-runtime error.
-* Consider factoring out a variable rather than repeating the non-null assertion operator several times on the same variable.
+* Add an assertion guard where necessary. Cases like `if ( this.someNumber! < 50 ) {` require an assertion guard,
+  since `null < 50` evaluates to true. Cases like `something!.method` do not require a guard, since you already get a
+  helpful runtime error.
+* Consider factoring out a variable rather than repeating the non-null assertion operator several times on the same
+  variable.
 
 ---
 
