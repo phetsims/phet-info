@@ -69,7 +69,8 @@ the class itself.
 For `readonly`, TypeScript's support also differs from how this was used in JavaScript code at PhET. At PhET it was
 common to mark something as readonly if internal class logic changed the value, but publicly, it was readonly. To
 support this in TypeScript, create two members in the class that point to the same value/field/member, one marked
-as `private`, and the other as `public readonly`.
+as `private`, and the other as `public readonly`. Alternatively, you can accomplish this with es5 getters and setters,
+perhaps omitting/limiting the setters when appropriate.
 
 ### Enumerations
 
