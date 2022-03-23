@@ -130,7 +130,7 @@ that types must be exported separately from other modules. For example:
 type NodeOptions = /*...*/;
 type MyEnum = /*...*/;
 
-class Node { /*...*/ }
+class Node { /*...*/}
 
 export { NodeOptions, MyEnum };
 export { Node as default };
