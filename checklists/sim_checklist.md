@@ -28,6 +28,7 @@
   - [ ] Teacher Guide created, uploaded, and added to sim design folder
 - [ ] **Pre-publication items**
   - [ ] Auxilary screenshots (up to 3 additional)
+  - [ ] Screen-specific screenshots for metadata service (see [naming convention](https://github.com/phetsims/website/issues/1322#issuecomment-1010320827))
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Accessibility features
   - [ ] Email announcement language
