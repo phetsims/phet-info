@@ -3,6 +3,12 @@
 These are the conventions established for TypeScript use by PhET developers. This is an evolving document in an early
 phase. Please bring things up for discussion to add here as you find new patterns.
 
+### ESLint
+
+Many of PhET's TypeScript conventions are emobodied in TypeScript-specific lint rules. We use the `@typescript-eslint`
+plugin to add these rules. Please see [.eslintrc](https://github.com/phetsims/chipper/blob/master/eslint/.eslintrc.js)
+for details and context about conventions based on lint rules. 
+
 ### Leveraging Type Inference
 
 From _Effective TypeScript_ (Dan Vanderkan), page 87, Item 19, "Avoid Cluttering Your Code with Inferable Types":
