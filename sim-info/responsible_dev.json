@@ -796,6 +796,15 @@
       "@arouinfar"
     ]
   },
+  "mean-share-and-balance": {
+    "responsibleDevs": [
+      "@marlitas",
+      "@samreid"
+    ],
+    "responsibleDesigners": [
+      "@amanda-phet"
+    ]
+  },
   "mobius": {
     "responsibleDevs": [
       "@jonathanolson"
