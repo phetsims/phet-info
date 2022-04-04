@@ -6,6 +6,7 @@ New sim repo
 | FULL_ACCESS_DEV   | Admin      |
 | Quality Assurance | Triage     |
 | SIMS_DESIGN       | PhET Write |
+| SIMS_DEV          | PhET Write |
 | Development       | Triage     |
 | Design            | Triage     |
 
