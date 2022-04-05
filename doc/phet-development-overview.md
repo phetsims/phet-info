@@ -63,7 +63,7 @@ please visit the [Developing Interactive Simulations in HTML5 Google Group](http
   https://git-scm.com/book/en/v2/Getting-Started-Installing-Git.
 * `node` and `npm` are necessary to install dependencies and run build code processes. Download & install node+npm
   from https://nodejs.org/en/
-    * After installing, run `npm config set save false` so that package-lock.json files are not created.
+    * After installing, run `npm config set save false` and `npm config set package-lock false` so that package-lock.json files are not created.
 * Create a directory where you intend to check out the PhET source code: `mkdir phetsims`
 * For building the simulations, install the grunt command line utility: `npm install -g grunt-cli` (May require `sudo`
   if you don't have sufficient permissions).
