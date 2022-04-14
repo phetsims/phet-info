@@ -3,6 +3,7 @@
 - [ ] Is the code formatted according to PhET conventions?
   See [phet-idea-code-style.xml](https://github.com/phetsims/phet-info/blob/master/ide/idea/phet-idea-codestyle.xml) for
   IntelliJ IDEA code style.
+
 - [ ] Names (types, variables, properties, Properties, functions,...) should be sufficiently descriptive and specific,
   and should avoid non-standard abbreviations. For example:
 
@@ -549,3 +550,7 @@ visibility annotations are as follows:
   expressions to search for these declarations as PhET uses them.
     * Regex for property assignment like `x.y = something`: `[\w]+\.[\w]+\s=`
     * Regex for function declarations: `[\w]+: function\(`
+
+- [ ] For private fields, a preceding underscore should generally *not* be used in the variable name.  For example,
+for a private variable that represents the background, the name ```background``` is preferred over ```_background```. 
+An exception is when trying to avoid a collision with and ES5 getter/setter.
