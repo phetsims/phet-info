@@ -88,5 +88,6 @@ find . -name "*.js" ! -iname "*phet-io-overrides.js"  -exec bash -c 'mv "$1" "${
 7. Conventions and patterns listed in https://github.com/phetsims/phet-info/blob/master/doc/typescript-conventions.md
 8. For certain files, when changing JS=>TS, WebStorm will say it is a rename in the commit dialog, then show a “delete +
    create” in the history. This is not desirable. For those files, a workaround is to rename the file with no content
-   changes, then change the contents in a separate commit. If you want a type-checking file, you can use // @ts-nocheck.
-   This came from https://github.com/phetsims/sun/issues/732#issuecomment-995330513
+   changes, then change the contents in a separate commit. We no longer are using `@ts-nocheck` as part of this process
+   because it wasn't worth the cost, and this doesn't prevent downstream errors by files that use your converting file
+   as a dependency. This came from https://github.com/phetsims/sun/issues/732#issuecomment-995330513.
