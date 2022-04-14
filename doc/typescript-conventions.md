@@ -114,7 +114,7 @@ class EventCounter {
 
 // Initialized in constructor
 class EventCounter {
-  public numberOfEvents: number = 0;
+  public numberOfEvents: number;
 
   constructor( ... ) {
     super(...);
