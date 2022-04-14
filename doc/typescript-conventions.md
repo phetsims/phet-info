@@ -101,14 +101,26 @@ type Cat = {
 
 ### Initialization of Class Properties
 
-When possible, it is preferable to initialize properties where they are declared and thus avoid an explicit
-initialization statement in the constructor. For example:
+Class properties can be initialized either where they are declared, or in the constructor. It is up to developer discretion, but please 
+try to be consistent, and adhere to the spirit of existing code.
 
 ```ts
+// Initialized where declared
 class EventCounter {
   public numberOfEvents: number = 0;
 
   // ...
+}
+
+// Initialized in constructor
+class EventCounter {
+  public numberOfEvents: number;
+
+  constructor( ... ) {
+    super(...);
+    this.numberOfEvents = 0;
+    // ...
+  }
 }
 ```
 
