@@ -81,6 +81,9 @@ Variants or Alternate problems:
 * It is possible to use the drag forwarding pattern without dynamically creating instances. For instance, in Wave
   Interference, there is only one Wave Meter Node, so dragging the icon displays the view and forwards the event without
   creating a new one.
+* A subtle and challenging error can occur when you forward from NodeA to NodeB. If using `DragListener.positionProperty` 
+  and these Nodes do not share the same parent, then you should specify `targetNode: NodeB` to avoid an unexpected
+  translation offset.   
 * Forces and Motion: Basics doesn't dynamically create elements. The real elements are already in the toolbox, hence no
   creation or forwarding takes place.
 
