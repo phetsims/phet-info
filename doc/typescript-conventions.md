@@ -1,7 +1,7 @@
 ## TypeScript Conventions
 
 These are the conventions established for TypeScript use by PhET developers. This is an evolving document in an early
-phase. Please bring things up for discussion to add here as you find new patterns.
+phase. Please bring things up for discussion to add here as you find new patterns.  Conventions enforced by lint or other tooling are not listed here.
 
 ### ESLint
 
@@ -87,17 +87,6 @@ Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/Wilder
 ### Options and Config
 
 Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts
-
-### Syntax in Type Declarations
-
-We prefer to follow the TypeScript handbook and put semicolon delimiters in type declarations:
-
-```ts
-type Cat = {
-  person: Person; // note the semicolons
-  age: number;
-}
-```
 
 ### Initialization of Class Properties
 
