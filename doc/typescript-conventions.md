@@ -18,7 +18,8 @@ From _Effective TypeScript_ (Dan Vanderkan), page 87, Item 19, "Avoid Cluttering
 * Consider using explicit annotations for object literals and function return types even when they can be inferred. This
   will help prevent implementation errors from surfacing in user code.
 
-It is PhET convention to provide return types when declaring methods and functions.
+It is PhET convention to provide return types when declaring methods and functions.  This includes explicitly specifying
+`void` for everything that is a method and/or part of a public API. 
 (Arrow functions as args are up to dev discretion.)
 
 TypeScript has a powerful type inference system, and we recommend to leverage that type inference in the general case.
