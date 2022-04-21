@@ -136,8 +136,37 @@ class EventCounter {
 }
 ```
 
-### Documentation for Class Properties
+#### Statics
 
+One line static properties and fields will likely be better and clearer when grouped with the prototype fields declared 
+at the top of a class. That said, it is developer preference whether to group them or put them at the bottom of the file:
+
+```ts
+class Person {
+
+  readonly name: string;
+
+  // here is a bit better
+  static QUALITIES: [ 'height', 'age' ];
+
+  constructor( name: string ) {
+    this.name = name;
+  }
+  
+  sayName() {
+    console.log( name );
+  }
+  
+  // or here because it is long
+  static QUALITIES: [ 
+    'height', 
+    'age' 
+  ];
+}
+```
+
+
+#### Documentation
 Documentation for class properties should be placed with the declaration, not the instantiation. For example:
 
 ```ts
