@@ -84,6 +84,28 @@ appropriate.
 
 Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderEnumerationPatterns.ts
 
+### Prefer IReadOnlyProperty to DerivedProperty for type annotations.
+Prefer IReadOnlyProperty to DerivedProperty for type annotations, see https://github.com/phetsims/build-a-nucleus/issues/13
+
+```ts
+class HalfLifeInformationNode extends Node {
+
+  constructor( halfLifeNumberProperty: DerivedProperty<number,
+                 [ protonCount: number, neutronCount: number, doesNuclideExist: boolean, isStable: boolean ]>,
+               isStableBooleanProperty: DerivedProperty<boolean, [ protonCount: number, neutronCount: number ]> ) {
+    super();
+```
+
+should be simplified as:
+
+```ts
+class HalfLifeInformationNode extends Node {
+
+  constructor( halfLifeNumberProperty: IReadOnlyProperty<number>,
+               isStableBooleanProperty: IReadOnlyProperty<boolean> ) {
+    super();
+```
+
 ### Options and Config
 
 Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts
