@@ -198,6 +198,12 @@ import { BendingLightScreenViewOptions } from '../../common/view/BendingLightScr
 If this exceeds the line limit and the WebStorm formatter wants to format it on multiple lines, please use
 `// eslint-disable-line single-line-import`
 
+### Assertions
+
+In general, assertions should be used to check run-time conditions that can't be validated by the type checker.
+
+When converting from JS to TS, `assert` statements that checked types can and should be removed. 
+
 ### JSDoc and TSDoc
 
 It is recommended that you do not duplicate parameter and return type information in JSDoc and in Typescript types. If
