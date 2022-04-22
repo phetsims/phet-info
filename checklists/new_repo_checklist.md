@@ -63,7 +63,7 @@ In your working copy of the sim repo:
 - [ ] `git push -u origin master`
 
 At https://github.com/phetsims/{{REPO}}:
-- [ ] Go to Settings => Collaborators and Teams, add the teams used in another public sims (currently Design, Development, and Quality Assurance) with "Write" permissions. _NOTE: If the repo is private, it is REQUIRED to add the Machine User collaborator (so automated processes can clone/pull the repo). CT will break otherwise._
+- [ ]Go to _Settings => Collaborators and teams_. Press the "Add teams" button. See [team assignment.md](https://github.com/phetsims/phet-info/blob/master/policies/team%20assignment.md) for assignments by repo type.
 
 In your working copy of perennial repo:
 - [ ] If applicable: Add the new repo to `perennial/data/active-repos`. Commit and push. Pull perennial-alias. If needed immediately, run `cd perennial/ && grunt generate-data` and commit and push to update data lists. Otherwise it is done every night as part of daily grunt work.
