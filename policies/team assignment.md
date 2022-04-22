@@ -1,5 +1,8 @@
 When creating a new repo, access should be managed by adding Teams, not individuals.
 
+_NOTE:
+The 'phet-dev' machine user is a member of APPS_DEV, BROWSER_SIDE_COMMON_CODE, PhET-iO, SERVER_CODE, SIMS_DEV, and WEBSITE_DEV teams. It is REQUIRED to add the Teams and Roles below to all new repos so that the 'phet-dev' machine user can properly clone/pull the repo for automated processes)._
+
 New sim repo
 | Team              | Role       |
 |-------------------|------------|
