@@ -59,12 +59,19 @@ Again, in complex or volatile cases, at the developer preference, the redundant 
 
 In TypeScript, the default access modifier (if unspecified) is `public`. For methods, attributes, constructors, etc.
 which are intended to be public, the access modifier can be omitted. Or at the developer's discretion, `public` can be
-specified.
+specified.  Whichever convention is preferred, it should be consistent within a repo.
 
 ```ts
+// ok
 class Clock {
-  time: number; // ok 
-  public age: number; // also ok
+  time: number; 
+  age: number;
+}
+
+// also ok
+class Clock {
+  public time: number;
+  public age: number;
 }
 ```
 
