@@ -1019,6 +1019,14 @@
     ],
     "responsibleDesigners": []
   },
+  "phet-io-sim-specific": {
+    "responsibleDevs": [
+      "@samreid"
+    ],
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
+  },
   "phet-io-test-sim": {
     "responsibleDevs": [
       "@chrisklus"
