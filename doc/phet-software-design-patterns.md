@@ -946,8 +946,8 @@ and `lazyLink` methods. However, note that the value of a DerivedProperty instan
 
 ##### Other Notes
 
-- All Properties and its subclasses use [validate](https://github.com/phetsims/axon/blob/master/js/validate.js), meaning
-  the [ValidatorDef](https://github.com/phetsims/axon/blob/master/js/ValidatorDef.js.) options are apart of its API.
+- All Properties and its subclasses use [validate](https://github.com/phetsims/axon/blob/master/js/validate.ts), meaning
+  the [Validation](https://github.com/phetsims/axon/blob/master/js/Validation.ts.) options are apart of its API.
 
   For type-specific subclasses like `NumberProperty`, these are set for you. However, this is needed for
   DerivedProperty. So for the example above, the declaration should look like
