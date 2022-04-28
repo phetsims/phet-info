@@ -90,7 +90,28 @@ appropriate.
 
 ### Enumerations
 
-Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderEnumerationPatterns.ts
+* String literal unions are idiomatic in TypeScript.
+* You can also use the string[] `as const` pattern for accessing string union literals and values at runtime.  
+This works well with axon/StringEnumerationProperty.
+* `EnumerationValue` adds rich methods on the instances.  Axon as EnumerationProperty for this.
+* Careful!  If you change from string literal union to `EnumerationValue`, the casing convention is different and you will
+break the PhET-iO API.
+* Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderEnumerationPatterns.ts for details and examples.
+
+### Parameters should be as general as possible
+This relates to Vanderkam's Item 29 "Be liberal in what you accept and strict in what you produce.". For example:
+
+```ts
+class Animal{ name='animalName';}
+class Dog extends Animal{ bark(){} }
+function computeHabitat( dog:Dog ){
+  lookup( dog.name );
+}
+```
+Since the `computeHabitat` method doesn't call `bark`, it may be rewritten to accept `computeHabitat( animal: Animal )`.
+
+However, something that has to be PhET-iO Instrumented should use `Property` instead of `IProperty` even if the additional 
+`Property` methods are not exercised.  This will help clients know that must be a full instrumentable axon Property.
 
 ### Prefer IReadOnlyProperty to DerivedProperty for type annotations.
 Prefer IReadOnlyProperty to DerivedProperty for type annotations, see https://github.com/phetsims/build-a-nucleus/issues/13
