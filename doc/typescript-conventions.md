@@ -139,6 +139,13 @@ class HalfLifeInformationNode extends Node {
 
 Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts
 
+#### Use `optionize` instead of `merge`
+
+In the vast majority of cases, `optionize` should be used instead of `merge`. This provided extra type information on top
+of the implementation of merge. While there are still some cases where `merge` is in TypeScript code, it is the exception
+and not the rule. Please bring any potential new `merge` usage in TypeScript to the attention of the devs so that it can
+be discussed.
+
 ### Initialization of Class Properties
 
 Class properties can be initialized either where they are declared, or in the constructor. It is up to developer discretion, but please 
