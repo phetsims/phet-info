@@ -111,7 +111,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | make-a-ten | @jonathanolson | @amanda-phet | Sound | 
 | masses-and-springs | @chrisklus | @arouinfar |  | 
 | masses-and-springs-basics | @chrisklus | @arouinfar |  | 
-| mean-share-and-balance | @marlitas,@samreid | @amanda-phet |  | 
+| mean-share-and-balance | @marlitas,@samreid | @amanda-phet | Interactive Description | 
 | mobius | @jonathanolson |  |  | 
 | models-of-the-hydrogen-atom | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | molarity | @zepumph | @arouinfar | Sound<br/>Interactive Description | 
