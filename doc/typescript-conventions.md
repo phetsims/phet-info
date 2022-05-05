@@ -216,6 +216,28 @@ class Person {
 }
 ```
 
+If implementation details are needed about the instantiation value, then those should be included at the instantiation
+point.
+
+```ts
+class Person {
+
+  // First and last name, separated by a whitespace
+  name: string;
+
+  constructor() {
+    
+    // All new people get assigned a random name. A specific name can be assigned later if desired.
+    this.name = Person.getRandomName();
+  }
+
+  // ...
+}
+```
+
+The same documentation pattern applies to options. Documentation should generally be placed at the declaration, but 
+explanation for defaults should be described where the default values are assigned. 
+
 ### Multiple Exports
 
 PhET uses babel to do transpilation, and it only operates on a single file at a time. This means that it can’t apply
