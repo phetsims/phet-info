@@ -1225,7 +1225,7 @@ Additional guidelines:
 
 ```js
 // Our parent class is Path, whose options type is PathOptions.
-class MyPath extends Path { … }
+class MyPath extends Path { ... }
 
 // incorrect, duplicates fields defined in PathOptions
 type SelfOptions = {
@@ -1237,7 +1237,7 @@ type SelfOptions = {
 type MyPathOptions = SelfOptions;
 
 // correct, composes PathOptions
-type SelfOptions = {…};
+type SelfOptions = { ... };
 type MyClassOptions = SelfOptions & PathOptions; 
 ```
 
@@ -1247,12 +1247,13 @@ type MyClassOptions = SelfOptions & PathOptions;
 // In this example, MyNode is responsible for setting the children option.
 // Omit is used to prevent clients from being able to set options.children.
 
-type SelfOptions = { … };
+type SelfOptions = { ... };
 type MyNodeOptions = SelfOptions & Omit<NodeOptions, ‘children’>;
 
 class MyNode extends Node { 
   constructor( …, providedOptions?: MyNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
+      ...
     }, providedOptions );
    …
    options.children = …
@@ -1265,12 +1266,13 @@ class MyNode extends Node {
 // In this example, we want to hide the parent class’ options, and make the tandem option required.
 // PickRequired is used to pick tandem from NodeOptions.
 
-type SelfOptions = { … };
+type SelfOptions = { ... };
 type MyNodeOptions = SelfOptions & PickRequired<NodeOptions, ‘tandem’>;
 
 class MyNode extends Node { 
-  constructor( …, providedOptions?: MyNodeOptions ) {
+  constructor( ..., providedOptions?: MyNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
+      ...
     }, providedOptions );
    …
   }
@@ -1281,14 +1283,15 @@ class MyNode extends Node {
 // In this example, we want to hide the parent class’ options, make `tandem` required, 
 // and make `phetioDocumentation` optional.  We use PickRequired and PickOptional respectively.
 
-type SelfOptions = { … };
+type SelfOptions = { ... };
 type MyNodeOptions = SelfOptions & 
   PickRequired<NodeOptions, ‘tandem’> &
   PickOptional<NodeOptions, ‘phetioDocumentation’>;
 
 class MyNode extends Node { 
-  constructor( …, providedOptions?: MyNodeOptions ) {
+  constructor( ..., providedOptions?: MyNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
+      ...
     }, providedOptions );
    …
   }
@@ -1300,10 +1303,10 @@ class MyNode extends Node {
 ```js
 // In this example, we make options ‘fill’ and ‘stroke’ required for our subclass.
 
-type SelfOptions = { … };
+type SelfOptions = { ... };
 type MyPathOptions = SelfOptions & PathOptions & PickRequired<PathOptions, ‘fill’ | ‘stroke’>;
 
-class MyPath extends Path { … }
+class MyPath extends Path { ... }
 ```
 
 ```js
@@ -1314,7 +1317,7 @@ type AtomizerOptions = {
 };
 
 class Atomizer {
-  constructor( providedOptions: AtomizerOptions ) { … }
+  constructor( providedOptions: AtomizerOptions ) { ... }
 }
 
 type MyAtomizerOptions = AtomizerOptions & PickOptional<AtomizerOptions, ‘numberOfAtoms’>;
@@ -1323,7 +1326,7 @@ class MyAtomizer extends Atomizer {
   constructor( providedOptions?: MyAtomizerOptions ) {
      const option = optionize<MyAtomizerOptions, {}, AtomizerOptions>()( {
         numberOfAtoms: 10,
-        …
+        ...
       }, providedOptions );
     …
   }
@@ -1334,17 +1337,17 @@ class MyAtomizer extends Atomizer {
 
 ```js
 // Our parent class is Path, whose options type is PathOptions.
-class MyPath extends Path { … }
+class MyPath extends Path { ... }
 
 // incorrect, definition of Path.fill is duplicated
 type SelfOptions = {
-  …
   fill?: IPaint;
+  ...
 };
 type MyPathOptions = SelfOptions;
 
 // correct, definition of fill is picked from PathOptions
-type SelfOptions = {…};
+type SelfOptions = { ... };
 type MyClassOptions = SelfOptions & PickOptional<PathOptions, ‘fill>; 
 ```
 
@@ -1352,17 +1355,17 @@ type MyClassOptions = SelfOptions & PickOptional<PathOptions, ‘fill>;
 
 ```js
 // Our parent class is PhetioObject, whose options type is PhetioObjectOptions.
-class MyClass extends PhetioObject { … }
+class MyClass extends PhetioObject { ... }
 
 // incorrect, definition of PhetioObjectOptions.tandem is duplicated
 type SelfOptions = {
-  …
   tandem: Tandem;
+  ...
 };
 type MyClassOptions = SelfOptions;
 
 // correct, definition of tandem is picked from PhetioObjectOptions, where it is defined
-type SelfOptions = { … };
+type SelfOptions = { ... };
 type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>; 
 ```
 
@@ -1370,7 +1373,7 @@ type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
 
 ```js
 // Our parent class is Path, whose options type is PathOptions.
-class MyPath extends Path { … }
+class MyPath extends Path { ... }
 
 // incorrect, picks tandem from ancestor class PhetioObjectOptions
 type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>; 
@@ -1399,19 +1402,19 @@ class MyNode extends Path { ... }
 
 type SelfOptions = {
   textOptions?: TextOptions;
-  …
+  ...
 };
 
 type MyControlOptions = SelfOptions & HBoxOptions;
 
 class MyControl extends HBox {
-  constructor( …, providedOptions?: MyControlOptions ) {
+  constructor( ..., providedOptions?: MyControlOptions ) {
 
     const options = optionize<MyControlOptions, Omit<SelfOptions, ‘textOptions’>()( {
-      …
+      ...
     }, providedOptions );
 
-    const text = new Text( …, optionize<TextOptions, {}, TextOptions>()( {
+    const text = new Text( ..., optionize<TextOptions, {}, TextOptions>()( {
        font: new Font( 18 )
     }, options.textOptions );
 
