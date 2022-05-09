@@ -1,7 +1,6 @@
 # PhET Software Design Patterns
 
-This document describes software design patterns that are specific to PhET, and PhET-specific applications of standard
-design patterns.
+This document describes software design patterns that are specific to PhET, and PhET-specific applications of standard design patterns.
 
 For general information on many standard design patterns,
 see _[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)_ by Addy
@@ -19,7 +18,8 @@ Osmani.
 * [Module](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#module)
 * [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace)
 * [Observer](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#observer)
-* [Options and Config](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config)
+* [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config-javascript)
+* [Options (TypeScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-typescript)
 * [Scenes](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#scenes)
 * [Singleton](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#singleton)
 * [State Machine](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#state-machine)
@@ -1026,7 +1026,8 @@ section.
 As a reminder from above, Input Listeners (such as `DragListener`) are internally referenced in Node, so be sure to
 call `removeInputListener()` to release listeners if needed.
 
-## Options and Config
+
+## Options and Config (JavaScript)
 
 Author: @pixelzoom, @denz1994
 
@@ -1201,6 +1202,226 @@ class MyPanel extends Panel {
 
 (5) Use `config` judiciously and appropriately. If your API has too many parameters, don't immediately reach
 for `config` as the solution. Review your API to understand _why_ it has too many parameters, and possibly redesign.
+
+## Options (TypeScript)
+
+Author: @pixelzoom
+
+Similar to the pattern decribed in [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config-javascript), this pattern is used to parameterize methods (most typically constructors) without having a large number of parameters. It provides the 
+additional benefit of type-checking.
+
+The parameter differs from the JavaScript `options` or `config` parameter in the following ways:
+
+* the parameter is named `providedOptions`
+* `providedOptions` may be optional or required
+* `providedOptions` fields may be optional or required
+* [optionize](https://github.com/phetsims/phet-core/blob/master/js/optionize.ts) is used to merge `providedOptions` with default values
+
+See [WilderOptionsPattern.ts](https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts) for additional description and examples.
+
+Additional guidelines:
+
+(1) Create your options type by composing `SelfOptions` and the parent class’ options type. `SelfOptions` will contain options that are specific to your class.
+
+```js
+// Our parent class is Path, whose options type is PathOptions.
+class MyPath extends Path { ... }
+
+// incorrect, duplicates fields defined in PathOptions
+type SelfOptions = {
+  fill?: IPaint;
+  stroke?: IPaint;
+  tandem: Tandem;
+  …
+};
+type MyPathOptions = SelfOptions;
+
+// correct, composes PathOptions
+type SelfOptions = { ... };
+type MyClassOptions = SelfOptions & PathOptions; 
+```
+
+(2) Use `Omit`, `PickRequired`, and `PickOptional` to narrow the API provided by your options type.
+
+```js
+// In this example, MyNode is responsible for setting the children option.
+// Omit is used to prevent clients from being able to set options.children.
+
+type SelfOptions = { ... };
+type MyNodeOptions = SelfOptions & Omit<NodeOptions, 'children'>;
+
+class MyNode extends Node { 
+  constructor( …, providedOptions?: MyNodeOptions ) {
+    const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
+      ...
+    }, providedOptions );
+   …
+   options.children = …
+   …
+  }
+}
+```
+
+```js
+// In this example, we want to hide the parent class’ options, and make the tandem option required.
+// PickRequired is used to pick tandem from NodeOptions.
+
+type SelfOptions = { ... };
+type MyNodeOptions = SelfOptions & PickRequired<NodeOptions, 'tandem'>;
+
+class MyNode extends Node { 
+  constructor( ..., providedOptions?: MyNodeOptions ) {
+    const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
+      ...
+    }, providedOptions );
+   …
+  }
+}
+```
+
+```js
+// In this example, we want to hide the parent class’ options, make tandem required, 
+// and make phetioDocumentation optional.  We use PickRequired and PickOptional respectively.
+
+type SelfOptions = { ... };
+type MyNodeOptions = SelfOptions & 
+  PickRequired<NodeOptions, 'tandem'> &
+  PickOptional<NodeOptions, 'phetioDocumentation'>;
+
+class MyNode extends Node { 
+  constructor( ..., providedOptions?: MyNodeOptions ) {
+    const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
+      ...
+    }, providedOptions );
+   …
+  }
+}
+```
+
+(3) Use `PickRequired` and `PickOptional` to change whether parent options are required or optional. Note that when composing types, `PickRequired` and `PickOptional` must come _after_ other occurrences of the parent class’ options type.
+
+```js
+// In this example, we make options fill and stroke required for our subclass.
+
+type SelfOptions = { ... };
+type MyPathOptions = SelfOptions & PathOptions & PickRequired<PathOptions, 'fill' | 'stroke'>;
+
+class MyPath extends Path { ... }
+```
+
+```js
+// In this example, we make numberOfAtoms optional for our subclass.
+
+type AtomizerOptions = {
+  numberOfAtoms: number;
+};
+
+class Atomizer {
+  constructor( providedOptions: AtomizerOptions ) { ... }
+}
+
+type MyAtomizerOptions = AtomizerOptions & PickOptional<AtomizerOptions, 'numberOfAtoms'>;
+
+class MyAtomizer extends Atomizer {
+  constructor( providedOptions?: MyAtomizerOptions ) {
+     const option = optionize<MyAtomizerOptions, {}, AtomizerOptions>()( {
+       numberOfAtoms: 10,
+       ...
+      }, providedOptions );
+    …
+  }
+}
+```
+
+(4) To narrow an API, pick fields from the parent class’ options, rather than duplicate the definitions of those fields.
+
+```js
+// Our parent class is Path, whose options type is PathOptions.
+class MyPath extends Path { ... }
+
+// incorrect, definition of Path.fill is duplicated
+type SelfOptions = {
+  fill?: IPaint;
+  ...
+};
+type MyPathOptions = SelfOptions;
+
+// correct, definition of fill is picked from PathOptions
+type SelfOptions = { ... };
+type MyClassOptions = SelfOptions & PickOptional<PathOptions, 'fill'>; 
+```
+
+(5) If a class has no parent class, pick a field from the type that defines that field, rather than duplicating that field’s definition.
+
+```js
+// Our parent class is PhetioObject, whose options type is PhetioObjectOptions.
+class MyClass extends PhetioObject { ... }
+
+// incorrect, definition of PhetioObjectOptions.tandem is duplicated
+type SelfOptions = {
+  tandem: Tandem;
+  ...
+};
+type MyClassOptions = SelfOptions;
+
+// correct, definition of tandem is picked from PhetioObjectOptions, where it is defined
+type SelfOptions = { ... };
+type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>; 
+```
+
+(6) Pick fields from the parent class’ options. Do not “reach up” the type hierarchy.
+
+```js
+// Our parent class is Path, whose options type is PathOptions.
+class MyPath extends Path { ... }
+
+// incorrect, picks tandem from ancestor class PhetioObjectOptions
+type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>; 
+
+// correct, picks tandem from parent class PathOptions
+type MyClassOptions = SelfOptions & PickRequired<PathOptions, 'tandem'>; 
+```
+
+(7) An exception to (6) is when you want to narrow the API of `NodeOptions`. You can do this using `NodeTranslationOptions`, `NodeTransformOptions`, or `NodeBoundsBasedTranslationOptions`.
+
+```js
+// Limit the API to include only the parent options related to translation.
+// In this case, it is acceptable to assume that Path is a subclass of Node.
+
+type SelfOptions = { ... };
+type MyNodeOptions = SelfOptions & NodeTranslationOptions;
+
+class MyNode extends Path { ... }
+```
+
+(8) Use `Omit` to avoid specifying a default value for optional nested options.
+
+```js
+// Nested textOptions are used to instantiate a Text subcomponent. 
+// They are optional, so we want to avoid having to specify a default value like {} or null.
+
+type SelfOptions = {
+  textOptions?: TextOptions;
+  ...
+};
+
+type MyControlOptions = SelfOptions & HBoxOptions;
+
+class MyControl extends HBox {
+  constructor( ..., providedOptions?: MyControlOptions ) {
+
+    const options = optionize<MyControlOptions, Omit<SelfOptions, 'textOptions'>()( {
+      ...
+    }, providedOptions );
+
+    const text = new Text( ..., optionize<TextOptions, {}, TextOptions>()( {
+      font: new Font( 18 )
+    }, options.textOptions );
+
+    …
+  } 
+}
+```
 
 ## Scenes
 
