@@ -1241,10 +1241,10 @@ type MyClassOptions = SelfOptions & PathOptions;
 (2) Use `Omit`, `PickRequired`, and `PickOptional` to narrow the API provided by your options type.
 
 ```js
-// In this example MyNode is responsible for setting the children option.
-// We use Omit to prevent clients from being able to set providedOptions.children.
+// In this example, MyNode is responsible for setting the children option.
+// Omit is used to prevent clients from being able to set options.children.
 
-type SelfOptions = {…};
+type SelfOptions = { … };
 type MyNodeOptions = SelfOptions & Omit<NodeOptions, ‘children’>;
 
 class MyNode extends Node { 
@@ -1260,9 +1260,9 @@ class MyNode extends Node {
 
 ```js
 // In this example, we want to hide the parent class’ options, and make the tandem option required.
-// We use PickRequired to pick tandem from NodeOptions.
+// PickRequired is used to pick tandem from NodeOptions.
 
-type SelfOptions = {…};
+type SelfOptions = { … };
 type MyNodeOptions = SelfOptions & PickRequired<NodeOptions, ‘tandem’>;
 
 class MyNode extends Node { 
@@ -1275,9 +1275,10 @@ class MyNode extends Node {
 ```
 
 ```js
-// In this example, we want to hide the parent class’ options, make `tandem` required, and provide optional `phetioDocumentation`.  We use PickRequired and PickOptional respectively.
+// In this example, we want to hide the parent class’ options, make `tandem` required, 
+// and provide optional `phetioDocumentation`.  We use PickRequired and PickOptional respectively.
 
-type SelfOptions = {…};
+type SelfOptions = { … };
 type MyNodeOptions = SelfOptions & 
   PickRequired<NodeOptions, ‘tandem’> &
   PickOptional<NodeOptions, ‘phetioDocumentation’>;
@@ -1296,10 +1297,10 @@ class MyNode extends Node {
 ```js
 // In this example, we make options ‘fill’ and ‘stroke’ required for our subclass.
 
-type SelfOptions = {…};
+type SelfOptions = { … };
 type MyPathOptions = SelfOptions & PathOptions & PickRequired<PathOptions, ‘fill’ | ‘stroke’>;
 
-class MyPath extends Path {…}
+class MyPath extends Path { … }
 ```
 
 ```js
@@ -1310,7 +1311,7 @@ type AtomizerOptions = {
 };
 
 class Atomizer {
-  constructor( providedOptions: AtomizerOptions ) {…}
+  constructor( providedOptions: AtomizerOptions ) { … }
 }
 
 type MyAtomizerOptions = AtomizerOptions & PickOptional<AtomizerOptions, ‘numberOfAtoms’>;
@@ -1339,12 +1340,12 @@ type SelfOptions = {
 };
 type MyPathOptions = SelfOptions;
 
-// correct, definition of fill is picked from parent class’ PathOptions
+// correct, definition of fill is picked from PathOptions
 type SelfOptions = {…};
 type MyClassOptions = SelfOptions & PickOptional<PathOptions, ‘fill>; 
 ```
 
-(5) If a class has no parent class, pick fields from the type that defines a field, rather than duplicating that field’s definition.
+(5) If a class has no parent class, pick a field from the type that defines that field, rather than duplicating that field’s definition.
 
 ```js
 // Our parent class is PhetioObject, whose options type is PhetioObjectOptions.
@@ -1362,7 +1363,7 @@ type SelfOptions = { … };
 type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>; 
 ```
 
-(6) Pick fields from the parent class’ options, do not “reach up” the type hierarchy:
+(6) Pick fields from the parent class’ options, do not “reach up” the type hierarchy.
 
 ```js
 // Our parent class is Path, whose options type is PathOptions.
@@ -1371,11 +1372,20 @@ class MyPath extends Path { … }
 // incorrect, picks tandem from ancestor class PhetioObjectOptions
 type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>; 
 
-// correct, picks tandem from NodeOptions
+// correct, picks tandem from parent class PathOptions
 type MyClassOptions = SelfOptions & PickRequired<PathOptions, 'tandem'>; 
 ```
 
-(NOTE: An exception to this guideline is when using `NodeTranslationOptions`, `NodeTransformOptions`, and `NodeBoundsBasedTranslationOptions` to narrow your API.)
+(7) An exception to (6) is when you want to narrow the API of NodeOptions. You can do this using `NodeTranslationOptions`, `NodeTransformOptions`, or `NodeBoundsBasedTranslationOptions`.
+
+```js
+// Limit the API to include only the parent options related to translation.
+
+type SelfOptions = { ... };
+type MyNodeOptions = SelfOptions & NodeTranslationOptions;
+
+class MyNode extends Path { ... }
+```
 
 ## Scenes
 
