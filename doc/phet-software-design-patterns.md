@@ -1,7 +1,6 @@
 # PhET Software Design Patterns
 
-This document describes software design patterns that are specific to PhET, and PhET-specific applications of standard
-design patterns.
+This document describes software design patterns that are specific to PhET, and PhET-specific applications of standard design patterns.
 
 For general information on many standard design patterns,
 see _[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)_ by Addy
@@ -1367,7 +1366,7 @@ type SelfOptions = { … };
 type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>; 
 ```
 
-(6) Pick fields from the parent class’ options, do not “reach up” the type hierarchy.
+(6) Pick fields from the parent class’ options. Do not “reach up” the type hierarchy.
 
 ```js
 // Our parent class is Path, whose options type is PathOptions.
