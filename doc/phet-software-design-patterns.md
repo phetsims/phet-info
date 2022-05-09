@@ -19,7 +19,8 @@ Osmani.
 * [Module](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#module)
 * [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace)
 * [Observer](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#observer)
-* [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config)
+* [Options and Config (TypeScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config-typescript)
+* [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config-javascript)
 * [Scenes](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#scenes)
 * [Singleton](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#singleton)
 * [State Machine](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#state-machine)
@@ -1025,6 +1026,8 @@ section.
 
 As a reminder from above, Input Listeners (such as `DragListener`) are internally referenced in Node, so be sure to
 call `removeInputListener()` to release listeners if needed.
+
+## Options and Config (TypeScript)
 
 ## Options and Config (JavaScript)
 
