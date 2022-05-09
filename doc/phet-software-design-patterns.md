@@ -1221,7 +1221,7 @@ See [WilderOptionsPattern.ts](https://github.com/phetsims/wilder/blob/master/js/
 
 Additional guidelines:
 
-(1) Create your options type by composing `SelfOptions` and the parent class’ options type.
+(1) Create your options type by composing `SelfOptions` and the parent class’ options type. `SelfOptions` will contain options that are specific to your class.
 
 ```js
 // Our parent class is Path, whose options type is PathOptions.
