@@ -1208,11 +1208,15 @@ for `config` as the solution. Review your API to understand _why_ it has too man
 
 Author: @pixelzoom
 
-This pattern is used to parameterize methods (most typically constructors) without having a large number of parameters. The last parameter is a single object literal. This parameter differs from the JavaScript `options` or `config` parameter in the following ways:
+Similar to the pattern decribed in [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config-javascript), this pattern is used to parameterize methods (most typically constructors) without having a large number of parameters. It provides the 
+additional benefit of type-checking.
 
-* it is named `providedOptions`
-* it may be optional or required
-* its fields may be optional or required
+The parameter differs from the JavaScript `options` or `config` parameter in the following ways:
+
+* the parameter is named `providedOptions`
+* `providedOptions` may be optional or required
+* `providedOptions` fields may be optional or required
+* [optionize](https://github.com/phetsims/phet-core/blob/master/js/optionize.ts) is used to merge `providedOptions` with default values
 
 Please refer to [WilderOptionsPattern.ts](https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts) for examples.
 
