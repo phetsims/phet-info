@@ -1415,7 +1415,7 @@ class MyControl extends HBox {
     }, providedOptions );
 
     const text = new Text( ..., optionize<TextOptions, {}, TextOptions>()( {
-       font: new Font( 18 )
+      font: new Font( 18 )
     }, options.textOptions );
 
     …
