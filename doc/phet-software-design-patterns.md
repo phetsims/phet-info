@@ -1380,10 +1380,11 @@ type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
 type MyClassOptions = SelfOptions & PickRequired<PathOptions, 'tandem'>; 
 ```
 
-(7) An exception to (6) is when you want to narrow the API of NodeOptions. You can do this using `NodeTranslationOptions`, `NodeTransformOptions`, or `NodeBoundsBasedTranslationOptions`.
+(7) An exception to (6) is when you want to narrow the API of `NodeOptions`. You can do this using `NodeTranslationOptions`, `NodeTransformOptions`, or `NodeBoundsBasedTranslationOptions`.
 
 ```js
 // Limit the API to include only the parent options related to translation.
+// In this case, it is acceptable to assume that Path is a subclass of Node.
 
 type SelfOptions = { ... };
 type MyNodeOptions = SelfOptions & NodeTranslationOptions;
