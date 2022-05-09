@@ -1280,7 +1280,7 @@ class MyNode extends Node {
 
 ```js
 // In this example, we want to hide the parent class’ options, make `tandem` required, 
-// and provide optional `phetioDocumentation`.  We use PickRequired and PickOptional respectively.
+// and make `phetioDocumentation` optional.  We use PickRequired and PickOptional respectively.
 
 type SelfOptions = { … };
 type MyNodeOptions = SelfOptions & 
