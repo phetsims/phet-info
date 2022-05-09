@@ -1029,6 +1029,178 @@ call `removeInputListener()` to release listeners if needed.
 
 ## Options (TypeScript)
 
+Author: @pixelzoom
+
+This pattern is used to avoid having a large number of parameters for constructors, methods, and functions.  The last parameter is a single object literal.  This parameter differs for from the JavaScript `options` or `config` parameter in the following ways:
+
+* it is named `providedOptions`
+* it may be optional or required
+* its fields may be optional or required
+
+Please refer to WilderOptionsPattern.ts for examples.
+
+Additional guidelines:
+
+(1) Create your options type by composing `SelfOptions` and the parent class’ options type.
+
+```js
+// Our parent class is Path, whose options type is PathOptions.
+class MyPath extends Path { … }
+
+// incorrect, duplicates fields defined in PathOptions
+type SelfOptions = {
+  fill?: IPaint;
+  stroke?: IPaint;
+  tandem: Tandem;
+  …
+};
+type MyPathOptions = SelfOptions;
+
+// correct, composes PathOptions
+type SelfOptions = {…};
+type MyClassOptions = SelfOptions & PathOptions; 
+```
+
+(2) Use `Omit`, `PickRequired`, and `PickOptional` to narrow the API provided by your options type.
+
+```js
+// In this example MyNode is responsible for setting the children option.
+// We use Omit to prevent clients from being able to set providedOptions.children.
+
+type SelfOptions = {…};
+type MyNodeOptions = SelfOptions & Omit<NodeOptions, ‘children’>;
+
+class MyNode extends Node { 
+  constructor( …, providedOptions?: MyNodeOptions ) {
+    const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
+    }, providedOptions );
+   …
+   options.children = …
+   …
+  }
+}
+```
+
+```js
+// In this example, we want to hide the parent class’ options, and make the tandem option required.
+// We use PickRequired to pick tandem from NodeOptions.
+
+type SelfOptions = {…};
+type MyNodeOptions = SelfOptions & PickRequired<NodeOptions, ‘tandem’>;
+
+class MyNode extends Node { 
+  constructor( …, providedOptions?: MyNodeOptions ) {
+    const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
+    }, providedOptions );
+   …
+  }
+}
+```
+
+```js
+// In this example, we want to hide the parent class’ options, make `tandem` required, and provide optional `phetioDocumentation`.  We use PickRequired and PickOptional respectively.
+
+type SelfOptions = {…};
+type MyNodeOptions = SelfOptions & 
+  PickRequired<NodeOptions, ‘tandem’> &
+  PickOptional<NodeOptions, ‘phetioDocumentation’>;
+
+class MyNode extends Node { 
+  constructor( …, providedOptions?: MyNodeOptions ) {
+    const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
+    }, providedOptions );
+   …
+  }
+}
+```
+
+(3) Use `PickRequired` and `PickOptional` to change whether parent options are required or optional. Note that `PickRequired` and `PickOptional` must come _after_ other occurrences of the parent class’ options type.
+
+```js
+// In this example, we make options ‘fill’ and ‘stroke’ required for our subclass.
+
+type SelfOptions = {…};
+type MyPathOptions = SelfOptions & PathOptions & PickRequired<PathOptions, ‘fill’ | ‘stroke’>;
+
+class MyPath extends Path {…}
+```
+
+```js
+// In this example, we make option ‘numberOfAtoms’ optional for our subclass.
+
+type AtomizerOptions = {
+  numberOfAtoms: number;
+};
+
+class Atomizer {
+  constructor( providedOptions: AtomizerOptions ) {…}
+}
+
+type MyAtomizerOptions = AtomizerOptions & PickOptional<AtomizerOptions, ‘numberOfAtoms’>;
+
+class MyAtomizer extends Atomizer {
+  constructor( providedOptions?: MyAtomizerOptions ) {
+     const option = optionize<MyAtomizerOptions, {}, AtomizerOptions>()( {
+        numberOfAtoms: 10,
+        …
+      }, providedOptions );
+    …
+  }
+}
+```
+
+(4) To narrow an API, pick fields from the parent class’ options, rather than duplicate the definitions of those fields.
+
+```js
+// Our parent class is Path, whose options type is PathOptions.
+class MyPath extends Path { … }
+
+// incorrect, definition of Path.fill is duplicated
+type SelfOptions = {
+  …
+  fill?: IPaint;
+};
+type MyPathOptions = SelfOptions;
+
+// correct, definition of fill is picked from parent class’ PathOptions
+type SelfOptions = {…};
+type MyClassOptions = SelfOptions & PickOptional<PathOptions, ‘fill>; 
+```
+
+(5) If a class has no parent class, pick fields from the type that defines a field, rather than duplicating that field’s definition.
+
+```js
+// Our parent class is PhetioObject, whose options type is PhetioObjectOptions.
+class MyClass extends PhetioObject { … }
+
+// incorrect, definition of PhetioObjectOptions.tandem is duplicated
+type SelfOptions = {
+  …
+  tandem: Tandem;
+};
+type MyClassOptions = SelfOptions;
+
+// correct, definition of tandem is picked from PhetioObjectOptions, where it is defined
+type SelfOptions = { … };
+type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>; 
+```
+
+(6) Pick fields from the parent class’ options, do not “reach up” the type hierarchy:
+
+```js
+// Our parent class is Path, whose options type is PathOptions.
+class MyPath extends Path { … }
+
+// incorrect, picks tandem from ancestor class PhetioObjectOptions
+type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>; 
+
+// correct, picks tandem from NodeOptions
+type MyClassOptions = SelfOptions & PickRequired<PathOptions, 'tandem'>; 
+```
+
+(NOTE: An exception to this guideline is when using `NodeTranslationOptions`, `NodeTransformOptions`, and `NodeBoundsBasedTranslationOptions` to narrow your API.)
+
+
 ## Options and Config (JavaScript)
 
 Author: @pixelzoom, @denz1994
