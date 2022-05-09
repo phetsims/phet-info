@@ -1354,8 +1354,8 @@ type MyClassOptions = SelfOptions & PickOptional<PathOptions, 'fill'>;
 (5) If a class has no parent class, pick a field from the type that defines that field, rather than duplicating that field’s definition.
 
 ```js
-// Our parent class is PhetioObject, whose options type is PhetioObjectOptions.
-class MyClass extends PhetioObject { ... }
+// Our parent class has no parent class.
+class MyClass { ... }
 
 // incorrect, definition of PhetioObjectOptions.tandem is duplicated
 type SelfOptions = {
