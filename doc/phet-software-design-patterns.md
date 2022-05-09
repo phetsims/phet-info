@@ -1296,7 +1296,7 @@ class MyNode extends Node {
 }
 ```
 
-(3) Use `PickRequired` and `PickOptional` to change whether parent options are required or optional. Note that `PickRequired` and `PickOptional` must come _after_ other occurrences of the parent class’ options type.
+(3) Use `PickRequired` and `PickOptional` to change whether parent options are required or optional. Note that when composing types, `PickRequired` and `PickOptional` must come _after_ other occurrences of the parent class’ options type.
 
 ```js
 // In this example, we make options ‘fill’ and ‘stroke’ required for our subclass.
