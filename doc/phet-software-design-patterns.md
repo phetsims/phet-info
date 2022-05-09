@@ -1217,7 +1217,7 @@ The parameter differs from the JavaScript `options` or `config` parameter in the
 * `providedOptions` fields may be optional or required
 * [optionize](https://github.com/phetsims/phet-core/blob/master/js/optionize.ts) is used to merge `providedOptions` with default values
 
-Please refer to [WilderOptionsPattern.ts](https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts) for additional description and examples.
+See [WilderOptionsPattern.ts](https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts) for additional description and examples.
 
 Additional guidelines:
 
