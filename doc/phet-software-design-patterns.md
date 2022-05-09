@@ -1037,7 +1037,7 @@ This pattern is used to avoid having a large number of parameters for constructo
 * it may be optional or required
 * its fields may be optional or required
 
-Please refer to WilderOptionsPattern.ts for examples.
+Please refer to [WilderOptionsPattern.ts](https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts) for examples.
 
 Additional guidelines:
 
