@@ -1391,6 +1391,35 @@ type MyNodeOptions = SelfOptions & NodeTranslationOptions;
 class MyNode extends Path { ... }
 ```
 
+(8) Use `Omit` to avoid specifying a default value for optional nested options.
+
+```js
+// Nested textOptions are used to instantiate a Text subcomponent. 
+// They are optional, so we want to avoid having to specify a default value like {} or null.
+
+type SelfOptions = {
+  textOptions?: TextOptions;
+  …
+};
+
+type MyControlOptions = SelfOptions & HBoxOptions;
+
+class MyControl extends HBox {
+  constructor( …, providedOptions?: MyControlOptions ) {
+
+    const options = optionize<MyControlOptions, Omit<SelfOptions, ‘textOptions’>()( {
+      …
+    }, providedOptions );
+
+    const text = new Text( …, optionize<TextOptions, {}, TextOptions>()( {
+       font: new Font( 18 )
+    }, options.textOptions );
+
+    …
+  } 
+}
+```
+
 ## Scenes
 
 Author: @jessegreenberg
