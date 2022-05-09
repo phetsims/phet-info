@@ -1248,7 +1248,7 @@ type MyClassOptions = SelfOptions & PathOptions;
 // Omit is used to prevent clients from being able to set options.children.
 
 type SelfOptions = { ... };
-type MyNodeOptions = SelfOptions & Omit<NodeOptions, ‘children’>;
+type MyNodeOptions = SelfOptions & Omit<NodeOptions, 'children'>;
 
 class MyNode extends Node { 
   constructor( …, providedOptions?: MyNodeOptions ) {
@@ -1267,7 +1267,7 @@ class MyNode extends Node {
 // PickRequired is used to pick tandem from NodeOptions.
 
 type SelfOptions = { ... };
-type MyNodeOptions = SelfOptions & PickRequired<NodeOptions, ‘tandem’>;
+type MyNodeOptions = SelfOptions & PickRequired<NodeOptions, 'tandem'>;
 
 class MyNode extends Node { 
   constructor( ..., providedOptions?: MyNodeOptions ) {
@@ -1280,13 +1280,13 @@ class MyNode extends Node {
 ```
 
 ```js
-// In this example, we want to hide the parent class’ options, make `tandem` required, 
-// and make `phetioDocumentation` optional.  We use PickRequired and PickOptional respectively.
+// In this example, we want to hide the parent class’ options, make tandem required, 
+// and make phetioDocumentation optional.  We use PickRequired and PickOptional respectively.
 
 type SelfOptions = { ... };
 type MyNodeOptions = SelfOptions & 
-  PickRequired<NodeOptions, ‘tandem’> &
-  PickOptional<NodeOptions, ‘phetioDocumentation’>;
+  PickRequired<NodeOptions, 'tandem'> &
+  PickOptional<NodeOptions, 'phetioDocumentation'>;
 
 class MyNode extends Node { 
   constructor( ..., providedOptions?: MyNodeOptions ) {
@@ -1301,16 +1301,16 @@ class MyNode extends Node {
 (3) Use `PickRequired` and `PickOptional` to change whether parent options are required or optional. Note that when composing types, `PickRequired` and `PickOptional` must come _after_ other occurrences of the parent class’ options type.
 
 ```js
-// In this example, we make options ‘fill’ and ‘stroke’ required for our subclass.
+// In this example, we make options fill and stroke required for our subclass.
 
 type SelfOptions = { ... };
-type MyPathOptions = SelfOptions & PathOptions & PickRequired<PathOptions, ‘fill’ | ‘stroke’>;
+type MyPathOptions = SelfOptions & PathOptions & PickRequired<PathOptions, 'fill' | 'stroke'>;
 
 class MyPath extends Path { ... }
 ```
 
 ```js
-// In this example, we make option ‘numberOfAtoms’ optional for our subclass.
+// In this example, we make numberOfAtoms optional for our subclass.
 
 type AtomizerOptions = {
   numberOfAtoms: number;
@@ -1320,13 +1320,13 @@ class Atomizer {
   constructor( providedOptions: AtomizerOptions ) { ... }
 }
 
-type MyAtomizerOptions = AtomizerOptions & PickOptional<AtomizerOptions, ‘numberOfAtoms’>;
+type MyAtomizerOptions = AtomizerOptions & PickOptional<AtomizerOptions, 'numberOfAtoms'>;
 
 class MyAtomizer extends Atomizer {
   constructor( providedOptions?: MyAtomizerOptions ) {
      const option = optionize<MyAtomizerOptions, {}, AtomizerOptions>()( {
-        numberOfAtoms: 10,
-        ...
+       numberOfAtoms: 10,
+       ...
       }, providedOptions );
     …
   }
@@ -1348,7 +1348,7 @@ type MyPathOptions = SelfOptions;
 
 // correct, definition of fill is picked from PathOptions
 type SelfOptions = { ... };
-type MyClassOptions = SelfOptions & PickOptional<PathOptions, ‘fill>; 
+type MyClassOptions = SelfOptions & PickOptional<PathOptions, 'fill'>; 
 ```
 
 (5) If a class has no parent class, pick a field from the type that defines that field, rather than duplicating that field’s definition.
@@ -1410,7 +1410,7 @@ type MyControlOptions = SelfOptions & HBoxOptions;
 class MyControl extends HBox {
   constructor( ..., providedOptions?: MyControlOptions ) {
 
-    const options = optionize<MyControlOptions, Omit<SelfOptions, ‘textOptions’>()( {
+    const options = optionize<MyControlOptions, Omit<SelfOptions, 'textOptions'>()( {
       ...
     }, providedOptions );
 
