@@ -1225,7 +1225,7 @@ See [WilderOptionsPattern.ts](https://github.com/phetsims/wilder/blob/master/js/
 
 Additional guidelines:
 
-(1) Create your options type by composing `SelfOptions` and the parent class’ options type. `SelfOptions` will contain options that are specific to your class.
+(1) Create your options type by composing `SelfOptions` and the parent class’s options type. `SelfOptions` will contain options that are specific to your class.
 
 ```typescript
 // Our parent class is Path, whose options type is PathOptions.
@@ -1273,7 +1273,7 @@ class MyNode extends Node {
 ```
 
 ```typescript
-// In this example, we want to hide the parent class’ options, and make the tandem option required.
+// In this example, we want to hide the parent class’s options, and make the tandem option required.
 // PickRequired is used to pick tandem from NodeOptions.
 
 type SelfOptions = {
@@ -1292,7 +1292,7 @@ class MyNode extends Node {
 ```
 
 ```js
-// In this example, we want to hide the parent class’ options, make tandem required, 
+// In this example, we want to hide the parent class’s options, make tandem required, 
 // and make phetioDocumentation optional.  We use PickRequired and PickOptional respectively.
 
 type SelfOptions = { 
@@ -1312,7 +1312,7 @@ class MyNode extends Node {
 }
 ```
 
-(3) Use `PickRequired` and `PickOptional` to change whether parent options are required or optional. Note that when composing types, `PickRequired` and `PickOptional` must come _after_ other occurrences of the parent class’ options type.
+(3) Use `PickRequired` and `PickOptional` to change whether parent options are required or optional. Note that when composing types, `PickRequired` and `PickOptional` must come _after_ other occurrences of the parent class’s options type.
 
 ```typescript
 // In this example, we make options fill and stroke required for our subclass.
@@ -1353,7 +1353,7 @@ class MyAtomizer extends Atomizer {
 }
 ```
 
-(4) To narrow an API, pick fields from the parent class’ options, rather than duplicate the definitions of those fields.
+(4) To narrow an API, pick fields from the parent class’s options, rather than duplicate the definitions of those fields.
 
 ```typescript
 // Our parent class is Path, whose options type is PathOptions.
@@ -1378,7 +1378,7 @@ type MyClassOptions = SelfOptions & PickOptional<PathOptions, 'fill'>;
 (5) If a class has no parent class, pick a field from the type that defines that field, rather than duplicating that field’s definition.
 
 ```typescript
-// Our parent class has no parent class.
+// Our class has no parent class.
 class MyClass { 
   // ...
 }
@@ -1395,7 +1395,7 @@ type SelfOptions = { ... };
 type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>; 
 ```
 
-(6) Pick fields from the parent class’ options. Do not “reach up” the type hierarchy.
+(6) Pick fields from the parent class’s options. Do not “reach up” the type hierarchy.
 
 ```typescript
 // Our parent class is Path, whose options type is PathOptions.
