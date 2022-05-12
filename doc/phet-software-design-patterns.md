@@ -1474,16 +1474,14 @@ class MySimNode extends Node {
 
 (10) For nested options, use `Omit` to avoid having to provide `{}` or `null` as a default value.
 
+In the parameters to `optionize`, omit `'helloButtonOptions'` from `SelfOptions` so that a default value is not needed:
+
 ```js
 type SelfOptions = {
   helloButtonOptions?: RectangularPushButtonOptions;
 };
 type MyNodeOptions = SelfOptions & NodeOptions;
-```
 
-In the parameters to `optionize`, omit `'helloButtonOptions'` from `SelfOptions` so that a default value is not needed:
-
-```js
 export default class MyNode extends Node {
   constructor( providedOptions?: MyNodeOptions ) {
     const options = optionize<MyNodeOptions, Omit<SelfOptions, 'helloButtonOptions'>, NodeOptions>()( {
@@ -1497,6 +1495,11 @@ export default class MyNode extends Node {
 Avoid providing a default value of `{}`, like this:
 
 ```js
+type SelfOptions = {
+  helloButtonOptions?: RectangularPushButtonOptions;
+};
+type MyNodeOptions = SelfOptions & NodeOptions;
+
 export default class MyNode extends Node {
   constructor( providedOptions?: MyNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
