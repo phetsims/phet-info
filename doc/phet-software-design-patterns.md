@@ -1605,7 +1605,7 @@ export default class MyNode extends Node {
 }
 ```
 
-The second pattern add default for nested options in the main `optionize` call. Note that this requires a less straighforward type definition. If you find that your type definition is getting unweildy, clever, or difficult to understand, then consider using the first pattern above.  
+The second pattern adds options that are the responsibility of the class in the main `optionize` call. Note that this requires a less straighforward type definition. If you find that your type definition is getting unweildy, clever, or difficult to understand, then consider using the first pattern above.  
 
 ```typescript
 // Do not omit options here, so that we can provide defaults in the optionize call.
