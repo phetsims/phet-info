@@ -1342,11 +1342,11 @@ type MyAtomizerOptions = AtomizerOptions & PickOptional<AtomizerOptions, 'number
 
 class MyAtomizer extends Atomizer {
   constructor( providedOptions?: MyAtomizerOptions ) {
-     const option = optionize<MyAtomizerOptions, {}, AtomizerOptions>()( {
-       numberOfAtoms: 10,
-       // ...
-      }, providedOptions );
-    // ...
+    const option = optionize<MyAtomizerOptions, {}, AtomizerOptions>()( {
+      numberOfAtoms: 10,
+      // ...
+     }, providedOptions );
+   // ...
   }
 }
 ```
