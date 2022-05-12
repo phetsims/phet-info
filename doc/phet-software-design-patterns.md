@@ -1472,7 +1472,7 @@ class MySimNode extends Node {
 }
 ```
 
-(10) For nest options, use `Omit` to avoid having to provide `{}` or `null` as a default value.
+(10) For nested options, use `Omit` to avoid having to provide `{}` or `null` as a default value.
 
 ```js
 type SelfOptions = {
