@@ -1031,7 +1031,7 @@ call `removeInputListener()` to release listeners if needed.
 
 Author: @pixelzoom, @denz1994
 
-**Note:** This is an obsolete pattern used in legacy JavaScript code. It's still recommended to read this section, especially since the subsection on **Nesting** still applied in TypeScript. For TypeScript code, see [Options (TypeScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-typescript).
+**Note:** This is an obsolete pattern used in legacy JavaScript code. It's still recommended to read this section, especially since the subsection on **Nesting** still applies for TypeScript. For TypeScript code, see [Options (TypeScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-typescript).
 
 This pattern is used for parameterizing classes and methods, which we use to avoid an explosion of parameters. `options`
 and `config` are the two implementations of that pattern that PhET typically uses. If all properties in the argument are
