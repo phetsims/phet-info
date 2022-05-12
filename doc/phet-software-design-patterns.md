@@ -1423,6 +1423,55 @@ class MyControl extends HBox {
 }
 ```
 
+(9) The `tandem` option for PhET-iO is a little tricky, and requires different patterns for common code versus sim-specific code.
+
+For common code, `tandem` should be optional, with a default of `tandem: Tandem.REQUIRED` provided. Using Tandem.REQUIRED is still necessary in common code in order to support PhET’s uninstrumented sims.  If we made tandem a required option in common code, then it would be difficult to convert a sim to TypeScript without also PhET-iO instrumenting it.
+
+```js
+type SelfOptions = {};
+type MyCommonCodeNodeOptions = SelfOptions & NodeOptions;
+
+class MyNode extends Node {
+
+  // If MyCommonCodeNodeOptions has no other required fields, then
+  // providedOptions can be an optional param because tandem is optional
+  constructor( ..., providedOptions?: MyCommonCodeNodeOptions ) {
+    const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
+      ...
+      // no need for tandem default here, because it's required
+      tandem: Tandem.REQUIRED
+    }, providedOptions ); 
+  }
+  ...
+  super( options );
+  ...
+}
+```
+
+For sim-specific code in sims that are PhET-iO instrumented, `tandem` should be required, with no default value needs.
+This ensures that a missing `tandem` is identified by the type checker, whereas the common-code approach won’t be caught until runtime with PhET-iO enabled.
+
+```js
+type SelfOptions = {...};
+
+// this makes tandem a required option
+type MyNodeOptions = SelfOptions & NodeOptions & PickRequired<NodeOptions, 'tandem'>;
+
+class MyNode extends Node {
+
+  // providedOptions is a required param because tandem is required
+  constructor( ..., providedOptions: MyNodeOptions ) {
+    const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
+      ...
+      // no need for tandem default here, because it's required
+    }, providedOptions ); 
+  }
+  ...
+  super( options );
+  ...
+}
+```
+
 ## Scenes
 
 Author: @jessegreenberg
