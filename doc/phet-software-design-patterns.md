@@ -1424,36 +1424,7 @@ class MyNode extends Path {
 }
 ```
 
-(8) Use `Omit` to avoid specifying a default value for optional nested options.
-
-```typescript
-// Nested textOptions are used to instantiate a Text subcomponent. 
-// They are optional, so we want to avoid having to specify a default value like {} or null.
-
-type SelfOptions = {
-  textOptions?: TextOptions;
-  // ...
-};
-
-type MyControlOptions = SelfOptions & HBoxOptions;
-
-class MyControl extends HBox {
-  constructor( providedOptions?: MyControlOptions ) {
-
-    const options = optionize<MyControlOptions, Omit<SelfOptions, 'textOptions'>()( {
-      // ...
-    }, providedOptions );
-
-    const text = new Text( ..., optionize<TextOptions, {}, TextOptions>()( {
-      font: new Font( 18 )
-    }, options.textOptions );
-
-    // ...
-  } 
-}
-```
-
-(9) The `tandem` option for PhET-iO is a little tricky, and requires different patterns for common code versus sim-specific code.
+(8) The `tandem` option for PhET-iO is a little tricky, and requires different patterns for common code versus sim-specific code.
 
 For common code, `tandem` should be optional, with a default of `tandem: Tandem.REQUIRED` provided. A missing `tandem` will not be identified until runtime with PhET-iO enabled.  But this approach is still necessary in common code in order to support PhET’s uninstrumented sims.  If `tandem` were required option in common code, then it would be difficult to convert a sim to TypeScript without also PhET-iO instrumenting it.
 
@@ -1506,7 +1477,7 @@ class MySimNode extends Node {
 }
 ```
 
-(10) For nested options, use `Omit` to avoid having to provide `{}` or `null` as a default value.
+(9) For nested options, use `Omit` to avoid having to provide `{}` or `null` as a default value.
 
 In the parameters to `optionize`, omit `'helloButtonOptions'` from `SelfOptions` so that a default value is not needed:
 
@@ -1570,7 +1541,7 @@ export default class MyNode extends Node {
 }
 ```
 
-(11) If your class has responsibilty for one or more fields in nested options, those fields should be omitted so that they cannot be provided by the caller. There are 2 patterns for accomplishing this.
+(10) If your class has responsibilty for one or more fields in nested options, those fields should be omitted so that they cannot be provided by the caller. There are 2 patterns for accomplishing this.
 
 The first pattern omits the fields from `SelfOptions`. Then, when the subcomponent is instantiated, `combineOptions` is used to add the options that are the responsibility of the class. 
 
