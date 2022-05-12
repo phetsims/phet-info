@@ -1425,7 +1425,7 @@ class MyControl extends HBox {
 
 (9) The `tandem` option for PhET-iO is a little tricky, and requires different patterns for common code versus sim-specific code.
 
-For common code, `tandem` should be optional, with a default of `tandem: Tandem.REQUIRED` provided. Using Tandem.REQUIRED is still necessary in common code in order to support PhET’s uninstrumented sims.  If we made tandem a required option in common code, then it would be difficult to convert a sim to TypeScript without also PhET-iO instrumenting it.
+For common code, `tandem` should be optional, with a default of `tandem: Tandem.REQUIRED` provided. A missing `tandem` will not be identified until runtime with PhET-iO enabled.  But this approach is still necessary in common code in order to support PhET’s uninstrumented sims.  If `tandem` were required option in common code, then it would be difficult to convert a sim to TypeScript without also PhET-iO instrumenting it.
 
 ```js
 type SelfOptions = {};
@@ -1448,8 +1448,8 @@ class MyNode extends Node {
 }
 ```
 
-For sim-specific code in sims that are PhET-iO instrumented, `tandem` should be required, with no default value needs.
-This ensures that a missing `tandem` is identified by the type checker, whereas the common-code approach won’t be caught until runtime with PhET-iO enabled.
+For sim-specific code (in sims that are PhET-iO instrumented), `tandem` should be required, with no default value needed.
+This ensures that a missing `tandem` is identified by the type checker.
 
 ```js
 type SelfOptions = {...};
