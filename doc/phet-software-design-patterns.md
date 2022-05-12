@@ -1225,19 +1225,23 @@ Additional guidelines:
 
 ```js
 // Our parent class is Path, whose options type is PathOptions.
-class MyPath extends Path { ... }
+class MyPath extends Path { 
+  // ... 
+}
 
 // incorrect, duplicates fields defined in PathOptions
 type SelfOptions = {
   fill?: IPaint;
   stroke?: IPaint;
   tandem: Tandem;
-  …
+  // ...
 };
 type MyPathOptions = SelfOptions;
 
 // correct, composes PathOptions
-type SelfOptions = { ... };
+type SelfOptions = { 
+  // ...
+};
 type MyClassOptions = SelfOptions & PathOptions; 
 ```
 
@@ -1247,17 +1251,19 @@ type MyClassOptions = SelfOptions & PathOptions;
 // In this example, MyNode is responsible for setting the children option.
 // Omit is used to prevent clients from being able to set options.children.
 
-type SelfOptions = { ... };
+type SelfOptions = { 
+  // ... 
+};
 type MyNodeOptions = SelfOptions & Omit<NodeOptions, 'children'>;
 
 class MyNode extends Node { 
   constructor( …, providedOptions?: MyNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
-      ...
+      / ...
     }, providedOptions );
-   …
+   // ..
    options.children = …
-   …
+   // ...
   }
 }
 ```
@@ -1266,15 +1272,17 @@ class MyNode extends Node {
 // In this example, we want to hide the parent class’ options, and make the tandem option required.
 // PickRequired is used to pick tandem from NodeOptions.
 
-type SelfOptions = { ... };
+type SelfOptions = {
+  // ...
+};
 type MyNodeOptions = SelfOptions & PickRequired<NodeOptions, 'tandem'>;
 
 class MyNode extends Node { 
-  constructor( ..., providedOptions?: MyNodeOptions ) {
+  constructor( providedOptions?: MyNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
-      ...
+      // ...
     }, providedOptions );
-   …
+   // ...
   }
 }
 ```
@@ -1283,7 +1291,9 @@ class MyNode extends Node {
 // In this example, we want to hide the parent class’ options, make tandem required, 
 // and make phetioDocumentation optional.  We use PickRequired and PickOptional respectively.
 
-type SelfOptions = { ... };
+type SelfOptions = { 
+  // ... 
+};
 type MyNodeOptions = SelfOptions & 
   PickRequired<NodeOptions, 'tandem'> &
   PickOptional<NodeOptions, 'phetioDocumentation'>;
@@ -1291,9 +1301,9 @@ type MyNodeOptions = SelfOptions &
 class MyNode extends Node { 
   constructor( ..., providedOptions?: MyNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
-      ...
+      // ...
     }, providedOptions );
-   …
+   // ...
   }
 }
 ```
@@ -1303,10 +1313,14 @@ class MyNode extends Node {
 ```js
 // In this example, we make options fill and stroke required for our subclass.
 
-type SelfOptions = { ... };
+type SelfOptions = {
+  // ...
+};
 type MyPathOptions = SelfOptions & PathOptions & PickRequired<PathOptions, 'fill' | 'stroke'>;
 
-class MyPath extends Path { ... }
+class MyPath extends Path {
+  // ...
+}
 ```
 
 ```js
@@ -1317,7 +1331,9 @@ type AtomizerOptions = {
 };
 
 class Atomizer {
-  constructor( providedOptions: AtomizerOptions ) { ... }
+  constructor( providedOptions: AtomizerOptions ) { 
+    // ...
+  }
 }
 
 type MyAtomizerOptions = AtomizerOptions & PickOptional<AtomizerOptions, 'numberOfAtoms'>;
@@ -1326,9 +1342,9 @@ class MyAtomizer extends Atomizer {
   constructor( providedOptions?: MyAtomizerOptions ) {
      const option = optionize<MyAtomizerOptions, {}, AtomizerOptions>()( {
        numberOfAtoms: 10,
-       ...
+       // ...
       }, providedOptions );
-    …
+    // ...
   }
 }
 ```
@@ -1337,17 +1353,21 @@ class MyAtomizer extends Atomizer {
 
 ```js
 // Our parent class is Path, whose options type is PathOptions.
-class MyPath extends Path { ... }
+class MyPath extends Path { 
+  // ...
+}
 
 // incorrect, definition of Path.fill is duplicated
 type SelfOptions = {
   fill?: IPaint;
-  ...
+  // ...
 };
 type MyPathOptions = SelfOptions;
 
 // correct, definition of fill is picked from PathOptions
-type SelfOptions = { ... };
+type SelfOptions = { \
+  // ... 
+};
 type MyClassOptions = SelfOptions & PickOptional<PathOptions, 'fill'>; 
 ```
 
@@ -1355,12 +1375,14 @@ type MyClassOptions = SelfOptions & PickOptional<PathOptions, 'fill'>;
 
 ```js
 // Our parent class has no parent class.
-class MyClass { ... }
+class MyClass { 
+  // ...
+}
 
 // incorrect, definition of PhetioObjectOptions.tandem is duplicated
 type SelfOptions = {
   tandem: Tandem;
-  ...
+  // ...
 };
 type MyClassOptions = SelfOptions;
 
@@ -1373,7 +1395,9 @@ type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
 
 ```js
 // Our parent class is Path, whose options type is PathOptions.
-class MyPath extends Path { ... }
+class MyPath extends Path { 
+  // ...
+}
 
 // incorrect, picks tandem from ancestor class PhetioObjectOptions
 type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>; 
@@ -1388,10 +1412,14 @@ type MyClassOptions = SelfOptions & PickRequired<PathOptions, 'tandem'>;
 // Limit the API to include only the parent options related to translation.
 // In this case, it is acceptable to assume that Path is a subclass of Node.
 
-type SelfOptions = { ... };
+type SelfOptions = { 
+  // ... 
+};
 type MyNodeOptions = SelfOptions & NodeTranslationOptions;
 
-class MyNode extends Path { ... }
+class MyNode extends Path { 
+  // ... 
+}
 ```
 
 (8) Use `Omit` to avoid specifying a default value for optional nested options.
@@ -1402,16 +1430,16 @@ class MyNode extends Path { ... }
 
 type SelfOptions = {
   textOptions?: TextOptions;
-  ...
+  // ...
 };
 
 type MyControlOptions = SelfOptions & HBoxOptions;
 
 class MyControl extends HBox {
-  constructor( ..., providedOptions?: MyControlOptions ) {
+  constructor( providedOptions?: MyControlOptions ) {
 
     const options = optionize<MyControlOptions, Omit<SelfOptions, 'textOptions'>()( {
-      ...
+      // ...
     }, providedOptions );
 
     const text = new Text( ..., optionize<TextOptions, {}, TextOptions>()( {
@@ -1428,23 +1456,25 @@ class MyControl extends HBox {
 For common code, `tandem` should be optional, with a default of `tandem: Tandem.REQUIRED` provided. A missing `tandem` will not be identified until runtime with PhET-iO enabled.  But this approach is still necessary in common code in order to support PhET’s uninstrumented sims.  If `tandem` were required option in common code, then it would be difficult to convert a sim to TypeScript without also PhET-iO instrumenting it.
 
 ```js
-type SelfOptions = {};
+type SelfOptions = {
+  // ...
+};
 type MyCommonCodeNodeOptions = SelfOptions & NodeOptions;
 
 class MyNode extends Node {
 
   // If MyCommonCodeNodeOptions has no other required fields, then
   // providedOptions can be an optional param because tandem is optional
-  constructor( ..., providedOptions?: MyCommonCodeNodeOptions ) {
+  constructor( providedOptions?: MyCommonCodeNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
-      ...
+      // ...
       // no need for tandem default here, because it's required
       tandem: Tandem.REQUIRED
     }, providedOptions ); 
   }
-  ...
+  // ...
   super( options );
-  ...
+  // ...
 }
 ```
 
@@ -1452,7 +1482,9 @@ For sim-specific code (in sims that are PhET-iO instrumented), `tandem` should b
 This ensures that a missing `tandem` is identified by the type checker.
 
 ```js
-type SelfOptions = {...};
+type SelfOptions = {
+  // ...
+};
 
 // this makes tandem a required option
 type MySimNodeOptions = SelfOptions & NodeOptions & PickRequired<NodeOptions, 'tandem'>;
@@ -1462,13 +1494,13 @@ class MySimNode extends Node {
   // providedOptions is a required param because tandem is required
   constructor( ..., providedOptions: MySimNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
-      ...
+      // ...
       // no need for tandem default here, because it's required
     }, providedOptions ); 
   }
-  ...
+  // ...
   super( options );
-  ...
+  // ...
 }
 ```
 
@@ -1479,6 +1511,7 @@ In the parameters to `optionize`, omit `'helloButtonOptions'` from `SelfOptions`
 ```js
 type SelfOptions = {
   helloButtonOptions?: RectangularPushButtonOptions;
+  // ...
 };
 type MyNodeOptions = SelfOptions & NodeOptions;
 
@@ -1500,6 +1533,7 @@ Avoid providing a default value of `{}`, like this:
 ```js
 type SelfOptions = {
   helloButtonOptions?: RectangularPushButtonOptions;
+  // ...
 };
 type MyNodeOptions = SelfOptions & NodeOptions;
 
@@ -1507,7 +1541,7 @@ export default class MyNode extends Node {
   constructor( providedOptions?: MyNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
       helloButtonOptions: {},  // don't do this!
-      ...
+      // ...
     }, providedOptions );
     super( options );
   }
@@ -1519,6 +1553,7 @@ Avoid using `null` in the definition and default value, like this:
 ```js
 type SelfOptions = {
   helloButtonOptions?: RectangularPushButtonOptions | null;  // don't do this!
+  // ...
 };
 type MyNodeOptions = SelfOptions & NodeOptions;
 
@@ -1526,7 +1561,7 @@ export default class MyNode extends Node {
   constructor( providedOptions?: MyNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
       helloButtonOptions: null, // don't do this!
-      ...
+      // ...
     }, providedOptions );
     super( options );
   }
@@ -1542,6 +1577,7 @@ type SelfOptions = {
 
   // omit nested options that are the responsibility of MyNode, and are therefore not part of the API
   helloButtonOptions?: Omit<RectangularPushButtonOptions, 'content' | 'listener'>;
+  // ...
 };
 type MyNodeOptions = SelfOptions & NodeOptions;
 
@@ -1573,6 +1609,7 @@ The second pattern add default for nested options in the main `optionize` call. 
 // Do not omit options here, so that we can provide defaults in the optionize call.
 type SelfOptions = {
   helloButtonOptions?: RectangularPushButtonOptions;
+  // ...
 };
 
 // Omit nested options here that are not part of the API.
@@ -1597,7 +1634,7 @@ export default class MyNode extends Node {
     const helloButton = new RectangularPushButton( options.helloButtonOptions );
     this.addChild( helloButton );
 
-    // add other UI components ...
+    // ...
   }
 }
 ```
