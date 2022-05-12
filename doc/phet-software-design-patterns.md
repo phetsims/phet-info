@@ -1212,7 +1212,7 @@ Author: @pixelzoom
 Similar to the pattern decribed in [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config-javascript), this pattern is used to parameterize methods (most typically constructors) without having a large number of parameters. It provides the 
 additional benefit of type-checking.
 
-The parameter differs from the JavaScript `options` or `config` parameter in the following ways:
+The method parameter differs from the JavaScript `options` or `config` parameter in the following ways:
 
 * the parameter is named `providedOptions`
 * `providedOptions` may be optional or required
