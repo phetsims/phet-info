@@ -1484,7 +1484,10 @@ type MyNodeOptions = SelfOptions & NodeOptions;
 
 export default class MyNode extends Node {
   constructor( providedOptions?: MyNodeOptions ) {
+  
+    // omit helloButtonOptions from SelfOptions
     const options = optionize<MyNodeOptions, Omit<SelfOptions, 'helloButtonOptions'>, NodeOptions>()( {
+      // no default for helloButtonOptions is needed
       ...
     }, providedOptions );
     super( options );
@@ -1503,7 +1506,7 @@ type MyNodeOptions = SelfOptions & NodeOptions;
 export default class MyNode extends Node {
   constructor( providedOptions?: MyNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
-      helloButtonOptions: {},
+      helloButtonOptions: {},  // don't do this!
       ...
     }, providedOptions );
     super( options );
@@ -1515,14 +1518,14 @@ Avoid using `null` in the definition and default value, like this:
 
 ```js
 type SelfOptions = {
-  helloButtonOptions?: RectangularPushButtonOptions | null;
+  helloButtonOptions?: RectangularPushButtonOptions | null;  // don't do this!
 };
 type MyNodeOptions = SelfOptions & NodeOptions;
 
 export default class MyNode extends Node {
   constructor( providedOptions?: MyNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
-      helloButtonOptions: null,
+      helloButtonOptions: null, // don't do this!
       ...
     }, providedOptions );
     super( options );
