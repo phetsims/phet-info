@@ -1455,12 +1455,12 @@ This ensures that a missing `tandem` is identified by the type checker.
 type SelfOptions = {...};
 
 // this makes tandem a required option
-type MyNodeOptions = SelfOptions & NodeOptions & PickRequired<NodeOptions, 'tandem'>;
+type MySimNodeOptions = SelfOptions & NodeOptions & PickRequired<NodeOptions, 'tandem'>;
 
-class MyNode extends Node {
+class MySimNode extends Node {
 
   // providedOptions is a required param because tandem is required
-  constructor( ..., providedOptions: MyNodeOptions ) {
+  constructor( ..., providedOptions: MySimNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
       ...
       // no need for tandem default here, because it's required
