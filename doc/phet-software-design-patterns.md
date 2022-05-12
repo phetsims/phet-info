@@ -1223,7 +1223,7 @@ Additional guidelines:
 
 (1) Create your options type by composing `SelfOptions` and the parent class’ options type. `SelfOptions` will contain options that are specific to your class.
 
-```js
+```typescript
 // Our parent class is Path, whose options type is PathOptions.
 class MyPath extends Path { 
   // ... 
@@ -1247,7 +1247,7 @@ type MyClassOptions = SelfOptions & PathOptions;
 
 (2) Use `Omit`, `PickRequired`, and `PickOptional` to narrow the API provided by your options type.
 
-```js
+```typescript
 // In this example, MyNode is responsible for setting the children option.
 // Omit is used to prevent clients from being able to set options.children.
 
@@ -1268,7 +1268,7 @@ class MyNode extends Node {
 }
 ```
 
-```js
+```typescript
 // In this example, we want to hide the parent class’ options, and make the tandem option required.
 // PickRequired is used to pick tandem from NodeOptions.
 
@@ -1310,7 +1310,7 @@ class MyNode extends Node {
 
 (3) Use `PickRequired` and `PickOptional` to change whether parent options are required or optional. Note that when composing types, `PickRequired` and `PickOptional` must come _after_ other occurrences of the parent class’ options type.
 
-```js
+```typescript
 // In this example, we make options fill and stroke required for our subclass.
 
 type SelfOptions = {
@@ -1323,7 +1323,7 @@ class MyPath extends Path {
 }
 ```
 
-```js
+```typescript
 // In this example, we make numberOfAtoms optional for our subclass.
 
 type AtomizerOptions = {
@@ -1351,7 +1351,7 @@ class MyAtomizer extends Atomizer {
 
 (4) To narrow an API, pick fields from the parent class’ options, rather than duplicate the definitions of those fields.
 
-```js
+```typescript
 // Our parent class is Path, whose options type is PathOptions.
 class MyPath extends Path { 
   // ...
@@ -1373,7 +1373,7 @@ type MyClassOptions = SelfOptions & PickOptional<PathOptions, 'fill'>;
 
 (5) If a class has no parent class, pick a field from the type that defines that field, rather than duplicating that field’s definition.
 
-```js
+```typescript
 // Our parent class has no parent class.
 class MyClass { 
   // ...
@@ -1393,7 +1393,7 @@ type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
 
 (6) Pick fields from the parent class’ options. Do not “reach up” the type hierarchy.
 
-```js
+```typescript
 // Our parent class is Path, whose options type is PathOptions.
 class MyPath extends Path { 
   // ...
@@ -1408,7 +1408,7 @@ type MyClassOptions = SelfOptions & PickRequired<PathOptions, 'tandem'>;
 
 (7) An exception to (6) is when you want to narrow the API of `NodeOptions`. You can do this using `NodeTranslationOptions`, `NodeTransformOptions`, or `NodeBoundsBasedTranslationOptions`.
 
-```js
+```typescript
 // Limit the API to include only the parent options related to translation.
 // In this case, it is acceptable to assume that Path is a subclass of Node.
 
@@ -1424,7 +1424,7 @@ class MyNode extends Path {
 
 (8) Use `Omit` to avoid specifying a default value for optional nested options.
 
-```js
+```typescript
 // Nested textOptions are used to instantiate a Text subcomponent. 
 // They are optional, so we want to avoid having to specify a default value like {} or null.
 
@@ -1455,7 +1455,7 @@ class MyControl extends HBox {
 
 For common code, `tandem` should be optional, with a default of `tandem: Tandem.REQUIRED` provided. A missing `tandem` will not be identified until runtime with PhET-iO enabled.  But this approach is still necessary in common code in order to support PhET’s uninstrumented sims.  If `tandem` were required option in common code, then it would be difficult to convert a sim to TypeScript without also PhET-iO instrumenting it.
 
-```js
+```typescript
 type SelfOptions = {
   // ...
 };
@@ -1481,7 +1481,7 @@ class MyNode extends Node {
 For sim-specific code (in sims that are PhET-iO instrumented), `tandem` should be required, with no default value needed.
 This ensures that a missing `tandem` is identified by the type checker.
 
-```js
+```typescript
 type SelfOptions = {
   // ...
 };
@@ -1508,7 +1508,7 @@ class MySimNode extends Node {
 
 In the parameters to `optionize`, omit `'helloButtonOptions'` from `SelfOptions` so that a default value is not needed:
 
-```js
+```typescript
 type SelfOptions = {
   helloButtonOptions?: RectangularPushButtonOptions;
   // ...
@@ -1530,7 +1530,7 @@ export default class MyNode extends Node {
 
 Avoid providing a default value of `{}`, like this:
 
-```js
+```typescript
 type SelfOptions = {
   helloButtonOptions?: RectangularPushButtonOptions;
   // ...
@@ -1550,7 +1550,7 @@ export default class MyNode extends Node {
 
 Avoid using `null` in the definition and default value, like this:
 
-```js
+```typescript
 type SelfOptions = {
   helloButtonOptions?: RectangularPushButtonOptions | null;  // don't do this!
   // ...
@@ -1572,7 +1572,7 @@ export default class MyNode extends Node {
 
 The first pattern omits the fields from SelfOptions. Then, when the subcomponent is instantiated, `combineOptions` is used to add the options that are the responsibility of the class. 
 
-```js
+```typescript
 type SelfOptions = {
 
   // omit nested options that are the responsibility of MyNode, and are therefore not part of the API
@@ -1605,7 +1605,7 @@ export default class MyNode extends Node {
 
 The second pattern add default for nested options in the main `optionize` call. Note that this requires a less straighforward type definition. If you find that your type definition is getting unweildy, clever, or difficult to understand, then consider using the first pattern above.  
 
-```js
+```typescript
 // Do not omit options here, so that we can provide defaults in the optionize call.
 type SelfOptions = {
   helloButtonOptions?: RectangularPushButtonOptions;
