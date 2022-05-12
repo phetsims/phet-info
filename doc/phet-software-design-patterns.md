@@ -1572,7 +1572,7 @@ export default class MyNode extends Node {
 
 (11) If your class has responsibilty for one or more fields in nested options, those fields should be omitted so that they cannot be provided by the caller. There are 2 patterns for accomplishing this.
 
-The first pattern omits the fields from SelfOptions. Then, when the subcomponent is instantiated, `combineOptions` is used to add the options that are the responsibility of the class. 
+The first pattern omits the fields from `SelfOptions`. Then, when the subcomponent is instantiated, `combineOptions` is used to add the options that are the responsibility of the class. 
 
 ```typescript
 type SelfOptions = {
