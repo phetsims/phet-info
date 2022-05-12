@@ -1367,7 +1367,7 @@ type SelfOptions = {
 type MyPathOptions = SelfOptions;
 
 // correct, definition of fill is picked from PathOptions
-type SelfOptions = { \
+type SelfOptions = {
   // ... 
 };
 type MyClassOptions = SelfOptions & PickOptional<PathOptions, 'fill'>; 
