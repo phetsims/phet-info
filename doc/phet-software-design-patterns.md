@@ -1533,6 +1533,75 @@ export default class MyNode extends Node {
 }
 ```
 
+(11) If your class has responsibilty for one or more fields in nested options, those fields should be omitted. There are 2 patterns for accomplishing this.
+
+The first pattern omits the fields from SelfOptions. Then, when the subcomponent is instantiated, `combineOptions` is used to add the options that are the responsibility of the class. 
+
+```js
+type SelfOptions = {
+
+  // omit nested options that are the responsibility of MyNode, and are therefore not part of the API
+  helloButtonOptions?: Omit<RectangularPushButtonOptions, 'content' | 'listener'>;
+};
+type MyNodeOptions = SelfOptions & NodeOptions;
+
+export default class MyNode extends Node {
+
+  constructor( providedOptions?: MyNodeOptions ) {
+
+    const options = optionize<MyNodeOptions, Omit<SelfOptions, 'helloButtonOptions'>, NodeOptions>()( {
+      // ...
+    }, providedOptions );
+
+    super( options );
+
+    // add values for nested options that are the responsibility of MyNode
+    const helloButton = new RectangularPushButton( combinOptions<RectangularPushButtonOptions>( {
+      content: new Text( 'hello' ),
+      listener: () => console.log( 'hello' )
+    }, options.helloButtonOptions ) );
+    this.addChild( helloButton );
+
+    // ...
+  }
+}
+```
+
+The second pattern add default for nested options in the main `optionize` call. Note that this requires a less straighforward type definition. If you find that your type definition is getting unweildy, clever, or difficult to understand, then consider using the first pattern above.  
+
+```js
+// Do not omit options here, so that we can provide defaults in the optionize call.
+type SelfOptions = {
+  helloButtonOptions?: RectangularPushButtonOptions;
+};
+
+// Omit nested options here that are not part of the API.
+type MyNodeOptions = SelfOptions & {
+  helloButtonOptions?: Omit<RectangularPushButtonOptions, 'content' | 'listener'>;
+} & NodeOptions;
+
+export default class MyNode extends Node {
+
+  constructor( providedOptions?: MyNodeOptions ) {
+    const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
+      helloButtonOptions: {
+      
+        // Provide defaults for nested options that are the responsibility of MyNode.
+        content: new Text( 'hello' ),
+        listener: () => console.log( 'hello' )
+      }
+    }, providedOptions );
+
+    super( options );
+
+    const helloButton = new RectangularPushButton( options.helloButtonOptions );
+    this.addChild( helloButton );
+
+    // add other UI components ...
+  }
+}
+```
+
 ## Scenes
 
 Author: @jessegreenberg
