@@ -1448,7 +1448,7 @@ class MyControl extends HBox {
       font: new Font( 18 )
     }, options.textOptions );
 
-    …
+    // ...
   } 
 }
 ```
