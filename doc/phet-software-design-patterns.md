@@ -1207,6 +1207,8 @@ for `config` as the solution. Review your API to understand _why_ it has too man
 
 Author: @pixelzoom
 
+Disclaimer: The description of this pattern is not complete -- it’s a start. The examples are terse, and significant familiarity with `optionize` etc. is needed to get the most out of the examples.
+
 Similar to the pattern decribed in [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config-javascript), this pattern is used to parameterize methods (most typically constructors) without having a large number of parameters. It provides the 
 additional benefit of type-checking.
 
