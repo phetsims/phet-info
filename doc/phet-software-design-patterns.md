@@ -1592,7 +1592,7 @@ export default class MyNode extends Node {
     super( options );
 
     // add values for nested options that are the responsibility of MyNode
-    const helloButton = new RectangularPushButton( combinOptions<RectangularPushButtonOptions>( {
+    const helloButton = new RectangularPushButton( combineOptions<RectangularPushButtonOptions>( {
       content: new Text( 'hello' ),
       listener: () => console.log( 'hello' )
     }, options.helloButtonOptions ) );
