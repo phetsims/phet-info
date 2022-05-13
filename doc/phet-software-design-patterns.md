@@ -1246,7 +1246,7 @@ type MyPathOptions = SelfOptions;
 type SelfOptions = { 
   // ...
 };
-type MyClassOptions = SelfOptions & PathOptions; 
+type MyPathOptions = SelfOptions & PathOptions; 
 ```
 
 (2) Use `Omit`, `PickRequired`, and `PickOptional` to narrow the API provided by your options type.
@@ -1372,7 +1372,7 @@ type MyPathOptions = SelfOptions;
 type SelfOptions = {
   // ... 
 };
-type MyClassOptions = SelfOptions & PickOptional<PathOptions, 'fill'>; 
+type MyPathOptions = SelfOptions & PickOptional<PathOptions, 'fill'>; 
 ```
 
 (5) If a class has no parent class, pick a field from the type that defines that field, rather than duplicating that field’s definition.
