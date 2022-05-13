@@ -1340,7 +1340,8 @@ class Atomizer {
   }
 }
 
-type MyAtomizerOptions = AtomizerOptions & PickOptional<AtomizerOptions, 'numberOfAtoms'>;
+// Make numberOfAtoms optional. Note that it must be omitted, then made required.
+type MyAtomizerOptions = Omit<AtomizerOptions, 'numberOfAtoms'> & PickOptional<AtomizerOptions, 'numberOfAtoms'>;
 
 class MyAtomizer extends Atomizer {
   constructor( providedOptions?: MyAtomizerOptions ) {
