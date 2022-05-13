@@ -1442,8 +1442,8 @@ class MyCommonNode extends Node {
   // providedOptions can be an optional param because tandem is optional
   constructor( providedOptions?: MyCommonCodeNodeOptions ) {
     const options = optionize<MyCommonCodeNodeOptions, SelfOptions, NodeOptions>()( {
-      // ...
-      // no need for tandem default here, because it's required
+    
+      // Provide a tandem default here, because it's optional, and we want MyCommonNode to be instrumented.
       tandem: Tandem.REQUIRED
     }, providedOptions ); 
   }
@@ -1470,7 +1470,7 @@ class MySimNode extends Node {
   constructor( ..., providedOptions: MySimNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
       // ...
-      // no need for tandem default here, because it's required
+      // No need for tandem default here, because it's a required option.
     }, providedOptions ); 
   }
   // ...
