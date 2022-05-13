@@ -1249,7 +1249,7 @@ type SelfOptions = {
 type MyPathOptions = SelfOptions & PathOptions; 
 ```
 
-(2) Use `Omit`, `PickRequired`, and `PickOptional` to narrow the API provided by your options type.
+(2) Use `Omit`, [PickRequired](https://github.com/phetsims/phet-core/blob/master/js/types/PickRequired.ts), and [PickOptional](https://github.com/phetsims/phet-core/blob/master/js/types/PickOptional.ts) to narrow the API provided by your options type.
 
 ```typescript
 // In this example, MyNode is responsible for setting the children option.
