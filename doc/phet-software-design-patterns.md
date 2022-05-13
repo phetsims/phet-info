@@ -1384,14 +1384,14 @@ class MyClass {
   // ...
 }
 
-// incorrect, definition of PhetioObjectOptions.tandem is duplicated
+// incorrect, SelfOptions should not duplicate the definition of PhetioObjectOptions.tandem.
 type SelfOptions = {
   tandem: Tandem;
   // ...
 };
 type MyClassOptions = SelfOptions;
 
-// correct, definition of tandem is picked from PhetioObjectOptions, where it is defined
+// correct, MyClassOptions gets the definition of tandem from PhetioObjectOptions, which is where tandem is defined.
 type SelfOptions = { ... };
 type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>; 
 ```
