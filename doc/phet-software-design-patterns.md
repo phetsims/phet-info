@@ -1273,7 +1273,7 @@ class MyNode extends Node {
 ```
 
 ```typescript
-// In this example, we want to hide the parent class’s options, and make the tandem option required.
+// In this example, we want to exclude the parent class’s options from our API, and make tandem required.
 // PickRequired is used to pick tandem from NodeOptions.
 
 type SelfOptions = {
@@ -1292,7 +1292,7 @@ class MyNode extends Node {
 ```
 
 ```js
-// In this example, we want to hide the parent class’s options, make tandem required, 
+// In this example, we want to exclude the parent class’s options from our API, and make tandem required, 
 // and make phetioDocumentation optional.  We use PickRequired and PickOptional respectively.
 
 type SelfOptions = { 
