@@ -1436,12 +1436,12 @@ type SelfOptions = {
 };
 type MyCommonCodeNodeOptions = SelfOptions & NodeOptions;
 
-class MyNode extends Node {
+class MyCommonNode extends Node {
 
   // If MyCommonCodeNodeOptions has no other required fields, then
   // providedOptions can be an optional param because tandem is optional
   constructor( providedOptions?: MyCommonCodeNodeOptions ) {
-    const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
+    const options = optionize<MyCommonCodeNodeOptions, SelfOptions, NodeOptions>()( {
       // ...
       // no need for tandem default here, because it's required
       tandem: Tandem.REQUIRED
