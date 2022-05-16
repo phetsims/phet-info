@@ -140,6 +140,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phet-global-initiative | @kathy-phet |  |  | 
 | phet-info | @zepumph |  |  | 
 | phet-io | @zepumph |  |  | 
+| phet-io-client-guides | @chrisklus |  |  | 
 | phet-io-sim-specific | @samreid | @arouinfar |  | 
 | phet-io-test-sim | @chrisklus |  |  | 
 | phet-io-website | @chrisklus |  |  | 
