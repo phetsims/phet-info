@@ -227,4 +227,7 @@ Production branches are "protected" on github so that they cannot be deleted unl
 
 # Deploying pre-chipper-2.0 things
 
+If you get an error during the deploy command like ```chipper 0.0.0 cannot build multiple brands at a time``` try using
+chipper 2.0 steps but just building and deploying each brand separately before moving on to chipper-1.0.
+
 See https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-1.0.md

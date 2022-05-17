@@ -8,7 +8,15 @@
  {{IDENTIKEY}} = your CU IdentiKey login name
  ```
  
-## Before Beginning.  
+## Before Beginning.
+
+#### Don't use chipper 1.0 tools unless you have to
+Chipper 1.0 tools may not work because old chipper SHAs still have code that points to spot, a decommissioned server.
+See https://github.com/phetsims/chipper/issues/1248.
+
+If you got an error from using chipper 2.0 tools like ```chipper 0.0.0 cannot build multiple brands at a time```
+try using chipper 2.0 steps but just building and deploying each brand separately before moving on to chipper-1.0.
+
 #### Configure the build process
                      
  Before building or deploying a simulation, familiarize yourself with configuration options for PhET's build process.
