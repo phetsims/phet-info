@@ -13,7 +13,7 @@ their environment at PhET.
 - [ ] Familiarize yourself with many documents that outline how PhET developers operate. The majority of documents in
   [phet-info/doc](https://github.com/phetsims/phet-info/tree/master/doc) will be helpful here:
   - [ ] [IDE setup document](https://github.com/phetsims/phet-info/blob/master/ide/idea/setup.md)
-  - [ ] [PhET-specific Design Patterns](./phet-software-design-patterns.md)
+  - [ ] [PhET Software Design Patterns](./phet-software-design-patterns.md)
   - [ ] [Typescript Quick Start](./typescript-quick-start.md) and how PhET uses it.
   - [ ] [Typescript Conventions](./typescript-conventions.md) that PhET has decided on.
   - [ ] [The Code Review Checklist](../checklists/code_review_checklist.md) (CRC).
