@@ -63,7 +63,7 @@ about why `dispose` isn't called?  An example of why no call to `dispose` is nee
 a `ScreenView` that would never be removed from the scene graph. Note that it's also acceptable (and encouraged!) to describe what needs to be disposed in implementation-notes.md. 
 - [ ] Are there leaks due to registering observers or listeners? The following guidelines should be followed unless documentation (in-line or in implementation-notes.md) describes why following them is not necessary.
   * AXON: `Property.link` or `lazyLink` is accompanied by `unlink`.
-  * AXON: `Property.multilink` is accompanied by `unmultilink`.
+  * AXON: `Multilink.multilink` is accompanied by `unmultilink`.
   * AXON: Creation of `Multilink` is accompanied by `dispose`.
   * AXON: Creation of `DerivedProperty` is accompanied by `dispose`.
   * AXON: `Emitter.addListener` is accompanied by `removeListener`.

@@ -220,13 +220,13 @@
   For example, both of these are acceptable:
 
   ```js
-  Property.multilink(
+  Multilink.multilink(
     [ styleProperty, activeProperty, colorProperty ],
     ( style, active, color ) => {
       // some algorithm that uses style and active
     } );
   
-  Property.multilink(
+  Multilink.multilink(
     [ styleProperty, activeProperty, colorProperty ],
     ( style, active ) => {
       // some algorithm that uses style and active
@@ -236,7 +236,7 @@
   This is not acceptable, because the 3rd parameter is incorrect.
 
   ```js
-  Property.multilink(
+  Multilink.multilink(
     [ styleProperty, activeProperty, colorProperty ],
     ( style, active, lineWidth ) => {
       // some algorithm that uses style and active
