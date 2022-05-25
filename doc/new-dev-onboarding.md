@@ -7,6 +7,11 @@ their environment at PhET.
 
 ## Steps
 
+Each new developer will be assigned a mentor who is an experienced developer of PhET simulations.  The new developer
+should work with their mentor to set up a "ramp-up plan".  Part of that plan will involve reading some introductory
+documentation.  The list below can serve as a rough guide, but the details - and the depth to which each of these
+documents should be studies - will need to be customized for the particular needs of the new developer.
+
 - [ ] The vast majority of info can be found in [PhET Development Overview](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md)
 - [ ] Set up a Github Account with access to the phetsims organization.
 - [ ] Have a CU Email account
