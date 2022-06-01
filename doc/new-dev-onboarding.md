@@ -1,14 +1,22 @@
 # Onboarding New Software Developers
 
+This document is intended to act as a starting point for new developers that are joining the PhET team and play to
+contribute to the development of simulations.  It discusses the process through which a new developer can acquire the
+knowledge and skills needed to do this.  Note that there are other software development roles at PhET, such as writing
+code for the website, the iOS and Android apps, the desktop app, and the translation utility.  These will not be covered
+in this document.
+
 ## Intro
 
-This document is a place for new developers to go to see (hopefully) everything that they need to get ramped up with 
-their environment at PhET.
+Don't panic (with apologies to Douglas Adams).  PhET has been around since 2001, and has written a lot of code and
+created some pretty involved processes during that time.  It will take a while for a new developer to learn what they
+need to in order to develop and maintain simulations.
 
-Each new developer will be assigned a mentor who is an experienced developer of PhET simulations. The new developer
-should work with their mentor to set up a "ramp-up plan". Part of that plan will involve reading some introductory
-documentation. The steps below can serve as a rough guide, but the details - and the depth to which each of these
-documents should be studied - will need to be customized for the particular needs of the new developer.
+Each new developer will have had a unique set of experiences and education when starting at PhET, which means it isn't
+possible to come up with a "one-size-fits-all" plan for what to read and work through to ramp up.  Each new developer
+will be assigned a mentor who is an experienced developer of PhET simulations, and one of the first steps of the process
+should be to come up with a customized plan or "road map" for ramping up.  This should be regularly reviewed and updated
+during the process.
 
 ## First Steps
 
@@ -16,11 +24,11 @@ In your first few days, there are many configuration and setup steps needed in o
 
 - [ ] Get a CU Email account and identikey.
 - [ ] Set up a Github Account with access to the phetsims organization.
-  - [ ] Ask Oliver to add you to the SIMS_DEV development team on Github. This will allow you to push code to sim repos.
+- [ ] Ask Oliver to add you to the SIMS_DEV development team on Github. This will allow you to push code to sim repos.
 - [ ] Follow the steps in the [Getting Started](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#getting-started)
 section of the PhET Development Overview doc to install some command line programs, get a copy of phet repos, and try
 out running a sim locally on your machine. TODO from @Luisav1: Improve docs in here about getting all repos.
-- From here, you should set up an IDE so you can start writing code. Most developers use Webstorm or IntelliJ IDEA. 
+- [ ] From here, you should set up an IDE so you can start writing code. Most developers use Webstorm or IntelliJ IDEA. 
 Instructions for both of those can be found in the [IDE setup document](https://github.com/phetsims/phet-info/blob/master/ide/idea/setup.md).
 - [ ] Before you start committing and pushing code to PhET repos, you should set up pre-commit hooks. These prevent
 developers from committing code that has various types of errors, most notably ESLint and TypeScript errors. Follow
