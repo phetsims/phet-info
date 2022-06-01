@@ -1,14 +1,22 @@
 # Onboarding New Software Developers
 
+This document is intended to act as a starting point for new developers that are joining the PhET team and play to
+contribute to the development of simulations.  It discusses the process through which a new developer can acquire the
+knowledge and skills needed to do this.  Note that there are other software development roles at PhET, such as writing
+code for the website, the iOS and Android apps, the desktop app, and the translation utility.  These will not be covered
+in this document.
+
 ## Intro
 
-This document is a place for new developers to go to see (hopefully) everything that they need to get ramped up with 
-their environment at PhET.
+Don't panic (with apologies to Douglas Adams).  PhET has been around since 2001, and has written a lot of code and
+created some pretty involved processes during that time.  It will take a while for a new developer to learn what they
+need to in order to develop and maintain simulations.
 
-Each new developer will be assigned a mentor who is an experienced developer of PhET simulations. The new developer
-should work with their mentor to set up a "ramp-up plan". Part of that plan will involve reading some introductory
-documentation. The steps below can serve as a rough guide, but the details - and the depth to which each of these
-documents should be studied - will need to be customized for the particular needs of the new developer.
+Each new developer will have had a unique set of experiences and education when starting at PhET, which means it isn't
+possible to come up with a "one-size-fits-all" plan for what to read and work through to ramp up.  Each new developer
+will be assigned a mentor who is an experienced developer of PhET simulations, and one of the first steps of the process
+should be to come up with a customized plan or "road map" for ramping up.  This should be regularly reviewed and updated
+during the process.
 
 ## First Steps
 
