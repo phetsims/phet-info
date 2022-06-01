@@ -16,7 +16,7 @@ In your first few days, there are many configuration and setup steps needed in o
 
 - [ ] Get a CU Email account and identikey.
 - [ ] Set up a Github Account with access to the phetsims organization.
-- [ ] Ask Oliver to add you to the SIMS_DEV development team on Github. This will allow you to push code to sim repos.
+  - [ ] Ask Oliver to add you to the SIMS_DEV development team on Github. This will allow you to push code to sim repos.
 - [ ] Follow the steps in the [Getting Started](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#getting-started)
 section of the PhET Development Overview doc to install some command line programs, get a copy of phet repos, and try
 out running a sim locally on your machine. TODO from @Luisav1: Improve docs in here about getting all repos.
@@ -41,3 +41,13 @@ like running `grunt lint`.
 - [ ] Once you're working on a sim, you will eventually want to publish a dev version to show your latest progress. See
 [Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development)
 and ask a senior dev to help add your identikey to PhET's servers. 
+
+```mermaid
+flowchart TD
+  A(((Environment Setup)))
+  B(((Building a Sim)))
+  C(((Conventions)))
+  A-->A1( <a href='http://google.com'>IDE setup Document</a>) & A2(<a href='https://www.jetbrains.com/webstorm/'>Webstorm</a>) & A3(<a href='https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-developmen'>Add New User to PhET Server</a>)
+  B-->B1(Simula Rasa) & B2(Documentation)
+  C-->C1(Typescript Conventions) & C2(Code Review Checklist)
+```
