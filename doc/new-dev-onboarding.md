@@ -23,3 +23,13 @@ documents should be studies - will need to be customized for the particular need
   - [ ] [Typescript Conventions](./typescript-conventions.md) that PhET has decided on.
   - [ ] [The Code Review Checklist](../checklists/code_review_checklist.md) (CRC).
 - [ ] [Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development)
+
+```mermaid
+flowchart TD
+  A(((Environment Setup)))
+  B(((Building a Sim)))
+  C(((Conventions)))
+  A-->A1( <a href='http://google.com'>IDE setup Document</a>) & A2(<a href='https://www.jetbrains.com/webstorm/'>Webstorm</a>) & A3(<a href='https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-developmen'>Add New User to PhET Server</a>)
+  B-->B1(Simula Rasa) & B2(Documentation)
+  C-->C1(Typescript Conventions) & C2(Code Review Checklist)
+```
