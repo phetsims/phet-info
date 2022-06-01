@@ -1249,16 +1249,16 @@ type SelfOptions = {
 type MyPathOptions = SelfOptions & PathOptions; 
 ```
 
-(2) Use `Omit`, [PickRequired](https://github.com/phetsims/phet-core/blob/master/js/types/PickRequired.ts), and [PickOptional](https://github.com/phetsims/phet-core/blob/master/js/types/PickOptional.ts) to narrow the API provided by your options type.
+(2) Use [OmitStrict](https://github.com/phetsims/phet-core/blob/master/js/types/OmitStrict.ts), [PickRequired](https://github.com/phetsims/phet-core/blob/master/js/types/PickRequired.ts), and [PickOptional](https://github.com/phetsims/phet-core/blob/master/js/types/PickOptional.ts) to narrow the API provided by your options type.
 
 ```typescript
 // In this example, MyNode is responsible for setting the children option.
-// Omit is used to prevent clients from being able to set options.children.
+// OmitStrict is used to prevent clients from being able to set options.children.
 
 type SelfOptions = { 
   // ... 
 };
-type MyNodeOptions = SelfOptions & Omit<NodeOptions, 'children'>;
+type MyNodeOptions = SelfOptions & OmitStrict<NodeOptions, 'children'>;
 
 class MyNode extends Node { 
   constructor( …, providedOptions?: MyNodeOptions ) {
@@ -1341,7 +1341,7 @@ class Atomizer {
 }
 
 // Make numberOfAtoms optional. Note that it must be omitted, then made required.
-type MyAtomizerOptions = Omit<AtomizerOptions, 'numberOfAtoms'> & PickOptional<AtomizerOptions, 'numberOfAtoms'>;
+type MyAtomizerOptions = OmitStrict<AtomizerOptions, 'numberOfAtoms'> & PickOptional<AtomizerOptions, 'numberOfAtoms'>;
 
 class MyAtomizer extends Atomizer {
   constructor( providedOptions?: MyAtomizerOptions ) {
@@ -1480,7 +1480,7 @@ class MySimNode extends Node {
 }
 ```
 
-(9) For nested options, use `Omit` to avoid having to provide `{}` or `null` as a default value.
+(9) For nested options, use `OmitStrict` to avoid having to provide `{}` or `null` as a default value.
 
 In the parameters to `optionize`, omit `'helloButtonOptions'` from `SelfOptions` so that a default value is not needed:
 
@@ -1495,7 +1495,7 @@ export default class MyNode extends Node {
   constructor( providedOptions?: MyNodeOptions ) {
   
     // omit helloButtonOptions from SelfOptions
-    const options = optionize<MyNodeOptions, Omit<SelfOptions, 'helloButtonOptions'>, NodeOptions>()( {
+    const options = optionize<MyNodeOptions, OmitStrict<SelfOptions, 'helloButtonOptions'>, NodeOptions>()( {
       // no default for helloButtonOptions is needed
       ...
     }, providedOptions );
@@ -1552,7 +1552,7 @@ The first pattern omits the fields from `SelfOptions`. Then, when the subcompone
 type SelfOptions = {
 
   // omit nested options that are the responsibility of MyNode, and are therefore not part of the API
-  helloButtonOptions?: Omit<RectangularPushButtonOptions, 'content' | 'listener'>;
+  helloButtonOptions?: OmitStrict<RectangularPushButtonOptions, 'content' | 'listener'>;
   // ...
 };
 type MyNodeOptions = SelfOptions & NodeOptions;
@@ -1561,7 +1561,7 @@ export default class MyNode extends Node {
 
   constructor( providedOptions?: MyNodeOptions ) {
 
-    const options = optionize<MyNodeOptions, Omit<SelfOptions, 'helloButtonOptions'>, NodeOptions>()( {
+    const options = optionize<MyNodeOptions, OmitStrict<SelfOptions, 'helloButtonOptions'>, NodeOptions>()( {
       // ...
     }, providedOptions );
 
@@ -1590,7 +1590,7 @@ type SelfOptions = {
 
 // Omit nested options here that are not part of the API.
 type MyNodeOptions = SelfOptions & {
-  helloButtonOptions?: Omit<RectangularPushButtonOptions, 'content' | 'listener'>;
+  helloButtonOptions?: OmitStrict<RectangularPushButtonOptions, 'content' | 'listener'>;
 } & NodeOptions;
 
 export default class MyNode extends Node {
