@@ -48,7 +48,7 @@ like running `grunt lint`.
   is a list of the patterns in the order in which they should be read.  At the top of the list are patterns that are
   central to the development process and necessary for pretty much every sim.  Below that are patterns that may be
   useful at some point, but aren't in every sim, so they can be skimmed and referenced when needed.
-  - *Patterns that every PhET developer should know well, read in this order:*
+  - *Patterns that every PhET developer should know well:*
     - Module
     - Namespace
     - Model-View-Controller (MVC)
