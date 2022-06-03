@@ -1165,6 +1165,12 @@
     ],
     "responsibleDesigners": []
   },
+  "quake": {
+    "responsibleDevs": [
+      "@jbphet"
+    ],
+    "responsibleDesigners": []
+  },
   "query-string-machine": {
     "responsibleDevs": [
       "@chrisklus"
