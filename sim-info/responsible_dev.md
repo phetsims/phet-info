@@ -164,6 +164,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | protein-synthesis | @samreid |  |  | 
 | qa | @KatieWoe |  |  | 
 | quadrilateral | @jessegreenberg |  | Sound<br/>Interactive Description<br/>Voicing | 
+| quake | @jbphet |  |  | 
 | query-string-machine | @chrisklus |  |  | 
 | ratio-and-proportion | @zepumph | @BLFiedler | Sound<br/>Interactive Description<br/>Voicing<br/>Interactive Highlights | 
 | reactants-products-and-leftovers | @pixelzoom | @arouinfar | Sound | 
