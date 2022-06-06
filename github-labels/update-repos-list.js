@@ -5,11 +5,9 @@
 //  This script creates a file in this directly called `.repos` that is
 //  a newline separated list of all repos in the phetsims organization.
 
-const axios = require( 'axios' );
+const axios = require( '../../perennial/node_modules/axios' );
 const buildLocal = require( '../../perennial/js/common/buildLocal' );
 const fs = require( 'fs' );
-
-let a;
 
 ( async () => {
   // temporarily store the old repos for troubleshooting if problems arise
