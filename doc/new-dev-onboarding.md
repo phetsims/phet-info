@@ -84,11 +84,18 @@ Once your machine is configured to start sim development from the steps above, y
 that PhET uses when writing code, and do some additional steps to continue ramping up your PhET development abilities.
 
 ```mermaid
-flowchart TD
+flowchart LR
   A(((Environment Setup)))
-  B(((Building a Sim)))
-  C(((Conventions)))
-  A-->A1( <a href='http://google.com'>IDE setup Document</a>) & A2(<a href='https://www.jetbrains.com/webstorm/'>Webstorm</a>) & A3(<a href='https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-developmen'>Add New User to PhET Server</a>)
-  B-->B1(Simula Rasa) & B2(Documentation)
-  C-->C1(Typescript Conventions) & C2(Code Review Checklist)
+  B(((First Steps)))
+  C(((Object Creation)))
+  D(((Layout)))
+  A-->A1(IDE) & A2(Node.js) & A3(<a href='https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-developmen'>Add New User to PhET Server</a>)
+  A1-->A1.1(<a href='http://google.com'>IDE setup Document</a>) & A1.2(<a href='https://www.jetbrains.com/webstorm/'>Webstorm</a>)
+  A2-->A2.1(<a href='https://nodejs.org/en/download/'>Install Node</a>) & A2.2(<a href='https://docs.npmjs.com/cli/v8/commands/npm-install'>Install NPM</a>)
+  B-->B1(Simula Rasa) & B2(Building example-sim) & B3(Using Code Snippets) & B4(Using phetmarks common code)
+  B3-->B3.1(Add Elements to the Model) & B3.2(Add Elements to the View) & B3.3(Modify Model Properties from View)
+  B4-->B4.1(Accessing Documentation) & B4.2(Accessing the Showcases) & B4.3(Using UI Componenets in example-sim)
+  C-->C1(File Structure Overview) & C2(Module Creation)
+  C2-->C2.1(Module Design Pattern) & C2.2(Typescript Conventions) & C2.3(Class Inheritance & Options) & C2.4(Instancing Custom Modules)
+  D-->D1(Flexbox & Gridbox) & D2(Node Tree Structure)
 ```
