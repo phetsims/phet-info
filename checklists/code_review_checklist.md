@@ -264,7 +264,7 @@ necessarily need to check these items one at a time. The goal is to determine wh
 - [ ] Are there any [magic numbers](https://en.wikipedia.org/wiki/Magic_number_(programming)) that should be factored out as constants and documented?
 - [ ] Are there any constants that are duplicated in multiple files that should be factored out into a `{{REPO}}Constants.js` file?
 - [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.) Does changing the values of these constants break the sim? For example, see https://github.com/phetsims/plinko-probability/issues/84.
-- [ ] Is [PhetColorScheme](https://github.com/phetsims/scenery-phet/blob/master/js/PhetColorScheme.js) used where appropriate? Verify that the sim is not inventing/creating its own colors for things that have been standardized in `PhetColorScheme`.  Identify any colors that might be worth adding to `PhetColorScheme`.
+- [ ] Is [PhetColorScheme](https://github.com/phetsims/scenery-phet/blob/master/js/PhetColorScheme.ts) used where appropriate? Verify that the sim is not inventing/creating its own colors for things that have been standardized in `PhetColorScheme`.  Identify any colors that might be worth adding to `PhetColorScheme`.
 - [ ] Are all dependent Properties modeled as `DerivedProperty` instead of `Property`?
 - [ ] All dynamics should be called from Sim.step(dt), do not use window.setTimeout or window.setInterval.  This will help support Legends of Learning and PhET-iO.
 
