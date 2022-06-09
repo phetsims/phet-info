@@ -1617,7 +1617,7 @@ export default class MyNode extends Node {
 
 (11) When applying a [mixin or trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait), defining the options `type` gets a little more complicated. Options must be included from both the mixin/trait and the class that the mixin/trait is applied to. 
 
-In this example, trait `Voicing` with options `VoicingOptions` is applied to `Checkbox`. (The pattern is idential for mixins.)
+In this example, trait `Voicing` with options `VoicingOptions` is applied to `Checkbox`. (The pattern is identical for mixins.)
 
 ```typescript
 type SelfOptions = { ... };
