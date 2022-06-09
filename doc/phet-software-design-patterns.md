@@ -1,7 +1,6 @@
 # PhET Software Design Patterns
 
 This document describes software design patterns that are specific to PhET, and PhET-specific applications of standard design patterns.
-
 For general information on many standard design patterns,
 see _[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)_ by Addy
 Osmani.
@@ -100,7 +99,7 @@ Some background reading for those interested:
 SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clarify which form of dependency injection
 (probably constructor-based injection), and some examples of where it's currently used in PhET sims.
 
-The main goal of DI is to decouple the implementation of a required object instance from where it’s used. While there
+The main goal of dependency injection (DI) is to decouple the implementation of a required object instance from where it’s used. While there
 are a few different ways to accomplish this, the basic idea is to provide the wrapping class with its required instance
 variables instead of allowing it to instantiate them itself. For example,
 
