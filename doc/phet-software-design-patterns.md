@@ -1620,15 +1620,18 @@ export default class MyNode extends Node {
 In this example, trait `Voicing` with options `VoicingOptions` is applied to `Checkbox`. (The pattern is identical for mixins.)
 
 ```typescript
+// Options that are specific to MyCheckbox go here.
 type SelfOptions = { ... };
 
 // Define ParentOptions, which is composed of both the trait's options (VoicingOptions), 
 // and the options for the class that the trait is applied to (CheckboxOptions).
+// Take care not to duplicate VoicingOptions & CheckboxOptions elsewhere.
 type ParentOptions = VoicingOptions & CheckboxOptions;
 
+// Combine options that are specific to this class (SelfOptions) and ParentOptions. 
 export type MyCheckboxOptions = SelfOptions & ParentOptions;
 
-// Note that Voicing is applied to Checkbox, which is why we use VoicingOptions & CheckboxOptions above.
+// Note that Voicing is applied to Checkbox.
 class MyCheckbox extends Voicing( Checkbox ) {
 
   constructor( ..., providedOptions?: MyCheckboxOptions ) {
