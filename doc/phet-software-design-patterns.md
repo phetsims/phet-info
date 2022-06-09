@@ -632,12 +632,11 @@ usage is most similar to the Model-View-Delegate pattern used by Java in the imp
 the controller code is generally packaged with view code. A diagram of this pattern would look like
 
 ```text
-    +----------------+    Axon          +------------------+                   +-----------+
-    |                |  +-------------> |                  |                   |           |
-    |                |                  |                  |     User Input    |           |
-    |    Model       |                  | View/Controller  |   <------------+  |   User    |
-    |                | <--------------+ |                  |                   |           |
-    +----------------+ Input Listeners  +------------------+                   +-----------+
+    +---------------+       Axon        +-------------------+                +-----------+
+    |               | +---------------> |                   |   User Input   |           |
+    |     Model     |                   |  View/Controller  | <------------+ |   User    |
+    |               | <---------------+ |                   |                |           |
+    +---------------+  Input Listeners  +-------------------+                +-----------+
 ```
 
 ## Model-View Transform
