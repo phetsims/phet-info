@@ -1615,6 +1615,35 @@ export default class MyNode extends Node {
 }
 ```
 
+(11) When using a mixin or trait, 
+
+When using a [mixin or trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait), defining the options `type` gets a little more complicated. Options must be included from both the mixin/trait and the class that the mixin/trait is applied to. 
+
+In this example, trait `Voicing` with options `VoicingOptions` is applied to `Checkbox`. (The pattern is idential for mixins.)
+
+```typescript
+type SelfOptions = { ... };
+
+// Define ParentOptions, which is composed of both the trait options, and the options for the class that the trait is applied to.
+type ParentOptions = VoicingOptions & CheckboxOptions;
+
+export type MyCheckboxOptions = SelfOptions & ParentOptions;
+
+// Note that Voicing is applied to Checkbox, which is why we use VoicingOptions & CheckboxOptions above.
+class MyCheckbox extends Voicing( Checkbox ) {
+
+  constructor( ..., providedOptions?: MyCheckboxOptions ) {
+  
+    // Use ParentOptions for the 3rd parameter to optionize -- 
+    // not VoicingOptions, CheckboxOptions, or (duplicated) VoicingOptions & CheckboxOptions.
+    const options = optionize<MyCheckboxOptions, SelfOptions, ParentOptions>()( {
+      ...
+    } );
+    ...
+  }
+}
+```
+
 ## Scenes
 
 Author: @jessegreenberg
