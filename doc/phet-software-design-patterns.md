@@ -1622,7 +1622,8 @@ In this example, trait `Voicing` with options `VoicingOptions` is applied to `Ch
 ```typescript
 type SelfOptions = { ... };
 
-// Define ParentOptions, which is composed of both the trait options, and the options for the class that the trait is applied to.
+// Define ParentOptions, which is composed of both the trait options, and the options for 
+// the class that the trait is applied to.
 type ParentOptions = VoicingOptions & CheckboxOptions;
 
 export type MyCheckboxOptions = SelfOptions & ParentOptions;
