@@ -5,6 +5,30 @@ For general information on many standard design patterns,
 see _[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)_ by Addy
 Osmani.
 
+This document has a bunch of different patterns in alphabetical order.  They are not all equally important.  Below
+is a list of the patterns in the order in which they should be read.  At the top of the list are patterns that are
+central to the development process and necessary for pretty much every sim.  Below that are patterns that may be
+useful at some point, but aren't in every sim, so they can be skimmed and referenced when needed.
+  - *Patterns that every PhET developer should know well:*
+    - Module
+    - Namespace
+    - Model-View-Controller (MVC)
+    - Model-View Transform
+    - Observer
+    - Options (TypeScript)
+    - Dispose
+    - Enumeration
+  - *Patterns to be aware of and reference when needed:*
+    - Mixin and Trait
+    - Singleton
+    - Dependency Injection
+    - Creator
+    - Scenes
+    - Strategy
+    - State Machine
+    - Options and Config (JavaScript)
+
+
 ## Table of Contents
 
 * [Creator](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-with-drag-forwarding)
