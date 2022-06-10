@@ -43,29 +43,9 @@ developing simulations.  Here is a list, in rough priority order, with notes abo
 TODO: Break this up more in to smaller pieces and add anything that's missing. @Luisav1 and @chrisklus would like to
 pick out more specific documentation to read for this section and also more helpful tools that weren't mentioned above,
 like running `grunt lint`.
-- [ ] [PhET Software Design Patterns](./phet-software-design-patterns.md)
-  - This document has a bunch of different patterns in alphabetical order.  They are not all equally important.  Below
-  is a list of the patterns in the order in which they should be read.  At the top of the list are patterns that are
-  central to the development process and necessary for pretty much every sim.  Below that are patterns that may be
-  useful at some point, but aren't in every sim, so they can be skimmed and referenced when needed.
-  - *Patterns that every PhET developer should know well:*
-    - Module
-    - Namespace
-    - Model-View-Controller (MVC)
-    - Model-View Transform
-    - Observer
-    - Options (TypeScript)
-    - Dispose
-    - Enumeration
-  - *Patterns to be aware of and reference when needed:*
-    - Mixin and Trait
-    - Singleton
-    - Dependency Injection
-    - Creator
-    - Scenes
-    - Strategy
-    - State Machine
-    - Options and Config (JavaScript)
+- [ ] [PhET Software Design Patterns](./phet-software-design-patterns.md): This document has an introduction that describes to new developers how to use PhET specific design patterns. We advise to read through 'Observer' and then try out the following introductory excercises. 
+  - [ ] Tutorial 1 # TODO
+  - [ ] Tutorial 2  
 
 ## Reference Documents
 
