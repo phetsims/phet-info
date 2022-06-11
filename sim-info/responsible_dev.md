@@ -8,7 +8,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | :---------- | :------------- | :------------- | :------------- |
 | a11y-research | @jessegreenberg |  |  | 
 | acid-base-solutions | @pixelzoom | @arouinfar |  | 
-| aqua | @jonathanolson |  |  | 
+| aqua | @zepumph |  |  | 
 | area-builder | @jbphet | @amanda-phet | Sound | 
 | area-model-algebra | @jonathanolson | @amanda-phet | Sound | 
 | area-model-common | @jonathanolson | @amanda-phet |  | 
