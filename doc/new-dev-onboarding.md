@@ -37,28 +37,25 @@ developers from committing code that has various types of errors, most notably E
 step 13. of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
 in the PhET Development Overview doc for instructions on setting them up.
 
-## Background Reading
+## Next steps
 
-There are a number of documents that can help with understanding the conventions and patterns used by PhET when
-developing simulations.  Here is a list, in rough priority order, with notes about how to approach each doc.
+TODO: @Luisav1 and @chrisklus would like to pick out more specific documentation to read for this section and also more
+helpful tools that weren't mentioned above, like running `grunt lint`.
 
-TODO: Break this up more in to smaller pieces and add anything that's missing. @Luisav1 and @chrisklus would like to
-pick out more specific documentation to read for this section and also more helpful tools that weren't mentioned above,
-like running `grunt lint`.
-- [ ] [PhET Software Design Patterns](./phet-software-design-patterns.md): This document has an introduction that describes to new developers how to use PhET specific design patterns. We advise to read through 'Observer' and then try out the following introductory excercises. 
-  - [ ] Tutorial 1 # TODO
-  - [ ] Tutorial 2  
+- [ ] Once you're working on a sim, you will eventually want to publish a dev version to show your latest progress. See
+  [Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development)
+  and ask a senior dev to help add your identikey to PhET's servers.
 
 ## Reference Documents
 
 Below is a list of documents that are helpful for reference.  It's important to know that these exist.  New developers
 should skim through them, and then reference them as needed when developing code.
 
-- [ ] [Typescript Conventions](./typescript-conventions.md) that PhET has decided on.
-- [ ] [The Code Review Checklist](../checklists/code_review_checklist.md) (CRC).
-- [ ] Once you're working on a sim, you will eventually want to publish a dev version to show your latest progress. See
-  [Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development)
-  and ask a senior dev to help add your identikey to PhET's servers.
+* [Typescript Conventions](./typescript-conventions.md) that PhET has decided on.
+* [The Code Review Checklist](../checklists/code_review_checklist.md) (CRC).
+* [PhET Software Design Patterns](./phet-software-design-patterns.md): This document has an introduction that describes to new developers how to use PhET specific design patterns. We advise to read through 'Observer' and then try out the following introductory excercises.
+  - [ ] Tutorial 1 # TODO
+  - [ ] Tutorial 2
 
 ## Early stages of development
 
