@@ -46,7 +46,13 @@ from WebStorm by running `node {{path-to-phet-repos}}/perennial/js/scripts/hook-
 check lint and tsc separately by running `grunt lint` or `tsc` in a sim repo.
 - [ ] Developers use phetmarks to run simulations and access other content. You can load it in the browser via your
 localhost server at `{{path-to-phet-repos}}/phetmarks`. phetmarks contains different ways to run sims, demos for some
-non-sim repos to show what components they contain, and links to documentation.  
+non-sim repos to show what components they contain, and links to documentation.
+- [ ] Sims can be run with various query parameters. Query parameters are by default "for internal use only" and should
+not be shared outside of PhET. Public-facing query parameters must be explicitly designated by including `public: true`
+in their schema. The following places contain relevant query parameters to know about:
+  * chipper initialize-globals.js for general global query parameters (preloaded)
+  * phet-io phet-io-initialize-globals.js for PhET-iO global query parameters (preloaded)
+  * {{REPO}}QueryParameters.js or {{REPO}}QueryParameters.ts for sim-specific query parameters
 - [ ] Once you're working on a sim, you will eventually want to publish a dev version to show your latest progress. See
   [Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development)
   and ask a senior dev to help add your identikey to PhET's servers.
