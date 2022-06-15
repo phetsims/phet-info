@@ -1367,7 +1367,7 @@ type MyAtomizerOptions = StrictOmit<AtomizerOptions, 'numberOfAtoms'> & PickOpti
 
 class MyAtomizer extends Atomizer {
   constructor( providedOptions?: MyAtomizerOptions ) {
-    const options = optionize<MyAtomizerOptions, {}, AtomizerOptions>()( {
+    const options = optionize<MyAtomizerOptions, EmptyObjectType, AtomizerOptions>()( {
       numberOfAtoms: 10,
       // ...
     }, providedOptions );
