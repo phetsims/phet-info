@@ -68,24 +68,32 @@ should skim through them, and then reference them as needed when developing code
   - [ ] Tutorial 1 # TODO
   - [ ] Tutorial 2
 
-## Early stages of development
+## :teacher: Early stages of development 
 
 Once your machine is configured to start sim development from the steps above, you can start learning about the patterns
 that PhET uses when writing code, and do some additional steps to continue ramping up your PhET development abilities.
 
 ```mermaid
 flowchart LR
-  A(((Environment Setup)))
+  A(((Initial Setup)))
   B(((First Steps)))
   C(((Object Creation)))
   D(((Layout)))
-  A-->A1(IDE) & A2(Node.js) & A3(<a href='https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-developmen'>Add New User to PhET Server</a>)
-  A1-->A1.1(<a href='http://google.com'>IDE setup Document</a>) & A1.2(<a href='https://www.jetbrains.com/webstorm/'>Webstorm</a>)
+  A-->A1(IDE) & A2(Node.js) & A3(<a href='https://github.com/join'>Create Github Account</a>) & A4(<a href='https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-developmen'>Add New User to PhET Server</a>)
+  A1-->A1.1(<a href='https://github.com/phetsims/phet-info/tree/master/ide'>IDE setup Documents</a>) & A1.2(<a href='https://www.jetbrains.com/webstorm/'>Webstorm</a>)
   A2-->A2.1(<a href='https://nodejs.org/en/download/'>Install Node</a>) & A2.2(<a href='https://docs.npmjs.com/cli/v8/commands/npm-install'>Install NPM</a>)
-  B-->B1(Simula Rasa) & B2(Building example-sim) & B3(Using Code Snippets) & B4(Using phetmarks common code)
-  B3-->B3.1(Add Elements to the Model) & B3.2(Add Elements to the View) & B3.3(Modify Model Properties from View)
-  B4-->B4.1(Accessing Documentation) & B4.2(Accessing the Showcases) & B4.3(Using UI Componenets in example-sim)
+  A3-->A3.1(Add User to Repo Permissions)
+  B-->B1(Example-sim) & B2(Background Reading) & B3(Using phetmarks common code)
+  B1-->B1.1(Building) & B1.2(Modify & Experiment)
+  B2-->B2.1(Software Design Patterns) & B2.2(Resources as Needed)
+  B3-->B3.1(Accessing Documentation) & B3.2(Accessing the Showcases) & B3.3(Using UI Componenets in example-sim)
   C-->C1(File Structure Overview) & C2(Module Creation)
   C2-->C2.1(Module Design Pattern) & C2.2(Typescript Conventions) & C2.3(Class Inheritance & Options) & C2.4(Instancing Custom Modules)
-  D-->D1(Flexbox & Gridbox) & D2(Node Tree Structure)
+  D-->D1(Node Tree Structure) & D2(Flexbox & Gridbox)
 ```
+
+## :classical_building: Glossary of Documentation
+| Doc | Contents |
+| ---- | ------ |
+| New Dev Onboarding | A guide and resource for new sim developers |
+| Responsible Devs | Associates repos with the dev responsible for maintenance |
