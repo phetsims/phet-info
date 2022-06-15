@@ -42,6 +42,11 @@ in the PhET Development Overview doc for instructions on setting them up.
 TODO: @Luisav1 and @chrisklus would like to pick out more specific documentation to read for this section and also more
 helpful tools that weren't mentioned above, like running `grunt lint`.
 
+- [ ] In the above steps, you installed git hooks to prevent committing lint and tsc errors. However, it can be 
+more time-consuming to first discover these errors when trying to commit. Some developers like to make sure the commit 
+is going to succeed by manually checking that lint and tsc are passing first. You can use the git hooks independently
+from WebStorm by running `node {{path-to-phet-repos}}/perennial/js/scripts/hook-pre-commit.js --console`. You also
+check lint and tsc separately by running `grunt lint` or `tsc` in a sim repo.
 - [ ] Once you're working on a sim, you will eventually want to publish a dev version to show your latest progress. See
   [Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development)
   and ask a senior dev to help add your identikey to PhET's servers.
