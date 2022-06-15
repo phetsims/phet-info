@@ -6,7 +6,7 @@ knowledge and skills needed to do this.  Note that there are other software deve
 code for the website, the iOS and Android apps, the desktop app, and the translation utility.  These will not be covered
 in this document.
 
-## Intro
+## :wave: Intro
 
 Don't panic (with apologies to Douglas Adams).  PhET has been around since 2001, and has written a lot of code and
 created some pretty involved processes during that time.  It will take a while for a new developer to learn what they
@@ -18,7 +18,7 @@ will be assigned a mentor who is an experienced developer of PhET simulations, a
 should be to come up with a customized plan or "road map" for ramping up.  This should be regularly reviewed and updated
 during the process.
 
-## First Steps
+## :technologist: First Steps
 
 In your first few days, there are many configuration and setup steps needed in order to start sim development:  
 
@@ -37,7 +37,7 @@ developers from committing code that has various types of errors, most notably E
 step 13. of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
 in the PhET Development Overview doc for instructions on setting them up.
 
-## Next steps
+## :climbing: Next steps
 
 - [ ] In the above steps, you installed git hooks to prevent committing lint and tsc errors. However, it can be 
 more time-consuming to first discover these errors when trying to commit. Some developers like to make sure the commit 
@@ -57,7 +57,7 @@ in their schema. The following places contain relevant query parameters to know 
   [Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development)
   and ask a senior dev to help add your identikey to PhET's servers.
 
-## Reference Documents
+## :book: Reference Documents
 
 Below is a list of documents that are helpful for reference.  It's important to know that these exist.  New developers
 should skim through them, and then reference them as needed when developing code.
