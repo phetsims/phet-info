@@ -25,6 +25,8 @@ In your first few days, there are many configuration and setup steps needed in o
 - [ ] Get a CU Email account and identikey.
 - [ ] Set up a Github Account with access to the phetsims organization.
 - [ ] Ask Oliver to add you to the SIMS_DEV development team on Github. This will allow you to push code to sim repos.
+- [ ] Set up a Slack account and join the phetsims workspace. From here, join the #general, #dev-public, #developer, and
+\#continuous-testing channel. Be sure to set notifications in #continuous-testing to "All messages". 
 - [ ] Follow the steps in the [Getting Started](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#getting-started)
 section of the PhET Development Overview doc to install some command line programs, get a copy of phet repos, and try
 out running a sim locally on your machine. TODO from @Luisav1: Improve docs in here about getting all repos.
