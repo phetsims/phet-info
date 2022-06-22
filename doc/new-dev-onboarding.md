@@ -24,7 +24,7 @@ will be assigned a mentor who is an experienced developer of PhET simulations, a
 should be to come up with a customized plan or "road map" for ramping up.  This should be regularly reviewed and updated
 during the process.
 
-<a id="initial-setup">
+<a id='initial-setup'>
  
 ## :technologist: First Steps
 
@@ -46,6 +46,8 @@ developers from committing code that has various types of errors, most notably E
 step 13. of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
 in the PhET Development Overview doc for instructions on setting them up.
 
+ <a id='next-steps'>
+ 
 ## :climbing: Next steps
 
 - [ ] In the above steps, you installed git hooks to prevent committing lint and tsc errors. However, it can be 
@@ -85,8 +87,8 @@ that PhET uses when writing code, and do some additional steps to continue rampi
 
 ```mermaid
 flowchart LR
-  A(((<a href='#initial-setup'>Initial Setup</a>)))
-  B(((First Steps)))
+  A(((<a href='https://github.com/phetsims/phet-info/blob/master/doc/new-dev-onboarding.md#initial-setup'>Initial Setup</a>)))
+  B(((<a href='#next-steps'>First Steps</a>)))
   C(((Object Creation)))
   D(((Layout)))
   A-->A1(IDE) & A2(Node.js) & A3(<a href='https://github.com/join'>Create Github Account</a>) & A4(<a href='https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-developmen'>Add New User to PhET Server</a>)
