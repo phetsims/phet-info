@@ -76,6 +76,14 @@ please visit the [Developing Interactive Simulations in HTML5 Google Group](http
 
 ### Checking out the code
 
+Method 1 (recommended): Get all PhET repos
+
+* Change directory to phetsims: `cd phetsims`
+* Get [phetsims/perennial](https://github.com/phetsims/perennial): `git clone https://github.com/phetsims/perennial`
+* Run "clone-missing-repos.sh": `./perennial/bin/clone-missing-repos.sh`
+
+Method 2: Manually get specific PhET repos
+
 * Change directory to phetsims: `cd phetsims`
 * Run the `git clone` commands listed in a simulation README.md file, such
   as https://github.com/phetsims/example-sim/blob/master/README.md
