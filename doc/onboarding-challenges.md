@@ -1,6 +1,13 @@
 # Onboarding Challenges
 
-Here you will find a list of coding excercises, they are designed for you to get the hang of PhET Sim Development alongside your mentor. Please, start by creating an issue on [Example Sim](https://github.com/phetsims/example-sim) with the title *"Coding Challenges Solution: \<Your name + favourite emoji\>"*, the idea is to report on that issue with your solutions to every challenge. Additionaly, you can either fork Example Sim or create a new branch while you solve the challenges.
+Here you will find a list of coding excercises, they are designed for you to get the hang of PhET Sim Development alongside your mentor. Please, start by creating an issue on [Example Sim](https://github.com/phetsims/example-sim) with the title *"Coding Challenges Solution: \<Your name + favourite emoji\>"*, the idea is to report on that issue with your solutions to every challenge. Additionaly, you should fork and clone Example Sim while you solve the challenges.
+
+How to fork and clone:
+- Fork example-sim (place fork under your personal github ownership)
+- Git clone in phetsims root directory changing the directory name to {{GITHUB}}-example-sim (ex. `git clone git clone https://github.com/marlitas/example-sim.git {{GITHUB}}-example-sim`)
+- Launch server ( from phetsims root directory) and transpile as normal
+- Visit http://localhost/{{REPO_NAME}}/example-sim_en.html to access forked example-sim. 
+- Make sure that any changes and commits for the purpose of the tutorial are being made inside the {{GITHUB}}-example-sim directory. 
 
 This is meant to be a fun exercise and a learning experience, so enjoy!
 
