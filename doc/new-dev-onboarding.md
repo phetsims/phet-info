@@ -30,7 +30,7 @@ In your first few days, there are many configuration and setup steps needed in o
 other relevant channels to join. If you're not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on how to use it.
 - [ ] Follow the steps in the [Getting Started](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#getting-started)
 section of the PhET Development Overview doc to install some command line programs, get a copy of phet repos, and try
-out running a sim locally on your machine. TODO from @Luisav1: Improve docs in here about getting all repos.
+out running a sim locally on your machine.
 - [ ] From here, you should set up an IDE so you can start writing code. Most developers use Webstorm or IntelliJ IDEA. 
 Instructions for both of those can be found in the [IDE setup document](https://github.com/phetsims/phet-info/blob/master/ide/idea/setup.md).
 - [ ] Before you start committing and pushing code to PhET repos, you should set up pre-commit hooks. These prevent
