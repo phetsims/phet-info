@@ -19,7 +19,7 @@ should be to come up with a customized plan or "road map" for ramping up.  This 
 during the process.
 
 ## :technologist: First Steps
-
+<a id="initial-setup">
 In your first few days, there are many configuration and setup steps needed in order to start sim development:  
 
 - [ ] Get a CU Email account and identikey.
@@ -77,7 +77,7 @@ that PhET uses when writing code, and do some additional steps to continue rampi
 
 ```mermaid
 flowchart LR
-  A(((Initial Setup)))
+  A(((<a href='#initial-setup'>Initial Setup</a>)))
   B(((First Steps)))
   C(((Object Creation)))
   D(((Layout)))
@@ -85,7 +85,7 @@ flowchart LR
   A1-->A1.1(<a href='https://github.com/phetsims/phet-info/tree/master/ide'>IDE setup Documents</a>) & A1.2(<a href='https://www.jetbrains.com/webstorm/'>Webstorm</a>)
   A2-->A2.1(<a href='https://nodejs.org/en/download/'>Install Node</a>) & A2.2(<a href='https://docs.npmjs.com/cli/v8/commands/npm-install'>Install NPM</a>)
   A3-->A3.1(Add User to Repo Permissions)
-  B-->B1(Example-sim) & B2(Background Reading) & B3(Using phetmarks common code)
+  B-->B1(<a href='https://github.com/phetsims/example-sim'>Example-sim</a>) & B2(Background Reading) & B3(Using phetmarks common code)
   B1-->B1.1(Building) & B1.2(Modify & Experiment)
   B2-->B2.1(Software Design Patterns) & B2.2(Resources as Needed)
   B3-->B3.1(Accessing Documentation) & B3.2(Accessing the Showcases) & B3.3(Using UI Componenets in example-sim)
