@@ -10,7 +10,6 @@
   ```js
   const numPart = 100;            // incorrect
   const numberOfParticles = 100;  // correct
-
   const width = 150;              // incorrect
   const beakerWidth = 150;        // correct
   ```
@@ -264,7 +263,7 @@ generally meets PhET standards.
 
 - [ ] All classes, methods and properties are documented.
 
-- [ ] Documentation at the top of .js files should provide an overview of purpose, responsibilies, and (where useful)
+- [ ] Documentation at the top of source-code files should provide an overview of purpose, responsibilies, and (where useful)
   examples of API use. If the file contains a subclass definition, it should indicate what functionality it adds to the
   superclass.
 
