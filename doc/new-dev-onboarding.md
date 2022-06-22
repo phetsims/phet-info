@@ -6,7 +6,13 @@ knowledge and skills needed to do this.  Note that there are other software deve
 code for the website, the iOS and Android apps, the desktop app, and the translation utility.  These will not be covered
 in this document.
 
-## :wave: Intro
+## Table of Contents
+- [Intro](#intro)
+- [Initial Setup](#initial-setup)
+
+<a id="intro">
+
+## :wave: Intro 
 
 Don't panic (with apologies to Douglas Adams).  PhET has been around since 2001, and has written a lot of code and
 created some pretty involved processes during that time.  It will take a while for a new developer to learn what they
@@ -18,8 +24,10 @@ will be assigned a mentor who is an experienced developer of PhET simulations, a
 should be to come up with a customized plan or "road map" for ramping up.  This should be regularly reviewed and updated
 during the process.
 
-## :technologist: First Steps
 <a id="initial-setup">
+ 
+## :technologist: First Steps
+
 In your first few days, there are many configuration and setup steps needed in order to start sim development:  
 
 - [ ] Get a CU Email account and identikey.
