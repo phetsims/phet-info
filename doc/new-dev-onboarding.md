@@ -8,7 +8,6 @@ in this document.
 
 ## Table of Contents
 - [Intro](#intro)
-- [Initial Setup](#initial-setup)
 
 <a id="intro">
 
@@ -46,7 +45,7 @@ developers from committing code that has various types of errors, most notably E
 step 13. of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
 in the PhET Development Overview doc for instructions on setting them up.
 
- <a id='next-steps'>
+ <a id='first-steps'>
  
 ## :climbing: Next steps
 
@@ -84,11 +83,15 @@ should skim through them, and then reference them as needed when developing code
 
 Once your machine is configured to start sim development from the steps above, you can start learning about the patterns
 that PhET uses when writing code, and do some additional steps to continue ramping up your PhET development abilities.
+  
+  TODO: Decide on name Initial Setup vs. First Steps, First Steps vs. Next Steps
+  TODO: Accessing Documentation currently links to scenery layout, but might be more helpful if it links to section in this document that talks about how to access the various documentation that exists in Phetmarks.
+  TODO: Currently Example Sim node is linking to Example-Sim repo. May want to link to tutorial instead.
 
 ```mermaid
 flowchart LR
   A(((<a href='https://github.com/phetsims/phet-info/blob/master/doc/new-dev-onboarding.md#initial-setup'>Initial Setup</a>)))
-  B(((<a href='#next-steps'>First Steps</a>)))
+  B(((<a href='https://github.com/phetsims/phet-info/blob/master/doc/new-dev-onboarding.md#first-steps'>First Steps</a>)))
   C(((Object Creation)))
   D(((Layout)))
   A-->A1(IDE) & A2(Node.js) & A3(<a href='https://github.com/join'>Create Github Account</a>) & A4(<a href='https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-developmen'>Add New User to PhET Server</a>)
@@ -97,10 +100,10 @@ flowchart LR
   A3-->A3.1(Add User to Repo Permissions)
   B-->B1(<a href='https://github.com/phetsims/example-sim'>Example-sim</a>) & B2(Background Reading) & B3(Using phetmarks common code)
   B1-->B1.1(Building) & B1.2(Modify & Experiment)
-  B2-->B2.1(Software Design Patterns) & B2.2(Resources as Needed)
-  B3-->B3.1(Accessing Documentation) & B3.2(Accessing the Showcases) & B3.3(Using UI Componenets in example-sim)
+  B2-->B2.1(<a href='https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md'>Software Design Patterns</a>) & B2.2(Resources as Needed)
+  B3-->B3.1(<a href='http://localhost/scenery/doc/layout.html'>Accessing Documentation</a>) & B3.2(Accessing the Showcases) & B3.3(Using UI Componenets in example-sim)
   C-->C1(File Structure Overview) & C2(Module Creation)
-  C2-->C2.1(Module Design Pattern) & C2.2(Typescript Conventions) & C2.3(Class Inheritance & Options) & C2.4(Instancing Custom Modules)
+  C2-->C2.1(Module Design Pattern) & C2.2(<a href='https://github.com/phetsims/phet-info/blob/master/doc/typescript-conventions.md'>Typescript Conventions</a>) & C2.3(Class Inheritance & Options) & C2.4(Instancing Custom Modules)
   D-->D1(Node Tree Structure) & D2(Flexbox & Gridbox)
 ```
 
