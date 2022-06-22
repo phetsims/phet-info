@@ -1,4 +1,4 @@
-# Onboarding Challenges
+# PhET Dev Excercises
 
 Here you will find a list of coding excercises, they are designed for you to get the hang of PhET Sim Development alongside your mentor. Please, start by creating an issue on [Example Sim](https://github.com/phetsims/example-sim) with the title *"Coding Challenges Solution: \<Your name + favourite emoji\>"*, the idea is to report on that issue with your solutions to every challenge. Additionaly, you should fork and clone Example Sim while you solve the challenges.
 
