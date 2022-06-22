@@ -52,6 +52,7 @@ non-sim repos to show what components they contain, and links to documentation.
 not be shared outside of PhET. Public-facing query parameters must be explicitly designated by including `public: true`
 in their schema. The following places contain relevant query parameters to know about:
   * chipper initialize-globals.js for general global query parameters (preloaded)
+    * `fuzz`, used for testing a sim with random inputs, and `dev`, used for showing the dev bounds of a sim, are two examples from initialize-globals.js that are commonly used.
   * phet-io phet-io-initialize-globals.js for PhET-iO global query parameters (preloaded)
   * {{REPO}}QueryParameters.js or {{REPO}}QueryParameters.ts for sim-specific query parameters
 - [ ] Once you're working on a sim, you will eventually want to publish a dev version to show your latest progress. See
