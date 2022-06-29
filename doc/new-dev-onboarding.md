@@ -35,10 +35,10 @@ during the process.
  
 In your first few days there are many configuration and setups steps that need to be completed in order to become a CU and PhET employee. Check-in with the PhET Business Manager for a complete list of HR needs. The list below is not comprehensive and is specific towards a PhET Developer's needs.
  
-- [ ] Get a CU Email account and identikey.
-- [ ] Set up a Github Account with access to the phetsims organization.
-- [ ] Ask the Business Manager to add you to the SIMS_DEV development team on Github. This will allow you to push code to sim repos.
-- [ ] Set up a Slack account and join the phetsims workspace. From here, join the #general, #dev-public, #developer, and #continuous-testing channel.
+- Get a CU Email account and identikey.
+- Set up a Github Account with access to the phetsims organization.
+- Ask the Business Manager to add you to the SIMS_DEV development team on Github. This will allow you to push code to sim repos.
+- Set up a Slack account and join the phetsims workspace. From here, join the #general, #dev-public, #developer, and #continuous-testing channel.
    - Be sure to set notifications in #continuous-testing to "All messages". Also, check with your mentor about any
 other relevant channels to join.
    - If you're not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on how to use it.
@@ -49,14 +49,14 @@ other relevant channels to join.
 
 Itching to dig into the code? The following are the steps needed in order to start sim development:  
 
-- [ ] Follow the steps in the [Getting Started](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#getting-started)
+- Follow the steps in the [Getting Started](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#getting-started)
 section of the PhET Development Overview doc.
   - Install some command line programs
   - Get a copy of phet repos
   - Try out running a sim locally on your machine.
-- [ ] Set up an IDE so you can start writing code. 
+- Set up an IDE so you can start writing code. 
   - Most developers use Webstorm or IntelliJ IDEA, recommended instructions can be found in the [IDE setup document](https://github.com/phetsims/phet-info/blob/master/ide/idea/setup.md).
-- [ ] Before you start committing and pushing code to PhET repos, you should set up pre-commit hooks.
+- Before you start committing and pushing code to PhET repos, you should set up pre-commit hooks.
   - Pre-Commit Hooks prevent developers from committing code that has various types of errors, most notably ESLint and TypeScript errors.
   - Follow step 13. of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing) in the PhET Development Overview doc for instructions on setting them up.
 
@@ -99,16 +99,15 @@ in their schema.
 Below is a list of documents that are helpful for reference.  It's important to know that these exist.  New developers
 should skim through them, and then reference them as needed while developing code.
   
-- [ ] [PhET Software Design Patterns](./phet-software-design-patterns.md) provides an introduction to new developers on how to use PhET specific design patterns. We advise to read through "Observer" and then try out the following introductory excercises.
-  - [ ] Tutorial 1 # TODO
-  - [ ] Tutorial 2
+- [PhET Software Design Patterns](./phet-software-design-patterns.md) provides an introduction to new developers on how to use PhET specific design patterns. We advise to read through "Observer" and then try out the following introductory excercises.
+  - [Intro Excercises for Developers](https://github.com/phetsims/phet-info/blob/master/doc/phet-dev-excercises.md)
 
-- [ ] [Typescript Conventions](./typescript-conventions.md) that PhET has decided on.
-- [ ] [The Code Review Checklist](../checklists/code_review_checklist.md) (CRC).
+- [Typescript Conventions](./typescript-conventions.md) that PhET has decided on.
+- [The Code Review Checklist](../checklists/code_review_checklist.md) (CRC).
   
   <a id='glossary'>
   
- ## :classical_building: Glossary of Documentation
+## :classical_building: Glossary of Documentation
 | Doc | Contents |
 | ---- | ------ |
 | New Dev Onboarding | A guide and resource for new sim developers |
