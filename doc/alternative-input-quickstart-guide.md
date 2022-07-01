@@ -152,6 +152,10 @@ globalKeyStateTracker.keydownEmitter.addListener( event => {
 } );
 ```
 
+Be careful not to add hotkeys that collide with other global hotkeys defined by PhET such as hotkeys that pan and zoom
+into the sim. We need a list of global hotkeys or a way to automatically prevent collisions but do not have that yet.
+See https://github.com/phetsims/phet-info/issues/188.
+
 ## Keyboard Shortcuts dialog
 
 The Keyboard Shortcuts dialog is accessed by pressing the keyboard button in the navigation bar. To make this button
