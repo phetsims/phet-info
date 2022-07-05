@@ -36,9 +36,9 @@ during the process.
 In your first few days there are many configuration and setups steps that need to be completed in order to become a CU and PhET employee. Check-in with the PhET Business Manager for a complete list of HR needs. The list below is not comprehensive and is specific towards a PhET Developer's needs.
  
 - Get a CU Email account and identikey.
-- Set up a Github Account with access to the phetsims organization.
-- Ask the Business Manager to add you to the SIMS_DEV development team on Github. This will allow you to push code to sim repos.
-- Set up a Slack account and join the phetsims workspace. From here, join the #general, #dev-public, #developer, and #continuous-testing channel.
+- Set up a Github Account with access to the phetsims organization (you should receive an invite to join).
+- Ask the Business Manager to add you to the SIMS_DEV and BROWSER_SIDE_COMMON_CODE development teams on Github. This will allow you to push code to sim repos and common code repos.
+- Set up a Slack account and join the phetsims workspace (you should receive an invite to join). From here, join the #general, #dev-public, #developer, and #continuous-testing channel.
    - Be sure to set notifications in #continuous-testing to "All messages". Also, check with your mentor about any
 other relevant channels to join.
    - If you're not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on how to use it.
