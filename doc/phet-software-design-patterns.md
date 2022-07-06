@@ -735,16 +735,14 @@ examples in [sim code](https://github.com/phetsims/equality-explorer/blob/master
 , [common code](https://github.com/phetsims/joist/blob/master/js/HomeButton.js),
 and [code for build tools](https://github.com/phetsims/perennial/blob/master/js/common/build.js).
 
-----
-
 #### Importing Modules:
 
 PhET uses ES6 modules for simulation code, directly loaded in the browser, and built using webpack. We use default
 imports and exports, so import statements will generally look like:
 
 ```js
-    import Vector2 from '../../../dot/js/Vector2.js';
-import Touch from '../input/Touch.js';
+  import Vector2 from '../../../dot/js/Vector2.js';
+  import Touch from '../input/Touch.js';
 ```
 
 The shortest possible relative path should be used, and the imports should be sorted lexicographically by the import
@@ -758,7 +756,7 @@ Some code is loaded in our "preloads" section, and is available through the glob
 like `phet.chipper.queryParameters`. These do not need any import statements to work, and should be available for all
 module-based code.
 
-#### Anatomy of a module:
+#### Anatomy of a Module:
 
 The PhET codebase follows a similar pattern for module structure as outlined below:
 
@@ -803,6 +801,33 @@ this there are three general solutions:
 1. Never concatenate strict files and nonstrict files.
 2. Concatenate files by wrapping their bodies in immediately invoked function expressions.
 3. Write your files so that they behave the same in either mode.
+
+### Best Practices for Modules
+
+Here are some things to do and to avoid when creating modules for use in PhET's code base:
+
+#### Do...
+
+* Include a default export, placed at the end of the .js or .ts file, e.g. `export default NumberControl;`
+* Group all `imports` at the top of the .js file, immediately after the overview comment block, organized à la
+  WebStorm "Organize Imports".
+* Rename on import only if you have a name collision between imports, e.g.
+  ```js
+    import { Line as SceneryLine } from '../../../../scenery/js/imports.js';
+    import Line from '../model/Line.js';
+  ```
+* Use existing modules as examples to be followed, and gravitate towards more recent ones, since these are most likely
+  have been implemented using the most up-to-date practices.
+* Discuss exceptions to best practices on Slack, as they are encountered. Modify the best practices if necessary, and/or
+  document (at the call site) why you needed to diverge from the best practices.
+
+#### Don't...
+
+* Do not use property notation for imports, e.g. `import * as lib from 'lib';`
+* Do not rename on export, e.g. `export { MY_CONST as THE_CONST };`
+* Do not rename on import, e.g. `import { named1 as myNamed1 } from 'src/mylib';`See exception above, for name
+  collisions.
+* Do not re-export, e.g. `export { foo } from 'src/other_module';`
 
 ## Namespace
 
