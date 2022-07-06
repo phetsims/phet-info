@@ -92,6 +92,11 @@ in their schema.
   Once you're working on a sim, you will eventually want to publish a dev version to show your latest progress. See
   [Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development) and ask a senior dev to help add your identikey to PhET's servers.
 
+### Navigating Repos
+  Most of your work will be done in the `js` directory of a repo. If you are curious about the other files check out the
+  [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#repository-structure)
+  in the Code Review Checklist for an overview or ask your mentor for an explanation.
+
  <a id='helpful-docs'>
   
 ## :book: Helpful Documents
