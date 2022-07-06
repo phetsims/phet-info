@@ -49,7 +49,7 @@ get you pointed in the right direction. If you notice errors or a need for clari
     * [Here is a list of default keyboard shortcuts for windows and mac](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
     * [Learn how to use multiple cursors!](https://www.jetbrains.com/webstorm/guide/tips/multi-cursor/)
 
-## Preferences
+## Suggestions
 
 These may not be required, but are settings that other developers have found useful for their coding style. Use at your
 own risk!
@@ -58,3 +58,8 @@ own risk!
   vertically: `Languages & Frameworks > Markdown > Editor and Preview Panel Layout: Split horizontally`
 * Move Editor tabs from the top to the right to maximize vertical
   space: `Editor > General > Editor Tabs > Tab placement: Right`
+* Name collisions with built-in types can make adding imports difficult. The following suggestions are ways to get around this problem.
+   * Using "Code completion->Basic" (ctrl+space from default MacOS bindings) will only work if you are already importing from scenery imports.
+   * A way around this is to auto-import a class with a name that is non built-in type to get scenery imports.js in your file automatically. Then you can auto import the file with a built-in type name and delete the first one.
+* [Live Templates](https://www.jetbrains.com/help/idea/using-live-templates.html#live_templates_types) are a feature that many devs use for quickly typing out common patterns in code. To try some out, ask a developer for some examples of  their favorites. A set of live templates can be exported from one instance of WebStorm and imported in another.
+  
