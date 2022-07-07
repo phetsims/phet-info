@@ -456,6 +456,8 @@ facilitate debugging) and `Object.freeze`  to prevent unintentional modification
 
 Author: @jessegreenberg
 
+NOTE: TypeScript does NOT support mixins in ways that work well for our project. Please think twice about adding mixins.
+
 Descriptions for each standard pattern can be found here:
 
 - Mixin: https://en.wikipedia.org/wiki/Mixin
