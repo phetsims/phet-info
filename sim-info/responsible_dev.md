@@ -119,7 +119,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | molecule-shapes | @jonathanolson | @arouinfar |  | 
 | molecule-shapes-basics | @jonathanolson | @arouinfar |  | 
 | molecules-and-light | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
-| my-solar-system | @jonathanolson | @DianaTavares |  | 
+| my-solar-system | @jonathanolson | @DianaTavares | Sound | 
 | natural-selection | @pixelzoom | @amanda-phet |  | 
 | neuron | @jbphet | @arouinfar |  | 
 | nitroglycerin | @pixelzoom |  |  | 
