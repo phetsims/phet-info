@@ -11,7 +11,7 @@ for details and context about conventions based on lint rules.
 
 ### Leveraging Type Inference
 
-From _Effective TypeScript_ (Dan Vanderkan), page 87, Item 19, "Avoid Cluttering Your Code with Inferable Types":
+From _Effective TypeScript_ (Dan Vanderkam), page 87, Item 19, "Avoid Cluttering Your Code with Inferable Types":
 
 * Avoid writing type annotations when TypeScript can infer the same type.
 * Ideally your code has type annotations in function/method signatures but not on local variables in their bodies.
