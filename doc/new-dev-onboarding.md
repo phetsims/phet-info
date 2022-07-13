@@ -9,7 +9,7 @@ in this document.
 ## Table of Contents
 - [Intro](#intro)
 - [Administrative Setup](#admin-setup)
-- [Sim Environment Setup](#env-setup)
+- [Dev Environment Setup](#env-setup)
 - [Ramping Up](#ramping-up)
 - [Helpful Documents](#helpful-docs)
 - [Glossary of Documentation](#glossary)
@@ -45,7 +45,7 @@ other relevant channels to join.
  
  <a id='env-setup'>
  
-## :technologist: Sim Environment Setup
+## :technologist: Dev Environment Setup
 
 Itching to dig into the code? The following are the steps needed in order to start sim development:  
 
@@ -137,8 +137,8 @@ flowchart LR
   A1-->A1.1(<a href='https://github.com/phetsims/phet-info/tree/master/ide'>IDE setup Documents</a>) & A1.2(<a href='https://www.jetbrains.com/webstorm/'>Webstorm</a>)
   A2-->A2.1(<a href='https://nodejs.org/en/download/'>Install Node</a>) & A2.2(<a href='https://docs.npmjs.com/cli/v8/commands/npm-install'>Install NPM</a>)
   A3-->A3.1(Add User to Repo Permissions)
-  B-->B1(<a href='https://github.com/phetsims/example-sim'>Example-sim</a>) & B2(Background Reading) & B3(Using phetmarks common code)
-  B1-->B1.1(Building) & B1.2(Modify & Experiment)
+  B-->B1(Example-sim) & B2(Background Reading) & B3(Using phetmarks common code)
+  B1-->B1.1(Building) & B1.2(<a href='https://github.com/phetsims/phet-info/blob/master/doc/phet-dev-excercises.md'>Modify & Experiment</a>)
   B2-->B2.1(<a href='https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md'>Software Design Patterns</a>) & B2.2(Resources as Needed)
   B3-->B3.1(<a href='https://github.com/phetsims/phet-info/blob/master/doc/new-dev-onboarding.md#helpful-docs'>Accessing Documentation</a>) & B3.2(Accessing the Showcases) & B3.3(Using UI Componenets in example-sim)
   C-->C1(File Structure Overview) & C2(Module Creation)
