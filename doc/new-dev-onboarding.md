@@ -109,6 +109,7 @@ should skim through them, and then reference them as needed while developing cod
 
 - [Typescript Conventions](./typescript-conventions.md) that PhET has decided on.
 - [The Code Review Checklist](../checklists/code_review_checklist.md) (CRC).
+- If you are working on a game you may need: [Private Features for PhET Team Members](https://github.com/phetsims/special-ops/blob/master/doc/phetTeamMember.md)
   
   <a id='glossary'>
   
