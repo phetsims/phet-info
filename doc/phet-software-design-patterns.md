@@ -1298,7 +1298,23 @@ type SelfOptions = {
 type MyPathOptions = SelfOptions & PathOptions; 
 ```
 
-(2) Use [StrictOmit](https://github.com/phetsims/phet-core/blob/master/js/types/StrictOmit.ts), [PickRequired](https://github.com/phetsims/phet-core/blob/master/js/types/PickRequired.ts), and [PickOptional](https://github.com/phetsims/phet-core/blob/master/js/types/PickOptional.ts) to narrow the API provided by your options type.
+(2) If your class does not have any class-specific options, it's still recommended to use `SelfOptions`, set to `EmptyObjectType`.  This makes it very easy to add class-specific options later, by replacing 1 occurrence of `EmptyObjectType` with `{…}`. Otherwise you have to remember to change to `SelfOptions` in 3 places. Here's the general pattern:
+
+```typescript
+type SelfOptions = EmptyObjectType;
+type MyClassOptions = SelfOptions & SuperclassOptions;
+
+class MyClass extends Superclass {
+  constructor( ..., providedOptions?: MyClassOptions ) {
+    const options = optionize<MyClassOptions, SelfOptions, SuperclassOptions>()( {
+       ... // set defaults
+    }, providedOptions );
+    ... 
+  } 
+}
+```
+
+(3) Use [StrictOmit](https://github.com/phetsims/phet-core/blob/master/js/types/StrictOmit.ts), [PickRequired](https://github.com/phetsims/phet-core/blob/master/js/types/PickRequired.ts), and [PickOptional](https://github.com/phetsims/phet-core/blob/master/js/types/PickOptional.ts) to narrow the API provided by your options type.
 
 ```typescript
 // In this example, MyNode is responsible for setting the children option.
@@ -1361,7 +1377,7 @@ class MyNode extends Node {
 }
 ```
 
-(3) Use `PickRequired` and `PickOptional` to change whether parent options are required or optional. Note that when composing types, `PickRequired` and `PickOptional` must come _after_ other occurrences of the parent class’s options type.
+(4) Use `PickRequired` and `PickOptional` to change whether parent options are required or optional. Note that when composing types, `PickRequired` and `PickOptional` must come _after_ other occurrences of the parent class’s options type.
 
 ```typescript
 // In this example, we make options fill and stroke required for our subclass.
@@ -1403,7 +1419,7 @@ class MyAtomizer extends Atomizer {
 }
 ```
 
-(4) To narrow an API, pick fields from the parent class’s options, rather than duplicate the definitions of those fields.
+(5) To narrow an API, pick fields from the parent class’s options, rather than duplicate the definitions of those fields.
 
 ```typescript
 // Our parent class is Path, whose options type is PathOptions.
@@ -1425,7 +1441,7 @@ type SelfOptions = {
 type MyPathOptions = SelfOptions & PickOptional<PathOptions, 'fill'>; 
 ```
 
-(5) If a class has no parent class, pick a field from the type that defines that field, rather than duplicating that field’s definition.
+(6) If a class has no parent class, pick a field from the type that defines that field, rather than duplicating that field’s definition.
 
 ```typescript
 // Our class has no parent class.
@@ -1445,7 +1461,7 @@ type SelfOptions = { ... };
 type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>; 
 ```
 
-(6) Pick fields from the parent class’s options. Do not “reach up” the type hierarchy.
+(7) Pick fields from the parent class’s options. Do not “reach up” the type hierarchy.
 
 ```typescript
 // Our parent class is Path, whose options type is PathOptions.
@@ -1460,7 +1476,7 @@ type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
 type MyClassOptions = SelfOptions & PickRequired<PathOptions, 'tandem'>; 
 ```
 
-(7) An exception to (6) is when you want to narrow the API of `NodeOptions`. You can do this using `NodeTranslationOptions`, `NodeTransformOptions`, or `NodeBoundsBasedTranslationOptions`.
+(8) An exception to (6) is when you want to narrow the API of `NodeOptions`. You can do this using `NodeTranslationOptions`, `NodeTransformOptions`, or `NodeBoundsBasedTranslationOptions`.
 
 ```typescript
 // Limit the API to include only the parent options related to translation.
@@ -1476,7 +1492,7 @@ class MyNode extends Path {
 }
 ```
 
-(8) The `tandem` option for PhET-iO is a little tricky, and requires different patterns for common code versus sim-specific code.
+(9) The `tandem` option for PhET-iO is a little tricky, and requires different patterns for common code versus sim-specific code.
 
 For common code, `tandem` should be optional, with a default of `tandem: Tandem.REQUIRED` provided. A missing `tandem` will not be identified until runtime with PhET-iO enabled.  But this approach is still necessary in common code in order to support PhET’s uninstrumented sims.  If `tandem` were required option in common code, then it would be difficult to convert a sim to TypeScript without also PhET-iO instrumenting it.
 
@@ -1529,7 +1545,7 @@ class MySimNode extends Node {
 }
 ```
 
-(9) For nested options, use `StrictOmit` to avoid having to provide `{}` or `null` as a default value.
+(10) For nested options, use `StrictOmit` to avoid having to provide `{}` or `null` as a default value.
 
 In the parameters to `optionize`, omit `'helloButtonOptions'` from `SelfOptions` so that a default value is not needed:
 
@@ -1593,7 +1609,7 @@ export default class MyNode extends Node {
 }
 ```
 
-(10) If your class has responsibilty for one or more fields in nested options, those fields should be omitted so that they cannot be provided by the caller. There are 2 patterns for accomplishing this.
+(11) If your class has responsibilty for one or more fields in nested options, those fields should be omitted so that they cannot be provided by the caller. There are 2 patterns for accomplishing this.
 
 The first pattern omits the fields from `SelfOptions`. Then, when the subcomponent is instantiated, `combineOptions` is used to add the options that are the responsibility of the class. 
 
@@ -1664,7 +1680,7 @@ export default class MyNode extends Node {
 }
 ```
 
-(11) When applying a [mixin or trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait), defining options types gets a little more complicated. Options must be included for _both_ the mixin/trait _and_ the class that the mixin/trait is applied to. 
+(12) When applying a [mixin or trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait), defining options types gets a little more complicated. Options must be included for _both_ the mixin/trait _and_ the class that the mixin/trait is applied to. 
 
 In this example, trait `Voicing` with options `VoicingOptions` is applied to `Checkbox`. (The pattern is identical for mixins.)
 
