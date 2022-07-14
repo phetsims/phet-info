@@ -1298,7 +1298,7 @@ type SelfOptions = {
 type MyPathOptions = SelfOptions & PathOptions; 
 ```
 
-(2) If your class does not have any class-specific options, it's still recommended to use `SelfOptions`, set to `EmptyObjectType`.  This makes it very easy to add class-specific options later, by replacing 1 occurrence of `EmptyObjectType` with `{…}`. Otherwise you have to remember to change to `SelfOptions` in 3 places. Here's the general pattern:
+(2) If your class does not have any class-specific options, it's still recommended to use `type SelfOptions= EmptyObjectType`.  This makes it very easy to add class-specific options later, by replacing 1 occurrence of `EmptyObjectType` with `{…}`. Otherwise you have to remember to change to `SelfOptions` in 3 places. Here's the general pattern:
 
 ```typescript
 type SelfOptions = EmptyObjectType;
