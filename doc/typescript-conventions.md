@@ -135,9 +135,10 @@ class HalfLifeInformationNode extends Node {
     super();
 ```
 
-### Options and Config
+### Options
 
-Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts
+See https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-typescript and 
+https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts.
 
 #### Use `optionize` instead of `merge`
 
