@@ -197,7 +197,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | utterance-queue | @jessegreenberg |  |  | 
 | vector-addition | @pixelzoom | @arouinfar |  | 
 | vector-addition-equations | @pixelzoom | @arouinfar |  | 
-| vegas | @jbphet |  | Sound | 
+| vegas | @pixelzoom |  | Sound | 
 | vibe | @jbphet |  |  | 
 | wave-interference | @samreid | @arouinfar | Sound | 
 | wave-on-a-string | @jonathanolson | @arouinfar |  | 
