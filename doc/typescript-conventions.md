@@ -55,39 +55,6 @@ new Property<Laser>( new Laser() );
 
 Again, in complex or volatile cases, at the developer preference, the redundant type annotations may prove useful.
 
-### Access Modifiers
-
-In TypeScript, the default access modifier (if unspecified) is `public`. For methods, attributes, constructors, etc.
-which are intended to be public, the access modifier can be omitted. Or at the developer's discretion, `public` can be
-specified.  Whichever convention is preferred, it should be consistent within a repo.
-
-```ts
-// ok
-class Clock {
-  time: number; 
-  age: number;
-}
-
-// also ok
-class Clock {
-  public time: number;
-  public age: number;
-}
-```
-
-The `private` modifier behaves differently than PhET's JavaScript JSDoc `@private` annotation. In typescript, this is
-private to the class, and often in JavaScript it meant "private to the file." To get around this, it is often helpful to
-convert a function/constant/etc. that needs to use the `private` feature of the class to be a `private static` member of
-the class itself.
-
-For `readonly`, TypeScript's support also differs from how this was used in JavaScript code at PhET. At PhET it was
-common to mark something as readonly if internal class logic changed the value, but publicly, it was readonly. To
-support this in TypeScript, create two members in the class that point to the same value/field/member, one marked
-as `private`, and the other as `public readonly`. For example
-see [RatioHalf.isBeingInteractedWithProperty](https://github.com/phetsims/ratio-and-proportion/blob/a7268932a7228f6555171c72e9137249383f03a1/js/common/view/RatioHalf.ts#L111-L113).
-Alternatively, you can accomplish this with es5 getters and setters, perhaps omitting/limiting the setters when
-appropriate.
-
 ### Enumerations
 
 * String literal unions are idiomatic in TypeScript.
