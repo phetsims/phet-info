@@ -6,6 +6,8 @@
     <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACKETS" value="true" />
     <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
     <option name="USE_DOUBLE_QUOTES" value="false" />
+    <option name="FORCE_QUOTE_STYlE" value="true" />
+    <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
     <option name="USE_EXPLICIT_JS_EXTENSION" value="TRUE" />
     <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
     <option name="SPACES_WITHIN_IMPORTS" value="true" />
@@ -14,7 +16,10 @@
   <TypeScriptCodeStyleSettings version="0">
     <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACKETS" value="true" />
     <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
+    <option name="PREFER_AS_TYPE_CAST" value="true" />
     <option name="USE_DOUBLE_QUOTES" value="false" />
+    <option name="FORCE_QUOTE_STYlE" value="true" />
+    <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
     <option name="USE_EXPLICIT_JS_EXTENSION" value="TRUE" />
     <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
     <option name="SPACES_WITHIN_IMPORTS" value="true" />
@@ -25,11 +30,11 @@
       <option name="CONTINUATION_INDENT_SIZE" value="4" />
       <option name="TAB_SIZE" value="2" />
     </indentOptions>
-    </codeStyleSettings>
-    <codeStyleSettings language="CoffeeScript">
-        <option name="ALIGN_MULTILINE_PARAMETERS_IN_CALLS" value="true"/>
-        <option name="SPACE_WITHIN_METHOD_CALL_PARENTHESES" value="true"/>
-        <option name="SPACE_WITHIN_METHOD_PARENTHESES" value="true"/>
+  </codeStyleSettings>
+  <codeStyleSettings language="CoffeeScript">
+    <option name="ALIGN_MULTILINE_PARAMETERS_IN_CALLS" value="true"/>
+    <option name="SPACE_WITHIN_METHOD_CALL_PARENTHESES" value="true"/>
+    <option name="SPACE_WITHIN_METHOD_PARENTHESES" value="true"/>
   </codeStyleSettings>
   <codeStyleSettings language="ECMA Script Level 4">
     <option name="ELSE_ON_NEW_LINE" value="true" />
