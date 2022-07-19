@@ -59,13 +59,14 @@ Again, in complex or volatile cases, at the developer preference, the redundant 
 
 * String literal unions are idiomatic in TypeScript.
 * You can also use the string[] `as const` pattern for accessing string union literals and values at runtime.  
-This works well with axon/StringEnumerationProperty.
-* `EnumerationValue` adds rich methods on the instances.  Axon as EnumerationProperty for this.
+This works well with `StringEnumerationProperty`.
+* `EnumerationValue` adds rich methods on the instances.  Use `EnumerationProperty` for this.
 * Careful!  If you change from string literal union to `EnumerationValue`, the casing convention is different and you will
 break the PhET-iO API.
 * Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderEnumerationPatterns.ts for details and examples.
 
 ### Parameters should be as general as possible
+
 This relates to Vanderkam's Item 29 "Be liberal in what you accept and strict in what you produce.". For example:
 
 ```ts
@@ -77,11 +78,12 @@ function computeHabitat( dog:Dog ){
 ```
 Since the `computeHabitat` method doesn't call `bark`, it may be rewritten to accept `computeHabitat( animal: Animal )`.
 
-However, something that has to be PhET-iO Instrumented should use `Property` instead of `IProperty` even if the additional 
-`Property` methods are not exercised.  This will help clients know that must be a full instrumentable axon Property.
+However, something that has to be PhET-iO instrumented should use `Property` instead of `IProperty` even if the additional 
+`Property` methods are not exercised.  This will help clients know that it must be a fully-instrumentable axon Property.
 
 ### Prefer IReadOnlyProperty to DerivedProperty for type annotations.
-Prefer IReadOnlyProperty to DerivedProperty for type annotations, see https://github.com/phetsims/build-a-nucleus/issues/13
+
+Prefer `IReadOnlyProperty` to `DerivedProperty` for type declarations, see https://github.com/phetsims/build-a-nucleus/issues/13
 
 ```ts
 class HalfLifeInformationNode extends Node {
@@ -114,9 +116,9 @@ of the implementation of merge. While there are still some cases where `merge` i
 and not the rule. Please bring any potential new `merge` usage in TypeScript to the attention of the devs so that it can
 be discussed.
 
-### Initialization of Class Properties
+### Initialization of instance properties
 
-Class properties can be initialized either where they are declared, or in the constructor. It is up to developer discretion, but please 
+Instance properties can be initialized either where they are declared, or in the constructor. It is up to developer discretion, but please 
 try to be consistent, and adhere to the spirit of existing code.
 
 ```ts
@@ -139,10 +141,10 @@ class EventCounter {
 }
 ```
 
-#### Statics
+#### Statics (class properties)
 
-One line static properties and fields will likely be better and clearer when grouped with the prototype fields declared 
-at the top of a class. That said, it is developer preference whether to group them or put them at the bottom of the file:
+One-line static properties will likely be better and clearer when grouped with the instance properties declared 
+at the top of a class. That said, it is developer preference whether to group them or put them at the bottom of the class definition:
 
 ```ts
 class Person {
@@ -170,7 +172,8 @@ class Person {
 
 
 #### Documentation
-Documentation for class properties should be placed with the declaration, not the instantiation. For example:
+
+Documentation for instance properties should be placed with the declaration, not the instantiation. For example:
 
 ```ts
 class Person {
