@@ -5,7 +5,7 @@ phase. Please bring things up for discussion to add here as you identify new con
 
 ### ESLint
 
-Many of PhET's TypeScript conventions are emobodied in TypeScript-specific lint rules. We use the `@typescript-eslint`
+Many of PhET's TypeScript conventions are embodied in TypeScript-specific lint rules. We use the `@typescript-eslint`
 plugin to add these rules. Please see [.eslintrc](https://github.com/phetsims/chipper/blob/master/eslint/.eslintrc.js)
 for details and context about conventions based on lint rules. 
 
