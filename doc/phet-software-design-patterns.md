@@ -1298,10 +1298,10 @@ type SelfOptions = {
 type MyPathOptions = SelfOptions & PathOptions; 
 ```
 
-(2) If your class does not have any class-specific options, it's still recommended to use `type SelfOptions = EmptyObjectType`.  This makes it very easy to add class-specific options later, by replacing 1 occurrence of `EmptyObjectType` with `{…}`. Otherwise you have to remember to change to `SelfOptions` in 3 places. Here's the general pattern:
+(2) If your class does not have any class-specific options, it's still recommended to use `type SelfOptions = EmptySelfOptions`.  This makes it very easy to add class-specific options later, by replacing 1 occurrence of `EmptySelfOptions` with `{…}`. Otherwise you have to remember to change to `SelfOptions` in 3 places. Here's the general pattern:
 
 ```typescript
-type SelfOptions = EmptyObjectType;
+type SelfOptions = EmptySelfOptions;
 type MyClassOptions = SelfOptions & SuperclassOptions;
 
 class MyClass extends Superclass {
@@ -1395,9 +1395,13 @@ class MyPath extends Path {
 ```typescript
 // In this example, we make numberOfAtoms optional for our subclass.
 
-type AtomizerOptions = {
+// Atomizer.ts ---------------------
+
+type SelfOptions = {
   numberOfAtoms: number;
 };
+
+type AtomizerOptions = SelfOptions;
 
 class Atomizer {
   constructor( providedOptions: AtomizerOptions ) { 
@@ -1405,12 +1409,18 @@ class Atomizer {
   }
 }
 
+// MyAtomizer.ts ---------------------
+
+type SelfOptions = EmptySelfOptions;
+
 // Make numberOfAtoms optional. Note that it must be omitted, then made required.
-type MyAtomizerOptions = StrictOmit<AtomizerOptions, 'numberOfAtoms'> & PickOptional<AtomizerOptions, 'numberOfAtoms'>;
+type MyAtomizerOptions = SelfOptions & 
+  StrictOmit<AtomizerOptions, 'numberOfAtoms'> & 
+  PickOptional<AtomizerOptions, 'numberOfAtoms'>;
 
 class MyAtomizer extends Atomizer {
   constructor( providedOptions?: MyAtomizerOptions ) {
-    const options = optionize<MyAtomizerOptions, EmptyObjectType, AtomizerOptions>()( {
+    const options = optionize<MyAtomizerOptions, SelfOptions, AtomizerOptions>()( {
       numberOfAtoms: 10,
       // ...
     }, providedOptions );
