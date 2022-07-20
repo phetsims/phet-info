@@ -1274,7 +1274,7 @@ See [WilderOptionsPattern.ts](https://github.com/phetsims/wilder/blob/master/js/
 
 Additional guidelines:
 
-(1) Create your options type by composing `SelfOptions` and the parent class’s options type. `SelfOptions` will contain options that are specific to your class.
+(1) Create your options type by intersecting `SelfOptions` and the parent class’s options type. `SelfOptions` will contain options that are specific to your class.
 
 ```typescript
 // Our parent class is Path, whose options type is PathOptions.
@@ -1291,7 +1291,7 @@ type SelfOptions = {
 };
 type MyPathOptions = SelfOptions;
 
-// correct, composes PathOptions
+// correct, intersects with PathOptions
 type SelfOptions = { 
   // ...
 };
@@ -1377,7 +1377,8 @@ class MyNode extends Node {
 }
 ```
 
-(4) Use `PickRequired` and `PickOptional` to change whether parent options are required or optional. Note that when composing types, `PickRequired` and `PickOptional` must come _after_ other occurrences of the parent class’s options type.
+(4) Use `PickRequired` and `PickOptional` to change whether parent options are required or optional. Note that when 
+intersecting type aliases, `PickRequired` and `PickOptional` must come _after_ other occurrences of the parent class’s options type.
 
 ```typescript
 // In this example, we make options fill and stroke required for our subclass.
