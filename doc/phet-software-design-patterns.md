@@ -887,7 +887,7 @@ Author: @brandonLi8
 PhET widely uses the observer pattern described in https://en.wikipedia.org/wiki/Observer_pattern throughout its entire
 code base.
 
-#### [Property](https://github.com/phetsims/axon/blob/master/js/Property.js)
+#### [Property](https://github.com/phetsims/axon/blob/master/js/Property.ts)
 
 Property is our most basic and simplest form of the Observer pattern. It is used as a wrapper of a JavaScript field,
 called its value. Observers are notified when its value is set to a different value. Observers add listeners through
@@ -968,7 +968,7 @@ its listeners will be invoked.
   etc.). We try to be verbose with this practice to emphasize a distinction between a normal JavaScript field and a
   wrapped Property.
 
-#### [DerivedProperty](https://github.com/phetsims/axon/blob/master/js/DerivedProperty.js)
+#### [DerivedProperty](https://github.com/phetsims/axon/blob/master/js/DerivedProperty.ts)
 
 DerivedProperty is another Property sub-type, but unlike other subtypes (which are mostly for type-specific values),
 DerivedProperty is a generic Property whose value is determined based on other Properties, called its dependencies.
@@ -996,7 +996,7 @@ and `lazyLink` methods. However, note that the value of a DerivedProperty instan
 ##### Other Notes
 
 - All Properties and its subclasses use [validate](https://github.com/phetsims/axon/blob/master/js/validate.ts), meaning
-  the [Validation](https://github.com/phetsims/axon/blob/master/js/Validation.ts.) options are apart of its API.
+  the [Validation](https://github.com/phetsims/axon/blob/master/js/Validation.ts) options are apart of its API.
 
   For type-specific subclasses like `NumberProperty`, these are set for you. However, this is needed for
   DerivedProperty. So for the example above, the declaration should look like
@@ -1011,7 +1011,7 @@ and `lazyLink` methods. However, note that the value of a DerivedProperty instan
     } );
   ```
 
-#### [Multilink](https://github.com/phetsims/axon/blob/master/js/Multilink.js)
+#### [Multilink](https://github.com/phetsims/axon/blob/master/js/Multilink.ts)
 
 Multilink is a convenience class that is used to observe multiple Properties with the same observer functionality.
 Similar to DerivedProperty, it has its "dependencies" of Properties, and when any dependency's value changes, the
@@ -1024,7 +1024,7 @@ Property and doesn't conform to the Property API.
   notification. One solution is to add independent listeners to each dependency and turn the DerivedProperty into a
   Property that is modified by each listener. Please reference https://github.com/phetsims/axon/issues/259.
 
-#### [ObservableArrayDef](https://github.com/phetsims/axon/blob/master/js/createObservableArray.js)
+#### [ObservableArrayDef](https://github.com/phetsims/axon/blob/master/js/createObservableArray.ts)
 
 ObservableArrayDef is another common iteration of the Observer pattern. ObservableArrayDefs are created via
 createObservableArray, and are a Proxy wrapper over an Array that notifies observers when items are added or removed
@@ -1050,7 +1050,7 @@ Then, wherever `this.carts.push( new Cart() )` is called, a new CartNode is adde
 As a reminder from above, observers are referenced as a listener in the ObservableArrayDef, so be sure to
 call `elementAddedEmitter.removeListener` to release listeners when needed.
 
-#### [Emitter](https://github.com/phetsims/axon/blob/master/js/Emitter.js)
+#### [Emitter](https://github.com/phetsims/axon/blob/master/js/Emitter.ts)
 
 You may see `Emitters` used in the common code shared between simulations. Emitters are a generic event-based class that
 follows the observer pattern to allow clients to subscribe (through the `addListener` method) to a single specific
@@ -1063,7 +1063,7 @@ pressing), etc. This is all done through the scenery input system.
 
 Scenery Nodes support `FireListener`, `DragListener`, `PressListener`, etc. Listeners subscribe to when the user does a
 specified event, which may alter the simulation. Listeners are often passed
-a [SceneryEvent](https://github.com/phetsims/scenery/blob/master/js/input/SceneryEvent.js).
+a [SceneryEvent](https://github.com/phetsims/scenery/blob/master/js/input/SceneryEvent.ts).
 
 ##### Role in MVC
 
