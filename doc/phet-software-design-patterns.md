@@ -196,8 +196,8 @@ that DI may simplify your implementation.
 To start, [Molecules and Light](https://github.com/phetsims/molecules-and-light) employs setter injection in how it
 handles absorption of various wavelengths of light for different molecules.
 
-In [Molecule.js](https://github.com/phetsims/molecules-and-light/blob/master/js/photon-absorption/model/Molecule.js),
-the constructor initializes `this.mapWavelengthToAbsorptionStrategy = {}`. Then on ln 189, we have the following method
+In [Molecule.js](https://github.com/phetsims/greenhouse-effect/blob/c3902b1c402cd2ca699a68938c98c7b2387844dd/js/micro/model/Molecule.js),
+the constructor initializes `this.mapWavelengthToAbsorptionStrategy = {}`. Then on ln 212, we have the following method
 allows any object inheriting Molecule to dynamically set the necessary `PhotonAbsorptionStrategy`
 
 ```js
