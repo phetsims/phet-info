@@ -14,7 +14,7 @@ get you pointed in the right direction. If you notice errors or a need for clari
 5. Set up version control by adding each repo to git. This can be more automatic, because `.git` dirs are found by the
    system and you just have to 'Add Roots' in the event log. See https://www.jetbrains.com/help/idea/2017.1/using-git-integration.html. You can confirm that all repos are registered with git in     
    Preferences -> Version Control -> Directory Mappings
-6. `File > Settings > Directory` (or `File > Project Structure > Modules` if in Intellij IDEA) lets you exclude directories from your search path. You typically want to exclude `build/` and `node_modules/` for each repository, and all of `sherpa/`. You can exclude all by pasting `build;node_modules;images;sounds;mipmaps;*phet-io-elements-overrides.js;*phet-io-elements-baseline.js` into Excluded Files.
+6. `File > Settings > Directories` (or `File > Project Structure > Modules` if in Intellij IDEA) lets you exclude directories from your search path. You typically want to exclude `build/` and `node_modules/` for each repository, and all of `sherpa/`. You can exclude all by pasting `build;node_modules;images;sounds;mipmaps;*phet-io-elements-overrides.js;*phet-io-elements-baseline.js` into Excluded Files.
 7. Set the right margin to appear after 120 characters. `File> Settings> Editor > Code Style` Set Default Options to 120.
 8. Import the PhET code style (located in `phet-info/ide/idea/phet-idea-codestyle.xml`).
     * See https://www.jetbrains.com/help/idea/2017.1/copying-code-style-settings.html. Press the drop-down "settings" icon to the right of the Scheme,           select "Import Scheme", and navigate to where the code style is located (noted above).
