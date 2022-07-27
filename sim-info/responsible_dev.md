@@ -52,7 +52,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | circuit-construction-kit-dc | @samreid | @arouinfar | Sound<br/>Interactive Description | 
 | circuit-construction-kit-dc-virtual-lab | @samreid | @arouinfar | Sound<br/>Interactive Description | 
 | collision-lab | @jonathanolson | @arouinfar |  | 
-| color-vision | @chrisklus | @DianaTavares |  | 
+| color-vision | @chrisklus | @DianaTavares | Sound | 
 | concentration | @pixelzoom | @arouinfar |  | 
 | coulombs-law | @zepumph | @arouinfar | Interactive Description | 
 | counting-common | @chrisklus | @amanda-phet |  | 
