@@ -1013,12 +1013,6 @@
     ],
     "responsibleDesigners": []
   },
-  "phet-io-client-guides": {
-    "responsibleDevs": [
-      "@chrisklus"
-    ],
-    "responsibleDesigners": []
-  },
   "phet-io-sim-specific": {
     "responsibleDevs": [
       "@samreid"
