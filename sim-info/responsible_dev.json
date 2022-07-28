@@ -161,7 +161,7 @@
   },
   "blackbody-spectrum": {
     "responsibleDevs": [
-      "@jbphet"
+      "@AgustinVallejo", "@jbphet"
     ],
     "responsibleDesigners": [
       "@DianaTavares"
@@ -861,7 +861,7 @@
   },
   "my-solar-system": {
     "responsibleDevs": [
-      "@jonathanolson"
+      "@AgustinVallejo", "@jonathanolson"
     ],
     "responsibleDesigners": [
       "@DianaTavares"
