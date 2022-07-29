@@ -28,7 +28,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | beers-law-lab | @pixelzoom | @arouinfar |  | 
 | bending-light | @samreid | @arouinfar |  | 
 | binder | @chrisklus |  |  | 
-| blackbody-spectrum | @jbphet | @DianaTavares |  | 
+| blackbody-spectrum | @AgustinVallejo,@jbphet | @DianaTavares |  | 
 | blast | @samreid |  |  | 
 | brand | @zepumph |  |  | 
 | build-a-fraction | @jonathanolson | @amanda-phet | Sound | 
@@ -119,7 +119,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | molecule-shapes | @jonathanolson | @arouinfar |  | 
 | molecule-shapes-basics | @jonathanolson | @arouinfar |  | 
 | molecules-and-light | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
-| my-solar-system | @jonathanolson | @DianaTavares | Sound | 
+| my-solar-system | @AgustinVallejo,@jonathanolson | @DianaTavares | Sound | 
 | natural-selection | @pixelzoom | @amanda-phet |  | 
 | neuron | @jbphet | @arouinfar |  | 
 | nitroglycerin | @pixelzoom |  |  | 
@@ -140,7 +140,6 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phet-global-initiative | @kathy-phet |  |  | 
 | phet-info | @zepumph |  |  | 
 | phet-io | @zepumph |  |  | 
-| phet-io-client-guides | @chrisklus |  |  | 
 | phet-io-sim-specific | @samreid | @arouinfar |  | 
 | phet-io-test-sim | @chrisklus |  |  | 
 | phet-io-website | @chrisklus |  |  | 
