@@ -6,4 +6,4 @@
 # for installation instructions.
 #-----------------------------------------------------------------------------------------------------------------------
 
-node ../perennial/js/scripts/hook-pre-commit.js
+node ../chipper/js/scripts/hook-pre-commit.js

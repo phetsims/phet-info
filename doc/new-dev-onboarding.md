@@ -69,7 +69,7 @@ section of the PhET Development Overview doc.
 time-consuming to discover these errors for the first time when trying to commit. Some developers like to make sure the commit 
 is going to succeed by manually checking that lint and tsc are passing first.
   
-- Use the git hooks independently from WebStorm by running `node {{path-to-phet-repos}}/perennial/js/scripts/hook-pre-commit.js --console`.
+- Use the git hooks independently from WebStorm by running `node {{path-to-phet-repos}}/chipper/js/scripts/hook-pre-commit.js --console`.
 - Check lint and tsc separately by running `grunt lint` or `tsc` in a sim repo.
   
 ### Phetmarks
