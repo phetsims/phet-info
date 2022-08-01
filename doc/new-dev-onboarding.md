@@ -65,12 +65,12 @@ section of the PhET Development Overview doc.
 ## :climbing: Ramping Up
   
 ### Pre-Commit Hooks
-  During environment setup, you installed git hooks to prevent committing lint and tsc errors. However, it can be 
-time-consuming to discover these errors for the first time when trying to commit. Some developers like to make sure the commit 
-is going to succeed by manually checking that lint and tsc are passing first.
-  
-- Use the git hooks independently from WebStorm by running `node {{path-to-phet-repos}}/chipper/js/scripts/hook-pre-commit.js --console`.
-- Check lint and tsc separately by running `grunt lint` or `tsc` in a sim repo.
+  During environment setup, you installed git hooks to prevent committing lint, tsc, and unit-test errors. However, it 
+can be frustrating and error-prone to discover these errors for the first time when trying to commit. Therefore it is 
+advantageous to run these intermittently during development. Specifically, there is a script `chipper/js/scripts/precommit-hook-multi.js`
+which will run the precommit hooks on any repos with working copy changes. Results are cached so the precommit hooks themselves
+will run quickly. It is recommended to set `chipper/js/scripts/precommit-hook-multi.js` as an External Tool in WebStorm/
+IntelliJ and bind it to a key command for ease-of-use.
   
 ### Phetmarks
   Developers use phetmarks to run simulations and access other content. You can load it in the browser via your
