@@ -19,7 +19,7 @@ get you pointed in the right direction. If you notice errors or a need for clari
 6. `File > Settings > Directories` (or `File > Project Structure > Modules` if in Intellij IDEA) lets you exclude
    directories from your search path. You typically want to exclude `build/` and `node_modules/` for each repository,
    and all of `sherpa/`. You can exclude all by
-   pasting `build;node_modules;images;sounds;mipmaps;*phet-io-elements-overrides.js;*phet-io-elements-baseline.js` into
+   pasting `build;node_modules;images;dist;sounds;mipmaps;*phet-io-elements-overrides.js;*phet-io-elements-baseline.js` into
    Excluded Files.
 7. Set the right margin to appear after 120 characters. `File> Settings> Editor > Code Style` Set Default Options to
    120.
