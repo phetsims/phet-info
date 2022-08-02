@@ -12,14 +12,24 @@ get you pointed in the right direction. If you notice errors or a need for clari
 4. Add your github credentials in `File > Settings > Version Control > Github`, and test your credentials with
    the `Test` button. (May need to hit "Create API Token")
 5. Set up version control by adding each repo to git. This can be more automatic, because `.git` dirs are found by the
-   system and you just have to 'Add Roots' in the event log. See https://www.jetbrains.com/help/idea/2017.1/using-git-integration.html. You can confirm that all repos are registered with git in     
+   system and you just have to 'Add Roots' in the event log.
+   See https://www.jetbrains.com/help/idea/2017.1/using-git-integration.html. You can confirm that all repos are
+   registered with git in     
    Preferences -> Version Control -> Directory Mappings
-6. `File > Settings > Directories` (or `File > Project Structure > Modules` if in Intellij IDEA) lets you exclude directories from your search path. You typically want to exclude `build/` and `node_modules/` for each repository, and all of `sherpa/`. You can exclude all by pasting `build;node_modules;images;sounds;mipmaps;*phet-io-elements-overrides.js;*phet-io-elements-baseline.js` into Excluded Files.
-7. Set the right margin to appear after 120 characters. `File> Settings> Editor > Code Style` Set Default Options to 120.
+6. `File > Settings > Directories` (or `File > Project Structure > Modules` if in Intellij IDEA) lets you exclude
+   directories from your search path. You typically want to exclude `build/` and `node_modules/` for each repository,
+   and all of `sherpa/`. You can exclude all by
+   pasting `build;node_modules;images;sounds;mipmaps;*phet-io-elements-overrides.js;*phet-io-elements-baseline.js` into
+   Excluded Files.
+7. Set the right margin to appear after 120 characters. `File> Settings> Editor > Code Style` Set Default Options to
+   120.
 8. Import the PhET code style (located in `phet-info/ide/idea/phet-idea-codestyle.xml`).
-    * See https://www.jetbrains.com/help/idea/2017.1/copying-code-style-settings.html. Press the drop-down "settings" icon to the right of the Scheme,           select "Import Scheme", and navigate to where the code style is located (noted above).
-    * On older Mac versions, phet-idea-codestyle.xml must be manually copied to 
-      $HOME/Library/Preferences/IntelliJIdea[**version**]/codestyles/. Restart IDEA, then you can choose it from Preferences > Editor > Code Style.
+    * See https://www.jetbrains.com/help/idea/2017.1/copying-code-style-settings.html. Press the drop-down "settings"
+      icon to the right of the Scheme, select "Import Scheme", and navigate to where the code style is located (noted
+      above).
+    * On older Mac versions, phet-idea-codestyle.xml must be manually copied to
+      $HOME/Library/Preferences/IntelliJIdea[**version**]/codestyles/. Restart IDEA, then you can choose it from
+      Preferences > Editor > Code Style.
 9. Configure JavaScript level. In `File > Settings > Language & Frameworks > JavaScript`, Make sure `ECMAScript 6` is
    selected.
 10. Configure eslint. In `File > Settings > Language & Frameworks > JavaScript > Code Quality Tools > ESLint`:
@@ -50,8 +60,13 @@ own risk!
   vertically: `Languages & Frameworks > Markdown > Editor and Preview Panel Layout: Split horizontally`
 * Move Editor tabs from the top to the right to maximize vertical
   space: `Editor > General > Editor Tabs > Tab placement: Right`
-* Name collisions with built-in types can make adding imports difficult. The following suggestions are ways to get around this problem.
-   * Using "Code completion->Basic" (ctrl+space from default MacOS bindings) will only work if you are already importing from scenery imports.
-   * A way around this is to auto-import a class with a name that is non built-in type to get scenery imports.js in your file automatically. Then you can auto import the file with a built-in type name and delete the first one.
-* [Live Templates](https://www.jetbrains.com/help/idea/using-live-templates.html#live_templates_types) are a feature that many devs use for quickly typing out common patterns in code. To try some out, ask a developer for some examples of  their favorites. A set of live templates can be exported from one instance of WebStorm and imported in another.
+* Name collisions with built-in types can make adding imports difficult. The following suggestions are ways to get
+  around this problem.
+    * Using "Code completion->Basic" (ctrl+space from default MacOS bindings) will only work if you are already
+      importing from scenery imports.
+    * A way around this is to auto-import a class with a name that is non built-in type to get scenery imports.js in
+      your file automatically. Then you can auto import the file with a built-in type name and delete the first one.
+* [Live Templates](https://www.jetbrains.com/help/idea/using-live-templates.html#live_templates_types) are a feature
+  that many devs use for quickly typing out common patterns in code. To try some out, ask a developer for some examples
+  of their favorites. A set of live templates can be exported from one instance of WebStorm and imported in another.
   
