@@ -11,8 +11,7 @@ document.
 - [Administrative Setup](#admin-setup)
 - [Dev Environment Setup](#env-setup)
 - [Ramping Up](#ramping-up)
-- [Helpful Documents](#helpful-docs)
-- [Glossary of Documentation](#glossary)
+- [Reference Documents](#reference-docs)
 - [Sample Roadmap](#roadmap)
 
 <a id="intro">
@@ -97,31 +96,25 @@ in their schema.
   [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#repository-structure)
   in the Code Review Checklist for an overview or ask your mentor for an explanation.
 
- <a id='helpful-docs'>
+ <a id='reference-docs'>
   
-## :book: Helpful Documents
+## :book: Reference Documents
 
 Below is a list of documents that are helpful for reference.  It's important to know that these exist.  New developers
 should skim through them, and then reference them as needed while developing code.
-  
-- [PhET Software Design Patterns](./phet-software-design-patterns.md) provides an introduction to new developers on how to use PhET specific design patterns. We advise to read through "Observer" and then try out the following introductory excercises.
-  - [Intro Excercises for Developers](https://github.com/phetsims/phet-info/blob/master/doc/phet-dev-excercises.md)
 
-- [Typescript Conventions](./typescript-conventions.md) that PhET has decided on.
-- [The Code Review Checklist](../checklists/code_review_checklist.md) (CRC).
-- If you are working on a game you may need: [Private Features for PhET Team Members](https://github.com/phetsims/special-ops/blob/master/doc/phetTeamMember.md)
-  
-  <a id='glossary'>
-  
-## :classical_building: Glossary of Documentation
-| Doc | Contents |
-| ---- | ------ |
-| New Dev Onboarding | A guide and resource for new sim developers |
-| Responsible Devs | Associates repos with the dev responsible for maintenance |
+| Doc                                                                                                                 | Contents                                                                               |
+|---------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| New Dev Onboarding                                                                                                  | (this document) A guide and resource for new sim developers                            |
+| Responsible Devs                                                                                                    | Associates repos with the dev responsible for maintenance                              |
+| [PhET Software Design Patterns](./phet-software-design-patterns.md)                                                 | provides an introduction to new developers on how to use PhET specific design patterns |
+| [Typescript Conventions](./typescript-conventions.md)                                                               | provides an introduction to new developers on how to use PhET specific design patterns |
+| [The Code Review Checklist](../checklists/code_review_checklist.md)                                                 | used when evaluating code                                                              |
+| [Private Features for PhET Team Members](https://github.com/phetsims/special-ops/blob/master/doc/phetTeamMember.md) | if you are working on a game you may need this |
 
 <a id='roadmap'>
-    
-## 		:car: Sample Roadmap 
+
+## :car: Sample Roadmap 
 
 Once your [machine is configured](#env-setup) to start sim development, you can start learning about the patterns
 that PhET uses when writing code. The flowchart below provides just one example of how you may choose to structure your learning and growth here at PhET. We recommend checking in with your mentor to customize your roadmap according to your needs and experiences.
