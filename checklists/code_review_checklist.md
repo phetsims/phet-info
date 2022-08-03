@@ -255,7 +255,13 @@ necessarily need to check these items one at a time. The goal is to determine wh
 - [ ] Are appropriate design patterns used? See [phet-software-design-patterns.md](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md).  If new or inappropriate patterns are identified, create an issue.
 - [ ] Is inheritance used where appropriate? Does the type hierarchy make sense?
 - [ ] Is composition favored over inheritance where appropriate? See https://en.wikipedia.org/wiki/Composition_over_inheritance.
-- [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary properties/functions)
+- [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary properties/functions). In TypeScript, you can decouple by narrowing the API like so: 
+```ts
+  public constructor( tickMarksVisibleProperty: Property<boolean>,
+                      model: Pick<IntroModel, 'changeWaterLevel'>, // <-- Note the call site can pass the whole model, but we declare we will only use this part of it
+                      waterCup: WaterCup, modelViewTransform: ModelViewTransform2,
+                      providedOptions?: WaterCup3DNodeOptions ) {
+```
 - [ ] Is there too much unnecessary decoupling? (e.g. by passing all of the properties of an object independently instead of passing the object itself)?
 - [ ] Are the source files reasonable in size? Scrutinize large files with too many responsibilities - can responsibilities be broken into smaller delegates?
 - [ ] Are any significant chunks of code duplicated? In addition to manual identification, tools include: WebStorm _Code > Analyze Code > Locate Duplicates_ and https://github.com/danielstjules/jsinspect.
