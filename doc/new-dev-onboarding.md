@@ -1,10 +1,10 @@
 # Onboarding New Software Developers
 
-This document is intended to act as a starting point for new developers that are joining the PhET team and play to
-contribute to the development of simulations.  It discusses the process through which a new developer can acquire the
-knowledge and skills needed to do this.  Note that there are other software development roles at PhET, such as writing
-code for the website, the iOS and Android apps, the desktop app, and the translation utility.  These will not be covered
-in this document.
+This document is intended as a starting point for new developers that are joining the PhET team and play to contribute
+to the development of simulations.  It discusses the process through which a new developer can acquire the knowledge and
+skills needed to do this.  Note that there are other software development roles at PhET, such as writing code for the
+website, the iOS and Android apps, the desktop app, and the translation utility.  These will not be covered in this
+document.
 
 ## Table of Contents
 - [Intro](#intro)
@@ -13,7 +13,7 @@ in this document.
 - [Ramping Up](#ramping-up)
 - [Helpful Documents](#helpful-docs)
 - [Glossary of Documentation](#glossary)
-- [Recommended Roadmap](#roadmap)
+- [Sample Roadmap](#roadmap)
 
 <a id="intro">
 
