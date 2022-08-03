@@ -1,10 +1,11 @@
 # Onboarding New Software Developers
 
-This document is intended as a starting point for new developers that are joining the PhET team and play to contribute
-to the development of simulations. It discusses the process through which a new developer can acquire the knowledge and
-skills needed to do this. Note that there are other software development roles at PhET, such as writing code for the
-website, the iOS and Android apps, the desktop app, and the translation utility. These will not be covered in this
-document.
+This document is intended as a starting point for new developers that are joining the PhET team and plan to contribute
+to the development of simulations. The document discusses the process through which a new developer can acquire the
+knowledge and skills needed to do create and maintain PhET simulations.
+
+Note that there are other software development roles at PhET, such as writing code for the website, the iOS and Android
+apps, the desktop app, and the translation utility. These will not be covered in this document.
 
 ## Table of Contents
 
@@ -21,9 +22,9 @@ document.
 
 Don't panic (with apologies to Douglas Adams). PhET has been around since 2001, and has written a lot of code and
 created some pretty involved processes during that time. It will take a while for a new developer to learn what they
-need to in order to develop and maintain simulations.
+need to know to develop and maintain simulations.
 
-Each new developer will have had a unique set of experiences and education when starting at PhET, which means it isn't
+Each new developer will have had a unique set of experiences and education when starting at PhET, so it isn't really
 possible to come up with a "one-size-fits-all" plan for what to read and work through to ramp up. Each new developer
 will be assigned a mentor who is an experienced developer of PhET simulations, and one of the first steps of the process
 should be to come up with a customized plan or "road map" for ramping up. This should be regularly reviewed and updated
@@ -50,7 +51,7 @@ comprehensive and is specific towards a PhET Developer's needs.
 
  <a id='env-setup'>
 
-## :technologist: Dev Environment Setup
+## :technologist: Development Environment Setup
 
 Itching to dig into the code? The following are the steps needed in order to start sim development:
 
@@ -103,6 +104,20 @@ general global query parameters (preloaded). Two examples of commonly used query
 
 - `fuzz`, used for testing a sim with random inputs
 - `dev`, used for showing the dev bounds of a sim, are two examples from initialize-globals.js that are commonly used.
+
+### Automated Testing
+
+PhET has a "Continuous Test" server that regularly pulls the latest code for all repositories, builds them, and
+executes "fuzz testing" (random mouse and touch inputs), and reports whether each of these sub-tests succeeded. The
+latest report can be found at
+https://bayes.colorado.edu/continuous-testing/aqua/html/continuous-report.html.
+
+The repository in which the code that implements the test server is called [aqua](https://github.com/phetsims/aqua).
+This code can also be run locally, which is useful when trying to verify common code changes.
+
+PhET has a Slack channel called "continuous-test" which is used by the server to notify developers when some major
+status change occurs for the continuous testing process.  For example, if a lint error ends up in the code base, the
+server will send a message on this Slack channel.
 
 ### Publishing a Sim
 
