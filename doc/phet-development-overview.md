@@ -155,7 +155,10 @@ simulation using the template.
    `grunt create-sim --repo=NAME --author=AUTHOR`
    For instance, if the simulation is going to be named Acceleration Lab and the author is Jane Doe, then you could put:
    `grunt create-sim --repo=acceleration-lab --author="Jane Doe"`
-6. Test the created simulation in the browser and make sure it launches. It should be a blank simulation. Write to the
+6. In chipper, run the transpiler watch process and specify your new repo as a target:
+   `cd ../chipper`
+   `node js/scripts/transpile.js --watch --repos=acceleration-lab`
+7. Test the created simulation in the browser and make sure it launches. It should be a blank simulation. Write to the
    Developing Interactive Simulations in HTML5 Google Group if you run into problems.
 
 ## Building and Testing
