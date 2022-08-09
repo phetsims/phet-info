@@ -9,16 +9,16 @@ Look at the way the first magnet was created in the simulation, how should you g
 
 <details><summary>Hint</summary>Look into `MagnetsScreenView.js` to see how the magnet is added to the screen, then change some things in `MagnetsModel.js`...</details>
 
-<details><summary>Solution Snippet</summary>
-```
-// Inside MagnetsModel.js:
-// @public {OtherBarMagnet} second bar magnet model element, different position
-    this.otherBarMagnet = new BarMagnet( new Dimension2( 250, 50 ), new Vector2( 300, 0 ), 0 );
+<details>
+    <summary>Solution Snippet</summary>
+    
+    // Inside MagnetsModel.js:
+    // @public {OtherBarMagnet} second bar magnet model element, different position
+        this.otherBarMagnet = new BarMagnet( new Dimension2( 250, 50 ), new Vector2( 300, 0 ), 0 );
 
-// Inside MagnetsScreenView.js:
-// Add a second magnet. The model determines its position.
-    this.addChild( new BarMagnetNode( model.otherBarMagnet, modelViewTransform ) );
-```
+    // Inside MagnetsScreenView.js:
+    // Add a second magnet. The model determines its position.
+        this.addChild( new BarMagnetNode( model.otherBarMagnet, modelViewTransform ) );
 </details>
 
 ### 2. Add a ball
@@ -28,47 +28,46 @@ Create a Ball class in the model, then create the corresponding BallNode class i
 
 <details><summary>Solution Snippet</summary>
   Also using much of the BarMagnetNode code for similar logic
-```
-import ShadedSphereNode from '../../../../scenery-phet/js/ShadedSphereNode.js';
 
-class BallNode extends ShadedSphereNode {
+    import ShadedSphereNode from '../../../../scenery-phet/js/ShadedSphereNode.js';
 
-  /**
-   * @param {Ball} ball - the model of the ball
-   * @param {ModelViewTransform2} modelViewTransform - the transform between model coordinates and view coordinates
-   */
-  constructor( ball, modelViewTransform ) {
-    super( ball.size, {
+    class BallNode extends ShadedSphereNode {
 
-      // Show a cursor hand over the ball
-      cursor: 'pointer'
-    } );
+      /**
+       * @param {Ball} ball - the model of the ball
+       * @param {ModelViewTransform2} modelViewTransform - the transform between model coordinates and view coordinates
+       */
+      constructor( ball, modelViewTransform ) {
+        super( ball.size, {
 
-    // Scale this Node, so that it matches the model width and height.
-    const scaleX = modelViewTransform.modelToViewDeltaX( ball.size ) / this.width;
-    this.scale( scaleX, scaleX );
+          // Show a cursor hand over the ball
+          cursor: 'pointer'
+        } );
 
-    // Move the magnet by dragging it.
-    this.addInputListener( new DragListener( {
-      allowTouchSnag: true, // When dragging across it on a touch device, pick it up
-      positionProperty: ball.positionProperty,
-      transform: modelViewTransform
-    } ) );
+        // Scale this Node, so that it matches the model width and height.
+        const scaleX = modelViewTransform.modelToViewDeltaX( ball.size ) / this.width;
+        this.scale( scaleX, scaleX );
 
-    // Observe changes in model position, and move this Node to the new position in the view.
-    // This Property exists for the lifetime of the simulation, so this listener does not need to be unlinked.
-    ball.positionProperty.link( position => {
-      this.translation = modelViewTransform.modelToViewPosition( position );
-    } );
+        // Move the magnet by dragging it.
+        this.addInputListener( new DragListener( {
+          allowTouchSnag: true, // When dragging across it on a touch device, pick it up
+          positionProperty: ball.positionProperty,
+          transform: modelViewTransform
+        } ) );
 
-    // Observe changes in model orientation, and update the orientation in the view.
-    // This Property exists for the lifetime of the simulation, so this listener does not need to be unlinked.
-    ball.orientationProperty.link( orientation => {
-      this.rotation = orientation;
-    } );
-  }
-}
-```
+        // Observe changes in model position, and move this Node to the new position in the view.
+        // This Property exists for the lifetime of the simulation, so this listener does not need to be unlinked.
+        ball.positionProperty.link( position => {
+          this.translation = modelViewTransform.modelToViewPosition( position );
+        } );
+
+        // Observe changes in model orientation, and update the orientation in the view.
+        // This Property exists for the lifetime of the simulation, so this listener does not need to be unlinked.
+        ball.orientationProperty.link( orientation => {
+          this.rotation = orientation;
+        } );
+      }
+    }
 </details>
 
 ### 3. Adding checkboxes
