@@ -81,9 +81,9 @@ Since the `computeHabitat` method doesn't call `bark`, it may be rewritten to ac
 However, something that has to be PhET-iO instrumented should use `Property` instead of `IProperty` even if the additional 
 `Property` methods are not exercised.  This will help clients know that it must be a fully-instrumentable axon Property.
 
-### Prefer TReadonlyProperty to DerivedProperty for type annotations.
+### Prefer TReadOnlyProperty to DerivedProperty for type annotations.
 
-Prefer `TReadonlyProperty` to `DerivedProperty` for type declarations, see https://github.com/phetsims/build-a-nucleus/issues/13
+Prefer `TReadOnlyProperty` to `DerivedProperty` for type declarations, see https://github.com/phetsims/build-a-nucleus/issues/13
 
 ```ts
 class HalfLifeInformationNode extends Node {
@@ -99,8 +99,8 @@ should be simplified as:
 ```ts
 class HalfLifeInformationNode extends Node {
 
-  constructor( halfLifeNumberProperty: TReadonlyProperty<number>,
-               isStableBooleanProperty: TReadonlyProperty<boolean> ) {
+  constructor( halfLifeNumberProperty: TReadOnlyProperty<number>,
+               isStableBooleanProperty: TReadOnlyProperty<boolean> ) {
     super();
 ```
 
