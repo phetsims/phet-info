@@ -92,6 +92,8 @@ server at `{{path-to-phet-repos}}/phetmarks`.
 
 phetmarks contains different ways to run sims, demos for some non-sim repos to show what components they contain, and
 links to documentation.
+   
+A very powerful tool to get familiar with PhET elements is to load one common repo (Sun, for example), press `Ctrl+Shift+H` and click on the component you want to know more about. It'll display information about it, and you can then look up its internal code to read how it was used.
 
 ### Query Parameters
 
