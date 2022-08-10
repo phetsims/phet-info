@@ -118,6 +118,12 @@ This code can also be run locally, which is useful when trying to verify common 
 PhET has a Slack channel called "continuous-test" which is used by the server to notify developers when some major
 status change occurs for the continuous testing process.  For example, if a lint error ends up in the code base, the
 server will send a message on this Slack channel.
+   
+- #### QUnit
+   
+   Unit testing at PhET is done through [QUnit](https://qunitjs.com/). Although most sims do not have unit testing built in, developers are encouraged to use unit testing as feels necessary for your development workflow. Most unit tests exist in common-code repos and these tests are run as part of pre-commit hooks and continuous testing.
+   
+   To run QUnit tests navigate to the repo in question in PhETmarks and click on Unit Tests (Unbuilt). Running the tests in the browser provides better error reporting, and debugging tools.
 
 ### Publishing a Sim
 
