@@ -70,7 +70,7 @@ Itching to dig into the code? The following are the steps needed in order to sta
     - Follow step 13.
       of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
       in the PhET Development Overview doc for instructions on setting them up.
-
+ 
  <a id='ramping-up'>
 
 ## :climbing: Ramping Up
@@ -124,6 +124,13 @@ server will send a message on this Slack channel.
    Unit testing at PhET is done through [QUnit](https://qunitjs.com/). Although most sims do not have unit testing built in, developers are encouraged to use unit testing as feels necessary for your development workflow. Most unit tests exist in common-code repos and these tests are run as part of pre-commit hooks and continuous testing.
    
    To run QUnit tests navigate to the repo in question in PhETmarks and click on Unit Tests (Unbuilt). Running the tests in the browser provides better error reporting, and debugging tools.
+   
+### Typescript
+   When you begin working in Typescript files you might hear a lot about tsc (Typescript Compiler):
+   - tsc runs a type checker that will output type errors in our code. This type checking is already included in pre-commit hooks, but many developers enjoy having a tool where they can check for type errors outside of pre-commit hooks.
+   - The recommended method for running tsc is through our script [absolute-tsc.js](https://github.com/phetsims/chipper/blob/master/js/scripts/absolute-tsc.js). Documentation for how to run absolute-tsc from the command line, or as an external tool in Webstorm can be found at the top of the file.
+   - The [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) is a great resource for diving into Typescript. You can also find PhET specific Typescript Conventions in the [Reference Documents](#reference-docs) section.
+
 
 ### Publishing a Sim
 
