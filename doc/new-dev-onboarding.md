@@ -121,15 +121,38 @@ server will send a message on this Slack channel.
    
 - #### QUnit
    
-   Unit testing at PhET is done through [QUnit](https://qunitjs.com/). Although most sims do not have unit testing built in, developers are encouraged to use unit testing as feels necessary for your development workflow. Most unit tests exist in common-code repos and these tests are run as part of pre-commit hooks and continuous testing.
+Unit testing at PhET is done through [QUnit](https://qunitjs.com/). Although most sims do not have unit testing built in, developers are encouraged to use unit testing as feels necessary for your development workflow. Most unit tests exist in common-code repos and these tests are run as part of pre-commit hooks and continuous testing.
    
-   To run QUnit tests navigate to the repo in question in PhETmarks and click on Unit Tests (Unbuilt). Running the tests in the browser provides better error reporting, and debugging tools.
+To run QUnit tests navigate to the repo in question in PhETmarks and click on Unit Tests (Unbuilt). Running the tests in the browser provides better error reporting, and debugging tools.
    
 ### Typescript
-   When you begin working in Typescript files you might hear a lot about tsc (Typescript Compiler):
-   - tsc runs a type checker that will output type errors in our code. This type checking is already included in pre-commit hooks, but many developers enjoy having a tool where they can check for type errors outside of pre-commit hooks.
-   - The recommended method for running tsc is through our script [absolute-tsc.js](https://github.com/phetsims/chipper/blob/master/js/scripts/absolute-tsc.js). Documentation for how to run absolute-tsc from the command line, or as an external tool in Webstorm can be found at the top of the file.
-   - The [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) is a great resource for diving into Typescript. You can also find PhET specific Typescript Conventions in the [Reference Documents](#reference-docs) section.
+
+#### History
+
+PhET made a decision in early 2022 to migrate from JavaScript to TypeScript as the primary development language for our
+simulations and build tools.  This was motivated by a desire to have stronger type checking so that our code base would
+be easier to navigate and maintain.
+
+Much of the common code was migrated to TypeScript when this decision was made, but we did not proactively migrate the
+simulations due to the cost of doing so.  Many of these remain in JavaScript, and are likely to stay that way for a long
+while if not indefinitely. New developers should be prepared to encounter a mix of TypeScript and JavaScript in the
+codebase, and may even be asked to fix or extend simulations that are written in JavaScript.
+
+Also, the standards for TypeScript evolved quite a bit while the migration was in progress.  It is therefore possible
+that developers could encounter code that is written in TypeScript, but doesn't fully adhere to the current standards.
+For this reason, always double check that any code that is being leveraged for a new sim meets the current standards.
+Also, be prepared to fix up code that *doesn't* meet those standards.  For a bit more information on the history of
+this, and on some specific things that changed during PhET's TypeScript evolution, please see
+https://github.com/phetsims/chipper/issues/1281.
+
+#### TSC
+
+When you begin working in Typescript files you might hear a lot about tsc (Typescript Compiler):
+- tsc runs a type checker that will output type errors in our code. This type checking is already included in pre-commit hooks, but many developers enjoy having a tool where they can check for type errors outside of pre-commit hooks.
+- The recommended method for running tsc is through our script [absolute-tsc.js](https://github.com/phetsims/chipper/blob/master/js/scripts/absolute-tsc.js). Documentation for how to run absolute-tsc from the command line, or as an external tool in Webstorm can be found at the top of the file.
+- The [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) is a great resource for diving into Typescript. You can also find PhET specific Typescript Conventions in the [Reference Documents](#reference-docs) section.
+
+
 
 
 ### Publishing a Sim
