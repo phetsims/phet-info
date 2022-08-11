@@ -18,7 +18,7 @@ apps, the desktop app, and the translation utility. These will not be covered in
 
 <a id="intro">
 
-## :wave: Intro
+## 👋 Intro
 
 Don't panic (with apologies to Douglas Adams). PhET has been around since 2001, and has written a lot of code and
 created some pretty involved processes during that time. It will take a while for a new developer to learn what they
@@ -198,11 +198,11 @@ needs and experiences.
 TODO: Currently Example Sim node is linking to Example-Sim repo. May want to link to tutorial instead.
 
 ```mermaid
-flowchart LR
-  A(((<a href='https://github.com/phetsims/phet-info/blob/master/doc/new-dev-onboarding.md#env-setup'>Environment Setup</a>)))
-  B(((<a href='https://github.com/phetsims/phet-info/blob/master/doc/new-dev-onboarding.md#ramping-up'>Ramping Up</a>)))
-  C(((Object Creation)))
-  D(((Layout)))
+graph LR
+  A((<a href='https://github.com/phetsims/phet-info/blob/master/doc/new-dev-onboarding.md#env-setup'>Environment Setup</a>))
+  B((<a href='https://github.com/phetsims/phet-info/blob/master/doc/new-dev-onboarding.md#ramping-up'>Ramping Up</a>))
+  C((Object Creation))
+  D((Layout))
   A-->A1(IDE) & A2(Node.js) & A3(<a href='https://github.com/join'>Create Github Account</a>) & A4(<a href='https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-developmen'>Add New User to PhET Server</a>)
   A1-->A1.1(<a href='https://github.com/phetsims/phet-info/tree/master/ide'>IDE setup Documents</a>) & A1.2(<a href='https://www.jetbrains.com/webstorm/'>Webstorm</a>)
   A2-->A2.1(<a href='https://nodejs.org/en/download/'>Install Node</a>) & A2.2(<a href='https://docs.npmjs.com/cli/v8/commands/npm-install'>Install NPM</a>)
@@ -215,5 +215,3 @@ flowchart LR
   C2-->C2.1(Module Design Pattern) & C2.2(<a href='https://github.com/phetsims/phet-info/blob/master/doc/typescript-conventions.md'>Typescript Conventions</a>) & C2.3(Class Inheritance & Options) & C2.4(Instancing Custom Modules)
   D-->D1(Node Tree Structure) & D2(Flexbox & Gridbox)
 ```
-
-
