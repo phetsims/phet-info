@@ -13,8 +13,8 @@ apps, the desktop app, and the translation utility. These will not be covered in
 - [Administrative Setup](#admin-setup)
 - [Dev Environment Setup](#env-setup)
 - [Ramping Up](#ramping-up)
-- [Reference Documents](#reference-docs)
 - [Sample Roadmap](#roadmap)
+- [Reference Documents](#reference-docs)
 
 <a id="intro">
 
@@ -32,7 +32,7 @@ during the process.
 
 <a id='admin-setup'>
 
-## :memo: Administrative Setup
+## 📝 Administrative Setup
 
 In your first few days there are many configuration and setups steps that need to be completed in order to become a CU
 and PhET employee. Check-in with the PhET Business Manager for a complete list of HR needs. The list below is not
@@ -51,7 +51,7 @@ comprehensive and is specific towards a PhET Developer's needs.
 
  <a id='env-setup'>
 
-## :technologist: Development Environment Setup
+## 👩‍💻 Development Environment Setup
 
 Itching to dig into the code? The following are the steps needed in order to start sim development:
 
@@ -73,7 +73,7 @@ Itching to dig into the code? The following are the steps needed in order to sta
  
  <a id='ramping-up'>
 
-## :climbing: Ramping Up
+## 🧗 Ramping Up
 
 ### Pre-Commit Hooks
 
@@ -167,28 +167,11 @@ and ask a senior dev to help add your identikey to PhET's servers.
 
 Most of your work will be done in the `js` directory of a repo. If you are curious about the other files check out the
 [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#repository-structure)
-in the Code Review Checklist for an overview or ask your mentor for an explanation.
-
- <a id='reference-docs'>
-
-## :book: Reference Documents
-
-Below is a list of documents that are helpful for reference. It's important to know that these exist. New developers
-should skim through them, and then reference them as needed while developing code.
-
-| Doc                                                                                                                 | Contents                                                                          |
-|---------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| [New Dev Onboarding](./new-dev-onboarding.md)                                                                       | A guide and resource for new sim developers (this document)                       |
-| [PhET Code Review Checklist](../checklists/code_review_checklist.md)                                                | A checklist for evaluating simulation code                                        |
-| [PhET Development Overview](./phet-development-overview.md)                                                         | A checklist for evaluating simulation code                                        |
-| [PhET Software Design Patterns](./phet-software-design-patterns.md)                                                 | Provides information on how PhET uses various software design patterns            |
-| [Private Features for PhET Team Members](https://github.com/phetsims/special-ops/blob/master/doc/phetTeamMember.md) | Information on hidden features. This comes up most often during game development. |
-| [Responsible Devs](../sim-info/responsible_dev.md)                                                                  | Associates repos with the developer who is responsible for maintenance            |
-| [Typescript Conventions](./typescript-conventions.md)                                                               | PhET's TypeScript conventions                                                     |
+in the Code Review Checklist for an overview or ask your mentor for an explanation. |
 
 <a id='roadmap'>
 
-## :car: Sample Roadmap
+## 🚗 Sample Roadmap
 
 Once your [machine is configured](#env-setup) to start sim development, you can start learning about the patterns that
 PhET uses when writing code. The flowchart below provides just one example of how you may choose to structure your
@@ -215,3 +198,19 @@ graph LR
   C2-->C2.1(Module Design Pattern) & C2.2(<a href='https://github.com/phetsims/phet-info/blob/master/doc/typescript-conventions.md'>Typescript Conventions</a>) & C2.3(Class Inheritance & Options) & C2.4(Instancing Custom Modules)
   D-->D1(Node Tree Structure) & D2(Flexbox & Gridbox)
 ```
+ <a id='reference-docs'>
+
+## 📖 Reference Documents
+
+Below is a list of documents that are helpful for reference. It's important to know that these exist. New developers
+should skim through them, and then reference them as needed while developing code.
+
+| Doc                                                                                                                 | Contents                                                                          |
+|---------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| [New Dev Onboarding](./new-dev-onboarding.md)                                                                       | A guide and resource for new sim developers (this document)                       |
+| [PhET Code Review Checklist](../checklists/code_review_checklist.md)                                                | A checklist for evaluating simulation code                                        |
+| [PhET Development Overview](./phet-development-overview.md)                                                         | A checklist for evaluating simulation code                                        |
+| [PhET Software Design Patterns](./phet-software-design-patterns.md)                                                 | Provides information on how PhET uses various software design patterns            |
+| [Private Features for PhET Team Members](https://github.com/phetsims/special-ops/blob/master/doc/phetTeamMember.md) | Information on hidden features. This comes up most often during game development. |
+| [Responsible Devs](../sim-info/responsible_dev.md)                                                                  | Associates repos with the developer who is responsible for maintenance            |
+| [Typescript Conventions](./typescript-conventions.md)                                                               | PhET's TypeScript conventions         
