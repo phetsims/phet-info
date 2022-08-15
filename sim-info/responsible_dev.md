@@ -143,7 +143,6 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phet-io-sim-specific | @samreid | @arouinfar |  | 
 | phet-io-test-sim | @chrisklus |  |  | 
 | phet-io-website | @chrisklus |  |  | 
-| phet-io-wrapper-arithmetic | @zepumph |  |  | 
 | phet-io-wrapper-classroom-activity | @zepumph |  |  | 
 | phet-io-wrapper-haptics | @jessegreenberg |  |  | 
 | phet-io-wrapper-hookes-law-energy | @zepumph |  |  | 

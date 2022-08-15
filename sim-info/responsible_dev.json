@@ -1033,12 +1033,6 @@
     ],
     "responsibleDesigners": []
   },
-  "phet-io-wrapper-arithmetic": {
-    "responsibleDevs": [
-      "@zepumph"
-    ],
-    "responsibleDesigners": []
-  },
   "phet-io-wrapper-classroom-activity": {
     "responsibleDevs": [
       "@zepumph"
