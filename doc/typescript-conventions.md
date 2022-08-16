@@ -78,7 +78,7 @@ function computeHabitat( dog:Dog ){
 ```
 Since the `computeHabitat` method doesn't call `bark`, it may be rewritten to accept `computeHabitat( animal: Animal )`.
 
-However, something that has to be PhET-iO instrumented should use `Property` instead of `IProperty` even if the additional 
+However, something that has to be PhET-iO instrumented should use `Property` instead of `TProperty` even if the additional 
 `Property` methods are not exercised.  This will help clients know that it must be a fully-instrumentable axon Property.
 
 ### Prefer TReadOnlyProperty to DerivedProperty for type annotations.
