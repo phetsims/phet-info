@@ -43,7 +43,7 @@ comprehensive and is specific towards a PhET Developer's needs.
 - Ask the Business Manager to add you to the SIMS_DEV and BROWSER_SIDE_COMMON_CODE development teams on Github. This
   will allow you to push code to sim repos and common code repos.
 - Set up a Slack account and join the phetsims workspace (you should receive an invite to join). From here, join the
-  # general, #dev-public, #developer, and #continuous-testing channel.
+  #general, #dev-public, #developer, and #continuous-testing channel.
     - Be sure to set notifications in #continuous-testing to "All messages". Also, check with your mentor about any
       other relevant channels to join.
     - If you're not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on
