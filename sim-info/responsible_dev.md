@@ -161,7 +161,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | proportion-playground | @jonathanolson | @amanda-phet |  | 
 | protein-synthesis | @samreid |  |  | 
 | qa | @KatieWoe |  |  | 
-| quadrilateral | @jessegreenberg |  | Sound<br/>Interactive Description<br/>Voicing | 
+| quadrilateral | @jessegreenberg |  | Sound<br/>Interactive Description<br/>Voicing<br/>Interactive Highlights | 
 | quake | @jbphet |  |  | 
 | query-string-machine | @chrisklus |  |  | 
 | ratio-and-proportion | @zepumph | @BLFiedler | Sound<br/>Interactive Description<br/>Voicing<br/>Interactive Highlights | 
