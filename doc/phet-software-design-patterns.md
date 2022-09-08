@@ -1,15 +1,17 @@
 # PhET Software Design Patterns
 
-This document describes software design patterns that are specific to PhET, and PhET-specific applications of standard design patterns.
+This document describes software design patterns that are specific to PhET, and PhET-specific applications of standard
+design patterns.
 For general information on many standard design patterns,
 see _[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)_ by Addy
 Osmani.
 
-This document has a bunch of different patterns in alphabetical order.  They are not all equally important.  Below
-is a list of the patterns in the order in which they should be read.  At the top of the list are patterns that are
-central to the development process and necessary for pretty much every sim.  Below that are patterns that may be
+This document has a bunch of different patterns in alphabetical order. They are not all equally important. Below
+is a list of the patterns in the order in which they should be read. At the top of the list are patterns that are
+central to the development process and necessary for pretty much every sim. Below that are patterns that may be
 useful at some point, but aren't in every sim, so they can be skimmed and referenced when needed.
-  - *Patterns that every PhET developer should know well:*
+
+- *Patterns that every PhET developer should know well:*
     - Module
     - Namespace
     - Model-View-Controller (MVC)
@@ -18,7 +20,7 @@ useful at some point, but aren't in every sim, so they can be skimmed and refere
     - Options (TypeScript)
     - Dispose
     - Enumeration
-  - *Patterns to be aware of and reference when needed:*
+- *Patterns to be aware of and reference when needed:*
     - Mixin and Trait
     - Singleton
     - Dependency Injection
@@ -27,7 +29,6 @@ useful at some point, but aren't in every sim, so they can be skimmed and refere
     - Strategy
     - State Machine
     - Options and Config (JavaScript)
-
 
 ## Table of Contents
 
@@ -104,9 +105,10 @@ Variants or Alternate problems:
 * It is possible to use the drag forwarding pattern without dynamically creating instances. For instance, in Wave
   Interference, there is only one Wave Meter Node, so dragging the icon displays the view and forwards the event without
   creating a new one.
-* A subtle and challenging error can occur when you forward from NodeA to NodeB. If using `DragListener.positionProperty` 
+* A subtle and challenging error can occur when you forward from NodeA to NodeB. If
+  using `DragListener.positionProperty`
   and these Nodes do not share the same parent, then you should specify `targetNode: NodeB` to avoid an unexpected
-  translation offset.   
+  translation offset.
 * Forces and Motion: Basics doesn't dynamically create elements. The real elements are already in the toolbox, hence no
   creation or forwarding takes place.
 
@@ -123,7 +125,8 @@ Some background reading for those interested:
 SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clarify which form of dependency injection
 (probably constructor-based injection), and some examples of where it's currently used in PhET sims.
 
-The main goal of dependency injection (DI) is to decouple the implementation of a required object instance from where it’s used. While there
+The main goal of dependency injection (DI) is to decouple the implementation of a required object instance from where
+it’s used. While there
 are a few different ways to accomplish this, the basic idea is to provide the wrapping class with its required instance
 variables instead of allowing it to instantiate them itself. For example,
 
@@ -196,7 +199,8 @@ that DI may simplify your implementation.
 To start, [Molecules and Light](https://github.com/phetsims/molecules-and-light) employs setter injection in how it
 handles absorption of various wavelengths of light for different molecules.
 
-In [Molecule.js](https://github.com/phetsims/greenhouse-effect/blob/c3902b1c402cd2ca699a68938c98c7b2387844dd/js/micro/model/Molecule.js),
+In [Molecule.js](https://github.com/phetsims/greenhouse-effect/blob/c3902b1c402cd2ca699a68938c98c7b2387844dd/js/micro/model/Molecule.js)
+,
 the constructor initializes `this.mapWavelengthToAbsorptionStrategy = {}`. Then on ln 212, we have the following method
 allows any object inheriting Molecule to dynamically set the necessary `PhotonAbsorptionStrategy`
 
@@ -396,7 +400,8 @@ class MyEnumeration extends EnumerationValue {
 To adapt the pattern to be a rich enumeration, add prototype or static methods as needed to the class.
 
 Another Enumeration strategy is to create a TypeScript string union type. In
-general, this strategy is less explicit, doesn't have as much runtime-safety, and doesn't support refactoring quite as well. That said,
+general, this strategy is less explicit, doesn't have as much runtime-safety, and doesn't support refactoring quite as
+well. That said,
 it is useful when strings are the best values for your enumeration:
 
 ```typescript
@@ -422,7 +427,8 @@ Those older cases should be treated as type `EnumerationValue | null` when conve
 
 #### Vestigial patterns and usages
 
-You’ll find a couple of other patterns commonly used in PhET code. These are good to be aware of, but generally shouldn't be
+You’ll find a couple of other patterns commonly used in PhET code. These are good to be aware of, but generally
+shouldn't be
 used in new code. `EnumerationDeprecated` is PhET's primary old pattern; please do not use it is new code.
 
 <details><summary>Previous pattern documentation based on `EnumerationDeprecated`</summary>
@@ -1075,12 +1081,14 @@ section.
 As a reminder from above, Input Listeners (such as `DragListener`) are internally referenced in Node, so be sure to
 call `removeInputListener()` to release listeners if needed.
 
-
 ## Options and Config (JavaScript)
 
 Author: @pixelzoom, @denz1994
 
-**Note:** This is an obsolete pattern used in legacy JavaScript code. It's still recommended to read this section, especially since the subsection on **Nesting** still applies for TypeScript. For TypeScript code, see [Options (TypeScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-typescript).
+**Note:** This is an obsolete pattern used in legacy JavaScript code. It's still recommended to read this section,
+especially since the subsection on **Nesting** still applies for TypeScript. For TypeScript code,
+see [Options (TypeScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-typescript)
+.
 
 This pattern is used for parameterizing classes and methods, which we use to avoid an explosion of parameters. `options`
 and `config` are the two implementations of that pattern that PhET typically uses. If all properties in the argument are
@@ -1258,9 +1266,13 @@ for `config` as the solution. Review your API to understand _why_ it has too man
 
 Author: @pixelzoom
 
-**Disclaimer**: The description of this pattern is not complete -- it’s a start. The examples are terse, and significant familiarity with `optionize` is needed to get the most out of the examples.
+**Disclaimer**: The description of this pattern is not complete -- it’s a start. The examples are terse, and significant
+familiarity with `optionize` is needed to get the most out of the examples.
 
-Similar to the pattern decribed in [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config-javascript), this pattern is used to parameterize methods (most typically constructors) without having a large number of method parameters. It provides the 
+Similar to the pattern decribed
+in [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config-javascript)
+, this pattern is used to parameterize methods (most typically constructors) without having a large number of method
+parameters. It provides the
 additional benefit of type-checking.
 
 The method parameter differs from the JavaScript `options` or `config` parameter in the following ways:
@@ -1268,13 +1280,16 @@ The method parameter differs from the JavaScript `options` or `config` parameter
 * the parameter is named `providedOptions`
 * `providedOptions` may be optional or required
 * `providedOptions` fields may be optional or required
-* [optionize](https://github.com/phetsims/phet-core/blob/master/js/optionize.ts) is used to merge `providedOptions` with default values
+* [optionize](https://github.com/phetsims/phet-core/blob/master/js/optionize.ts) is used to merge `providedOptions` with
+  default values
 
-See [WilderOptionsPattern.ts](https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts) for additional description and examples.
+See [WilderOptionsPattern.ts](https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts)
+for additional description and examples.
 
 Additional guidelines:
 
-(1) Create your options type by intersecting `SelfOptions` and the parent class’s options type. `SelfOptions` will contain options that are specific to your class.
+(1) Create your options type by intersecting `SelfOptions` and the parent class’s options type. `SelfOptions` will
+contain options that are specific to your class.
 
 ```typescript
 // Our parent class is Path, whose options type is PathOptions.
@@ -1298,7 +1313,10 @@ type SelfOptions = {
 type MyPathOptions = SelfOptions & PathOptions; 
 ```
 
-(2) If your class does not have any class-specific options, it's still recommended to use `type SelfOptions = EmptySelfOptions`.  This makes it very easy to add class-specific options later, by replacing 1 occurrence of `EmptySelfOptions` with `{…}`. Otherwise you have to remember to change to `SelfOptions` in 3 places. Here's the general pattern:
+(2) If your class does not have any class-specific options, it's still recommended to
+use `type SelfOptions = EmptySelfOptions`. This makes it very easy to add class-specific options later, by replacing 1
+occurrence of `EmptySelfOptions` with `{…}`. Otherwise you have to remember to change to `SelfOptions` in 3 places.
+Here's the general pattern:
 
 ```typescript
 type SelfOptions = EmptySelfOptions;
@@ -1314,7 +1332,10 @@ class MyClass extends Superclass {
 }
 ```
 
-(3) Use [StrictOmit](https://github.com/phetsims/phet-core/blob/master/js/types/StrictOmit.ts), [PickRequired](https://github.com/phetsims/phet-core/blob/master/js/types/PickRequired.ts), and [PickOptional](https://github.com/phetsims/phet-core/blob/master/js/types/PickOptional.ts) to narrow the API provided by your options type.
+(3) Use [StrictOmit](https://github.com/phetsims/phet-core/blob/master/js/types/StrictOmit.ts)
+, [PickRequired](https://github.com/phetsims/phet-core/blob/master/js/types/PickRequired.ts),
+and [PickOptional](https://github.com/phetsims/phet-core/blob/master/js/types/PickOptional.ts) to narrow the API
+provided by your options type.
 
 ```typescript
 // In this example, MyNode is responsible for setting the children option.
@@ -1377,8 +1398,9 @@ class MyNode extends Node {
 }
 ```
 
-(4) Use `PickRequired` and `PickOptional` to change whether parent options are required or optional. Note that when 
-intersecting type aliases, `PickRequired` and `PickOptional` must come _after_ other occurrences of the parent class’s options type.
+(4) Use `PickRequired` and `PickOptional` to change whether parent options are required or optional. Note that when
+intersecting type aliases, `PickRequired` and `PickOptional` must come _after_ other occurrences of the parent class’s
+options type.
 
 ```typescript
 // In this example, we make options fill and stroke required for our subclass.
@@ -1430,7 +1452,8 @@ class MyAtomizer extends Atomizer {
 }
 ```
 
-(5) To narrow an API, pick fields from the parent class’s options, rather than duplicate the definitions of those fields.
+(5) To narrow an API, pick fields from the parent class’s options, rather than duplicate the definitions of those
+fields.
 
 ```typescript
 // Our parent class is Path, whose options type is PathOptions.
@@ -1452,7 +1475,8 @@ type SelfOptions = {
 type MyPathOptions = SelfOptions & PickOptional<PathOptions, 'fill'>; 
 ```
 
-(6) If a class has no parent class, pick a field from the type that defines that field, rather than duplicating that field’s definition.
+(6) If a class has no parent class, pick a field from the type that defines that field, rather than duplicating that
+field’s definition.
 
 ```typescript
 // Our class has no parent class.
@@ -1487,7 +1511,8 @@ type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
 type MyClassOptions = SelfOptions & PickRequired<PathOptions, 'tandem'>; 
 ```
 
-(8) An exception to (6) is when you want to narrow the API of `NodeOptions`. You can do this using `NodeTranslationOptions`, `NodeTransformOptions`, or `NodeBoundsBasedTranslationOptions`.
+(8) An exception to (6) is when you want to narrow the API of `NodeOptions`. You can do this
+using `NodeTranslationOptions`, `NodeTransformOptions`, or `NodeBoundsBasedTranslationOptions`.
 
 ```typescript
 // Limit the API to include only the parent options related to translation.
@@ -1503,9 +1528,13 @@ class MyNode extends Path {
 }
 ```
 
-(9) The `tandem` option for PhET-iO is a little tricky, and requires different patterns for common code versus sim-specific code.
+(9) The `tandem` option for PhET-iO is a little tricky, and requires different patterns for common code versus
+sim-specific code.
 
-For common code, `tandem` should be optional, with a default of `tandem: Tandem.REQUIRED` provided. A missing `tandem` will not be identified until runtime with PhET-iO enabled.  But this approach is still necessary in common code in order to support PhET’s uninstrumented sims.  If `tandem` were required option in common code, then it would be difficult to convert a sim to TypeScript without also PhET-iO instrumenting it.
+For common code, `tandem` should be optional, with a default of `tandem: Tandem.REQUIRED` provided. A missing `tandem`
+will not be identified until runtime with PhET-iO enabled. But this approach is still necessary in common code in order
+to support PhET’s uninstrumented sims. If `tandem` were required option in common code, then it would be difficult to
+convert a sim to TypeScript without also PhET-iO instrumenting it.
 
 ```typescript
 type SelfOptions = {
@@ -1530,7 +1559,8 @@ class MyCommonNode extends Node {
 }
 ```
 
-For sim-specific code (in sims that are PhET-iO instrumented), `tandem` should be required, with no default value needed.
+For sim-specific code (in sims that are PhET-iO instrumented), `tandem` should be required, with no default value
+needed.
 This ensures that a missing `tandem` is identified by the type checker.
 
 ```typescript
@@ -1620,9 +1650,11 @@ export default class MyNode extends Node {
 }
 ```
 
-(11) If your class has responsibilty for one or more fields in nested options, those fields should be omitted so that they cannot be provided by the caller. There are 2 patterns for accomplishing this.
+(11) If your class has responsibilty for one or more fields in nested options, those fields should be omitted so that
+they cannot be provided by the caller. There are 2 patterns for accomplishing this.
 
-The first pattern omits the fields from `SelfOptions`. Then, when the subcomponent is instantiated, `combineOptions` is used to add the options that are the responsibility of the class. 
+The first pattern omits the fields from `SelfOptions`. Then, when the subcomponent is instantiated, `combineOptions` is
+used to add the options that are the responsibility of the class.
 
 ```typescript
 type SelfOptions = {
@@ -1655,7 +1687,9 @@ export default class MyNode extends Node {
 }
 ```
 
-The second pattern adds options that are the responsibility of the class in the main `optionize` call. Note that this requires a less straighforward type definition. If you find that your type definition is getting unweildy, clever, or difficult to understand, then consider using the first pattern above.  
+The second pattern adds options that are the responsibility of the class in the main `optionize` call. Note that this
+requires a less straighforward type definition. If you find that your type definition is getting unweildy, clever, or
+difficult to understand, then consider using the first pattern above.
 
 ```typescript
 // Do not omit options here, so that we can provide defaults in the optionize call.
@@ -1691,9 +1725,13 @@ export default class MyNode extends Node {
 }
 ```
 
-(12) When applying a [mixin or trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait), defining options types gets a little more complicated. Options must be included for _both_ the mixin/trait _and_ the class that the mixin/trait is applied to. 
+(12) When applying
+a [mixin or trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
+, defining options types gets a little more complicated. Options must be included for _both_ the mixin/trait _and_ the
+class that the mixin/trait is applied to.
 
-In this example, trait `Voicing` with options `VoicingOptions` is applied to `Checkbox`. (The pattern is identical for mixins.)
+In this example, trait `Voicing` with options `VoicingOptions` is applied to `Checkbox`. (The pattern is identical for
+mixins.)
 
 ```typescript
 // Options that are specific to MyCheckbox go here.

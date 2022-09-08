@@ -213,9 +213,9 @@ graph LR
 ## 📖 Reference Documents
 
 Below is a list of documents that are helpful for reference. It's important to know that these exist. New developers
-should skim through them, then reference them as needed while developing code.  This list doesn't include *all*
-documents that might be useful, it's just a good list to start with.  If a new developer is looking for a document on
-a particular topic that is not listed below, https://github.com/phetsims/phet-info is a good place to start.  After
+should skim through them, then reference them as needed while developing code. This list doesn't include *all*
+documents that might be useful, it's just a good list to start with. If a new developer is looking for a document on
+a particular topic that is not listed below, https://github.com/phetsims/phet-info is a good place to start. After
 that, it's probably best to ask around.
 
 | Doc                                                                                                                 | Contents                                                                          |

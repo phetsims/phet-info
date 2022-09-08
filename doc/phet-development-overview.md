@@ -6,7 +6,9 @@ PhET Interactive Simulations creates free, open source educational simulations i
 at the PhET website. This document explains PhET’s libraries, practices and patterns for developing interactive
 simulations in HTML5. This document is also available
 at https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md. For discussion and feedback,
-please visit the [Developing Interactive Simulations in HTML5 Google Group](https://groups.google.com/g/developing-interactive-simulations-in-html5).
+please visit
+the [Developing Interactive Simulations in HTML5 Google Group](https://groups.google.com/g/developing-interactive-simulations-in-html5)
+.
 
 **[Overview](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#overview)**
 
@@ -63,7 +65,8 @@ please visit the [Developing Interactive Simulations in HTML5 Google Group](http
   https://git-scm.com/book/en/v2/Getting-Started-Installing-Git.
 * `node` and `npm` are necessary to install dependencies and run build code processes. Download & install node+npm
   from https://nodejs.org/en/
-    * After installing, run `npm config set save false` and `npm config set package-lock false` so that package-lock.json files are not created.
+    * After installing, run `npm config set save false` and `npm config set package-lock false` so that
+      package-lock.json files are not created.
 * Create a directory where you intend to check out the PhET source code: `mkdir phetsims`
 * For building the simulations, install the grunt command line utility: `npm install -g grunt-cli` (May require `sudo`
   if you don't have sufficient permissions).
@@ -326,6 +329,7 @@ for writing code and documentation:
 * We use ESLint to lint our code. See https://github.com/phetsims/chipper/blob/master/eslint/README.md.
 
 *
+
 An [IntelliJ IDEA formatting XML file](https://github.com/phetsims/phet-info/blob/master/ide/idea/phet-idea-codestyle.xml)
 to automatically format code. This is the ground truth for how PhET code should be formatted. Our example-sim also shows
 how to use our libraries idiomatically as well as a good example of code commenting + documentation.
@@ -342,11 +346,14 @@ System requirements: https://phet.colorado.edu/en/help-center/running-sims/gener
 ## Modularity with ES6 Modules
 
 The current iteration of PhET's simulation codebase uses native Javascript modules, which were introduced in ECMAScript
+
 6. For PhET specifically, default exports are only used (as opposed to named exports). ES6 Modules are used to support
-modularization of the JavaScript code. Information about ES6 Modules can be
-found [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). Examples of how it will be used by
-PhET can be seen in the [Example Simulation](https://github.com/phetsims/example-sim) (specifically the source files in
-the js directory).
+   modularization of the JavaScript code. Information about ES6 Modules can be
+   found [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). Examples of how it will be used
+   by
+   PhET can be seen in the [Example Simulation](https://github.com/phetsims/example-sim) (specifically the source files
+   in
+   the js directory).
 
 ## Layout
 

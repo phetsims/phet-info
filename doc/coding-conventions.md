@@ -263,7 +263,8 @@ generally meets PhET standards.
 
 - [ ] All classes, methods and properties are documented.
 
-- [ ] Documentation at the top of source-code files should provide an overview of purpose, responsibilies, and (where useful)
+- [ ] Documentation at the top of source-code files should provide an overview of purpose, responsibilies, and (where
+  useful)
   examples of API use. If the file contains a subclass definition, it should indicate what functionality it adds to the
   superclass.
 
@@ -550,6 +551,6 @@ visibility annotations are as follows:
     * Regex for property assignment like `x.y = something`: `[\w]+\.[\w]+\s=`
     * Regex for function declarations: `[\w]+: function\(`
 
-- [ ] For private fields, a preceding underscore should generally *not* be used in the variable name.  For example,
-for a private variable that represents the background, the name ```background``` is preferred over ```_background```. 
-An exception is when trying to avoid a collision with and ES5 getter/setter.
+- [ ] For private fields, a preceding underscore should generally *not* be used in the variable name. For example,
+  for a private variable that represents the background, the name ```background``` is preferred over ```_background```.
+  An exception is when trying to avoid a collision with and ES5 getter/setter.
