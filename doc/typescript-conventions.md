@@ -118,8 +118,9 @@ be discussed.
 
 ### Initialization of instance properties
 
-Instance properties can be initialized either where they are declared, or in the constructor. It is up to developer discretion, but please 
-try to be consistent, and adhere to the spirit of existing code.
+Instance properties can be initialized either where they are declared, or in the constructor, or as parameter properties 
+in the constructor parameters. It is up to developer discretion, but please try to be consistent, and adhere to the 
+spirit of existing code.
 
 ```ts
 // Initialized where declared
@@ -134,9 +135,17 @@ class EventCounter {
   public numberOfEvents: number;
 
   constructor( ... ) {
-    super(...);
+    super( ... );
     this.numberOfEvents = 0;
     // ...
+  }
+}
+
+// Initialized as parameter property in constructor
+class EventCounter {
+
+  constructor( public numberOfEvents = 0 ) {
+    super( ... );
   }
 }
 ```
