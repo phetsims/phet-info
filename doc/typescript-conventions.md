@@ -1,13 +1,14 @@
 ## TypeScript Conventions
 
 These are the conventions established for TypeScript use by PhET developers. This is an evolving document in an early
-phase. Please bring things up for discussion to add here as you identify new conventions.  Conventions enforced by lint or other tooling are not listed here.
+phase. Please bring things up for discussion to add here as you identify new conventions. Conventions enforced by lint
+or other tooling are not listed here.
 
 ### ESLint
 
 Many of PhET's TypeScript conventions are embodied in TypeScript-specific lint rules. We use the `@typescript-eslint`
 plugin to add these rules. Please see [.eslintrc](https://github.com/phetsims/chipper/blob/master/eslint/.eslintrc.js)
-for details and context about conventions based on lint rules. 
+for details and context about conventions based on lint rules.
 
 ### Leveraging Type Inference
 
@@ -18,8 +19,8 @@ From _Effective TypeScript_ (Dan Vanderkam), page 87, Item 19, "Avoid Cluttering
 * Consider using explicit annotations for object literals and function return types even when they can be inferred. This
   will help prevent implementation errors from surfacing in user code.
 
-It is PhET convention to provide return types when declaring methods and functions.  This includes explicitly specifying
-`void` for everything that is a method and/or part of a public API. 
+It is PhET convention to provide return types when declaring methods and functions. This includes explicitly specifying
+`void` for everything that is a method and/or part of a public API.
 (Arrow functions as args are up to dev discretion.)
 
 TypeScript has a powerful type inference system, and we recommend to leverage that type inference in the general case.
@@ -59,11 +60,13 @@ Again, in complex or volatile cases, at the developer preference, the redundant 
 
 * String literal unions are idiomatic in TypeScript.
 * You can also use the string[] `as const` pattern for accessing string union literals and values at runtime.  
-This works well with `StringEnumerationProperty`.
-* `EnumerationValue` adds rich methods on the instances.  Use `EnumerationProperty` for this.
-* Careful!  If you change from string literal union to `EnumerationValue`, the casing convention is different and you will
-break the PhET-iO API.
-* Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderEnumerationPatterns.ts for details and examples.
+  This works well with `StringEnumerationProperty`.
+* `EnumerationValue` adds rich methods on the instances. Use `EnumerationProperty` for this.
+* Careful!  If you change from string literal union to `EnumerationValue`, the casing convention is different and you
+  will
+  break the PhET-iO API.
+* Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderEnumerationPatterns.ts for details and
+  examples.
 
 ### Parameters should be as general as possible
 
@@ -76,14 +79,17 @@ function computeHabitat( dog:Dog ){
   lookup( dog.name );
 }
 ```
+
 Since the `computeHabitat` method doesn't call `bark`, it may be rewritten to accept `computeHabitat( animal: Animal )`.
 
-However, something that has to be PhET-iO instrumented should use `Property` instead of `TProperty` even if the additional 
-`Property` methods are not exercised.  This will help clients know that it must be a fully-instrumentable axon Property.
+However, something that has to be PhET-iO instrumented should use `Property` instead of `TProperty` even if the
+additional
+`Property` methods are not exercised. This will help clients know that it must be a fully-instrumentable axon Property.
 
 ### Prefer TReadOnlyProperty to DerivedProperty for type annotations.
 
-Prefer `TReadOnlyProperty` to `DerivedProperty` for type declarations, see https://github.com/phetsims/build-a-nucleus/issues/13
+Prefer `TReadOnlyProperty` to `DerivedProperty` for type declarations,
+see https://github.com/phetsims/build-a-nucleus/issues/13
 
 ```ts
 class HalfLifeInformationNode extends Node {
@@ -106,20 +112,22 @@ class HalfLifeInformationNode extends Node {
 
 ### Options
 
-See https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-typescript and 
+See https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-typescript and
 https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts.
 
 #### Use `optionize` instead of `merge`
 
-In the vast majority of cases, `optionize` should be used instead of `merge`. This provided extra type information on top
-of the implementation of merge. While there are still some cases where `merge` is in TypeScript code, it is the exception
+In the vast majority of cases, `optionize` should be used instead of `merge`. This provided extra type information on
+top
+of the implementation of merge. While there are still some cases where `merge` is in TypeScript code, it is the
+exception
 and not the rule. Please bring any potential new `merge` usage in TypeScript to the attention of the devs so that it can
 be discussed.
 
 ### Initialization of instance properties
 
-Instance properties can be initialized either where they are declared, or in the constructor, or as parameter properties 
-in the constructor parameters. It is up to developer discretion, but please try to be consistent, and adhere to the 
+Instance properties can be initialized either where they are declared, or in the constructor, or as parameter properties
+in the constructor parameters. It is up to developer discretion, but please try to be consistent, and adhere to the
 spirit of existing code.
 
 ```ts
@@ -152,8 +160,9 @@ class EventCounter {
 
 #### Statics (class properties)
 
-One-line static properties will likely be better and clearer when grouped with the instance properties declared 
-at the top of a class. That said, it is developer preference whether to group them or put them at the bottom of the class definition:
+One-line static properties will likely be better and clearer when grouped with the instance properties declared
+at the top of a class. That said, it is developer preference whether to group them or put them at the bottom of the
+class definition:
 
 ```ts
 class Person {
@@ -178,7 +187,6 @@ class Person {
   ];
 }
 ```
-
 
 #### Documentation
 
@@ -215,8 +223,8 @@ class Person {
 }
 ```
 
-The same documentation pattern applies to options. Documentation should generally be placed at the declaration, but 
-explanation for defaults should be described where the default values are assigned. 
+The same documentation pattern applies to options. Documentation should generally be placed at the declaration, but
+explanation for defaults should be described where the default values are assigned.
 
 ### Multiple Exports
 
@@ -268,7 +276,7 @@ If this exceeds the line limit and the WebStorm formatter wants to format it on 
 
 In general, assertions should be used to check run-time conditions that can't be validated by the type checker.
 
-When converting from JS to TS, `assert` statements that checked types can and should be removed. 
+When converting from JS to TS, `assert` statements that checked types can and should be removed.
 
 ### JSDoc and TSDoc
 
