@@ -88,7 +88,7 @@ Examples of simulations that use `DragListener.createForwardingListener` (recomm
 Examples of simulations that use `SimpleDragHandler.createForwardingListener` (similar to recommended pattern)
 
 * Capacitor Lab Basics (Voltmeter)
-* Fluid Pressure and Flow (sensors, barmometer)
+* Fluid Pressure and Flow (sensors, barometer)
 * Masses and Springs (Ruler and timer)
 
 Deprecated solutions to this same problem:
@@ -518,7 +518,7 @@ For recent examples, see the following:
 * SUN/AccessibleValueHandler
 
 Mixins and traits cannot mutate the constructor signature, and also cannot have private or protected members. This is
-due to the implemention which creates an anonymous class that dynamically extends the provided Type. For private
+due to the implementation which creates an anonymous class that dynamically extends the provided Type. For private
 members, name them prefixed with an underscore (`_myPrivateProperty`). The constructor signature should just pass
 up an `args` param using the spread operator:
 
@@ -682,7 +682,7 @@ To support any size model coordinate system and have it sized correctly in the v
 systems and the ability to transform between the two.
 
 Since the majority of our simulations take place in a 2-dimensional coordinate frame, we often use
-ModelViewTransform2.js to achive these tranformations. It allows you to create an instance of a transform that suits
+ModelViewTransform2.js to achieve these transformations. It allows you to create an instance of a transform that suits
 your scaling, translational, and rotational specifications - and then you can call methods on that instance to switch
 between coordinate systems. Here's an example of what a `modelViewTransform` instantiation could look like in the view.
 It's the most typical case where you're positioning Nodes relative to the ScreenView's coordinate frame:
@@ -718,8 +718,8 @@ If positions and dimensions are not important to the model, then it's likely not
 transform, but instead develop a sim only in view coordinates. Function Builder and Circuit Construction Kit are a
 couple examples of sims that do not use model-view transforms.
 
-It's also important to know about the different coordinate frames in a scene graph. For Scenery specfically, that means
-understanding the difference betweeen local, parent, and global coordinate frames. That's beyond the scope of this
+It's also important to know about the different coordinate frames in a scene graph. For Scenery specifically, that means
+understanding the difference between local, parent, and global coordinate frames. That's beyond the scope of this
 section, see Node.js for details. For a simple introduction to some of the methods that Node has for transforming
 between its coordinate systems, see https://github.com/phetsims/phet-info/issues/133.
 
@@ -900,7 +900,7 @@ called its value. Observers are notified when its value is set to a different va
 the `link` and `lazyLink` methods and remove listeners through the `unlink` method.
 
 In general, with PhET simulation code, it is encouraged to use the many subtypes of Property, which depend on the type
-of its internal value (ie. the values of `NumberProperty` are numbers). Some other common sub-types that are used
+of its internal value (i.e. the values of `NumberProperty` are numbers). Some other common sub-types that are used
 are `StringProperty`, `BooleanProperty`, `Vector2Property`, etc.
 
 ##### Role in MVC
@@ -1269,7 +1269,7 @@ Author: @pixelzoom
 **Disclaimer**: The description of this pattern is not complete -- it’s a start. The examples are terse, and significant
 familiarity with `optionize` is needed to get the most out of the examples.
 
-Similar to the pattern decribed
+Similar to the pattern described
 in [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config-javascript)
 , this pattern is used to parameterize methods (most typically constructors) without having a large number of method
 parameters. It provides the
@@ -1650,7 +1650,7 @@ export default class MyNode extends Node {
 }
 ```
 
-(11) If your class has responsibilty for one or more fields in nested options, those fields should be omitted so that
+(11) If your class has responsibility for one or more fields in nested options, those fields should be omitted so that
 they cannot be provided by the caller. There are 2 patterns for accomplishing this.
 
 The first pattern omits the fields from `SelfOptions`. Then, when the subcomponent is instantiated, `combineOptions` is
@@ -1688,7 +1688,7 @@ export default class MyNode extends Node {
 ```
 
 The second pattern adds options that are the responsibility of the class in the main `optionize` call. Note that this
-requires a less straighforward type definition. If you find that your type definition is getting unweildy, clever, or
+requires a less straightforward type definition. If you find that your type definition is getting unwieldy, clever, or
 difficult to understand, then consider using the first pattern above.
 
 ```typescript
@@ -1914,7 +1914,7 @@ approach. One method is to use the pattern described in
 "Design Patterns: Elements of Reusable Object-Oriented Software", where each state of the state machine is represented
 by an instance of an abstract "state" base class, and the methods defined in this base class specify all of the stimuli
 that can be received by the state machine. A transition from one state to another is done by switching the instance of
-of the state from one of these subclasses to another. This was the approach taken in the Build an Atom game (and several
+the state from one of these subclasses to another. This was the approach taken in the Build an Atom game (and several
 other game implementations), and the base class for all states can be seen
 at [BAAGameState.js] (https://github.com/phetsims/build-an-atom/blob/master/js/game/model/BAAGameState.js).
 
@@ -2108,4 +2108,3 @@ the name of the base class for the strategy followed by the name of the simulati
 ## Trait
 
 see [Mixin and Trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
-
