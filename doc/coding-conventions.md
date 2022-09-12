@@ -263,7 +263,7 @@ generally meets PhET standards.
 
 - [ ] All classes, methods and properties are documented.
 
-- [ ] Documentation at the top of source-code files should provide an overview of purpose, responsibilies, and (where
+- [ ] Documentation at the top of source-code files should provide an overview of purpose, responsibilities, and (where
   useful)
   examples of API use. If the file contains a subclass definition, it should indicate what functionality it adds to the
   superclass.
@@ -289,13 +289,13 @@ generally meets PhET standards.
   const targetConfiguration = this.getTargetConfiguration( crystal );
   ```
 
-- [ ] When documenting conditionals (if/else statements), follow these guidlines:
+- [ ] When documenting conditionals (if/else statements), follow these guidelines:
 
-    1. Comments above the first `if` in a conditional should be about the entire conditional, not just the if block.
-    2. Comments should not break up sections of the conditional.
-    3. If a comment is needed to describe a single block of the conditional, then add that comment just inside the
-       block (no space between the `if`/`else if`/`else` and the comment), with a space below it as to not be confused
-       with a comment about logic below.
+  1. Comments above the first `if` in a conditional should be about the entire conditional, not just the if block.
+  2. Comments should not break up sections of the conditional.
+  3. If a comment is needed to describe a single block of the conditional, then add that comment just inside the
+     block (no space between the `if`/`else if`/`else` and the comment), with a space below it as to not be confused
+     with a comment about logic below.
 
     ```js
 

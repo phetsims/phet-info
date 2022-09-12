@@ -103,7 +103,7 @@ Sims can be run with various query parameters. Query parameters are by default "
 shared outside of PhET. Public-facing query parameters must be explicitly designated by including `public: true`
 in their schema.
 
-Chipper's [initialize-globals.js](https://github.com/phetsims/chipper/blob/master/js/initialize-globals.js) constains
+Chipper's [initialize-globals.js](https://github.com/phetsims/chipper/blob/master/js/initialize-globals.js) contains
 general global query parameters (preloaded). Two examples of commonly used query params are:
 
 - `fuzz`, used for testing a sim with random inputs
