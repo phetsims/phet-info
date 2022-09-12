@@ -28,7 +28,7 @@
 
 ## Prerequisites
 
-* Before reading this documentation, please see scenery's accessibility-related documention
+* Before reading this documentation, please see scenery's accessibility-related documentation
   at `/scenery/doc/accessibility/accessibility.html`. This includes an overview of web accessibility key features
   required for Interactive Description implementation.
 * Note: "a11y" is a synonym for "accessibility".
@@ -154,7 +154,7 @@ generated manually with `grunt generate-a11y-view-html` in the sim repo.
 
 ### Populating the PDOM
 
-The first thing to do is to create the PDOM content for the simulation. This are often referred to as "state
+The first thing to do is to create the PDOM content for the simulation. This is often referred to as "state
 description". In general, the process looks like this:
 
 * Understand the design for your work
@@ -216,7 +216,7 @@ If `setPDOMOrder` is needed on Nodes that are not descendants, then likely there
 addressed fully, rather than hacked at by using `Node.setPDOMOrder`. Although the setter will accept any `Node` in the
 scene graph, it is not the cleanest practice.
 
-NOTE: This list was created with a mindset of instrumenting a simulation with Interacitve Description. If a new sim is
+NOTE: This list was created with a mindset of instrumenting a simulation with Interactive Description. If a new sim is
 being created, then this list could be irrelevant because the design process from the beginning will be focused on this
 feature and visual sim development together.
 
@@ -280,7 +280,7 @@ To implement interactive description with best practices . . .
       not exist on screen, other labeling options can be considered.
     * `aria-label`: is an aria attribute that can provide an accessible name.
     * `aria-labelledby`: aria-labelledby can be used to associate an HTML element other than the label element to
-      another element. The elements do not have to be right beside eachother. In a PhET Sim one might want to associate
+      another element. The elements do not have to be right beside each other. In a PhET Sim one might want to associate
       a heading element with a region or group. For example, an H2 heading is associated with the Play Area region
       through an `aria-labelledby` attribute. With this association the H2's content, "Play Area", provides the region
       with an accessible name in the _Accessibility Tree_ which is accessed by assistive technology.
@@ -347,7 +347,7 @@ It is best practice to never call to an UtteranceQueue from a Describer file. Th
 should be doing. Instead, Describer types just return strings that can then be used for alerts in UtteranceQueue
 instances.
 
-In general, Describer types need a fair bit of information from the model, and sometime the view-state to fill in
+In general, Describer types need a fair bit of information from the model, and sometimes the view-state to fill in
 description. It is cleanest to pass as much information into the constructor, limiting the number of arguments needed
 for individual functions. See https://github.com/phetsims/ratio-and-proportion/issues/334.
 
