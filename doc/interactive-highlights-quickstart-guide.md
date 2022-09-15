@@ -58,3 +58,9 @@ myNode.interactiveHighlight = new FocusHighlightPath( interactiveHighlightShape 
 ```
 
 See InteractiveHighlighting.ts for more documentation.
+
+## Potential Pitfalls
+
+Try to use default highlights or FocusHighlightFromNode.ts if possible. These will manage styling
+and repositioning for you. If you use a more custom highlight Node, it is your responsibility to
+reposition the highlight if the Node it surrounds resizes or moves.
