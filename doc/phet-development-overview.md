@@ -48,8 +48,6 @@ the [Developing Interactive Simulations in HTML5 Google Group](https://groups.go
 
 **[Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)**
 
-**[Performance Optimization](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#performance-optimization)**
-
 **[Working with GitHub Issues](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#working-with-github-issues)**
 
 **[Embedding a Simulation in Your Website](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#embedding-a-simulation-in-your-website)**
