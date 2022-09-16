@@ -40,6 +40,8 @@ For non-`LayoutBox` classes, it is recommended to explicitly set `this.pdomOrder
 on the default ordering - it’s better to decouple rendering order and traversal order by explicitly
 setting `this.pdomOrder`. Note that most of the work here is typically in `ScreenView` subclasses.
 
+If you need to remove a Node from the traversal order you can do so with the `focusable` option of Node.
+
 For `ScreenView`, `this.pdomOrder` cannot be set directly. There are two approaches you can use to specify traversal
 order at the ScreenView level. Check with your sim designer to see which approach is appropriate.
 
@@ -64,6 +66,8 @@ const screenViewRootNode = new Node( {
 screenViewRootNode.pdomOrder = [...]; // decouple traversal order from rendering order
 this.addChild( screenViewRootNode );
 ```
+
+See `ParallelDOM.setPDOMOrder` for more advanced features of this setter if needed.
 
 If you need to augment `this.pdomOrder` in a subclass, read about the pitfalls
 in https://github.com/phetsims/scenery/issues/1308.
