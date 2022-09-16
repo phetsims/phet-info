@@ -69,7 +69,7 @@ this.addChild( screenViewRootNode );
 
 See `ParallelDOM.setPDOMOrder` for more advanced features of this setter if needed.
 
-Potential gothcas:
+Potential gotchas:
 * `ParallelDOM.setPDOMOrder` has some interesting quirks, so be sure to read the documentation closely. Of special interest is the behavior or `null` in the pdomOrder, and what happens to any focuable Nodes that are not explicitly included when setting pdomOrder.
 * If you need to augment `this.pdomOrder` in a subclass, read about the pitfalls
 in https://github.com/phetsims/scenery/issues/1308.
