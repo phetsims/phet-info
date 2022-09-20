@@ -33,10 +33,10 @@ Traversal order is the order in which Nodes are visited as you press the Tab key
 the `pdomOrder` option to Node. If `pdomOrder` is not specified, the default is the order in which children are added to
 a Node.
 
-For `LayoutBox` (and its subclasses) there is no need to specify traversal order. There is a good match between layout
-order and traversal order; they are typically the same. So for `LayoutBox`, you can do nothing.
+For `FlowBox` (and its subclasses) there is no need to specify traversal order. There is a good match between layout
+order and traversal order; they are typically the same. So for `FlowBox`, you can do nothing.
 
-For non-`LayoutBox` classes, it is recommended to explicitly set `this.pdomOrder` at the end of constructor. Do not rely
+For non-`FlowBox` classes, it is recommended to explicitly set `this.pdomOrder` at the end of constructor. Do not rely
 on the default ordering - it’s better to decouple rendering order and traversal order by explicitly
 setting `this.pdomOrder`. Note that most of the work here is typically in `ScreenView` subclasses.
 
