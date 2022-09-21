@@ -210,7 +210,7 @@ graph LR
 
  <a id='reference-docs'>
 
-## Project Management
+## 👷‍♀ Project Management
 
 PhET has a very flat management structure, and the development team works directly with the director of PhET (Kathy P)
 to set and track goals. The goals are driven largely by the grants that fund the work that we do and by the needs of the
