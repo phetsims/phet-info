@@ -210,6 +210,42 @@ graph LR
 
  <a id='reference-docs'>
 
+## Project Management
+
+PhET has a very flat management structure, and the development team works directly with the director of PhET (Kathy P)
+to set and track goals. The goals are driven largely by the grants that fund the work that we do and by the needs of the
+simulation users. We have meetings each quarter to set the goals for the upcoming quarter and the review the progress of
+goals for the previous quarter. The project board where this information is maintained can be found at
+https://github.com/orgs/phetsims/projects/41/views/33.
+
+The development group also meets weekly, and Kathy attends those meetings as well. Each week we first discuss items that
+were added to the agenda during the week, then work through open issues that are on the project board. The agenda and
+history for this meeting can be found at
+https://docs.google.com/document/d/1bAPEP1iUxQRuCSLHkrwjAH-948kB-sBN3hCC54g-8dc/edit. (We update this document every
+year, so if this link is out of date, please fix it!). Any developer can add an agenda item at any time prior to the
+start of the meeting. The project board with the issues that are up for discussion can be found
+at https://github.com/orgs/phetsims/projects/35. Developers can and should add GitHub issues to the project board that
+they feel need to be discussed by the group. We generally try to move through the discussion of each issue fairly
+quickly, and assign them to subgroups of developers who can finish the necessary work to address an issue.
+
+As a developer, much of your moment-to-moment activity will be driven by the GitHub issues to which you are assigned. We
+tend to use GitHub issues quite a bit as a means to track what needs to be done, and also to keep a record of what was
+done, when, who did it, and what the motivation was. GitHub issues can be assigned priority levels, which can help in
+prioritizing your day-to-day work. There are a number of other labels for issues that are PhET-specific, and it will
+take some time to get familiar with them all, but you can take a quick look at them [here]
+(https://github.com/phetsims/phet-info/blob/master/github-labels/github-labels) to get started (you can ignore the hex
+values - they represent to color of the label when it appears on an issue).
+
+One of the tricky things about using GitHub issues to manage the work that the developers do is how widely variable the
+scope of an issue can be. People create issues that can be knocked out in a half hour as well as ones that would take
+several months of focused effort. One of the labels that we try to use to help manage this situation is the `type:epic`
+label. An epic is an issue that is more of a project than a clear and finite task, and is likely to involve multiple
+people, and will have "sub- issues" created for the individual tasks that will go into completing the "epic".
+
+PhET's approach and systems for project management are constantly evolving, especially as PhET continues to grow. All
+developers should feel free to suggest improvements to our management process. Also, please update this section of the
+onboarding document if you find that anything you've read here is no longer accurate or pertinent.
+
 ## 📖 Reference Documents
 
 Below is a list of documents that are helpful for reference. It's important to know that these exist. New developers
