@@ -36,7 +36,7 @@ during the process.
 
 ## 📝 Administrative Setup
 
-In your first few days there are many configuration and setups steps that need to be completed in order to become a CU
+In your first few days there are many configuration and setup steps that need to be completed in order to become a CU
 and PhET employee. Check-in with the PhET Business Manager for a complete list of HR needs. The list below is not
 comprehensive and is specific towards a PhET Developer's needs.
 
@@ -46,8 +46,8 @@ comprehensive and is specific towards a PhET Developer's needs.
   will allow you to push code to sim repos and common code repos.
 - Set up a Slack account and join the phetsims workspace (you should receive an invite to join). From here, join the
   #general, #dev-public, #developer, and #continuous-testing channel.
-    - Be sure to set notifications in #continuous-testing to "All messages". Also, check with your mentor about any
-      other relevant channels to join.
+    - Be sure to set notifications in #continuous-testing to "All messages".
+    - Check with your mentor about any other relevant channels to join.
     - If you're not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on
       how to use it.
 
@@ -62,7 +62,7 @@ Itching to dig into the code? The following are the steps needed in order to sta
   section of the PhET Development Overview doc.
     - Install some command line programs
     - Get a copy of phet repos
-    - Try out running a sim locally on your machine.
+    - Try running a sim locally on your machine
 - Set up an IDE so you can start writing code.
     - Most developers use Webstorm or IntelliJ IDEA, recommended instructions can be found in
       the [IDE setup document](https://github.com/phetsims/phet-info/blob/master/ide/idea/setup.md).
@@ -77,14 +77,13 @@ Itching to dig into the code? The following are the steps needed in order to sta
 
 ## 🐣 Introductory Development
 
-The PhET team has developed workflows that make working in the codebase fun and productive. Although we encourage you to find your own development style, the following recommendations have been refined after years of dev team conversations and experiences.
+The PhET team has developed systems that make working in the codebase fun and productive. Although we encourage you to find your own development style, the following recommendations have been refined after years of development team conversations and experiences.
 
 ### Pull & Push Routines
 
-You may be surprised to find that PhET developers work off of, commit, and push to the master branch. There are many reasons for this workflow, which is beyond the scope of this document. 
-
-Working off of master does require specific routines in pull, push, and commit:
-- Pull code from all repos every morning.
+You may be surprised to find that PhET developers work off of, commit, and push to the master branch. The reasons for this this workflow are beyond the scope of this document. However, working off of master does require specific routines in pull, push, and commit behaviors.
+  
+- Pull code from all repos, every morning.
   - Recommended to use the pull-all.sh script in perennial
   - Continue to pull frequently throughout the day
 - Do not commit broken code.
@@ -99,8 +98,8 @@ During environment setup, you installed git hooks to prevent committing lint, ts
 
 - Run the script `chipper/js/scripts/precommit-hook-multi.js` intermittently during development to avoid surprises when you commit.
   - Results are cached for efficiency and will only run on repos with working copy changes.
-- Set `chipper/js/scripts/precommit-hook-multi.js` as an External Tool in WebStorm/ IntelliJ
-  - You can bind it to a key command for ease-of-use.
+- Set `chipper/js/scripts/precommit-hook-multi.js` as an [External Tool](https://www.jetbrains.com/help/idea/settings-tools-external-tools.html) in WebStorm/ IntelliJ.
+  - You can bind external tools to a key command for ease-of-use.
 
 
 ### Debugging
@@ -108,17 +107,17 @@ During environment setup, you installed git hooks to prevent committing lint, ts
 - Console.log
   - A favorite amongst javascript developers, console.log allows you to log values to the console, which can help devs take a peek into what is happening in the code at run time.
 - Debugger
-  - You can use the `debugger` keyword in code to set a breakpoint that allows you to explore code in a paused state in a console.
+  - You can insert the `debugger` keyword in code to set a breakpoint that allows you to explore code in a paused state in a console.
 - [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
-  - Chrome Dev Tools provides powerful features for debugging and examining code.
-  - Most developers on the team use Chrome for development and then test for performance and bugs on other browsers. If you have a different preference do not feel obligated to use Chrome.
-  - A [handy tutorial](https://developer.chrome.com/docs/devtools/javascript/) for debugging Javascript in Chrome Dev Tools.
+  - Chrome Dev Tools is built into the Chrome browser and provides a set of powerful web development tools for debugging and examining code.
+  - Most developers on the team use Chrome for development and test for performance and bugs on other browsers. If you have a different preference do not feel obligated to use Chrome.
+  - This is a [handy tutorial](https://developer.chrome.com/docs/devtools/javascript/) for debugging Javascript in Chrome Dev Tools.
 - Helper Tool
   - The Helper tool will display information about PhET components, helping devs navigate and implement the internal code.
   - How to use:
-    - Load a common code repo (ex. Sun).
+    - Load a sim or common code repo
     - Press `Ctrl+Shift+H` (The helper tool box will appear)
-    - Click on the component you want to know more about. 
+    - Click on the component you want to know more about
 
 
 ### Phetmarks
@@ -141,26 +140,25 @@ Most of your work will be done in the `js` directory of a repo. If you are curio
 
 Sims can be run with various query parameters. Query parameters are by default "for internal use only" and should not be
 shared outside of PhET. Public-facing query parameters must be explicitly designated by including `public: true`
-in their schema.
-
-Chipper's [initialize-globals.js](https://github.com/phetsims/chipper/blob/master/js/initialize-globals.js) contains general global query parameters (preloaded). Two examples of commonly used query params are:
-
+in their schema. Chipper's [initialize-globals.js](https://github.com/phetsims/chipper/blob/master/js/initialize-globals.js) contains general global query parameters (preloaded).
+   
+Two examples of commonly used query params are:
 - `fuzz`, used for testing a sim with random inputs
-- `dev`, used for showing the dev bounds of a sim, are two examples from initialize-globals.js that are commonly used.
+- `dev`, used for showing the dev bounds of a sim
 
 ### Automated Testing
 
 PhET has a "Continuous Test" server that regularly pulls the latest code for all repositories, builds them, and
-executes "fuzz testing" (random mouse and touch inputs), and reports whether each of these sub-tests succeeded. The
+executes "[fuzz testing](https://en.wikipedia.org/wiki/Fuzzing)", and reports whether each of these sub-tests succeeded. The
 latest report can be found at
 https://bayes.colorado.edu/continuous-testing/aqua/html/continuous-report.html.
 
-The repository in which the code that implements the test server is called [aqua](https://github.com/phetsims/aqua).
-This code can also be run locally, which is useful when trying to verify common code changes.
+The repository that implements the test server is called [aqua](https://github.com/phetsims/aqua).
+You can run Aqua locally, which is useful when trying to verify common code changes.
 
-PhET has a Slack channel called "continuous-test" which is used by the server to notify developers when some major
+PhET has a Slack channel called "continuous-testing" which is used by the server to notify developers when some major
 status change occurs for the continuous testing process. For example, if a lint error ends up in the code base, the
-server will send a message on this Slack channel.
+server will send a message to this Slack channel.
 
 - #### QUnit
 
@@ -168,7 +166,7 @@ Unit testing at PhET is done through [QUnit](https://qunitjs.com/). Although mos
 in, developers are encouraged to use unit testing as feels necessary for your development workflow. Most unit tests
 exist in common-code repos and these tests are run as part of pre-commit hooks and continuous testing.
 
-To run QUnit tests navigate to the repo in question in PhETmarks and click on Unit Tests (Unbuilt). Running the tests in
+To run QUnit tests, navigate to the repo in question in phetmarks and click on Unit Tests (Unbuilt). Running the tests in
 the browser provides better error reporting, and debugging tools.
 
 ### Typescript
@@ -185,7 +183,7 @@ while if not indefinitely. New developers should be prepared to encounter a mix 
 codebase, and may even be asked to fix or extend simulations that are written in JavaScript.
 
 Also, the standards for TypeScript evolved quite a bit while the migration was in progress. It is therefore possible
-that developers could encounter code that is written in TypeScript, but doesn't fully adhere to the current standards.
+that you encounter code that is written in TypeScript, but doesn't fully adhere to the current standards.
 For this reason, always double check that any code that is being leveraged for a new sim meets the current standards.
 Also, be prepared to fix up code that *doesn't* meet those standards. For a bit more information on the history of this,
 and on some specific things that changed during PhET's TypeScript evolution, please see
@@ -193,13 +191,11 @@ https://github.com/phetsims/chipper/issues/1281.
 
 #### TSC
 
-When you begin working in Typescript files you might hear a lot about tsc (Typescript Compiler):
+When you begin working in Typescript files, you might hear a lot about tsc (Typescript Compiler):
 
 - tsc runs a type checker that will output type errors in our code. This type checking is already included in pre-commit
   hooks, but many developers enjoy having a tool where they can check for type errors outside of pre-commit hooks.
-- The recommended method for running tsc is through our
-  script [absolute-tsc.js](https://github.com/phetsims/chipper/blob/master/js/scripts/absolute-tsc.js). Documentation
-  for how to run absolute-tsc from the command line, or as an external tool in Webstorm can be found at the top of the
+- The recommended method for running tsc is through the script [absolute-tsc.js](https://github.com/phetsims/chipper/blob/master/js/scripts/absolute-tsc.js). Documentation for how to run absolute-tsc from the command line, or as an external tool in Webstorm can be found at the top of the
   file.
 - The [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) is a great resource for diving into
   Typescript. You can also find PhET specific Typescript Conventions in the [Reference Documents](#reference-docs)
@@ -208,17 +204,14 @@ When you begin working in Typescript files you might hear a lot about tsc (Types
 ### Publishing a Sim
 
 Once you're working on a sim, you will eventually want to publish a dev version to show your latest progress. See
-[Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development)
-and ask a senior dev to help add your identikey to PhET's servers.
+[Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development), and ask a senior dev to help add your identikey to PhET's servers.
 
 
 <a id='roadmap'>
 
 ## 🚗 Sample Roadmap
 
-Once your [machine is configured](#env-setup) to start sim development, you can start learning about the patterns that
-PhET uses when writing code. The flowchart below provides just one example of how you may choose to structure your
-learning and growth here at PhET. We recommend checking in with your mentor to customize your roadmap according to your
+You've made it so far already! After all this reading you may be wondering where to go next. The flowchart below provides just one example of how you may choose to structure your learning and growth here at PhET. We recommend checking in with your mentor to customize your roadmap according to your
 needs and experiences.
 
 
@@ -245,39 +238,25 @@ graph LR
 
 ## 👷‍♀ Project Management
 
-PhET has a very flat management structure, and the development team works directly with the director of PhET (Kathy P)
-to set and track goals. The goals are driven largely by the grants that fund the work that we do and by the needs of the
-simulation users. We have meetings each quarter to set the goals for the upcoming quarter and the review the progress of
-goals for the previous quarter. The project board where this information is maintained can be found at
-https://github.com/orgs/phetsims/projects/41/views/33.
+PhET's approach and systems for project management are constantly evolving, especially as PhET continues to grow. Currently we have a very flat management structure, and the development team works directly with the director of PhET to set and track goals. All developers should feel free to suggest improvements to the project management process. Also, please update this section of the onboarding document if you find that anything you read here is no longer accurate or pertinent.
 
-The development group also meets weekly, and Kathy attends those meetings as well. Each week we first discuss items that
-were added to the agenda during the week, then work through open issues that are on the project board. The agenda and
-history for this meeting can be found at
-https://docs.google.com/document/d/1bAPEP1iUxQRuCSLHkrwjAH-948kB-sBN3hCC54g-8dc/edit. (We update this document every
-year, so if this link is out of date, please fix it!). Any developer can add an agenda item at any time prior to the
-start of the meeting. The project board with the issues that are up for discussion can be found
-at https://github.com/orgs/phetsims/projects/35. Developers can and should add GitHub issues to the project board that
-they feel need to be discussed by the group. We generally try to move through the discussion of each issue fairly
-quickly, and assign them to subgroups of developers who can finish the necessary work to address an issue.
+### Quarterly Goals
+Each quarter we have meetings to discuss and set the goals for the upcoming quarter and review the progress of goals from the previous quarter. The goals are driven largely by the grants that fund the work that we do and by the needs of the simulation users. A [project board](https://github.com/orgs/phetsims/projects/41/views/33) is used to track and maintain this information.
 
-As a developer, much of your moment-to-moment activity will be driven by the GitHub issues to which you are assigned. We
-tend to use GitHub issues quite a bit as a means to track what needs to be done, and also to keep a record of what was
-done, when, who did it, and what the motivation was. GitHub issues can be assigned priority levels, which can help in
-prioritizing your day-to-day work. There are a number of other labels for issues that are PhET-specific, and it will
-take some time to get familiar with them all, but you can take a quick look at them [here]
-(https://github.com/phetsims/phet-info/blob/master/github-labels/github-labels) to get started (you can ignore the hex
-values - they represent to color of the label when it appears on an issue).
+### Weekly Meetings 
+The development group meets weekly with the director of PhET to discuss items that are added to the agenda, and to work through open issues that are on the project board.
+  
+The agenda and history for this meeting can be found in this [google doc](https://docs.google.com/document/d/1bAPEP1iUxQRuCSLHkrwjAH-948kB-sBN3hCC54g-8dc/edit) (We update this document every year, so if this link is out of date, please fix it!). Any developer can add an agenda item at any time prior to the start of the meeting.
+ 
+Developers are also encouraged to add GitHub issues to the [project board](https://github.com/orgs/phetsims/projects/35) that they feel need to be discussed by the group. Our goal is to move through issue discussions quickly, and assign each issue to a subgroup of developers who can finish the necessary work.
 
-One of the tricky things about using GitHub issues to manage the work that the developers do is how widely variable the
-scope of an issue can be. People create issues that can be knocked out in a half hour as well as ones that would take
-several months of focused effort. One of the labels that we try to use to help manage this situation is the `type:epic`
-label. An epic is an issue that is more of a project than a clear and finite task, and is likely to involve multiple
-people, and will have "sub- issues" created for the individual tasks that will go into completing the "epic".
+### Github Issues
+As a developer, much of your moment-to-moment activity will be driven by the GitHub issues to which you are assigned. We use GitHub issues to track action items, and to keep a record of what was done, when, by whom, and the motivation / discussion surrounding the task.
 
-PhET's approach and systems for project management are constantly evolving, especially as PhET continues to grow. All
-developers should feel free to suggest improvements to our management process. Also, please update this section of the
-onboarding document if you find that anything you've read here is no longer accurate or pertinent.
+GitHub issues can be assigned priority levels, which can help in organizing your day-to-day work. There are a number of other labels for issues that are PhET-specific, and it will take some time to familiarize yourself with them all. You can take a quick look at the availabe issue labels [here](https://github.com/phetsims/phet-info/blob/master/github-labels/github-labels) (the hex
+values represent the color of the label when it appears on an issue).
+
+One of the tricky things about using GitHub issues to manage work is how widely variable the scope of an issue can be. People create issues that can be knocked out in half an hour, as well as issues that would take several months of focused effort to complete. One of the labels that we try to use to help manage this situation is the `type:epic` label. An epic is an issue that is more of a project than a clear and finite task. This type of issue is likely to involve multiple people, and will have "sub- issues" created for the individual tasks that will go into completing the "epic".
 
 <a id='reference-docs'>  
   
