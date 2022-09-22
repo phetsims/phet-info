@@ -14,6 +14,7 @@ apps, the desktop app, and the translation utility. These will not be covered in
 - [Dev Environment Setup](#env-setup)
 - [Ramping Up](#ramping-up)
 - [Sample Roadmap](#roadmap)
+- [Project Management](#project-management)
 - [Reference Documents](#reference-docs)
 
 <a id="intro">
@@ -207,8 +208,8 @@ graph LR
   C2-->C2.1(Module Design Pattern) & C2.2(<a href='https://github.com/phetsims/phet-info/blob/master/doc/typescript-conventions.md'>Typescript Conventions</a>) & C2.3(Class Inheritance & Options) & C2.4(Instancing Custom Modules)
   D-->D1(Node Tree Structure) & D2(Flexbox & Gridbox)
 ```
-
- <a id='reference-docs'>
+  
+<a id='project-management'>  
 
 ## 👷‍♀ Project Management
 
@@ -246,6 +247,8 @@ PhET's approach and systems for project management are constantly evolving, espe
 developers should feel free to suggest improvements to our management process. Also, please update this section of the
 onboarding document if you find that anything you've read here is no longer accurate or pertinent.
 
+<a id='reference-docs'>  
+  
 ## 📖 Reference Documents
 
 Below is a list of documents that are helpful for reference. It's important to know that these exist. New developers
