@@ -12,6 +12,7 @@ apps, the desktop app, and the translation utility. These will not be covered in
 - [Intro](#intro)
 - [Administrative Setup](#admin-setup)
 - [Dev Environment Setup](#env-setup)
+- [Introductory Development](#intro-dev)
 - [Ramping Up](#ramping-up)
 - [Sample Roadmap](#roadmap)
 - [Project Management](#project-management)
@@ -72,31 +73,69 @@ Itching to dig into the code? The following are the steps needed in order to sta
       of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
       in the PhET Development Overview doc for instructions on setting them up.
 
+<a id='intro-dev'>
+
+## 🐣 Introductory Development
+
+The PhET team has developed workflows that make working in the codebase fun and productive. Although we encourage you to find your own development style, the following recommendations have been refined after years of dev team conversations and experiences.
+
+### Pull & Push Routines
+
+You may be surprised to find that PhET developers work off of, commit, and push to the master branch. There are many reasons for this workflow, which is beyond the scope of this document. 
+
+Working off of master does require specific routines in pull, push, and commit:
+- Pull code from all repos every morning.
+  - Recommended to use the pull-all.sh script in perennial
+  - Continue to pull frequently throughout the day
+- Do not commit broken code.
+  - Sims should load, test, and lint without errors
+  - Pre-Commit Hooks help catch errors, read more below.
+- Push code frequently (some devs push after every commit).
+  - Recommended to use the push-all.sh script in perennial
+
+### Pre-Commit Hooks
+
+During environment setup, you installed git hooks to prevent committing lint, tsc, and unit-test errors. However, it can be frustrating and error-prone to discover these errors for the first time when trying to commit.
+
+- Run the script `chipper/js/scripts/precommit-hook-multi.js` intermittently during development to avoid surprises when you commit.
+  - Results are cached for efficiency and will only run on repos with working copy changes.
+- Set `chipper/js/scripts/precommit-hook-multi.js` as an External Tool in WebStorm/ IntelliJ
+  - You can bind it to a key command for ease-of-use.
+
+
+### Debugging
+
+- Console.log
+  - A favorite amongst javascript developers, console.log allows you to log values to the console, which can help devs take a peek into what is happening in the code at run time.
+- Debugger
+  - You can use the `debugger` keyword in code to set a breakpoint that allows you to explore code in a paused state in a console.
+- [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
+  - Chrome Dev Tools provides powerful features for debugging and examining code.
+  - Most developers on the team use Chrome for development and then test for performance and bugs on other browsers. If you have a different preference do not feel obligated to use Chrome.
+  - A [handy tutorial](https://developer.chrome.com/docs/devtools/javascript/) for debugging Javascript in Chrome Dev Tools.
+- Helper Tool
+  - The Helper tool will display information about PhET components, helping devs navigate and implement the internal code.
+  - How to use:
+    - Load a common code repo (ex. Sun).
+    - Press `Ctrl+Shift+H` (The helper tool box will appear)
+    - Click on the component you want to know more about. 
+
+
+### Phetmarks
+
+Developers use phetmarks to run simulations and access other content. You can load it in the browser via your localhost server at `{{path-to-phet-repos}}/phetmarks`.
+
+Phetmarks contains different ways to run sims, demos for some non-sim repos to show what components they contain, and links to documentation.
+
+### Navigating Repos
+
+Most of your work will be done in the `js` directory of a repo. If you are curious about the other files check out the [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#repository-structure) in the Code Review Checklist for an overview or ask your mentor for an explanation.
+
+
  <a id='ramping-up'>
 
 ## 🧗 Ramping Up
 
-### Pre-Commit Hooks
-
-During environment setup, you installed git hooks to prevent committing lint, tsc, and unit-test errors. However, it can
-be frustrating and error-prone to discover these errors for the first time when trying to commit. Therefore it is
-advantageous to run these intermittently during development. Specifically, there is a
-script `chipper/js/scripts/precommit-hook-multi.js`
-which will run the precommit hooks on any repos with working copy changes. Results are cached so the precommit hooks
-themselves will run quickly. It is recommended to set `chipper/js/scripts/precommit-hook-multi.js` as an External Tool
-in WebStorm/ IntelliJ and bind it to a key command for ease-of-use.
-
-### Phetmarks
-
-Developers use phetmarks to run simulations and access other content. You can load it in the browser via your localhost
-server at `{{path-to-phet-repos}}/phetmarks`.
-
-phetmarks contains different ways to run sims, demos for some non-sim repos to show what components they contain, and
-links to documentation.
-
-A very powerful tool to get familiar with PhET elements is to load one common repo (Sun, for example),
-press `Ctrl+Shift+H` and click on the component you want to know more about. It'll display information about it, and you
-can then look up its internal code to read how it was used.
 
 ### Query Parameters
 
@@ -104,8 +143,7 @@ Sims can be run with various query parameters. Query parameters are by default "
 shared outside of PhET. Public-facing query parameters must be explicitly designated by including `public: true`
 in their schema.
 
-Chipper's [initialize-globals.js](https://github.com/phetsims/chipper/blob/master/js/initialize-globals.js) contains
-general global query parameters (preloaded). Two examples of commonly used query params are:
+Chipper's [initialize-globals.js](https://github.com/phetsims/chipper/blob/master/js/initialize-globals.js) contains general global query parameters (preloaded). Two examples of commonly used query params are:
 
 - `fuzz`, used for testing a sim with random inputs
 - `dev`, used for showing the dev bounds of a sim, are two examples from initialize-globals.js that are commonly used.
@@ -173,11 +211,6 @@ Once you're working on a sim, you will eventually want to publish a dev version 
 [Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development)
 and ask a senior dev to help add your identikey to PhET's servers.
 
-### Navigating Repos
-
-Most of your work will be done in the `js` directory of a repo. If you are curious about the other files check out the
-[Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#repository-structure)
-in the Code Review Checklist for an overview or ask your mentor for an explanation. |
 
 <a id='roadmap'>
 
@@ -188,7 +221,6 @@ PhET uses when writing code. The flowchart below provides just one example of ho
 learning and growth here at PhET. We recommend checking in with your mentor to customize your roadmap according to your
 needs and experiences.
 
-TODO: Currently Example Sim node is linking to Example-Sim repo. May want to link to tutorial instead.
 
 ```mermaid
 graph LR
