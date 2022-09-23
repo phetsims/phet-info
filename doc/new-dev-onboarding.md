@@ -145,6 +145,12 @@ in their schema. Chipper's [initialize-globals.js](https://github.com/phetsims/c
 Two examples of commonly used query params are:
 - `fuzz`, used for testing a sim with random inputs
 - `dev`, used for showing the dev bounds of a sim
+   
+### Additional IDE Features
+   
+Aside from setting up your development environment, there are additional IDE features devs use that may be useful to start 
+adding to your workflow. Using patches, "show history", and live templates are a few examples. Check out the [suggestions](https://github.com/phetsims/phet-info/blob/master/ide/idea/setup.md#suggestions) section of the IDE setup document and ask
+your mentor for any further explanation or additional tips.
 
 ### Automated Testing
 
@@ -160,7 +166,7 @@ PhET has a Slack channel called "continuous-testing" which is used by the server
 status change occurs for the continuous testing process. For example, if a lint error ends up in the code base, the
 server will send a message to this Slack channel.
 
-- #### QUnit
+### QUnit
 
 Unit testing at PhET is done through [QUnit](https://qunitjs.com/). Although most sims do not have unit testing built
 in, developers are encouraged to use unit testing as feels necessary for your development workflow. Most unit tests
