@@ -57,8 +57,8 @@ get you pointed in the right direction. If you notice errors or a need for clari
 
 ## Suggestions
 
-These may not be required, but are settings that other developers have found useful for their coding style. Use at your
-own risk!
+These may not be required, but are settings or features that other developers have found useful for their coding style.
+Use at your own risk!
 
 * View Markdown preview horizontally split instead of
   vertically: `Languages & Frameworks > Markdown > Editor and Preview Panel Layout: Split horizontally`
