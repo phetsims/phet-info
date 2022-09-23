@@ -73,4 +73,8 @@ own risk!
 * [Live Templates](https://www.jetbrains.com/help/idea/using-live-templates.html#live_templates_types) are a feature
   that many devs use for quickly typing out common patterns in code. To try some out, ask a developer for some examples
   of their favorites. A set of live templates can be exported from one instance of WebStorm and imported in another.
-  
+* Many devs use [patches](https://www.jetbrains.com/help/webstorm/using-patches.html) for quickly sharing code changes
+  with other developers. They are most commonly used for:
+    * Sending code changes over Slack when developers are pairing together and they need to switch who is leading
+    * Adding code changes to a GitHub issue for other devs to try out. Often times, you may see patches contained
+      in a "details" dropdown (notated as `<details>`) since they can be very long.
