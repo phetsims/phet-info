@@ -78,3 +78,7 @@ Use at your own risk!
     * Sending code changes over Slack when developers are pairing together and they need to switch who is leading
     * Adding code changes to a GitHub issue for other devs to try out. Often times, you may see patches contained
       in a "details" dropdown (notated as `<details>`) since they can be very long.
+* It can be helpful to see the history of a file or section of a file that you're working in. This is not
+  only a way to see how a section of code came to be, but also which devs made the changes. See documentation on
+  the [Show History](https://www.jetbrains.com/help/webstorm/investigate-changes.html#file-history) feature (or
+  do `Right click > Git > Show History/Show History for Selection`).
