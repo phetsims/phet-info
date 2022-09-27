@@ -166,6 +166,10 @@ simulation using the template.
 
 ## Building and Testing
 
+The process described above is sufficient for iterating during development. When you are ready to build the source
+code (including images, sounds and other assets) into an optimized HTML file suitable for student or client usage, 
+you can build the simulation using the chipper grunt build process.
+
 ### Building the Simulation with chipper
 
 1. Open Git Bash (Windows) or Terminal (macOS) and type:
