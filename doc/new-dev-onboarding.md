@@ -129,6 +129,10 @@ Phetmarks contains different ways to run sims, demos for some non-sim repos to s
 ### Navigating Repos
 
 Most of your work will be done in the `js` directory of a repo. If you are curious about the other files check out the [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#repository-structure) in the Code Review Checklist for an overview or ask your mentor for an explanation.
+  
+### Tutorials and Excercises
+  
+We prepared some excercises in order for you to get the hang of Sim-development. Try to complete, with the help of your mentor, the steps described in [this Dev Excercises document](https://github.com/phetsims/phet-info/blob/master/doc/phet-dev-excercises.md). This way, you will catch glimpses of the tasks you'll be performing when developing a real PhET sim.
 
 
  <a id='advanced-development'>
