@@ -472,12 +472,11 @@ https://github.com/phetsims/chipper/blob/master/js/initialize-globals.js
 12. Run `grunt lint` on the command line to check for lint errors. All code should be free of lint errors. (lint is a
     tool that analyzes source code to flag programming errors, bugs, stylistic errors, and suspicious constructs. PhET
     uses the eslint variant of lint.)
-13. Install PhET's git hooks to run basic checks as part of the git lifecycle. Run these commands from the root of your
+13. Install PhET's git hooks to run basic checks as part of the git lifecycle. Run this from the root of your
     checkout. First it clears any pre-existing commit hooks, then installs the new hooks.
 
 ```
-perennial/bin/for-each.sh active-repos rm .git/hooks/pre-commit
-perennial/bin/for-each.sh active-repos git init --template=../phet-info/git-template-dir
+perennial/bin/for-each.sh perennial/data/active-repos "rm .git/hooks/pre-commit; git init --template=../phet-info/git-template-dir"
 ```
 
 Getting to optimal performance on all supported platforms can be tricky--this section enumerates possible optimizations
