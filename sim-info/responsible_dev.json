@@ -1251,6 +1251,14 @@
     ],
     "responsibleDesigners": []
   },
+  "sound": {
+    "responsibleDevs": [
+      "@samreid"
+    ],
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
+  },
   "special-ops": {
     "responsibleDevs": [
       "@zepumph"
