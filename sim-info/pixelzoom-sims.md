@@ -21,7 +21,7 @@
 | graphing-quadratics              |     x      |            |    x     |                    |           |                 |
 | graphing-slope-intercept         |     x      |            |          |                    |           |                 |
 | hookes-law                       |     x      |            |    x     |                    |           |                 |
-| models-of-the-hydrogen-atom      |     x      |            |          |                    |           |        x        |
+| models-of-the-hydrogen-atom      |            |            |          |                    |           |        x        |
 | molecule-polarity                |     x      |     x      |    x     |                    |           |                 |
 | natural-selection                |     x      |            |    x     |         x          |     x     |        x        |
 | ph-scale                         |     x      |     x      |    x     |         x          |     x     |        x        |
