@@ -494,9 +494,7 @@
     ]
   },
   "faraday": {
-    "responsibleDevs": [
-      "@pixelzoom"
-    ],
+    "responsibleDevs": [],
     "responsibleDesigners": []
   },
   "faradays-law": {
