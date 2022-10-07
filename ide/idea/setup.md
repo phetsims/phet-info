@@ -46,7 +46,7 @@ get you pointed in the right direction. If you notice errors or a need for clari
 11. (Optional) Enable Nodejs coding assistance. `File > Settings > Language & Frameworks > Node.js and NPM`. Coding
     Assistance section. "Node.js Core is disabled" Enable it. This is handy if working on build tools/ node often.
 12. We as a project prefer to use `@returns` over `@return` in jsdoc (there is even a lint rule for this), see
-    https://github.com/phetsims/chipper/issues/557. To get Webstorm to auto fillin `@returns` when using
+    https://github.com/phetsims/chipper/issues/557. To get Webstorm to auto filling `@returns` when using
     the `/**[Enter]`
     template, follow these instructions: https://youtrack.jetbrains.com/issue/WEB-7516#comment=27-611256. Basically type
     `@retur` in a jsdoc comment and then select manually `returns` from the dialog that pops up. Webstorm will remember
