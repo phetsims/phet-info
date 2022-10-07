@@ -124,6 +124,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | neuron | @jbphet | @arouinfar |  | 
 | nitroglycerin | @pixelzoom |  |  | 
 | normal-modes |  | @DianaTavares |  | 
+| number-compare | @chrisklus | @amanda-phet | Sound | 
 | number-line-common | @jbphet | @amanda-phet |  | 
 | number-line-distance | @jbphet | @amanda-phet |  | 
 | number-line-integers | @jbphet | @amanda-phet |  | 
