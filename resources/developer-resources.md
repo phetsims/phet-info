@@ -63,7 +63,7 @@ Please beware of the following "Gotchyas" that I have encountered while using We
   they are removed for good if you click a checkbox, even if you try to add them back. Reloading is the only solution.
 
 #### Getting crash logs
-Crash logs are transfered to iTunes whenver the device is synced to another computer. Just plug in your device and
+Crash logs are transferred to iTunes whenever the device is synced to another computer. Just plug in your device and
 launch iTunes to complete the sync. The location of the crash logs will depend on whether you are using Mac or Windows.
 
 ##### On Mac
