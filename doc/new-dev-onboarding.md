@@ -131,10 +131,13 @@ Phetmarks contains different ways to run sims, demos for some non-sim repos to s
 ### Navigating Repos
 
 Most of your work will be done in the `js` directory of a repo. If you are curious about the other files check out the [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#repository-structure) in the Code Review Checklist for an overview or ask your mentor for an explanation.
-  
-### Tutorials and Excercises
-  
-We prepared some excercises in order for you to get the hang of Sim-development. Try to complete, with the help of your mentor, the steps described in [this Dev Excercises document](https://github.com/phetsims/phet-info/blob/master/doc/phet-dev-excercises.md). This way, you will catch glimpses of the tasks you'll be performing when developing a real PhET sim.
+
+### Tutorials and Exercises
+
+We prepared some exercises in order for you to get the hang of Sim-development. Try to complete, with the help of your
+mentor, the steps described
+in [this Dev Exercises document](https://github.com/phetsims/phet-info/blob/master/doc/phet-dev-excercises.md). This
+way, you will catch glimpses of the tasks you'll be performing when developing a real PhET sim.
 
 
  <a id='advanced-development'>
@@ -215,12 +218,15 @@ When you begin working in Typescript files, you might hear a lot about tsc (Type
 
 ### Memory and Performance Profiling
 
-When a sim is further along in development, it needs to be memory and performance tested before publication. Most developers use Chrome
+When a sim is further along in development, it needs to be memory and performance tested before publication. Most
+developers use Chrome
 for both of these processes.
 
-Read about how to conduct a memory test [here](https://github.com/phetsims/QA/blob/master/documentation/qa-book.md#47-memory-leak-testing).
-If there is a leak, you will need to do some memory profiling to find out where your sim is not properly managaing
-its memory usage. This in-depth process should be taught by your mentor when you begin on your first memory investigation.
+Read about how to conduct a memory
+test [here](https://github.com/phetsims/QA/blob/master/documentation/qa-book.md#47-memory-leak-testing).
+If there is a leak, you will need to do some memory profiling to find out where your sim is not properly managing
+its memory usage. This in-depth process should be taught by your mentor when you begin on your first memory
+investigation.
 
 Performance profiling can also be a complex process. To start, you can check how well your sim is performing on various
 devices by adding the query parameter `profiler` (another common [query parameter](#query-parameters)). It allows you to

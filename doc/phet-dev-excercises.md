@@ -1,10 +1,10 @@
-# 💪 PhET Dev Excercises
+# 💪 PhET Dev Exercises
 
-Here you will find a list of coding excercises that are designed to provide insight into the fundamentals of PhET Sim
+Here you will find a list of coding exercises that are designed to provide insight into the fundamentals of PhET Sim
 Development. If you ever get stuck or have questions reach out to your mentor for guidance. Please start by creating an
 issue on [Example Sim](https://github.com/phetsims/example-sim) with the title *"Dev Exercises Solution: \<Your name +
 favourite emoji\>"*. Use this issue to track your progress and solutions to every challenge. Additionally, you should
-create a new branch of example-sim while you work on the excercises. This branch should be named: *"
+create a new branch of example-sim while you work on the exercises. This branch should be named: *"
 dev-exercises-{{username}}"*.
 
 This is meant to be a fun learning experience, so do enjoy!
