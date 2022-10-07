@@ -81,7 +81,9 @@ The PhET team has developed systems that make working in the codebase fun and pr
 
 ### Pull & Push Routines
 
-You may be surprised to find that PhET developers work off of, commit, and push to the master branch. The reasons for this this workflow are beyond the scope of this document. However, working off of master does require specific routines in pull, push, and commit behaviors.
+You may be surprised to find that PhET developers work off of, commit, and push to the master branch. The reasons for
+this workflow are beyond the scope of this document. However, working off of master does require specific routines in
+pull, push, and commit behaviors.
   
 - Pull code from all repos, every morning.
   - Recommended to use the pull-all.sh script in perennial
@@ -277,12 +279,22 @@ The agenda and history for this meeting can be found in this [google doc](https:
 Developers are also encouraged to add GitHub issues to the [project board](https://github.com/orgs/phetsims/projects/35) that they feel need to be discussed by the group. Our goal is to move through issue discussions quickly, and assign each issue to a subgroup of developers who can finish the necessary work.
 
 ### Github Issues
-As a developer, much of your moment-to-moment activity will be driven by the GitHub issues to which you are assigned. We use GitHub issues to track action items, and to keep a record of what was done, when, by whom, and the motivation / discussion surrounding the task.
 
-GitHub issues can be assigned priority levels, which can help in organizing your day-to-day work. There are a number of other labels for issues that are PhET-specific, and it will take some time to familiarize yourself with them all. You can take a quick look at the availabe issue labels [here](https://github.com/phetsims/phet-info/blob/master/github-labels/github-labels) (the hex
+As a developer, much of your moment-to-moment activity will be driven by the GitHub issues to which you are assigned. We
+use GitHub issues to track action items, and to keep a record of what was done, when, by whom, and the motivation /
+discussion surrounding the task.
+
+GitHub issues can be assigned priority levels, which can help in organizing your day-to-day work. There are a number of
+other labels for issues that are PhET-specific, and it will take some time to familiarize yourself with them all. You
+can take a quick look at the available issue
+labels [here](https://github.com/phetsims/phet-info/blob/master/github-labels/github-labels) (the hex
 values represent the color of the label when it appears on an issue).
 
-One of the tricky things about using GitHub issues to manage work is how widely variable the scope of an issue can be. People create issues that can be knocked out in half an hour, as well as issues that would take several months of focused effort to complete. One of the labels that we try to use to help manage this situation is the `type:epic` label. An epic is an issue that is more of a project than a clear and finite task. This type of issue is likely to involve multiple people, and will have "sub- issues" created for the individual tasks that will go into completing the "epic".
+One of the tricky things about using GitHub issues to manage work is how widely variable the scope of an issue can be.
+People create issues that can be knocked out in half an hour, as well as issues that would take several months of
+focused effort to complete. One of the labels that we try to use to help manage this situation is the `type:epic` label.
+An epic is an issue that is more of a project than a clear and finite task. This type of issue is likely to involve
+multiple people, and will have "sub- issues" created for the individual tasks that will go into completing the "epic".
 
 <a id='reference-docs'>  
   
