@@ -59,8 +59,9 @@ perennial# grunt dev --repo=chains --brands=phet,phet-io
 
 ## If working off campus, install the VPN
 
-- If you work exclusivley on campus, this step is not required.
-- If you plan on deploying sims from a remote location, install the Cisco Anyconnect Secure Mobility Client from https://oit.colorado.edu/services/network-internet-services/vpn.
+- If you work exclusively on campus, this step is not required.
+- If you plan on deploying sims from a remote location, install the Cisco Anyconnect Secure Mobility Client
+  from https://oit.colorado.edu/services/network-internet-services/vpn.
 
 ## Configure build-local.json settings
 
@@ -175,9 +176,9 @@ Otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
 - If you didn't build it before, run `grunt` in the sim repo.
 - Copy the dependencies.json from the build directory to the top-level directory in the sim.
   - Newer sims (chipper 2.0): `cp build/phet/dependencies.json .`
-  - Older sims: `cp build/dependencies.json .` 
+  - Older sims: `cp build/dependencies.json .`
 - `git add dependencies.json`
-- `git commit -m {{MESSAGE}}`, where `{{MESSAGE}}` includes the GitHub issue URL(s) for the maintenace release.
+- `git commit -m {{MESSAGE}}`, where `{{MESSAGE}}` includes the GitHub issue URL(s) for the maintenance release.
 - `git push origin {{BRANCH}}`.
 
 This will ensure that the top level dependencies.json will properly reference the common-code fixed SHA, and that we'll always have a consistent common code branch for the sim branch.
@@ -189,12 +190,19 @@ This would usually be followed by 1+ RC deployments and then a production deploy
 A prototype is defined as a sim version that is deemed worthy of early release to the public before it has gone through the full production process. Prototypes will typically be published for legacy sims that are not yet available in HTML5. 
 
 How prototypes differ from production versions:
-- A prototype is not necessarily feature-complete, and release will typcially occur before formal code review and production-level QA testing.
-- Known issues may be present in prototypes. These will generally be of the nature of "polish" issues, but pedagogical issues or crashing will generally be considered "showstoppers".
+
+- A prototype is not necessarily feature-complete, and release will typically occur before formal code review and
+  production-level QA testing.
+- Known issues may be present in prototypes. These will generally be of the nature of "polish" issues, but pedagogical
+  issues or crashing will generally be considered "showstoppers".
 - Testing will not be as thorough as a production RC and will focus on "normal" usability and pedagogical accuracy. Issues found in testing that go beyond these requirements will typically be deferred.
 - A prototype will be published at the appropriate "latest" link, but the sim's page on phet.colorado.edu **WILL NOT** be made visible.
-- The first version of a prototype will typically be 1.0, and there may be more than one minor release of a prototype. Therefore the first version visible at phet.colorado.edu will have the version schema "1.N.0", where N is >= 1. For example, if we had 2 prototypes with versions 1.0.0 and 1.1.0, then the first version visible at phet.colorado.edu would be 1.2.0.
-- When cost-effective, maintainence releases can be performed on a prototype release branch. When not cost-effective, a new version of a prototype may require a new release branch.
+- The first version of a prototype will typically be 1.0, and there may be more than one minor release of a prototype.
+  Therefore the first version visible at phet.colorado.edu will have the version schema "1.N.0", where N is >= 1. For
+  example, if we had 2 prototypes with versions 1.0.0 and 1.1.0, then the first version visible at phet.colorado.edu
+  would be 1.2.0.
+- When cost-effective, maintenance releases can be performed on a prototype release branch. When not cost-effective, a
+  new version of a prototype may require a new release branch.
 
 Prototypes will follow the process for [RC/production deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches) using `grunt production`, with the following differences:
 - When the RC test issue is created:

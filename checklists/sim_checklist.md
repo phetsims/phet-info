@@ -27,8 +27,9 @@
   - [ ] Email/Twitter announcement language
   - [ ] Teacher Guide created, uploaded, and added to sim design folder
 - [ ] **Pre-publication items**
-  - [ ] Auxilary screenshots (up to 3 additional)
-  - [ ] Screen-specific screenshots for metadata service (see [naming convention](https://github.com/phetsims/website/issues/1322#issuecomment-1010320827))
+  - [ ] Auxiliary screenshots (up to 3 additional)
+  - [ ] Screen-specific screenshots for metadata service (
+    see [naming convention](https://github.com/phetsims/website/issues/1322#issuecomment-1010320827))
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Accessibility features
   - [ ] Email announcement language
@@ -82,4 +83,3 @@
 - [ ] **First RC published** (Date: //)
   - [ ] Test matrices put in [Testing Matrices Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYbW9fTGNCODdYVjQ)
 - [ ] **RC testing completed** (Date: //)
-

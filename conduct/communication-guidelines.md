@@ -6,7 +6,7 @@ This document is targeted towards public forums, but the principles should be ap
 ### Empathy
 Recognize that we all have different stresses at different times, and we all make mistakes.
 ### Respectful Candor
-We should be able to discuss topics in a candid manor, but maintain professionalism and respect.
+We should be able to discuss topics in a candid manner, but maintain professionalism and respect.
 ### Specificity
 When providing critiques we should be specific and clear.
 ### Trust
@@ -21,16 +21,19 @@ To be refined but -- basically consider tone when writing comments, and also try
 "Good faith" interpretation of what is written
 
 ### Offering solutions
-When pointing out issues/critiques, offering potential solutions adds a more collaborative nature to discussion. There will of course be times where another solution is not obvious. In such cases it is best to say something like "this approach seems problematic for these reasons...but I don't have a solution to offer currently".
+
+When pointing out issues/critiques, offering potential solutions adds a more collaborative nature to discussion. There
+will of course be times when another solution is not obvious. In such cases it is best to say something like "this
+approach seems problematic for these reasons...but I don't have a solution to offer currently".
 
 ### Be open to feedback
 We want to "gracefully accept constructive criticism" and ideally avoid feeling defensive. (Situations have arisen where people feel their expertise/ability is being questioned, need to have strategy to avoid this feeling, not a fully-formed thought yet, but seems to mainly be about trusting your team.)
 
-
-## To be recognzied
+## To be recognized
 
 ### Bandwidth of the medium 
-intent/voice is harder to gauge in places githhub comments
+
+intent/voice is harder to gauge in places github comments
 
 ### Impact vs Intent
 
@@ -52,16 +55,17 @@ Add something into the document about tone - try to use a “nice” tone.
 
 Read things without inferring a tone.
 
-Impact vs intent - understanding that the impact of your comment can be different than the intent of your communication. 
+Impact vs intent - understanding that the impact of your comment can be different than the intent of your communication.
 
-Recognizing that everyone is working hard with good intentions, and that we are a learning organization, framing comments in offering improvements and opportunities to grow ... more than just being critical.
+Recognizing that everyone is working hard with good intentions, and that we are a learning organization, framing
+comments in offering improvements and opportunities to grow ... more than just being critical.
 
-We want to have an open environment, where everyone feels comfortable making suggestions, offering well-intentioned critques, etc.  So we don’t want team members not making their comments, because they are worried about how reactions. 
+We want to have an open environment, where everyone feels comfortable making suggestions, offering well-intentioned
+critiques, etc. So we don’t want team members not making their comments, because they are worried about how reactions.
 
-Lots of energy (emotional energy) can be used up when events arise … pick up the phone and don’t let things linger. 
+Lots of energy (emotional energy) can be used up when events arise … pick up the phone and don’t let things linger.
 
 How do people perceive comments on GitHub? That is "talking to a person", "documenting", or etc ... Perspective makes a difference on interpretation?
 
 Useful links to think about: 
 Interplay with how to bring more diversity into open source communities? 
-

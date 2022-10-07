@@ -2,7 +2,9 @@
  - Require the entire sim team to participate, and optionally anyone else who had a significant involvement. Have the meeting as soon as possible after the sim is released, so that experiences are still fresh in everyone's mind. Allow sufficient time for the meeting, 1.5-2 hours.
 
  - [ ]  **2. Enlist a meeting moderator**
- - The moderator's job is to make sure the meeting runs efficiently, stays on point, and focuses on constructive (but not overly negative) critcism. The moderator can be someone not on the sim team, or in many cases the Development Coordinator. The moderator also documents the important points of the meeting.
+ - The moderator's job is to make sure the meeting runs efficiently, stays on point, and focuses on constructive (but
+   not overly negative) criticism. The moderator can be someone not on the sim team, or in many cases the Development
+   Coordinator. The moderator also documents the important points of the meeting.
 
  - [ ]  **3. Create github postmortem issue and postmortem google doc**
  - Create a github issue in the repository of the sim for which the postmortem is occurring. This checklist will should be copied into the issue.
@@ -31,4 +33,3 @@
 - [ ]  **9. Take home messages** 
 - From the top 5 successes/improvements, decide what are the "take home messages" that would be useful to note in the future, and add these to the [HTML5 Postmortem Take Home Messages](https://docs.google.com/document/d/1hayLX0FbhYqGao-5xizAFU9kVBzqrW_RVX88Wk_C_Lc/edit#heading=h.krbf2d24bpav) google doc
 - Report out at status meeting
-

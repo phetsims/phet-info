@@ -371,7 +371,7 @@ of scaling can be seen in the example simulation.
 A minification and unification process is implemented in our repo https://github.com/phetsims/chipper. This can be used
 to create a single-file HTML that contains all images and audio, and is suitable for download for offline usage.
 
-Here's an example of how to compile example-sim into a single HTML file. Other sims would be compiled similarily. This
+Here's an example of how to compile example-sim into a single HTML file. Other sims would be compiled similarly. This
 assumes that you have all of example-sim's dependencies checked out in your local working copy.
 
 ```
