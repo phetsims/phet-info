@@ -252,7 +252,7 @@ A leak often happens due to the Observer pattern. If you own the observable and 
 chance of outside observers being added), then you don't need to dispose. if you own only the observable or the
 observers, then you need to dispose by cutting those references.
 
-Note: when use `SCENERY/Node` that need disposal, be careful about disposing when using DAG (directed asyclic graph)
+Note: when use `SCENERY/Node` that need disposal, be careful about disposing when using DAG (directed acyclic graph)
 features.
 
 [Here](https://github.com/phetsims/sun/issues/121#issuecomment-209141994) is a helpful list of actions that likely need
