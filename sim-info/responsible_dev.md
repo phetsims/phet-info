@@ -133,8 +133,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | optics-lab | @veillette,@jbphet | @arouinfar |  | 
 | pendulum-lab | @jonathanolson | @arouinfar | Sound | 
 | perennial | @mattpen,@jonathanolson |  |  | 
-| ph-scale | @pixelzoom | @arouinfar |  | 
-| ph-scale-basics | @pixelzoom | @arouinfar |  | 
+| ph-scale | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
+| ph-scale-basics | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | phet-android-app | @mattpen |  |  | 
 | phet-core | @jonathanolson |  |  | 
 | phet-global-initiative | @kathy-phet |  |  | 
@@ -177,6 +177,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | skiffle | @jbphet |  |  | 
 | simula-rasa | @pixelzoom |  |  | 
 | smithers | @mattpen |  |  | 
+| sound | @samreid | @arouinfar | Sound | 
 | special-ops | @zepumph |  |  | 
 | states-of-matter | @jbphet | @arouinfar |  | 
 | states-of-matter-basics | @jbphet | @arouinfar |  | 
