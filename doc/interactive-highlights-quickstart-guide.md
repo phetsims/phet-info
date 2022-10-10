@@ -9,8 +9,8 @@ most useful for users with low vision and help identify the interactive componen
 
 ## package.json
 
-By default, Interactive Highlights are enabled when the sim supports Interactive Description. To enable both
-Interactive Description and Interactive Highlights, have the following in the sim's package.json
+By default, Interactive Highlights are enabled when the sim supports Interactive Description (or alternative input).
+To enable both Interactive Description and Interactive Highlights, have the following in the sim's package.json
 
 ```json
 {
