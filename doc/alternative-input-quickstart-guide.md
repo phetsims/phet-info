@@ -27,6 +27,10 @@ Follow these steps to add support for alternative input to a simulation.
 2. In your sim's repository, run `grunt update`. This will generate `{{REPO}}_a11y_view.html` and
    modify `{{REPO}}_en.html`.
 
+3. Adding `"supportsInteractiveDescription": true` will by default also enable Interactive Highlights.
+   See https://github.com/phetsims/phet-info/blob/master/doc/interactive-highlights-quickstart-guide.md for more
+   information about this feature.
+
 ## Traversal Order
 
 Traversal order is the order in which Nodes are visited as you press the Tab key. The order is specified using
@@ -70,9 +74,12 @@ this.addChild( screenViewRootNode );
 See `ParallelDOM.setPDOMOrder` for more advanced features of this setter if needed.
 
 Potential gotchas:
-* `ParallelDOM.setPDOMOrder` has some interesting quirks, so be sure to read the documentation closely. Of special interest is the behavior of `null` in the pdomOrder, and what happens to any focuable Nodes that are not explicitly included when setting pdomOrder.
+
+* `ParallelDOM.setPDOMOrder` has some interesting quirks, so be sure to read the documentation closely. Of special
+  interest is the behavior of `null` in the pdomOrder, and what happens to any focuable Nodes that are not explicitly
+  included when setting pdomOrder.
 * If you need to augment `this.pdomOrder` in a subclass, read about the pitfalls
-in https://github.com/phetsims/scenery/issues/1308.
+  in https://github.com/phetsims/scenery/issues/1308.
 
 ## Fire using the keyboard
 
