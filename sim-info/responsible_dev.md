@@ -22,7 +22,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | babel | @jbphet |  |  | 
 | balancing-act | @jbphet | @DianaTavares | Sound | 
 | balancing-chemical-equations | @pixelzoom | @arouinfar | Sound | 
-| balloons-and-static-electricity | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description<br/>Interactive Highlights | 
+| balloons-and-static-electricity | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
 | bamboo | @samreid |  |  | 
 | beaker | @samreid |  |  | 
 | beers-law-lab | @pixelzoom | @arouinfar |  | 
@@ -84,7 +84,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | fractions-equality | @jonathanolson | @amanda-phet | Sound | 
 | fractions-intro | @jonathanolson | @amanda-phet | Sound | 
 | fractions-mixed-numbers | @jonathanolson | @amanda-phet | Sound | 
-| friction | @zepumph | @arouinfar | Sound<br/>Interactive Description<br/>Voicing<br/>Interactive Highlights | 
+| friction | @zepumph | @arouinfar | Sound<br/>Interactive Description<br/>Voicing | 
 | function-builder | @pixelzoom | @amanda-phet |  | 
 | function-builder-basics | @pixelzoom | @amanda-phet |  | 
 | gas-properties | @pixelzoom | @arouinfar |  | 
@@ -97,14 +97,14 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | graphing-slope-intercept | @pixelzoom | @amanda-phet | Sound | 
 | gravity-and-orbits | @samreid | @arouinfar |  | 
 | gravity-force-lab | @zepumph | @arouinfar | Sound<br/>Interactive Description | 
-| gravity-force-lab-basics | @zepumph | @arouinfar | Sound<br/>Interactive Description<br/>Voicing<br/>Interactive Highlights | 
+| gravity-force-lab-basics | @zepumph | @arouinfar | Sound<br/>Interactive Description<br/>Voicing | 
 | greenhouse-effect | @jbphet | @arouinfar | Sound<br/>Interactive Description | 
 | griddle | @samreid |  |  | 
 | hookes-law | @pixelzoom | @arouinfar |  | 
 | interaction-dashboard | @zepumph | @DianaTavares |  | 
 | inverse-square-law-common | @zepumph | @arouinfar |  | 
 | isotopes-and-atomic-mass | @jbphet | @arouinfar |  | 
-| john-travoltage | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description<br/>Voicing<br/>Interactive Highlights | 
+| john-travoltage | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description<br/>Voicing | 
 | joist | @zepumph |  |  | 
 | kite | @jonathanolson |  |  | 
 | least-squares-regression | @jonathanolson | @amanda-phet |  | 
@@ -162,10 +162,10 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | proportion-playground | @jonathanolson | @amanda-phet |  | 
 | protein-synthesis | @samreid |  |  | 
 | qa | @KatieWoe |  |  | 
-| quadrilateral | @jessegreenberg |  | Sound<br/>Interactive Description<br/>Voicing<br/>Interactive Highlights | 
+| quadrilateral | @jessegreenberg |  | Sound<br/>Interactive Description<br/>Voicing | 
 | quake | @jbphet |  |  | 
 | query-string-machine | @chrisklus |  |  | 
-| ratio-and-proportion | @zepumph | @BLFiedler | Sound<br/>Interactive Description<br/>Voicing<br/>Interactive Highlights | 
+| ratio-and-proportion | @zepumph | @BLFiedler | Sound<br/>Interactive Description<br/>Voicing | 
 | reactants-products-and-leftovers | @pixelzoom | @arouinfar | Sound | 
 | resistance-in-a-wire | @jbphet | @DianaTavares | Sound<br/>Interactive Description | 
 | rosetta | @jbphet |  |  | 
