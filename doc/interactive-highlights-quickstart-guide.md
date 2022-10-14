@@ -10,7 +10,7 @@ visual boldness to identify the interactive components in the sim.
 
 When a sim supports Interactive Highlights, a toggle switch will be available in the Visual tab of the Preferences
 dialog to enable the feature. When enabled, moving a mouse or finger over an interactive component will display a
-visual highlight around that component.
+visual highlight around that component. When the pointer leaves the component the highlight will disappear.
 
 You can use query parameter flag `interactiveHighlightsInitiallyEnabled` to have Interactive Highlights enabled
 when the sim loads.
