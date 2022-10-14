@@ -4,7 +4,16 @@
 
 A quick guide for adding Interactive Highlights to your PhET Simulation.
 
-Interactive Highlights are highlights that surround interactive components on mouse and touch input. In addition, to other styles already designed on many interactive components, interactive highlights make the interactions stand out even more. Interactive highlights can benefit many users, and are particularly helpful for users with low vision who need a little extra visual boldness to identify the interactive components in the sim.
+Interactive Highlights are highlights that surround interactive components on mouse and touch input. Interactive
+Highlights can benefit many users, and are particularly helpful for users with low vision who need a little extra
+visual boldness to identify the interactive components in the sim.
+
+When a sim supports Interactive Highlights, a toggle switch will be available in the Visual tab of the Preferences
+dialog to enable the feature. When enabled, moving a mouse or finger over an interactive component will display a
+visual highlight around that component.
+
+You can use query parameter flag `interactiveHighlightsInitiallyEnabled` to have Interactive Highlights enabled
+when the sim loads.
 
 ## package.json
 
