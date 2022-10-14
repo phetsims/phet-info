@@ -28,8 +28,12 @@ In your working copy of the sim repo:
 - [ ] `git push -u origin master`
 
 At https://github.com/phetsims/{{REPO}}:
-- [ ] Go to _Settings => Collaborators and teams_. Press the "Add teams" button. See [team assignment.md](https://github.com/phetsims/phet-info/blob/master/policies/team%20assignment.md) for assignments by repo type.
-- [ ] Create a Sim Checklist issue using template [sim_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/sim_checklist.md). Use "{{TITLE}} Master Checklist" as the issue name. Assign to @ariel-phet.
+- [ ] Go to _Settings => Collaborators and teams_. Press the "Add teams" button.
+  See [team assignment.md](https://github.com/phetsims/phet-info/blob/master/policies/team%20assignment.md) for
+  assignments by repo type.
+- [ ] Create a Sim Checklist issue using
+  template [sim-checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/sim-checklist.md). Use "
+  {{TITLE}} Master Checklist" as the issue name. Assign to @ariel-phet.
 
 In your working copy of perennial repo:
 - [ ] Add the new repo to `perennial/data/active-repos`. Commit and push. Then pull perennial-alias so these two checkouts stay in sync. If needed immediately, run `cd perennial/ && grunt generate-data` and commit and push to update data lists. Otherwise it is done every night as part of daily grunt work.  _Note that your sim won't run in phetmarks until this is done._

@@ -130,7 +130,9 @@ Phetmarks contains different ways to run sims, demos for some non-sim repos to s
 
 ### Navigating Repos
 
-Most of your work will be done in the `js` directory of a repo. If you are curious about the other files check out the [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md#repository-structure) in the Code Review Checklist for an overview or ask your mentor for an explanation.
+Most of your work will be done in the `js` directory of a repo. If you are curious about the other files check out
+the [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#repository-structure)
+in the Code Review Checklist for an overview or ask your mentor for an explanation.
 
 ### Tutorials and Exercises
 
@@ -316,7 +318,7 @@ that, it's probably best to ask around.
 |---------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
 | [Deployment Info for chipper 2.0](../deployment-info/chipper-2.0.md)                                                | A guide to deploying simulations for testing and ultimately to the website        |
 | [New Dev Onboarding](./new-dev-onboarding.md)                                                                       | A guide and resource for new sim developers (this document)                       |
-| [PhET Code Review Checklist](../checklists/code_review_checklist.md)                                                | A checklist for evaluating simulation code                                        |
+| [PhET Code Review Checklist](../checklists/code-review-checklist.md)                                                | A checklist for evaluating simulation code                                        |
 | [PhET Development Overview](./phet-development-overview.md)                                                         | A checklist for evaluating simulation code                                        |
 | [PhET Quarterly Goal Planning](https://github.com/orgs/phetsims/projects/41/views/1)                                | Goals for current quarter (not really a doc, but important)                       |
 | [PhET Software Design Patterns](./phet-software-design-patterns.md)                                                 | Provides information on how PhET uses various software design patterns            |

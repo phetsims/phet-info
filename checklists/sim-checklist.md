@@ -60,7 +60,9 @@
 - [ ] Voicing - (include links to relevant voicing design document)
 
 ## Implementation
-- [ ] **Repository created** by following [new_repo_checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/new_repo_checklist.md) (Date: //)
+- [ ] **Repository created** by
+  following [new-repo-checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/new-repo-checklist.md) (
+  Date: //)
 - [ ] **Development started** (Date: //)
 - [ ] **Sim is "feature complete"** (Date: //)
 - [ ] **QA team "first look"** (Date: //)

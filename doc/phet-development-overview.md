@@ -324,7 +324,7 @@ To improve the readability and maintainability of PhET Simulation code, we have 
 for writing code and documentation:
 
 * The PhET Code Review Checklist is available
-  at https://github.com/phetsims/phet-info/blob/master/checklists/code_review_checklist.md provides additional steps to
+  at https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md provides additional steps to
   make sure a simulation is well written. This checklist is used for publication of any new PhET simulation to make sure
   they are consistent and maintainable. It enumerates steps including but not limited to coding style.
 
