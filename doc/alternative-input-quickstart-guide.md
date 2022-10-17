@@ -61,7 +61,7 @@ this.pdomControlAreaNode.pdomOrder = [ ... ]; // decouple traversal order from r
 
 Approach 2: In some cases (typically before descriptions are added), "Play Area" and "Control Area" can be ignored for
 the purposes of alternative input. If that is appropriate for your sim, then do not add Nodes directly to the
-ScreenView. Instead, use this pattern in your ScreenView constructor:
+base ScreenView or ScreenView subclasses. Instead, use this pattern in your base ScreenView constructor:
 
 ```js
 const screenViewRootNode = new Node( {
