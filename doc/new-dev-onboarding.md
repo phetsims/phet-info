@@ -46,10 +46,10 @@ comprehensive and is specific towards a PhET Developer's needs.
   will allow you to push code to sim repos and common code repos.
 - Set up a Slack account and join the phetsims workspace (you should receive an invite to join). From here, join the
   #general, #dev-public, #developer, and #continuous-testing channel.
-    - Be sure to set notifications in #continuous-testing to "All messages".
-    - Check with your mentor about any other relevant channels to join.
-    - If you're not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on
-      how to use it.
+  - Be sure to set notifications in #continuous-testing to "All messages".
+  - Check with your mentor about any other relevant channels to join.
+  - If you're not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on
+    how to use it.
 
  <a id='env-setup'>
 
@@ -60,31 +60,33 @@ Itching to dig into the code? The following are the steps needed in order to sta
 - Follow the steps in
   the [Getting Started](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#getting-started)
   section of the PhET Development Overview doc.
-    - Install some command line programs
-    - Get a copy of phet repos
-    - Try running a sim locally on your machine
+  - Install some command line programs
+  - Get a copy of phet repos
+  - Try running a sim locally on your machine
 - Set up an IDE so you can start writing code.
-    - Most developers use Webstorm or IntelliJ IDEA, recommended instructions can be found in
-      the [IDE setup document](https://github.com/phetsims/phet-info/blob/master/ide/idea/setup.md).
+  - Most developers use Webstorm or IntelliJ IDEA, recommended instructions can be found in
+    the [IDE setup document](https://github.com/phetsims/phet-info/blob/master/ide/idea/setup.md).
 - Before you start committing and pushing code to PhET repos, you should set up pre-commit hooks.
-    - Pre-Commit Hooks prevent developers from committing code that has various types of errors, most notably ESLint and
-      TypeScript errors.
-    - Follow step 13.
-      of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
-      in the PhET Development Overview doc for instructions on setting them up.
+  - Pre-Commit Hooks prevent developers from committing code that has various types of errors, most notably ESLint and
+    TypeScript errors.
+  - Follow step 13.
+    of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
+    in the PhET Development Overview doc for instructions on setting them up.
 
 <a id='intro-dev'>
 
 ## 🐣 Introductory Development
 
-The PhET team has developed systems that make working in the codebase fun and productive. Although we encourage you to find your own development style, the following recommendations have been refined after years of development team conversations and experiences.
+The PhET team has developed systems that make working in the codebase fun and productive. Although we encourage you to
+find your own development style, the following recommendations have been refined after years of development team
+conversations and experiences.
 
 ### Pull & Push Routines
 
 You may be surprised to find that PhET developers work off of, commit, and push to the master branch. The reasons for
 this workflow are beyond the scope of this document. However, working off of master does require specific routines in
 pull, push, and commit behaviors.
-  
+
 - Pull code from all repos, every morning.
   - Recommended to use the pull-all.sh script in perennial
   - Continue to pull frequently throughout the day
@@ -96,37 +98,46 @@ pull, push, and commit behaviors.
 
 ### Pre-Commit Hooks
 
-During environment setup, you installed git hooks to prevent committing lint, tsc, and unit-test errors. However, it can be frustrating and error-prone to discover these errors for the first time when trying to commit.
+During environment setup, you installed git hooks to prevent committing lint, tsc, and unit-test errors. However, it can
+be frustrating and error-prone to discover these errors for the first time when trying to commit.
 
-- Run the script `chipper/js/scripts/precommit-hook-multi.js` intermittently during development to avoid surprises when you commit.
+- Run the script `chipper/js/scripts/precommit-hook-multi.js` intermittently during development to avoid surprises when
+  you commit.
   - Results are cached for efficiency and will only run on repos with working copy changes.
-- Set `chipper/js/scripts/precommit-hook-multi.js` as an [External Tool](https://www.jetbrains.com/help/idea/settings-tools-external-tools.html) in WebStorm/ IntelliJ.
+- Set `chipper/js/scripts/precommit-hook-multi.js` as
+  an [External Tool](https://www.jetbrains.com/help/idea/settings-tools-external-tools.html) in WebStorm/ IntelliJ.
   - You can bind external tools to a key command for ease-of-use.
-
 
 ### Debugging
 
 - Console.log
-  - A favorite amongst javascript developers, console.log allows you to log values to the console, which can help devs take a peek into what is happening in the code at run time.
+  - A favorite amongst javascript developers, console.log allows you to log values to the console, which can help devs
+    take a peek into what is happening in the code at run time.
 - Debugger
-  - You can insert the `debugger` keyword in code to set a breakpoint that allows you to explore code in a paused state in a console.
+  - You can insert the `debugger` keyword in code to set a breakpoint that allows you to explore code in a paused
+    state in a console.
 - [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
-  - Chrome Dev Tools is built into the Chrome browser and provides a set of powerful web development tools for debugging and examining code.
-  - Most developers on the team use Chrome for development and test for performance and bugs on other browsers. If you have a different preference do not feel obligated to use Chrome.
-  - This is a [handy tutorial](https://developer.chrome.com/docs/devtools/javascript/) for debugging Javascript in Chrome Dev Tools.
+  - Chrome Dev Tools is built into the Chrome browser and provides a set of powerful web development tools for
+    debugging and examining code.
+  - Most developers on the team use Chrome for development and test for performance and bugs on other browsers. If you
+    have a different preference do not feel obligated to use Chrome.
+  - This is a [handy tutorial](https://developer.chrome.com/docs/devtools/javascript/) for debugging Javascript in
+    Chrome Dev Tools.
 - Helper Tool
-  - The Helper tool will display information about PhET components, helping devs navigate and implement the internal code.
+  - The Helper tool will display information about PhET components, helping devs navigate and implement the internal
+    code.
   - How to use:
     - Load a sim or common code repo
     - Press `Ctrl+Shift+H` (The helper tool box will appear)
     - Click on the component you want to know more about
 
-
 ### Phetmarks
 
-Developers use phetmarks to run simulations and access other content. You can load it in the browser via your localhost server at `{{path-to-phet-repos}}/phetmarks`.
+Developers use phetmarks to run simulations and access other content. You can load it in the browser via your localhost
+server at `{{path-to-phet-repos}}/phetmarks`.
 
-Phetmarks contains different ways to run sims, demos for some non-sim repos to show what components they contain, and links to documentation.
+Phetmarks contains different ways to run sims, demos for some non-sim repos to show what components they contain, and
+links to documentation.
 
 ### Navigating Repos
 
@@ -146,27 +157,33 @@ way, you will catch glimpses of the tasks you'll be performing when developing a
 
 ## 🧗 Advanced Development
 
-
 ### Query Parameters
 
 Sims can be run with various query parameters. Query parameters are by default "for internal use only" and should not be
 shared outside of PhET. Public-facing query parameters must be explicitly designated by including `public: true`
-in their schema. Chipper's [initialize-globals.js](https://github.com/phetsims/chipper/blob/master/js/initialize-globals.js) contains general global query parameters (preloaded).
-   
+in their schema.
+Chipper's [initialize-globals.js](https://github.com/phetsims/chipper/blob/master/js/initialize-globals.js) contains
+general global query parameters (preloaded).
+
 Two examples of commonly used query params are:
+
 - `fuzz`, used for testing a sim with random inputs
 - `dev`, used for showing the dev bounds of a sim
-   
+
 ### Additional IDE Features
-   
-Aside from setting up your development environment, there are additional IDE features devs use that may be useful to start 
-adding to your workflow. Using patches, "show history", and live templates are a few examples. Check out the [suggestions](https://github.com/phetsims/phet-info/blob/master/ide/idea/setup.md#suggestions) section of the IDE setup document and ask
+
+Aside from setting up your development environment, there are additional IDE features devs use that may be useful to
+start
+adding to your workflow. Using patches, "show history", and live templates are a few examples. Check out
+the [suggestions](https://github.com/phetsims/phet-info/blob/master/ide/idea/setup.md#suggestions) section of the IDE
+setup document and ask
 your mentor for any further explanation or additional tips.
 
 ### Automated Testing
 
 PhET has a "Continuous Test" server that regularly pulls the latest code for all repositories, builds them, and
-executes "[fuzz testing](https://en.wikipedia.org/wiki/Fuzzing)", and reports whether each of these sub-tests succeeded. The
+executes "[fuzz testing](https://en.wikipedia.org/wiki/Fuzzing)", and reports whether each of these sub-tests succeeded.
+The
 latest report can be found at
 https://bayes.colorado.edu/continuous-testing/aqua/html/continuous-report.html.
 
@@ -174,11 +191,14 @@ The repository that implements the test server is called [aqua](https://github.c
 You can run Aqua locally, which is useful when trying to verify common code changes.
 
 PhET has a Slack channel called "continuous-testing" which is used by the server to notify developers when some major
-status change occurs for the continuous testing process. The underlying process that powers these notifications is called
+status change occurs for the continuous testing process. The underlying process that powers these notifications is
+called
 continuous testing quick (CTQ), and it is the same service as the test boxes at the top of continuous-report. An example
-error would be a lint error ends up in the code base, the server will send a message to this Slack channel. Sometimes, 
-errors are triggered here are false positives, when only half of a changeset is picked up (mid-pull on a developer machine).
-In this case, we note the error on slack with a bird emoji (dodo/turkey/etc) to signify that CTQ should pass on the next round.
+error would be a lint error ends up in the code base, the server will send a message to this Slack channel. Sometimes,
+errors are triggered here are false positives, when only half of a changeset is picked up (mid-pull on a developer
+machine).
+In this case, we note the error on slack with a bird emoji (dodo/turkey/etc) to signify that CTQ should pass on the next
+round.
 
 ### QUnit
 
@@ -186,7 +206,8 @@ Unit testing at PhET is done through [QUnit](https://qunitjs.com/). Although mos
 in, developers are encouraged to use unit testing as feels necessary for your development workflow. Most unit tests
 exist in common-code repos and these tests are run as part of pre-commit hooks and continuous testing.
 
-To run QUnit tests, navigate to the repo in question in phetmarks and click on Unit Tests (Unbuilt). Running the tests in
+To run QUnit tests, navigate to the repo in question in phetmarks and click on Unit Tests (Unbuilt). Running the tests
+in
 the browser provides better error reporting, and debugging tools.
 
 ### Typescript
@@ -215,7 +236,9 @@ When you begin working in Typescript files, you might hear a lot about tsc (Type
 
 - tsc runs a type checker that will output type errors in our code. This type checking is already included in pre-commit
   hooks, but many developers enjoy having a tool where they can check for type errors outside of pre-commit hooks.
-- The recommended method for running tsc is through the script [absolute-tsc.js](https://github.com/phetsims/chipper/blob/master/js/scripts/absolute-tsc.js). Documentation for how to run absolute-tsc from the command line, or as an external tool in Webstorm can be found at the top of the
+- The recommended method for running tsc is through the
+  script [absolute-tsc.js](https://github.com/phetsims/chipper/blob/master/js/scripts/absolute-tsc.js). Documentation
+  for how to run absolute-tsc from the command line, or as an external tool in Webstorm can be found at the top of the
   file.
 - The [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) is a great resource for diving into
   Typescript. You can also find PhET specific Typescript Conventions in the [Reference Documents](#reference-docs)
@@ -243,16 +266,18 @@ for how to do this.
 ### Publishing a Sim
 
 Once you're working on a sim, you will eventually want to publish a dev version to show your latest progress. See
-[Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development), and ask a senior dev to help add your identikey to PhET's servers.
+[Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development)
+, and ask a senior dev to help add your identikey to PhET's servers.
 
 
 <a id='roadmap'>
 
 ## 🚗 Sample Roadmap
 
-You've made it so far already! After all this reading you may be wondering where to go next. The flowchart below provides just one example of how you may choose to structure your learning and growth here at PhET. We recommend checking in with your mentor to customize your roadmap according to your
+You've made it so far already! After all this reading you may be wondering where to go next. The flowchart below
+provides just one example of how you may choose to structure your learning and growth here at PhET. We recommend
+checking in with your mentor to customize your roadmap according to your
 needs and experiences.
-
 
 ```mermaid
 graph LR
@@ -272,22 +297,37 @@ graph LR
   C2-->C2.1(Module Design Pattern) & C2.2(<a href='https://github.com/phetsims/phet-info/blob/master/doc/typescript-conventions.md'>Typescript Conventions</a>) & C2.3(Class Inheritance & Options) & C2.4(Instancing Custom Modules)
   D-->D1(Node Tree Structure) & D2(Flexbox & Gridbox)
 ```
-  
+
 <a id='project-management'>  
 
 ## 👷‍♀ Project Management
 
-PhET's approach and systems for project management are constantly evolving, especially as PhET continues to grow. Currently we have a very flat management structure, and the development team works directly with the director of PhET to set and track goals. All developers should feel free to suggest improvements to the project management process. Also, please update this section of the onboarding document if you find that anything you read here is no longer accurate or pertinent.
+PhET's approach and systems for project management are constantly evolving, especially as PhET continues to grow.
+Currently we have a very flat management structure, and the development team works directly with the director of PhET to
+set and track goals. All developers should feel free to suggest improvements to the project management process. Also,
+please update this section of the onboarding document if you find that anything you read here is no longer accurate or
+pertinent.
 
 ### Quarterly Goals
-Each quarter we have meetings to discuss and set the goals for the upcoming quarter and review the progress of goals from the previous quarter. The goals are driven largely by the grants that fund the work that we do and by the needs of the simulation users. A [project board](https://github.com/orgs/phetsims/projects/41/views/33) is used to track and maintain this information.
 
-### Weekly Meetings 
-The development group meets weekly with the director of PhET to discuss items that are added to the agenda, and to work through open issues that are on the project board.
-  
-The agenda and history for this meeting can be found in this [google doc](https://docs.google.com/document/d/1bAPEP1iUxQRuCSLHkrwjAH-948kB-sBN3hCC54g-8dc/edit) (We update this document every year, so if this link is out of date, please fix it!). Any developer can add an agenda item at any time prior to the start of the meeting.
- 
-Developers are also encouraged to add GitHub issues to the [project board](https://github.com/orgs/phetsims/projects/35) that they feel need to be discussed by the group. Our goal is to move through issue discussions quickly, and assign each issue to a subgroup of developers who can finish the necessary work.
+Each quarter we have meetings to discuss and set the goals for the upcoming quarter and review the progress of goals
+from the previous quarter. The goals are driven largely by the grants that fund the work that we do and by the needs of
+the simulation users. A [project board](https://github.com/orgs/phetsims/projects/41/views/33) is used to track and
+maintain this information.
+
+### Weekly Meetings
+
+The development group meets weekly with the director of PhET to discuss items that are added to the agenda, and to work
+through open issues that are on the project board.
+
+The agenda and history for this meeting can be found in
+this [google doc](https://docs.google.com/document/d/1bAPEP1iUxQRuCSLHkrwjAH-948kB-sBN3hCC54g-8dc/edit) (We update this
+document every year, so if this link is out of date, please fix it!). Any developer can add an agenda item at any time
+prior to the start of the meeting.
+
+Developers are also encouraged to add GitHub issues to the [project board](https://github.com/orgs/phetsims/projects/35)
+that they feel need to be discussed by the group. Our goal is to move through issue discussions quickly, and assign each
+issue to a subgroup of developers who can finish the necessary work.
 
 ### Github Issues
 
@@ -308,7 +348,7 @@ An epic is an issue that is more of a project than a clear and finite task. This
 multiple people, and will have "sub- issues" created for the individual tasks that will go into completing the "epic".
 
 <a id='reference-docs'>  
-  
+
 ## 📖 Reference Documents
 
 Below is a list of documents that are helpful for reference. It's important to know that these exist. New developers
