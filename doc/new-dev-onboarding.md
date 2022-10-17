@@ -174,8 +174,11 @@ The repository that implements the test server is called [aqua](https://github.c
 You can run Aqua locally, which is useful when trying to verify common code changes.
 
 PhET has a Slack channel called "continuous-testing" which is used by the server to notify developers when some major
-status change occurs for the continuous testing process. For example, if a lint error ends up in the code base, the
-server will send a message to this Slack channel.
+status change occurs for the continuous testing process. The underlying process that powers these notifications is called
+continuous testing quick (CTQ), and it is the same service as the test boxes at the top of continuous-report. An example
+error would be a lint error ends up in the code base, the server will send a message to this Slack channel. Sometimes, 
+errors are triggered here are false positives, when only half of a changeset is picked up (mid-pull on a developer machine).
+In this case, we note the error on slack with a bird emoji (dodo/turkey/etc) to signify that CTQ should pass on the next round.
 
 ### QUnit
 
