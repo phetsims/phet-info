@@ -432,71 +432,71 @@ generally meets PhET standards.
 - [ ] Type expressions for functions have a variety of possibilities, increasing in complexity depending on the case. In
   general note that `{function}` is not enough information. Here are some better options:
 
-    1. The most basic option it to use Google Closure Type syntax, for more info
-       see https://github.com/google/closure-compiler/wiki/Types-in-the-Closure-Type-System. This specifies the
-       param/return types, but nothing more. Here are some examples:
+  1. The most basic option it to use Google Closure Type syntax, for more info
+     see https://github.com/google/closure-compiler/wiki/Types-in-the-Closure-Type-System. This specifies the
+     param/return types, but nothing more. Here are some examples:
 
-    * `@param {function()} noParamsAndNoReturnValue`
-    * `@param {function(number)} giveMeNumberAndReturnNothing`
-    * `@param {function(number, number):Vector2} getVector2`
-    * `@param {function(new:Node)} createNode - a function that takes the Node constructor`
+  * `@param {function()} noParamsAndNoReturnValue`
+  * `@param {function(number)} giveMeNumberAndReturnNothing`
+  * `@param {function(number, number):Vector2} getVector2`
+  * `@param {function(new:Node)} createNode - a function that takes the Node constructor`
 
-    2. When needing to be a bit more specific, add a name to parameters of the function. Sometimes this is all that is
-       needed for clarity on what the param does:
+  2. When needing to be a bit more specific, add a name to parameters of the function. Sometimes this is all that is
+     needed for clarity on what the param does:
 
-    * `@param {function(model:MyModel, length:number, name:string): Node} getLengthNode`
-    * `@param {function(aSelfExplanatoryNameForAString:string): Node} getStringNode`
+  * `@param {function(model:MyModel, length:number, name:string): Node} getLengthNode`
+  * `@param {function(aSelfExplanatoryNameForAString:string): Node} getStringNode`
 
-    3. If (2) isn't enough, use English to explain the parameters and return values. This is easy because they are
-       named, and can be easily mentioned:
+  3. If (2) isn't enough, use English to explain the parameters and return values. This is easy because they are
+     named, and can be easily mentioned:
 
-    * `@param {function(model:MyModel, length:number, name:string): Node} getLengthNode - returns the length Node that you have always wanted, name is the name of the source of your aspirations, length is a special number according to the following 24 criteria. . .`
+  * `@param {function(model:MyModel, length:number, name:string): Node} getLengthNode - returns the length Node that you have always wanted, name is the name of the source of your aspirations, length is a special number according to the following 24 criteria. . .`
 
-    4. If needing more complexity, or using jsdoc rendering tools (like PhET-iO documentation does), you must use a
-       JSDoc compatible format, not (2) or (3), and you may need to use the more complicated solution. See JSDoc docs
-       for more info. Here is an example of a named callback:
-        ```js
-        /**
-         * @name mySpecialCallback
-         * Converts a string to a number
-         * @param {string}
-         * @returns {number}
-         */
-        /**
-         * @param {mySpecialCallback} callback
-        */
-        x = function( callback) { callback( 'still chocolate' ) };
-        ```
+  4. If needing more complexity, or using jsdoc rendering tools (like PhET-iO documentation does), you must use a
+     JSDoc compatible format, not (2) or (3), and you may need to use the more complicated solution. See JSDoc docs
+     for more info. Here is an example of a named callback:
+      ```js
+      /**
+       * @name mySpecialCallback
+       * Converts a string to a number
+       * @param {string}
+       * @returns {number}
+       */
+      /**
+       * @param {mySpecialCallback} callback
+      */
+      x = function( callback) { callback( 'still chocolate' ) };
+      ```
 
 - [ ] Type expressions for anonymous Objects have a variety of possibilities, increasing in complexity depending on the
   case.
-    1. When the documentation is close by, then {Object} is still acceptable. This mainly applies to options and similar
-       patterns:
+  1. When the documentation is close by, then {Object} is still acceptable. This mainly applies to options and similar
+     patterns:
 
-    * `@param {Object} [options] // this is great because of the extend call 5 lines down`
+  * `@param {Object} [options] // this is great because of the extend call 5 lines down`
 
-    2. When using an `Object` with specific properties, name them and their types like so:
+  2. When using an `Object` with specific properties, name them and their types like so:
 
-    * `@param {name:string, address:{street:string}, returnNode:function(number):Node, [shoeSize:number]} personalData // note that shoeSize is optional here`
+  * `@param {name:string, address:{street:string}, returnNode:function(number):Node, [shoeSize:number]} personalData // note that shoeSize is optional here`
 
-    3. When you need a bit more explanation, keep the same type expression as (2), but feel free to outline specifics in
-       English after the param name.
-        ```
-        @ param {name:string, address:{street:string}, returnNode:function(number):Node, [shoeSize:number]} personalData - use english after to explain pieces of this
-            (if needed, outline properties on their own lines)
-            name is something
-            address is something else
-            returnNode does this thing
-        ```
-    4. Not all objects have named keys like (2) and (3). Here is how to document dictionary-like `Object`s, where each
-       key is some type, and the value is another type. For key value pairs use this:
+  3. When you need a bit more explanation, keep the same type expression as (2), but feel free to outline specifics in
+     English after the param name.
+      ```
+      @ param {name:string, address:{street:string}, returnNode:function(number):Node, [shoeSize:number]} personalData - use english after to explain pieces of this
+          (if needed, outline properties on their own lines)
+          name is something
+          address is something else
+          returnNode does this thing
+      ```
+  4. Not all objects have named keys like (2) and (3). Here is how to document dictionary-like `Object`s, where each
+     key is some type, and the value is another type. For key value pairs use this:
 
-    * `{Object.<string, number>}` Where keys are strings, and values are numbers.
-    * `{Object.<phetioID:string, count:number>}` - naming each of these can help identify them too. Feel free to explain
-      in English after the type expression if needed.
+  * `{Object.<string, number>}` Where keys are strings, and values are numbers.
+  * `{Object.<phetioID:string, count:number>}` - naming each of these can help identify them too. Feel free to explain
+    in English after the type expression if needed.
 
-    5. If things are too complicated for the above cases, use a `*Def.js` file (especially is used in more than one
-       file), or a `@typedef` declaration right above the jsdoc that uses the typedef.
+  5. If things are too complicated for the above cases, use a `*Def.js` file (especially is used in more than one
+     file), or a `@typedef` declaration right above the jsdoc that uses the typedef.
 
 - [ ] Look for cases where the use of type expressions involving Property subclasses are incorrect. Because of the
   structure of the `Property` class hierarchy, specifying type-specific Properties (`{BooleanProperty}`
@@ -523,12 +523,12 @@ visibility annotations are as follows:
 - [ ] Use `@protected` for anything that is intended for use by subtypes.
 - [ ] Use `@private` for anything that is NOT intended to be part of the public or protected API.
 - [ ] Put qualifiers in parenthesis after the annotation, for example:
-    * To qualify that something is read-only, use `@public (read-only)`. This indicates that the given Property (AND its
-      value) should not be changed by outside code (e.g. a Property should not have its value changed)
-    * To qualify that something is public to a specific repository, use (for example) `@public (scenery-internal)`
-    * For something made public solely for a11y, use `@public (a11y)`
-    * For something made public solely for phet-io, use `@public (phet-io)`
-    * Separate multiple qualifiers with commas. For example: `@public (scenery-internal, read-only)`
+  * To qualify that something is read-only, use `@public (read-only)`. This indicates that the given Property (AND its
+    value) should not be changed by outside code (e.g. a Property should not have its value changed)
+  * To qualify that something is public to a specific repository, use (for example) `@public (scenery-internal)`
+  * For something made public solely for a11y, use `@public (a11y)`
+  * For something made public solely for phet-io, use `@public (phet-io)`
+  * Separate multiple qualifiers with commas. For example: `@public (scenery-internal, read-only)`
 - [ ] For JSDoc-style comments, the annotation should appear in context like this:
 
   ```js
@@ -548,8 +548,8 @@ visibility annotations are as follows:
 
 - [ ] Verify that every JavaScript property and function has a visibility annotation. Here are some helpful regular
   expressions to search for these declarations as PhET uses them.
-    * Regex for property assignment like `x.y = something`: `[\w]+\.[\w]+\s=`
-    * Regex for function declarations: `[\w]+: function\(`
+  * Regex for property assignment like `x.y = something`: `[\w]+\.[\w]+\s=`
+  * Regex for function declarations: `[\w]+: function\(`
 
 - [ ] For private fields, a preceding underscore should generally *not* be used in the variable name. For example,
   for a private variable that represents the background, the name ```background``` is preferred over ```_background```.

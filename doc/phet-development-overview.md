@@ -63,8 +63,8 @@ the [Developing Interactive Simulations in HTML5 Google Group](https://groups.go
   https://git-scm.com/book/en/v2/Getting-Started-Installing-Git.
 * `node` and `npm` are necessary to install dependencies and run build code processes. Download & install node+npm
   from https://nodejs.org/en/
-    * After installing, run `npm config set save false` and `npm config set package-lock false` so that
-      package-lock.json files are not created.
+  * After installing, run `npm config set save false` and `npm config set package-lock false` so that
+    package-lock.json files are not created.
 * Create a directory where you intend to check out the PhET source code: `mkdir phetsims`
 * For building the simulations, install the grunt command line utility: `npm install -g grunt-cli` (May require `sudo`
   if you don't have sufficient permissions).
@@ -72,8 +72,8 @@ the [Developing Interactive Simulations in HTML5 Google Group](https://groups.go
   Some systems already have Apache, or you can install something like `npm install http-server -g`. (May require `sudo`
   if you don't have sufficient permissions).
 * Serve files from the `phetsims/` directory. For `http-server` this can be done like so:
-    * Change into the phetsims directory `cd phetsims/`
-    * Run the http server program (with caching turned off to help with iteration) `http-server -c-1`
+  * Change into the phetsims directory `cd phetsims/`
+  * Run the http server program (with caching turned off to help with iteration) `http-server -c-1`
 
 ### Checking out the code
 
@@ -167,7 +167,7 @@ simulation using the template.
 ## Building and Testing
 
 The process described above is sufficient for iterating during development. When you are ready to build the source
-code (including images, sounds and other assets) into an optimized HTML file suitable for student or client usage, 
+code (including images, sounds and other assets) into an optimized HTML file suitable for student or client usage,
 you can build the simulation using the chipper grunt build process.
 
 ### Building the Simulation with chipper

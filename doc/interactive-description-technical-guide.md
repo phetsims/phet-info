@@ -3,26 +3,26 @@
 ### Table Of Contents
 
 * [Prerequisites](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#prerequisites)
-    * [Understand the Goal](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#understand-the-goal)
-    * [Accessibility Basics](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#accessibility-basics)
-    * [Assistive Technology](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#assistive-technology)
+  * [Understand the Goal](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#understand-the-goal)
+  * [Accessibility Basics](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#accessibility-basics)
+  * [Assistive Technology](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#assistive-technology)
 * [What does "Interactive Description" mean?](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#what-does-interactive-description-mean)
 * [Understanding each technology](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#understanding-each-technology)
-    * [Overall Code structure](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#overall-code-structure)
-    * [Parallel DOM](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#parallel-dom)
-    * [UtteranceQueue](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#utterancequeue)
+  * [Overall Code structure](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#overall-code-structure)
+  * [Parallel DOM](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#parallel-dom)
+  * [UtteranceQueue](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#utterancequeue)
 * [Implementation](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#implementation)
-    * [Getting started](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#getting-started)
-    * [The a11y-view](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#the-a11y-view)
-    * [Populating the PDOM](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#populating-the-pdom)
-    * [PDOM Order for PhET Sims](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#pdom-order-for-phet-sims)
-    * [Add alternative-input input listeners](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#add-alternative-input-input-listeners)
-    * [Web Accessibility Toolkit](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#web-accessibility-toolkit)
-    * [Interactive Alerts](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#interactive-alerts)
-    * [Aria Value Text](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#aria-value-text)
-    * [Handling a11y specific strings](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#handling-a11y-specific-strings)
-    * [Naming Types](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#naming-types)
-    * [Other misc notes for PhET Devs](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#other-misc-notes-for-phet-devs)
+  * [Getting started](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#getting-started)
+  * [The a11y-view](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#the-a11y-view)
+  * [Populating the PDOM](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#populating-the-pdom)
+  * [PDOM Order for PhET Sims](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#pdom-order-for-phet-sims)
+  * [Add alternative-input input listeners](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#add-alternative-input-input-listeners)
+  * [Web Accessibility Toolkit](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#web-accessibility-toolkit)
+  * [Interactive Alerts](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#interactive-alerts)
+  * [Aria Value Text](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#aria-value-text)
+  * [Handling a11y specific strings](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#handling-a11y-specific-strings)
+  * [Naming Types](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#naming-types)
+  * [Other misc notes for PhET Devs](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#other-misc-notes-for-phet-devs)
 * [In Conclusion](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#in-conclusion)
 * [Resources for further understanding](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#resources-for-further-understanding)
 
@@ -62,19 +62,19 @@ accessibility. It has the following components (with their implementation in par
 * Alternative Input - ways of interacting with the sim through the PDOM. This largely is classified as the technology
   that can interface with HTML in general, but cannot with SVG, WebGL, or Canvas as used by the primary input system in
   scenery (mouse/touch/pen).
-    * keyboard (PDOM)
-    * mobile (PDOM)
-    * switch (PDOM)
+  * keyboard (PDOM)
+  * mobile (PDOM)
+  * switch (PDOM)
 * State Description (PDOM) - description about the state of objects in the sim.
-    * Static States - unchanging content either describing objects in the sim, or giving hints about interactions.
-    * Dynamic States - description that depends on the model or view values, and so dynamically will change with that
-      sim content.
+  * Static States - unchanging content either describing objects in the sim, or giving hints about interactions.
+  * Dynamic States - description that depends on the model or view values, and so dynamically will change with that
+    sim content.
 * Responsive Description - description given in response to a change in the sim. This is often not directly from the
   PDOM, but instead via technology that will push verbal description directly to the user (like an aria-live alert).
-    * Object Responses (UtteranceQueue/aria-valuetext/PDOM) - a response from an object change, most like stating how
-      that object changed, or what its new value is.
-    * Context Responses (UtteranceQueue) - Often emitted immediately after an object response, a context response is
-      description about the larger context of the sim. This may be the resulting effect that the object change had.
+  * Object Responses (UtteranceQueue/aria-valuetext/PDOM) - a response from an object change, most like stating how
+    that object changed, or what its new value is.
+  * Context Responses (UtteranceQueue) - Often emitted immediately after an object response, a context response is
+    description about the larger context of the sim. This may be the resulting effect that the object change had.
 
 ## Understanding each technology
 
@@ -268,22 +268,22 @@ To implement interactive description with best practices . . .
   comment.
 * Understand [Accessible Name](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
   The short article above describes very simply and briefly the different ways an element gets an accessible name.
-    * element's content: Example `<button>my button</button>`. The inner text within the button's opening and closing
-      tags is the button element's accessible name.
-    * `label` element: a `label` element can be associated with an interactive _input type_ (
-      e.g., `input type="checkbox"`)
-      that does not have inner content in order to provide the input with an accessible name. A `label` is preferred
-      naming method when the sim interaction has visible text-based identifying it on screen. A `label` element can only
-      be associated with _labelable elements_ like typical interactive HTML elements
-      [http://w3c.github.io/html/sec-forms.html#labelable-element](http://w3c.github.io/html/sec-forms.html#labelable-element)
-      . It cannot, for example, be associated with a `div` with `role="checkbox"`. When a visible text-based label does
-      not exist on screen, other labeling options can be considered.
-    * `aria-label`: is an aria attribute that can provide an accessible name.
-    * `aria-labelledby`: aria-labelledby can be used to associate an HTML element other than the label element to
-      another element. The elements do not have to be right beside each other. In a PhET Sim one might want to associate
-      a heading element with a region or group. For example, an H2 heading is associated with the Play Area region
-      through an `aria-labelledby` attribute. With this association the H2's content, "Play Area", provides the region
-      with an accessible name in the _Accessibility Tree_ which is accessed by assistive technology.
+  * element's content: Example `<button>my button</button>`. The inner text within the button's opening and closing
+    tags is the button element's accessible name.
+  * `label` element: a `label` element can be associated with an interactive _input type_ (
+    e.g., `input type="checkbox"`)
+    that does not have inner content in order to provide the input with an accessible name. A `label` is preferred
+    naming method when the sim interaction has visible text-based identifying it on screen. A `label` element can only
+    be associated with _labelable elements_ like typical interactive HTML elements
+    [http://w3c.github.io/html/sec-forms.html#labelable-element](http://w3c.github.io/html/sec-forms.html#labelable-element)
+    . It cannot, for example, be associated with a `div` with `role="checkbox"`. When a visible text-based label does
+    not exist on screen, other labeling options can be considered.
+  * `aria-label`: is an aria attribute that can provide an accessible name.
+  * `aria-labelledby`: aria-labelledby can be used to associate an HTML element other than the label element to
+    another element. The elements do not have to be right beside each other. In a PhET Sim one might want to associate
+    a heading element with a region or group. For example, an H2 heading is associated with the Play Area region
+    through an `aria-labelledby` attribute. With this association the H2's content, "Play Area", provides the region
+    with an accessible name in the _Accessibility Tree_ which is accessed by assistive technology.
 * For a full list of available options, see `ParallelDOM.js`.
 
 ### Interactive Alerts

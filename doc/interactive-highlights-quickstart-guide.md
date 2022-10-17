@@ -31,7 +31,7 @@ To enable both Interactive Description and Interactive Highlights, have the foll
 ```
 
 If you want to enable or disable Interactive Highlights separately from `supportsInteractiveDescription`, you can
-do so with 
+do so with
 
 ```json
 {

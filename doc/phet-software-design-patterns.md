@@ -12,23 +12,23 @@ central to the development process and necessary for pretty much every sim. Belo
 useful at some point, but aren't in every sim, so they can be skimmed and referenced when needed.
 
 - *Patterns that every PhET developer should know well:*
-    - Module
-    - Namespace
-    - Model-View-Controller (MVC)
-    - Model-View Transform
-    - Observer
-    - Options (TypeScript)
-    - Dispose
-    - Enumeration
+  - Module
+  - Namespace
+  - Model-View-Controller (MVC)
+  - Model-View Transform
+  - Observer
+  - Options (TypeScript)
+  - Dispose
+  - Enumeration
 - *Patterns to be aware of and reference when needed:*
-    - Mixin and Trait
-    - Singleton
-    - Dependency Injection
-    - Creator
-    - Scenes
-    - Strategy
-    - State Machine
-    - Options and Config (JavaScript)
+  - Mixin and Trait
+  - Singleton
+  - Dependency Injection
+  - Creator
+  - Scenes
+  - Strategy
+  - State Machine
+  - Options and Config (JavaScript)
 
 ## Table of Contents
 
