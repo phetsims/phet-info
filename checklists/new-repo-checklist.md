@@ -81,8 +81,8 @@ Other:
 - [ ] Apply GitHub labels. See [github-labels/README.md](https://github.com/phetsims/phet-info/blob/master/github-labels/README.md).
 - [ ] Apply branch protection rules. Use [this script to do so](https://github.com/phetsims/perennial/blob/master/js/scripts/protect-branches-for-repo.js).
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
-- [ ] Add the sim to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json).
-- [ ] Add the sim to chipper/tsconfig/all/tsconfig.json
+- [ ] Add the repo to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json).
+- [ ] Add the repo to chipper/tsconfig/all/tsconfig.json
 
 ## Steps for renaming a repo
 - [ ] Make sure all commits are pushed to that repo.
