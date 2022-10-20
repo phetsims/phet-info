@@ -169,6 +169,18 @@ Be careful not to add hotkeys that collide with other global hotkeys defined by 
 into the sim. We need a list of global hotkeys or a way to automatically prevent collisions but do not have that yet.
 See https://github.com/phetsims/phet-info/issues/188.
 
+## Scenery Events
+If the above are not sufficient you can add input listeners with Scenery's input system that are related to alternative
+input. For example, if you want to add behavior whenever a Node has focus you can add a listener like this:
+```js
+myNode.addInputListener( {
+  focus: ( event: SceneryEvent ) => {
+    console.log( 'Hey, I have focus!' );
+  }
+} );
+```
+See scenery/js/input/Input.js top level documentation for a list of all related alternative input events.
+
 ## Keyboard Shortcuts dialog
 
 The Keyboard Shortcuts dialog is accessed by pressing the keyboard button in the navigation bar. To make this button
