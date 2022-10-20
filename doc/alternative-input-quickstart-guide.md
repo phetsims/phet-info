@@ -96,7 +96,7 @@ this.addInputListener( {
 } );
 ```
 
-## Drag using the keyboard
+## Drag using the KeyboardDragListener
 
 `DragListener` does NOT handle keyboard input. For Nodes where you’ve added a `DragListener`, you’ll need to add a
 corresponding `KeyboardDragListener`. The options for your `DragListener` and `KeyboardDragListener` will typically be
@@ -123,6 +123,36 @@ You’ll also need to add these options to your Node:
 tagName: 'div', 
 focusable: true
 ```
+
+## Drag using AccessibleSlider for 1D Motion
+If your draggable component moves in 1 dimension consider using AccessibleSlider. AccessibleSlider is a trait that
+can be mixed into a Node to add 1D motion with alternative input. AccessibleSlider will make the component much more
+accessible for a screen reader user compared to KeyboardDragListener. It is very easy to use when there is a
+NumberProperty driving the position.  Here is an example:
+```js
+type SelfOptions = EmptySelfOptions;
+type ParentOptions = AccessibleSliderOptions & NodeOptions;
+
+class MyDraggable extends AccessibleSlider( Node, 0 ) {
+    public constructor( altitudeProperty: TProperty<number> ) {
+      const options = optionize<ParentOptions>()( {
+        valueProperty: altitudeProperty,
+        enabledRangeProperty: new Property( ALTITUDE_RANGE )
+      }, providedOptions );
+    
+      super( options );
+    
+      // Now use altitudeProperty to position the Node
+      altitudeProperty.link( altitude => {
+        this.centerY = altitude;
+      } );
+    }
+  } 
+}
+```
+AccessibleSlider will support movement with arrow keys, as well as other keys such as home/end to quickly move the
+component to the limits of the range. See AccessibleSlider and its supertype AccessibleValueHandler for more options
+and functionality.
 
 ## Hotkeys
 
