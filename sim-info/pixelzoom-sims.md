@@ -17,9 +17,9 @@
 | gases-intro                      | 8/12/2019  |            |          |                    |           |                |
 | geometric-optics                 | 10/29/2021 |     x      |    x     |         x          |     x     |       x        |
 | geometric-optics-basics          |            |     x      |    x     |         x          |     x     |       x        |
-| graphing-lines                   |     x      |            |          |                    |           |                |
-| graphing-quadratics              |     x      |            |    x     |                    |           |                |
-| graphing-slope-intercept         |     x      |            |          |                    |           |                |
+| graphing-lines                   | 7/21/2014  |            |          |                    |           |                |
+| graphing-quadratics              | 12/7/2018  |            |    x     |                    |           |                |
+| graphing-slope-intercept         | 6/14/2017  |            |          |                    |           |                |
 | hookes-law                       |     x      |            |    x     |                    |           |                |
 | models-of-the-hydrogen-atom      |            |            |          |                    |           |       x        |
 | molecule-polarity                |     x      |     x      |    x     |                    |           |                |
