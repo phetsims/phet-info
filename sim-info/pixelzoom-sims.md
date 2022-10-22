@@ -22,7 +22,7 @@
 | graphing-slope-intercept         | 6/14/2017  |            |          |                    |           |                |
 | hookes-law                       | 10/21/2015 |            |    x     |                    |           |                |
 | models-of-the-hydrogen-atom      |            |            |          |         x          |     x     |       x        |
-| molecule-polarity                | 7/26/2017  |     x      |    x     |                    |           |                |
+| molecule-polarity                | 7/26/2017  |     x      |    x     |                    |           |       x        |
 | natural-selection                | 9/1/2020   |            |    x     |         x          |     x     |       x        |
 | ph-scale                         | 8/22/2014  |     x      |    x     |         x          |     x     |       x        |
 | ph-scale-basics                  | 1/7/2014   |     x      |    x     |         x          |     x     |       x        |
