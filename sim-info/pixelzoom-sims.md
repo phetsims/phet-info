@@ -4,8 +4,8 @@
 |:---------------------------------|:----------:|:----------:|:--------:|:------------------:|:---------:|:--------------:|
 | acid-base-solutions              | 4/18/2014  |            |          |                    |           |       x        |
 | balancing-chemical-equations     | 7/31/2014  |            |          |                    |           |                |
-| beers-law-lab                    |     x      |     x      |    x     |                    |           |                |
-| concentration                    |     x      |     x      |    x     |                    |           |                |
+| beers-law-lab                    | 8/16/2013  |     x      |    x     |                    |           |                |
+| concentration                    | 10/31/2013 |     x      |    x     |                    |           |                |
 | diffusion                        |     x      |            |          |                    |           |                |
 | equality-explorer                |     x      |     x      |          |                    |           |                |
 | equality-explorer-basics         |     x      |     x      |          |                    |           |                |
