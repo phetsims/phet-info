@@ -6,10 +6,10 @@
 | balancing-chemical-equations     | 7/31/2014  |            |          |                    |           |                |
 | beers-law-lab                    | 8/16/2013  |     x      |    x     |                    |           |                |
 | concentration                    | 10/31/2013 |     x      |    x     |                    |           |                |
-| diffusion                        |     x      |            |          |                    |           |                |
-| equality-explorer                |     x      |     x      |          |                    |           |                |
-| equality-explorer-basics         |     x      |     x      |          |                    |           |                |
-| equality-explorer-two-variables  |     x      |     x      |          |                    |           |                |
+| diffusion                        | 8/12/2019  |            |          |                    |           |                |
+| equality-explorer                | 7/18/2018  |     x      |          |                    |           |                |
+| equality-explorer-basics         | 7/18/2018  |     x      |          |                    |           |                |
+| equality-explorer-two-variables  | 7/18/2018  |     x      |          |                    |           |                |
 | fourier-making-waves             |     x      |            |          |                    |           |                |
 | function-builder                 |     x      |            |          |                    |           |                |
 | function-builder-basics          |     x      |            |          |                    |           |                |
