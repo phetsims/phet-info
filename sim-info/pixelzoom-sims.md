@@ -29,4 +29,4 @@
 | reactants-products-and-leftovers | 1/27/2015  |            |          |             |           |                |
 | unit-rates                       | 4/4/2017   |            |          |             |           |                |
 | vector-addition                  | 11/5/2019  |            |          |             |           |                |
-| vector-addition-equations        | 11/5/2019  |            |          |             |           |                |
+| vector-addition-equations        | 11/5/2019  |            |          |             |           |       x        |
