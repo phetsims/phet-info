@@ -10,11 +10,11 @@
 | equality-explorer                | 7/18/2018  |     x      |          |                    |           |                |
 | equality-explorer-basics         | 7/18/2018  |     x      |          |                    |           |                |
 | equality-explorer-two-variables  | 7/18/2018  |     x      |          |                    |           |                |
-| fourier-making-waves             |     x      |            |          |                    |           |                |
-| function-builder                 |     x      |            |          |                    |           |                |
-| function-builder-basics          |     x      |            |          |                    |           |                |
-| gas-properties                   |     x      |            |          |                    |           |                |
-| gases-intro                      |     x      |            |          |                    |           |                |
+| fourier-making-waves             | 10/13/2021 |            |          |                    |           |                |
+| function-builder                 | 7/13/2016  |            |          |                    |           |                |
+| function-builder-basics          | 6/6/2017   |            |          |                    |           |                |
+| gas-properties                   | 8/12/2019  |            |          |                    |           |                |
+| gases-intro                      | 8/12/2019  |            |          |                    |           |                |
 | geometric-optics                 |     x      |     x      |    x     |         x          |     x     |       x        |
 | geometric-optics-basics          |            |     x      |    x     |         x          |     x     |       x        |
 | graphing-lines                   |     x      |            |          |                    |           |                |
