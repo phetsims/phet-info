@@ -26,7 +26,7 @@
 | natural-selection                | 9/1/2020   |            |    x     |         x          |     x     |       x        |
 | ph-scale                         | 8/22/2014  |     x      |    x     |         x          |     x     |       x        |
 | ph-scale-basics                  | 1/7/2014   |     x      |    x     |         x          |     x     |       x        |
-| reactants-products-and-leftovers |     x      |            |          |                    |           |                |
-| unit-rates                       |     x      |            |          |                    |           |                |
-| vector-addition                  |     x      |            |          |                    |           |                |
-| vector-addition-equations        |     x      |            |          |                    |           |                |
+| reactants-products-and-leftovers | 1/27/2015  |            |          |                    |           |                |
+| unit-rates                       | 4/4/2017   |            |          |                    |           |                |
+| vector-addition                  | 11/5/2019  |            |          |                    |           |                |
+| vector-addition-equations        | 11/5/2019  |            |          |                    |           |                |
