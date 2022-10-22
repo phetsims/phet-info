@@ -1,6 +1,6 @@
 ## Status of pixelzoom sims 
 
-| Simulation                       | Published  | TypeScript | PhET-iO  | Alternative Input  | UI Sound  | Dynamic Locale |
+| Simulation                       |    1.0     | TypeScript | PhET-iO  | Alternative Input  | UI Sound  | Dynamic Locale |
 |:---------------------------------|:----------:|:----------:|:--------:|:------------------:|:---------:|:--------------:|
 | acid-base-solutions              | 4/18/2014  |            |          |                    |           |       x        |
 | balancing-chemical-equations     |     x      |            |          |                    |           |                |
