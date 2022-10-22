@@ -6,7 +6,7 @@
 | balancing-chemical-equations     | 7/31/2014  |            |          |             |           |       x        |
 | beers-law-lab                    | 8/16/2013  |     x      |    x     |             |           |       x        |
 | concentration                    | 10/31/2013 |     x      |    x     |             |           |       x        |
-| diffusion                        | 8/12/2019  |            |          |             |           |                |
+| diffusion                        | 8/12/2019  |            |          |             |           |       x        |
 | equality-explorer                | 7/18/2018  |     x      |          |             |           |       x        |
 | equality-explorer-basics         | 7/18/2018  |     x      |          |             |           |       x        |
 | equality-explorer-two-variables  | 7/18/2018  |     x      |          |             |           |       x        |
