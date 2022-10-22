@@ -20,7 +20,7 @@
 | graphing-lines                   | 7/21/2014  |            |          |                    |           |                |
 | graphing-quadratics              | 12/7/2018  |            |    x     |                    |           |                |
 | graphing-slope-intercept         | 6/14/2017  |            |          |                    |           |                |
-| hookes-law                       |     x      |            |    x     |                    |           |                |
+| hookes-law                       | 10/21/2015 |            |    x     |                    |           |                |
 | models-of-the-hydrogen-atom      |            |            |          |                    |           |       x        |
 | molecule-polarity                |     x      |     x      |    x     |                    |           |                |
 | natural-selection                |     x      |            |    x     |         x          |     x     |       x        |
