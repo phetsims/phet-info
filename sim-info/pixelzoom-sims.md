@@ -15,7 +15,7 @@
 | function-builder-basics          | 6/6/2017   |            |          |                    |           |                |
 | gas-properties                   | 8/12/2019  |            |          |                    |           |                |
 | gases-intro                      | 8/12/2019  |            |          |                    |           |                |
-| geometric-optics                 |     x      |     x      |    x     |         x          |     x     |       x        |
+| geometric-optics                 | 10/29/2021 |     x      |    x     |         x          |     x     |       x        |
 | geometric-optics-basics          |            |     x      |    x     |         x          |     x     |       x        |
 | graphing-lines                   |     x      |            |          |                    |           |                |
 | graphing-quadratics              |     x      |            |    x     |                    |           |                |
