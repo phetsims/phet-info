@@ -7,9 +7,9 @@
 | beers-law-lab                    | 8/16/2013  |     x      |    x     |                    |           |       x        |
 | concentration                    | 10/31/2013 |     x      |    x     |                    |           |       x        |
 | diffusion                        | 8/12/2019  |            |          |                    |           |                |
-| equality-explorer                | 7/18/2018  |     x      |          |                    |           |                |
-| equality-explorer-basics         | 7/18/2018  |     x      |          |                    |           |                |
-| equality-explorer-two-variables  | 7/18/2018  |     x      |          |                    |           |                |
+| equality-explorer                | 7/18/2018  |     x      |          |                    |           |       x        |
+| equality-explorer-basics         | 7/18/2018  |     x      |          |                    |           |       x        |
+| equality-explorer-two-variables  | 7/18/2018  |     x      |          |                    |           |       x        |
 | fourier-making-waves             | 10/13/2021 |            |          |                    |           |                |
 | function-builder                 | 7/13/2016  |            |          |                    |           |                |
 | function-builder-basics          | 6/6/2017   |            |          |                    |           |                |
