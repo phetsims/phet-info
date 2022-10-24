@@ -224,6 +224,9 @@ consist of standard "sections" supported by common code
 (e.g. `BasicActionsKeyboardHelpSection`), plus custom sections for sim-specific hotkeys. Consult with your designer
 about the content language and layout.
 
+## Pitfalls
+* Beware that keyboard navigation does not work by default in Safari. You need to enable traversal in user settings. See [this for example](https://www.seanmcp.com/articles/tab-focus-not-working-in-safari/) 
+
 ## Not supported? Create an issue!
 
 There may be common-code UI components for which alternative input has not been implemented. And there may be PhET
