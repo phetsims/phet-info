@@ -1083,6 +1083,12 @@
     ],
     "responsibleDesigners": []
   },
+  "phet-lib": {
+    "responsibleDevs": [
+      "@jonathanolson"
+    ],
+    "responsibleDesigners": []
+  },
   "phet-office-add-in": {
     "responsibleDevs": [
       "@oliver-phet"
