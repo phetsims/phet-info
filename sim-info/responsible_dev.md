@@ -151,6 +151,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phet-io-wrappers | @zepumph |  |  | 
 | phet-ios-app | @mattpen |  |  | 
 | phet-ios-vibtest-app | @jessegreenberg |  |  | 
+| phet-lib | @jonathanolson |  |  | 
 | phet-office-add-in | @oliver-phet |  |  | 
 | phet-partnerships | @kathy-phet |  |  | 
 | phet-sublime-plugin | @jonathanolson |  |  | 
