@@ -6,7 +6,7 @@
 | balancing-chemical-equations     |  7/31/2014 |  4,634 |             |          |             |           |       x        |
 | beers-law-lab                    |  8/16/2013 |  6,517 |            x |    x     |             |           |       x        |
 | concentration                    | 10/31/2013 |     54 |            x |    x     |             |           |       x        |
-| diffusion                        |  8/12/2019 |     53 |              |          |             |           |       x        |
+| diffusion                        |  8/12/2019 |     53 |            x |          |             |           |       x        |
 | equality-explorer                |  7/18/2018 | 13,672 |            x |          |             |           |       x        |
 | equality-explorer-basics         |  7/18/2018 |    375 |           x |          |             |           |       x        |
 | equality-explorer-two-variables  |  7/18/2018 |    283 |           x |          |             |           |       x        |
