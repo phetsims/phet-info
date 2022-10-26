@@ -11,7 +11,7 @@
 | equality-explorer-basics         |  7/18/2018 |    375 |          x |          |             |           |       x        |
 | equality-explorer-two-variables  |  7/18/2018 |    283 |          x |          |             |           |       x        |
 | fourier-making-waves             | 10/13/2021 | 14,630 |            |          |             |           |                |
-| function-builder                 |  7/13/2016 | 10,716 |            |          |             |           |   partial      |
+| function-builder                 |  7/13/2016 | 10,716 |            |          |             |           |      80%       |
 | function-builder-basics          |   6/6/2017 |    805 |            |          |             |           |       x        |
 | gas-properties                   |  8/12/2019 | 12,732 |            |          |             |           |                |
 | gases-intro                      |  8/12/2019 |    133 |            |          |             |           |       x        |
