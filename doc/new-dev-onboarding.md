@@ -2,10 +2,10 @@
 
 This document is intended as a starting point for new developers that are joining the PhET team and plan to contribute
 to the development of simulations. The document discusses the process through which a new developer can acquire the
-knowledge and skills needed to do create and maintain PhET simulations.
+knowledge and skills needed to create and maintain PhET simulations.
 
-Note that there are other software development roles at PhET, such as writing code for the website, the iOS and Android
-apps, the desktop app, and the translation utility. These will not be covered in this document.
+Note that there are other software development roles at PhET beyond simulation development, such as writing code for the website, the iOS and Android
+apps, the desktop app, and the translation utility. These roles will not be covered in this document.
 
 ## Table of Contents
 
@@ -22,40 +22,39 @@ apps, the desktop app, and the translation utility. These will not be covered in
 
 ## 👋 Intro
 
-Don't panic (with apologies to Douglas Adams). PhET has been around since 2001, and has written a lot of code and
+Welcome! We know jumping into to simulation development can be a bit overwhelming at first. PhET has been around since 2001, and has written a lot of code and
 created some pretty involved processes during that time. It will take a while for a new developer to learn what they
-need to know to develop and maintain simulations.
+need to know to develop and maintain simulations, and the team understands onboarding takes some dedicated time. 
 
-Each new developer will have had a unique set of experiences and education when starting at PhET, so it isn't really
+Each new developer will have had a unique set of experiences and education when starting at PhET, so it is not
 possible to come up with a "one-size-fits-all" plan for what to read and work through to ramp up. Each new developer
 will be assigned a mentor who is an experienced developer of PhET simulations, and one of the first steps of the process
-should be to come up with a customized plan or "road map" for ramping up. This should be regularly reviewed and updated
+should be to come up with a customized plan or "road map" for ramping up. This plan should be regularly reviewed and updated
 during the process.
 
 <a id='admin-setup'>
 
 ## 📝 Administrative Setup
 
-In your first few days there are many configuration and setup steps that need to be completed in order to become a CU
-and PhET employee. Check-in with the PhET Business Manager for a complete list of HR needs. The list below is not
-comprehensive and is specific towards a PhET Developer's needs.
-
+In your first few days there are many configuration and setup steps that need to be completed to become a CU
+and PhET employee. Check-in with the PhET Business Manager for a complete list of HR needs. Beyond those HR nees, the following list specifies essential itmes for a PhET Developer:
+  
 - Get a CU Email account and identikey.
 - Set up a Github Account with access to the phetsims organization (you should receive an invite to join).
-- Ask the Business Manager to add you to the SIMS_DEV and BROWSER_SIDE_COMMON_CODE development teams on Github. This
+- Ask the Business Manager to add you to the SIMS_DEV and BROWSER_SIDE_COMMON_CODE development teams on Github. This access
   will allow you to push code to sim repos and common code repos.
 - Set up a Slack account and join the phetsims workspace (you should receive an invite to join). From here, join the
-  #general, #dev-public, #developer, and #continuous-testing channel.
+  #general, #dev-public, #developer, and #continuous-testing channels.
   - Be sure to set notifications in #continuous-testing to "All messages".
   - Check with your mentor about any other relevant channels to join.
-  - If you're not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on
+  - If you are not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on
     how to use it.
 
  <a id='env-setup'>
 
 ## 👩‍💻 Development Environment Setup
 
-Itching to dig into the code? The following are the steps needed in order to start sim development:
+Itching to dig into the code? The following are the steps needed to start sim development:
 
 - Follow the steps in
   the [Getting Started](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#getting-started)
@@ -111,7 +110,7 @@ be frustrating and error-prone to discover these errors for the first time when 
 ### Debugging
 
 - Console.log
-  - A favorite amongst javascript developers, console.log allows you to log values to the console, which can help devs
+  - A favorite amongst JavaScript developers, console.log allows you to log values to the console, which can help developers
     take a peek into what is happening in the code at run time.
 - Debugger
   - You can insert the `debugger` keyword in code to set a breakpoint that allows you to explore code in a paused
@@ -119,12 +118,12 @@ be frustrating and error-prone to discover these errors for the first time when 
 - [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
   - Chrome Dev Tools is built into the Chrome browser and provides a set of powerful web development tools for
     debugging and examining code.
-  - Most developers on the team use Chrome for development and test for performance and bugs on other browsers. If you
+  - Most developers on the team use Chrome for development and testing for performance and bugs on other browsers. If you
     have a different preference do not feel obligated to use Chrome.
-  - This is a [handy tutorial](https://developer.chrome.com/docs/devtools/javascript/) for debugging Javascript in
+  - This is a [handy tutorial](https://developer.chrome.com/docs/devtools/javascript/) for debugging JavaScript in
     Chrome Dev Tools.
 - Helper Tool
-  - The Helper tool will display information about PhET components, helping devs navigate and implement the internal
+  - The Helper tool will display information about PhET components, helping developers navigate and implement the internal
     code.
   - How to use:
     - Load a sim or common code repo
@@ -147,7 +146,7 @@ in the Code Review Checklist for an overview or ask your mentor for an explanati
 
 ### Tutorials and Exercises
 
-We prepared some exercises in order for you to get the hang of Sim-development. Try to complete, with the help of your
+We prepared some exercises in order for you to get the hang of sim development. Try to complete, with the help of your
 mentor, the steps described
 in [this Dev Exercises document](https://github.com/phetsims/phet-info/blob/master/doc/phet-dev-excercises.md). This
 way, you will catch glimpses of the tasks you'll be performing when developing a real PhET sim.
@@ -195,7 +194,7 @@ status change occurs for the continuous testing process. The underlying process 
 called
 continuous testing quick (CTQ), and it is the same service as the test boxes at the top of continuous-report. An example
 error would be a lint error ends up in the code base, the server will send a message to this Slack channel. Sometimes,
-errors are triggered here are false positives, when only half of a changeset is picked up (mid-pull on a developer
+errors triggered here are false positives, when only half of a changeset is picked up (mid-pull on a developer
 machine).
 In this case, we note the error on slack with a bird emoji (dodo/turkey/etc) to signify that CTQ should pass on the next
 round.
@@ -203,7 +202,7 @@ round.
 ### QUnit
 
 Unit testing at PhET is done through [QUnit](https://qunitjs.com/). Although most sims do not have unit testing built
-in, developers are encouraged to use unit testing as feels necessary for your development workflow. Most unit tests
+in, developers are encouraged to use unit testing as feels necessary for their development workflow. Most unit tests
 exist in common-code repos and these tests are run as part of pre-commit hooks and continuous testing.
 
 To run QUnit tests, navigate to the repo in question in phetmarks and click on Unit Tests (Unbuilt). Running the tests
@@ -215,24 +214,24 @@ the browser provides better error reporting, and debugging tools.
 #### History
 
 PhET made a decision in early 2022 to migrate from JavaScript to TypeScript as the primary development language for our
-simulations and build tools. This was motivated by a desire to have stronger type checking so that our code base would
+simulations and build tools. This decision was motivated by a desire to have stronger type checking so that our code base would
 be easier to navigate and maintain.
 
 Much of the common code was migrated to TypeScript when this decision was made, but we did not proactively migrate the
 simulations due to the cost of doing so. Many of these remain in JavaScript, and are likely to stay that way for a long
 while if not indefinitely. New developers should be prepared to encounter a mix of TypeScript and JavaScript in the
-codebase, and may even be asked to fix or extend simulations that are written in JavaScript.
+code base, and may even be asked to fix or extend simulations that are written in JavaScript.
 
 Also, the standards for TypeScript evolved quite a bit while the migration was in progress. It is therefore possible
 that you encounter code that is written in TypeScript, but doesn't fully adhere to the current standards.
 For this reason, always double check that any code that is being leveraged for a new sim meets the current standards.
-Also, be prepared to fix up code that *doesn't* meet those standards. For a bit more information on the history of this,
+Also, be prepared to fix up code that *doesn't* meet those standards. For a bit more information on the history of this change,
 and on some specific things that changed during PhET's TypeScript evolution, please see
 https://github.com/phetsims/chipper/issues/1281.
 
 #### TSC
 
-When you begin working in Typescript files, you might hear a lot about tsc (Typescript Compiler):
+When you begin working in TypeScript files, you might hear a lot about tsc (TypeScript Compiler):
 
 - tsc runs a type checker that will output type errors in our code. This type checking is already included in pre-commit
   hooks, but many developers enjoy having a tool where they can check for type errors outside of pre-commit hooks.
@@ -240,8 +239,8 @@ When you begin working in Typescript files, you might hear a lot about tsc (Type
   script [absolute-tsc.js](https://github.com/phetsims/chipper/blob/master/js/scripts/absolute-tsc.js). Documentation
   for how to run absolute-tsc from the command line, or as an external tool in Webstorm can be found at the top of the
   file.
-- The [Typescript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) is a great resource for diving into
-  Typescript. You can also find PhET specific Typescript Conventions in the [Reference Documents](#reference-docs)
+- The [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) is a great resource for diving into
+  TypeScript. You can also find PhET specific TypeScript Conventions in the [Reference Documents](#reference-docs)
   section.
 
 ### Memory and Performance Profiling
@@ -261,7 +260,7 @@ devices by adding the query parameter `profiler` (another common [query paramete
 see the live frame rate while you interact with various parts of the sim. If you find parts that aren't performing well,
 ask your mentor how to record your interaction of the poor performance and investigate with Chrome's flame chart. Google
 also provides some [documentation](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/)
-for how to do this.
+for how to do this profiling.
 
 ### Publishing a Sim
 
