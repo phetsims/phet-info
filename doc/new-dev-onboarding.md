@@ -111,7 +111,7 @@ be frustrating and error-prone to discover these errors for the first time when 
 
 - Console.log
   - A favorite amongst JavaScript developers, console.log allows you to log values to the console, which can help developers
-    take a peek into what is happening in the code at run time.
+    take a peek into what is happening in the code at runtime.
 - Debugger
   - You can insert the `debugger` keyword in code to set a breakpoint that allows you to explore code in a paused
     state in a console.
