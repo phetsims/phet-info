@@ -366,4 +366,4 @@ that, it's probably best to ask around.
 | [PhET Software Design Patterns](./phet-software-design-patterns.md)                                                 | Provides information on how PhET uses various software design patterns            |
 | [Private Features for PhET Team Members](https://github.com/phetsims/special-ops/blob/master/doc/phetTeamMember.md) | Information on hidden features. This comes up most often during game development. |
 | [Responsible Devs](../sim-info/responsible_dev.md)                                                                  | Associates repos with the developer who is responsible for maintenance            |
-| [Typescript Conventions](./typescript-conventions.md)                                                               | PhET's TypeScript conventions                                                     |
+| [TypeScript Conventions](./typescript-conventions.md)                                                               | PhET's TypeScript conventions                                                     |
