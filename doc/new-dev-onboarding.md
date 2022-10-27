@@ -209,7 +209,7 @@ To run QUnit tests, navigate to the repo in question in phetmarks and click on U
 in
 the browser provides better error reporting, and debugging tools.
 
-### Typescript
+### TypeScript
 
 #### History
 
