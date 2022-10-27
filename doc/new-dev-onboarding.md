@@ -328,7 +328,7 @@ Developers are also encouraged to add GitHub issues to the [project board](https
 that they feel need to be discussed by the group. Our goal is to move through issue discussions quickly, and assign each
 issue to a subgroup of developers who can finish the necessary work.
 
-### Github Issues
+### GitHub Issues
 
 As a developer, much of your moment-to-moment activity will be driven by the GitHub issues to which you are assigned. We
 use GitHub issues to track action items, and to keep a record of what was done, when, by whom, and the motivation /
