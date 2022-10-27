@@ -40,7 +40,7 @@ In your first few days there are many configuration and setup steps that need to
 and PhET employee. Check-in with the PhET Business Manager for a complete list of HR needs. Beyond those HR nees, the following list specifies essential items for a PhET Developer:
   
 - Get a CU Email account and identikey.
-- Set up a Github Account with access to the phetsims organization (you should receive an invite to join).
+- Set up a GitHub Account with access to the phetsims organization (you should receive an invite to join).
 - Ask the Business Manager to add you to the SIMS_DEV and BROWSER_SIDE_COMMON_CODE development teams on Github. This access
   will allow you to push code to sim repos and common code repos.
 - Set up a Slack account and join the phetsims workspace (you should receive an invite to join). From here, join the
