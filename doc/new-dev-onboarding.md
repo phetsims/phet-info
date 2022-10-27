@@ -41,7 +41,7 @@ and PhET employee. Check-in with the PhET Business Manager for a complete list o
   
 - Get a CU Email account and identikey.
 - Set up a GitHub Account with access to the phetsims organization (you should receive an invite to join).
-- Ask the Business Manager to add you to the SIMS_DEV and BROWSER_SIDE_COMMON_CODE development teams on Github. This access
+- Ask the Business Manager to add you to the SIMS_DEV and BROWSER_SIDE_COMMON_CODE development teams on GitHub. This access
   will allow you to push code to sim repos and common code repos.
 - Set up a Slack account and join the phetsims workspace (you should receive an invite to join). From here, join the
   #general, #dev-public, #developer, and #continuous-testing channels.
