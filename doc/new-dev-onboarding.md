@@ -37,7 +37,7 @@ during the process.
 ## 📝 Administrative Setup
 
 In your first few days there are many configuration and setup steps that need to be completed to become a CU
-and PhET employee. Check-in with the PhET Business Manager for a complete list of HR needs. Beyond those HR nees, the following list specifies essential itmes for a PhET Developer:
+and PhET employee. Check-in with the PhET Business Manager for a complete list of HR needs. Beyond those HR nees, the following list specifies essential items for a PhET Developer:
   
 - Get a CU Email account and identikey.
 - Set up a Github Account with access to the phetsims organization (you should receive an invite to join).
