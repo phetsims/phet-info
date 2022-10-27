@@ -344,7 +344,7 @@ One of the tricky things about using GitHub issues to manage work is how widely 
 People create issues that can be knocked out in half an hour, as well as issues that would take several months of
 focused effort to complete. One of the labels that we try to use to help manage this situation is the `type:epic` label.
 An epic is an issue that is more of a project than a clear and finite task. This type of issue is likely to involve
-multiple people, and will have "sub- issues" created for the individual tasks that will go into completing the "epic".
+multiple people, and will have "sub-issues" created for the individual tasks that will go into completing the "epic".
 
 <a id='reference-docs'>  
 
