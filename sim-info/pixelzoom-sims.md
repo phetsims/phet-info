@@ -2,7 +2,7 @@
 
 | Simulation                       |        1.0 |    loc | TypeScript | PhET-iO  | Alt Input  | UI Sound  | Dynamic Locale |
 |:---------------------------------|-----------:|-------:|:----------:|:--------:|:-----------:|:---------:|:--------------:|
-| acid-base-solutions              |  4/18/2014 |  3,869 |          x |          |             |           |       x        |
+| acid-base-solutions              |  4/18/2014 |  3,937 |          x |          |             |           |       x        |
 | balancing-chemical-equations     |  7/31/2014 |  4,634 |            |          |             |           |       x        |
 | beers-law-lab                    |  8/16/2013 |  6,517 |          x |    x     |             |           |       x        |
 | concentration                    | 10/31/2013 |     54 |          x |    x     |             |           |       x        |
