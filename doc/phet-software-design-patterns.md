@@ -24,7 +24,7 @@ useful at some point, but aren't in every sim, so they can be skimmed and refere
   - Mixin and Trait
   - Singleton
   - Dependency Injection
-  - Creator
+  - Creator (with Drag Forwarding)
   - Scenes
   - Strategy
   - State Machine
@@ -32,7 +32,7 @@ useful at some point, but aren't in every sim, so they can be skimmed and refere
 
 ## Table of Contents
 
-* [Creator](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-with-drag-forwarding)
+* [Creator (with Drag Forwarding)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-with-drag-forwarding)
 * [Dependency Injection](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dependency-injection)
 * [Dispose](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dispose)
 * [Enumeration](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#enumeration)
