@@ -6,14 +6,14 @@
 | balancing-chemical-equations     |  7/31/2014 |  4,634 |            |          |             |           |       x        | |
 | beers-law-lab                    |  8/16/2013 |  6,517 |          x |    x     |             |           |       x        | |
 | concentration                    | 10/31/2013 |     54 |          x |    x     |             |           |       x        | |
-| diffusion                        |  8/12/2019 |     53 |          x |          |             |           |       x        | x |
+| diffusion                        |  8/12/2019 |     53 |          x |   25%    |             |           |       x        | x |
 | equality-explorer                |  7/18/2018 | 13,672 |          x |   40%    |             |           |       x        | |
 | equality-explorer-basics         |  7/18/2018 |    375 |          x |   40%    |             |           |       x        | |
 | equality-explorer-two-variables  |  7/18/2018 |    283 |          x |   40%    |             |           |       x        | |
-| fourier-making-waves             | 10/13/2021 | 14,630 |            |          |             |           |      80%       | x |
+| fourier-making-waves             | 10/13/2021 | 14,630 |            |   25%    |             |           |      80%       | x |
 | function-builder                 |  7/13/2016 | 10,716 |            |          |             |           |      80%       | |
-| function-builder-basics          |   6/6/2017 |    805 |            |          |             |           |       x        | |
-| gas-properties                   |  8/12/2019 | 12,732 |            |          |             |           |                | x |
+| function-builder-basics          |   6/6/2017 |    805 |            |   25%    |             |           |       x        | |
+| gas-properties                   |  8/12/2019 | 12,732 |            |   25%    |             |           |                | x |
 | gases-intro                      |  8/12/2019 |    133 |            |          |             |           |       x        | x |
 | geometric-optics                 | 10/29/2021 | 12,593 |          x |    x     |      x      |     x     |       x        | x |
 | geometric-optics-basics          |            |     63 |          x |    x     |      x      |     x     |       x        | x |
