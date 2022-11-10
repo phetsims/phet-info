@@ -14,7 +14,7 @@
 | function-builder                 |  7/13/2016 | 10,716 |            |          |             |           |      80%       | |
 | function-builder-basics          |   6/6/2017 |    805 |            |          |             |           |       x        | |
 | gas-properties                   |  8/12/2019 | 12,732 |            |   25%    |             |           |                | x |
-| gases-intro                      |  8/12/2019 |    133 |            |   25%    |             |           |       x        | x |
+| gases-intro                      |  8/12/2019 |    133 |          x |   25%    |             |           |       x        | x |
 | geometric-optics                 | 10/29/2021 | 12,593 |          x |    x     |      x      |     x     |       x        | x |
 | geometric-optics-basics          |            |     63 |          x |    x     |      x      |     x     |       x        | x |
 | graphing-lines                   |  7/21/2014 |  9,999 |            |          |             |           |                | |
