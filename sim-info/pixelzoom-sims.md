@@ -4,7 +4,7 @@
 |:---------------------------------|-----------:|-------:|:----------:|:--------:|:-----------:|:---------:|:--------------:|:---:|:---:|
 | acid-base-solutions              |  4/18/2014 |  3,937 |          x |          |             |           |       x        | | |
 | balancing-chemical-equations     |  7/31/2014 |  4,634 |            |          |             |           |       x        | | |
-| beers-law-lab                    |  8/16/2013 |  6,517 |          x |    x     |             |           |       x        | | |
+| beers-law-lab                    |  8/16/2013 |  6,517 |          x |    x     |             |           |       x        | x | |
 | concentration                    | 10/31/2013 |     54 |          x |    x     |             |           |       x        | | |
 | diffusion                        |  8/12/2019 |     53 |          x |   25%    |             |           |       x        | | x |
 | equality-explorer                |  7/18/2018 | 13,672 |          x |   40%    |             |           |       x        | | |
@@ -15,8 +15,8 @@
 | function-builder-basics          |   6/6/2017 |    805 |            |          |             |           |       x        | | |
 | gas-properties                   |  8/12/2019 | 12,732 |            |   25%    |             |           |                | | x |
 | gases-intro                      |  8/12/2019 |    133 |          x |   25%    |             |           |       x        | | x |
-| geometric-optics                 | 10/29/2021 | 12,593 |          x |    x     |      x      |     x     |       x        | | x |
-| geometric-optics-basics          |            |     63 |          x |    x     |      x      |     x     |       x        | | x |
+| geometric-optics                 | 10/29/2021 | 12,593 |          x |    x     |      x      |     x     |       x        | x | x |
+| geometric-optics-basics          |            |     63 |          x |    x     |      x      |     x     |       x        | x | x |
 | graphing-lines                   |  7/21/2014 |  9,999 |            |          |             |           |                | | |
 | graphing-quadratics              |  12/7/2018 |  7,359 |            |    x     |             |           |                | | |
 | graphing-slope-intercept         |  6/14/2017 |    606 |            |          |             |           |       x        | | |
