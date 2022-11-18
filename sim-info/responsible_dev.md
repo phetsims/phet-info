@@ -134,8 +134,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | optics-lab | @veillette,@jbphet | @arouinfar |  | 
 | pendulum-lab | @jonathanolson | @arouinfar | Sound | 
 | perennial | @mattpen,@jonathanolson |  |  | 
-| ph-scale | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
-| ph-scale-basics | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
+| ph-scale | @pixelzoom | @arouinfar |  | 
+| ph-scale-basics | @pixelzoom | @arouinfar |  | 
 | phet-android-app | @mattpen |  |  | 
 | phet-core | @jonathanolson |  |  | 
 | phet-global-initiative | @kathy-phet |  |  | 
