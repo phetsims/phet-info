@@ -4,8 +4,9 @@ This document is intended as a starting point for new developers that are joinin
 to the development of simulations. The document discusses the process through which a new developer can acquire the
 knowledge and skills needed to create and maintain PhET simulations.
 
-Note that there are other software development roles at PhET beyond simulation development, such as writing code for the website, the iOS and Android
-apps, the desktop app, and the translation utility. These roles will not be covered in this document.
+Note that there are other software development roles at PhET beyond simulation development, such as writing code for the
+website, the iOS and Android apps, the desktop app, and the translation utility. These roles will not be covered in this
+document.
 
 ## Table of Contents
 
@@ -22,26 +23,29 @@ apps, the desktop app, and the translation utility. These roles will not be cove
 
 ## 👋 Intro
 
-Welcome! We know jumping into to simulation development can be a bit overwhelming at first. PhET has been around since 2001, and has written a lot of code and
-created some pretty involved processes during that time. It will take a while for a new developer to learn what they
-need to know to develop and maintain simulations, and the team understands onboarding takes some dedicated time. 
+Welcome! We know jumping into to simulation development can be a bit overwhelming at first. PhET has been around since
+2001, and has written a lot of code and created some pretty involved processes during that time. It will take a while
+for a new developer to learn what they need to know to develop and maintain simulations, and the team understands
+onboarding takes some dedicated time.
 
 Each new developer will have had a unique set of experiences and education when starting at PhET, so it is not
 possible to come up with a "one-size-fits-all" plan for what to read and work through to ramp up. Each new developer
 will be assigned a mentor who is an experienced developer of PhET simulations, and one of the first steps of the process
-should be to come up with a customized plan or "road map" for ramping up. This plan should be regularly reviewed and updated
-during the process.
+should be to come up with a customized plan or "road map" for ramping up. This plan should be regularly reviewed and
+updated during the process.
 
 <a id='admin-setup'>
 
 ## 📝 Administrative Setup
 
 In your first few days there are many configuration and setup steps that need to be completed to become a CU
-and PhET employee. Check-in with the PhET Business Manager for a complete list of HR needs. Beyond those HR nees, the following list specifies essential items for a PhET Developer:
-  
+and PhET employee. Check-in with the PhET Business Manager for a complete list of HR needs. Beyond those HR nees, the
+following list specifies essential items for a PhET Developer:
+
 - Get a CU Email account and identikey.
 - Set up a GitHub Account with access to the phetsims organization (you should receive an invite to join).
-- Ask the Business Manager to add you to the SIMS_DEV and BROWSER_SIDE_COMMON_CODE development teams on GitHub. This access
+- Ask the Business Manager to add you to the SIMS_DEV and BROWSER_SIDE_COMMON_CODE development teams on GitHub. This
+  access
   will allow you to push code to sim repos and common code repos.
 - Set up a Slack account and join the phetsims workspace (you should receive an invite to join). From here, join the
   #general, #dev-public, #developer, and #continuous-testing channels.
@@ -138,6 +142,24 @@ server at `{{path-to-phet-repos}}/phetmarks`.
 Phetmarks contains different ways to run sims, demos for some non-sim repos to show what components they contain, and
 links to documentation.
 
+### Common Code
+
+The term "common code" is mentioned several times in this document and tends to come up a lot in discussions amongst the
+developers. In general, common code refers to a set of libraries that the development team has created that is reused
+between sims and is intended to make the development process faster & easier, and also to make the behavior and
+appearance of the sims more consistent. Each common code library is in its own repo and is generally targeted towards a
+fairly specific function, such as graphic rendering or sound generation. One of the most challenging tasks for new
+developers is to become familiar with the common code repos and how to apply them to the task of developing a
+simulation. As of this writing, there are about ten of these repos that will almost certainly be used in any sim that a
+developer creates, and there are additional libraries that may be used depending on the particular requirements of a
+sim. A list of the common- code repos can be found at 
+https://github.com/phetsims/perennial/blob/master/data/active-common-sim-repos. Talk with your mentor about which ones
+to start ramping up on first.
+
+Perhaps the most fundamental of the common code libs is "scenery", which is the graphics library that is used to define
+and render pretty much everything that appears on the screen in a PhET sim. This one may be a good place to start,
+since you'll definitely need to become pretty familiar with it to create a sim.
+
 ### Navigating Repos
 
 Most of your work will be done in the `js` directory of a repo. If you are curious about the other files check out
@@ -214,8 +236,8 @@ the browser provides better error reporting, and debugging tools.
 #### History
 
 PhET made a decision in early 2022 to migrate from JavaScript to TypeScript as the primary development language for our
-simulations and build tools. This decision was motivated by a desire to have stronger type checking so that our code base would
-be easier to navigate and maintain.
+simulations and build tools. This decision was motivated by a desire to have stronger type checking so that our code
+base would be easier to navigate and maintain.
 
 Much of the common code was migrated to TypeScript when this decision was made, but we did not proactively migrate the
 simulations due to the cost of doing so. Many of these remain in JavaScript, and are likely to stay that way for a long
@@ -225,8 +247,8 @@ code base, and may even be asked to fix or extend simulations that are written i
 Also, the standards for TypeScript evolved quite a bit while the migration was in progress. It is therefore possible
 that you encounter code that is written in TypeScript, but doesn't fully adhere to the current standards.
 For this reason, always double check that any code that is being leveraged for a new sim meets the current standards.
-Also, be prepared to fix up code that *doesn't* meet those standards. For a bit more information on the history of this change,
-and on some specific things that changed during PhET's TypeScript evolution, please see
+Also, be prepared to fix up code that *doesn't* meet those standards. For a bit more information on the history of this
+change, and on some specific things that changed during PhET's TypeScript evolution, please see
 https://github.com/phetsims/chipper/issues/1281.
 
 #### TSC
