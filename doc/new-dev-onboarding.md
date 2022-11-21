@@ -286,7 +286,9 @@ for how to do this profiling.
 
 ### Publishing a Sim
 
-Once you're working on a sim, you will eventually want to publish a dev version to show your latest progress. See
+Once you're working on a sim, you will eventually want to publish a "dev version", which is short for "development
+version", to show your latest progress.  This is distinct from other types of versions that are published, such as
+release candidates.  See
 [Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development)
 , and ask a senior dev to help add your identikey to PhET's servers.
 
@@ -368,7 +370,7 @@ focused effort to complete. One of the labels that we try to use to help manage 
 An epic is an issue that is more of a project than a clear and finite task. This type of issue is likely to involve
 multiple people, and will have "sub-issues" created for the individual tasks that will go into completing the "epic".
 
-<a id='reference-docs'>  
+<a id='reference-docs'>
 
 ## 📖 Reference Documents
 
