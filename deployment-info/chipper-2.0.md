@@ -147,13 +147,22 @@ NOTE: It will initialize the branch to a version of 1.0.0-rc.0, and then increme
 
 ### RC/production deployment on an existing branch
 
-Just execute:
+For deploying a RC (Release Candidate), execute:
 ```sh
 grunt rc --brands={{BRANDS}} --branch={{BRANCH}}
-# or
+```
+
+For deploying a production version, execute either:
+```sh
 grunt production --brands={{BRANDS}} --branch={{BRANCH}}
 ```
-and follow the prompts. It should handle all of the steps in the older deployment checklist, and will notify you about any additional tasks that you will need to take afterwards.
+for a published, non-prototype sim, or
+```sh
+grunt prototype --brands={{BRANDS}} --branch={{BRANCH}}
+```
+for a published sim.
+
+For all of these, follow the prompts. It should handle all of the steps in the older deployment checklist, and will notify you about any additional tasks that you will need to take afterwards.
 
 ### Manual maintenance patching
 
@@ -204,13 +213,13 @@ How prototypes differ from production versions:
 - When cost-effective, maintenance releases can be performed on a prototype release branch. When not cost-effective, a
   new version of a prototype may require a new release branch.
 
-Prototypes will follow the process for [RC/production deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches) using `grunt production`, with the following differences:
+Prototypes will follow the process for [RC/production deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches) using `grunt prototype`, with the following differences:
+- Use `grunt prototype` instead of `grunt production`. `grunt rc` works as normal. DO NOT use `grunt production`, as this will mark it as a published branch.
 - When the RC test issue is created:
   - Use the [prototype testing template](https://github.com/phetsims/QA/blob/master/issue-templates/prototype-test-template.md).
   - Issue title format is "Prototype test: ${{SIM}} {{VERSION}}", for example "Prototype test: Natural Selection 1.0.0-rc.1".
   - Label the issue `QA:prototype-test`.
 - After publishing, the developer will:
-    - Revert `README.md` to unpublished by running `grunt unpublished-README`.
     - Inform the lead designer that the prototype is published.
 - After publishing, the designer will:
     - Mark the sim as a prototype on the [Admin page](https://phet.colorado.edu/admin/main).
