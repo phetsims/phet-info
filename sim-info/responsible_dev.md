@@ -44,13 +44,13 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | charges-and-fields | @jonathanolson | @arouinfar |  | 
 | chipper | @jonathanolson |  |  | 
 | circuit-construction-ios-app | @samreid |  |  | 
-| circuit-construction-kit-ac | @samreid | @arouinfar | Sound<br/>Interactive Description | 
-| circuit-construction-kit-ac-virtual-lab | @samreid | @arouinfar | Sound<br/>Interactive Description | 
+| circuit-construction-kit-ac | @samreid | @arouinfar | Interactive Description | 
+| circuit-construction-kit-ac-virtual-lab | @samreid | @arouinfar | Interactive Description | 
 | circuit-construction-kit-basics | @samreid | @arouinfar |  | 
 | circuit-construction-kit-black-box-study | @samreid | @arouinfar |  | 
 | circuit-construction-kit-common | @samreid | @arouinfar |  | 
-| circuit-construction-kit-dc | @samreid | @arouinfar | Sound<br/>Interactive Description | 
-| circuit-construction-kit-dc-virtual-lab | @samreid | @arouinfar | Sound<br/>Interactive Description | 
+| circuit-construction-kit-dc | @samreid | @arouinfar | Interactive Description | 
+| circuit-construction-kit-dc-virtual-lab | @samreid | @arouinfar | Interactive Description | 
 | collision-lab | @jonathanolson | @arouinfar |  | 
 | color-vision | @chrisklus | @DianaTavares | Sound<br/>Interactive Description | 
 | concentration | @pixelzoom | @arouinfar |  | 
