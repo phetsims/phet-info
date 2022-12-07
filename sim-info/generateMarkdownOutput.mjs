@@ -1,6 +1,6 @@
 // Copyright 2021, University of Colorado Boulder
 
-import fs from 'fs'; // eslint-disable-line
+import fs from 'fs';
 
 /**
  * List repos per developer
