@@ -186,7 +186,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | studio | @chrisklus |  |  | 
 | sugar-and-salt-solutions | @samreid | @amanda-phet |  | 
 | sun | @jbphet |  | Interactive Description | 
-| tambo | @jbphet |  |  | 
+| tambo | @jbphet |  | Sound<br/>Interactive Description | 
 | tandem | @zepumph |  |  | 
 | tangible | @zepumph |  |  | 
 | tappi | @jessegreenberg |  |  | 
