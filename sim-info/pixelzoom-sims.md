@@ -21,7 +21,7 @@
 | graphing-quadratics              |  12/7/2018 |  7,359 |            |    x     |             |           |                | | |
 | graphing-slope-intercept         |  6/14/2017 |    606 |            |          |             |           |       x        | | |
 | hookes-law                       | 10/21/2015 |  5,658 |            |    x     |             |           |                | | |
-| models-of-the-hydrogen-atom      |            |        |            |          |      x      |     x     |       x        | x | x |
+| models-of-the-hydrogen-atom      |            |        |          x |          |      x      |     x     |       x        | x | x |
 | molecule-polarity                |  7/26/2017 |  6,665 |          x |    x     |             |           |       x        | x | |
 | natural-selection                |   9/1/2020 | 13,808 |          x |    x     |             |           |       x        | | |
 | ph-scale                         |  8/22/2014 |  6,580 |          x |    x     |     75%     | disabled  |       x        | x | |
