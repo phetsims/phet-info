@@ -23,7 +23,7 @@
 | hookes-law                       | 10/21/2015 |  5,658 |            |    x     |             |           |                | | |
 | models-of-the-hydrogen-atom      |            |        |            |          |      x      |     x     |       x        | x | x |
 | molecule-polarity                |  7/26/2017 |  6,665 |          x |    x     |             |           |       x        | x | |
-| natural-selection                |   9/1/2020 | 13,840 |        98% |    x     |             |           |       x        | | |
+| natural-selection                |   9/1/2020 | 13,808 |          x |    x     |             |           |       x        | | |
 | ph-scale                         |  8/22/2014 |  6,580 |          x |    x     |     75%     | disabled  |       x        | x | |
 | ph-scale-basics                  |   1/7/2014 |     67 |          x |    x     |     75%     | disabled  |       x        | x | |
 | reactants-products-and-leftovers |  1/27/2015 |  5,482 |            |          |             |           |       x        | | |
