@@ -60,7 +60,7 @@ Again, in complex or volatile cases, at the developer preference, the redundant 
 
 * String literal unions are idiomatic in TypeScript.
 * You can also use the string[] `as const` pattern for accessing string union literals and values at runtime.  
-  This works well with `StringEnumerationProperty`.
+  This works well with `StringUnionProperty`.
 * `EnumerationValue` adds rich methods on the instances. Use `EnumerationProperty` for this.
 * Careful!  If you change from string literal union to `EnumerationValue`, the casing convention is different and you
   will
