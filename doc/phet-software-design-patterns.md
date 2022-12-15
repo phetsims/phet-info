@@ -1290,7 +1290,7 @@ for additional description and examples.
 Additional guidelines:
 
 (1) Create your options type by intersecting `SelfOptions` and the parent class’s options type. `SelfOptions` will
-contain options that are specific to your class.
+contain options that are specific to your class. Document options in the Type, and not in the defaults in the constructor
 
 ```typescript
 // Our parent class is Path, whose options type is PathOptions.
@@ -1309,6 +1309,7 @@ type MyPathOptions = SelfOptions;
 
 // correct, intersects with PathOptions
 type SelfOptions = { 
+  aSelfOption?: boolean // documentation goes here about aSelfOption
   // ...
 };
 type MyPathOptions = SelfOptions & PathOptions; 
