@@ -943,6 +943,14 @@
       "@amanda-phet"
     ]
   },
+  "number-suite-common": {
+    "responsibleDevs": [
+      "@chrisklus"
+    ],
+    "responsibleDesigners": [
+      "@amanda-phet"
+    ]
+  },
   "ohms-law": {
     "responsibleDevs": [
       "@jbphet"
