@@ -19,7 +19,7 @@
 | geometric-optics-basics          |            |     63 |          x |    x     |      x      |     x     |       x        | x | x |
 | graphing-lines                   |  7/21/2014 |  9,999 |            |          |             |           |                | | |
 | graphing-quadratics              |  12/7/2018 |  7,359 |            |    x     |             |           |                | | |
-| graphing-slope-intercept         |  6/14/2017 |    606 |            |          |             |           |       x        | | |
+| graphing-slope-intercept         |  6/14/2017 |    606 |          x |          |             |           |       x        | | |
 | hookes-law                       | 10/21/2015 |  6,117 |          x |    x     |             |           |      25%       | | |
 | models-of-the-hydrogen-atom      |            |        |          x |          |      x      |     x     |       x        | x | x |
 | molecule-polarity                |  7/26/2017 |  6,665 |          x |    x     |             |           |       x        | x | |
