@@ -169,7 +169,7 @@ For all of these, follow the prompts. It should handle all of the steps in the o
 If you want to make a change to the sim's own repo on the release branch (and no changes to other dependencies), then generally first do the following:
 
 - From perennial, `grunt checkout-target --repo={{REPO}} --target={{BRANCH}}`, e.g. `grunt checkout-target --repo=chains --target=1.2`.
-- Apply the change to the sim's branch (either a usual commit, or by cherry-picking a change, e.g. `git cherry-pick {{SHA}}` in the sim repo).
+- Apply the change to the sim's branch (either a usual commit, or by cherry-picking a change, e.g. `git cherry-pick -x {{SHA}}` in the sim repo).
 - Test it. You can `grunt` in the sim repo (the `checkout-target` above did the NPM magic for it to work)
 - Push the change to the sim branch (e.g. `git push origin 1.2`).
 
@@ -179,7 +179,7 @@ Otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
 - Check the common repo to see if it has a branch named `{{SIM}}-{{BRANCH}}`, e.g. does scenery have a branch named chains-1.2
   - If it HAS the branch, ensure that the branch's HEAD commit is the same as the currently-checked-out commit. THEN checkout the branch (e.g. `git checkout chains-1.2`) in the common repo. If the commits don't match, INVESTIGATE as something went wrong before. Talk to @jonathanolson?
   - If there IS NO branch, create it in the common repo with `git checkout -b {{SIM}}-{{BRANCH}}`, e.g. `git checkout -b chains-1.2`
-- Apply the change to the sim's branch (it's almost always a cherry-pick, e.g. `git cherry-pick {{SHA}}` in the common repo).
+- Apply the change to the sim's branch (it's almost always a cherry-pick, e.g. `git cherry-pick -x {{SHA}}` in the common repo).
 - Test it. You can `grunt` in the sim repo (the `checkout-target` above did the NPM magic for it to work)
 - Push the change to the common branch (e.g. `git push origin chains-1.2`)
 - If you didn't build it before, run `grunt` in the sim repo.
@@ -187,7 +187,7 @@ Otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
   - Newer sims (chipper 2.0): `cp build/phet/dependencies.json .`
   - Older sims: `cp build/dependencies.json .`
 - `git add dependencies.json`
-- `git commit -m {{MESSAGE}}`, where `{{MESSAGE}}` includes the GitHub issue URL(s) for the maintenance release.
+- `git commit --no-verify -m {{MESSAGE}}`, where `{{MESSAGE}}` includes the GitHub issue URL(s) for the maintenance release.
 - `git push origin {{BRANCH}}`.
 
 This will ensure that the top level dependencies.json will properly reference the common-code fixed SHA, and that we'll always have a consistent common code branch for the sim branch.
