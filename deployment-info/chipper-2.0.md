@@ -194,6 +194,8 @@ This will ensure that the top level dependencies.json will properly reference th
 
 This would usually be followed by 1+ RC deployments and then a production deployment.
 
+If you need to get back to master, use `grunt checkout-master` from the sim repo.
+
 ## Prototype deployments
 
 A prototype is defined as a sim version that is deemed worthy of early release to the public before it has gone through the full production process. Prototypes will typically be published for legacy sims that are not yet available in HTML5. 
