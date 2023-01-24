@@ -161,7 +161,8 @@
   },
   "blackbody-spectrum": {
     "responsibleDevs": [
-      "@AgustinVallejo", "@jbphet"
+      "@AgustinVallejo",
+      "@jbphet"
     ],
     "responsibleDesigners": [
       "@DianaTavares"
@@ -861,7 +862,8 @@
   },
   "my-solar-system": {
     "responsibleDevs": [
-      "@AgustinVallejo", "@jonathanolson"
+      "@AgustinVallejo",
+      "@jonathanolson"
     ],
     "responsibleDesigners": [
       "@DianaTavares"
@@ -966,6 +968,15 @@
     ],
     "responsibleDesigners": [
       "@arouinfar"
+    ]
+  },
+  "papyrus": {
+    "responsibleDevs": [
+      "@jbphet",
+      "@jessegreenberg"
+    ],
+    "responsibleDesigners": [
+      "@BLFiedler"
     ]
   },
   "pendulum-lab": {
