@@ -133,6 +133,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | number-suite-common | @chrisklus | @amanda-phet |  | 
 | ohms-law | @jbphet | @DianaTavares | Sound<br/>Interactive Description | 
 | optics-lab | @veillette,@jbphet | @arouinfar |  | 
+| papyrus | @jbphet,@jessegreenberg | @BLFiedler |  | 
 | pendulum-lab | @jonathanolson | @arouinfar | Sound | 
 | perennial | @mattpen,@jonathanolson |  |  | 
 | ph-scale | @pixelzoom | @arouinfar |  | 
