@@ -227,7 +227,8 @@
   },
   "calculus-grapher": {
     "responsibleDevs": [
-      "@jonathanolson"
+      "@veillette",
+      "@pixelzoom"
     ],
     "responsibleDesigners": [
       "@amanda-phet"
