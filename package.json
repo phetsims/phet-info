@@ -1,0 +1,12 @@
+{
+  "name": "phet-info",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phetsims/phet-info.git"
+  },
+  "devDependencies": {
+    "@octokit": "~4.2.0"
+  }
+}
