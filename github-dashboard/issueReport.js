@@ -19,47 +19,79 @@ const getUsersFromGitHub = async () => { // eslint-disable-line no-unused-vars
 };
 
 // Users that have >=1 ready for review issue as of Feb 16, 2023
-const getUsersStatic = async () => {
+// const getUsersStatic = async () => {
+//   return [
+//     'AgustinVallejo',
+//     'amanda-phet',
+//     'arouinfar',
+//     'chrisklus',
+//     'emily-phet',
+//     'JacquiHayes',
+//     'jbphet',
+//     'jessegreenberg',
+//     'jonathanolson',
+//     'kathy-phet',
+//     'Luisav1',
+//     'matthew-blackman',
+//     'Matthew-Moore240',
+//     'mattpen',
+//     'oliver-phet',
+//     'pixelzoom',
+//     'samreid',
+//     'veillette',
+//     'zepumph'
+//   ];
+// };
+
+const getDevUsersStatic = async () => {
   return [
     'AgustinVallejo',
-    'amanda-phet',
-    'arouinfar',
     'chrisklus',
-    'emily-phet',
-    'JacquiHayes',
     'jbphet',
     'jessegreenberg',
     'jonathanolson',
-    'kathy-phet',
+    'liammulh',
     'Luisav1',
+    'marlitas',
     'matthew-blackman',
-    'Matthew-Moore240',
     'mattpen',
-    'oliver-phet',
     'pixelzoom',
     'samreid',
     'veillette',
     'zepumph'
   ];
 };
-const getUsers = getUsersStatic;
+
+const getUsers = getDevUsersStatic();
 
 // https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28#list-users
 ( async () => {
-  const users = await getUsers();
-
+  const users = await getUsers;
+  const results = [];
   for ( let i = 0; i < users.length; i++ ) {
     const user = users[ i ];
 
-    const result = await octokit.request( 'GET /search/issues', {
+    const openIssuesResult = await octokit.request( 'GET /search/issues', {
       accept: 'application/vnd.github+json',
       // q: `is:issue is:open label:status:ready-for-review assignee:${user} org:phetsims`,
       q: `is:issue is:open assignee:${user} org:phetsims`,
       per_page: 100,
       page: 1
     } );
+
+    const readyForReviewResult = await octokit.request( 'GET /search/issues', {
+      accept: 'application/vnd.github+json',
+      q: `is:issue is:open label:status:ready-for-review assignee:${user} org:phetsims`,
+      // q: `is:issue is:open assignee:${user} org:phetsims`,
+      per_page: 100,
+      page: 1
+    } );
+
     // console.log( result.data.items.length );
     // console.log( result.data.items );
-    console.log( `${user}: ${result.data.items.length}` );
+    // console.log( `${user}: ${result.data.items.length}` );
+    results.push( { user: user, 'open issues': openIssuesResult.data.items.length, 'ready-for-review': readyForReviewResult.data.items.length } );
   }
+
+  console.table( results, [ 'user', 'open issues', 'ready-for-review' ] );
 } )();
