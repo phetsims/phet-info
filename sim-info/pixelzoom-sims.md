@@ -19,7 +19,7 @@
 | geometric-optics                 | 10/29/2021 | 12,593 |          x |    x     |      x      |     x     |       x        | x | x |
 | geometric-optics-basics          | 11/30/2022 |     63 |          x |    x     |      x      |     x     |       x        | x | x |
 | graphing-lines                   |  7/21/2014 |  9,999 |         5% |          |             |           |                | | |
-| graphing-quadratics              |  12/7/2018 |  6,836 |        65% |    x     |             |           |                | | |
+| graphing-quadratics              |  12/7/2018 |  6,904 |        82% |    x     |             |           |                | | |
 | graphing-slope-intercept         |  6/14/2017 |    606 |          x |          |             |           |       x        | | |
 | hookes-law                       | 10/21/2015 |  6,117 |          x |    x     |             |           |      25%       | | |
 | models-of-the-hydrogen-atom      |            |        |          x |          |      x      |     x     |       x        | x | x |
