@@ -63,6 +63,7 @@ In your working copy of the sim repo:
 - [ ] `git init`
 - [ ] `git add * .gitignore`
 - [ ] `git commit -m "Initial commit"`
+- [ ] `git branch -M master`
 - [ ] `git remote add origin https://github.com/phetsims/{{REPO}}.git`
 - [ ] `git push -u origin master`
 
