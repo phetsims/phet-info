@@ -760,6 +760,15 @@
     ],
     "responsibleDesigners": []
   },
+  "keplers-laws": {
+    "responsibleDevs": [
+      "@AgustinVallejo",
+      "@jonathanolson"
+    ],
+    "responsibleDesigners": [
+      "@DianaTavares"
+    ]
+  },
   "kite": {
     "responsibleDevs": [
       "@jonathanolson"
@@ -1284,6 +1293,15 @@
       "@mattpen"
     ],
     "responsibleDesigners": []
+  },
+  "solar-system-common": {
+    "responsibleDevs": [
+      "@AgustinVallejo",
+      "@jonathanolson"
+    ],
+    "responsibleDesigners": [
+      "@DianaTavares"
+    ]
   },
   "sound": {
     "responsibleDevs": [
