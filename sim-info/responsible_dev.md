@@ -106,6 +106,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | isotopes-and-atomic-mass | @jbphet | @arouinfar |  | 
 | john-travoltage | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description<br/>Voicing | 
 | joist | @zepumph |  |  | 
+| keplers-laws | @AgustinVallejo,@jonathanolson | @DianaTavares |  | 
 | kite | @jonathanolson |  |  | 
 | least-squares-regression | @jonathanolson | @amanda-phet |  | 
 | make-a-ten | @jonathanolson | @amanda-phet | Sound | 
@@ -181,6 +182,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | skiffle | @jbphet |  |  | 
 | simula-rasa | @pixelzoom |  |  | 
 | smithers | @mattpen |  |  | 
+| solar-system-common | @AgustinVallejo,@jonathanolson | @DianaTavares |  | 
 | sound | @samreid | @arouinfar | Sound | 
 | special-ops | @zepumph |  |  | 
 | states-of-matter | @jbphet | @arouinfar |  | 
