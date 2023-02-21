@@ -29,5 +29,5 @@
 | ph-scale-basics                  |   1/7/2014 |     67 |          x |    x     |     75%     | disabled  |       x        | x | |
 | reactants-products-and-leftovers |  1/27/2015 |  5,482 |         2% |          |             |           |       x        | | |
 | unit-rates                       |   4/4/2017 |  7,768 |            |          |             |           |       5%       | | |
-| vector-addition                  |  11/5/2019 | 10,029 |            |          |             |           |                | | |
+| vector-addition                  |  11/5/2019 | 10,029 |         2% |          |             |           |                | | |
 | vector-addition-equations        |  11/5/2019 |     36 |          x |          |             |           |       x        | | |
