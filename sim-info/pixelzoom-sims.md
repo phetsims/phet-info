@@ -3,7 +3,7 @@
 | Simulation                       |        1.0 |    loc | TypeScript | PhET-iO  | Alt Input  | UI Sound  | Dynamic Locale | Preferences | Color Profile |
 |:---------------------------------|-----------:|-------:|:----------:|:--------:|:-----------:|:---------:|:--------------:|:---:|:---:|
 | acid-base-solutions              |  4/18/2014 |  3,937 |          ✓ |   75%    |             |           |       ✓        | | |
-| balancing-chemical-equations     |  7/31/2014 |  4,619 |        52% |          |             |           |       ✓        | | |
+| balancing-chemical-equations     |  7/31/2014 |  4,742 |        77% |          |             |           |       ✓        | | |
 | beers-law-lab                    |  8/16/2013 |  6,517 |          ✓ |    ✓     |             |           |       ✓        | ✓ | |
 | calculus-grapher                 |            |        |          ✓ |    ✓     |             |           |       ✓        | ✓ | ✓ |
 | concentration                    | 10/31/2013 |     54 |          ✓ |    ✓     |             |           |       ✓        | ✓ | |
