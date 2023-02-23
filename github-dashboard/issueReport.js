@@ -1,5 +1,7 @@
 // Copyright 2023, University of Colorado Boulder
 
+// eslint-disable-next-line require-statement-match
+const _ = require( 'lodash' );
 const buildLocal = require( '../../perennial-alias/js/common/buildLocal' );
 const { Octokit } = require( 'octokit' ); // eslint-disable-line require-statement-match
 const octokit = new Octokit( {
@@ -71,27 +73,50 @@ const getUsers = getDevUsersStatic();
   for ( let i = 0; i < users.length; i++ ) {
     const user = users[ i ];
 
-    const openIssuesResult = await octokit.request( 'GET /search/issues', {
-      accept: 'application/vnd.github+json',
-      // q: `is:issue is:open label:status:ready-for-review assignee:${user} org:phetsims`,
-      q: `is:issue is:open assignee:${user} org:phetsims`,
-      per_page: 100,
-      page: 1
+    const perPage = 100;
+    let page = 1;
+    let totalCount = 100;
+    const openIssuesResultPages = [];
+
+    while ( totalCount + perPage >= page * perPage ) {
+      const openIssuesResult = await octokit.request( 'GET /search/issues', {
+        accept: 'application/vnd.github+json',
+        q: `is:issue is:open assignee:${user} org:phetsims`,
+        per_page: perPage,
+        page: page
+      } );
+
+      openIssuesResultPages.push( openIssuesResult );
+      totalCount = openIssuesResult.data.total_count;
+      page += 1;
+    }
+
+    const openIssuesData = openIssuesResultPages.flat( 1 ).map( openIssuesResult => openIssuesResult.data );
+    const userTotalCount = openIssuesData[ 0 ].total_count;
+
+    const totalReadyForReview = _.sumBy( openIssuesData, openIssuesData => {
+      let issueCount = 0;
+      openIssuesData.items.forEach( openIssue => {
+        openIssue.labels.forEach( label => {
+          issueCount += label.name === 'status:ready-for-review' ? 1 : 0;
+        } );
+      } );
+      return issueCount;
     } );
 
-    const readyForReviewResult = await octokit.request( 'GET /search/issues', {
-      accept: 'application/vnd.github+json',
-      q: `is:issue is:open label:status:ready-for-review assignee:${user} org:phetsims`,
-      // q: `is:issue is:open assignee:${user} org:phetsims`,
-      per_page: 100,
-      page: 1
+    const totalHighPriority = _.sumBy( openIssuesData, openIssuesData => {
+      let issueCount = 0;
+      openIssuesData.items.forEach( openIssue => {
+        openIssue.labels.forEach( label => {
+          issueCount += label.name === 'priority:2-high' ? 1 : 0;
+        } );
+      } );
+      return issueCount;
     } );
 
-    // console.log( result.data.items.length );
-    // console.log( result.data.items );
-    // console.log( `${user}: ${result.data.items.length}` );
-    results.push( { user: user, 'open issues': openIssuesResult.data.items.length, 'ready-for-review': readyForReviewResult.data.items.length } );
+
+    results.push( { user: user, 'open issues': userTotalCount, 'ready-for-review': totalReadyForReview, 'high-priority': totalHighPriority } );
   }
 
-  console.table( results, [ 'user', 'open issues', 'ready-for-review' ] );
+  console.table( results, [ 'user', 'open issues', 'ready-for-review', 'high-priority' ] );
 } )();
