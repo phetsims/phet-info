@@ -19,7 +19,7 @@ Assignment
 ### Assigners
 
 Assign the developer(s) responsible for the repo in which you
-are creating the repo. See [the responsible dev
+are creating the issue. See [the responsible dev
 document](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json)
 for who to assign.
 
