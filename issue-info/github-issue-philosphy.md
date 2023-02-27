@@ -14,14 +14,15 @@ Contents
   - [Assignees](#assignees)
 - [Content](#content)
   - [Bottom Line Up Front](#bottom-line-up-front)
+  - [Facts Over Speculation](#facts-over-speculation)
 
 Assignment
 ----------
 
 ### Assigners
 
-Assign the developer(s) responsible for the repo in which you
-are creating the issue. See [the responsible dev
+Assign the developer(s) responsible for the repo in which you are
+creating the issue. See [the responsible developer
 document](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json)
 for who to assign.
 
@@ -47,7 +48,7 @@ This will help your future self and other developers who encounter the
 issue understand it. Put the gory details after your
 concise-but-accurate summary.
 
-### Facts and Evidence Over Speculation and Analysis
+### Facts Over Speculation
 
 If you are investigating an issue, write down facts and evidence in your
 issue rather than speculation and analysis. There are a couple reasons for
