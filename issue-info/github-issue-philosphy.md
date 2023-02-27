@@ -31,6 +31,6 @@ appropriate labels, and decide whether to work on it now or later.
 If you will work on it now, keep your assignment. Post updates when you
 make progress or have useful information.
 
-If you will work on it later, remove your assignment, and provide as
-much context and useful information as you can for your future self or
-the developer who ends up working on the issue.
+If you will work on it later, provide as much context and useful
+information as you can for your future self or the developer who ends up
+working on the issue. Then remove your assignment.
