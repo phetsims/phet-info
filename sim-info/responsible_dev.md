@@ -120,7 +120,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | molecule-shapes | @jonathanolson | @arouinfar |  | 
 | molecule-shapes-basics | @jonathanolson | @arouinfar |  | 
 | molecules-and-light | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
-| my-solar-system | @AgustinVallejo,@jonathanolson | @DianaTavares | Sound | 
+| my-solar-system | @AgustinVallejo,@jonathanolson | @DianaTavares | Sound<br/>Interactive Description | 
 | natural-selection | @pixelzoom | @amanda-phet |  | 
 | neuron | @jbphet | @arouinfar |  | 
 | nitroglycerin | @pixelzoom |  |  | 
@@ -166,7 +166,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | proportion-playground | @jonathanolson | @amanda-phet |  | 
 | protein-synthesis | @samreid |  |  | 
 | qa | @KatieWoe |  |  | 
-| quadrilateral | @jessegreenberg | @BLFiedler | Sound<br/>Interactive Description<br/>Voicing | 
+| quadrilateral | @jessegreenberg |  | Sound<br/>Interactive Description<br/>Voicing | 
 | quake | @jbphet |  |  | 
 | query-string-machine | @chrisklus |  |  | 
 | ratio-and-proportion | @zepumph | @BLFiedler | Sound<br/>Interactive Description<br/>Voicing | 
