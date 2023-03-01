@@ -6,4 +6,10 @@
 # for installation instructions.
 #-----------------------------------------------------------------------------------------------------------------------
 
-node ../chipper/js/scripts/hook-pre-commit.js
+# Detect the current branch. Requires git 2.22.0 or higher
+current_branch=$(git branch --show-current)
+
+# Only run pre-commit hooks in master, see https://github.com/phetsims/perennial/issues/276
+if [[ "$current_branch" == "master" ]]; then
+  node ../chipper/js/scripts/hook-pre-commit.js
+fi
