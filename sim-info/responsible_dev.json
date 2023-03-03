@@ -349,6 +349,14 @@
       "@DianaTavares"
     ]
   },
+  "community": {
+    "responsibleDevs": [
+      "@samreid"
+    ],
+    "responsibleDesigners": [
+      "@BLFiedler"
+    ]
+  },
   "concentration": {
     "responsibleDevs": [
       "@pixelzoom"
