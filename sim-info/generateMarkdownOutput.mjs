@@ -12,7 +12,7 @@ import fs from 'fs';
  * @author Michael Kauzmann (PhET Interactive Simulations)
  */
 const responsibleDevObject = JSON.parse( fs.readFileSync( './phet-info/sim-info/responsible_dev.json', 'utf8' ) );
-const devs = [];
+
 const repos = Object.keys( responsibleDevObject );
 let responsibleTableString = `
 ## HTML5 Sim and Common Code Repos - Developer/Designer Responsibility List
@@ -45,13 +45,16 @@ const getFeatures = repo => {
       }
     }
   }
-  catch( e ) {} // some repos don't have package.json, and that's okay.
+  catch( e ) {
+
+    // some repos don't have package.json, and that's okay.
+  }
   return features;
 };
 
 repos.forEach( repoName => {
-  const responsibleDeveloper = responsibleDevObject[ repoName ].responsibleDevs.join( ',' )
-  const responsibleDesigner = responsibleDevObject[ repoName ].responsibleDesigners.join( ',' )
+  const responsibleDeveloper = responsibleDevObject[ repoName ].responsibleDevs.join( ',' );
+  const responsibleDesigner = responsibleDevObject[ repoName ].responsibleDesigners.join( ',' );
   const features = getFeatures( repoName ).join( '<br/>' );
   responsibleTableString += `| ${repoName} | ${responsibleDeveloper} | ${responsibleDesigner} | ${features} | \n`;
 } );

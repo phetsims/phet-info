@@ -30,7 +30,7 @@ function compareIssues( fromSpreadSheet, fromGithub ) {
   console.log( _.difference( fromGithub, fromSpreadSheet ) );
 }
 
-// TODO: support more that 100 epic issues!
+// NOTE: This only loads 100 epic issues.
 
 const requestOptions = {
   host: 'api.github.com',
