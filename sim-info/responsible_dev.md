@@ -53,6 +53,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | circuit-construction-kit-dc-virtual-lab | @samreid | @arouinfar | Interactive Description | 
 | collision-lab | @jonathanolson | @arouinfar |  | 
 | color-vision | @chrisklus | @DianaTavares | Sound<br/>Interactive Description | 
+| community | @samreid | @BLFiedler |  | 
 | concentration | @pixelzoom | @arouinfar |  | 
 | coulombs-law | @zepumph | @arouinfar | Interactive Description | 
 | counting-common | @chrisklus | @amanda-phet |  | 
