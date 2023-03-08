@@ -14,6 +14,7 @@ Contents
   - [Assigners](#assigners)
   - [Assignees](#assignees)
   - [Removing Assignment](#removing-assignment)
+- [Labels](#labels)
 
 Assignment
 ----------
@@ -60,7 +61,7 @@ Labels
 - If a label doesn't have a definition, and you want to use that label,
   please create a definition for that label.
 - If you need a new label, you can only do so if you provide a
-  definition for that label.
+  definition for the new label.
 
 To see labels and their definitions in a GitHub repository, go to:
 
