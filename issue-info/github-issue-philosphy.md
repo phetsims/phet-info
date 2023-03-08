@@ -52,3 +52,18 @@ you can for your future self or the developer who ends up working on the
 issue. Optionally add the issue to a backlog issue or meta issue where
 you track issues you might eventually want to work on. Finally, remove
 your assignment.
+
+Labels
+------
+
+- Only use a label if your issue meets the definition for that label.
+- If a label doesn't have a definition, and you want to use that label,
+  please create a definition for that label.
+- If you need a new label, you can only do so if you provide a
+  definition for that label.
+
+To see labels and their definitions in a GitHub repository, go to:
+
+```
+https://github.com/phetsims/<repo-name-here>/labels
+```
