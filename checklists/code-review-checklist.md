@@ -275,7 +275,10 @@ necessarily need to check these items one at a time. The goal is to determine wh
                       providedOptions?: WaterCup3DNodeOptions ) {
 ```
 - [ ] Is there too much unnecessary decoupling? (e.g. by passing all of the properties of an object independently instead of passing the object itself)?
-- [ ] Are the source files reasonable in size? Scrutinize large files with too many responsibilities - can responsibilities be broken into smaller delegates?
+- [ ] Are the source files reasonable in size? Scrutinize large files with too many responsibilities - can responsibilities be broken into smaller delegates? To see file sizes for TypeScript sims, run this shell command:
+```
+cd calculus-grapher/js ; wc -l `find . -name "*.ts" -print` | sort
+```
 - [ ] Are any significant chunks of code duplicated? In addition to manual identification, tools include: WebStorm _Code > Analyze Code > Locate Duplicates_ and https://github.com/danielstjules/jsinspect.
 - [ ] Is there anything that should be generalized and migrated to common code?
 - [ ] Are there any `TODO` or `FIXME` or `REVIEW` comments in the code?  They should be addressed or promoted to GitHub issues.
