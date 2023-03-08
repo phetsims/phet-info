@@ -10,11 +10,18 @@ Contents
 --------
 
 - [Assignment](#assignment)
+  - [Definition](#definition)
   - [Assigners](#assigners)
   - [Assignees](#assignees)
+  - [Removing Assignment](#removing-assignment)
 
 Assignment
 ----------
+
+### Definition
+
+Being assigned to an issue means you are actively working on an issue or
+have plans to work on the issue within the next week or so.
 
 ### Assigners
 
@@ -26,7 +33,9 @@ for who to assign.
 ### Assignees
 
 When you are assigned to an issue, it's your responsibility to add
-appropriate labels, and decide whether to work on it now or later.
+appropriate labels, and decide whether to work on it now or later. It is
+also your responsibility to ensure the title accurately describes the
+issue.
 
 If you will work on it now, keep your assignment. Post updates when you
 make progress or have useful information.
@@ -35,5 +44,11 @@ If you will work on it later, provide as much context and useful
 information as you can for your future self or the developer who ends up
 working on the issue. Then remove your assignment.
 
-If you plan on working on something within the next week, you should
-assign yourself.
+### Removing Assignment
+
+If you can't work on an issue within the next week or so, it shouldn't
+be assigned to you. Provide as much context and useful information as
+you can for your future self or the developer who ends up working on the
+issue. Optionally add the issue to a backlog issue or meta issue where
+you track issues you might eventually want to work on. Finally, remove
+your assignment.
