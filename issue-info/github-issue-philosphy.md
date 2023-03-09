@@ -60,8 +60,8 @@ Labels
 - Only use a label if your issue meets the definition for that label.
 - If a label doesn't have a definition, and you want to use that label,
   please create a definition for that label.
-- If you need a new label, you can only do so if you provide a
-  definition for the new label.
+- If you need to create a new label, you can only do so if you provide
+  a definition for the new label.
 
 To see labels and their definitions in a GitHub repository, go to:
 
