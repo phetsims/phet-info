@@ -187,11 +187,14 @@ prompt you whether the release branch should be created. For example, if `1.6` w
 want to create `1.7` and deploy an RC, just fire off `grunt rc --branch=1.7 --brands={{BRANDS}}`.
 
 If you do not want to deploy an RC when creating the release branch, instead directly
-do `grunt create-release --branch=1.7` (which will handle all of the steps to create the new branch). Release branches
-should be created using either `grunt rc` or `grunt create-release`, as this sets them up with the correct package.json
-version and dependencies.json content.
+do `grunt create-release --branch=1.7 --brands={{BRANDS}}` (which will handle all steps to create the new branch).
+Release branches should be created using either `grunt rc` or `grunt create-release`, as this sets them up with the
+correct package.json version and dependencies.json content.
 
+NOTE: The `--brands` you include in the command will be set as the only supported brands for the release
+branch in the `package.json`.
 NOTE: It will initialize the branch to a version of 1.0.0-rc.0, and then increment/deploy to 1.0.0-rc.1.
+
 
 ### RC/production deployment on an existing branch
 
