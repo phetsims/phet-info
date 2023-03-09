@@ -243,7 +243,7 @@ it is made up of many separate, modular components.
 | ------------- | ------------- | ---------- |
 | [chipper](https://github.com/phetsims/chipper/)  | 10,000  | Tools for developing and building simulations. Uses code in [perennial-alias](https://github.com/phetsims/perennial-alias/) for some tasks.
 | [perennial](https://github.com/phetsims/perennial/)  | 11,000  | Maintenance tools that won't change with different versions of chipper checked out (always runs in master).
-| [perennial-alias](https://github.com/phetsims/perennial-alias/)  | 11,000  | Copy of perennial that can run on non-master SHAs.
+| [perennial-alias](https://github.com/phetsims/perennial/)  | 11,000  | Copy of perennial that can run on non-master SHAs.
 | [sherpa](https://github.com/phetsims/sherpa/)  | -  | All of our 3rd-party dependencies. Some such as font-awesome or lodash are used in every simulation and some such as numeric or three.js are sim-specific.
 
 ## Checking out the HTML5 Code from GitHub
