@@ -34,7 +34,10 @@ const fs = require( 'fs' );
       }
     } ) ).data;
     if ( currentRepos ) {
-      repoNames += currentRepos.map( repo => repo.name ).join( '\n' ) + '\n';
+      const names = currentRepos.map( repo => repo.name.trim() ).filter( name =>
+        name !== 'community'
+      );
+      repoNames += names.join( '\n' ) + '\n';
     }
     currentPage++;
   } while ( currentRepos && currentRepos.length === pageSize );
