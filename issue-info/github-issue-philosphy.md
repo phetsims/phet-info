@@ -28,7 +28,7 @@ have plans to work on the issue within the next week or so.
 
 Assign the developer(s) responsible for the repo in which you are
 creating the issue. See [the responsible developer
-document](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json)
+document]([https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.json](https://github.com/phetsims/phet-info/blob/master/sim-info/responsible_dev.md))
 for who to assign.
 
 ### Assignees
