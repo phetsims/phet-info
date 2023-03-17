@@ -53,6 +53,7 @@ type:automated-testing,FF00AA
 type:bug,FF00AA
 type:documentation,A17188
 type:duplicate,EEEED1
+type:emergent/choice,9C4A2A
 type:epic,4B0082
 type:i18n,B452CD
 type:legacy-bug,CD00CD
