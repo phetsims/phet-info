@@ -11,7 +11,7 @@
  * Usage: Run the script with Node.js. Optionally, set downloadNewData to true to download updated user and repo data.
  *
  * @author Sam Reid (PhET Interactive Simulations)
- * @author Agustin Vallejo (PhET Interactive Simulations)
+ * @author Agustín Vallejo (PhET Interactive Simulations)
  */
 
 const buildLocal = require( '../../perennial-alias/js/common/buildLocal' );

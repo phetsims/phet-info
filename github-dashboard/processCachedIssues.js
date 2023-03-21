@@ -4,7 +4,7 @@
  * Read the open issues cached to disk, and output the number of issues assigned to each user.
  *
  * @author Sam Reid (PhET Interactive Simulations)
- * @author Agustin Vallejo (PhET Interactive Simulations)
+ * @author Agustín Vallejo (PhET Interactive Simulations)
  */
 
 const fs = require( 'fs' );
