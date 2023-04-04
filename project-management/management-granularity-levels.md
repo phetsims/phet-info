@@ -37,11 +37,11 @@ The Epic level is only focused on the due dates, and timeline for sim releases, 
 #### Github's Role
 Benefits could potentially come from task roll up, but other than that zero github input needed. Task roll up would only require a one-way sync.
 
-### :woman_scientist: Iteration Level
+### :woman_scientist: Phase Level
 Example: Iteration planning, epic milestones
 
 #### Summary
-The Iteration level is focused on scheduling epics and epic milestones (design complete, development complete, etc.) inside of two week chunks. This level of planning requires prioritization of epics, when we plan to work on epics within our iteration schedule, as well as the amount of effort we can put in towards each epic. A high amount of input is needed from administrative and management positions, with a medium amount of input needed from others. This is mostly used as a reference for the majority of team members with iteration planning being the highest point of contribution.
+The Phase level is focused on scheduling epics and epic milestones (design complete, development complete, etc.) inside of two week chunks. This level of planning requires prioritization of epics, when we plan to work on epics within our iteration schedule, as well as the amount of effort we can put in towards each epic. A high amount of input is needed from administrative and management positions, with a medium amount of input needed from others. This is mostly used as a reference for the majority of team members with iteration planning being the highest point of contribution.
 
 #### Github Role
 It is not uncommon for epic milestones to have associated github issues ( dev tests, initial screen development, etc.). Integration for these epic milestone issues would be necessary, however can be filtered by a label. These issues would require one way sync only. It is not expected that team members will comment or update cards from the management end, rather the Github issue would drive the progress in management tooling we choose.
