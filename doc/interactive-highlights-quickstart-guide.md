@@ -72,7 +72,7 @@ class MyDraggableNode extends InteractiveHighlighting( Node ) {
 ## InteractiveHighlightingNode.ts
 
 If the trait pattern is inconvenient (or you prefer not to use traits in general) you can extend or instantiate an
-InteractiveHighlightingNode which will accomplish the sme thing.
+InteractiveHighlightingNode which will accomplish the same thing.
 
 ```js
 class MyCompositeNode extends Node {
