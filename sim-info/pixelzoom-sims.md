@@ -5,7 +5,7 @@
 | acid-base-solutions              |  4/18/2014 |  3,937 |     ✓      |   75%    |             |           |       ✓        | | |
 | balancing-chemical-equations     |  7/31/2014 |  4,805 |     ✓      |          |             |           |       ✓        | | |
 | beers-law-lab                    |  8/16/2013 |  6,517 |     ✓      |    ✓     |             |           |       ✓        | ✓ | |
-| calculus-grapher                 |            |        |     ✓      |    ✓     |             |           |       ✓        | ✓ | ✓ |
+| calculus-grapher                 |  4/17/2023 |  9,554 |     ✓      |    ✓     |             |           |       ✓        | ✓ | ✓ |
 | concentration                    | 10/31/2013 |     54 |     ✓      |    ✓     |             |           |       ✓        | ✓ | |
 | diffusion                        |  8/12/2019 |     53 |     ✓      |   25%    |             |           |       ✓        | ✓ | ✓ |
 | equality-explorer                |  7/18/2018 | 13,672 |     ✓      |   25%    |             |           |       ✓        | ✓ | |
