@@ -107,7 +107,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | isotopes-and-atomic-mass | @jbphet | @arouinfar |  | 
 | john-travoltage | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description<br/>Voicing | 
 | joist | @zepumph |  |  | 
-| keplers-laws | @AgustinVallejo,@jonathanolson | @DianaTavares |  | 
+| keplers-laws | @AgustinVallejo,@jonathanolson | @DianaTavares | Sound | 
 | kite | @jonathanolson |  |  | 
 | least-squares-regression | @jonathanolson | @amanda-phet |  | 
 | make-a-ten | @jonathanolson | @amanda-phet | Sound | 
