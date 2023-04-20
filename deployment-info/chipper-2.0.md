@@ -307,11 +307,6 @@ using `grunt prototype`, with the following differences:
   - Notify AP so that he can announce on social media.
   - Notify ON so that he can announce via email.
 
-## PhET-iO Wrapper deployments
-
-`grunt wrapper` in a wrapper directory (e.g. phet-io-wrapper-sonification) should deploy the whole thing. Follow the
-prompts.
-
 # Branch Protections
 
 Production branches are "protected" on github so that they cannot be deleted unless absolutely necessary. This includes
