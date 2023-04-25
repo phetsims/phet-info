@@ -801,10 +801,11 @@
   },
   "masses-and-springs": {
     "responsibleDevs": [
-      "@chrisklus"
+      "@matthew-blackman"
     ],
     "responsibleDesigners": [
-      "@arouinfar"
+      "@arouinfar",
+      "@matthew-blackman"
     ]
   },
   "masses-and-springs-basics": {
@@ -1172,9 +1173,11 @@
   },
   "projectile-motion": {
     "responsibleDevs": [
-      "@jbphet"
+      "@matthew-blackman"
     ],
     "responsibleDesigners": [
+      "@matthew-blackman",
+      "@catherinecarter",
       "@arouinfar"
     ]
   },
