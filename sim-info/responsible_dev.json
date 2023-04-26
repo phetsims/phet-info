@@ -155,7 +155,7 @@
   },
   "binder": {
     "responsibleDevs": [
-      "@chrisklus"
+      "@zepumph"
     ],
     "responsibleDesigners": []
   },
@@ -245,7 +245,7 @@
   "center-and-variability": {
     "responsibleDevs": [
       "@samreid",
-      "@chrisklus"
+      "@marlitas"
     ],
     "responsibleDesigners": [
       "@amanda-phet"
@@ -343,7 +343,7 @@
   },
   "color-vision": {
     "responsibleDevs": [
-      "@chrisklus"
+      "@jbphet"
     ],
     "responsibleDesigners": [
       "@DianaTavares"
@@ -375,7 +375,7 @@
   },
   "counting-common": {
     "responsibleDevs": [
-      "@chrisklus"
+      "@marlitas"
     ],
     "responsibleDesigners": [
       "@amanda-phet"
@@ -435,7 +435,7 @@
   },
   "energy-forms-and-changes": {
     "responsibleDevs": [
-      "@chrisklus"
+      "@jbphet"
     ],
     "responsibleDesigners": [
       "@arouinfar"
@@ -918,7 +918,7 @@
   },
   "number-compare": {
     "responsibleDevs": [
-      "@chrisklus"
+      "@marlitas"
     ],
     "responsibleDesigners": [
       "@amanda-phet"
@@ -958,7 +958,7 @@
   },
   "number-play": {
     "responsibleDevs": [
-      "@chrisklus"
+      "@marlitas"
     ],
     "responsibleDesigners": [
       "@amanda-phet"
@@ -966,7 +966,7 @@
   },
   "number-suite-common": {
     "responsibleDevs": [
-      "@chrisklus"
+      "@marlitas"
     ],
     "responsibleDesigners": [
       "@amanda-phet"
@@ -1069,7 +1069,7 @@
   },
   "phet-io-test-sim": {
     "responsibleDevs": [
-      "@chrisklus"
+      "@zepumph"
     ],
     "responsibleDesigners": []
   },
@@ -1165,7 +1165,7 @@
   },
   "plinko-probability": {
     "responsibleDevs": [
-      "@chrisklus"
+      "@pixelzoom"
     ],
     "responsibleDesigners": [
       "@amanda-phet"
@@ -1215,7 +1215,7 @@
   },
   "query-string-machine": {
     "responsibleDevs": [
-      "@chrisklus"
+      "@samreid"
     ],
     "responsibleDesigners": []
   },
@@ -1346,7 +1346,7 @@
   },
   "studio": {
     "responsibleDevs": [
-      "@chrisklus"
+      "@zepumph"
     ],
     "responsibleDesigners": []
   },

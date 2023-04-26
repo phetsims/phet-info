@@ -27,7 +27,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | beaker | @samreid |  |  | 
 | beers-law-lab | @pixelzoom | @arouinfar |  | 
 | bending-light | @samreid | @arouinfar |  | 
-| binder | @chrisklus |  |  | 
+| binder | @zepumph |  |  | 
 | blackbody-spectrum | @AgustinVallejo,@jbphet | @DianaTavares |  | 
 | blast | @samreid |  |  | 
 | brand | @zepumph |  |  | 
@@ -39,7 +39,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | buoyancy | @jonathanolson | @DianaTavares |  | 
 | calculus-grapher | @veillette,@pixelzoom | @amanda-phet |  | 
 | capacitor-lab-basics | @jonathanolson | @arouinfar |  | 
-| center-and-variability | @samreid,@chrisklus | @amanda-phet | Interactive Description | 
+| center-and-variability | @samreid,@marlitas | @amanda-phet | Interactive Description | 
 | chains | @jbphet |  |  | 
 | charges-and-fields | @jonathanolson | @arouinfar |  | 
 | chipper | @jonathanolson |  |  | 
@@ -52,11 +52,11 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | circuit-construction-kit-dc | @samreid | @arouinfar | Interactive Description | 
 | circuit-construction-kit-dc-virtual-lab | @samreid | @arouinfar | Interactive Description | 
 | collision-lab | @jonathanolson | @arouinfar |  | 
-| color-vision | @chrisklus | @DianaTavares | Sound<br/>Interactive Description | 
+| color-vision | @jbphet | @DianaTavares | Sound<br/>Interactive Description | 
 | community | @samreid | @BLFiedler |  | 
 | concentration | @pixelzoom | @arouinfar |  | 
 | coulombs-law | @zepumph | @arouinfar | Interactive Description | 
-| counting-common | @chrisklus | @amanda-phet |  | 
+| counting-common | @marlitas | @amanda-phet |  | 
 | curve-fitting | @jonathanolson | @amanda-phet |  | 
 | decaf | @samreid |  |  | 
 | density | @jonathanolson | @DianaTavares |  | 
@@ -64,7 +64,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | diffusion | @pixelzoom | @arouinfar |  | 
 | dot | @jonathanolson |  |  | 
 | eating-exercise-and-energy | @samreid | @amanda-phet |  | 
-| energy-forms-and-changes | @chrisklus | @arouinfar |  | 
+| energy-forms-and-changes | @jbphet | @arouinfar |  | 
 | energy-skate-park | @jessegreenberg | @arouinfar |  | 
 | energy-skate-park-basics | @jessegreenberg | @arouinfar |  | 
 | equality-explorer | @pixelzoom | @amanda-phet | Sound | 
@@ -126,13 +126,13 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | neuron | @jbphet | @arouinfar |  | 
 | nitroglycerin | @pixelzoom |  |  | 
 | normal-modes |  | @DianaTavares |  | 
-| number-compare | @chrisklus | @amanda-phet | Sound | 
+| number-compare | @marlitas | @amanda-phet | Sound | 
 | number-line-common | @jbphet | @amanda-phet |  | 
 | number-line-distance | @jbphet | @amanda-phet |  | 
 | number-line-integers | @jbphet | @amanda-phet |  | 
 | number-line-operations | @jbphet | @amanda-phet |  | 
-| number-play | @chrisklus | @amanda-phet | Sound | 
-| number-suite-common | @chrisklus | @amanda-phet |  | 
+| number-play | @marlitas | @amanda-phet | Sound | 
+| number-suite-common | @marlitas | @amanda-phet |  | 
 | ohms-law | @jbphet | @DianaTavares | Sound<br/>Interactive Description | 
 | optics-lab | @veillette,@jbphet | @arouinfar |  | 
 | paper-land | @jbphet,@jessegreenberg | @BLFiedler |  | 
@@ -146,7 +146,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phet-info | @zepumph |  |  | 
 | phet-io | @zepumph |  |  | 
 | phet-io-sim-specific | @samreid | @arouinfar |  | 
-| phet-io-test-sim | @chrisklus |  |  | 
+| phet-io-test-sim | @zepumph |  |  | 
 | phet-io-website | @chrisklus |  |  | 
 | phet-io-wrapper-classroom-activity | @zepumph |  |  | 
 | phet-io-wrapper-haptics | @jessegreenberg |  |  | 
@@ -162,14 +162,14 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phetcommon | @zepumph |  |  | 
 | phetmarks | @jonathanolson |  |  | 
 | phettest | @zepumph |  |  | 
-| plinko-probability | @chrisklus | @amanda-phet |  | 
+| plinko-probability | @pixelzoom | @amanda-phet |  | 
 | projectile-motion | @matthew-blackman | @matthew-blackman,@catherinecarter,@arouinfar |  | 
 | proportion-playground | @jonathanolson | @amanda-phet |  | 
 | protein-synthesis | @samreid |  |  | 
 | qa | @KatieWoe |  |  | 
 | quadrilateral | @jessegreenberg |  | Sound<br/>Interactive Description<br/>Voicing | 
 | quake | @jbphet |  |  | 
-| query-string-machine | @chrisklus |  |  | 
+| query-string-machine | @samreid |  |  | 
 | ratio-and-proportion | @zepumph | @BLFiedler | Sound<br/>Interactive Description<br/>Voicing | 
 | reactants-products-and-leftovers | @pixelzoom | @arouinfar | Sound | 
 | resistance-in-a-wire | @jbphet | @DianaTavares | Sound<br/>Interactive Description | 
@@ -188,7 +188,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | special-ops | @zepumph |  |  | 
 | states-of-matter | @jbphet | @arouinfar |  | 
 | states-of-matter-basics | @jbphet | @arouinfar |  | 
-| studio | @chrisklus |  |  | 
+| studio | @zepumph |  |  | 
 | sugar-and-salt-solutions | @samreid | @amanda-phet |  | 
 | sun | @jbphet |  | Interactive Description | 
 | tambo | @jbphet |  | Sound<br/>Interactive Description | 
