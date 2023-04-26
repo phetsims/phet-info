@@ -111,8 +111,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | kite | @jonathanolson |  |  | 
 | least-squares-regression | @jonathanolson | @amanda-phet |  | 
 | make-a-ten | @jonathanolson | @amanda-phet | Sound | 
-| masses-and-springs | @chrisklus | @arouinfar |  | 
-| masses-and-springs-basics | @chrisklus | @arouinfar |  | 
+| masses-and-springs | @matthew-blackman | @arouinfar,@matthew-blackman |  | 
+| masses-and-springs-basics | @matthew-blackman | @arouinfar |  | 
 | mean-share-and-balance | @marlitas,@samreid | @amanda-phet | Interactive Description | 
 | mobius | @jonathanolson |  |  | 
 | models-of-the-hydrogen-atom | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
@@ -163,7 +163,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phetmarks | @jonathanolson |  |  | 
 | phettest | @zepumph |  |  | 
 | plinko-probability | @chrisklus | @amanda-phet |  | 
-| projectile-motion | @jbphet | @arouinfar |  | 
+| projectile-motion | @matthew-blackman | @matthew-blackman,@catherinecarter,@arouinfar |  | 
 | proportion-playground | @jonathanolson | @amanda-phet |  | 
 | protein-synthesis | @samreid |  |  | 
 | qa | @KatieWoe |  |  | 
