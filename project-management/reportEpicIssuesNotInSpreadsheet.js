@@ -20,7 +20,7 @@
  * @author Michael Kauzmann (PhET Interactive Simulations)
  */
 
-const _ = require( '../../perennial/node_modules/lodash' ); // eslint-disable-line require-statement-match
+const _ = require( '../../perennial/node_modules/lodash' );
 const buildLocal = require( '../../perennial/js/common/buildLocal' );
 const https = require( 'https' );
 
