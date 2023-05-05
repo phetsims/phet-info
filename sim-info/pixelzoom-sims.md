@@ -8,9 +8,9 @@
 | calculus-grapher                 |  4/17/2023 |  9,554 |     ✓      |    ✓     |             |           |       ✓        | ✓ | ✓ |
 | concentration                    | 10/31/2013 |     54 |     ✓      |    ✓     |             |           |       ✓        | ✓ | |
 | diffusion                        |  8/12/2019 |     53 |     ✓      |   25%    |             |           |       ✓        | ✓ | ✓ |
-| equality-explorer                |  7/18/2018 | 13,672 |     ✓      |   25%    |             |           |       ✓        | ✓ | |
-| equality-explorer-basics         |  7/18/2018 |    375 |     ✓      |   25%    |             |           |       ✓        | ✓ | |
-| equality-explorer-two-variables  |  7/18/2018 |    283 |     ✓      |   25%    |             |           |       ✓        | ✓ | |
+| equality-explorer                |  7/18/2018 | 13,672 |     ✓      |   [25%](https://github.com/phetsims/equality-explorer/issues/200)    |             |           |       ✓        | ✓ | |
+| equality-explorer-basics         |  7/18/2018 |    375 |     ✓      |   [25%](https://github.com/phetsims/equality-explorer/issues/200)    |             |           |       ✓        | ✓ | |
+| equality-explorer-two-variables  |  7/18/2018 |    283 |     ✓      |   [25%](https://github.com/phetsims/equality-explorer/issues/200)    |             |           |       ✓        | ✓ | |
 | fourier-making-waves             | 10/13/2021 | 14,595 |    30%     |   25%    |             |           |      80%       | | ✓ |
 | function-builder                 |  7/13/2016 | 10,716 |     1%     |          |             |           |      80%       | | |
 | function-builder-basics          |   6/6/2017 |    805 |    13%     |          |             |           |       ✓        | | |
