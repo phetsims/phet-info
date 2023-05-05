@@ -25,8 +25,8 @@
 | models-of-the-hydrogen-atom      |            |        |     ✓      |          |      ✓      |     ✓     |       ✓        | ✓ | ✓ |
 | molecule-polarity                |  7/26/2017 |  6,665 |     ✓      |    ✓     |             |           |       ✓        | ✓ | |
 | natural-selection                |   9/1/2020 | 13,808 |     ✓      |    ✓     |             |           |       ✓        | | |
-| ph-scale                         |  8/22/2014 |  6,580 |     ✓      |    ✓     |     75%     | [disabled](https://github.com/phetsims/ph-scale/issues/248#issuecomment-1319254656)  |       ✓        | ✓ | |
-| ph-scale-basics                  |   1/7/2014 |     67 |     ✓      |    ✓     |     75%     | [disabled](https://github.com/phetsims/ph-scale/issues/248#issuecomment-1319254656)  |       ✓        | ✓ | |
+| ph-scale                         |  8/22/2014 |  6,580 |     ✓      |    ✓     |     [75%](https://github.com/phetsims/ph-scale/issues/249#issuecomment-1319350553)     | [disabled](https://github.com/phetsims/ph-scale/issues/248#issuecomment-1319254656)  |       ✓        | ✓ | |
+| ph-scale-basics                  |   1/7/2014 |     67 |     ✓      |    ✓     |     [75%](https://github.com/phetsims/ph-scale/issues/249#issuecomment-1319350553)     | [disabled](https://github.com/phetsims/ph-scale/issues/248#issuecomment-1319254656)  |       ✓        | ✓ | |
 | reactants-products-and-leftovers |  1/27/2015 |  5,744 |     ✓      |   [15%](https://github.com/phetsims/reactants-products-and-leftovers/issues/78)    |             |           |       ✓        | | |
 | unit-rates                       |   4/4/2017 |  7,768 |     1%     |          |             |           |       5%       | | |
 | vector-addition                  |  11/5/2019 | 10,029 |     2%     |          |             |           |                | | |
