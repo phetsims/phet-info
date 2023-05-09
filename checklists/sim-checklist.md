@@ -21,11 +21,12 @@
   - [ ] Performance acceptable
   - [ ] Carefully review ?showPointerAreas
   - [ ] No new feature requests
-- [ ] **Pre-prototype items**
+- [ ] **Prototype items**
   - [ ] Auxiliary screenshots (at least 1 additional)
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL) as appropriate
   - [ ] Email/Twitter announcement language
   - [ ] Teacher Guide created, uploaded, and added to sim design folder
+  - [ ] Send Simulation Notification from the Admin page (to alert translators)
 - [ ] **Pre-publication items**
   - [ ] Auxiliary screenshots (up to 3 additional)
   - [ ] Screen-specific screenshots for metadata service (
@@ -45,7 +46,7 @@
   - [ ] Deliver to [Legends of Learning](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=0)
   - [ ] Create "sim primer" issue
   - [ ] Hold postmortem if applicable (Date: //)
-  - [ ] Send Simulation Notification from the Admin page (to alert translators)
+  - [ ] Send Simulation Notification from the Admin page (to alert translators) 
 
 ## Inclusive Features
 - [ ] Alternative Input (Started: ) (Completed: ) 
