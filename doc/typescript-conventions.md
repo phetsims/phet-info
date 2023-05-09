@@ -10,6 +10,17 @@ Many of PhET's TypeScript conventions are embodied in TypeScript-specific lint r
 plugin to add these rules. Please see [.eslintrc](https://github.com/phetsims/chipper/blob/master/eslint/.eslintrc.js)
 for details and context about conventions based on lint rules.
 
+### Philosophy
+
+Familiarize yourself with the TypeScript Design
+Goals: https://github.com/Microsoft/TypeScript/wiki/TypeScript-Design-Goals.
+An important one that is often forgotten is the following:
+
+- "\[the goal is not to\] Apply a sound or "provably correct" type system. Instead, strike a balance between correctness
+  and productivity."
+
+TypeScript should work for us and the project, instead of the other way around.
+
 ### Leveraging Type Inference
 
 From _Effective TypeScript_ (Dan Vanderkam), page 87, Item 19, "Avoid Cluttering Your Code with Inferable Types":
