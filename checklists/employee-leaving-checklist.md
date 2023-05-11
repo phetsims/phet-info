@@ -1,7 +1,7 @@
 # Employee/Affiliate Leaving Checklist
 
 ## Responsibilities of Departing Employee
-- [ ] Submit your letter of resignation.
+- [ ] Submit your letter of resignation.= to supervisor.
 - [ ] Ensure your address is up to date in myCUinfo. This ensures you will receive your W-2 in a timely manner.
 - [ ] Inform committees/team you are working on of your resignation.
 
