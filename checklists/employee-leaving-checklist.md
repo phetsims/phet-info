@@ -24,7 +24,6 @@ Boulder, CO 80309
 
 ## Internal (PhET) Administrative Responsibilities
 - [ ] Exit Interview if appropriate
-- [ ] https://docs.google.com/document/d/0B3aB5oT9c4e0R2VrTXVWd0pleFU/edit
 - [ ] Buff One card, Eco-Pass returned via campus mail to 159 UCB or in person at the Campus Card Office located at Center for Community (C4C), Room N180, 159 UCB
 - [ ] Send copy of final leave balance sheet to HR 565UCB
 - [ ] (if applicable) Cancel PSC cards (procurement/travel card)
