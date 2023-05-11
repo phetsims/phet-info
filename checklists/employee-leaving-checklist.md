@@ -4,6 +4,7 @@
 - [ ] Submit your letter of resignation to supervisor.
 - [ ] Ensure your address is up to date in myCUinfo. This ensures you will receive your W-2 in a timely manner.
 - [ ] Inform committees/team you are working on of your resignation.
+- [ ] Submit final my.leave timesheet as soon as possible (once your last day is finalized)
 
 ### Turn in all university property to Physics department or PhET:
 - [ ] Door Keys. If needed, can be mailed to:
