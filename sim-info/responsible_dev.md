@@ -39,7 +39,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | buoyancy | @jonathanolson | @DianaTavares |  | 
 | calculus-grapher | @veillette,@pixelzoom | @amanda-phet |  | 
 | capacitor-lab-basics | @jonathanolson | @arouinfar |  | 
-| center-and-variability | @samreid,@marlitas | @amanda-phet | Interactive Description | 
+| center-and-variability | @samreid,@marlitas | @amanda-phet | Sound<br/>Interactive Description | 
 | chains | @jbphet |  |  | 
 | charges-and-fields | @jonathanolson | @arouinfar |  | 
 | chipper | @jonathanolson |  |  | 
