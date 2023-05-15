@@ -21,11 +21,11 @@
  - [ ]  **6. Modifications to Look & Feel** 
  - Identify modifications to the PhET Look-&-Feel Guidelines. If applicable, based on what we learned during development of this sim, suggest revisions to the guidelines.
   * [HTML5 Look and Feel](https://docs.google.com/document/d/1Fg4E6VNMsnId7CjsyqHKnZeIoQ4N-5ezM9PTkj7N3PM/edit)
-  * [HTML5 Sim Design Elements
+  * [HTML5 Visual Sim Design Elements
 ](https://docs.google.com/document/d/1rpp0vT7-bGUs_5tZP_77-HM8PnaGbIDQ5DGNygX5CBo/edit)
 
 - [ ]  **7. Sim checklist** 
-- Review the "Sim checklist" (under development). Will be a "living" issue for each sim repository
+- Review the [Sim Checklist](https://github.com/phetsims/phet-info/blob/master/checklists/sim-checklist.md) 
 
 - [ ]  **8. Action items** 
 - Note important items in the postmortem github issue, and create issues for any tasks the require action (such as updating documents, leftover "todo's", etc. 
