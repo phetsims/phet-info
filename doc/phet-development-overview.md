@@ -7,8 +7,7 @@ at the PhET website. This document explains PhET’s libraries, practices and pa
 simulations in HTML5. This document is also available
 at https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md. For discussion and feedback,
 please visit
-the [Developing Interactive Simulations in HTML5 Google Group](https://groups.google.com/g/developing-interactive-simulations-in-html5)
-.
+the [GitHub Discussions forum](https://github.com/orgs/phetsims/discussions).
 
 **[Overview](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#overview)**
 
