@@ -7,15 +7,15 @@
 | beers-law-lab                    |  8/16/2013 |  6,517 |     ✓      |    ✓     |             |           |       ✓        | ✓ | |
 | calculus-grapher                 |  4/17/2023 |  9,554 |     ✓      |    ✓     |   [#125](https://github.com/phetsims/calculus-grapher/issues/125)    |           |       ✓        | ✓ | ✓ |
 | concentration                    | 10/31/2013 |     54 |     ✓      |    ✓     |             |           |       ✓        | ✓ | |
-| diffusion                        |  8/12/2019 |     53 |     ✓      |   25%    |             |           |       ✓        | ✓ | ✓ |
+| diffusion                        |  8/12/2019 |     53 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
 | equality-explorer                |  7/18/2018 | 13,672 |     ✓      |   [25%](https://github.com/phetsims/equality-explorer/issues/200)    |             |           |       ✓        | ✓ | |
 | equality-explorer-basics         |  7/18/2018 |    375 |     ✓      |   [25%](https://github.com/phetsims/equality-explorer/issues/200)    |             |           |       ✓        | ✓ | |
 | equality-explorer-two-variables  |  7/18/2018 |    283 |     ✓      |   [25%](https://github.com/phetsims/equality-explorer/issues/200)    |             |           |       ✓        | ✓ | |
 | fourier-making-waves             | 10/13/2021 | 14,595 |    30%     |   25%    |             |           |      80%       | | ✓ |
 | function-builder                 |  7/13/2016 | 10,716 |     1%     |          |             |           |      80%       | | |
 | function-builder-basics          |   6/6/2017 |    805 |    13%     |          |             |           |       ✓        | | |
-| gas-properties                   |  8/12/2019 | 12,127 |     ✓      |   25%    |             |           |       ✓        | ✓ | ✓ |
-| gases-intro                      |  8/12/2019 |    133 |     ✓      |   25%    |             |           |       ✓        | ✓ | ✓ |
+| gas-properties                   |  8/12/2019 | 12,127 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
+| gases-intro                      |  8/12/2019 |    133 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
 | geometric-optics                 | 10/29/2021 | 12,593 |     ✓      |    ✓     |      ✓      |     ✓     |       ✓        | ✓ | ✓ |
 | geometric-optics-basics          | 11/30/2022 |     63 |     ✓      |    ✓     |      ✓      |     ✓     |       ✓        | ✓ | ✓ |
 | graphing-lines                   |  7/21/2014 | 10,177 |    [95%](https://github.com/phetsims/graphing-lines/issues/139)     |          |             |           |                | | |
