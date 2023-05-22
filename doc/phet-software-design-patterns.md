@@ -1730,7 +1730,7 @@ export default class MyNode extends Node {
 (12) When applying
 a [mixin or trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
 , defining options types gets a little more complicated. Options must be included for _both_ the mixin/trait _and_ the
-class that the mixin/trait is applied to.
+class that the mixin/trait is applied to.  This is when you should explicitly define `type ParentOptions`.
 
 In this example, trait `Voicing` with options `VoicingOptions` is applied to `Checkbox`. (The pattern is identical for
 mixins.)
