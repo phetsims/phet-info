@@ -148,13 +148,12 @@ The term "common code" is mentioned several times in this document and tends to 
 developers. In general, common code refers to a set of libraries that the development team has created that is reused
 between sims and is intended to make the development process faster & easier, and also to make the behavior and
 appearance of the sims more consistent. Each common code library is in its own repo and is generally targeted towards a
-fairly specific function, such as graphic rendering or sound generation. One of the most challenging tasks for new
-developers is to become familiar with the common code repos and how to apply them to the task of developing a
-simulation. As of this writing, there are about ten of these repos that will almost certainly be used in any sim that a
-developer creates, and there are additional libraries that may be used depending on the particular requirements of a
-sim. A list of the common- code repos can be found at 
-https://github.com/phetsims/perennial/blob/master/data/active-common-sim-repos. Talk with your mentor about which ones
-to start ramping up on first.
+fairly specific function, such as graphic rendering or sound generation. As of this writing, there are about ten of
+these repos that will almost certainly be used in any sim that a developer creates, and there are additional libraries
+that may be used depending on the particular requirements of a
+sim. A list of the common-code repos can be found
+at https://github.com/phetsims/perennial/blob/master/data/active-common-sim-repos. Talk with your mentor about which
+ones to start ramping up on first.
 
 Perhaps the most fundamental of the common code libs is "scenery", which is the graphics library that is used to define
 and render pretty much everything that appears on the screen in a PhET sim. This one may be a good place to start,
