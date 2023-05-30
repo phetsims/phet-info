@@ -283,6 +283,8 @@ ask your mentor how to record your interaction of the poor performance and inves
 also provides some [documentation](https://developer.chrome.com/docs/devtools/evaluate-performance/reference/)
 for how to do this profiling.
 
+### Quality Assurance Testing
+
 ### Publishing a Sim
 
 Once you're working on a sim, you will eventually want to publish a "dev version", which is short for "development
