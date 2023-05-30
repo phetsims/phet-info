@@ -49,10 +49,10 @@ following list specifies essential items for a PhET Developer:
   will allow you to push code to sim repos and common code repos.
 - Set up a Slack account and join the phetsims workspace (you should receive an invite to join). From here, join the
   #general, #dev-public, #developer, and #continuous-testing channels.
-  - Be sure to set notifications in #continuous-testing to "All messages".
-  - Check with your mentor about any other relevant channels to join.
-  - If you are not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on
-    how to use it.
+    - Be sure to set notifications in #continuous-testing to "All messages".
+    - Check with your mentor about any other relevant channels to join.
+    - If you are not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on
+      how to use it.
 
  <a id='env-setup'>
 
@@ -63,18 +63,18 @@ Itching to dig into the code? The following are the steps needed to start sim de
 - Follow the steps in
   the [Getting Started](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#getting-started)
   section of the PhET Development Overview doc.
-  - Install some command line programs
-  - Get a copy of phet repos
-  - Try running a sim locally on your machine
+    - Install some command line programs
+    - Get a copy of phet repos
+    - Try running a sim locally on your machine
 - Set up an IDE so you can start writing code.
-  - Most developers use Webstorm or IntelliJ IDEA, recommended instructions can be found in
-    the [IDE setup document](https://github.com/phetsims/phet-info/blob/master/ide/idea/setup.md).
+    - Most developers use Webstorm or IntelliJ IDEA, recommended instructions can be found in
+      the [IDE setup document](https://github.com/phetsims/phet-info/blob/master/ide/idea/setup.md).
 - Before you start committing and pushing code to PhET repos, you should set up pre-commit hooks.
-  - Pre-Commit Hooks prevent developers from committing code that has various types of errors, most notably ESLint and
-    TypeScript errors.
-  - Follow step 13.
-    of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
-    in the PhET Development Overview doc for instructions on setting them up.
+    - Pre-Commit Hooks prevent developers from committing code that has various types of errors, most notably ESLint and
+      TypeScript errors.
+    - Follow step 13.
+      of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
+      in the PhET Development Overview doc for instructions on setting them up.
 
 <a id='intro-dev'>
 
@@ -91,13 +91,13 @@ this workflow are beyond the scope of this document. However, working off of mas
 pull, push, and commit behaviors.
 
 - Pull code from all repos, every morning.
-  - Recommended to use the pull-all.sh script in perennial
-  - Continue to pull frequently throughout the day
+    - Recommended to use the pull-all.sh script in perennial
+    - Continue to pull frequently throughout the day
 - Do not commit broken code.
-  - Sims should load, test, and lint without errors
-  - Pre-Commit Hooks help catch errors, read more below.
+    - Sims should load, test, and lint without errors
+    - Pre-Commit Hooks help catch errors, read more below.
 - Push code frequently (some devs push after every commit).
-  - Recommended to use the push-all.sh script in perennial
+    - Recommended to use the push-all.sh script in perennial
 
 ### Pre-Commit Hooks
 
@@ -106,33 +106,36 @@ be frustrating and error-prone to discover these errors for the first time when 
 
 - Run the script `chipper/js/scripts/precommit-hook-multi.js` intermittently during development to avoid surprises when
   you commit.
-  - Results are cached for efficiency and will only run on repos with working copy changes.
+    - Results are cached for efficiency and will only run on repos with working copy changes.
 - Set `chipper/js/scripts/precommit-hook-multi.js` as
   an [External Tool](https://www.jetbrains.com/help/idea/settings-tools-external-tools.html) in WebStorm/ IntelliJ.
-  - You can bind external tools to a key command for ease-of-use.
+    - You can bind external tools to a key command for ease-of-use.
 
 ### Debugging
 
 - Console.log
-  - A favorite amongst JavaScript developers, console.log allows you to log values to the console, which can help developers
-    take a peek into what is happening in the code at runtime.
+    - A favorite amongst JavaScript developers, console.log allows you to log values to the console, which can help
+      developers
+      take a peek into what is happening in the code at runtime.
 - Debugger
-  - You can insert the `debugger` keyword in code to set a breakpoint that allows you to explore code in a paused
-    state in a console.
+    - You can insert the `debugger` keyword in code to set a breakpoint that allows you to explore code in a paused
+      state in a console.
 - [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
-  - Chrome Dev Tools is built into the Chrome browser and provides a set of powerful web development tools for
-    debugging and examining code.
-  - Most developers on the team use Chrome for development and testing for performance and bugs on other browsers. If you
-    have a different preference do not feel obligated to use Chrome.
-  - This is a [handy tutorial](https://developer.chrome.com/docs/devtools/javascript/) for debugging JavaScript in
-    Chrome Dev Tools.
+    - Chrome Dev Tools is built into the Chrome browser and provides a set of powerful web development tools for
+      debugging and examining code.
+    - Most developers on the team use Chrome for development and testing for performance and bugs on other browsers. If
+      you
+      have a different preference do not feel obligated to use Chrome.
+    - This is a [handy tutorial](https://developer.chrome.com/docs/devtools/javascript/) for debugging JavaScript in
+      Chrome Dev Tools.
 - Helper Tool
-  - The Helper tool will display information about PhET components, helping developers navigate and implement the internal
-    code.
-  - How to use:
-    - Load a sim or common code repo
-    - Press `Ctrl+Shift+H` (The helper tool box will appear)
-    - Click on the component you want to know more about
+    - The Helper tool will display information about PhET components, helping developers navigate and implement the
+      internal
+      code.
+    - How to use:
+        - Load a sim or common code repo
+        - Press `Ctrl+Shift+H` (The helper tool box will appear)
+        - Click on the component you want to know more about
 
 ### Phetmarks
 
@@ -285,11 +288,19 @@ for how to do this profiling.
 
 ### Quality Assurance Testing
 
+The Quality Assurance (QA) process is a critical component in the creation, refinement, and deployment of PhET Sims.
+Once a sim reaches a stage of development, the QA team will become involved in the testing process. This team's task is to rigorously test the sim across a variety of devices and platforms
+to ensure correct functionality, acceptable performance, and a satisfying user experience. This process often involves
+identifying and exploring edge cases, seeking out unpredictable behavior, and uncovering any potential bugs within the
+system. When a QA team member encounters a problem, they will report it through a GitHub issue and notify the developer
+team, who will then take the necessary steps to rectify the problem. As a developer, you may not engage significantly
+with the QA process until your sim nears the publication stage.
+
 ### Publishing a Sim
 
 Once you're working on a sim, you will eventually want to publish a "dev version", which is short for "development
-version", to show your latest progress.  This is distinct from other types of versions that are published, such as
-release candidates.  See
+version", to show your latest progress. This is distinct from other types of versions that are published, such as
+release candidates. See
 [Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development)
 , and ask a senior dev to help add your identikey to PhET's servers.
 
