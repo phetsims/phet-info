@@ -289,7 +289,8 @@ for how to do this profiling.
 ### Quality Assurance Testing
 
 The Quality Assurance (QA) process is a critical component in the creation, refinement, and deployment of PhET Sims.
-Once a sim reaches a stage of development, the QA team will become involved in the testing process. This team's task is to rigorously test the sim across a variety of devices and platforms
+Once a Sim reaches a stage of development where it is ready for testing it is deployed as a development (dev) version
+and forwarded to our QA team. This team's task is to rigorously test the sim across a variety of devices and platforms
 to ensure correct functionality, acceptable performance, and a satisfying user experience. This process often involves
 identifying and exploring edge cases, seeking out unpredictable behavior, and uncovering any potential bugs within the
 system. When a QA team member encounters a problem, they will report it through a GitHub issue and notify the developer
@@ -298,12 +299,24 @@ with the QA process until your sim nears the publication stage.
 
 ### Publishing a Sim
 
-Once you're working on a sim, you will eventually want to publish a "dev version", which is short for "development
-version", to show your latest progress. This is distinct from other types of versions that are published, such as
-release candidates. See
-[Adding new users to PhET's servers](https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-development)
-, and ask a senior dev to help add your identikey to PhET's servers.
+Once the dev testing is complete, you'll start Release Candidate (RC) testing, where the common code used by the sim is
+essentially frozen through a process of branching and recording the common-code dependencies (this process is mostly
+automatic). During this phase of testing, QA is a bit more thorough and rigorous, and also tests the sim on all
+supported platforms. As with dev testing, any issues that are found are generally assigned to the primary developer,
+although if something that is considered a design issue is found, this may be assigned to the primary sim designer.
 
+Once an acceptable level of quality has been achieved, the sim is published using the automated tools.
+
+On occasion, a decision is made to publish a sim to the main site before it is 100% complete. These are called 
+"prototype publications", and the process for testing and publishing a prototype is similar to that described above, but
+there are some variations. The details are described in the documents linked below, and your mentor should be able to
+help if this comes up for a sim you're developing.
+
+For information on the details of how the various types of publications are initiated, please see
+https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#dev-deployments.
+
+For templates that can be used to set up the various QA tests, see
+https://github.com/phetsims/qa/tree/master/issue-templates.
 
 <a id='roadmap'>
 
