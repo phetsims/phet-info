@@ -39,7 +39,7 @@ updated during the process.
 ## 📝 Administrative Setup
 
 In your first few days there are many configuration and setup steps that need to be completed to become a CU
-and PhET employee. Check-in with the PhET Business Manager for a complete list of HR needs. Beyond those HR nees, the
+and PhET employee. Check-in with the PhET Business Manager for a complete list of HR needs. Beyond those HR needs, the
 following list specifies essential items for a PhET Developer:
 
 - Get a CU Email account and identikey.
@@ -168,7 +168,10 @@ Most of your work will be done in the `js` directory of a repo. If you are curio
 the [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#repository-structure)
 in the Code Review Checklist for an overview or ask your mentor for an explanation.
 
-To become acquainted with a simulation inner workings, a useful approach is to begin by reviewing the `model.md` and `implementation-notes.md` files within the `/doc` folder. These documents provide valuable insights into the simulation's purpose, its functioning, and the strategies adopted by other developers during its implementation. By reading them, you can gain a comprehensive understanding of the repository's contents and workings.
+To become acquainted with a simulation's inner workings, a useful starting point is to review the `model.md`
+and `implementation-notes.md` files within the `/doc` folder. These documents provide valuable insights into the
+simulation's purpose, its functioning, and the strategies adopted by other developers during its implementation. By
+reading them, you can gain a high-level understanding of the repository's contents and workings.
 
 ### Tutorials and Exercises
 
