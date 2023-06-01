@@ -168,6 +168,8 @@ Most of your work will be done in the `js` directory of a repo. If you are curio
 the [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#repository-structure)
 in the Code Review Checklist for an overview or ask your mentor for an explanation.
 
+To become acquainted with a simulation inner workings, a useful approach is to begin by reviewing the `model.md` and `implementation-notes.md` files within the `/doc` folder. These documents provide valuable insights into the simulation's purpose, its functioning, and the strategies adopted by other developers during its implementation. By reading them, you can gain a comprehensive understanding of the repository's contents and workings.
+
 ### Tutorials and Exercises
 
 We prepared some exercises in order for you to get the hang of sim development. Try to complete, with the help of your
