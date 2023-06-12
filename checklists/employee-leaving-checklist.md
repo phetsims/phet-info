@@ -29,14 +29,15 @@ Boulder, CO 80309
 - [ ] Send copy of final leave balance sheet to HR 565UCB
 - [ ] (if applicable) Cancel PSC cards (procurement/travel card)
 - [ ] Final payment submitted
-- [ ] Pay up to max of vacation at separation, VCT  for resignation. Prorated leave accruals until last day worked and pay out vacation. 'CUES_HCM_LEAVE_ACCRUAL_SUM - Leave Accrual Summary', departing employee signs, attached to VCT transaction.
+- [ ] Pay up to max of vacation at separation, VCT  for resignation. Prorated leave accruals until last day worked and pay out vacation. 'CUES_HCM_LEAVE_ACCRUAL_SUM' - Leave Accrual Summary, departing employee signs, attached to VCT transaction.
 - [ ] Termination in HCM. Termination effective date in HCM is the following day after last day worked.
 
 ### Accounts
 - [ ] Remove from PhET google group
+- [ ] Remove from PhET Sharepoint Employee and Affiliate Group
 - [ ] Remove GitHub access
 - [ ] Remove from Slack
 - [ ] (if applicable) Remove unfuddle access
 - [ ] (if applicable) Cancel A-Card or US Bank Cards
 - [ ] Remove admin access on website
-- [ ] Remove from About Page
+- [ ] Remove from About>Team Page
