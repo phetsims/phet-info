@@ -29,5 +29,5 @@
 | ph-scale-basics                  |   1/7/2014 |     67 |     ✓      |    ✓     |     [75%](https://github.com/phetsims/ph-scale/issues/249#issuecomment-1319350553)     | [disabled](https://github.com/phetsims/ph-scale/issues/248#issuecomment-1319254656)  |       ✓        | ✓ | |
 | reactants-products-and-leftovers |  1/27/2015 |  5,744 |     ✓      |   [15%](https://github.com/phetsims/reactants-products-and-leftovers/issues/78)    |             |           |       ✓        | | |
 | unit-rates                       |   4/4/2017 |  7,768 |     1%     |          |             |           |       5%       | | |
-| vector-addition                  |  11/5/2019 | 9,680 |     84%     |          |             |           |                | | |
+| vector-addition                  |  11/5/2019 | 10,407 |     ✓      |          |             |           |                | | |
 | vector-addition-equations        |  11/5/2019 |     36 |     ✓      |          |             |           |       ✓        | | |
