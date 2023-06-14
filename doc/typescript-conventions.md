@@ -84,9 +84,11 @@ Again, in complex or volatile cases, at the developer preference, the redundant 
 This relates to Vanderkam's Item 29 "Be liberal in what you accept and strict in what you produce.". For example:
 
 ```ts
-class Animal{ name='animalName';}
-class Dog extends Animal{ bark(){} }
-function computeHabitat( dog:Dog ){
+class Animal {name = 'animalName';}
+
+class Dog extends Animal {bark() {}}
+
+function computeHabitat( dog: Dog ) {
   lookup( dog.name );
 }
 ```
@@ -186,15 +188,15 @@ class Person {
   constructor( name: string ) {
     this.name = name;
   }
-  
+
   sayName() {
     console.log( name );
   }
-  
+
   // or here because it is long
-  static QUALITIES: [ 
-    'height', 
-    'age' 
+  static QUALITIES: [
+    'height',
+    'age'
   ];
 }
 ```
@@ -225,7 +227,7 @@ class Person {
   name: string;
 
   constructor() {
-    
+
     // All new people get assigned a random name. A specific name can be assigned later if desired.
     this.name = Person.getRandomName();
   }
@@ -309,6 +311,38 @@ assertion operator is appropriate:
 * Consider factoring out a variable rather than repeating the non-null assertion operator several times on the same
   variable.
 
+### Leverage Excess Property Checking
+
+TypeScript is structurally typed, but has a feature called excess property checking that can, in some situations,
+guard against typos or any form of incorrect object keys. Excess property checking identifies when an object literal is
+compatible with a target type and disallows properties that are not known in that type. For example:
+
+```ts
+type Person = {
+  age?: number;
+  name: string;
+};
+
+const p: Person = {
+  name: 'John',
+  agee: 42 // Hooray, it caught a typo
+};
+
+const otherThing = {
+  name: 'John',
+  agee: 42
+};
+
+const p2: Person = otherThing; // Missed opportunity, did not catch my typo. 
+```
+
+Leveraging excess property checking can help us catch potential bugs in the form of typos or incorrect object keys at
+compile time,
+enhancing the robustness of our code and reducing the likelihood of runtime errors.
+
+For further reading, please see Item 11 "Recognize the Limits of Excess Property Checking" in the book Effective
+Typescript
+by Vanderkam.
 ---
 
 Please see other notes in https://github.com/phetsims/ratio-and-proportion/issues/405
