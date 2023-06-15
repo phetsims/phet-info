@@ -92,7 +92,8 @@ desktop platform.  For PhET-iO sims, additionally test `?stringTest=xss` in Stud
 to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
 - [ ] Avoid using concatenation to create strings that will be visible in the user interface. Use `StringUtils.fillIn` and a string pattern to ensure that strings are properly localized.
 - [ ] Use named placeholders (e.g. `"{{value}} {{units}}"`) instead of numbered placeholders (e.g. `"{0} {1}"`).
-- [ ] Make sure the string keys are all perfect, because they are difficult to change after 1.0.0 is published. Guidelines for string keys are:
+- [ ] Make sure the string keys are all perfect. They are difficult to change after 1.0.0 is published. They should be 
+literal, they should be explicit, and they should be consistent. This will also be the PhET-iO phetioID name in Studio etc. Guidelines for string keys are:
 
   (1) Strings keys should generally match their values. E.g.:
 
