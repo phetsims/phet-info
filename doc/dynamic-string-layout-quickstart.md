@@ -7,7 +7,7 @@
 
 ### First Steps
 
-Strings should be converted to a `TReadOnlyProperty` or `LinkableProperty` instances. These properties are auto-generated in the strings file, and every single usage case should be converted.
+Strings should be converted to a `TReadOnlyProperty` instances. These properties are auto-generated in the strings file, and every single usage case should be converted.
 
 Certain components may need to be set to `resizable: true`. If you see that components are not resizing as expected, this is a good place to start.
 
@@ -22,7 +22,7 @@ Run with `?locales=*` to enable the locale-testing button (globe) in the navigat
 
 **If you are working on an unpublished sim:**
 
-Use the `stringTest=dynamic` query parameter to change all the strings in your sim at once. `DynamicStringTest` uses a keyboard event listener to adjust the length of strings with the arrow keys and space bar. For more specific usage info refer to [DynamicStringTest](https://github.com/phetsims/joist/blob/master/js/DynamicStringTest.ts) documentation. This tool will allow you to see if dynamic layout is working as anticipated, and that components are resizing as would be expected. Strings will only change if they have been implemented with a `TReadOnlyProperty` or `LinkableProperty` from the strings file.
+Use the `stringTest=dynamic` query parameter to change all the strings in your sim at once. `DynamicStringTest` uses a keyboard event listener to adjust the length of strings with the arrow keys and space bar. For more specific usage info refer to [DynamicStringTest](https://github.com/phetsims/joist/blob/master/js/DynamicStringTest.ts) documentation. This tool will allow you to see if dynamic layout is working as anticipated, and that components are resizing as would be expected. Strings will only change if they have been implemented with a `TReadOnlyProperty` from the strings file.
 
 ### Final Steps
 
