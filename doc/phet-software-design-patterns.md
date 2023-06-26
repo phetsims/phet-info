@@ -1290,7 +1290,8 @@ for additional description and examples.
 Additional guidelines:
 
 (1) Create your options type by intersecting `SelfOptions` and the parent class’s options type. `SelfOptions` will
-contain options that are specific to your class. Document options in the Type, and not in the defaults in the constructor
+contain options that are specific to your class. Document options in the Type, and not in the defaults in the
+constructor
 
 ```typescript
 // Our parent class is Path, whose options type is PathOptions.
@@ -1312,7 +1313,8 @@ type SelfOptions = {
   aSelfOption?: boolean // documentation goes here about aSelfOption
   // ...
 };
-type MyPathOptions = SelfOptions & PathOptions; 
+// Tandem needs to become required, but should not be repeated
+type MyPathOptions = SelfOptions & PathOptions & PickRequired<PathOptions, 'tandem'>; 
 ```
 
 (2) If your class does not have any class-specific options, it's still recommended to
@@ -1730,7 +1732,7 @@ export default class MyNode extends Node {
 (12) When applying
 a [mixin or trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
 , defining options types gets a little more complicated. Options must be included for _both_ the mixin/trait _and_ the
-class that the mixin/trait is applied to.  This is when you should explicitly define `type ParentOptions`.
+class that the mixin/trait is applied to. This is when you should explicitly define `type ParentOptions`.
 
 In this example, trait `Voicing` with options `VoicingOptions` is applied to `Checkbox`. (The pattern is identical for
 mixins.)
