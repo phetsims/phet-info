@@ -31,6 +31,10 @@ Follow these steps to add support for alternative input to a simulation.
    See https://github.com/phetsims/phet-info/blob/master/doc/interactive-highlights-quickstart-guide.md for more
    information about this feature.
 
+4. Sims that support alternative input also need an accessible Preferences dialog. See
+   https://github.com/phetsims/phet-info/blob/master/doc/accessible-preferences-quickstart-guide.md for information
+   about this.
+
 ## Traversal Order
 
 Traversal order is the order in which Nodes are visited as you press the Tab key. The order is specified using
@@ -125,10 +129,12 @@ focusable: true
 ```
 
 ## Drag using AccessibleSlider for 1D Motion
+
 If your draggable component moves in 1 dimension consider using AccessibleSlider. AccessibleSlider is a trait that
 can be mixed into a Node to add 1D motion with alternative input. AccessibleSlider will make the component much more
 accessible for a screen reader user compared to KeyboardDragListener. It is very easy to use when there is a
-NumberProperty driving the position.  Here is an example:
+NumberProperty driving the position. Here is an example:
+
 ```js
 type SelfOptions = EmptySelfOptions;
 type ParentOptions = AccessibleSliderOptions & NodeOptions;
@@ -150,6 +156,7 @@ class MyDraggable extends AccessibleSlider( Node, 0 ) {
   } 
 }
 ```
+
 AccessibleSlider will support movement with arrow keys, as well as other keys such as home/end to quickly move the
 component to the limits of the range. See AccessibleSlider and its supertype AccessibleValueHandler for more options
 and functionality.
@@ -200,8 +207,10 @@ into the sim. We need a list of global hotkeys or a way to automatically prevent
 See https://github.com/phetsims/phet-info/issues/188.
 
 ## Scenery Events
+
 If the above are not sufficient you can add input listeners with Scenery's input system that are related to alternative
 input. For example, if you want to add behavior whenever a Node has focus you can add a listener like this:
+
 ```js
 myNode.addInputListener( {
   focus: ( event: SceneryEvent ) => {
@@ -209,6 +218,7 @@ myNode.addInputListener( {
   }
 } );
 ```
+
 See scenery/js/input/Input.js top level documentation for a list of all related alternative input events.
 
 ## Keyboard Shortcuts dialog
@@ -217,14 +227,18 @@ The Keyboard Shortcuts dialog is accessed by pressing the keyboard button in the
 appear in the navigation bar, follow steps below to add content to each screen.
 
 Each of your screens is then required to provide content for the dialog, via the
-`createKeyboardHelpNode: ()=>{Node}` option to the `Screen` constructor. Instructions for creating this Node are beyond the scope
-of this guide. Programming by example is recommended, by searching for "createKeyboardHelpNode". Your content will typically
+`createKeyboardHelpNode: ()=>{Node}` option to the `Screen` constructor. Instructions for creating this Node are beyond
+the scope
+of this guide. Programming by example is recommended, by searching for "createKeyboardHelpNode". Your content will
+typically
 consist of standard "sections" supported by common code
 (e.g. `BasicActionsKeyboardHelpSection`), plus custom sections for sim-specific hotkeys. Consult with your designer
 about the content language and layout.
 
 ## Pitfalls
-* Beware that keyboard navigation does not work by default in Safari. You need to enable traversal in user settings. See [this for example](https://www.seanmcp.com/articles/tab-focus-not-working-in-safari/) 
+
+* Beware that keyboard navigation does not work by default in Safari. You need to enable traversal in user settings.
+  See [this for example](https://www.seanmcp.com/articles/tab-focus-not-working-in-safari/)
 
 ## Not supported? Create an issue!
 
