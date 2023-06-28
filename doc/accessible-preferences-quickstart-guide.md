@@ -110,3 +110,8 @@ The QA handbook has good resources about how to use a screen reader. You can fin
 here: https://github.com/phetsims/QA/blob/master/documentation/qa-book.md#screen-readers.
 With that information you should be able to turn on a screen reader, navigate to the Preferences dialog, and read
 components in the Preferences dialog.
+
+## Additional Resources
+
+For a more thorough guide to Interactive Description, please see the interactive-description-technical-guide.md.
+The fundamental scenery component for accessibility is [ParallelDOM.ts](https://github.com/phetsims/scenery/blob/master/js/accessibility/pdom/ParallelDOM.ts)
