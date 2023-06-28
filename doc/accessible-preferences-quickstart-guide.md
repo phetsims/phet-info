@@ -109,6 +109,9 @@ here: https://github.com/phetsims/QA/blob/master/documentation/qa-book.md#screen
 With that information you should be able to turn on a screen reader, navigate to the Preferences dialog, and read
 components in the Preferences dialog.
 
+## Examples
+- See greenhouse-effect for an example of instrumented simulation preferences.
+
 ## Additional Resources
 
 For a more thorough guide to Interactive Description, please see the interactive-description-technical-guide.md.
