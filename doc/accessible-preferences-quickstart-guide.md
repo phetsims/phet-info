@@ -11,13 +11,11 @@ Please see the alternative-input-quickstart-guide.md first. This guide assumes y
 and have enabled Interactive Description in your package.json.
 
 PhET is going to start adding Interactive Description to the Preferences dialog for simulations that support
-alternative input.
-
-By adding Interactive Description to our Preferences dialog, we aim to enhance the accessibility of our simulations,
-enabling students to access and use specific simulation controls that can aid their learning process.
+alternative input. By adding Interactive Description to our Preferences dialog, we enable students to access and use
+specific simulation controls that can aid their learning process.
 
 Interactive Description allows individuals who rely on screen readers to interact with our user interfaces effectively.
-By ensuring screen reader compatibility in the Preferences dialog, we empower users to access essential features. For
+By adding screen reader support for the Preferences dialog, we empower users to access essential features. For
 example, a user can enable the Voicing option, even if the simulation does not fully support screen reader access.
 
 ## General Instrumentation Process
@@ -114,4 +112,5 @@ components in the Preferences dialog.
 ## Additional Resources
 
 For a more thorough guide to Interactive Description, please see the interactive-description-technical-guide.md.
-The fundamental scenery component for accessibility is [ParallelDOM.ts](https://github.com/phetsims/scenery/blob/master/js/accessibility/pdom/ParallelDOM.ts)
+The fundamental scenery component for accessibility
+is [ParallelDOM.ts](https://github.com/phetsims/scenery/blob/master/js/accessibility/pdom/ParallelDOM.ts)
