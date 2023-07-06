@@ -47,17 +47,18 @@ Screen reader accessibility is supported by scenery/ParallelDOM.ts, a super clas
 options you can set on a Node for accessibility. But most common code components have options you can use to easily
 set their accessible content. These options let you set things like
 
-- The name of the component.
-- A description of the component, providing some contextual information about what it will do.
+- The accessible name of the component.
+- The help text description for the component, i.e., a description that provides some contextual information about what the component does.
 
 Here is an example of using the options for a sun/Checkbox:
 
 ```js
 const myCheckbox = new Checkbox( someBooleanProperty, someContentNode, {
   labelContent: 'My Checkbox',
-  descriptionContent: 'This is a checkbox that does something.'
+  descriptionContent: 'Toggle this checkbox to do something.'
 } );
 ```
+**Description Design Tip:** In the Preferences Menu, both the name and the help text description will be visually displayed. This is not the case for simulation description design. Make sure the name fully captures what is being toggled and consider using a verb to start the help text description. For example, the "Extra Sounds" checkbox is displayed with the help text, "Play additional sound that may be helpful for some learners." In addition, consider how you might use a verb in the name in order to avoid the need for a help text description.
 
 Here is an example of using the options for a sun/AquaRadioButtonGroup:
 
@@ -70,7 +71,7 @@ const items = [
 
 const myRadioButtonGroup = new AquaRadioButtonGroup( someProperty, items, {
   labelContent: 'My Radio Button Group',
-  descriptionContent: 'This is a radio button group that does something.'
+  descriptionContent: 'This is a radio button group that provides options for something.'
 } );
 ```
 
@@ -79,7 +80,7 @@ Here is an example of using the options for a sun/Slider:
 ```js
 const mySlider = new Slider( someProperty, {
   labelContent: 'My Slider',
-  descriptionContent: 'This is a slider that does something.'
+  descriptionContent: 'This is a slider that explores a range of some values.'
 } );
 ```
 
@@ -94,12 +95,12 @@ const myText = new Text( 'My Text', {
 
 ### Reviewing components with a11y-view
 
-The "a11y-view" is a debugging tool that lets you see the accessible content for the simulation. It is a representation
-of the screen reader experience. It is automatically generated for sims that support Interactive Description. You can
-run the a11y-view for a simulation from phetmarks.
+The "a11y-view" is a debugging tool that lets you see the descriptions that have been designed for the simulation. The ally-view is not a full representation of the screen rader experience, but it helpfully displays all the content that screen reader software can access and read out. The a11y-view is automatically generated for sims that support Interactive Description. 
+
+You can run the a11y-view for a simulation from phetmarks. 
 Or, go to http://localhost:8080/{{SIMULATION}}/{{SIMULATION}}_a11y_view.html?brand=phet&ea&debugger.
 
-Open the Preferences dialog and make sure that all of your components and have the name and description content you
+Open the Preferences dialog and make sure that all of your components and have the name (`labelContent`) and help text (`descriptionContent`) you
 expect.
 
 ### Testing with a screen reader
