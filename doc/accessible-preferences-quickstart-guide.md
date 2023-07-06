@@ -63,6 +63,7 @@ const myCheckbox = new Checkbox( someBooleanProperty, someContentNode, {
 Here is an example of using the options for a sun/AquaRadioButtonGroup:
 
 ```js
+// labelContent sets an accessible label on each radio button in the group.
 const items = [
   { value: 'item1', createNode: () => new Text( 'Item 1' ), labelContent: 'Item 1' },
   { value: 'item2', createNode: () => new Text( 'Item 2' ), labelContent: 'Item 2' },
@@ -70,6 +71,7 @@ const items = [
 ];
 
 const myRadioButtonGroup = new AquaRadioButtonGroup( someProperty, items, {
+  // the label and help text description for the whole radio button group.
   labelContent: 'My Radio Button Group',
   descriptionContent: 'This is a radio button group that provides options for something.'
 } );
