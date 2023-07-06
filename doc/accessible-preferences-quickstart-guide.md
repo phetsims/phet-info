@@ -49,13 +49,18 @@ set their accessible content. These options let you set things like
 
 - The accessible name of the component.
 - The help text description for the component, i.e., a description that provides some contextual information about what the component does.
+- A context response - an additional statement that describes the result of an action taken on the component. This is optional if it is clear what interaction with the component will do.
 
 Here is an example of using the options for a sun/Checkbox:
 
 ```js
 const myCheckbox = new Checkbox( someBooleanProperty, someContentNode, {
   labelContent: 'My Checkbox',
-  descriptionContent: 'Toggle this checkbox to do something.'
+  descriptionContent: 'Toggle this checkbox to do something.',
+
+  // optional responses that describe context after changing this checkbox
+  checkedContextResponse: 'The value has changed to true.',
+  uncheckedContextResponse: 'The value has changed to false.'
 } );
 ```
 **Description Design Tip:** In the Preferences Menu, both the name and the help text description will be visually displayed. This is not the case for simulation description design. Make sure the name fully captures what is being toggled and consider using a verb to start the help text description. For example, the "Extra Sounds" checkbox is displayed with the help text, "Play additional sound that may be helpful for some learners." In addition, consider how you might use a verb in the name in order to avoid the need for a help text description.
@@ -75,6 +80,11 @@ const myRadioButtonGroup = new AquaRadioButtonGroup( someProperty, items, {
   labelContent: 'My Radio Button Group',
   descriptionContent: 'This is a radio button group that provides options for something.'
 } );
+
+// optional context responses that describe the result of the changing Property
+someProperty.lazyLink( value => {
+  myRadioButtonGroup.alertDescriptionUtterance( value );
+} );
 ```
 
 Here is an example of using the options for a sun/Slider:
@@ -82,7 +92,10 @@ Here is an example of using the options for a sun/Slider:
 ```js
 const mySlider = new Slider( someProperty, {
   labelContent: 'My Slider',
-  descriptionContent: 'This is a slider that explores a range of some values.'
+  descriptionContent: 'This is a slider that explores a range of some values.',
+
+  // optional context responses that describe the result of the action
+  a11yCreateContextResponseAlert: value => { `The value has changed to ${value}.` }
 } );
 ```
 
