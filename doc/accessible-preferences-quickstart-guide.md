@@ -10,65 +10,73 @@ This document is a quicksart guide for adding Interactive Description to the Pre
 Please see the alternative-input-quickstart-guide.md first. This guide assumes you are familiar with that
 and have enabled Interactive Description in your package.json.
 
-PhET is going to start adding Interactive Description to the Preferences dialog for simulations that support
-alternative input. By adding Interactive Description to our Preferences dialog, we enable students to access and use
+PhET is going to start adding Interactive Description to the Preferences Menu dialog for simulations that support
+alternative input. By adding Interactive Description to our Preferences Menu dialog, we enable students to access and use
 specific simulation controls that can aid their learning process.
 
 Interactive Description allows individuals who rely on screen readers to interact with our user interfaces effectively.
-By adding screen reader support for the Preferences dialog, we empower users to access essential features. For
+By adding screen reader support for the Preferences Menu dialog, we empower users to access essential features. For
 example, a user can enable the Voicing option, even if the simulation does not fully support screen reader access.
 
-## General Instrumentation Process
+## General Dscription Design and Instrumentation Process
 
 ### 1. Identify the components that require instrumentation
 
 Start by identifying components that need to be made accessible. If your sim includes sim-specific components for
-Preferences, you will need to instrument them. Otherwise, you are done! The shared components and tabs for Preferences
-are already instrumented for screen reader accessibility.
+Preferences, you will need to instrument them and design descriptions for them. Otherwise, you are done! The shared components and tabs for Preferences are already instrumented for screen reader accessibility.
 
 ### 2. Set component options for Interactive Description
 
 Most components will require a few additional options to be set in order to be screen reader accessible.
 
-### 3. Inspect components with a11y-view
+### 3. Inspect components with the a11y-view
 
-Once you have set the component options, use the 'a11y-view' for the sim to make sure that accessible content is
-set correctly.
+Once you have set the component options and added descriptions to the component, use the 'a11y-view' for the sim to make sure that accessible content (i.e., the added description) is set correctly.
 
 ### 4. Test with a screen reader
 
-Use a screen reader to find the instrumented components, read their information, and interact with them.
+Use a screen reader to navigate and find the instrumented components, interact with them using the keyboard, and verify that the descriptions you hear work well in the screen reader experience.
 
-## Detailed Instrumentation Process
+## Detailed Instrumentation Process and Description Design Tips
 
 ### Setting component options
 
 Screen reader accessibility is supported by scenery/ParallelDOM.ts, a super class for scenery/Node. This class has many
 options you can set on a Node for accessibility. But most common code components have options you can use to easily
-set their accessible content. These options let you set things like
+set their accessible content. These options let you set things like:
 
-- The accessible name of the component.
-- The help text description for the component, i.e., a description that provides some contextual information about what the component does.
-- A context response - an additional statement that describes the result of an action taken on the component. This is optional if it is clear what interaction with the component will do.
+- The accessible name for the component.
+- The help text description for the component, i.e., a optional description that provides some contextual information about what the component does. If you need a help text description, it is a good practice to start the help text with a verb.
+- Context responses to succinctly confirm or describe the resulting change to the surrounding context that result from the action taken on the component.
 
-Here is an example of using the options for a sun/Checkbox:
+Here are two examples using the options for a sun/Checkbox:
 
 ```js
 const myCheckbox = new Checkbox( someBooleanProperty, someContentNode, {
-  labelContent: 'My Checkbox',
-  descriptionContent: 'Toggle this checkbox to do something.',
+  labelContent: 'Extra Sounds',
+  descriptionContent: 'Play additional sound that may be helpful for some learners.',
 
-  // optional responses that describe context after changing this checkbox
-  checkedContextResponse: 'The value has changed to true.',
-  uncheckedContextResponse: 'The value has changed to false.'
+  // Context responses that describe or confirm the changed context upon toggling the checkbox
+  checkedContextResponse: 'Extra sounds on.',
+  uncheckedContextResponse: 'Extra sounds off.'
 } );
 ```
-**Description Design Tip:** In the Preferences Menu, both the name and the help text description will be visually displayed. This is not the case for simulation description design. Make sure the name fully captures what is being toggled and consider using a verb to start the help text description. For example, the "Extra Sounds" checkbox is displayed with the help text, "Play additional sound that may be helpful for some learners." In addition, consider how you might use a verb in the name in order to avoid the need for a help text description.
+**Chekbox Description Design Tip:** In the Preferences Menu, both the name and the help text description are visually displayed. This is not the case for simulation description design. You can potentially avoid the need for help text by creating an action-oriented name that starts with a verb, and context responses that succinctly confirm the success of the taken action.
+
+```js
+const myCheckbox = new Checkbox( someBooleanProperty, someContentNode, {
+  labelContent: 'Voice surrounding context changes',
+
+  // Context responses that describe or confirm the changed context upon toggling the checkbox
+  checkedContextResponse: 'Voicing surrounding context changes.',
+  uncheckedContextResponse: 'Surrounding context changes muted.'
+} );
+```
 
 Here is an example of using the options for a sun/AquaRadioButtonGroup:
 
 ```js
-// labelContent sets an accessible label on each radio button in the group.
+// labelContent sets an accessible name on each radio button in the group.
 const items = [
   { value: 'item1', createNode: () => new Text( 'Item 1' ), labelContent: 'Item 1' },
   { value: 'item2', createNode: () => new Text( 'Item 2' ), labelContent: 'Item 2' },
@@ -78,7 +86,7 @@ const items = [
 const myRadioButtonGroup = new AquaRadioButtonGroup( someProperty, items, {
   // the label and help text description for the whole radio button group.
   labelContent: 'My Radio Button Group',
-  descriptionContent: 'This is a radio button group that provides options for something.'
+  descriptionContent: 'Choose an option that does something.'
 } );
 
 // optional context responses that describe the result of the changing Property
