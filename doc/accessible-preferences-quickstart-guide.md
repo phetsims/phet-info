@@ -99,15 +99,15 @@ const myRadioButtonGroup = new AquaRadioButtonGroup( someProperty, items, {
 
 Here is an example of using the options for a sun/Slider implemented for Quadrilateral's Input Tab:
 
-**Slider Description Design Tips:** Sliders always need a range of object responses to communicate their current and changed values. A help text description is often helpful, but always optional. For the Preferences Menu, context responses for slider components are often not needed. This is not the case for sliders in simulations.
+**Slider Description Design Tips:** Sliders always need a range of object responses to communicate their current and changed values. Object responses can be quantitative or qualitative. Be mindful of where you might need to adjust for singular or plural wording, e.g. "1 value" versus "5 values". A help text description is often helpful, but always optional. For the Preferences Menu, context responses for slider components are likley not needed. This is not the case for sliders in simulations.
 
 ```js
 const mySlider = new Slider( someProperty, {
   labelContent: 'Smoothing Avergage',
   descriptionContent: 'Adjust number of values used to smooth noise in incoming sensor values from input device.',
 
-  // @jesse, how to put the range of object responses? This slider does not need context responses.
-  a11yCreateAriaValueText: value => { `The value has changed to ${value}.` }
+  // a range of object responses are required for slider components
+  a11yCreateAriaValueText: value => { `${value} values` }
 
   // optional context responses that describe the result of the action
   // a11yCreateContextResponseAlert: value => { `The value has changed to ${value}.` }
