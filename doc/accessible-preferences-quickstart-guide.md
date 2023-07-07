@@ -107,6 +107,7 @@ const mySlider = new Slider( someProperty, {
   descriptionContent: 'Adjust number of values used to smooth noise in incoming sensor values from input device.',
 
   // @jesse, how to put the range of object responses? This slider does not need context responses.
+  a11yCreateAriaValueText: value => { `The value has changed to ${value}.` }
 
   // optional context responses that describe the result of the action
   // a11yCreateContextResponseAlert: value => { `The value has changed to ${value}.` }
