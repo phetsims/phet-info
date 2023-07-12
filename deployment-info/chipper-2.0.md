@@ -244,7 +244,7 @@ Otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
     something went wrong before. Talk to @jonathanolson?
   - If there IS NO branch, create it in the common repo with `git checkout -b {{SIM}}-{{BRANCH}}`,
     e.g. `git checkout -b chains-1.2`
-- Apply the change to the sim's branch (it's almost always a cherry-pick, e.g. `git cherry-pick -x {{SHA}}` in the
+- Apply the change to the dependency's branch (it's almost always a cherry-pick, e.g. `git cherry-pick -x {{SHA}}` in the
   common repo).
 - Test it. You can `grunt` in the sim repo (the `checkout-target` above did the NPM magic for it to work)
 - Push the change to the common branch (e.g. `git push origin chains-1.2`)
