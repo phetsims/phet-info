@@ -84,6 +84,7 @@ a `ScreenView` that would never be removed from the scene graph. Note that it's 
 - [ ] Do pointer areas overlap? (run with query parameter `showPointerAreas`) Overlap may be OK in some cases, depending on the z-ordering (if the front-most object is supposed to occlude pointer areas) and whether objects can be moved.
 
 ## **Internationalization**
+- [ ] Does the sim behave correctly with dynamic layout, to support dynamic locale? Run with `stringTest=dynamic` and use the left/right arrow keys.
 - [ ] Are there any strings that are not internationalized, and does the sim layout gracefully handle internationalized strings that are shorter than the English strings? (run with query parameter `stringTest=X`. You should see nothing but 'X' strings.)
 - [ ] Does the sim layout gracefully handle internationalized strings that are longer than the English strings? (run with query parameters `stringTest=double` and `stringTest=long`)
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter
