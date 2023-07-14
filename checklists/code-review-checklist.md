@@ -221,7 +221,7 @@ For a sim repository named “my-repo”, the general structure should look like
   repository name, e.g. `EEConstants.js` in expression-exchange. If the abbreviation is already used by another
   repository, then the full name must be used. For example, if the "EE" abbreviation is already used by
   expression-exchange, then it should not be used in equality-explorer. Whichever convention is used, it should be used
-  consistently within a repository - don't mix abbreviations and full names.
+  consistently within a repository - don't mix abbreviations and full names. The abbreviation should be all uppercase letters; e.g. MOTHAConstants, not MotHAConstants for "Model of the Hydrogen Atom".
 - [ ] Is there a file in assets/ for every resource file in sound/ and images/? Note that there is *not necessarily* a
   1:1 correspondence between asset and resource files; for example, several related images may be in the same .ai file.
   Check license.json for possible documentation of why some resources might not have a corresponding asset file.
