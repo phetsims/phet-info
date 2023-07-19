@@ -182,24 +182,27 @@ keyboardDragListener.hotkeys = [
 ];
 ```
 
-If your Node does not have a `KeyboardDragListener`, add hotkeys like this:
+If your Node does not have a `KeyboardDragListener`, add hotkeys with `KeyboardListener` like this:
 
 ```js
-globalKeyStateTracker.keydownEmitter.addListener( event => {
 
-  // Make sure the event is intended for this Node.
-  if ( this.pdomDisplayed && this.enabledProperty.value ) {
-    if ( KeyboardUtils.isKeyEvent( event, KeyboardUtils.KEY_ESCAPE ) ) {
-      // Escape
-      ...
+const keyboardListener = new KeyboardListener( {
+  keys: [ 'escape', 'j+0' ],
+  callback: ( event, listener ) => {
+    if ( listener.keysPressed === 'escape' ) {
+      // escape key was pressed
     }
-    else if ( globalKeyStateTracker.altKeyDown && 
-              KeyboardUtils.isKeyEvent( event, KeyboardUtils.KEY_C ) ){
-      // Alt+C
-      ...
+    else if ( listener.keysPressed === 'j+0' ) {
+      // j and 0 were pressed
     }
-  }
+  },
+  
+  // By making this listener "global" it will fire no matter where focus is in the document as long as
+  // myNode is visible and has input enabled. If this is false, callback will only fire when myNode has keyboard focus.
+  global: true
 } );
+
+myNode.addInputListener( keyboardListener );
 ```
 
 Be careful not to add hotkeys that collide with other global hotkeys defined by PhET such as hotkeys that pan and zoom
@@ -208,7 +211,7 @@ See https://github.com/phetsims/phet-info/issues/188.
 
 ## Scenery Events
 
-If the above are not sufficient you can add input listeners with Scenery's input system that are related to alternative
+For more custom behavior you can add input listeners with Scenery's input system that are related to alternative
 input. For example, if you want to add behavior whenever a Node has focus you can add a listener like this:
 
 ```js
