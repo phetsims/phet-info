@@ -1165,7 +1165,7 @@
   },
   "plinko-probability": {
     "responsibleDevs": [
-      "@pixelzoom"
+      "[See #214](https://github.com/phetsims/phet-info/issues/214)"
     ],
     "responsibleDesigners": [
       "@amanda-phet"
