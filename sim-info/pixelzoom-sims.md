@@ -22,7 +22,7 @@
 | graphing-quadratics              |  12/7/2018 |  6,860 |     ✓      |    ✓     |             |           |       ✓        | | |
 | graphing-slope-intercept         |  6/14/2017 |    606 |     ✓      |          |             |           |       ✓        | | |
 | hookes-law                       | 10/21/2015 |  6,117 |     ✓      |    ✓     |             |           |      [25%](https://github.com/phetsims/hookes-law/issues/81)       | | |
-| models-of-the-hydrogen-atom      |            |        |     ✓      |          |      ✓      |     ✓     |       ✓        | ✓ | ✓ |
+| models-of-the-hydrogen-atom      |            |        |     ✓      |          |             |           |                |   |   |
 | molecule-polarity                |  7/26/2017 |  6,665 |     ✓      |    ✓     |             |           |       ✓        | ✓ | |
 | natural-selection                |   9/1/2020 | 13,808 |     ✓      |    ✓     |             |           |       ✓        | | |
 | ph-scale                         |  8/22/2014 |  6,580 |     ✓      |    ✓     |     [75%](https://github.com/phetsims/ph-scale/issues/249#issuecomment-1319350553)     | [disabled](https://github.com/phetsims/ph-scale/issues/248#issuecomment-1319254656)  |       ✓        | ✓ | |
