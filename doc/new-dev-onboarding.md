@@ -23,7 +23,7 @@ document.
 
 ## 👋 Intro
 
-Welcome! We know jumping into to simulation development can be a bit overwhelming at first. PhET has been around since
+Welcome! We know jumping into simulation development can be a bit overwhelming at first. PhET has been around since
 2001, and has written a lot of code and created some pretty involved processes during that time. It will take a while
 for a new developer to learn what they need to know to develop and maintain simulations, and the team understands
 onboarding takes some dedicated time.
