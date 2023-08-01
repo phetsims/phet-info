@@ -53,6 +53,9 @@ following list specifies essential items for a PhET Developer:
     - Check with your mentor about any other relevant channels to join.
     - If you are not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on
       how to use it.
+- Set up your account for Monday.com
+    - You will need an invitation from the phetsims account to be able to join. If you have not received one ask your mentor for next steps.
+    - Refer to the [dev learning center document](https://phetsims.monday.com/docs/4142228659) to learn more about navigating and using Monday.com
 
  <a id='env-setup'>
 
@@ -91,13 +94,13 @@ this workflow are beyond the scope of this document. However, working off of mas
 pull, push, and commit behaviors.
 
 - Pull code from all repos, every morning.
-    - Recommended to use the pull-all.sh script in perennial
+    - Recommended to use the `pull-all.sh` script in perennial
     - Continue to pull frequently throughout the day
 - Do not commit broken code.
     - Sims should load, test, and lint without errors
     - Pre-Commit Hooks help catch errors, read more below.
 - Push code frequently (some devs push after every commit).
-    - Recommended to use the push-all.sh script in perennial
+    - Recommended to use the `push-all.sh` script in perennial
 
 ### Pre-Commit Hooks
 
@@ -159,8 +162,8 @@ at https://github.com/phetsims/perennial/blob/master/data/active-common-sim-repo
 ones to start ramping up on first.
 
 Perhaps the most fundamental of the common code libs is "scenery", which is the graphics library that is used to define
-and render pretty much everything that appears on the screen in a PhET sim. This one may be a good place to start,
-since you'll definitely need to become pretty familiar with it to create a sim.
+and render almost everything that appears on the screen in a PhET sim. This one is a good place to start,
+since you'll need to become familiar with it to create a sim.
 
 ### Navigating Repos
 
@@ -213,7 +216,7 @@ PhET has a "Continuous Test" server that regularly pulls the latest code for all
 executes "[fuzz testing](https://en.wikipedia.org/wiki/Fuzzing)", and reports whether each of these sub-tests succeeded.
 The
 latest report can be found at
-https://bayes.colorado.edu/continuous-testing/aqua/html/continuous-report.html.
+[https://bayes.colorado.edu/continuous-testing/aqua/html/continuous-report.html](https://sparky.colorado.edu/continuous-testing/aqua/html/continuous-report.html?maxColumns=10).
 
 The repository that implements the test server is called [aqua](https://github.com/phetsims/aqua).
 You can run Aqua locally, which is useful when trying to verify common code changes.
@@ -221,8 +224,7 @@ You can run Aqua locally, which is useful when trying to verify common code chan
 PhET has a Slack channel called "continuous-testing" which is used by the server to notify developers when some major
 status change occurs for the continuous testing process. The underlying process that powers these notifications is
 called
-continuous testing quick (CTQ), and it is the same service as the test boxes at the top of continuous-report. An example
-error would be a lint error ends up in the code base, the server will send a message to this Slack channel. Sometimes,
+continuous testing quick (CTQ), and is the same service as the test boxes at the top of continuous-report. For example, if the server detects a lint error that ended up in the code base, the server will send a message to the "continuous-testing" Slack channgel. Sometimes,
 errors triggered here are false positives, when only half of a changeset is picked up (mid-pull on a developer
 machine).
 In this case, we note the error on slack with a bird emoji (dodo/turkey/etc) to signify that CTQ should pass on the next
@@ -235,8 +237,7 @@ in, developers are encouraged to use unit testing as feels necessary for their d
 exist in common-code repos and these tests are run as part of pre-commit hooks and continuous testing.
 
 To run QUnit tests, navigate to the repo in question in phetmarks and click on Unit Tests (Unbuilt). Running the tests
-in
-the browser provides better error reporting, and debugging tools.
+in the browser provides better error reporting, and debugging tools.
 
 ### TypeScript
 
@@ -275,8 +276,7 @@ When you begin working in TypeScript files, you might hear a lot about tsc (Type
 ### Memory and Performance Profiling
 
 When a sim is further along in development, it needs to be memory and performance tested before publication. Most
-developers use Chrome
-for both of these processes.
+developers use Chrome for both of these processes.
 
 Read about how to conduct a memory
 test [here](https://github.com/phetsims/QA/blob/master/documentation/qa-book.md#47-memory-leak-testing).
@@ -318,10 +318,10 @@ there are some variations. The details are described in the documents linked bel
 help if this comes up for a sim you're developing.
 
 For information on the details of how the various types of publications are initiated, please see
-https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#dev-deployments.
+[chipper-2.0](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#dev-deployments).
 
 For templates that can be used to set up the various QA tests, see
-https://github.com/phetsims/qa/tree/master/issue-templates.
+[templates](https://github.com/phetsims/qa/tree/master/issue-templates).
 
 <a id='roadmap'>
 
@@ -356,31 +356,25 @@ graph LR
 ## 👷‍♀ Project Management
 
 PhET's approach and systems for project management are constantly evolving, especially as PhET continues to grow.
-Currently we have a very flat management structure, and the development team works directly with the director of PhET to
-set and track goals. All developers should feel free to suggest improvements to the project management process. Also,
+Currently we have a very flat management structure, and the development team works together to bring Epics and other goals to the attention of the wider organization.
+All developers should feel free to suggest improvements to the project management process. Also,
 please update this section of the onboarding document if you find that anything you read here is no longer accurate or
 pertinent.
 
-### Quarterly Goals
+### Iterations
 
-Each quarter we have meetings to discuss and set the goals for the upcoming quarter and review the progress of goals
-from the previous quarter. The goals are driven largely by the grants that fund the work that we do and by the needs of
-the simulation users. A [project board](https://github.com/orgs/phetsims/projects/41/views/33) is used to track and
-maintain this information.
+PhET transitioned to an agile style working environment in early 2023. This transition included the start of an "iteration" process. Each iteration ranges from 2-3 weeks depending on the needs and schedule of the organization. The director of PhET will identify the priorities for each iteration, and each iteration team will then choose tasks (or goals), that help drive the progress and work of each iteration. Many of the priorities for each iteration are driven largely by the grants that fund the work that we do and by the needs of
+the simulation users. We currently use Monday.com to organize our iterations as well as short term and long term roadmaps. You can find more information about the iteration process [here](https://phetsims.monday.com/docs/4639020997)
 
 ### Weekly Meetings
 
-The development group meets weekly with the director of PhET to discuss items that are added to the agenda, and to work
-through open issues that are on the project board.
+The development group meets weekly (unless it is a iteration planning week) to discuss items that are added to the agenda, and to work
+through open issues that need the help or input of the larger team. These meetings also serve as a time to elevate issues that may need more time and resources to accomplish. The dev team discusses goals for the codebase at large and then votes on what issues should be elevated and scheduled for iteration planning.
 
 The agenda and history for this meeting can be found in
 this [google doc](https://docs.google.com/document/d/1bAPEP1iUxQRuCSLHkrwjAH-948kB-sBN3hCC54g-8dc/edit) (We update this
 document every year, so if this link is out of date, please fix it!). Any developer can add an agenda item at any time
 prior to the start of the meeting.
-
-Developers are also encouraged to add GitHub issues to the [project board](https://github.com/orgs/phetsims/projects/35)
-that they feel need to be discussed by the group. Our goal is to move through issue discussions quickly, and assign each
-issue to a subgroup of developers who can finish the necessary work.
 
 ### GitHub Issues
 
