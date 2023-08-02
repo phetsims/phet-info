@@ -12,16 +12,16 @@
 | equality-explorer-basics         |  7/18/2018 |    375 |     ✓      |   [25%](https://github.com/phetsims/equality-explorer/issues/200)    |             |           |       ✓        | ✓ | |
 | equality-explorer-two-variables  |  7/18/2018 |    283 |     ✓      |   [25%](https://github.com/phetsims/equality-explorer/issues/200)    |             |           |       ✓        | ✓ | |
 | fourier-making-waves             | 10/13/2021 | 13,875 |     ✓      |   75%    |             |           |      [80%](https://github.com/phetsims/fourier-making-waves/issues/225)       | | ✓ |
-| function-builder                 |  7/13/2016 | 10,616 |    [32%](https://github.com/phetsims/function-builder/issues/158)     |          |             |           |      [80%](https://github.com/phetsims/function-builder/issues/156)       | | |
-| function-builder-basics          |   6/6/2017 |    805 |    [13%](https://github.com/phetsims/function-builder/issues/158)     |          |             |           |       ✓        | | |
+| function-builder                 |  7/13/2016 | 10,616 |    [32%](https://github.com/phetsims/function-builder/issues/158)     |          |             |           |      [80%](https://github.com/phetsims/function-builder/issues/156)       | N/A | |
+| function-builder-basics          |   6/6/2017 |    805 |    [13%](https://github.com/phetsims/function-builder/issues/158)     |          |             |           |       ✓        | N/A | |
 | gas-properties                   |  8/12/2019 | 12,127 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
 | gases-intro                      |  8/12/2019 |    133 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
 | geometric-optics                 | 10/29/2021 | 12,593 |     ✓      |    ✓     |      ✓      |     ✓     |       ✓        | ✓ | ✓ |
 | geometric-optics-basics          | 11/30/2022 |     63 |     ✓      |    ✓     |      ✓      |     ✓     |       ✓        | ✓ | ✓ |
-| graphing-lines                   |  7/21/2014 | 10,177 |     ✓      |          |             |           |  [25%](https://github.com/phetsims/graphing-lines/issues/140)  | | |
+| graphing-lines                   |  7/21/2014 | 10,177 |     ✓      |          |             |           |  [25%](https://github.com/phetsims/graphing-lines/issues/140)  | N/A | |
 | graphing-quadratics              |  12/7/2018 |  6,860 |     ✓      |    ✓     |             |           |       ✓        | N/A | |
 | graphing-slope-intercept         |  6/14/2017 |    606 |     ✓      |          |             |           |       ✓        | N/A | |
-| hookes-law                       | 10/21/2015 |  6,117 |     ✓      |    ✓     |             |           |      [25%](https://github.com/phetsims/hookes-law/issues/81)       | | |
+| hookes-law                       | 10/21/2015 |  6,117 |     ✓      |    ✓     |             |           |      [25%](https://github.com/phetsims/hookes-law/issues/81)       | N/A | |
 | models-of-the-hydrogen-atom      | on hold |        |     ✓      |          |             |           |                |   |   |
 | molecule-polarity                |  7/26/2017 |  6,665 |     ✓      |    ✓     |             |           |       ✓        | ✓ | |
 | natural-selection                |   9/1/2020 | 13,808 |     ✓      |    ✓     |             |           |       ✓        | N/A | |
