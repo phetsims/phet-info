@@ -1307,6 +1307,12 @@
     ],
     "responsibleDesigners": []
   },
+  "soccer-common": {
+    "responsibleDevs": [
+      "@marlitas",
+      "@samreid"
+    ]
+  }
   "solar-system-common": {
     "responsibleDevs": [
       "@AgustinVallejo",
