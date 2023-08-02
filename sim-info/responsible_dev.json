@@ -354,7 +354,7 @@
       "@samreid"
     ],
     "responsibleDesigners": [
-      "@BLFiedler"
+      "@brettfiedler"
     ]
   },
   "concentration": {
@@ -995,7 +995,7 @@
       "@jessegreenberg"
     ],
     "responsibleDesigners": [
-      "@BLFiedler"
+      "@brettfiedler"
     ]
   },
   "pendulum-lab": {
@@ -1205,7 +1205,9 @@
     "responsibleDevs": [
       "@jessegreenberg"
     ],
-    "responsibleDesigners": []
+    "responsibleDesigners": [
+      "@brettfiedler"
+    ]
   },
   "quake": {
     "responsibleDevs": [
@@ -1224,7 +1226,7 @@
       "@zepumph"
     ],
     "responsibleDesigners": [
-      "@BLFiedler"
+      "@brettfiedler"
     ]
   },
   "reactants-products-and-leftovers": {
