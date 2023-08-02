@@ -2,7 +2,7 @@
 
 | Simulation                       |        1.0 |    loc | TypeScript | PhET-iO  | Alt Input  | UI Sound  | Dynamic Locale | Simulation Preferences | Color Profile |
 |:---------------------------------|-----------:|-------:|:----------:|:--------:|:-----------:|:---------:|:--------------:|:---:|:---:|
-| acid-base-solutions              |  4/18/2014 |  3,937 |     ✓      |   [90%](https://github.com/phetsims/acid-base-solutions/issues/178)    |             |           |       ✓        | | ✓ |
+| acid-base-solutions              |  4/18/2014 |  3,937 |     ✓      |   [90%](https://github.com/phetsims/acid-base-solutions/issues/178)    |             |           |       ✓        | N/A | ✓ |
 | balancing-chemical-equations     |  7/31/2014 |  4,805 |     ✓      |          |             |           |       ✓        | | |
 | beers-law-lab                    |  8/16/2013 |  6,517 |     ✓      |    ✓     |             |           |       ✓        | ✓ | |
 | calculus-grapher                 |  4/17/2023 |  9,554 |     ✓      |    ✓     |   [#125](https://github.com/phetsims/calculus-grapher/issues/125)    |           |       ✓        | ✓ | ✓ |
