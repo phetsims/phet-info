@@ -1,6 +1,6 @@
 ## Status of pixelzoom sims 
 
-| Simulation                       |        1.0 |    loc | TypeScript | PhET-iO  | Alt Input  | UI Sound  | Dynamic Locale | Preferences | Color Profile |
+| Simulation                       |        1.0 |    loc | TypeScript | PhET-iO  | Alt Input  | UI Sound  | Dynamic Locale | Simulation Preferences | Color Profile |
 |:---------------------------------|-----------:|-------:|:----------:|:--------:|:-----------:|:---------:|:--------------:|:---:|:---:|
 | acid-base-solutions              |  4/18/2014 |  3,937 |     ✓      |   [90%](https://github.com/phetsims/acid-base-solutions/issues/178)    |             |           |       ✓        | | ✓ |
 | balancing-chemical-equations     |  7/31/2014 |  4,805 |     ✓      |          |             |           |       ✓        | | |
