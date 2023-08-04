@@ -5,7 +5,7 @@
 
 ## Overview
 
-This document is a quicksart guide for adding Interactive Description to the Preferences dialog in PhET simulations.
+This document is a quickstart guide for adding Interactive Description to the Preferences dialog in PhET simulations.
 
 Please see the alternative-input-quickstart-guide.md first. This guide assumes you are familiar with that
 and have enabled Interactive Description in your package.json.
@@ -26,7 +26,7 @@ Most components will require a few additional options to be set in order to be s
 
 ### 3. Inspect components with the a11y-view
 
-Once you have set the component options and added descriptions to the component, use the 'a11y-view' for the sim to make sure that accessible content (i.e., the added descriptions) are displayed correctly.
+Once you have set the component options and added descriptions to the component, use the 'a11y-view' for the sim to make sure that accessible content (i.e., the added descriptions) is displayed correctly.
 
 ### 4. Test with a screen reader
 
@@ -41,7 +41,7 @@ options you can set on a Node for accessibility. But most common code components
 set their accessible content (i.e., the descriptions you add). These options let you set things like:
 
 - The accessible name (or ```labelContent```).
-- The help text description (or ```descriptionContent```), i.e., an optional description that provides some contextual information about what the component does. If you need a help text description, it is a good practice to start the help text with a verb.
+- The help text description (or ```descriptionContent```), i.e., an optional description that provides some contextual information about what the component does. If you need a help text description, it is good practice to start the help text with a verb.
 - Depending on the component type, you may need object responses to communicate current and changed values. Not all interactive components require object responses.
 - Depending on the component type, you may need context responses to succinctly confirm or describe the resulting change to the surrounding context that results from the action taken on the component.
 
@@ -49,7 +49,7 @@ Note that in the Preferences Menu, both the name and the help text description a
 
 Here are two examples from the Preferences Menu that use the options for a sun/Checkbox:
 
-**Checkbox Description Design Tips:** You can potentially avoid the need for help text by creating an action-oriented name that starts with a verb, and context responses that succinctly confirm the success of the action (see second example).
+**Checkbox Description Design Tips:** You can potentially avoid the need for help text by creating an action-oriented name that starts with a verb and context responses that succinctly confirm the success of the action (see second example).
 
 ```js
 const myCheckbox = new Checkbox( someBooleanProperty, someContentNode, {
@@ -99,7 +99,7 @@ const myRadioButtonGroup = new AquaRadioButtonGroup( someProperty, items, {
 
 Here is an example of using the options for a sun/Slider implemented for Quadrilateral's Input Tab:
 
-**Slider Description Design Tips:** Sliders always need a range of object responses to communicate their current and changed values. Object responses can be quantitative or qualitative. Be mindful of where you might need to adjust for singular or plural wording, e.g. "1 value" versus "5 values". A help text description is often helpful, but always optional. For the Preferences Menu, context responses for slider components are likley not needed. This is not the case for sliders in simulations.
+**Slider Description Design Tips:** Sliders always need a range of object responses to communicate their current and changed values. Object responses can be quantitative or qualitative. Be mindful of where you might need to adjust for singular or plural wording, e.g., "1 value" versus "5 values". A help text description is often helpful but always optional. For the Preferences Menu, context responses for slider components are likely not needed. This is not the case for sliders in simulations.
 
 ```js
 const mySlider = new Slider( someProperty, {
@@ -136,7 +136,7 @@ Open the Preferences dialog and make sure that all of your components have the n
 
 The QA handbook has good resources about how to use a screen reader. You can find it
 here: https://github.com/phetsims/QA/blob/master/documentation/qa-book.md#screen-readers.
-With that information you should be able to turn on a screen reader, navigate to the Preferences Menu, and read
+With that information, you should be able to turn on a screen reader, navigate to the Preferences Menu, and read
 through descriptions and interact with the described components in the Preferences Menu.
 
 ## Examples
