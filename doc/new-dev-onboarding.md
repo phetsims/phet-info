@@ -335,7 +335,7 @@ needs and experiences.
 ```mermaid
 graph LR
   A((<a href='https://github.com/phetsims/phet-info/blob/master/doc/new-dev-onboarding.md#env-setup'>Environment Setup</a>))
-  B((<a href='https://github.com/phetsims/phet-info/blob/master/doc/new-dev-onboarding.md#ramping-up'>Ramping Up</a>))
+  B((Ramping Up))
   C((Object Creation))
   D((Layout))
   A-->A1(IDE) & A2(Node.js) & A3(<a href='https://github.com/join'>Create Github Account</a>) & A4(<a href='https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-developmen'>Add New User to PhET Server</a>)
@@ -343,7 +343,7 @@ graph LR
   A2-->A2.1(<a href='https://nodejs.org/en/download/'>Install Node</a>) & A2.2(<a href='https://docs.npmjs.com/cli/v8/commands/npm-install'>Install NPM</a>)
   A3-->A3.1(Add User to Repo Permissions)
   B-->B1(Example-sim) & B2(Background Reading) & B3(Using phetmarks common code)
-  B1-->B1.1(Building) & B1.2(<a href='https://github.com/phetsims/phet-info/blob/master/doc/phet-dev-excercises.md'>Modify & Experiment</a>)
+  B1-->B1.1(Building) & B1.2(<a href='https://github.com/phetsims/phet-info/blob/master/doc/phet-dev-exercises.md'>Modify & Experiment</a>)
   B2-->B2.1(<a href='https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md'>Software Design Patterns</a>) & B2.2(Resources as Needed)
   B3-->B3.1(<a href='https://github.com/phetsims/phet-info/blob/master/doc/new-dev-onboarding.md#helpful-docs'>Accessing Documentation</a>) & B3.2(Accessing the Showcases) & B3.3(Using UI Componenets in example-sim)
   C-->C1(File Structure Overview) & C2(Module Creation)
