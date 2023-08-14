@@ -21,7 +21,7 @@ the [GitHub Discussions forum](https://github.com/orgs/phetsims/discussions).
 
 **[Checking out the HTML5 Code from GitHub](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#checking-out-the-html5-code-from-github)**
 
-**[Master is Unstable: Accessing Rigorously-Tested Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#main-is-unstable-accessing-rigorously-tested-code)**
+**[Main is Unstable: Accessing Rigorously-Tested Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#main-is-unstable-accessing-rigorously-tested-code)**
 
 **[Original Java/Flash Source Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#original-javaflash-source-code)**
 
@@ -264,7 +264,7 @@ intermittently if you remain up-to-date with them. If you run into any breaking 
 Also, we recommend developing your code on a public repo such as GitHub to enable us to test and update your simulations
 as common dependencies are changed.
 
-## Master is Unstable: Accessing Rigorously-Tested Code
+## Main is Unstable: Accessing Rigorously-Tested Code
 
 The main branch of the PhET simulation and library repositories is constantly under development and not guaranteed to
 be stable. It is our intent that the main branch of simulations + libraries will build and run properly, but sometimes

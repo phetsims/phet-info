@@ -54,7 +54,7 @@ If you are working in main, would like to release a dev version by updating the 
 * **RC_FIRST**: 
     + **PHET_IO:**: Add `-phetio` to the end of the branch name.
     + Create a branch with MAJOR.MINOR matching the sim to be published, such as 1.2.  For instance: `git checkout -b 1.2`
-    + Update the version id in package.json for main. Master should be set up for what 
+    + Update the version id in package.json for main. Main should be set up for what 
 would be the _next_ release branch name.  So if you just created release branch 1.3, then the version should be "1.4.0-dev.0" in main. (Note the "0" for the dev number, so that `grunt bump-version` works properly.)
 * **RC_SUBSEQUENT | PRODUCTION**: 
     + Checkout the branch with MAJOR.MINOR (**PHET_IO** branches will end with `-phetio`). If a branch does not exist for your 
@@ -144,7 +144,7 @@ for phet-io versions. Ask a PhET developer for credentials.
 ## Step 8. Restore your working copy
 * Check out main for dependencies: `grunt checkout-main`
 * Run again to prune and update node modules: `grunt checkout-main`, **Skip This Step** if you are using a chipper sha that is newer than Jan 24th, 2017.
-* Check out main for the sim repo: `git checkout master`
+* Check out main for the sim repo: `git checkout main`
 * Run `npm update` in chipper.
 * Run `perennial/bin/status.sh` as a sanity check.
   

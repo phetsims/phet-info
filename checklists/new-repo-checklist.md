@@ -33,7 +33,7 @@ At https://github.com/phetsims/{{REPO}}:
   assignments by repo type.
 - [ ] Create a Sim Checklist issue using
   template [sim-checklist.md](https://github.com/phetsims/phet-info/blob/main/checklists/sim-checklist.md). Use "
-  {{TITLE}} Master Checklist" as the issue name. Assign to @ariel-phet.
+  {{TITLE}} Main Checklist" as the issue name. Assign to @ariel-phet.
 
 In your working copy of perennial repo:
 - [ ] Add the new repo to `perennial/data/active-repos`. Commit and push. Then pull perennial-alias so these two checkouts stay in sync. If needed immediately, run `cd perennial/ && grunt generate-data` and commit and push to update data lists. Otherwise it is done every night as part of daily grunt work.  _Note that your sim won't run in phetmarks until this is done._
@@ -44,7 +44,7 @@ Other:
 - [ ] Apply branch protection rules using [protect-branches-for-repo.js](https://github.com/phetsims/perennial/blob/main/js/scripts/protect-branches-for-repo.js). Follow the instructions in the documentation at the top of the script.
 - [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}. Please pull perennial and perennial-alias and run `clone-missing-repos.sh` at your convenience."
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
-- [ ] Follow any remaining "Implementation" tasks in the Master Checklist issue that you created above.
+- [ ] Follow any remaining "Implementation" tasks in the Main Checklist issue that you created above.
 - [ ] If applicable, add any needed dependencies to `phetLibs` in package.json. If you change package.json, run `grunt update`.
 - [ ] Add the sim to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/main/sim-info/responsible_dev.json).
 - [ ] Add the sim to chipper/tsconfig/all/tsconfig.json
