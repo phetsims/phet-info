@@ -46,7 +46,7 @@ remain centered on something, then a boundsProperty listener may be needed.
 
 Use the `stringTest=dynamic` query parameter to change all the strings in your sim at once. `DynamicStringTest` uses a
 keyboard event listener to adjust the length of strings with the arrow keys and space bar. For more specific usage info
-refer to [DynamicStringTest](https://github.com/phetsims/joist/blob/master/js/DynamicStringTest.ts) documentation. This
+refer to [DynamicStringTest](https://github.com/phetsims/joist/blob/main/js/DynamicStringTest.ts) documentation. This
 tool will allow you to see if dynamic layout is working as anticipated, and that components are resizing as would be
 expected. Strings will only change if they have been implemented with a `TReadOnlyProperty` from the strings file.
 

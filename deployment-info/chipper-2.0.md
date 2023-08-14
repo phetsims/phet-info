@@ -2,25 +2,25 @@
 
 # Table of Contents
 
-* [Building simulation](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#building-simulations)
-* [Updating supported brands](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#updating-supported-brands)
-* [Building standalone repositories](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#building-standalone-repositories)
-* [Building wrapper repositories](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#building-standalone-repositories)
-* [Deploying simulations](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#deploying-simulations)
-  * [If working off campus, install the VPN](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#if-working-off-campus-install-the-vpn)
-  * [Configure build-local.json settings](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#configure-remote-bashrc)
-  * [Configure remote ~/.bashrc](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#configure-remote-bashrc)
-  * [Configure an RSA key](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#configure-an-rsa-key)
-  * [Dev deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#dev-deployments)
-  * [One-off deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#one-off-deployments)
-  * [RC/production deployments and release branches](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches)
-    * [If the release branch does not yet exist](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#if-the-release-branch-does-not-yet-exist)
-    * [RC/production deployment on an existing branch](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployment-on-an-existing-branch)
-    * [Manual maintenance patching](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#manual-maintenance-patching)
-  * [Prototype deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#prototype-deployments)
-  * [PhET-iO Wrapper deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#phet-io-wrapper-deployments)
-* [Branch Protections](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#branch-protections)
-* [Deploying pre-chipper-2.0 things](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#deploying-pre-chipper-20-things)
+* [Building simulation](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#building-simulations)
+* [Updating supported brands](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#updating-supported-brands)
+* [Building standalone repositories](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#building-standalone-repositories)
+* [Building wrapper repositories](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#building-standalone-repositories)
+* [Deploying simulations](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#deploying-simulations)
+  * [If working off campus, install the VPN](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#if-working-off-campus-install-the-vpn)
+  * [Configure build-local.json settings](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#configure-remote-bashrc)
+  * [Configure remote ~/.bashrc](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#configure-remote-bashrc)
+  * [Configure an RSA key](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#configure-an-rsa-key)
+  * [Dev deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#dev-deployments)
+  * [One-off deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#one-off-deployments)
+  * [RC/production deployments and release branches](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches)
+    * [If the release branch does not yet exist](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#if-the-release-branch-does-not-yet-exist)
+    * [RC/production deployment on an existing branch](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#rcproduction-deployment-on-an-existing-branch)
+    * [Manual maintenance patching](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#manual-maintenance-patching)
+  * [Prototype deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#prototype-deployments)
+  * [PhET-iO Wrapper deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#phet-io-wrapper-deployments)
+* [Branch Protections](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#branch-protections)
+* [Deploying pre-chipper-2.0 things](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#deploying-pre-chipper-20-things)
 
 # Building simulations
 
@@ -132,7 +132,7 @@ Configure an RSA key, or you will be prompted multiple times for a password duri
 
 ## Dev deployments
 
-**Normal dev deployments can only be done from master. If you want to deploy off of a branch, do a one-off deployment
+**Normal dev deployments can only be done from main. If you want to deploy off of a branch, do a one-off deployment
 ** (with a clean working copy on the sim being deployed). To deploy a dev version, run:
 
 ```sh
@@ -262,7 +262,7 @@ always have a consistent common code branch for the sim branch.
 
 This would usually be followed by 1+ RC deployments and then a production deployment.
 
-If you need to get back to master, use `grunt checkout-master` from the sim repo.
+If you need to get back to main, use `grunt checkout-main` from the sim repo.
 
 ## Prototype deployments
 
@@ -287,14 +287,14 @@ How prototypes differ from production versions:
   new version of a prototype may require a new release branch.
 
 Prototypes will follow the process
-for [RC/production deployments](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches)
+for [RC/production deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches)
 using `grunt prototype`, with the following differences:
 
 - Use `grunt prototype` instead of `grunt production`. `grunt rc` works as normal. DO NOT use `grunt production`, as
   this will mark it as a published branch.
 - When the RC test issue is created:
   - Use
-    the [prototype testing template](https://github.com/phetsims/QA/blob/master/issue-templates/prototype-test-template.md).
+    the [prototype testing template](https://github.com/phetsims/QA/blob/main/issue-templates/prototype-test-template.md).
   - Issue title format is "Prototype test: ${{SIM}} {{VERSION}}", for example "Prototype test: Natural Selection
     1.0.0-rc.1".
   - Label the issue `QA:prototype-test`.
@@ -320,7 +320,7 @@ steps for this are:
    delete the Branch protection rule with the pattern `*[0-9].[0-9]*`.
 2. Delete the branch.
 3. Add the rule back.
-   Use [This script to do so](https://github.com/phetsims/perennial/blob/master/js/scripts/protect-branches-for-repo.js).
+   Use [This script to do so](https://github.com/phetsims/perennial/blob/main/js/scripts/protect-branches-for-repo.js).
    For example, you can run this to add back protection rules to john-travoltage.
 
   ```
@@ -332,4 +332,4 @@ steps for this are:
 If you get an error during the deploy command like ```chipper 0.0.0 cannot build multiple brands at a time``` try using
 chipper 2.0 steps but just building and deploying each brand separately before moving on to chipper-1.0.
 
-See https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-1.0.md
+See https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-1.0.md

@@ -7,7 +7,7 @@ or other tooling are not listed here.
 ### ESLint
 
 Many of PhET's TypeScript conventions are embodied in TypeScript-specific lint rules. We use the `@typescript-eslint`
-plugin to add these rules. Please see [.eslintrc](https://github.com/phetsims/chipper/blob/master/eslint/.eslintrc.js)
+plugin to add these rules. Please see [.eslintrc](https://github.com/phetsims/chipper/blob/main/eslint/.eslintrc.js)
 for details and context about conventions based on lint rules.
 
 ### Philosophy
@@ -76,7 +76,7 @@ Again, in complex or volatile cases, at the developer preference, the redundant 
 * Careful!  If you change from string literal union to `EnumerationValue`, the casing convention is different and you
   will
   break the PhET-iO API.
-* Please see https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderEnumerationPatterns.ts for details and
+* Please see https://github.com/phetsims/wilder/blob/main/js/wilder/model/WilderEnumerationPatterns.ts for details and
   examples.
 
 ### Parameters should be as general as possible
@@ -125,8 +125,8 @@ class HalfLifeInformationNode extends Node {
 
 ### Options
 
-See https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-typescript and
-https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts.
+See https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#options-typescript and
+https://github.com/phetsims/wilder/blob/main/js/wilder/model/WilderOptionsPatterns.ts.
 
 #### Use `optionize` instead of `merge`
 
@@ -346,4 +346,4 @@ by Vanderkam.
 ---
 
 Please see other notes in https://github.com/phetsims/ratio-and-proportion/issues/405
-and https://github.com/phetsims/phet-info/blob/master/doc/typescript-quick-start.md 
+and https://github.com/phetsims/phet-info/blob/main/doc/typescript-quick-start.md 

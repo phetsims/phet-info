@@ -1,7 +1,7 @@
 ## Coding Conventions
 
 - [ ] Is the code formatted according to PhET conventions?
-  See [phet-idea-code-style.xml](https://github.com/phetsims/phet-info/blob/master/ide/idea/phet-idea-codestyle.xml) for
+  See [phet-idea-code-style.xml](https://github.com/phetsims/phet-info/blob/main/ide/idea/phet-idea-codestyle.xml) for
   IntelliJ IDEA code style.
 
 - [ ] Names (types, variables, properties, Properties, functions,...) should be sufficiently descriptive and specific,
@@ -15,7 +15,7 @@
   ```
 
 - [ ] Verify
-  that [Best Practices for Modules](https://github.com/phetsims/phet-info/blob/master/doc/best-practices-for-modules.md)
+  that [Best Practices for Modules](https://github.com/phetsims/phet-info/blob/main/doc/best-practices-for-modules.md)
   are followed.
 
 - [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default
@@ -413,7 +413,7 @@ generally meets PhET standards.
   ```
 
 - [ ] Type expressions for `EnumerationDeprecated` values should be annotated as instances of that
-  EnumerationDeprecated, see examples in https://github.com/phetsims/phet-core/blob/master/js/EnumerationDeprecated.js
+  EnumerationDeprecated, see examples in https://github.com/phetsims/phet-core/blob/main/js/EnumerationDeprecated.js
   for more.
   ```js
   /**

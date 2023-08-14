@@ -25,7 +25,7 @@
 ](https://docs.google.com/document/d/1rpp0vT7-bGUs_5tZP_77-HM8PnaGbIDQ5DGNygX5CBo/edit)
 
 - [ ]  **7. Sim checklist** 
-- Review the [Sim Checklist](https://github.com/phetsims/phet-info/blob/master/checklists/sim-checklist.md) 
+- Review the [Sim Checklist](https://github.com/phetsims/phet-info/blob/main/checklists/sim-checklist.md) 
 
 - [ ]  **8. Action items** 
 - Note important items in the postmortem github issue, and create issues for any tasks the require action (such as updating documents, leftover "todo's", etc. 

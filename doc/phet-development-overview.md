@@ -5,51 +5,51 @@
 PhET Interactive Simulations creates free, open source educational simulations in science and math, which you can find
 at the PhET website. This document explains PhET’s libraries, practices and patterns for developing interactive
 simulations in HTML5. This document is also available
-at https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md. For discussion and feedback,
+at https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md. For discussion and feedback,
 please visit
 the [GitHub Discussions forum](https://github.com/orgs/phetsims/discussions).
 
-**[Overview](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#overview)**
+**[Overview](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#overview)**
 
-**[Getting Started](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#getting-started)**
+**[Getting Started](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#getting-started)**
 
-**[Creating a New Sim](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#creating-a-new-sim)**
+**[Creating a New Sim](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#creating-a-new-sim)**
 
-**[Building and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#building-and-testing)**
+**[Building and Testing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#building-and-testing)**
 
-**[Source Code and Dependencies](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#source-code-and-dependencies)**
+**[Source Code and Dependencies](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#source-code-and-dependencies)**
 
-**[Checking out the HTML5 Code from GitHub](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#checking-out-the-html5-code-from-github)**
+**[Checking out the HTML5 Code from GitHub](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#checking-out-the-html5-code-from-github)**
 
-**[Master is Unstable: Accessing Rigorously-Tested Code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#master-is-unstable-accessing-rigorously-tested-code)**
+**[Master is Unstable: Accessing Rigorously-Tested Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#main-is-unstable-accessing-rigorously-tested-code)**
 
-**[Original Java/Flash Source Code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#original-javaflash-source-code)**
+**[Original Java/Flash Source Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#original-javaflash-source-code)**
 
-**[3rd-Party Dependencies](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#3rd-party-dependencies)**
+**[3rd-Party Dependencies](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#3rd-party-dependencies)**
 
-**[Licensing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#licensing)**
+**[Licensing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#licensing)**
 
-**[Coding Style Guidelines](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#coding-style-guidelines)**
+**[Coding Style Guidelines](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#coding-style-guidelines)**
 
-**[Platforms](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#platforms)**
+**[Platforms](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#platforms)**
 
-**[Modularity with ES6 Modules](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#modularity-with-es6-modules)**
+**[Modularity with ES6 Modules](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#modularity-with-es6-modules)**
 
-**[Layout](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#layout)**
+**[Layout](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#layout)**
 
-**[Compiling the Code](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#compiling-the-code)**
+**[Compiling the Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#compiling-the-code)**
 
-**[Offline Operation](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#offline-operation)**
+**[Offline Operation](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#offline-operation)**
 
-**[Published Versions](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#published-versions)**
+**[Published Versions](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#published-versions)**
 
-**[Development Process and Checklist](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#development-process-and-checklist)**
+**[Development Process and Checklist](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#development-process-and-checklist)**
 
-**[Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)**
+**[Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)**
 
-**[Working with GitHub Issues](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#working-with-github-issues)**
+**[Working with GitHub Issues](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#working-with-github-issues)**
 
-**[Embedding a Simulation in Your Website](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#embedding-a-simulation-in-your-website)**
+**[Embedding a Simulation in Your Website](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#embedding-a-simulation-in-your-website)**
 
 ## Getting Started
 
@@ -86,7 +86,7 @@ Method 2: Manually get specific PhET repos
 
 * Change directory to phetsims: `cd phetsims`
 * Run the `git clone` commands listed in a simulation README.md file, such
-  as https://github.com/phetsims/example-sim/blob/master/README.md
+  as https://github.com/phetsims/example-sim/blob/main/README.md
 
 When running the first `git clone` command, macOS may show a dialog that says: The “git” command requires the command
 line developer tools. Would you like to install the tools now? In this case, press “Install”.
@@ -112,7 +112,7 @@ npm install
 * Run the TypeScript transpiler: `node js/scripts/transpile.js --watch` which starts a process that will auto-transpile
   when files change.
 * For more details about TypeScript, please
-  see [PhET's TypeScript Quick Start Guide](https://github.com/phetsims/phet-info/blob/master/doc/typescript-quick-start.md)
+  see [PhET's TypeScript Quick Start Guide](https://github.com/phetsims/phet-info/blob/main/doc/typescript-quick-start.md)
 
 ### View in the Browser
 
@@ -203,7 +203,7 @@ We have 150+ repositories for the simulations and their dependencies, listed
 at: https://github.com/orgs/phetsims/repositories.
 
 PhET Simulations are based on a Model/View separation pattern. This pattern and others used in PhET Simulations are
-described at https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md
+described at https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md
 
 The tables below depict the most significant common code libraries used by PhET Simulations. The simulations provide
 their own model and view implementations often building with common code components. Salient relationships between repos
@@ -241,8 +241,8 @@ it is made up of many separate, modular components.
 | Repository  | LOC | Description |
 | ------------- | ------------- | ---------- |
 | [chipper](https://github.com/phetsims/chipper/)  | 10,000  | Tools for developing and building simulations. Uses code in [perennial-alias](https://github.com/phetsims/perennial-alias/) for some tasks.
-| [perennial](https://github.com/phetsims/perennial/)  | 11,000  | Maintenance tools that won't change with different versions of chipper checked out (always runs in master).
-| [perennial-alias](https://github.com/phetsims/perennial/)  | 11,000  | Copy of perennial that can run on non-master SHAs.
+| [perennial](https://github.com/phetsims/perennial/)  | 11,000  | Maintenance tools that won't change with different versions of chipper checked out (always runs in main).
+| [perennial-alias](https://github.com/phetsims/perennial/)  | 11,000  | Copy of perennial that can run on non-main SHAs.
 | [sherpa](https://github.com/phetsims/sherpa/)  | -  | All of our 3rd-party dependencies. Some such as font-awesome or lodash are used in every simulation and some such as numeric or three.js are sim-specific.
 
 ## Checking out the HTML5 Code from GitHub
@@ -259,15 +259,15 @@ All repositories should be cloned into the same directory so that relative paths
 Here is a full list of all phetsims repositories. If the sim won’t launch due to a missing dependency, you may need to
 check out some more of these repos: https://github.com/phetsims?tab=repositories
 
-Also note that this will check out the ‘master’ branch of all of our dependencies, which may create breaking changes
+Also note that this will check out the ‘main’ branch of all of our dependencies, which may create breaking changes
 intermittently if you remain up-to-date with them. If you run into any breaking changes, please notify us immediately.
 Also, we recommend developing your code on a public repo such as GitHub to enable us to test and update your simulations
 as common dependencies are changed.
 
 ## Master is Unstable: Accessing Rigorously-Tested Code
 
-The master branch of the PhET simulation and library repositories is constantly under development and not guaranteed to
-be stable. It is our intent that the master branch of simulations + libraries will build and run properly, but sometimes
+The main branch of the PhET simulation and library repositories is constantly under development and not guaranteed to
+be stable. It is our intent that the main branch of simulations + libraries will build and run properly, but sometimes
 the code goes through intermediate states where errors can be introduced. On the other hand, our published simulations
 have been rigorously tested across 18+ platforms and are the most stable option. If you are adapting a PhET simulation,
 or would like to access simulation code that corresponds directly to one of our published versions, then you will need
@@ -288,14 +288,14 @@ is also important when working on a release-candidate branch of a simulation. He
 7. Inspect the simulation and its dependencies to make sure `grunt checkout-shas` had the intended effect of getting the
    right SHA for each repo.
 
-Now you can use the published source code. To restore each branch to master, you can run `grunt checkout-master`.
+Now you can use the published source code. To restore each branch to main, you can run `grunt checkout-main`.
 
 ### Exceptions and Caveats:
 
 1. Running `grunt checkout-shas` gives errors when the working copy is not committed. These grunt commands are currently
    only supported for clean git repos. Stashing may be a way around this problem. Also, if you want to use dependencies
    from a different version than in the SHAs, that will have to be done as an additional manual step.
-2. When working in a branch, `grunt checkout-master` will check out the master branch and additional manual steps will
+2. When working in a branch, `grunt checkout-main` will check out the main branch and additional manual steps will
    be required to get back to the desired branch(es). For instance, this is an issue when working with the
    “adapted-from-phet” branch of brand.
 
@@ -323,15 +323,15 @@ To improve the readability and maintainability of PhET Simulation code, we have 
 for writing code and documentation:
 
 * The PhET Code Review Checklist is available
-  at https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md provides additional steps to
+  at https://github.com/phetsims/phet-info/blob/main/checklists/code-review-checklist.md provides additional steps to
   make sure a simulation is well written. This checklist is used for publication of any new PhET simulation to make sure
   they are consistent and maintainable. It enumerates steps including but not limited to coding style.
 
-* We use ESLint to lint our code. See https://github.com/phetsims/chipper/blob/master/eslint/README.md.
+* We use ESLint to lint our code. See https://github.com/phetsims/chipper/blob/main/eslint/README.md.
 
 *
 
-An [IntelliJ IDEA formatting XML file](https://github.com/phetsims/phet-info/blob/master/ide/idea/phet-idea-codestyle.xml)
+An [IntelliJ IDEA formatting XML file](https://github.com/phetsims/phet-info/blob/main/ide/idea/phet-idea-codestyle.xml)
 to automatically format code. This is the ground truth for how PhET code should be formatted. Our example-sim also shows
 how to use our libraries idiomatically as well as a good example of code commenting + documentation.
 
@@ -428,14 +428,14 @@ specification:
 Many aspects of a simulation must be developed properly and working well in order for the simulation to behave properly
 across our many supported platforms. PhET has developed several utilities and instruments to make this development and
 testing easier. The most up-to-date documentation for the query parameters is available here:
-https://github.com/phetsims/chipper/blob/master/js/initialize-globals.js
+https://github.com/phetsims/chipper/blob/main/js/initialize-globals.js
 
 1. Query parameter: `?screenIndex`. This query parameter may be used to specify the initial screen of the simulation. It
    can be paired with standalone above to launch just a specific screen of the simulation. For instance:
    http://localhost:8080/energy-skate-park-basics/energy-skate-park-basics_en.html?screenIndex=1&standalone launches
    Energy Skate Park: Basics using only the 2nd screen.
 2. Phet Allocations: Object instance allocation tracking, so we can cut down on garbage collection.
-   See https://github.com/phetsims/phet-core/blob/master/js/phetAllocation.js
+   See https://github.com/phetsims/phet-core/blob/main/js/phetAllocation.js
    Sample usage:
    a. Run the sim and set up the scenario that you wish to profile b. In the JS console, type: window.alloc={} c. Wait
    until you have taken enough data d. Type x = window.alloc; delete window.alloc; Now you can inspect the x variable

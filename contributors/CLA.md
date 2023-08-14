@@ -12,6 +12,6 @@ https://powerforms.docusign.net/942abb00-7132-498e-94ce-e55344d32dd9?env=na2&acc
 YearContributionsBegan_LastName_FirstName_Affiliation_githubUsername-CLA
  
 #### Original Word versions of the CLA
-https://github.com/phetsims/special-ops/tree/master/CLA-files
+https://github.com/phetsims/special-ops/tree/main/CLA-files
  
  

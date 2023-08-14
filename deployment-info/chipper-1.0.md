@@ -47,15 +47,15 @@ Configure an RSA key, or you will be prompted multiple times for a password duri
  - Change the permissions of `authorized_keys` so it is not group writable: `chmod g-w authorized_keys`
 
 ## Shortcut for dev deployment:
-If you are working in master, would like to release a dev version by updating the dev number, and your working copy is clean then you can use `grunt deploy-next-dev`. This will run a trial build and if there are any lint or build errors the process will halt. If there are no lint or build errors, package.json will be updated with the next version number and the simulation will be built and deployed.
+If you are working in main, would like to release a dev version by updating the dev number, and your working copy is clean then you can use `grunt deploy-next-dev`. This will run a trial build and if there are any lint or build errors the process will halt. If there are no lint or build errors, package.json will be updated with the next version number and the simulation will be built and deployed.
 
 ## Step 1. Set up the codebase
-* **DEV**: Dev deploys are often made from master using `pull-all.sh` in `perennial/bin`, but you can use code from branches if you wish
+* **DEV**: Dev deploys are often made from main using `pull-all.sh` in `perennial/bin`, but you can use code from branches if you wish
 * **RC_FIRST**: 
     + **PHET_IO:**: Add `-phetio` to the end of the branch name.
     + Create a branch with MAJOR.MINOR matching the sim to be published, such as 1.2.  For instance: `git checkout -b 1.2`
-    + Update the version id in package.json for master. Master should be set up for what 
-would be the _next_ release branch name.  So if you just created release branch 1.3, then the version should be "1.4.0-dev.0" in master. (Note the "0" for the dev number, so that `grunt bump-version` works properly.)
+    + Update the version id in package.json for main. Master should be set up for what 
+would be the _next_ release branch name.  So if you just created release branch 1.3, then the version should be "1.4.0-dev.0" in main. (Note the "0" for the dev number, so that `grunt bump-version` works properly.)
 * **RC_SUBSEQUENT | PRODUCTION**: 
     + Checkout the branch with MAJOR.MINOR (**PHET_IO** branches will end with `-phetio`). If a branch does not exist for your 
     version, make, following the step above, like you are publishing the first rc.
@@ -70,7 +70,7 @@ would be the _next_ release branch name.  So if you just created release branch 
        means that these branches should have the same shas (not always true in practice, but mostly accurate, so check your shas). Make 
        sure that all of your commits are cherry-picked onto that branch too (if they apply), so that the branches stay in sync. 
 * **PRODUCTION**: Update the QA credits before continuing.
-* **PHET PRODUCTION_FIRST**: Complete the simulation master checklist (beyond the scope of this document). Notably, this 
+* **PHET PRODUCTION_FIRST**: Complete the simulation main checklist (beyond the scope of this document). Notably, this 
       includes adding a screenshot so that thumbnails and the twitter card are properly generated in the initial deployment.
 * **ALL RC and PRODUCTION**: please see https://github.com/phetsims/chipper/issues/587 for a description of branch names and 
       how to keep phet and phet-io branch names in sync  
@@ -133,30 +133,30 @@ for phet-io versions. Ask a PhET developer for credentials.
           empty value. Cookie usage cannot be covered in entirety here. To use cookies with `curl` 
           see [this answer](http://stackoverflow.com/a/7186160/2496827). To add custom cookies in 
           Chrome [see this solution](http://superuser.com/a/636697/493443).
-   + **INITIAL_PUBLICATION**: Generate and check in (on the master branch) the auto-generated readme file for a published sim.  The README.md file can be created using ```grunt published-README```.
+   + **INITIAL_PUBLICATION**: Generate and check in (on the main branch) the auto-generated readme file for a published sim.  The README.md file can be created using ```grunt published-README```.
    + **NOT_A_NEW_SIMULATION**: Verify that any previously existing translations are still available and that
         their version numbers are correct. 
 * **PRODUCTION FOR PHET_IO_BRAND**:
-   + If this is a version that will be used with students, then make sure to remove the password protection. See https://github.com/phetsims/phet-io/blob/master/doc/phet-io-security.md for details.
+   + If this is a version that will be used with students, then make sure to remove the password protection. See https://github.com/phetsims/phet-io/blob/main/doc/phet-io-security.md for details.
    + Make sure that the current level of instrumentation is represented here in the [Instrumentation Status Spreadsheet](https://docs.google.com/spreadsheets/d/1pU9izdNQkd9vr8TvLAfXe_v68yh-7potH-y712FBPr8/edit#gid=0). MAKE SURE TO UPDATE THE "Latest Published Version" COLUMN.
-   + If you are delivering this to a partner, update [partners.md](https://github.com/phetsims/phet-io/blob/master/doc/partners.md) to show this delivery. Read the intro of the document to make sure that you format the entry correctly.
+   + If you are delivering this to a partner, update [partners.md](https://github.com/phetsims/phet-io/blob/main/doc/partners.md) to show this delivery. Read the intro of the document to make sure that you format the entry correctly.
 
 ## Step 8. Restore your working copy
-* Check out master for dependencies: `grunt checkout-master`
-* Run again to prune and update node modules: `grunt checkout-master`, **Skip This Step** if you are using a chipper sha that is newer than Jan 24th, 2017.
-* Check out master for the sim repo: `git checkout master`
+* Check out main for dependencies: `grunt checkout-main`
+* Run again to prune and update node modules: `grunt checkout-main`, **Skip This Step** if you are using a chipper sha that is newer than Jan 24th, 2017.
+* Check out main for the sim repo: `git checkout master`
 * Run `npm update` in chipper.
 * Run `perennial/bin/status.sh` as a sanity check.
   
 ## Deploy a batch of production sims.
-These steps were followed by @samreid on Nov 2, 2016 to roll out a batch of PhET-iO sims to master.
+These steps were followed by @samreid on Nov 2, 2016 to roll out a batch of PhET-iO sims to main.
 
 1. Setup: 
-  * `pull-all.sh`, we will use same master (without pulling) to deploy all.  Do not pull between the other steps.
+  * `pull-all.sh`, we will use same main (without pulling) to deploy all.  Do not pull between the other steps.
 
 2. Publish:
   * checkout branch for sim.
-  * merge master to it.
+  * merge main to it.
   * update version number + commit + push.
   * make sure version is not already published on phet-io site.
   ```
@@ -169,4 +169,4 @@ These steps were followed by @samreid on Nov 2, 2016 to roll out a batch of PhET
 
 3. Cleanup:
   * review `dependencies.json` and make sure they match.
-  * update version in master.
+  * update version in main.

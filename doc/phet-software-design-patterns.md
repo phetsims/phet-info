@@ -32,22 +32,22 @@ useful at some point, but aren't in every sim, so they can be skimmed and refere
 
 ## Table of Contents
 
-* [Creator (with Drag Forwarding)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-with-drag-forwarding)
-* [Dependency Injection](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dependency-injection)
-* [Dispose](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dispose)
-* [Enumeration](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#enumeration)
-* [Mixin and Trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
-* [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc)
-* [Model-View Transform](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-transform)
-* [Module](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#module)
-* [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace)
-* [Observer](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#observer)
-* [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config-javascript)
-* [Options (TypeScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-typescript)
-* [Scenes](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#scenes)
-* [Singleton](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#singleton)
-* [State Machine](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#state-machine)
-* [Strategy](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#strategy)
+* [Creator (with Drag Forwarding)](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#creator-with-drag-forwarding)
+* [Dependency Injection](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#dependency-injection)
+* [Dispose](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#dispose)
+* [Enumeration](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#enumeration)
+* [Mixin and Trait](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#mixin-and-trait)
+* [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#model-view-controller-mvc)
+* [Model-View Transform](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#model-view-transform)
+* [Module](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#module)
+* [Namespace](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#namespace)
+* [Observer](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#observer)
+* [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#options-and-config-javascript)
+* [Options (TypeScript)](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#options-typescript)
+* [Scenes](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#scenes)
+* [Singleton](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#singleton)
+* [State Machine](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#state-machine)
+* [Strategy](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#strategy)
 
 ## Creator (with Drag Forwarding)
 
@@ -214,7 +214,7 @@ class X {
 ```
 
 An example of DI through the options object can be found
-in [Slider.js](https://github.com/phetsims/sun/blob/master/js/Slider.js). There are a series of options that allow the
+in [Slider.js](https://github.com/phetsims/sun/blob/main/js/Slider.js). There are a series of options that allow the
 client to alter the appearance of the Slider’s thumb, but the client can also pass an instance of a `SliderThumb` in the
 options that will override
 the [defaults](https://github.com/phetsims/sun/blob/b4fadc867525be5577febefd3324064e6684e2f2/js/Slider.js#L70).
@@ -383,8 +383,8 @@ Author: @pixelzoom and @zepumph
 This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
 
 PhET’s preferred implementation of this pattern is by declaring a class that extends
-[EnumerationValue.ts](https://github.com/phetsims/phet-core/blob/master/js/EnumerationValue.ts), and declaring  
-an [Enumeration.ts](https://github.com/phetsims/phet-core/blob/master/js/Enumeration.ts) member on it called
+[EnumerationValue.ts](https://github.com/phetsims/phet-core/blob/main/js/EnumerationValue.ts), and declaring  
+an [Enumeration.ts](https://github.com/phetsims/phet-core/blob/main/js/Enumeration.ts) member on it called
 `enumeration`. It was developed in TypeScript, but can be used in JavaScript as well.
 
 ```typescript
@@ -419,7 +419,7 @@ const component = new MyComponent( {
 ```
 
 More examples and coding conventions for enumerations can be found in
-[WilderEnumerationPatterns.ts](https://github.com/phetsims/wilder/blob/master/js/WilderEnumerationPatterns.ts).
+[WilderEnumerationPatterns.ts](https://github.com/phetsims/wilder/blob/main/js/WilderEnumerationPatterns.ts).
 
 #### Supporting `null`:
 
@@ -439,7 +439,7 @@ Author: @pixelzoom
 This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
 
 PhET’s preferred implementation of this pattern can be found
-in [EnumerationDeprecated.js](https://github.com/phetsims/phet-core/blob/master/js/EnumerationDeprecated.js). Examples
+in [EnumerationDeprecated.js](https://github.com/phetsims/phet-core/blob/main/js/EnumerationDeprecated.js). Examples
 and coding conventions are in the comment header of that file. See the wave-interference repository for exemplars of
 EnumerationDeprecated use. Rich enumerations are not currently supported, but may be supported in the future
 (see https://github.com/phetsims/phet-core/issues/50).
@@ -447,7 +447,7 @@ EnumerationDeprecated use. Rich enumerations are not currently supported, but ma
 You’ll find a couple of other patterns commonly used in PhET code. These are good to know, but should be avoided in new
 code.
 
-(1) A set of string values. For example, [Slider.js](https://github.com/phetsims/sun/blob/master/js/Slider.js) uses
+(1) A set of string values. For example, [Slider.js](https://github.com/phetsims/sun/blob/main/js/Slider.js) uses
 `’horizontal’` and `’vertical’` as the values for its `orientation` option. This approach results in the duplication of
 string literals throughout the code.
 
@@ -455,7 +455,7 @@ string literals throughout the code.
 in [StackOverflow](https://stackoverflow.com/questions/287903/what-is-the-preferred-syntax-for-defining-enums-in-javascript)
 . The typical implementation associates named keys with numeric values. PhET’s implementation uses string values (to
 facilitate debugging) and `Object.freeze`  to prevent unintentional modification. See for example
-[SolutionType.js](https://github.com/phetsims/acid-base-solutions/blob/master/js/common/enum/SolutionType.js).
+[SolutionType.js](https://github.com/phetsims/acid-base-solutions/blob/main/js/common/enum/SolutionType.js).
 
 </details>
 
@@ -740,9 +740,9 @@ More background reading:
 - Effective JavaScript by David Herman
 
 Modules operate as independent pieces of code and are used throughout the whole PhET project. Take a look at some
-examples in [sim code](https://github.com/phetsims/equality-explorer/blob/master/js/common/view/BoxNode.js)
-, [common code](https://github.com/phetsims/joist/blob/master/js/HomeButton.js),
-and [code for build tools](https://github.com/phetsims/perennial/blob/master/js/common/build.js).
+examples in [sim code](https://github.com/phetsims/equality-explorer/blob/main/js/common/view/BoxNode.js)
+, [common code](https://github.com/phetsims/joist/blob/main/js/HomeButton.js),
+and [code for build tools](https://github.com/phetsims/perennial/blob/main/js/common/build.js).
 
 #### Importing Modules:
 
@@ -773,7 +773,7 @@ The PhET codebase follows a similar pattern for module structure as outlined bel
 - Imports: whatever import statements are required, in one single block
 - Class/etc.: Houses the main body of our module (attributes and elements)
 - NameSpace: Register our module to avoid conflicts (
-  see [Namespace](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#namespace)
+  see [Namespace](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#namespace)
   section)
 - Export default: exports the main object from the module
 
@@ -894,7 +894,7 @@ Author: @brandonLi8
 PhET widely uses the observer pattern described in https://en.wikipedia.org/wiki/Observer_pattern throughout its entire
 code base.
 
-#### [Property](https://github.com/phetsims/axon/blob/master/js/Property.ts)
+#### [Property](https://github.com/phetsims/axon/blob/main/js/Property.ts)
 
 Property is our most basic and simplest form of the Observer pattern. It is used as a wrapper of a JavaScript field,
 called its value. Observers are notified when its value is set to a different value. Observers add listeners through
@@ -907,7 +907,7 @@ are `StringProperty`, `BooleanProperty`, `Vector2Property`, etc.
 ##### Role in MVC
 
 Please see
-the [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc)
+the [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#model-view-controller-mvc)
 section of this document for context.
 
 In short, the observer pattern acts as a key communicator within the model-view hierarchy of PhET simulations. The model
@@ -960,7 +960,7 @@ its listeners will be invoked.
 
 - Ensure that you aren't causing any memory leaks. Property holds references to its listeners, so, in the case above, if
   you were to dispose `BallNode` it would be kept by the Property and wouldn't be garbage collected. Reference
-  the [Dispose](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#dispose) section.
+  the [Dispose](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#dispose) section.
 - Generally, listeners don't normally set the Property that it is listening too. This is called a reentrant:
   ```js
   const massProperty = new NumberProperty( 4 );
@@ -975,7 +975,7 @@ its listeners will be invoked.
   etc.). We try to be verbose with this practice to emphasize a distinction between a normal JavaScript field and a
   wrapped Property.
 
-#### [DerivedProperty](https://github.com/phetsims/axon/blob/master/js/DerivedProperty.ts)
+#### [DerivedProperty](https://github.com/phetsims/axon/blob/main/js/DerivedProperty.ts)
 
 DerivedProperty is another Property sub-type, but unlike other subtypes (which are mostly for type-specific values),
 DerivedProperty is a generic Property whose value is determined based on other Properties, called its dependencies.
@@ -996,14 +996,14 @@ If the `massProperty` OR the `accelerationProperty` is set to a different value,
 what the derivation function returns, which is passed the values of the dependencies in corresponding order.
 
 DerivedProperty usually has the same role in the MVC pattern, as
-outlined [above](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#role-in-mvc). It
+outlined [above](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#role-in-mvc). It
 is still a subtype of Property, so observers are notified when its value changes and observers are added through `link`
 and `lazyLink` methods. However, note that the value of a DerivedProperty instance cannot be set externally.
 
 ##### Other Notes
 
-- All Properties and its subclasses use [validate](https://github.com/phetsims/axon/blob/master/js/validate.ts), meaning
-  the [Validation](https://github.com/phetsims/axon/blob/master/js/Validation.ts) options are apart of its API.
+- All Properties and its subclasses use [validate](https://github.com/phetsims/axon/blob/main/js/validate.ts), meaning
+  the [Validation](https://github.com/phetsims/axon/blob/main/js/Validation.ts) options are apart of its API.
 
   For type-specific subclasses like `NumberProperty`, these are set for you. However, this is needed for
   DerivedProperty. So for the example above, the declaration should look like
@@ -1018,7 +1018,7 @@ and `lazyLink` methods. However, note that the value of a DerivedProperty instan
     } );
   ```
 
-#### [Multilink](https://github.com/phetsims/axon/blob/master/js/Multilink.ts)
+#### [Multilink](https://github.com/phetsims/axon/blob/main/js/Multilink.ts)
 
 Multilink is a convenience class that is used to observe multiple Properties with the same observer functionality.
 Similar to DerivedProperty, it has its "dependencies" of Properties, and when any dependency's value changes, the
@@ -1031,7 +1031,7 @@ Property and doesn't conform to the Property API.
   notification. One solution is to add independent listeners to each dependency and turn the DerivedProperty into a
   Property that is modified by each listener. Please reference https://github.com/phetsims/axon/issues/259.
 
-#### [ObservableArrayDef](https://github.com/phetsims/axon/blob/master/js/createObservableArray.ts)
+#### [ObservableArrayDef](https://github.com/phetsims/axon/blob/main/js/createObservableArray.ts)
 
 ObservableArrayDef is another common iteration of the Observer pattern. ObservableArrayDefs are created via
 createObservableArray, and are a Proxy wrapper over an Array that notifies observers when items are added or removed
@@ -1057,7 +1057,7 @@ Then, wherever `this.carts.push( new Cart() )` is called, a new CartNode is adde
 As a reminder from above, observers are referenced as a listener in the ObservableArrayDef, so be sure to
 call `elementAddedEmitter.removeListener` to release listeners when needed.
 
-#### [Emitter](https://github.com/phetsims/axon/blob/master/js/Emitter.ts)
+#### [Emitter](https://github.com/phetsims/axon/blob/main/js/Emitter.ts)
 
 You may see `Emitters` used in the common code shared between simulations. Emitters are a generic event-based class that
 follows the observer pattern to allow clients to subscribe (through the `addListener` method) to a single specific
@@ -1070,13 +1070,13 @@ pressing), etc. This is all done through the scenery input system.
 
 Scenery Nodes support `FireListener`, `DragListener`, `PressListener`, etc. Listeners subscribe to when the user does a
 specified event, which may alter the simulation. Listeners are often passed
-a [SceneryEvent](https://github.com/phetsims/scenery/blob/master/js/input/SceneryEvent.ts).
+a [SceneryEvent](https://github.com/phetsims/scenery/blob/main/js/input/SceneryEvent.ts).
 
 ##### Role in MVC
 
 View classes observing scenery input events are a key communicator in the model-view hierarchy. For instance, user input
 may propagate and affect model properties or may create new model objects, as described in
-the [Creator pattern](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#creator-with-drag-forwarding)
+the [Creator pattern](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#creator-with-drag-forwarding)
 section.
 
 As a reminder from above, Input Listeners (such as `DragListener`) are internally referenced in Node, so be sure to
@@ -1088,7 +1088,7 @@ Author: @pixelzoom, @denz1994
 
 **Note:** This is an obsolete pattern used in legacy JavaScript code. It's still recommended to read this section,
 especially since the subsection on **Nesting** still applies for TypeScript. For TypeScript code,
-see [Options (TypeScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-typescript)
+see [Options (TypeScript)](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#options-typescript)
 .
 
 This pattern is used for parameterizing classes and methods, which we use to avoid an explosion of parameters. `options`
@@ -1271,7 +1271,7 @@ Author: @pixelzoom
 familiarity with `optionize` is needed to get the most out of the examples.
 
 Similar to the pattern described
-in [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config-javascript)
+in [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#options-and-config-javascript)
 , this pattern is used to parameterize methods (most typically constructors) without having a large number of method
 parameters. It provides the
 additional benefit of type-checking.
@@ -1281,10 +1281,10 @@ The method parameter differs from the JavaScript `options` or `config` parameter
 * the parameter is named `providedOptions`
 * `providedOptions` may be optional or required
 * `providedOptions` fields may be optional or required
-* [optionize](https://github.com/phetsims/phet-core/blob/master/js/optionize.ts) is used to merge `providedOptions` with
+* [optionize](https://github.com/phetsims/phet-core/blob/main/js/optionize.ts) is used to merge `providedOptions` with
   default values
 
-See [WilderOptionsPattern.ts](https://github.com/phetsims/wilder/blob/master/js/wilder/model/WilderOptionsPatterns.ts)
+See [WilderOptionsPattern.ts](https://github.com/phetsims/wilder/blob/main/js/wilder/model/WilderOptionsPatterns.ts)
 for additional description and examples.
 
 Additional guidelines:
@@ -1336,9 +1336,9 @@ class MyClass extends Superclass {
 }
 ```
 
-(3) Use [StrictOmit](https://github.com/phetsims/phet-core/blob/master/js/types/StrictOmit.ts)
-, [PickRequired](https://github.com/phetsims/phet-core/blob/master/js/types/PickRequired.ts),
-and [PickOptional](https://github.com/phetsims/phet-core/blob/master/js/types/PickOptional.ts) to narrow the API
+(3) Use [StrictOmit](https://github.com/phetsims/phet-core/blob/main/js/types/StrictOmit.ts)
+, [PickRequired](https://github.com/phetsims/phet-core/blob/main/js/types/PickRequired.ts),
+and [PickOptional](https://github.com/phetsims/phet-core/blob/main/js/types/PickOptional.ts) to narrow the API
 provided by your options type.
 
 ```typescript
@@ -1730,7 +1730,7 @@ export default class MyNode extends Node {
 ```
 
 (12) When applying
-a [mixin or trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
+a [mixin or trait](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#mixin-and-trait)
 , defining options types gets a little more complicated. Options must be included for _both_ the mixin/trait _and_ the
 class that the mixin/trait is applied to. This is when you should explicitly define `type ParentOptions`.
 
@@ -1771,7 +1771,7 @@ Author: @jessegreenberg
 A "Scene" in a PhET simulation is a collection of elements presented to the user. When a new scene is selected, elements
 of the previous scene will be swapped out for elements in the new scene. A single simulation Screen may have multiple
 Scenes. The implementation of a Scene should adhere to
-the [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc)
+the [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#model-view-controller-mvc)
 pattern and be implemented like any other component in a simulation. There is no base class called Scene which combines
 a SceneModel and a SceneView. Instead, model information for a Scene should exist with the rest of the simulation model
 and view code for a scene should exist with the rest of the simulation view code.
@@ -1920,7 +1920,7 @@ by an instance of an abstract "state" base class, and the methods defined in thi
 that can be received by the state machine. A transition from one state to another is done by switching the instance of
 the state from one of these subclasses to another. This was the approach taken in the Build an Atom game (and several
 other game implementations), and the base class for all states can be seen
-at [BAAGameState.js] (https://github.com/phetsims/build-an-atom/blob/master/js/game/model/BAAGameState.js).
+at [BAAGameState.js] (https://github.com/phetsims/build-an-atom/blob/main/js/game/model/BAAGameState.js).
 
 Another approach is to use a switch statement that switches on the current state, and the code under each switch
 statement handles the incoming event. This approach hasn't been used much in PhET code (at least not at the time of this
@@ -2111,4 +2111,4 @@ the name of the base class for the strategy followed by the name of the simulati
 
 ## Trait
 
-see [Mixin and Trait](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#mixin-and-trait)
+see [Mixin and Trait](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#mixin-and-trait)

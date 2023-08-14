@@ -64,19 +64,19 @@ following list specifies essential items for a PhET Developer:
 Itching to dig into the code? The following are the steps needed to start sim development:
 
 - Follow the steps in
-  the [Getting Started](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#getting-started)
+  the [Getting Started](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#getting-started)
   section of the PhET Development Overview doc.
     - Install some command line programs
     - Get a copy of phet repos
     - Try running a sim locally on your machine
 - Set up an IDE so you can start writing code.
     - Most developers use Webstorm or IntelliJ IDEA, recommended instructions can be found in
-      the [IDE setup document](https://github.com/phetsims/phet-info/blob/master/ide/idea/setup.md).
+      the [IDE setup document](https://github.com/phetsims/phet-info/blob/main/ide/idea/setup.md).
 - Before you start committing and pushing code to PhET repos, you should set up pre-commit hooks.
     - Pre-Commit Hooks prevent developers from committing code that has various types of errors, most notably ESLint and
       TypeScript errors.
     - Follow step 13.
-      of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
+      of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
       in the PhET Development Overview doc for instructions on setting them up.
 
 <a id='intro-dev'>
@@ -89,8 +89,8 @@ conversations and experiences.
 
 ### Pull & Push Routines
 
-You may be surprised to find that PhET developers work off of, commit, and push to the master branch. The reasons for
-this workflow are beyond the scope of this document. However, working off of master does require specific routines in
+You may be surprised to find that PhET developers work off of, commit, and push to the main branch. The reasons for
+this workflow are beyond the scope of this document. However, working off of main does require specific routines in
 pull, push, and commit behaviors.
 
 - Pull code from all repos, every morning.
@@ -158,7 +158,7 @@ fairly specific function, such as graphic rendering or sound generation. As of t
 these repos that will almost certainly be used in any sim that a developer creates, and there are additional libraries
 that may be used depending on the particular requirements of a
 sim. A list of the common-code repos can be found
-at https://github.com/phetsims/perennial/blob/master/data/active-common-sim-repos. Talk with your mentor about which
+at https://github.com/phetsims/perennial/blob/main/data/active-common-sim-repos. Talk with your mentor about which
 ones to start ramping up on first.
 
 Perhaps the most fundamental of the common code libs is "scenery", which is the graphics library that is used to define
@@ -168,7 +168,7 @@ since you'll need to become familiar with it to create a sim.
 ### Navigating Repos
 
 Most of your work will be done in the `js` directory of a repo. If you are curious about the other files check out
-the [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#repository-structure)
+the [Repository Structure](https://github.com/phetsims/phet-info/blob/main/checklists/code-review-checklist.md#repository-structure)
 in the Code Review Checklist for an overview or ask your mentor for an explanation.
 
 To become acquainted with a simulation's inner workings, a useful starting point is to review the `model.md`
@@ -180,7 +180,7 @@ reading them, you can gain a high-level understanding of the repository's conten
 
 We prepared some exercises in order for you to get the hang of sim development. Try to complete, with the help of your
 mentor, the steps described
-in [this Dev Exercises document](https://github.com/phetsims/phet-info/blob/master/doc/phet-dev-excercises.md). This
+in [this Dev Exercises document](https://github.com/phetsims/phet-info/blob/main/doc/phet-dev-excercises.md). This
 way, you will catch glimpses of the tasks you'll be performing when developing a real PhET sim.
 
 
@@ -193,7 +193,7 @@ way, you will catch glimpses of the tasks you'll be performing when developing a
 Sims can be run with various query parameters. Query parameters are by default "for internal use only" and should not be
 shared outside of PhET. Public-facing query parameters must be explicitly designated by including `public: true`
 in their schema.
-Chipper's [initialize-globals.js](https://github.com/phetsims/chipper/blob/master/js/initialize-globals.js) contains
+Chipper's [initialize-globals.js](https://github.com/phetsims/chipper/blob/main/js/initialize-globals.js) contains
 general global query parameters (preloaded).
 
 Two examples of commonly used query params are:
@@ -206,7 +206,7 @@ Two examples of commonly used query params are:
 Aside from setting up your development environment, there are additional IDE features devs use that may be useful to
 start
 adding to your workflow. Using patches, "show history", and live templates are a few examples. Check out
-the [suggestions](https://github.com/phetsims/phet-info/blob/master/ide/idea/setup.md#suggestions) section of the IDE
+the [suggestions](https://github.com/phetsims/phet-info/blob/main/ide/idea/setup.md#suggestions) section of the IDE
 setup document and ask
 your mentor for any further explanation or additional tips.
 
@@ -266,7 +266,7 @@ When you begin working in TypeScript files, you might hear a lot about tsc (Type
 - tsc runs a type checker that will output type errors in our code. This type checking is already included in pre-commit
   hooks, but many developers enjoy having a tool where they can check for type errors outside of pre-commit hooks.
 - The recommended method for running tsc is through the
-  script [absolute-tsc.js](https://github.com/phetsims/chipper/blob/master/js/scripts/absolute-tsc.js). Documentation
+  script [absolute-tsc.js](https://github.com/phetsims/chipper/blob/main/js/scripts/absolute-tsc.js). Documentation
   for how to run absolute-tsc from the command line, or as an external tool in Webstorm can be found at the top of the
   file.
 - The [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) is a great resource for diving into
@@ -279,7 +279,7 @@ When a sim is further along in development, it needs to be memory and performanc
 developers use Chrome for both of these processes.
 
 Read about how to conduct a memory
-test [here](https://github.com/phetsims/QA/blob/master/documentation/qa-book.md#47-memory-leak-testing).
+test [here](https://github.com/phetsims/QA/blob/main/documentation/qa-book.md#47-memory-leak-testing).
 If there is a leak, you will need to do some memory profiling to find out where your sim is not properly managing
 its memory usage. This in-depth process should be taught by your mentor when you begin on your first memory
 investigation.
@@ -318,10 +318,10 @@ there are some variations. The details are described in the documents linked bel
 help if this comes up for a sim you're developing.
 
 For information on the details of how the various types of publications are initiated, please see
-[chipper-2.0](https://github.com/phetsims/phet-info/blob/master/deployment-info/chipper-2.0.md#dev-deployments).
+[chipper-2.0](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#dev-deployments).
 
 For templates that can be used to set up the various QA tests, see
-[templates](https://github.com/phetsims/qa/tree/master/issue-templates).
+[templates](https://github.com/phetsims/qa/tree/main/issue-templates).
 
 <a id='roadmap'>
 
@@ -334,20 +334,20 @@ needs and experiences.
 
 ```mermaid
 graph LR
-  A((<a href='https://github.com/phetsims/phet-info/blob/master/doc/new-dev-onboarding.md#env-setup'>Environment Setup</a>))
+  A((<a href='https://github.com/phetsims/phet-info/blob/main/doc/new-dev-onboarding.md#env-setup'>Environment Setup</a>))
   B((Ramping Up))
   C((Object Creation))
   D((Layout))
   A-->A1(IDE) & A2(Node.js) & A3(<a href='https://github.com/join'>Create Github Account</a>) & A4(<a href='https://github.com/phetsims/website#adding-new-users-to-phets-servers-so-a-user-can-upload-a-dev-version-or-participate-in-web-developmen'>Add New User to PhET Server</a>)
-  A1-->A1.1(<a href='https://github.com/phetsims/phet-info/tree/master/ide'>IDE setup Documents</a>) & A1.2(<a href='https://www.jetbrains.com/webstorm/'>Webstorm</a>)
+  A1-->A1.1(<a href='https://github.com/phetsims/phet-info/tree/main/ide'>IDE setup Documents</a>) & A1.2(<a href='https://www.jetbrains.com/webstorm/'>Webstorm</a>)
   A2-->A2.1(<a href='https://nodejs.org/en/download/'>Install Node</a>) & A2.2(<a href='https://docs.npmjs.com/cli/v8/commands/npm-install'>Install NPM</a>)
   A3-->A3.1(Add User to Repo Permissions)
   B-->B1(Example-sim) & B2(Background Reading) & B3(Using phetmarks common code)
-  B1-->B1.1(Building) & B1.2(<a href='https://github.com/phetsims/phet-info/blob/master/doc/phet-dev-exercises.md'>Modify & Experiment</a>)
-  B2-->B2.1(<a href='https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md'>Software Design Patterns</a>) & B2.2(Resources as Needed)
-  B3-->B3.1(<a href='https://github.com/phetsims/phet-info/blob/master/doc/new-dev-onboarding.md#helpful-docs'>Accessing Documentation</a>) & B3.2(Accessing the Showcases) & B3.3(Using UI Componenets in example-sim)
+  B1-->B1.1(Building) & B1.2(<a href='https://github.com/phetsims/phet-info/blob/main/doc/phet-dev-exercises.md'>Modify & Experiment</a>)
+  B2-->B2.1(<a href='https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md'>Software Design Patterns</a>) & B2.2(Resources as Needed)
+  B3-->B3.1(<a href='https://github.com/phetsims/phet-info/blob/main/doc/new-dev-onboarding.md#helpful-docs'>Accessing Documentation</a>) & B3.2(Accessing the Showcases) & B3.3(Using UI Componenets in example-sim)
   C-->C1(File Structure Overview) & C2(Module Creation)
-  C2-->C2.1(Module Design Pattern) & C2.2(<a href='https://github.com/phetsims/phet-info/blob/master/doc/typescript-conventions.md'>Typescript Conventions</a>) & C2.3(Class Inheritance & Options) & C2.4(Instancing Custom Modules)
+  C2-->C2.1(Module Design Pattern) & C2.2(<a href='https://github.com/phetsims/phet-info/blob/main/doc/typescript-conventions.md'>Typescript Conventions</a>) & C2.3(Class Inheritance & Options) & C2.4(Instancing Custom Modules)
   D-->D1(Node Tree Structure) & D2(Flexbox & Gridbox)
 ```
 
@@ -385,7 +385,7 @@ discussion surrounding the task.
 GitHub issues can be assigned priority levels, which can help in organizing your day-to-day work. There are a number of
 other labels for issues that are PhET-specific, and it will take some time to familiarize yourself with them all. You
 can take a quick look at the available issue
-labels [here](https://github.com/phetsims/phet-info/blob/master/github-labels/github-labels) (the hex
+labels [here](https://github.com/phetsims/phet-info/blob/main/github-labels/github-labels) (the hex
 values represent the color of the label when it appears on an issue).
 
 One of the tricky things about using GitHub issues to manage work is how widely variable the scope of an issue can be.
@@ -412,6 +412,6 @@ that, it's probably best to ask around.
 | [PhET Development Overview](./phet-development-overview.md)                                                         | A checklist for evaluating simulation code                                        |
 | [PhET Quarterly Goal Planning](https://github.com/orgs/phetsims/projects/41/views/1)                                | Goals for current quarter (not really a doc, but important)                       |
 | [PhET Software Design Patterns](./phet-software-design-patterns.md)                                                 | Provides information on how PhET uses various software design patterns            |
-| [Private Features for PhET Team Members](https://github.com/phetsims/special-ops/blob/master/doc/phetTeamMember.md) | Information on hidden features. This comes up most often during game development. |
+| [Private Features for PhET Team Members](https://github.com/phetsims/special-ops/blob/main/doc/phetTeamMember.md) | Information on hidden features. This comes up most often during game development. |
 | [Responsible Devs](../sim-info/responsible_dev.md)                                                                  | Associates repos with the developer who is responsible for maintenance            |
 | [TypeScript Conventions](./typescript-conventions.md)                                                               | PhET's TypeScript conventions                                                     |

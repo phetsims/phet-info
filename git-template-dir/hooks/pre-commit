@@ -2,14 +2,14 @@
 #-----------------------------------------------------------------------------------------------------------------------
 # git pre-commit hooks
 #
-# Please see https://github.com/phetsims/phet-info/blob/master/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing
+# Please see https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing
 # for installation instructions.
 #-----------------------------------------------------------------------------------------------------------------------
 
 # Detect the current branch. Requires git 2.22.0 or higher
 current_branch=$(git branch --show-current)
 
-# Only run pre-commit hooks in master, see https://github.com/phetsims/perennial/issues/276
-if [[ "$current_branch" == "master" ]]; then
+# Only run pre-commit hooks in main, see https://github.com/phetsims/perennial/issues/276
+if [[ "$current_branch" == "main" ]]; then
   node ../chipper/js/scripts/hook-pre-commit.js
 fi

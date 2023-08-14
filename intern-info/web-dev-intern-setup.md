@@ -116,7 +116,7 @@ In the phet/git directory, run this command:
   8. Open phet/git/website/ide/intellij/website.iml		
   9. Click OK
 6. Setup the style template:
-  1. Download the template xml file from https://github.com/phetsims/phet-info/blob/master/ide/idea/phet-idea-codestyle.xml
+  1. Download the template xml file from https://github.com/phetsims/phet-info/blob/main/ide/idea/phet-idea-codestyle.xml
   2. Put the file in the local IntelliJ directory.  
     * Try $HOMEPATH$/.IntelliJIdea14/config/codestyles
   3. Restart IntelliJ, go to File > Settings > Editor > Code Style > Java.

@@ -14,7 +14,7 @@ This is meant to be a fun learning experience, so do enjoy!
 Look at the way the first magnet was created in the simulation. How should you go about displaying a second one that
 shares the same logic? You will frequently find yourself instantiating multiple objects of the same class in PhET sims.
 Keeping the code organized, and minimizing repetition is something to consider. Remember to read
-through [The Model-View coding pattern](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#model-view-controller-mvc)
+through [The Model-View coding pattern](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#model-view-controller-mvc)
 .
 
 <details><summary>Hint</summary>Look into `MagnetsScreenView.js` to see how the magnet is added to the screen. There will be a model field for the magnet, so you'll have to work your way around that in `MagnetsModel.js`...</details>
@@ -31,7 +31,7 @@ this for almost every new class of an object there is on the screen.
 ### 3. Add a checkbox that controls the Ball's visibility ☑️
 
 Most PhET Simulations have checkboxes that control boolean aspects of the sim. Have you read
-about [phetmarks](https://github.com/phetsims/phet-info/blob/master/doc/new-dev-onboarding.md#phetmarks) yet? Use it to
+about [phetmarks](https://github.com/phetsims/phet-info/blob/main/doc/new-dev-onboarding.md#phetmarks) yet? Use it to
 access the Sun example to see how checkboxes are implemented, remember you can use `Ctrl + Shift + H` to get details as
 to how components are used.
 
@@ -47,9 +47,9 @@ again, you should refer to Sun's implementation of Sliders as a starting point t
 ### 5. Options 🎨
 
 Add an option to the ball constructor to control its color. Read through
-the [Javascript Options](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-and-config-javascript)
+the [Javascript Options](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#options-and-config-javascript)
 design pattern, if you're using JS. Keep in mind that the Javascript options pattern is different
-than [the TypeScript options pattern](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md#options-typescript)
+than [the TypeScript options pattern](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#options-typescript)
 .
 
 <details><summary>Hint</summary> You can look into `ShadedSphereNodeOptions` to know what options you can play with.</details>

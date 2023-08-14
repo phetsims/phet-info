@@ -1,5 +1,5 @@
 ### Standard Labels
-The standard label set is documented [in this json file](https://github.com/phetsims/phet-info/blob/master/github-labels/github-labels.json)
+The standard label set is documented [in this json file](https://github.com/phetsims/phet-info/blob/main/github-labels/github-labels.json)
 
 ### General Scheme
 + labels follow the format `<label-category:label-name>`  

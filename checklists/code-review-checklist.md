@@ -14,17 +14,17 @@
 * Problems can be noted in side issues that reference this issue, or through `// REVIEW` comments in the code
 
 ## Table of Contents
-* [Build and Run Check](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#build-and-run-checks)
-* [Memory Leaks](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#memory-leaks)
-* [Performance](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#performance)
-* [Usability](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#usability)
-* [Internationalization](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#internationalization)
-* [Repository Structure](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#repository-structure)
-* [Coding Conventions](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#coding-conventions)
-* [Math Libraries](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#math-libraries)
-* [IE11](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#ie11)
-* [Organization, Readability, and Maintainability](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#organization-readability-and-maintainability)
-* [PhET-iO](https://github.com/phetsims/phet-info/blob/master/checklists/code-review-checklist.md#phet-io)
+* [Build and Run Check](https://github.com/phetsims/phet-info/blob/main/checklists/code-review-checklist.md#build-and-run-checks)
+* [Memory Leaks](https://github.com/phetsims/phet-info/blob/main/checklists/code-review-checklist.md#memory-leaks)
+* [Performance](https://github.com/phetsims/phet-info/blob/main/checklists/code-review-checklist.md#performance)
+* [Usability](https://github.com/phetsims/phet-info/blob/main/checklists/code-review-checklist.md#usability)
+* [Internationalization](https://github.com/phetsims/phet-info/blob/main/checklists/code-review-checklist.md#internationalization)
+* [Repository Structure](https://github.com/phetsims/phet-info/blob/main/checklists/code-review-checklist.md#repository-structure)
+* [Coding Conventions](https://github.com/phetsims/phet-info/blob/main/checklists/code-review-checklist.md#coding-conventions)
+* [Math Libraries](https://github.com/phetsims/phet-info/blob/main/checklists/code-review-checklist.md#math-libraries)
+* [IE11](https://github.com/phetsims/phet-info/blob/main/checklists/code-review-checklist.md#ie11)
+* [Organization, Readability, and Maintainability](https://github.com/phetsims/phet-info/blob/main/checklists/code-review-checklist.md#organization-readability-and-maintainability)
+* [PhET-iO](https://github.com/phetsims/phet-info/blob/main/checklists/code-review-checklist.md#phet-io)
 
 ## Specific Instructions
 
@@ -56,7 +56,7 @@ If any of these items fail, pause code review.
 
 ## **Memory Leaks**
 
-- [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (This process is described [here](https://github.com/phetsims/QA/blob/master/documentation/qa-book.md#47-memory-leak-testing).) Test on a version built using `grunt --minify.mangle=false`. Compare to testing results done by the responsible developer. Results can be found in {{GITHUB_ISSUE_LINK}}.
+- [ ] Does a heap comparison using Chrome Developer Tools indicate a memory leak? (This process is described [here](https://github.com/phetsims/QA/blob/main/documentation/qa-book.md#47-memory-leak-testing).) Test on a version built using `grunt --minify.mangle=false`. Compare to testing results done by the responsible developer. Results can be found in {{GITHUB_ISSUE_LINK}}.
 - [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is
 there a call to that component’s `dispose` function, or is it obvious why it isn't necessary, or is there documentation
 about why `dispose` isn't called?  An example of why no call to `dispose` is needed is if the component is used in
@@ -242,18 +242,18 @@ For a sim repository named “my-repo”, the general structure should look like
   use `ProfileColorProperty` where appropriate, even if they have a single (default) profile (to support color editing
   and PhET-iO Studio). The `ColorProfile` pattern was converted to `*Colors.js` files in 
   https://github.com/phetsims/scenery-phet/issues/515. Please see 
-  [GasPropertiesColors.js](https://github.com/phetsims/gas-properties/blob/master/js/common/GasPropertiesColors.js)
+  [GasPropertiesColors.js](https://github.com/phetsims/gas-properties/blob/main/js/common/GasPropertiesColors.js)
   for a good example.
 
 ## **Coding Conventions**
 
-- [ ] Are coding conventions outlined in [PhET's Coding Conventions Document](https://github.com/phetsims/phet-info/blob/master/doc/coding-conventions.md) followed and adhered to? This document 
+- [ ] Are coding conventions outlined in [PhET's Coding Conventions Document](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md) followed and adhered to? This document 
 deals with PhET coding conventions. You do not need to exhaustively check every item in this section, nor do you 
 necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET standards.
 
 ## **TypeScript Conventions**
 
-- [ ] Are TypeScript conventions outlined in the [TypeScript Conventions Document](https://github.com/phetsims/phet-info/blob/master/doc/typescript-conventions.md) followed and adhered to?
+- [ ] Are TypeScript conventions outlined in the [TypeScript Conventions Document](https://github.com/phetsims/phet-info/blob/main/doc/typescript-conventions.md) followed and adhered to?
 
 ## **Math Libraries**
 
@@ -266,7 +266,7 @@ necessarily need to check these items one at a time. The goal is to determine wh
 ## **Organization, Readability, and Maintainability**
 
 - [ ] Does the organization and structure of the code make sense? Do the model and view contain types that you would expect (or guess!) by looking at the sim? Do the names of things correspond to the names that you see in the user interface?
-- [ ] Are appropriate design patterns used? See [phet-software-design-patterns.md](https://github.com/phetsims/phet-info/blob/master/doc/phet-software-design-patterns.md).  If new or inappropriate patterns are identified, create an issue.
+- [ ] Are appropriate design patterns used? See [phet-software-design-patterns.md](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md).  If new or inappropriate patterns are identified, create an issue.
 - [ ] Is inheritance used where appropriate? Does the type hierarchy make sense?
 - [ ] Is composition favored over inheritance where appropriate? See https://en.wikipedia.org/wiki/Composition_over_inheritance.
 - [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary properties/functions). In TypeScript, you can decouple by narrowing the API like so: 
@@ -287,7 +287,7 @@ cd {{repo}}/js ; wc -l `find . -name "*.ts" -print` | sort
 - [ ] Are there any [magic numbers](https://en.wikipedia.org/wiki/Magic_number_(programming)) that should be factored out as constants and documented?
 - [ ] Are there any constants that are duplicated in multiple files that should be factored out into a `{{REPO}}Constants.js` file?
 - [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify constants that might be changed in the future. (Use your judgement about which constants are likely candidates.) Does changing the values of these constants break the sim? For example, see https://github.com/phetsims/plinko-probability/issues/84.
-- [ ] Is [PhetColorScheme](https://github.com/phetsims/scenery-phet/blob/master/js/PhetColorScheme.ts) used where appropriate? Verify that the sim is not inventing/creating its own colors for things that have been standardized in `PhetColorScheme`.  Identify any colors that might be worth adding to `PhetColorScheme`.
+- [ ] Is [PhetColorScheme](https://github.com/phetsims/scenery-phet/blob/main/js/PhetColorScheme.ts) used where appropriate? Verify that the sim is not inventing/creating its own colors for things that have been standardized in `PhetColorScheme`.  Identify any colors that might be worth adding to `PhetColorScheme`.
 - [ ] Are all dependent Properties modeled as `DerivedProperty` instead of `Property`?
 - [ ] All dynamics should be called from Sim.step(dt), do not use window.setTimeout or window.setInterval.  This will help support Legends of Learning and PhET-iO.
 
@@ -305,7 +305,7 @@ various features, not all are always include. Ignore sections that do not apply.
 
 ### Interactive Description
 - [ ] Run the entire built sim HTML file through an [HTML validator](https://validator.w3.org/nu/#textarea), does the HTML pass?
-- [ ] If applicable, are good design patterns used for interactive description, see [interactive-description-technical-guide.md](https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md)
+- [ ] If applicable, are good design patterns used for interactive description, see [interactive-description-technical-guide.md](https://github.com/phetsims/phet-info/blob/main/doc/interactive-description-technical-guide.md)
 - [ ] Does resetting the simulation also reset the entire PDOM?
 - [ ] Is `Node.pdomOrder` used appropriately to maintain visual and PDOM layout balance?
 - [ ] Make sure accessibility strings aren't being adjusted with ascii specific javascript methods like `toUpperCase()`. Remember that one day these strings will be translatable
@@ -315,7 +315,7 @@ various features, not all are always include. Ignore sections that do not apply.
 
 This section may be omitted if the sim has not been instrumented for PhET-iO, but is likely good to glance at no matter.
 
-- [ ] Does instrumentation follow the conventions described in [PhET-iO Instrumentation Guide](https://github.com/phetsims/phet-io/blob/master/doc/phet-io-instrumentation-technical-guide.md)?
+- [ ] Does instrumentation follow the conventions described in [PhET-iO Instrumentation Guide](https://github.com/phetsims/phet-io/blob/main/doc/phet-io-instrumentation-technical-guide.md)?
 This could be an extensive bullet. At the very least, be sure to know what amount of instrumentation this sim
  supports. Describing this further goes beyond the scope of this document.
 - [ ] PhET-iO instantiates different objects and wires up listeners that are not present in the PhET-branded simulation.

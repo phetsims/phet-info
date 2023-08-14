@@ -63,7 +63,7 @@
 
 ## Implementation
 - [ ] **Repository created** by
-  following [new-repo-checklist.md](https://github.com/phetsims/phet-info/blob/master/checklists/new-repo-checklist.md) (
+  following [new-repo-checklist.md](https://github.com/phetsims/phet-info/blob/main/checklists/new-repo-checklist.md) (
   Date: //)
 - [ ] **Development started** (Date: //)
 - [ ] **Sim is "feature complete"** (Date: //)
@@ -75,9 +75,9 @@
 - [ ] **Sim dev test completed** (Date: //)
 - [ ] **Sim RC tests completed** (Date: //)
 - [ ] **Pre-publication items**
-  - [ ] Main screenshot (read [this](https://github.com/phetsims/QA/blob/master/documentation/qa-book.md#screenshots))
-  - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/joist/blob/master/js/CreditsNode.js))
-  - [ ] Add CT tests for public query parameters that need testing. See examples in [listContinuousTests.js](https://github.com/phetsims/perennial/blob/master/js/listContinuousTests.js)
+  - [ ] Main screenshot (read [this](https://github.com/phetsims/QA/blob/main/documentation/qa-book.md#screenshots))
+  - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
+  - [ ] Add CT tests for public query parameters that need testing. See examples in [listContinuousTests.js](https://github.com/phetsims/perennial/blob/main/js/listContinuousTests.js)
 - [ ] **Published** (Date: //)
 
 ## QA

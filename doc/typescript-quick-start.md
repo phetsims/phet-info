@@ -45,7 +45,7 @@ Congratulations!  Now the repo is TypeScript-capable. You can commit these chang
 * Run the TypeScript transpiler: `node js/scripts/transpile.js --watch` which starts a process that will auto-transpile
   when files change.
 * If you prefer to experiment with using WebStorm/IDEA File Watchers, please
-  see https://github.com/phetsims/phet-info/blob/master/doc/typescript-webstorm-file-watcher.md
+  see https://github.com/phetsims/phet-info/blob/main/doc/typescript-webstorm-file-watcher.md
 
 ### Experiment with your new TypeScript repo
 
@@ -87,7 +87,7 @@ find . -name "*.js" ! -iname "*phet-io-overrides.js"  -exec bash -c 'mv "$1" "${
    TypeScript. Details in https://github.com/phetsims/chipper/issues/1067
 6. Some common code repos include code outside their directory. This problem is described
    in https://github.com/phetsims/chipper/issues/1096
-7. Conventions and patterns listed in https://github.com/phetsims/phet-info/blob/master/doc/typescript-conventions.md
+7. Conventions and patterns listed in https://github.com/phetsims/phet-info/blob/main/doc/typescript-conventions.md
 8. For certain files, when changing JS=>TS, WebStorm will say it is a rename in the commit dialog, then show a “delete +
    create” in the history. This is not desirable. For those files, a workaround is to rename the file with no content
    changes, then change the contents in a separate commit. We no longer are using `@ts-nocheck` as part of this process

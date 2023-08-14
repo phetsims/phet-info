@@ -28,11 +28,11 @@ Follow these steps to add support for alternative input to a simulation.
    modify `{{REPO}}_en.html`.
 
 3. Adding `"supportsInteractiveDescription": true` will by default also enable Interactive Highlights.
-   See https://github.com/phetsims/phet-info/blob/master/doc/interactive-highlights-quickstart-guide.md for more
+   See https://github.com/phetsims/phet-info/blob/main/doc/interactive-highlights-quickstart-guide.md for more
    information about this feature.
 
 4. Sims that support alternative input also need an accessible Preferences dialog. See
-   https://github.com/phetsims/phet-info/blob/master/doc/accessible-preferences-quickstart-guide.md for information
+   https://github.com/phetsims/phet-info/blob/main/doc/accessible-preferences-quickstart-guide.md for information
    about this.
 
 ## Traversal Order
@@ -253,4 +253,4 @@ and create GitHub issues.
 
 * [Interactive Description Technical Guide](https://github.com/phetsims/phet-info/blob/4839f03214bbba21b4621f80aea8e78a9519fb43/doc/interactive-description-technical-guide.md)
 * Description of "Play Area" and "Control
-  Area": https://github.com/phetsims/phet-info/blob/master/doc/interactive-description-technical-guide.md#pdom-order-for-phet-sims
+  Area": https://github.com/phetsims/phet-info/blob/main/doc/interactive-description-technical-guide.md#pdom-order-for-phet-sims
