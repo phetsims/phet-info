@@ -1,9 +1,9 @@
 **To begin a code review, the responsible developer should:**
 * Copy this checklist to a new GitHub issue titled "Code Review" and labeled `dev:code-review`. 
 * Delete the **Table of Contents** section, since the links will be incorrect.
-* Delete (or ~~strikethrough~~) items and sections that are not relevant.
+* Complete (or delete) the **Specific Instructions** section.
+* Delete (or ~~strikethrough~~) checklist items and sections that are not relevant.
 * Replace {{GITHUB_ISSUE_LINK}} with links to GitHub issues.
-* Fill in (or delete) the **Specific Instructions** section.
 * Assign the GitHub issue to the developer who is doing the code review.
 
 ---
