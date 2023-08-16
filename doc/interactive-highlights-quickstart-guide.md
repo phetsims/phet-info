@@ -95,14 +95,14 @@ Interactive Highlights will use the same highlight as the focus highlight, so yo
 from `ParallelDOM.ts`.
 
 ```js
-myNode.focusHighlight = new FocusHighlightPath( focusHighlightShape );
+myNode.focusHighlight = new HighlightPath( focusHighlightShape );
 ```
 
 If the Interactive Highlight needs to look different than the focus highlight, you can do that with an additional
 setter from `InteractiveHighlighting.ts`.
 
 ```js
-myNode.interactiveHighlight = new FocusHighlightPath( interactiveHighlightShape );
+myNode.interactiveHighlight = new HighlightPath( interactiveHighlightShape );
 ```
 
 See InteractiveHighlighting.ts for more documentation.
