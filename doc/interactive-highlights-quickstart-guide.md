@@ -125,6 +125,6 @@ composed with InteractiveHighlighting if you need to.
 
 ## Potential Pitfalls
 
-Try to use default highlights or `FocusHighlightFromNode.ts` for custom highlights if possible. These will manage
+Try to use default highlights or `HighlightFromNode.ts` for custom highlights if possible. These will manage
 styling and repositioning for you. If you use a more custom highlight Node, it is your responsibility to
 reposition the highlight if the Node it surrounds resizes or moves.
