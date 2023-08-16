@@ -239,11 +239,11 @@ For a sim repository named “my-repo”, the general structure should look like
   ArithmeticQueryParameters.js for the arithmetic repository, or FBQueryParameters.js for Function Builder (where
   the `FB` prefix is used).
 - [ ] Query parameters that are public-facing should be identified using `public: true` in the schema.
-- [ ] All sims should use a color file named `MyRepoColors.js` or, if using abbreviations, `MRColors.js`, and
+- [ ] All sims should use a color file named `MyRepoColors.ts` or, if using abbreviations, `MRColors.ts`, and
   use `ProfileColorProperty` where appropriate, even if they have a single (default) profile (to support color editing
-  and PhET-iO Studio). The `ColorProfile` pattern was converted to `*Colors.js` files in 
+  and PhET-iO Studio). The `ColorProfile` pattern was converted to `*Colors.ts` files in 
   https://github.com/phetsims/scenery-phet/issues/515. Please see 
-  [GasPropertiesColors.js](https://github.com/phetsims/gas-properties/blob/main/js/common/GasPropertiesColors.js)
+  [GasPropertiesColors.ts](https://github.com/phetsims/gas-properties/blob/main/js/common/GasPropertiesColors.ts)
   for a good example.
 
 ## **Coding Conventions**
