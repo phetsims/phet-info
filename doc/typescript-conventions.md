@@ -141,12 +141,15 @@ be discussed.
 
 Instance properties can be initialized either where they are declared, or in the constructor, or as parameter properties
 in the constructor parameters. It is up to developer discretion, but please try to be consistent, and adhere to the
-spirit of existing code.
+spirit of existing code. In addition, please keep potential future PhET-iO instrumentation in mind. Initializing
+where declaration occurs may result in refactoring when it comes time to pass Tandems to those objects
+(see [example issue](https://github.com/phetsims/keplers-laws/issues/103)).
 
 ```ts
 // Initialized where declared
 class EventCounter {
   public numberOfEvents: number = 0;
+  public numberOfEventsProperty: TProperty<number> = new NumberProperty( 0 );
 
   // ...
 }
