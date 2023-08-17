@@ -1322,12 +1322,14 @@
       "@DianaTavares"
     ]
   },
-  "sound": {
+  "sound-waves": {
     "responsibleDevs": [
-      "@samreid"
+      "@samreid",
+      "@matthew-blackman"
     ],
     "responsibleDesigners": [
-      "@arouinfar"
+      "@arouinfar",
+      "@matthew-blackman"
     ]
   },
   "special-ops": {
