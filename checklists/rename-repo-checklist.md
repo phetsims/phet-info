@@ -14,6 +14,7 @@
 - [ ] If applicable, "refresh perennial" on phettest.
 - [ ] Add the sim to chipper/tsconfig/all/tsconfig.json
 - [ ] Remove old repo directories in `chipper/dist/js`, `chipper/dist/declarations`, and `chipper/dist/js-cache-status.json` and and restart your transpiler.
+- [ ] Run `rm -rf {{OLD_REPO}}` from the phetsims directory
 - [ ] Notify Slack channel dev-public that the repo has been renamed. E.g. "I just renamed repository {{OLD_REPO}} to {{NEW_REPO}}. Please pull perennial and perennial-alias, run `clone-missing-repos.sh` at your convenience, remove {{OLD_REPO}} in `chipper/dist/js`, `chipper/dist/declarations`, and `chipper/dist/js-cache-status.json` and restart your transpiler."
 
 ### If this is a simulation. . .
