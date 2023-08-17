@@ -188,11 +188,11 @@ If your Node does not have a `KeyboardDragListener`, add hotkeys with `KeyboardL
 
 const keyboardListener = new KeyboardListener( {
   keys: [ 'escape', 'j+0' ],
-  callback: ( event, listener ) => {
-    if ( listener.keysPressed === 'escape' ) {
+  callback: ( event, keysPressed, listener ) => {
+    if ( keysPressed === 'escape' ) {
       // escape key was pressed
     }
-    else if ( listener.keysPressed === 'j+0' ) {
+    else if ( keysPressed === 'j+0' ) {
       // j and 0 were pressed
     }
   },
