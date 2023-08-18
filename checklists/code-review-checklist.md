@@ -72,7 +72,7 @@ a `ScreenView` that would never be removed from the scene graph. Note that it's 
   * SCENERY: `Node.addInputListener` is accompanied by `removeInputListener`
   * TANDEM: Creation of an instrumented `PhetioObject` is accompanied by `dispose`.
 - [ ] All classes that require a `dispose` function should have one. This should expose a public `dispose` function that calls `this.dispose{{CLASS_NAME}}()`, where `dispose{{CLASS_NAME}}` is a private function declared in the constructor.  `{{CLASS_NAME}}` should exactly match the class name.
-- [ ] All classes that are not disposable should either (a) use `isDisposable: false`, or (b) implement a `dispose` method that calls `Disposable.assertNotDisposable`.  Use (a) for classes that inherit a `dispose` method. Use (b) for classes that do not inherit a `dispose` method.
+- [ ] All classes that do not properly implement `dispose` should either (a) use `isDisposable: false`, or (b) implement a `dispose` method that calls `Disposable.assertNotDisposable`.  Use (a) for classes that inherit a `dispose` method from Disposable. Use (b) for classes that inherit a `dispose` method from something other than Disposable.  The goal here is to prevent clients from calling `dispose` for something that does not properly clean itself up, creating a memory leak.  This is especially important for common code, but is good defensive programming for sim-specific code.
 
 ## **Performance**
 
