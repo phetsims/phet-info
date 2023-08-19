@@ -93,7 +93,7 @@ a `ScreenView` that would never be removed from the scene graph. Note that it's 
 `stringTest=xss`? This test passes if sim does not redirect, OK if sim crashes or fails to fully start. Only test on one
 desktop platform.  For PhET-iO sims, additionally test `?stringTest=xss` in Studio to make sure i18n strings didn't leak
 to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
-- [ ] Avoid using concatenation to create strings that will be visible in the user interface. Use `StringUtils.fillIn` and a string pattern to ensure that strings are properly localized.
+- [ ] Avoid using concatenation to create strings that will be visible in the user interface. Use `StringUtils.fillIn` and a string pattern to ensure that strings are properly localized. This is relevant in cases where order should be translatable.
 - [ ] Use named placeholders (e.g. `"{{value}} {{units}}"`) instead of numbered placeholders (e.g. `"{0} {1}"`).
 - [ ] Make sure the string keys are all perfect. They are difficult to change after 1.0.0 is published. They should be 
 literal, they should be explicit, and they should be consistent. This will also be the PhET-iO phetioID name in Studio etc. Guidelines for string keys are:
