@@ -11,14 +11,19 @@ Please see the alternative-input-quickstart-guide.md first. This guide assumes y
 and have enabled Interactive Description in your package.json.
 
 PhET is going to start adding Interactive Description to the Preferences Menu dialog for simulations that support
-alternative input. By adding Interactive Description to our Preferences Menu dialog, learners who rely on screen reader software are empowered to access essential features. For example, a blind learner will be able to enable the Voicing feature, even if the simulation does not fully support Interactive Description. Having a fully accessible Preferences Menu supports learner agency in accessing and using any features in the Preferences Menu that can aid in their learning process.
+alternative input. By adding Interactive Description to our Preferences Menu dialog, learners who rely on screen reader
+software are empowered to access essential features. For example, a blind learner will be able to enable the Voicing
+feature, even if the simulation does not fully support Interactive Description. Having a fully accessible Preferences
+Menu supports learner agency in accessing and using any features in the Preferences Menu that can aid in their learning
+process.
 
 ## General Description Design and Instrumentation Process
 
 ### 1. Identify the components that require instrumentation
 
 Start by identifying components that need to be made accessible. If your sim includes sim-specific components for
-Preferences, you will need to instrument them and design descriptions for them. Otherwise, you are done! The shared components and tabs for Preferences are already instrumented for screen reader accessibility.
+Preferences, you will need to instrument them and design descriptions for them. Otherwise, you are done! The shared
+components and tabs for Preferences are already instrumented for screen reader accessibility.
 
 ### 2. Set component options for Interactive Description
 
@@ -26,11 +31,14 @@ Most components will require a few additional options to be set in order to be s
 
 ### 3. Inspect components with the a11y-view
 
-Once you have set the component options and added descriptions to the component, use the 'a11y-view' for the sim to make sure that accessible content (i.e., the added descriptions) is displayed correctly.
+Once you have set the component options and added descriptions to the component, use the 'a11y-view' for the sim to make
+sure that accessible content (i.e., the added descriptions) is displayed correctly.
 
 ### 4. Test with a screen reader
 
-Use a screen reader to navigate and find the instrumented components, interact with them using the keyboard, and verify that the descriptions you hear work well when delivered through the screen reader experience. Do not use the A11y View tool for step.
+Use a screen reader to navigate and find the instrumented components, interact with them using the keyboard, and verify
+that the descriptions you hear work well when delivered through the screen reader experience. Do not use the A11y View
+tool for step.
 
 ## Detailed Instrumentation Process and Description Design Tips
 
@@ -41,15 +49,22 @@ options you can set on a Node for accessibility. But most common code components
 set their accessible content (i.e., the descriptions you add). These options let you set things like:
 
 - The accessible name (or ```labelContent```).
-- The help text description (or ```descriptionContent```), i.e., an optional description that provides some contextual information about what the component does. If you need a help text description, it is good practice to start the help text with a verb.
-- Depending on the component type, you may need object responses to communicate current and changed values. Not all interactive components require object responses.
-- Depending on the component type, you may need context responses to succinctly confirm or describe the resulting change to the surrounding context that results from the action taken on the component.
+- The help text description (or ```descriptionContent```), i.e., an optional description that provides some contextual
+  information about what the component does. If you need a help text description, it is good practice to start the help
+  text with a verb.
+- Depending on the component type, you may need object responses to communicate current and changed values. Not all
+  interactive components require object responses.
+- Depending on the component type, you may need context responses to succinctly confirm or describe the resulting change
+  to the surrounding context that results from the action taken on the component.
 
-Note that in the Preferences Menu, both the name and the help text description are visually displayed. This is not the case for simulation description design.
+Note that in the Preferences Menu, both the name and the help text description are visually displayed. This is not the
+case for simulation description design.
 
 Here are two examples from the Preferences Menu that use the options for a sun/Checkbox:
 
-**Checkbox Description Design Tips:** You can potentially avoid the need for help text by creating an action-oriented name that starts with a verb and context responses that succinctly confirm the success of the action (see second example).
+**Checkbox Description Design Tips:** You can potentially avoid the need for help text by creating an action-oriented
+name that starts with a verb and context responses that succinctly confirm the success of the action (see second
+example).
 
 ```js
 const myCheckbox = new Checkbox( someBooleanProperty, someContentNode, {
@@ -74,7 +89,8 @@ const myCheckbox = new Checkbox( someBooleanProperty, someContentNode, {
 
 Here is an example from Density's Simulation Tab that uses the options for a sun/AquaRadioButtonGroup:
 
-**Radio button group Description Design Tips:** Radio butttons rarely need context responses. Consider using "Choose" as part of the group name or help text, and always spell out abbreviations and symbols for screen reader accessibility.
+**Radio button group Description Design Tips:** Radio butttons rarely need context responses. Consider using "Choose" as
+part of the group name or help text, and always spell out abbreviations and symbols for screen reader accessibility.
 
 ```js
 // labelContent sets an accessible name on each radio button in the group.
@@ -99,7 +115,11 @@ const myRadioButtonGroup = new AquaRadioButtonGroup( someProperty, items, {
 
 Here is an example of using the options for a sun/Slider implemented for Quadrilateral's Input Tab:
 
-**Slider Description Design Tips:** Sliders always need a range of object responses to communicate their current and changed values. Object responses can be quantitative or qualitative. Be mindful of where you might need to adjust for singular or plural wording, e.g., "1 value" versus "5 values". A help text description is often helpful but always optional. For the Preferences Menu, context responses for slider components are likely not needed. This is not the case for sliders in simulations.
+**Slider Description Design Tips:** Sliders always need a range of object responses to communicate their current and
+changed values. Object responses can be quantitative or qualitative. Be mindful of where you might need to adjust for
+singular or plural wording, e.g., "1 value" versus "5 values". A help text description is often helpful but always
+optional. For the Preferences Menu, context responses for slider components are likely not needed. This is not the case
+for sliders in simulations.
 
 ```js
 const mySlider = new Slider( someProperty, {
@@ -125,9 +145,12 @@ const myText = new Text( 'My Text', {
 
 ### Reviewing components with a11y-view
 
-The "a11y-view" is a debugging tool that lets you see the descriptions that have been designed for the simulation. The ally-view is not a full representation of the screen reader experience, but it helpfully displays all the content that screen reader software can access and read out. The a11y-view is automatically generated for sims that support Interactive Description. 
+The "a11y-view" is a debugging tool that lets you see the descriptions that have been designed for the simulation. The
+ally-view is not a full representation of the screen reader experience, but it helpfully displays all the content that
+screen reader software can access and read out. The a11y-view is automatically generated for sims that support
+Interactive Description.
 
-You can run the a11y-view for a simulation from phetmarks. 
+You can run the a11y-view for a simulation from phetmarks.
 Or, go to http://localhost:8080/{{SIMULATION}}/{{SIMULATION}}_a11y_view.html?brand=phet&ea&debugger.
 
 Open the Preferences dialog and make sure that all of your components have the name and help text you expect.
@@ -140,10 +163,12 @@ With that information, you should be able to turn on a screen reader, navigate t
 through descriptions and interact with the described components in the Preferences Menu.
 
 ## Examples
+
 - See greenhouse-effect for an example of instrumented simulation preferences.
 
 ## Additional Resources
 
-For a more thorough guide to Interactive Description implementation, please see the interactive-description-technical-guide.md.
+For a more thorough guide to Interactive Description implementation, please see the
+interactive-description-technical-guide.md.
 The fundamental scenery component for accessibility
 is [ParallelDOM.ts](https://github.com/phetsims/scenery/blob/main/js/accessibility/pdom/ParallelDOM.ts)

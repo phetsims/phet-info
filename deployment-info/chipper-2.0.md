@@ -195,7 +195,6 @@ NOTE: The `--brands` you include in the command will be set as the only supporte
 branch in the `package.json`.
 NOTE: It will initialize the branch to a version of 1.0.0-rc.0, and then increment/deploy to 1.0.0-rc.1.
 
-
 ### RC/production deployment on an existing branch
 
 For deploying a RC (Release Candidate), execute:
@@ -244,7 +243,8 @@ Otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
     something went wrong before. Talk to @jonathanolson?
   - If there IS NO branch, create it in the common repo with `git checkout -b {{SIM}}-{{BRANCH}}`,
     e.g. `git checkout -b chains-1.2`
-- Apply the change to the dependency's branch (it's almost always a cherry-pick, e.g. `git cherry-pick -x {{SHA}}` in the
+- Apply the change to the dependency's branch (it's almost always a cherry-pick, e.g. `git cherry-pick -x {{SHA}}` in
+  the
   common repo).
 - Test it. You can `grunt` in the sim repo (the `checkout-target` above did the NPM magic for it to work)
 - Push the change to the common branch (e.g. `git push origin chains-1.2`)

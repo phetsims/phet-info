@@ -49,13 +49,15 @@ following list specifies essential items for a PhET Developer:
   will allow you to push code to sim repos and common code repos.
 - Set up a Slack account and join the phetsims workspace (you should receive an invite to join). From here, join the
   #general, #dev-public, #developer, and #continuous-testing channels.
-    - Be sure to set notifications in #continuous-testing to "All messages".
-    - Check with your mentor about any other relevant channels to join.
-    - If you are not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on
-      how to use it.
+  - Be sure to set notifications in #continuous-testing to "All messages".
+  - Check with your mentor about any other relevant channels to join.
+  - If you are not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on
+    how to use it.
 - Set up your account for Monday.com
-    - You will need an invitation from the phetsims account to be able to join. If you have not received one ask your mentor for next steps.
-    - Refer to the [dev learning center document](https://phetsims.monday.com/docs/4142228659) to learn more about navigating and using Monday.com
+  - You will need an invitation from the phetsims account to be able to join. If you have not received one ask your
+    mentor for next steps.
+  - Refer to the [dev learning center document](https://phetsims.monday.com/docs/4142228659) to learn more about
+    navigating and using Monday.com
 
  <a id='env-setup'>
 
@@ -66,18 +68,18 @@ Itching to dig into the code? The following are the steps needed to start sim de
 - Follow the steps in
   the [Getting Started](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#getting-started)
   section of the PhET Development Overview doc.
-    - Install some command line programs
-    - Get a copy of phet repos
-    - Try running a sim locally on your machine
+  - Install some command line programs
+  - Get a copy of phet repos
+  - Try running a sim locally on your machine
 - Set up an IDE so you can start writing code.
-    - Most developers use Webstorm or IntelliJ IDEA, recommended instructions can be found in
-      the [IDE setup document](https://github.com/phetsims/phet-info/blob/main/ide/idea/setup.md).
+  - Most developers use Webstorm or IntelliJ IDEA, recommended instructions can be found in
+    the [IDE setup document](https://github.com/phetsims/phet-info/blob/main/ide/idea/setup.md).
 - Before you start committing and pushing code to PhET repos, you should set up pre-commit hooks.
-    - Pre-Commit Hooks prevent developers from committing code that has various types of errors, most notably ESLint and
-      TypeScript errors.
-    - Follow step 13.
-      of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
-      in the PhET Development Overview doc for instructions on setting them up.
+  - Pre-Commit Hooks prevent developers from committing code that has various types of errors, most notably ESLint and
+    TypeScript errors.
+  - Follow step 13.
+    of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
+    in the PhET Development Overview doc for instructions on setting them up.
 
 <a id='intro-dev'>
 
@@ -94,13 +96,13 @@ this workflow are beyond the scope of this document. However, working off of mai
 pull, push, and commit behaviors.
 
 - Pull code from all repos, every morning.
-    - Recommended to use the `pull-all.sh` script in perennial
-    - Continue to pull frequently throughout the day
+  - Recommended to use the `pull-all.sh` script in perennial
+  - Continue to pull frequently throughout the day
 - Do not commit broken code.
-    - Sims should load, test, and lint without errors
-    - Pre-Commit Hooks help catch errors, read more below.
+  - Sims should load, test, and lint without errors
+  - Pre-Commit Hooks help catch errors, read more below.
 - Push code frequently (some devs push after every commit).
-    - Recommended to use the `push-all.sh` script in perennial
+  - Recommended to use the `push-all.sh` script in perennial
 
 ### Pre-Commit Hooks
 
@@ -109,36 +111,36 @@ be frustrating and error-prone to discover these errors for the first time when 
 
 - Run the script `chipper/js/scripts/precommit-hook-multi.js` intermittently during development to avoid surprises when
   you commit.
-    - Results are cached for efficiency and will only run on repos with working copy changes.
+  - Results are cached for efficiency and will only run on repos with working copy changes.
 - Set `chipper/js/scripts/precommit-hook-multi.js` as
   an [External Tool](https://www.jetbrains.com/help/idea/settings-tools-external-tools.html) in WebStorm/ IntelliJ.
-    - You can bind external tools to a key command for ease-of-use.
+  - You can bind external tools to a key command for ease-of-use.
 
 ### Debugging
 
 - Console.log
-    - A favorite amongst JavaScript developers, console.log allows you to log values to the console, which can help
-      developers
-      take a peek into what is happening in the code at runtime.
+  - A favorite amongst JavaScript developers, console.log allows you to log values to the console, which can help
+    developers
+    take a peek into what is happening in the code at runtime.
 - Debugger
-    - You can insert the `debugger` keyword in code to set a breakpoint that allows you to explore code in a paused
-      state in a console.
+  - You can insert the `debugger` keyword in code to set a breakpoint that allows you to explore code in a paused
+    state in a console.
 - [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
-    - Chrome Dev Tools is built into the Chrome browser and provides a set of powerful web development tools for
-      debugging and examining code.
-    - Most developers on the team use Chrome for development and testing for performance and bugs on other browsers. If
-      you
-      have a different preference do not feel obligated to use Chrome.
-    - This is a [handy tutorial](https://developer.chrome.com/docs/devtools/javascript/) for debugging JavaScript in
-      Chrome Dev Tools.
+  - Chrome Dev Tools is built into the Chrome browser and provides a set of powerful web development tools for
+    debugging and examining code.
+  - Most developers on the team use Chrome for development and testing for performance and bugs on other browsers. If
+    you
+    have a different preference do not feel obligated to use Chrome.
+  - This is a [handy tutorial](https://developer.chrome.com/docs/devtools/javascript/) for debugging JavaScript in
+    Chrome Dev Tools.
 - Helper Tool
-    - The Helper tool will display information about PhET components, helping developers navigate and implement the
-      internal
-      code.
-    - How to use:
-        - Load a sim or common code repo
-        - Press `Ctrl+Shift+H` (The helper tool box will appear)
-        - Click on the component you want to know more about
+  - The Helper tool will display information about PhET components, helping developers navigate and implement the
+    internal
+    code.
+  - How to use:
+    - Load a sim or common code repo
+    - Press `Ctrl+Shift+H` (The helper tool box will appear)
+    - Click on the component you want to know more about
 
 ### Phetmarks
 
@@ -224,7 +226,9 @@ You can run Aqua locally, which is useful when trying to verify common code chan
 PhET has a Slack channel called "continuous-testing" which is used by the server to notify developers when some major
 status change occurs for the continuous testing process. The underlying process that powers these notifications is
 called
-continuous testing quick (CTQ), and is the same service as the test boxes at the top of continuous-report. For example, if the server detects a lint error that ended up in the code base, the server will send a message to the "continuous-testing" Slack channgel. Sometimes,
+continuous testing quick (CTQ), and is the same service as the test boxes at the top of continuous-report. For example,
+if the server detects a lint error that ended up in the code base, the server will send a message to the "
+continuous-testing" Slack channgel. Sometimes,
 errors triggered here are false positives, when only half of a changeset is picked up (mid-pull on a developer
 machine).
 In this case, we note the error on slack with a bird emoji (dodo/turkey/etc) to signify that CTQ should pass on the next
@@ -312,7 +316,7 @@ although if something that is considered a design issue is found, this may be as
 
 Once an acceptable level of quality has been achieved, the sim is published using the automated tools.
 
-On occasion, a decision is made to publish a sim to the main site before it is 100% complete. These are called 
+On occasion, a decision is made to publish a sim to the main site before it is 100% complete. These are called
 "prototype publications", and the process for testing and publishing a prototype is similar to that described above, but
 there are some variations. The details are described in the documents linked below, and your mentor should be able to
 help if this comes up for a sim you're developing.
@@ -356,20 +360,29 @@ graph LR
 ## 👷‍♀ Project Management
 
 PhET's approach and systems for project management are constantly evolving, especially as PhET continues to grow.
-Currently we have a very flat management structure, and the development team works together to bring Epics and other goals to the attention of the wider organization.
+Currently we have a very flat management structure, and the development team works together to bring Epics and other
+goals to the attention of the wider organization.
 All developers should feel free to suggest improvements to the project management process. Also,
 please update this section of the onboarding document if you find that anything you read here is no longer accurate or
 pertinent.
 
 ### Iterations
 
-PhET transitioned to an agile style working environment in early 2023. This transition included the start of an "iteration" process. Each iteration ranges from 2-3 weeks depending on the needs and schedule of the organization. The director of PhET will identify the priorities for each iteration, and each iteration team will then choose tasks (or goals), that help drive the progress and work of each iteration. Many of the priorities for each iteration are driven largely by the grants that fund the work that we do and by the needs of
-the simulation users. We currently use Monday.com to organize our iterations as well as short term and long term roadmaps. You can find more information about the iteration process [here](https://phetsims.monday.com/docs/4639020997)
+PhET transitioned to an agile style working environment in early 2023. This transition included the start of an "
+iteration" process. Each iteration ranges from 2-3 weeks depending on the needs and schedule of the organization. The
+director of PhET will identify the priorities for each iteration, and each iteration team will then choose tasks (or
+goals), that help drive the progress and work of each iteration. Many of the priorities for each iteration are driven
+largely by the grants that fund the work that we do and by the needs of
+the simulation users. We currently use Monday.com to organize our iterations as well as short term and long term
+roadmaps. You can find more information about the iteration process [here](https://phetsims.monday.com/docs/4639020997)
 
 ### Weekly Meetings
 
-The development group meets weekly (unless it is a iteration planning week) to discuss items that are added to the agenda, and to work
-through open issues that need the help or input of the larger team. These meetings also serve as a time to elevate issues that may need more time and resources to accomplish. The dev team discusses goals for the codebase at large and then votes on what issues should be elevated and scheduled for iteration planning.
+The development group meets weekly (unless it is a iteration planning week) to discuss items that are added to the
+agenda, and to work
+through open issues that need the help or input of the larger team. These meetings also serve as a time to elevate
+issues that may need more time and resources to accomplish. The dev team discusses goals for the codebase at large and
+then votes on what issues should be elevated and scheduled for iteration planning.
 
 The agenda and history for this meeting can be found in
 this [google doc](https://docs.google.com/document/d/1bAPEP1iUxQRuCSLHkrwjAH-948kB-sBN3hCC54g-8dc/edit) (We update this
@@ -404,14 +417,14 @@ documents that might be useful, it's just a good list to start with. If a new de
 a particular topic that is not listed below, https://github.com/phetsims/phet-info is a good place to start. After
 that, it's probably best to ask around.
 
-| Doc                                                                                                                 | Contents                                                                          |
-|---------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| [Deployment Info for chipper 2.0](../deployment-info/chipper-2.0.md)                                                | A guide to deploying simulations for testing and ultimately to the website        |
-| [New Dev Onboarding](./new-dev-onboarding.md)                                                                       | A guide and resource for new sim developers (this document)                       |
-| [PhET Code Review Checklist](../checklists/code-review-checklist.md)                                                | A checklist for evaluating simulation code                                        |
-| [PhET Development Overview](./phet-development-overview.md)                                                         | A checklist for evaluating simulation code                                        |
-| [PhET Quarterly Goal Planning](https://github.com/orgs/phetsims/projects/41/views/1)                                | Goals for current quarter (not really a doc, but important)                       |
-| [PhET Software Design Patterns](./phet-software-design-patterns.md)                                                 | Provides information on how PhET uses various software design patterns            |
+| Doc                                                                                                               | Contents                                                                          |
+|-------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| [Deployment Info for chipper 2.0](../deployment-info/chipper-2.0.md)                                              | A guide to deploying simulations for testing and ultimately to the website        |
+| [New Dev Onboarding](./new-dev-onboarding.md)                                                                     | A guide and resource for new sim developers (this document)                       |
+| [PhET Code Review Checklist](../checklists/code-review-checklist.md)                                              | A checklist for evaluating simulation code                                        |
+| [PhET Development Overview](./phet-development-overview.md)                                                       | A checklist for evaluating simulation code                                        |
+| [PhET Quarterly Goal Planning](https://github.com/orgs/phetsims/projects/41/views/1)                              | Goals for current quarter (not really a doc, but important)                       |
+| [PhET Software Design Patterns](./phet-software-design-patterns.md)                                               | Provides information on how PhET uses various software design patterns            |
 | [Private Features for PhET Team Members](https://github.com/phetsims/special-ops/blob/main/doc/phetTeamMember.md) | Information on hidden features. This comes up most often during game development. |
-| [Responsible Devs](../sim-info/responsible_dev.md)                                                                  | Associates repos with the developer who is responsible for maintenance            |
-| [TypeScript Conventions](./typescript-conventions.md)                                                               | PhET's TypeScript conventions                                                     |
+| [Responsible Devs](../sim-info/responsible_dev.md)                                                                | Associates repos with the developer who is responsible for maintenance            |
+| [TypeScript Conventions](./typescript-conventions.md)                                                             | PhET's TypeScript conventions                                                     |

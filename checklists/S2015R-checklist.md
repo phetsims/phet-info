@@ -1,6 +1,7 @@
 Checklist for S2015R milestone (GitHub issues labeled "Summer 2015 redeploy")
 
 **Developer**
+
 - [ ] Review outstanding issues, mark what will be addressed for redeploy (@ariel-phet and original developer). Then
   mark these issues with a milestone.
 - [ ] Look over the code review checklist, decide if code review should be
@@ -13,6 +14,7 @@ Checklist for S2015R milestone (GitHub issues labeled "Summer 2015 redeploy")
 - [ ] Address RC issues
 
 **QA**
+
 - [ ] stringTest=double
 - [ ] stringTest=long
 - [ ] stringTest=X (short strings)
@@ -21,9 +23,10 @@ Checklist for S2015R milestone (GitHub issues labeled "Summer 2015 redeploy")
 - [ ] showPointerAreas (touchArea=red, mouseArea=blue)
 - [ ] Full screen test
 - [ ] Perform RC testing
- - [ ] Reference issues to RC test task
+- [ ] Reference issues to RC test task
 
 **Design/Admin**
+
 - [ ] Rosetta test (Opening sim to trusted translators for beta)
 - [ ] Check teacher tips are up to date
 - [ ] Check sim primer is up to date

@@ -13,43 +13,75 @@ the [GitHub Discussions forum](https://github.com/orgs/phetsims/discussions).
 
 **[Getting Started](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#getting-started)**
 
-**[Creating a New Sim](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#creating-a-new-sim)**
+*
+*[Creating a New Sim](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#creating-a-new-sim)
+**
 
-**[Building and Testing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#building-and-testing)**
+*
+*[Building and Testing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#building-and-testing)
+**
 
-**[Source Code and Dependencies](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#source-code-and-dependencies)**
+*
+*[Source Code and Dependencies](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#source-code-and-dependencies)
+**
 
-**[Checking out the HTML5 Code from GitHub](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#checking-out-the-html5-code-from-github)**
+*
+*[Checking out the HTML5 Code from GitHub](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#checking-out-the-html5-code-from-github)
+**
 
-**[Main is Unstable: Accessing Rigorously-Tested Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#main-is-unstable-accessing-rigorously-tested-code)**
+*
+*[Main is Unstable: Accessing Rigorously-Tested Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#main-is-unstable-accessing-rigorously-tested-code)
+**
 
-**[Original Java/Flash Source Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#original-javaflash-source-code)**
+*
+*[Original Java/Flash Source Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#original-javaflash-source-code)
+**
 
-**[3rd-Party Dependencies](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#3rd-party-dependencies)**
+*
+*[3rd-Party Dependencies](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#3rd-party-dependencies)
+**
 
 **[Licensing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#licensing)**
 
-**[Coding Style Guidelines](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#coding-style-guidelines)**
+*
+*[Coding Style Guidelines](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#coding-style-guidelines)
+**
 
 **[Platforms](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#platforms)**
 
-**[Modularity with ES6 Modules](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#modularity-with-es6-modules)**
+*
+*[Modularity with ES6 Modules](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#modularity-with-es6-modules)
+**
 
 **[Layout](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#layout)**
 
-**[Compiling the Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#compiling-the-code)**
+*
+*[Compiling the Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#compiling-the-code)
+**
 
-**[Offline Operation](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#offline-operation)**
+*
+*[Offline Operation](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#offline-operation)
+**
 
-**[Published Versions](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#published-versions)**
+*
+*[Published Versions](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#published-versions)
+**
 
-**[Development Process and Checklist](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#development-process-and-checklist)**
+*
+*[Development Process and Checklist](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#development-process-and-checklist)
+**
 
-**[Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)**
+*
+*[Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
+**
 
-**[Working with GitHub Issues](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#working-with-github-issues)**
+*
+*[Working with GitHub Issues](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#working-with-github-issues)
+**
 
-**[Embedding a Simulation in Your Website](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#embedding-a-simulation-in-your-website)**
+*
+*[Embedding a Simulation in Your Website](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#embedding-a-simulation-in-your-website)
+**
 
 ## Getting Started
 
@@ -216,34 +248,34 @@ it is made up of many separate, modular components.
 
 ### View - Common Code
 
-| Repository  | LOC | Description |
-| ------------- | ------------- | ---------- |
-| [joist](https://github.com/phetsims/joist/)  | 10,000  | Simulation loading, homescreen + navigation bar, screen management. Uses some user interface components from [sun](https://github.com/phetsims/sun/). Uses [scenery](https://github.com/phetsims/scenery/) to render and process input. Runs the animation loop.
-| [sun](https://github.com/phetsims/sun/) | 13,000  | Graphical user interface components, such as buttons and checkboxes which could be useful in any application context. Built using [scenery](https://github.com/phetsims/scenery/).
-| [scenery-phet](https://github.com/phetsims/scenery-phet/)  | 25,000  | Simulation-specific components, such as probes, sensors, buckets, magnifying glasses, etc. Built using [scenery](https://github.com/phetsims/scenery/).
-| [scenery](https://github.com/phetsims/scenery/)  | 86,000  | Foundational library for representing graphics (rendering to SVG, canvas or WebGL), handling input and generally abstraction for the browser and cross-platform support. Shapes are represented using [kite](https://github.com/phetsims/kite/). Observer and emitter patterns use [axon](https://github.com/phetsims/axon/). Support for alternative input and accessibility features.
-| [tambo](https://github.com/phetsims/tambo/)  | 6,000  | Sound effects and sonification. Uses [axon](https://github.com/phetsims/axon/) for some observer/listeners support.
-| [brand](https://github.com/phetsims/brand/)  | 100  | Provides support for the main supported brands "PhET" and "PhET-iO" and hooks for clients to develop their own branding.
-| [twixt](https://github.com/phetsims/brand/)  | 2,000  | Support for tweening and animation. Can be used to animate user interface components or artwork in the view or model elements directly.
+| Repository                                                | LOC    | Description                                                                                                                                                                                                                                                                                                                                                                             |
+|-----------------------------------------------------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [joist](https://github.com/phetsims/joist/)               | 10,000 | Simulation loading, homescreen + navigation bar, screen management. Uses some user interface components from [sun](https://github.com/phetsims/sun/). Uses [scenery](https://github.com/phetsims/scenery/) to render and process input. Runs the animation loop.                                                                                                                        
+| [sun](https://github.com/phetsims/sun/)                   | 13,000 | Graphical user interface components, such as buttons and checkboxes which could be useful in any application context. Built using [scenery](https://github.com/phetsims/scenery/).                                                                                                                                                                                                      
+| [scenery-phet](https://github.com/phetsims/scenery-phet/) | 25,000 | Simulation-specific components, such as probes, sensors, buckets, magnifying glasses, etc. Built using [scenery](https://github.com/phetsims/scenery/).                                                                                                                                                                                                                                 
+| [scenery](https://github.com/phetsims/scenery/)           | 86,000 | Foundational library for representing graphics (rendering to SVG, canvas or WebGL), handling input and generally abstraction for the browser and cross-platform support. Shapes are represented using [kite](https://github.com/phetsims/kite/). Observer and emitter patterns use [axon](https://github.com/phetsims/axon/). Support for alternative input and accessibility features. 
+| [tambo](https://github.com/phetsims/tambo/)               | 6,000  | Sound effects and sonification. Uses [axon](https://github.com/phetsims/axon/) for some observer/listeners support.                                                                                                                                                                                                                                                                     
+| [brand](https://github.com/phetsims/brand/)               | 100    | Provides support for the main supported brands "PhET" and "PhET-iO" and hooks for clients to develop their own branding.                                                                                                                                                                                                                                                                
+| [twixt](https://github.com/phetsims/brand/)               | 2,000  | Support for tweening and animation. Can be used to animate user interface components or artwork in the view or model elements directly.                                                                                                                                                                                                                                                 
 
 ### Model - Common Code
 
-| Repository  | LOC | Description |
-| ------------- | ------------- | ---------- |
-| [kite](https://github.com/phetsims/kite/)  | 16,000  | Shapes and geometry. Mathematics implemented using [dot](https://github.com/phetsims/dot/)
-| [dot](https://github.com/phetsims/dot/)  | 21,000  | Mathematical objects such as Vector, Matrix, and corresponding numerical algorithms
-| [axon](https://github.com/phetsims/axon/)  | 8,000  | Data structures for the observer pattern (Property) and listener pattern (Emitters).
-| [phet-core](https://github.com/phetsims/phet-core/)  | 4,000  | Basic utility & support data structures and algorithms
-| [tandem](https://github.com/phetsims/tandem/)  | 5,000  | Simulation-side code to support PhET-iO instrumentation.
+| Repository                                          | LOC    | Description                                                                                |
+|-----------------------------------------------------|--------|--------------------------------------------------------------------------------------------|
+| [kite](https://github.com/phetsims/kite/)           | 16,000 | Shapes and geometry. Mathematics implemented using [dot](https://github.com/phetsims/dot/) 
+| [dot](https://github.com/phetsims/dot/)             | 21,000 | Mathematical objects such as Vector, Matrix, and corresponding numerical algorithms        
+| [axon](https://github.com/phetsims/axon/)           | 8,000  | Data structures for the observer pattern (Property) and listener pattern (Emitters).       
+| [phet-core](https://github.com/phetsims/phet-core/) | 4,000  | Basic utility & support data structures and algorithms                                     
+| [tandem](https://github.com/phetsims/tandem/)       | 5,000  | Simulation-side code to support PhET-iO instrumentation.                                   
 
 ### Tooling & Other
 
-| Repository  | LOC | Description |
-| ------------- | ------------- | ---------- |
-| [chipper](https://github.com/phetsims/chipper/)  | 10,000  | Tools for developing and building simulations. Uses code in [perennial-alias](https://github.com/phetsims/perennial-alias/) for some tasks.
-| [perennial](https://github.com/phetsims/perennial/)  | 11,000  | Maintenance tools that won't change with different versions of chipper checked out (always runs in main).
-| [perennial-alias](https://github.com/phetsims/perennial/)  | 11,000  | Copy of perennial that can run on non-main SHAs.
-| [sherpa](https://github.com/phetsims/sherpa/)  | -  | All of our 3rd-party dependencies. Some such as font-awesome or lodash are used in every simulation and some such as numeric or three.js are sim-specific.
+| Repository                                                | LOC    | Description                                                                                                                                                |
+|-----------------------------------------------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [chipper](https://github.com/phetsims/chipper/)           | 10,000 | Tools for developing and building simulations. Uses code in [perennial-alias](https://github.com/phetsims/perennial-alias/) for some tasks.                
+| [perennial](https://github.com/phetsims/perennial/)       | 11,000 | Maintenance tools that won't change with different versions of chipper checked out (always runs in main).                                                  
+| [perennial-alias](https://github.com/phetsims/perennial/) | 11,000 | Copy of perennial that can run on non-main SHAs.                                                                                                           
+| [sherpa](https://github.com/phetsims/sherpa/)             | -      | All of our 3rd-party dependencies. Some such as font-awesome or lodash are used in every simulation and some such as numeric or three.js are sim-specific. 
 
 ## Checking out the HTML5 Code from GitHub
 

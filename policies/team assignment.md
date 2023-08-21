@@ -1,7 +1,9 @@
 When creating a new repo, access should be managed by adding Teams, not individuals.
 
 _NOTE:
-The 'phet-dev' machine user is a member of APPS_DEV, BROWSER_SIDE_COMMON_CODE, PhET-iO, SERVER_CODE, SIMS_DEV, and WEBSITE_DEV teams. It is REQUIRED to add the Teams and Roles below to all new repos so that the 'phet-dev' machine user can properly clone/pull the repo for automated processes)._
+The 'phet-dev' machine user is a member of APPS_DEV, BROWSER_SIDE_COMMON_CODE, PhET-iO, SERVER_CODE, SIMS_DEV, and
+WEBSITE_DEV teams. It is REQUIRED to add the Teams and Roles below to all new repos so that the 'phet-dev' machine user
+can properly clone/pull the repo for automated processes)._
 
 <h2>New sim repo</h2>
 
@@ -26,13 +28,13 @@ The 'phet-dev' machine user is a member of APPS_DEV, BROWSER_SIDE_COMMON_CODE, P
 
 <h2>New browser-side common code repo</h2>
 
-| Team                    | Role       |
-|-------------------------|------------|
-| FULL_ACCESS_DEV         | Admin      |
-| Quality Assurance       | Triage     |
-| BROWSER_SIDE_COMMON_CODE| PhET Write |
-| Development       | Triage     |
-| Design            | Triage     |
+| Team                     | Role       |
+|--------------------------|------------|
+| FULL_ACCESS_DEV          | Admin      |
+| Quality Assurance        | Triage     |
+| BROWSER_SIDE_COMMON_CODE | PhET Write |
+| Development              | Triage     |
+| Design                   | Triage     |
 
 <h2>New server repo</h2>
 

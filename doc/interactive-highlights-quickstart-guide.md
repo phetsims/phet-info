@@ -120,6 +120,7 @@ myNode.interactiveHighlightEnabled = false
 ```
 
 ## Disposal
+
 InteractiveHighlighting adds listeners to the Node to activate it on mouse/touch input. Remember to dispose the Node
 composed with InteractiveHighlighting if you need to.
 
