@@ -27,7 +27,7 @@ We are all working towards a common goal, and need to trust that we have the bes
 These are public forums. A simple heuristic to apply is if an outside person were reading comments with no knowledge of
 the participants, would they view the exchange as respectful and collaborative?
 
-### Tone is two way
+### Tone is two-way
 
 To be refined but -- basically consider tone when writing comments, and also try not to infer a tone when reading them
 "Good faith" interpretation of what is written
