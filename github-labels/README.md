@@ -8,11 +8,14 @@ build-local.json. See Getting Started for details.
 ## Getting Started
 
 1. Setup credentials
-  - You must add the developerGithubAccessToken and developerGithubUsername properties to ~/.phet/build-local.json. See
-    https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token
-    for creating a personal access token. Under "Select Scopes", the token should be given full "repo" access.
+
+- You must add the developerGithubAccessToken and developerGithubUsername properties to ~/.phet/build-local.json. See
+  https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token
+  for creating a personal access token. Under "Select Scopes", the token should be given full "repo" access.
+
 2. Install npm packages
-  - The node scripts in this repo require running `npm install` in the phet-info/github-labels directory.
+
+- The node scripts in this repo require running `npm install` in the phet-info/github-labels directory.
 
 ## PhET Github Label operations
 

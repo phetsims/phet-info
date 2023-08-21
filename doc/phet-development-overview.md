@@ -14,72 +14,88 @@ the [GitHub Discussions forum](https://github.com/orgs/phetsims/discussions).
 **[Getting Started](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#getting-started)**
 
 *
+
 *[Creating a New Sim](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#creating-a-new-sim)
 **
 
 *
+
 *[Building and Testing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#building-and-testing)
 **
 
 *
+
 *[Source Code and Dependencies](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#source-code-and-dependencies)
 **
 
 *
+
 *[Checking out the HTML5 Code from GitHub](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#checking-out-the-html5-code-from-github)
 **
 
 *
+
 *[Main is Unstable: Accessing Rigorously-Tested Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#main-is-unstable-accessing-rigorously-tested-code)
 **
 
 *
+
 *[Original Java/Flash Source Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#original-javaflash-source-code)
 **
 
 *
+
 *[3rd-Party Dependencies](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#3rd-party-dependencies)
 **
 
 **[Licensing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#licensing)**
 
 *
+
 *[Coding Style Guidelines](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#coding-style-guidelines)
 **
 
 **[Platforms](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#platforms)**
 
 *
+
 *[Modularity with ES6 Modules](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#modularity-with-es6-modules)
 **
 
 **[Layout](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#layout)**
 
 *
+
 *[Compiling the Code](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#compiling-the-code)
 **
 
 *
+
 *[Offline Operation](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#offline-operation)
 **
 
 *
+
 *[Published Versions](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#published-versions)
 **
 
 *
+
 *[Development Process and Checklist](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#development-process-and-checklist)
 **
 
 *
+
 *[Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
 **
 
 *
+
 *[Working with GitHub Issues](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#working-with-github-issues)
 **
 
 *
+
 *[Embedding a Simulation in Your Website](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#embedding-a-simulation-in-your-website)
 **
 

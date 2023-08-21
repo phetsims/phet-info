@@ -120,8 +120,8 @@ In the phet/git directory, run this command:
 9. Click OK
 6. Setup the style template:
 1. Download the template xml file from https://github.com/phetsims/phet-info/blob/main/ide/idea/phet-idea-codestyle.xml
-2. Put the file in the local IntelliJ directory.  
-   * Try $HOMEPATH$/.IntelliJIdea14/config/codestyles
+2. Put the file in the local IntelliJ directory.
+  * Try $HOMEPATH$/.IntelliJIdea14/config/codestyles
 3. Restart IntelliJ, go to File > Settings > Editor > Code Style > Java.
 4. Click the "Manage" button next to "Scheme" and select "phet-idea-codestyle".
 
