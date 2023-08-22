@@ -333,7 +333,8 @@ Nested substructure is not yet fully supported.
 - [ ] Is composition favored over inheritance where appropriate?
   See https://en.wikipedia.org/wiki/Composition_over_inheritance.
 - [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary
-  properties/functions). In TypeScript, you can decouple by narrowing the API like so:
+  properties/functions). If you only need a few fields from a large object, pass them in as separate parameters.  The threshold for
+  the number of parameters is up to you - use your judgement. Alternatively in TypeScript, you can decouple by narrowing the API using `Pick`, but this is a bit of a hack. Here's an example:
 
 ```ts
   public constructor( tickMarksVisibleProperty: Property<boolean>,
