@@ -12,7 +12,7 @@
 | equality-explorer-basics         |  7/18/2018 |    375 |     ✓      |   [25%](https://github.com/phetsims/equality-explorer/issues/200)    |             |           |       ✓        | ✓ | |
 | equality-explorer-two-variables  |  7/18/2018 |    283 |     ✓      |   [25%](https://github.com/phetsims/equality-explorer/issues/200)    |             |           |       ✓        | ✓ | |
 | fourier-making-waves             | 10/13/2021 | 13,875 |     ✓      |   75%    |             |           |      [80%](https://github.com/phetsims/fourier-making-waves/issues/225)       | N/A | ✓ |
-| function-builder                 |  7/13/2016 | 10,669 |    [50%](https://github.com/phetsims/function-builder/issues/158)     |          |             |           |      [80%](https://github.com/phetsims/function-builder/issues/156)       | N/A | |
+| function-builder                 |  7/13/2016 | 10,687 |    [54%](https://github.com/phetsims/function-builder/issues/158)     |          |             |           |      [80%](https://github.com/phetsims/function-builder/issues/156)       | N/A | |
 | function-builder-basics          |   6/6/2017 |    805 |    [13%](https://github.com/phetsims/function-builder/issues/158)     |          |             |           |       ✓        | N/A | |
 | gas-properties                   |  8/12/2019 | 12,127 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
 | gases-intro                      |  8/12/2019 |    133 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
