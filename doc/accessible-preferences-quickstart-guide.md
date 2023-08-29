@@ -10,8 +10,8 @@ This document is a quickstart guide for adding Interactive Description to the Pr
 Please see the alternative-input-quickstart-guide.md first. This guide assumes you are familiar with that
 and have enabled Interactive Description in your package.json.
 
-PhET is going to start adding Interactive Description to the Preferences Menu dialog for simulations that support
-alternative input. By adding Interactive Description to our Preferences Menu dialog, learners who rely on screen reader
+PhET is going to start adding Interactive Description to the Preferences dialog for simulations that support
+alternative input. By adding Interactive Description to our Preferences dialog, learners who rely on screen reader
 software are empowered to access essential features. For example, a blind learner will be able to enable the Voicing
 feature, even if the simulation does not fully support Interactive Description. Having a fully accessible Preferences
 Menu supports learner agency in accessing and using any features in the Preferences Menu that can aid in their learning
@@ -38,7 +38,7 @@ sure that accessible content (i.e., the added descriptions) is displayed correct
 
 Use a screen reader to navigate and find the instrumented components, interact with them using the keyboard, and verify
 that the descriptions you hear work well when delivered through the screen reader experience. Do not use the A11y View
-tool for step.
+tool for this step.
 
 ## Detailed Instrumentation Process and Description Design Tips
 
@@ -48,17 +48,14 @@ Screen reader accessibility is supported by scenery/ParallelDOM.ts, a super clas
 options you can set on a Node for accessibility. But most common code components have options you can use to easily
 set their accessible content (i.e., the descriptions you add). These options let you set things like:
 
-- The accessible name (or ```labelContent```).
-- The help text description (or ```descriptionContent```), i.e., an optional description that provides some contextual
+- The accessible name.
+- The help text description, i.e., an optional description that provides some contextual
   information about what the component does. If you need a help text description, it is good practice to start the help
   text with a verb.
 - Depending on the component type, you may need object responses to communicate current and changed values. Not all
   interactive components require object responses.
 - Depending on the component type, you may need context responses to succinctly confirm or describe the resulting change
   to the surrounding context that results from the action taken on the component.
-
-Note that in the Preferences Menu, both the name and the help text description are visually displayed. This is not the
-case for simulation description design.
 
 Here are two examples from the Preferences Menu that use the options for a sun/Checkbox:
 
@@ -126,7 +123,7 @@ const mySlider = new Slider( someProperty, {
   labelContent: 'Smoothing Avergage',
   descriptionContent: 'Adjust number of values used to smooth noise in incoming sensor values from input device.',
 
-  // a range of object responses are required for slider components
+  // spoken every time the slider value changes, describing the new value
   a11yCreateAriaValueText: value => { `${value} values` }
 
   // optional context responses that describe the result of the action
