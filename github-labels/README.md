@@ -27,8 +27,7 @@ build-local.json. See Getting Started for details.
 
 1. Choose a new label following the [labeling-scheme](labeling-scheme.md)
 2. Run `./new-label-all-repos.sh {{new-label-name}} {{new-label-color}}`.  `new-label-color` should be the hexcode with
-   no #
-   symbol, e.g. FF00AA.
+   no # symbol, e.g. FF00AA.
 
 ### To change the text and/or color of a label
 
