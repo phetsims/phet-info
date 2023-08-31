@@ -32,6 +32,7 @@ phet-io:breaking-api-change,B60205
 phet-io:collaboration,006B75
 phet-io:event-stream,bd5404
 phet-io:instance-proxies,FBCA04
+phet-io:migration,E59400
 phet-io:record-and-playback,0E8A16
 phet-io:save-and-load,BFDADC
 priority:1-top,FF007F
