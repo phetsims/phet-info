@@ -33,6 +33,7 @@ known problems, etc.
 
 ```json
 "../chipper/phet-types.d.ts",
+"../chipper/phet-types-module.d.ts",
 "../chipper/node_modules/@types/lodash/index.d.ts",
 "../chipper/node_modules/@types/qunit/index.d.ts"
 ```
@@ -82,7 +83,7 @@ find . -name "*.js" ! -iname "*phet-io-overrides.js"  -exec bash -c 'mv "$1" "${
 2. phettest and CT provide TypeScript support, but do not yet have a good user experience for showing TypeErrors etc.
    And it is not well-vetted.
 3. Please make sure you are using the commit hooks, which are configured to run type checks on typescript repos.
-4. Ambient type definitions are provided in chipper/phet-types.d.ts
+4. Ambient type definitions are provided in chipper/phet-types.d.ts and phet-types-module.d.ts
 5. Transitive dependencies are not always tracked correctly in the build system. This bug has been reported to
    TypeScript. Details in https://github.com/phetsims/chipper/issues/1067
 6. Some common code repos include code outside their directory. This problem is described
