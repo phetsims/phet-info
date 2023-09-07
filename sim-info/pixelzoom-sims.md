@@ -17,7 +17,7 @@
 | gas-properties                   |  8/12/2019 | 12,127 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
 | gases-intro                      |  8/12/2019 |    133 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
 | geometric-optics                 | 10/29/2021 | 12,593 |     1.1      |    ✓     |      ✓      |     ✓     |       ✓        | ✓ | 1.0 |
-| geometric-optics-basics          | 11/30/2022 |     63 |     1.1      |   1.3     |      1.3      |     1.3     |       1.3        | 1.2 | 1.1 |
+| geometric-optics-basics          | 11/30/2022 |     63 |     1.1      |   1.3     |      1.3      |     1.3     |       1.3        | 1.2 | 1.2 |
 | graphing-lines                   |  7/21/2014 | 10,177 |     ✓      |          |             |           |  [25%](https://github.com/phetsims/graphing-lines/issues/140)  | N/A | |
 | graphing-quadratics              |  12/7/2018 |  6,860 |     ✓      |    ✓     |             |           |       ✓        | N/A | |
 | graphing-slope-intercept         |  6/14/2017 |    606 |     ✓      |          |             |           |       ✓        | N/A | |
