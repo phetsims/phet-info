@@ -19,7 +19,7 @@
 | geometric-optics                 | 10/29/2021 | 12,593 |     1.1      |    1.3     |      1.3      |     1.3     |       1.3        | 1.3 | 1.0 |
 | geometric-optics-basics          | 11/30/2022 |     63 |     1.1      |   1.3     |      1.3      |     1.3     |       1.3        | 1.2 | 1.2 |
 | graphing-lines                   |  7/21/2014 | 10,177 |     ✓      |          |             |           |  [25%](https://github.com/phetsims/graphing-lines/issues/140)  | N/A | |
-| graphing-quadratics              |  12/7/2018 |  6,860 |     1.3      |    1.1     |             |           |       ✓        | N/A | |
+| graphing-quadratics              |  12/7/2018 |  6,860 |     1.3      |    1.1     |             |           |       1.3        | N/A | |
 | graphing-slope-intercept         |  6/14/2017 |    606 |     ✓      |          |             |           |       ✓        | N/A | |
 | hookes-law                       | 10/21/2015 |  6,117 |     ✓      |    ✓     |             |           |      [25%](https://github.com/phetsims/hookes-law/issues/81)       | N/A | |
 | models-of-the-hydrogen-atom      | on hold |        |     ✓      |          |             |           |                |   |   |
