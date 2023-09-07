@@ -5,7 +5,7 @@
 | acid-base-solutions              |  4/18/2014 |  3,937 |     1.3      |   1.3    |      1.3     |     1.3     |       1.3        | 1.3 | 1.3 |
 | balancing-chemical-equations     |  7/31/2014 |  4,805 |     ✓      |          |             |           |       ✓        | N/A | |
 | beers-law-lab                    |  8/16/2013 |  6,517 |     1.7      |   1.4     |             |           |       1.7        | 1.7 | |
-| calculus-grapher                 |  4/17/2023 |  9,554 |     ✓      |    ✓     |   [#125](https://github.com/phetsims/calculus-grapher/issues/125)    |           |       ✓        | ✓ | ✓ |
+| calculus-grapher                 |  4/17/2023 |  9,554 |     1.0      |     1.0     |   [#125](https://github.com/phetsims/calculus-grapher/issues/125)    |           |  1.0  |  1.0 |  1.0 |
 | concentration                    | 10/31/2013 |     54 |     1.7      |    1.4     |             |           |       1.7        | 1.7 | |
 | diffusion                        |  8/12/2019 |     53 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
 | equality-explorer                |  7/18/2018 | 13,672 |     ✓      |   [25%](https://github.com/phetsims/equality-explorer/issues/200)    |             |           |       ✓        | ✓ | |
