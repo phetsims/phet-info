@@ -1,4 +1,4 @@
-✓ = completed but not published
+`✓` = completed but not published
 
 ## Status of pixelzoom sims 
 
