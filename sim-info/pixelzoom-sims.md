@@ -1,7 +1,7 @@
+## Status of pixelzoom sims 
+
 `✓` = completed but not published<br>
 `N/A` = not applicable
-
-## Status of pixelzoom sims 
 
 | Simulation                       |        1.0 | latest |   loc | TypeScript | PhET-iO  | Alt Input  | UI Sound  | Dynamic Locale | Simulation Preferences | Color Profile |
 |:---------------------------------|-----------:|:-------:|-------:|:----------:|:--------:|:-----------:|:---------:|:--------------:|:---:|:---:|
