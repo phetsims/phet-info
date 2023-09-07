@@ -10,15 +10,15 @@
 | beers-law-lab                    |  8/16/2013 | 1.7 | 6,517 |     1.7      |   1.4     |             |           |       1.7        | 1.7 | |
 | calculus-grapher                 |  4/17/2023 | 1.0 | 9,554 |     1.0      |     1.0     |   [#125](https://github.com/phetsims/calculus-grapher/issues/125)    |           |  1.0  |  1.0 |  1.0 |
 | concentration                    | 10/31/2013 | 1.7 |    54 |     1.7      |    1.4     |             |           |       1.7        | 1.7 | |
-| diffusion                        |  8/12/2019 |  |    53 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
+| diffusion                        |  8/12/2019 | 1.0 |    53 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
 | equality-explorer                |  7/18/2018 | | 13,672 |     ✓      |   [25%](https://github.com/phetsims/equality-explorer/issues/200)    |             |           |       ✓        | ✓ | |
 | equality-explorer-basics         |  7/18/2018 |  |  375 |     ✓      |   [25%](https://github.com/phetsims/equality-explorer/issues/200)    |             |           |       ✓        | ✓ | |
 | equality-explorer-two-variables  |  7/18/2018 |  | 283 |     ✓      |   [25%](https://github.com/phetsims/equality-explorer/issues/200)    |             |           |       ✓        | ✓ | |
 | fourier-making-waves             | 10/13/2021 | | 13,875 |     ✓      |   75%    |             |           |      [80%](https://github.com/phetsims/fourier-making-waves/issues/225)       | N/A | ✓ |
 | function-builder                 |  7/13/2016 |  | 10,687 |    [54%](https://github.com/phetsims/function-builder/issues/158)     |          |             |           |      [80%](https://github.com/phetsims/function-builder/issues/156)       | N/A | |
 | function-builder-basics          |   6/6/2017 |  |  821 |    [19%](https://github.com/phetsims/function-builder/issues/158)     |          |             |           |       ✓        | N/A | |
-| gas-properties                   |  8/12/2019 |  | 12,127 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
-| gases-intro                      |  8/12/2019 |  |   133 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
+| gas-properties                   |  8/12/2019 | 1.0 | 12,127 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
+| gases-intro                      |  8/12/2019 | 1.0 |   133 |     ✓      |   [25%](https://github.com/phetsims/gas-properties/issues/77)    |             |           |       ✓        | ✓ | ✓ |
 | geometric-optics                 | 10/29/2021 | 1.3 | 12,593 |     1.1      |    1.3     |      1.3      |     1.3     |       1.3        | 1.3 | 1.0 |
 | geometric-optics-basics          | 11/30/2022 | 1.3 |    63 |     1.1      |   1.3     |      1.3      |     1.3     |       1.3        | 1.2 | 1.2 |
 | graphing-lines                   |  7/21/2014 |  | 10,177 |     ✓      |          |             |           |  [25%](https://github.com/phetsims/graphing-lines/issues/140)  | N/A | |
