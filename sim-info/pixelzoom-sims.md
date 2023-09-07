@@ -33,4 +33,4 @@
 | [reactants-products-and-leftovers](https://github.com/phetsims/reactants-products-and-leftovers) |  1/27/2015 | 1.2 | 5,744 |     ✓      |   [25%](https://github.com/phetsims/reactants-products-and-leftovers/issues/78)    |             |           |       ✓        | N/A | |
 | [unit-rates](https://github.com/phetsims/unit-rates)                       |   4/4/2017 | 1.0 | 7,888 |     ✓      |          |             |           |       [5%](https://github.com/phetsims/unit-rates/issues/222)       | N/A | |
 | [vector-addition](https://github.com/phetsims/vector-addition)                  |  11/5/2019 | 1.0 | 10,407 |     ✓      |          |             |           | [0%](https://github.com/phetsims/vector-addition/issues/280) | N/A | |
-| [vector-addition-equations]https://github.com/phetsims/vector-addition-equations)        |  11/5/2019 | 1.0 |   36 |     ✓      |          |             |           |       ✓        | N/A | |
+| [vector-addition-equations](https://github.com/phetsims/vector-addition-equations)        |  11/5/2019 | 1.0 |   36 |     ✓      |          |             |           |       ✓        | N/A | |
