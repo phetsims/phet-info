@@ -25,8 +25,8 @@
 | models-of-the-hydrogen-atom      | on hold |        |     ✓      |          |             |           |                |   |   |
 | molecule-polarity                |  7/26/2017 |  6,665 |     1.3      |    1.2     |             |           |      1.3        | 1.3 | |
 | natural-selection                |   9/1/2020 | 13,808 |     1.5      |    1.2     |             |           |       1.5        | N/A | |
-| ph-scale                         |  8/22/2014 |  6,580 |     ✓      |    ✓     |     [75%](https://github.com/phetsims/ph-scale/issues/249#issuecomment-1319350553)     | [disabled](https://github.com/phetsims/ph-scale/issues/248#issuecomment-1319254656)  |       ✓        | ✓ | |
-| ph-scale-basics                  |   1/7/2014 |     67 |     ✓      |    ✓     |     [75%](https://github.com/phetsims/ph-scale/issues/249#issuecomment-1319350553)     | [disabled](https://github.com/phetsims/ph-scale/issues/248#issuecomment-1319254656)  |       ✓        | ✓ | |
+| ph-scale                         |  8/22/2014 |  6,580 |     1.6      |    1.5     |     [75%](https://github.com/phetsims/ph-scale/issues/249#issuecomment-1319350553)     | [disabled](https://github.com/phetsims/ph-scale/issues/248#issuecomment-1319254656)  |       1.6        | 1.6 | |
+| ph-scale-basics                  |   1/7/2014 |     67 |     1.6      |    1.5     |     [75%](https://github.com/phetsims/ph-scale/issues/249#issuecomment-1319350553)     | [disabled](https://github.com/phetsims/ph-scale/issues/248#issuecomment-1319254656)  |       1.6        | 1.6 | |
 | reactants-products-and-leftovers |  1/27/2015 |  5,744 |     ✓      |   [25%](https://github.com/phetsims/reactants-products-and-leftovers/issues/78)    |             |           |       ✓        | N/A | |
 | unit-rates                       |   4/4/2017 |  7,888 |     ✓      |          |             |           |       [5%](https://github.com/phetsims/unit-rates/issues/222)       | N/A | |
 | vector-addition                  |  11/5/2019 | 10,407 |     ✓      |          |             |           | [0%](https://github.com/phetsims/vector-addition/issues/280) | N/A | |
