@@ -1,4 +1,4 @@
-## Status of @pixelzoom sims 
+## Status of [@pixelzoom](https://github.com/pixelzoom) sims 
 
 `✓` = completed but not published<br>
 `N/A` = not applicable
