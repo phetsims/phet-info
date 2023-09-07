@@ -24,7 +24,7 @@
 | [graphing-lines](https://github.com/phetsims/graphing-lines)                   |  7/21/2014 | 1.3 | 10,176 |     ✓      |          |             |           |  [25%](https://github.com/phetsims/graphing-lines/issues/140)  | N/A | |
 | [graphing-quadratics](https://github.com/phetsims/graphing-quadratics)              |  12/7/2018 | 1.3 | 6,946 |     1.3      |    1.1     |             |           |       1.3        | N/A | |
 | [graphing-slope-intercept](https://github.com/phetsims/graphing-slope-intercept)         |  6/14/2017 | 1.1 |  574 |     ✓      |          |             |           |       ✓        | N/A | |
-| [hookes-law](https://github.com/phetsims/hookes-law)                       | 10/21/2015 |  | 6,107 |     ✓      |    ✓     |             |           |      [25%](https://github.com/phetsims/hookes-law/issues/81)       | N/A | |
+| [hookes-law](https://github.com/phetsims/hookes-law)                       | 10/21/2015 | 1.0 | 6,107 |     ✓      |    ✓     |             |           |      [25%](https://github.com/phetsims/hookes-law/issues/81)       | N/A | |
 | [models-of-the-hydrogen-atom](https://github.com/phetsims/models-of-the-hydrogen-atom)      | on hold |   |     |     ✓      |          |             |           |                |   |   |
 | [molecule-polarity](https://github.com/phetsims/molecule-polarity)                |  7/26/2017 | 1.3 | 6,549 |     1.3      |    1.2     |             |           |      1.3        | 1.3 | |
 | [natural-selection](https://github.com/phetsims/natural-selection)                |   9/1/2020 | 1.5 | 13,524 |     1.5      |    1.2     |             |           |       1.5        | N/A | |
