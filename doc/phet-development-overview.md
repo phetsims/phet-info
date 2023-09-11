@@ -333,11 +333,10 @@ for writing code and documentation:
 
 * We use ESLint to lint our code. See https://github.com/phetsims/chipper/blob/main/eslint/README.md.
 
-*
-
-An [IntelliJ IDEA formatting XML file](https://github.com/phetsims/phet-info/blob/main/ide/idea/phet-idea-codestyle.xml)
-to automatically format code. This is the ground truth for how PhET code should be formatted. Our example-sim also shows
-how to use our libraries idiomatically as well as a good example of code commenting + documentation.
+* An
+  [IntelliJ IDEA formatting XML file](https://github.com/phetsims/phet-info/blob/main/ide/idea/phet-idea-codestyle.xml)
+  to automatically format code. This is the ground truth for how PhET code should be formatted. Our example-sim also
+  shows how to use our libraries idiomatically as well as a good example of code commenting + documentation.
 
 We also tend to agree with most of the guidelines set out in [idiomatic.js](https://github.com/rwldrn/idiomatic.js/).
 
