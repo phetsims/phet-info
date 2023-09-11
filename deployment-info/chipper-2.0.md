@@ -191,9 +191,9 @@ do `grunt create-release --branch=1.7 --brands={{BRANDS}}` (which will handle al
 Release branches should be created using either `grunt rc` or `grunt create-release`, as this sets them up with the
 correct package.json version and dependencies.json content.
 
-NOTE: The `--brands` you include in the command will be set as the only supported brands for the release
-branch in the `package.json`.
-NOTE: It will initialize the branch to a version of 1.0.0-rc.0, and then increment/deploy to 1.0.0-rc.1.
+NOTE: The `--brands` you include in the command will be set as the only supported brands for the release branch in
+the `package.json`. NOTE: It will initialize the branch to a version of 1.0.0-rc.0, and then increment/deploy to
+1.0.0-rc.1.
 
 ### RC/production deployment on an existing branch
 
@@ -244,8 +244,7 @@ Otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
   - If there IS NO branch, create it in the common repo with `git checkout -b {{SIM}}-{{BRANCH}}`,
     e.g. `git checkout -b chains-1.2`
 - Apply the change to the dependency's branch (it's almost always a cherry-pick, e.g. `git cherry-pick -x {{SHA}}` in
-  the
-  common repo).
+  the common repo).
 - Test it. You can `grunt` in the sim repo (the `checkout-target` above did the NPM magic for it to work)
 - Push the change to the common branch (e.g. `git push origin chains-1.2`)
 - If you didn't build it before, run `grunt` in the sim repo.

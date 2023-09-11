@@ -35,5 +35,4 @@
 - [ ] Run `grunt modulify`
 - [ ] update usages of the Namespace file
 - [ ] Looks through all usages in the repo of the previous name to make sure issues links, comments and code are
-  updated.
-  This especially applies to imports for the namespace and strings.
+  updated. This especially applies to imports for the namespace and strings.

@@ -13,8 +13,8 @@ for details and context about conventions based on lint rules.
 ### Philosophy
 
 Familiarize yourself with the TypeScript Design
-Goals: https://github.com/Microsoft/TypeScript/wiki/TypeScript-Design-Goals.
-An important one that is often forgotten is the following:
+Goals: https://github.com/Microsoft/TypeScript/wiki/TypeScript-Design-Goals. An important one that is often forgotten is
+the following:
 
 - "\[the goal is not to\] Apply a sound or "provably correct" type system. Instead, strike a balance between correctness
   and productivity."
@@ -74,8 +74,7 @@ Again, in complex or volatile cases, at the developer preference, the redundant 
   This works well with `StringUnionProperty`.
 * `EnumerationValue` adds rich methods on the instances. Use `EnumerationProperty` for this.
 * Careful!  If you change from string literal union to `EnumerationValue`, the casing convention is different and you
-  will
-  break the PhET-iO API.
+  will break the PhET-iO API.
 * Please see https://github.com/phetsims/wilder/blob/main/js/wilder/model/WilderEnumerationPatterns.ts for details and
   examples.
 
@@ -131,18 +130,16 @@ https://github.com/phetsims/wilder/blob/main/js/wilder/model/WilderOptionsPatter
 #### Use `optionize` instead of `merge`
 
 In the vast majority of cases, `optionize` should be used instead of `merge`. This provided extra type information on
-top
-of the implementation of merge. While there are still some cases where `merge` is in TypeScript code, it is the
-exception
-and not the rule. Please bring any potential new `merge` usage in TypeScript to the attention of the devs so that it can
-be discussed.
+top of the implementation of merge. While there are still some cases where `merge` is in TypeScript code, it is the
+exception and not the rule. Please bring any potential new `merge` usage in TypeScript to the attention of the devs so
+that it can be discussed.
 
 ### Initialization of instance properties
 
 Instance properties can be initialized either where they are declared, or in the constructor, or as parameter properties
 in the constructor parameters. It is up to developer discretion, but please try to be consistent, and adhere to the
-spirit of existing code. In addition, please keep potential future PhET-iO instrumentation in mind. Initializing
-where declaration occurs may result in refactoring when it comes time to pass Tandems to those objects
+spirit of existing code. In addition, please keep potential future PhET-iO instrumentation in mind. Initializing where
+declaration occurs may result in refactoring when it comes time to pass Tandems to those objects
 (see [example issue](https://github.com/phetsims/keplers-laws/issues/103)).
 
 ```ts
@@ -176,9 +173,9 @@ class EventCounter {
 
 #### Statics (class properties)
 
-One-line static properties will likely be better and clearer when grouped with the instance properties declared
-at the top of a class. That said, it is developer preference whether to group them or put them at the bottom of the
-class definition:
+One-line static properties will likely be better and clearer when grouped with the instance properties declared at the
+top of a class. That said, it is developer preference whether to group them or put them at the bottom of the class
+definition:
 
 ```ts
 class Person {
@@ -316,8 +313,8 @@ assertion operator is appropriate:
 
 ### Leverage Excess Property Checking
 
-TypeScript is structurally typed, but has a feature called excess property checking that can, in some situations,
-guard against typos or any form of incorrect object keys. Excess property checking identifies when an object literal is
+TypeScript is structurally typed, but has a feature called excess property checking that can, in some situations, guard
+against typos or any form of incorrect object keys. Excess property checking identifies when an object literal is
 compatible with a target type and disallows properties that are not known in that type. For example:
 
 ```ts
@@ -340,12 +337,10 @@ const p2: Person = otherThing; // Missed opportunity, did not catch my typo.
 ```
 
 Leveraging excess property checking can help us catch potential bugs in the form of typos or incorrect object keys at
-compile time,
-enhancing the robustness of our code and reducing the likelihood of runtime errors.
+compile time, enhancing the robustness of our code and reducing the likelihood of runtime errors.
 
 For further reading, please see Item 11 "Recognize the Limits of Excess Property Checking" in the book Effective
-Typescript
-by Vanderkam.
+Typescript by Vanderkam.
 ---
 
 Please see other notes in https://github.com/phetsims/ratio-and-proportion/issues/405

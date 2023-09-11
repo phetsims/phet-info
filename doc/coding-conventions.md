@@ -293,9 +293,9 @@ generally meets PhET standards.
 
   1. Comments above the first `if` in a conditional should be about the entire conditional, not just the if block.
   2. Comments should not break up sections of the conditional.
-  3. If a comment is needed to describe a single block of the conditional, then add that comment just inside the
-     block (no space between the `if`/`else if`/`else` and the comment), with a space below it as to not be confused
-     with a comment about logic below.
+  3. If a comment is needed to describe a single block of the conditional, then add that comment just inside the block (
+     no space between the `if`/`else if`/`else` and the comment), with a space below it as to not be confused with a
+     comment about logic below.
 
     ```js
 
@@ -447,14 +447,14 @@ generally meets PhET standards.
   * `@param {function(model:MyModel, length:number, name:string): Node} getLengthNode`
   * `@param {function(aSelfExplanatoryNameForAString:string): Node} getStringNode`
 
-  3. If (2) isn't enough, use English to explain the parameters and return values. This is easy because they are
-     named, and can be easily mentioned:
+  3. If (2) isn't enough, use English to explain the parameters and return values. This is easy because they are named,
+     and can be easily mentioned:
 
   * `@param {function(model:MyModel, length:number, name:string): Node} getLengthNode - returns the length Node that you have always wanted, name is the name of the source of your aspirations, length is a special number according to the following 24 criteria. . .`
 
-  4. If needing more complexity, or using jsdoc rendering tools (like PhET-iO documentation does), you must use a
-     JSDoc compatible format, not (2) or (3), and you may need to use the more complicated solution. See JSDoc docs
-     for more info. Here is an example of a named callback:
+  4. If needing more complexity, or using jsdoc rendering tools (like PhET-iO documentation does), you must use a JSDoc
+     compatible format, not (2) or (3), and you may need to use the more complicated solution. See JSDoc docs for more
+     info. Here is an example of a named callback:
       ```js
       /**
        * @name mySpecialCallback
@@ -488,15 +488,15 @@ generally meets PhET standards.
           address is something else
           returnNode does this thing
       ```
-  4. Not all objects have named keys like (2) and (3). Here is how to document dictionary-like `Object`s, where each
-     key is some type, and the value is another type. For key value pairs use this:
+  4. Not all objects have named keys like (2) and (3). Here is how to document dictionary-like `Object`s, where each key
+     is some type, and the value is another type. For key value pairs use this:
 
   * `{Object.<string, number>}` Where keys are strings, and values are numbers.
   * `{Object.<phetioID:string, count:number>}` - naming each of these can help identify them too. Feel free to explain
     in English after the type expression if needed.
 
-  5. If things are too complicated for the above cases, use a `*Def.js` file (especially is used in more than one
-     file), or a `@typedef` declaration right above the jsdoc that uses the typedef.
+  5. If things are too complicated for the above cases, use a `*Def.js` file (especially is used in more than one file),
+     or a `@typedef` declaration right above the jsdoc that uses the typedef.
 
 - [ ] Look for cases where the use of type expressions involving Property subclasses are incorrect. Because of the
   structure of the `Property` class hierarchy, specifying type-specific Properties (`{BooleanProperty}`
@@ -551,6 +551,6 @@ visibility annotations are as follows:
   * Regex for property assignment like `x.y = something`: `[\w]+\.[\w]+\s=`
   * Regex for function declarations: `[\w]+: function\(`
 
-- [ ] For private fields, a preceding underscore should generally *not* be used in the variable name. For example,
-  for a private variable that represents the background, the name ```background``` is preferred over ```_background```.
-  An exception is when trying to avoid a collision with and ES5 getter/setter.
+- [ ] For private fields, a preceding underscore should generally *not* be used in the variable name. For example, for a
+  private variable that represents the background, the name ```background``` is preferred over ```_background```. An
+  exception is when trying to avoid a collision with and ES5 getter/setter.

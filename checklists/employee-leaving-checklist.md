@@ -10,10 +10,12 @@
 ### Turn in all university property to Physics department or PhET:
 
 - [ ] Door Keys. If needed, can be mailed to:
-  Facilities Management Access Services
-  University of Colorado Boulder
-  UCB 53
-  Boulder, CO 80309
+    ```
+    Facilities Management Access Services
+    University of Colorado Boulder
+    UCB 53
+    Boulder, CO 80309
+    ```
 - [ ] Buff OneCard and Eco Pass
 - [ ] A-Card or US Bank Cards
 - [ ] Library materials

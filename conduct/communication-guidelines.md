@@ -63,8 +63,7 @@ intent/voice is harder to gauge in places github comments
 5. If talking directly is ineffective OR if you do not feel comfortable initiating the conversation in the first place,
    speak to a supervisor.
 
-Notes from dev discussion 07/11/2019
-It’s not about efficiency. It’s about creating a supportive environment.
+Notes from dev discussion 07/11/2019 It’s not about efficiency. It’s about creating a supportive environment.
 
 Concern that it will take more time. How to balance.
 

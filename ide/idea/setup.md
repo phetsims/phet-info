@@ -34,9 +34,8 @@ get you pointed in the right direction. If you notice errors or a need for clari
 * See https://www.jetbrains.com/help/idea/2017.1/copying-code-style-settings.html. Press the drop-down "settings"
   icon to the right of the Scheme, select "Import Scheme", and navigate to where the code style is located (noted
   above).
-* On older Mac versions, phet-idea-codestyle.xml must be manually copied to
-  $HOME/Library/Preferences/IntelliJIdea[**version**]/codestyles/. Restart IDEA, then you can choose it from
-  Preferences > Editor > Code Style.
+* On older Mac versions, phet-idea-codestyle.xml must be manually copied to $HOME/Library/Preferences/IntelliJIdea[*
+  *version**]/codestyles/. Restart IDEA, then you can choose it from Preferences > Editor > Code Style.
 
 9. Configure JavaScript level. In `File > Settings > Language & Frameworks > JavaScript`, Make sure `ECMAScript 6` is
    selected.
@@ -74,19 +73,19 @@ Use at your own risk!
   space: `Editor > General > Editor Tabs > Tab placement: Right`
 * Name collisions with built-in types can make adding imports difficult. The following suggestions are ways to get
   around this problem.
-  * Using "Code completion->Basic" (ctrl+space from default MacOS bindings) will only work if you are already
-    importing from scenery imports.
-  * A way around this is to auto-import a class with a name that is non built-in type to get scenery imports.js in
-    your file automatically. Then you can auto import the file with a built-in type name and delete the first one.
+  * Using "Code completion->Basic" (ctrl+space from default MacOS bindings) will only work if you are already importing
+    from scenery imports.
+  * A way around this is to auto-import a class with a name that is non built-in type to get scenery imports.js in your
+    file automatically. Then you can auto import the file with a built-in type name and delete the first one.
 * [Live Templates](https://www.jetbrains.com/help/idea/using-live-templates.html#live_templates_types) are a feature
   that many devs use for quickly typing out common patterns in code. To try some out, ask a developer for some examples
   of their favorites. A set of live templates can be exported from one instance of WebStorm and imported in another.
 * Many devs use [patches](https://www.jetbrains.com/help/webstorm/using-patches.html) for quickly sharing code changes
   with other developers. They are most commonly used for:
   * Sending code changes over Slack when developers are pairing together and they need to switch who is leading
-  * Adding code changes to a GitHub issue for other devs to try out. Often times, you may see patches contained
-    in a "details" dropdown (notated as `<details>`) since they can be very long.
-* It can be helpful to see the history of a file or section of a file that you're working in. This is not
-  only a way to see how a section of code came to be, but also which devs made the changes. See documentation on
+  * Adding code changes to a GitHub issue for other devs to try out. Often times, you may see patches contained in a "
+    details" dropdown (notated as `<details>`) since they can be very long.
+* It can be helpful to see the history of a file or section of a file that you're working in. This is not only a way to
+  see how a section of code came to be, but also which devs made the changes. See documentation on
   the [Show History](https://www.jetbrains.com/help/webstorm/investigate-changes.html#file-history) feature (or
   do `Right click > Git > Show History/Show History for Selection`).

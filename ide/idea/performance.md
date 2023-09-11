@@ -14,8 +14,7 @@ steps that can be taken to optimize the performance.
 * Improving search performance:
   * Make sure that as many folders as possible are excluded (as is reasonable). See above.
   * Use a scope! In many cases, it is enough to just look in the `js/` folders of repos, so make a scope to look there.
-    The
-    pattern looks like `file:*/js//*`.
+    The pattern looks like `file:*/js//*`.
 * Optimizing VM options file:
   * Edit by opening `top menu > Help > Edit Custom VM Options`
   * zepumph's looks like:

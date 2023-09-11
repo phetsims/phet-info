@@ -4,8 +4,8 @@
   sufficient time for the meeting, 1.5-2 hours.
 
 - [ ]  **2. Enlist a meeting moderator**
-- The moderator's job is to make sure the meeting runs efficiently, stays on point, and focuses on constructive (but
-  not overly negative) criticism. The moderator can be someone not on the sim team, or in many cases the Development
+- The moderator's job is to make sure the meeting runs efficiently, stays on point, and focuses on constructive (but not
+  overly negative) criticism. The moderator can be someone not on the sim team, or in many cases the Development
   Coordinator. The moderator also documents the important points of the meeting.
 
 - [ ]  **3. Create github postmortem issue and postmortem google doc**

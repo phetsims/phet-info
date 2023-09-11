@@ -65,9 +65,9 @@ Congratulations!  Now the repo is TypeScript-capable. You can commit these chang
    with Option+Enter then "Declare property [...]"
 3. After all class attributes have been declared as class properties, you can mark each as `private readonly` then the
    compiler will tell you where that needs to be relaxed.
-4. Try to minimize its use as much as possible, but use `// @ts-expect-error` to get past any insurmountable
-   problems. We prefer that to `// @ts-ignore` so it will tell you if there is no problem. Please also add
-   a message about why there is an error there.
+4. Try to minimize its use as much as possible, but use `// @ts-expect-error` to get past any insurmountable problems.
+   We prefer that to `// @ts-ignore` so it will tell you if there is no problem. Please also add a message about why
+   there is an error there.
 5. For pro users, once you are familiar with porting files, if you want to port more than one at a time, you can use a
    command like this, but keep in mind you need to make sure they are `git mv` and not just `mv`. You could update the
    command or follow directions like https://github.com/phetsims/chipper/issues/1120#issuecomment-947090489

@@ -32,8 +32,8 @@ Follow these steps to add support for alternative input to a simulation.
    information about this feature.
 
 4. Sims that support alternative input also need an accessible Preferences dialog. See
-   https://github.com/phetsims/phet-info/blob/main/doc/accessible-preferences-quickstart-guide.md for information
-   about this.
+   https://github.com/phetsims/phet-info/blob/main/doc/accessible-preferences-quickstart-guide.md for information about
+   this.
 
 ## Traversal Order
 
@@ -64,8 +64,8 @@ this.pdomControlAreaNode.pdomOrder = [ ... ]; // decouple traversal order from r
 ```
 
 Approach 2: In some cases (typically before descriptions are added), "Play Area" and "Control Area" can be ignored for
-the purposes of alternative input. If that is appropriate for your sim, then do not add Nodes directly to the
-base ScreenView or ScreenView subclasses. Instead, use this pattern in your base ScreenView constructor:
+the purposes of alternative input. If that is appropriate for your sim, then do not add Nodes directly to the base
+ScreenView or ScreenView subclasses. Instead, use this pattern in your base ScreenView constructor:
 
 ```js
 const screenViewRootNode = new Node( {
@@ -130,8 +130,8 @@ focusable: true
 
 ## Drag using AccessibleSlider for 1D Motion
 
-If your draggable component moves in 1 dimension consider using AccessibleSlider. AccessibleSlider is a trait that
-can be mixed into a Node to add 1D motion with alternative input. AccessibleSlider will make the component much more
+If your draggable component moves in 1 dimension consider using AccessibleSlider. AccessibleSlider is a trait that can
+be mixed into a Node to add 1D motion with alternative input. AccessibleSlider will make the component much more
 accessible for a screen reader user compared to KeyboardDragListener. It is very easy to use when there is a
 NumberProperty driving the position. Here is an example:
 
@@ -158,8 +158,8 @@ class MyDraggable extends AccessibleSlider( Node, 0 ) {
 ```
 
 AccessibleSlider will support movement with arrow keys, as well as other keys such as home/end to quickly move the
-component to the limits of the range. See AccessibleSlider and its supertype AccessibleValueHandler for more options
-and functionality.
+component to the limits of the range. See AccessibleSlider and its supertype AccessibleValueHandler for more options and
+functionality.
 
 ## Hotkeys
 
@@ -211,8 +211,8 @@ See https://github.com/phetsims/phet-info/issues/188.
 
 ## Scenery Events
 
-For more custom behavior you can add input listeners with Scenery's input system that are related to alternative
-input. For example, if you want to add behavior whenever a Node has focus you can add a listener like this:
+For more custom behavior you can add input listeners with Scenery's input system that are related to alternative input.
+For example, if you want to add behavior whenever a Node has focus you can add a listener like this:
 
 ```js
 myNode.addInputListener( {
@@ -231,10 +231,8 @@ appear in the navigation bar, follow steps below to add content to each screen.
 
 Each of your screens is then required to provide content for the dialog, via the
 `createKeyboardHelpNode: ()=>{Node}` option to the `Screen` constructor. Instructions for creating this Node are beyond
-the scope
-of this guide. Programming by example is recommended, by searching for "createKeyboardHelpNode". Your content will
-typically
-consist of standard "sections" supported by common code
+the scope of this guide. Programming by example is recommended, by searching for "createKeyboardHelpNode". Your content
+will typically consist of standard "sections" supported by common code
 (e.g. `BasicActionsKeyboardHelpSection`), plus custom sections for sim-specific hotkeys. Consult with your designer
 about the content language and layout.
 

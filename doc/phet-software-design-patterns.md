@@ -1,15 +1,14 @@
 # PhET Software Design Patterns
 
 This document describes software design patterns that are specific to PhET, and PhET-specific applications of standard
-design patterns.
-For general information on many standard design patterns,
-see _[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)_ by Addy
+design patterns. For general information on many standard design patterns, see
+_[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)_ by Addy
 Osmani.
 
-This document has a bunch of different patterns in alphabetical order. They are not all equally important. Below
-is a list of the patterns in the order in which they should be read. At the top of the list are patterns that are
-central to the development process and necessary for pretty much every sim. Below that are patterns that may be
-useful at some point, but aren't in every sim, so they can be skimmed and referenced when needed.
+This document has a bunch of different patterns in alphabetical order. They are not all equally important. Below is a
+list of the patterns in the order in which they should be read. At the top of the list are patterns that are central to
+the development process and necessary for pretty much every sim. Below that are patterns that may be useful at some
+point, but aren't in every sim, so they can be skimmed and referenced when needed.
 
 - *Patterns that every PhET developer should know well:*
   - Module
@@ -126,9 +125,8 @@ SR was an advocate of this in https://github.com/phetsims/tasks/issues/952. Clar
 (probably constructor-based injection), and some examples of where it's currently used in PhET sims.
 
 The main goal of dependency injection (DI) is to decouple the implementation of a required object instance from where
-it’s used. While there
-are a few different ways to accomplish this, the basic idea is to provide the wrapping class with its required instance
-variables instead of allowing it to instantiate them itself. For example,
+it’s used. While there are a few different ways to accomplish this, the basic idea is to provide the wrapping class with
+its required instance variables instead of allowing it to instantiate them itself. For example,
 
 ```js
 class MyClass {
@@ -200,9 +198,8 @@ To start, [Molecules and Light](https://github.com/phetsims/molecules-and-light)
 handles absorption of various wavelengths of light for different molecules.
 
 In [Molecule.js](https://github.com/phetsims/greenhouse-effect/blob/c3902b1c402cd2ca699a68938c98c7b2387844dd/js/micro/model/Molecule.js)
-,
-the constructor initializes `this.mapWavelengthToAbsorptionStrategy = {}`. Then on ln 212, we have the following method
-allows any object inheriting Molecule to dynamically set the necessary `PhotonAbsorptionStrategy`
+, the constructor initializes `this.mapWavelengthToAbsorptionStrategy = {}`. Then on ln 212, we have the following
+method allows any object inheriting Molecule to dynamically set the necessary `PhotonAbsorptionStrategy`
 
 ```js
 class X {
@@ -400,10 +397,9 @@ class MyEnumeration extends EnumerationValue {
 
 To adapt the pattern to be a rich enumeration, add prototype or static methods as needed to the class.
 
-Another Enumeration strategy is to create a TypeScript string union type. In
-general, this strategy is less explicit, doesn't have as much runtime-safety, and doesn't support refactoring quite as
-well. That said,
-it is useful when strings are the best values for your enumeration:
+Another Enumeration strategy is to create a TypeScript string union type. In general, this strategy is less explicit,
+doesn't have as much runtime-safety, and doesn't support refactoring quite as well. That said, it is useful when strings
+are the best values for your enumeration:
 
 ```typescript
 type LayoutType = 'upward' | 'downward';
@@ -423,14 +419,13 @@ More examples and coding conventions for enumerations can be found in
 
 #### Supporting `null`:
 
-In some old enumeration patterns, `null` was an acceptable enumeration value. This is no longer the case.
-Those older cases should be treated as type `EnumerationValue | null` when converted to the new pattern.
+In some old enumeration patterns, `null` was an acceptable enumeration value. This is no longer the case. Those older
+cases should be treated as type `EnumerationValue | null` when converted to the new pattern.
 
 #### Vestigial patterns and usages
 
 You’ll find a couple of other patterns commonly used in PhET code. These are good to be aware of, but generally
-shouldn't be
-used in new code. `EnumerationDeprecated` is PhET's primary old pattern; please do not use it is new code.
+shouldn't be used in new code. `EnumerationDeprecated` is PhET's primary old pattern; please do not use it is new code.
 
 <details><summary>Previous pattern documentation based on `EnumerationDeprecated`</summary>
 
@@ -439,8 +434,8 @@ Author: @pixelzoom
 This is a standard pattern described in https://en.wikipedia.org/wiki/Enumerated_type.
 
 PhET’s preferred implementation of this pattern can be found
-in [EnumerationDeprecated.js](https://github.com/phetsims/phet-core/blob/main/js/EnumerationDeprecated.js). Examples
-and coding conventions are in the comment header of that file. See the wave-interference repository for exemplars of
+in [EnumerationDeprecated.js](https://github.com/phetsims/phet-core/blob/main/js/EnumerationDeprecated.js). Examples and
+coding conventions are in the comment header of that file. See the wave-interference repository for exemplars of
 EnumerationDeprecated use. Rich enumerations are not currently supported, but may be supported in the future
 (see https://github.com/phetsims/phet-core/issues/50).
 
@@ -520,8 +515,8 @@ For recent examples, see the following:
 
 Mixins and traits cannot mutate the constructor signature, and also cannot have private or protected members. This is
 due to the implementation which creates an anonymous class that dynamically extends the provided Type. For private
-members, name them prefixed with an underscore (`_myPrivateProperty`). The constructor signature should just pass
-up an `args` param using the spread operator:
+members, name them prefixed with an underscore (`_myPrivateProperty`). The constructor signature should just pass up
+an `args` param using the spread operator:
 
 ```js
 const Mixin = Type => {
@@ -1273,8 +1268,7 @@ familiarity with `optionize` is needed to get the most out of the examples.
 Similar to the pattern described
 in [Options and Config (JavaScript)](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#options-and-config-javascript)
 , this pattern is used to parameterize methods (most typically constructors) without having a large number of method
-parameters. It provides the
-additional benefit of type-checking.
+parameters. It provides the additional benefit of type-checking.
 
 The method parameter differs from the JavaScript `options` or `config` parameter in the following ways:
 
@@ -1338,8 +1332,8 @@ class MyClass extends Superclass {
 
 (3) Use [StrictOmit](https://github.com/phetsims/phet-core/blob/main/js/types/StrictOmit.ts)
 , [PickRequired](https://github.com/phetsims/phet-core/blob/main/js/types/PickRequired.ts),
-and [PickOptional](https://github.com/phetsims/phet-core/blob/main/js/types/PickOptional.ts) to narrow the API
-provided by your options type.
+and [PickOptional](https://github.com/phetsims/phet-core/blob/main/js/types/PickOptional.ts) to narrow the API provided
+by your options type.
 
 ```typescript
 // In this example, MyNode is responsible for setting the children option.
@@ -1564,8 +1558,7 @@ class MyCommonNode extends Node {
 ```
 
 For sim-specific code (in sims that are PhET-iO instrumented), `tandem` should be required, with no default value
-needed.
-This ensures that a missing `tandem` is identified by the type checker.
+needed. This ensures that a missing `tandem` is identified by the type checker.
 
 ```typescript
 type SelfOptions = {

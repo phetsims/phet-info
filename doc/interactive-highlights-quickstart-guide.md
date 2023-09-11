@@ -5,20 +5,20 @@
 A quick guide for adding Interactive Highlights to your PhET Simulation.
 
 Interactive Highlights are highlights that surround interactive components on mouse and touch input. Interactive
-Highlights can benefit many users, and are particularly helpful for users with low vision who need a little extra
-visual boldness to identify the interactive components in the sim.
+Highlights can benefit many users, and are particularly helpful for users with low vision who need a little extra visual
+boldness to identify the interactive components in the sim.
 
 When a sim supports Interactive Highlights, a toggle switch will be available in the Visual tab of the Preferences
-dialog to enable the feature. When enabled, moving a mouse or finger over an interactive component will display a
-visual highlight around that component. When the pointer leaves the component the highlight will disappear.
+dialog to enable the feature. When enabled, moving a mouse or finger over an interactive component will display a visual
+highlight around that component. When the pointer leaves the component the highlight will disappear.
 
-You can use query parameter flag `interactiveHighlightsInitiallyEnabled` to have Interactive Highlights enabled
-when the sim loads.
+You can use query parameter flag `interactiveHighlightsInitiallyEnabled` to have Interactive Highlights enabled when the
+sim loads.
 
 ## package.json
 
-By default, Interactive Highlights are enabled when the sim supports Interactive Description (or alternative input).
-To enable both Interactive Description and Interactive Highlights, have the following in the sim's package.json
+By default, Interactive Highlights are enabled when the sim supports Interactive Description (or alternative input). To
+enable both Interactive Description and Interactive Highlights, have the following in the sim's package.json
 
 ```json
 {
@@ -30,8 +30,8 @@ To enable both Interactive Description and Interactive Highlights, have the foll
 }
 ```
 
-If you want to enable or disable Interactive Highlights separately from `supportsInteractiveDescription`, you can
-do so with
+If you want to enable or disable Interactive Highlights separately from `supportsInteractiveDescription`, you can do so
+with
 
 ```json
 {
@@ -52,8 +52,8 @@ enable the feature.
 
 ## InteractiveHighlighting.ts
 
-Common code components will now be highlighted when a pointer moves over them. But sim-specific
-interactive Nodes will need to be composed with `InteractiveHighlighting.ts` to get this feature.
+Common code components will now be highlighted when a pointer moves over them. But sim-specific interactive Nodes will
+need to be composed with `InteractiveHighlighting.ts` to get this feature.
 `InteractiveHighlighting` is a trait that adds listeners to a Node that activate highlights from pointer input.
 
 Here is an example of composing a Node with InteractiveHighlighting.
@@ -98,8 +98,8 @@ from `ParallelDOM.ts`.
 myNode.focusHighlight = new HighlightPath( focusHighlightShape );
 ```
 
-If the Interactive Highlight needs to look different than the focus highlight, you can do that with an additional
-setter from `InteractiveHighlighting.ts`.
+If the Interactive Highlight needs to look different than the focus highlight, you can do that with an additional setter
+from `InteractiveHighlighting.ts`.
 
 ```js
 myNode.interactiveHighlight = new HighlightPath( interactiveHighlightShape );
@@ -109,8 +109,8 @@ See InteractiveHighlighting.ts for more documentation.
 
 ## Disabling Interactive Highlights
 
-The highlights for Interactive Highlights are activated on mouse and touch input. If you need to prevent highlights
-from activating (for an icon or instance of a Node that is not interactive) you can set `pickable: false` on the Node.
+The highlights for Interactive Highlights are activated on mouse and touch input. If you need to prevent highlights from
+activating (for an icon or instance of a Node that is not interactive) you can set `pickable: false` on the Node.
 
 If you don't want to use `pickable`, you can also disable Interactive Highlights for a Node with setter/option in
 InteractiveHighlighting.ts
@@ -126,6 +126,6 @@ composed with InteractiveHighlighting if you need to.
 
 ## Potential Pitfalls
 
-Try to use default highlights or `HighlightFromNode.ts` for custom highlights if possible. These will manage
-styling and repositioning for you. If you use a more custom highlight Node, it is your responsibility to
-reposition the highlight if the Node it surrounds resizes or moves.
+Try to use default highlights or `HighlightFromNode.ts` for custom highlights if possible. These will manage styling and
+repositioning for you. If you use a more custom highlight Node, it is your responsibility to reposition the highlight if
+the Node it surrounds resizes or moves.

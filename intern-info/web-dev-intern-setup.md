@@ -80,8 +80,7 @@ In the phet/git directory, run this command:
     port 22
     identityfile ~/.ssh/id_rsa
     ```
-2. Create an RSA key
-   Enter this command in the terminal: `ssh-keygen -t rsa`
+2. Create an RSA key Enter this command in the terminal: `ssh-keygen -t rsa`
 
    Press enter 4 times, leave the file path as default and the password blank.
 3. Copy the contents of ~/.ssh/id_rsa.pub from the VM to ~/.ssh/authorized_keys on phet-server.
@@ -120,8 +119,7 @@ In the phet/git directory, run this command:
 9. Click OK
 6. Setup the style template:
 1. Download the template xml file from https://github.com/phetsims/phet-info/blob/main/ide/idea/phet-idea-codestyle.xml
-2. Put the file in the local IntelliJ directory.
-  * Try $HOMEPATH$/.IntelliJIdea14/config/codestyles
+2. Put the file in the local IntelliJ directory. Try $HOMEPATH$/.IntelliJIdea14/config/codestyles
 3. Restart IntelliJ, go to File > Settings > Editor > Code Style > Java.
 4. Click the "Manage" button next to "Scheme" and select "phet-idea-codestyle".
 

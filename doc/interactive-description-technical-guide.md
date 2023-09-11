@@ -67,12 +67,12 @@ accessibility. It has the following components (with their implementation in par
   * switch (PDOM)
 * State Description (PDOM) - description about the state of objects in the sim.
   * Static States - unchanging content either describing objects in the sim, or giving hints about interactions.
-  * Dynamic States - description that depends on the model or view values, and so dynamically will change with that
-    sim content.
+  * Dynamic States - description that depends on the model or view values, and so dynamically will change with that sim
+    content.
 * Responsive Description - description given in response to a change in the sim. This is often not directly from the
   PDOM, but instead via technology that will push verbal description directly to the user (like an aria-live alert).
-  * Object Responses (UtteranceQueue/aria-valuetext/PDOM) - a response from an object change, most like stating how
-    that object changed, or what its new value is.
+  * Object Responses (UtteranceQueue/aria-valuetext/PDOM) - a response from an object change, most like stating how that
+    object changed, or what its new value is.
   * Context Responses (UtteranceQueue) - Often emitted immediately after an object response, a context response is
     description about the larger context of the sim. This may be the resulting effect that the object change had.
 
@@ -268,8 +268,8 @@ To implement interactive description with best practices . . .
   comment.
 * Understand [Accessible Name](https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/)
   The short article above describes very simply and briefly the different ways an element gets an accessible name.
-  * element's content: Example `<button>my button</button>`. The inner text within the button's opening and closing
-    tags is the button element's accessible name.
+  * element's content: Example `<button>my button</button>`. The inner text within the button's opening and closing tags
+    is the button element's accessible name.
   * `label` element: a `label` element can be associated with an interactive _input type_ (
     e.g., `input type="checkbox"`)
     that does not have inner content in order to provide the input with an accessible name. A `label` is preferred
@@ -279,11 +279,11 @@ To implement interactive description with best practices . . .
     . It cannot, for example, be associated with a `div` with `role="checkbox"`. When a visible text-based label does
     not exist on screen, other labeling options can be considered.
   * `aria-label`: is an aria attribute that can provide an accessible name.
-  * `aria-labelledby`: aria-labelledby can be used to associate an HTML element other than the label element to
-    another element. The elements do not have to be right beside each other. In a PhET Sim one might want to associate
-    a heading element with a region or group. For example, an H2 heading is associated with the Play Area region
-    through an `aria-labelledby` attribute. With this association the H2's content, "Play Area", provides the region
-    with an accessible name in the _Accessibility Tree_ which is accessed by assistive technology.
+  * `aria-labelledby`: aria-labelledby can be used to associate an HTML element other than the label element to another
+    element. The elements do not have to be right beside each other. In a PhET Sim one might want to associate a heading
+    element with a region or group. For example, an H2 heading is associated with the Play Area region through
+    an `aria-labelledby` attribute. With this association the H2's content, "Play Area", provides the region with an
+    accessible name in the _Accessibility Tree_ which is accessed by assistive technology.
 * For a full list of available options, see `ParallelDOM.js`.
 
 ### Interactive Alerts

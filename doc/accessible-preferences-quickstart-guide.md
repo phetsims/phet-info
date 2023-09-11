@@ -7,15 +7,14 @@
 
 This document is a quickstart guide for adding Interactive Description to the Preferences dialog in PhET simulations.
 
-Please see the alternative-input-quickstart-guide.md first. This guide assumes you are familiar with that
-and have enabled Interactive Description in your package.json.
+Please see the alternative-input-quickstart-guide.md first. This guide assumes you are familiar with that and have
+enabled Interactive Description in your package.json.
 
-PhET is going to start adding Interactive Description to the Preferences dialog for simulations that support
-alternative input. By adding Interactive Description to our Preferences dialog, learners who rely on screen reader
-software are empowered to access essential features. For example, a blind learner will be able to enable the Voicing
-feature, even if the simulation does not fully support Interactive Description. Having a fully accessible Preferences
-Menu supports learner agency in accessing and using any features in the Preferences Menu that can aid in their learning
-process.
+PhET is going to start adding Interactive Description to the Preferences dialog for simulations that support alternative
+input. By adding Interactive Description to our Preferences dialog, learners who rely on screen reader software are
+empowered to access essential features. For example, a blind learner will be able to enable the Voicing feature, even if
+the simulation does not fully support Interactive Description. Having a fully accessible Preferences Menu supports
+learner agency in accessing and using any features in the Preferences Menu that can aid in their learning process.
 
 ## General Description Design and Instrumentation Process
 
@@ -45,13 +44,12 @@ tool for this step.
 ### Setting component options
 
 Screen reader accessibility is supported by scenery/ParallelDOM.ts, a super class for scenery/Node. This class has many
-options you can set on a Node for accessibility. But most common code components have options you can use to easily
-set their accessible content (i.e., the descriptions you add). These options let you set things like:
+options you can set on a Node for accessibility. But most common code components have options you can use to easily set
+their accessible content (i.e., the descriptions you add). These options let you set things like:
 
 - The accessible name.
-- The help text description, i.e., an optional description that provides some contextual
-  information about what the component does. If you need a help text description, it is good practice to start the help
-  text with a verb.
+- The help text description, i.e., an optional description that provides some contextual information about what the
+  component does. If you need a help text description, it is good practice to start the help text with a verb.
 - Depending on the component type, you may need object responses to communicate current and changed values. Not all
   interactive components require object responses.
 - Depending on the component type, you may need context responses to succinctly confirm or describe the resulting change
@@ -147,17 +145,17 @@ ally-view is not a full representation of the screen reader experience, but it h
 screen reader software can access and read out. The a11y-view is automatically generated for sims that support
 Interactive Description.
 
-You can run the a11y-view for a simulation from phetmarks.
-Or, go to http://localhost:8080/{{SIMULATION}}/{{SIMULATION}}_a11y_view.html?brand=phet&ea&debugger.
+You can run the a11y-view for a simulation from phetmarks. Or, go
+to http://localhost:8080/{{SIMULATION}}/{{SIMULATION}}_a11y_view.html?brand=phet&ea&debugger.
 
 Open the Preferences dialog and make sure that all of your components have the name and help text you expect.
 
 ### Testing with a screen reader
 
 The QA handbook has good resources about how to use a screen reader. You can find it
-here: https://github.com/phetsims/QA/blob/main/documentation/qa-book.md#screen-readers.
-With that information, you should be able to turn on a screen reader, navigate to the Preferences Menu, and read
-through descriptions and interact with the described components in the Preferences Menu.
+here: https://github.com/phetsims/QA/blob/main/documentation/qa-book.md#screen-readers. With that information, you
+should be able to turn on a screen reader, navigate to the Preferences Menu, and read through descriptions and interact
+with the described components in the Preferences Menu.
 
 ## Examples
 
@@ -166,6 +164,5 @@ through descriptions and interact with the described components in the Preferenc
 ## Additional Resources
 
 For a more thorough guide to Interactive Description implementation, please see the
-interactive-description-technical-guide.md.
-The fundamental scenery component for accessibility
+interactive-description-technical-guide.md. The fundamental scenery component for accessibility
 is [ParallelDOM.ts](https://github.com/phetsims/scenery/blob/main/js/accessibility/pdom/ParallelDOM.ts)

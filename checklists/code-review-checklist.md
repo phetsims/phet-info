@@ -72,10 +72,9 @@ If any of these items fail, pause code review.
   Results can be found in {{GITHUB_ISSUE_LINK}}.
 - [ ] For each common-code component (sun, scenery-phet, vegas, …) that opaquely registers observers or listeners, is
   there a call to that component’s `dispose` function, or is it obvious why it isn't necessary, or is there
-  documentation
-  about why `dispose` isn't called? An example of why no call to `dispose` is needed is if the component is used in
-  a `ScreenView` that would never be removed from the scene graph. Note that it's also acceptable (and encouraged!) to
-  describe what needs to be disposed in implementation-notes.md.
+  documentation about why `dispose` isn't called? An example of why no call to `dispose` is needed is if the component
+  is used in a `ScreenView` that would never be removed from the scene graph. Note that it's also acceptable (and
+  encouraged!) to describe what needs to be disposed in implementation-notes.md.
 - [ ] Are there leaks due to registering observers or listeners? The following guidelines should be followed unless
   documentation (in-line or in implementation-notes.md) describes why following them is not necessary.
   * AXON: `Property.link` or `lazyLink` is accompanied by `unlink`.
@@ -121,10 +120,8 @@ If any of these items fail, pause code review.
   with query parameters `stringTest=double` and `stringTest=long`)
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter
   `stringTest=xss`? This test passes if sim does not redirect, OK if sim crashes or fails to fully start. Only test on
-  one
-  desktop platform. For PhET-iO sims, additionally test `?stringTest=xss` in Studio to make sure i18n strings didn't
-  leak
-  to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
+  one desktop platform. For PhET-iO sims, additionally test `?stringTest=xss` in Studio to make sure i18n strings didn't
+  leak to phetioDocumentation, see https://github.com/phetsims/phet-io/issues/1377
 - [ ] Avoid using concatenation to create strings that will be visible in the user interface. Use `StringUtils.fillIn`
   and a string pattern to ensure that strings are properly localized. This is relevant in cases where order should be
   translatable.
@@ -207,9 +204,9 @@ Nested substructure is not yet fully supported.
 
 - [ ] The repository name should correspond to the sim title. For example, if the sim title is "Wave Interference", then
   the repository name should be "wave-interference".
-- [ ] Are all required files and directories present?
-  For a sim repository named “my-repo”, the general structure should look like this (where assets/, images/, mipmaps/ or
-  sounds/ may be omitted if the sim doesn’t have those types of resource files).
+- [ ] Are all required files and directories present? For a sim repository named “my-repo”, the general structure should
+  look like this (where assets/, images/, mipmaps/ or sounds/ may be omitted if the sim doesn’t have those types of
+  resource files).
 
   ```
   my-repo/
@@ -242,12 +239,11 @@ Nested substructure is not yet fully supported.
 - [ ] Verify that the same image file is not present in both images/ and mipmaps/. If you need a mipmap, use it for all
   occurrences of the image.
 
-- [ ] Is the js/ directory properly structured?
-  All JavaScript source should be in the js/ directory. There should be a subdirectory for each screen (this also
-  applies for single-screen sims, where the subdirectory matches the repo name). For a multi-screen sim, code shared by
-  2 or more screens should be in a js/common/ subdirectory. Model and view code should be in model/ and view/
-  subdirectories for each screen and common/. For example, for a sim with screens “Introduction” and “Lab”, the general
-  directory structure should look like this:
+- [ ] Is the js/ directory properly structured? All JavaScript source should be in the js/ directory. There should be a
+  subdirectory for each screen (this also applies for single-screen sims, where the subdirectory matches the repo name).
+  For a multi-screen sim, code shared by 2 or more screens should be in a js/common/ subdirectory. Model and view code
+  should be in model/ and view/ subdirectories for each screen and common/. For example, for a sim with screens
+  “Introduction” and “Lab”, the general directory structure should look like this:
 
   ```
   my-repo/
@@ -300,10 +296,9 @@ Nested substructure is not yet fully supported.
 
 - [ ] Are coding conventions outlined
   in [PhET's Coding Conventions Document](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md)
-  followed and adhered to? This document
-  deals with PhET coding conventions. You do not need to exhaustively check every item in this section, nor do you
-  necessarily need to check these items one at a time. The goal is to determine whether the code generally meets PhET
-  standards.
+  followed and adhered to? This document deals with PhET coding conventions. You do not need to exhaustively check every
+  item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether
+  the code generally meets PhET standards.
 
 ## **TypeScript Conventions**
 
@@ -333,8 +328,9 @@ Nested substructure is not yet fully supported.
 - [ ] Is composition favored over inheritance where appropriate?
   See https://en.wikipedia.org/wiki/Composition_over_inheritance.
 - [ ] Is there any unnecessary coupling? (e.g., by passing large objects to constructors, or exposing unnecessary
-  properties/functions). If you only need a few fields from a large object, pass them in as separate parameters.  The threshold for
-  the number of parameters is up to you - use your judgement. Alternatively in TypeScript, you can decouple by narrowing the API using `Pick`, but this is a bit of a hack. Here's an example:
+  properties/functions). If you only need a few fields from a large object, pass them in as separate parameters. The
+  threshold for the number of parameters is up to you - use your judgement. Alternatively in TypeScript, you can
+  decouple by narrowing the API using `Pick`, but this is a bit of a hack. Here's an example:
 
 ```ts
   public constructor( tickMarksVisibleProperty: Property<boolean>,
@@ -412,18 +408,17 @@ This section may be omitted if the sim has not been instrumented for PhET-iO, bu
   This could be an extensive bullet. At the very least, be sure to know what amount of instrumentation this sim
   supports. Describing this further goes beyond the scope of this document.
 - [ ] PhET-iO instantiates different objects and wires up listeners that are not present in the PhET-branded simulation.
-  It needs to be tested separately for memory leaks. To help isolate the nature of the memory leak, this test should
-  be run separately from the PhET brand memory leak test. Test with a colorized Data Stream, and Studio (easily
-  accessed from phetmarks). Compare to testing results done by the responsible developer and previous releases.
+  It needs to be tested separately for memory leaks. To help isolate the nature of the memory leak, this test should be
+  run separately from the PhET brand memory leak test. Test with a colorized Data Stream, and Studio (easily accessed
+  from phetmarks). Compare to testing results done by the responsible developer and previous releases.
 - [ ] Make sure unused `PhetioObject` instances are disposed, which unregisters their tandems.
 - [ ] Make sure JOIST `dt` values are used instead of `Date.now()` or other Date functions. Perhaps try
   `phet.joist.elapsedTime`. Though this has already been mentioned, it is necessary for reproducible playback via input
   events and deserves a comment in this PhET-iO section.
 - [ ] Are random numbers using `DOT/dotRandom` as an imported module (not a global), and all doing so after modules are
-  declared (non-statically)? For
-  example, the following methods (and perhaps others) should not be
-  used: `Math.random`, `_.shuffle`, `_.sample`, `_.random`.
-  This also deserves re-iteration due to its effect on record/playback for PhET-iO.
+  declared (non-statically)? For example, the following methods (and perhaps others) should not be
+  used: `Math.random`, `_.shuffle`, `_.sample`, `_.random`. This also deserves re-iteration due to its effect on
+  record/playback for PhET-iO.
 - [ ] Like JSON, keys for `undefined` values are omitted when serializing objects across frames. Consider this when
   determining whether `toStateObject` should use `null` or `undefined` values.
 - [ ] PhET prefers to use the term "position" to refer to the physical (x,y) position of objects. This applies to both
