@@ -13,6 +13,10 @@
     <option name="SPACES_WITHIN_IMPORTS" value="true" />
     <option name="IMPORT_SORT_MODULE_NAME" value="true" />
   </JSCodeStyleSettings>
+  <Markdown>
+    <option name="MIN_LINES_AROUND_HEADER" value="2" />
+    <option name="KEEP_LINE_BREAKS_INSIDE_TEXT_BLOCKS" value="false" />
+  </Markdown>
   <TypeScriptCodeStyleSettings version="0">
     <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACKETS" value="true" />
     <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
