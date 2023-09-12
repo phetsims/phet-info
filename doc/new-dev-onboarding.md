@@ -48,15 +48,15 @@ list specifies essential items for a PhET Developer:
   access will allow you to push code to sim repos and common code repos.
 - Set up a Slack account and join the phetsims workspace (you should receive an invite to join). From here, join the
   #general, #dev-public, #developer, and #continuous-testing channels.
-  - Be sure to set notifications in #continuous-testing to "All messages".
-  - Check with your mentor about any other relevant channels to join.
-  - If you are not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on
-    how to use it.
+    - Be sure to set notifications in #continuous-testing to "All messages".
+    - Check with your mentor about any other relevant channels to join.
+    - If you are not familiar with Slack, check out some [tutorials](https://slack.com/help/categories/360000049063) on
+      how to use it.
 - Set up your account for Monday.com
-  - You will need an invitation from the phetsims account to be able to join. If you have not received one ask your
-    mentor for next steps.
-  - Refer to the [dev learning center document](https://phetsims.monday.com/docs/4142228659) to learn more about
-    navigating and using Monday.com
+    - You will need an invitation from the phetsims account to be able to join. If you have not received one ask your
+      mentor for next steps.
+    - Refer to the [dev learning center document](https://phetsims.monday.com/docs/4142228659) to learn more about
+      navigating and using Monday.com
 
  <a id='env-setup'>
 
@@ -67,18 +67,18 @@ Itching to dig into the code? The following are the steps needed to start sim de
 - Follow the steps in
   the [Getting Started](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#getting-started)
   section of the PhET Development Overview doc.
-  - Install some command line programs
-  - Get a copy of phet repos
-  - Try running a sim locally on your machine
+    - Install some command line programs
+    - Get a copy of phet repos
+    - Try running a sim locally on your machine
 - Set up an IDE so you can start writing code.
-  - Most developers use Webstorm or IntelliJ IDEA, recommended instructions can be found in
-    the [IDE setup document](https://github.com/phetsims/phet-info/blob/main/ide/idea/setup.md).
+    - Most developers use Webstorm or IntelliJ IDEA, recommended instructions can be found in
+      the [IDE setup document](https://github.com/phetsims/phet-info/blob/main/ide/idea/setup.md).
 - Before you start committing and pushing code to PhET repos, you should set up pre-commit hooks.
-  - Pre-Commit Hooks prevent developers from committing code that has various types of errors, most notably ESLint and
-    TypeScript errors.
-  - Follow step 13.
-    of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
-    in the PhET Development Overview doc for instructions on setting them up.
+    - Pre-Commit Hooks prevent developers from committing code that has various types of errors, most notably ESLint and
+      TypeScript errors.
+    - Follow step 13.
+      of [Utilities and Instrumentation for Development and Testing](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing)
+      in the PhET Development Overview doc for instructions on setting them up.
 
 <a id='intro-dev'>
 
@@ -95,13 +95,13 @@ workflow are beyond the scope of this document. However, working off of main doe
 push, and commit behaviors.
 
 - Pull code from all repos, every morning.
-  - Recommended to use the `pull-all.sh` script in perennial
-  - Continue to pull frequently throughout the day
+    - Recommended to use the `pull-all.sh` script in perennial
+    - Continue to pull frequently throughout the day
 - Do not commit broken code.
-  - Sims should load, test, and lint without errors
-  - Pre-Commit Hooks help catch errors, read more below.
+    - Sims should load, test, and lint without errors
+    - Pre-Commit Hooks help catch errors, read more below.
 - Push code frequently (some devs push after every commit).
-  - Recommended to use the `push-all.sh` script in perennial
+    - Recommended to use the `push-all.sh` script in perennial
 
 ### Pre-Commit Hooks
 
@@ -110,33 +110,33 @@ be frustrating and error-prone to discover these errors for the first time when 
 
 - Run the script `chipper/js/scripts/precommit-hook-multi.js` intermittently during development to avoid surprises when
   you commit.
-  - Results are cached for efficiency and will only run on repos with working copy changes.
+    - Results are cached for efficiency and will only run on repos with working copy changes.
 - Set `chipper/js/scripts/precommit-hook-multi.js` as
   an [External Tool](https://www.jetbrains.com/help/idea/settings-tools-external-tools.html) in WebStorm/ IntelliJ.
-  - You can bind external tools to a key command for ease-of-use.
+    - You can bind external tools to a key command for ease-of-use.
 
 ### Debugging
 
 - Console.log
-  - A favorite amongst JavaScript developers, console.log allows you to log values to the console, which can help
-    developers take a peek into what is happening in the code at runtime.
+    - A favorite amongst JavaScript developers, console.log allows you to log values to the console, which can help
+      developers take a peek into what is happening in the code at runtime.
 - Debugger
-  - You can insert the `debugger` keyword in code to set a breakpoint that allows you to explore code in a paused state
-    in a console.
+    - You can insert the `debugger` keyword in code to set a breakpoint that allows you to explore code in a paused
+      state in a console.
 - [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
-  - Chrome Dev Tools is built into the Chrome browser and provides a set of powerful web development tools for debugging
-    and examining code.
-  - Most developers on the team use Chrome for development and testing for performance and bugs on other browsers. If
-    you have a different preference do not feel obligated to use Chrome.
-  - This is a [handy tutorial](https://developer.chrome.com/docs/devtools/javascript/) for debugging JavaScript in
-    Chrome Dev Tools.
+    - Chrome Dev Tools is built into the Chrome browser and provides a set of powerful web development tools for
+      debugging and examining code.
+    - Most developers on the team use Chrome for development and testing for performance and bugs on other browsers. If
+      you have a different preference do not feel obligated to use Chrome.
+    - This is a [handy tutorial](https://developer.chrome.com/docs/devtools/javascript/) for debugging JavaScript in
+      Chrome Dev Tools.
 - Helper Tool
-  - The Helper tool will display information about PhET components, helping developers navigate and implement the
-    internal code.
-  - How to use:
-    - Load a sim or common code repo
-    - Press `Ctrl+Shift+H` (The helper tool box will appear)
-    - Click on the component you want to know more about
+    - The Helper tool will display information about PhET components, helping developers navigate and implement the
+      internal code.
+    - How to use:
+        - Load a sim or common code repo
+        - Press `Ctrl+Shift+H` (The helper tool box will appear)
+        - Click on the component you want to know more about
 
 ### Phetmarks
 
