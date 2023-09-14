@@ -354,7 +354,7 @@ cd {{repo}}/js ; wc -l `find . -name "*.ts" -print` | sort
 - [ ] Are there any `TODO` or `FIXME` or `REVIEW` comments in the code? They should be addressed or promoted to GitHub
   issues.
   - This means that there should be no TODOs pointing to https://github.com/phetsims/tasks/issues/1129
-  - This means that your repo should make sure to be using the `todo-should-have-repo` lint rule. 
+  - This means that your repo should make sure to be using the `todo-should-have-repo` lint rule.
 - [ ] Are there any [magic numbers](https://en.wikipedia.org/wiki/Magic_number_(programming)) that should be factored
   out as constants and documented?
 - [ ] Are there any constants that are duplicated in multiple files that should be factored out into
