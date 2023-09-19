@@ -248,8 +248,8 @@ highlights. If you must use something more custom, it will be your responsibilit
 Scenery will pan to put the focused Node in the center of the viewport when focus changes and when the focused Node
 moves. Try to make your focused Node the logical interactive display object. For example, if you have a draggable
 component that is a child of a larger Node, make the draggable component the focused Node so that scenery can keep
-that Node displayed. If you must do something else, you can use animatedPanZoomSingleton to specifically pan to a
-Node. For example:
+that Node displayed. If you must do something else, you can use animatedPanZoomSingleton to control the panning.
+For example:
 
 ```js
 animatedPanZoomSingleton.listener.panToNode( myNode, false );
