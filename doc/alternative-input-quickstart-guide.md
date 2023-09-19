@@ -35,6 +35,17 @@ Follow these steps to add support for alternative input to a simulation.
    https://github.com/phetsims/phet-info/blob/main/doc/accessible-preferences-quickstart-guide.md for information about
    this.
 
+## Make a Node focusable
+Most common code UI components are already focusable. But you can make any Node focusable by using these options
+from ParallelDOM.ts.
+
+```js
+const myNode = new Node( {
+  tagName: 'div', // creates representation in the parallel DOM
+  focusable: true // makes this Node focusable
+} );
+```
+
 ## Traversal Order
 
 Traversal order is the order in which Nodes are visited as you press the Tab key. The order is specified using
@@ -223,6 +234,26 @@ myNode.addInputListener( {
 ```
 
 See scenery/js/input/Input.js top level documentation for a list of all related alternative input events.
+
+## Focus Highlights
+
+By default, a focus highlight will surround the bounds of your Node. You can customize the highlight with a setter from
+ParallelDOM.ts called `setFocusHighlight`. Try to use the default highlight or `HighlightFromNode.ts` for custom
+highlights. If you must use something more custom, it will be your responsibility to 
+1) Style and scale the highlight correctly.
+2) Reposition the highlight if the your focused Node moves.
+
+## Pan and Zoom
+
+Scenery will pan to put the focused Node in the center of the viewport when focus changes and when the focused Node
+moves. Try to make your focused Node the logical interactive display object. For example, if you have a draggable
+component that is a child of a larger Node, make the draggable component the focused Node so that scenery can keep
+that Node displayed. If you must do something else, you can use animatedPanZoomSingleton to specifically pan to a
+Node. For example:
+
+```js
+animatedPanZoomSingleton.listener.panToNode( myNode, false );
+```
 
 ## Keyboard Shortcuts dialog
 
