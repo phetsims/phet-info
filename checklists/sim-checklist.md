@@ -38,7 +38,7 @@
     see [naming convention](https://github.com/phetsims/website/issues/1322#issuecomment-1010320827))
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL)
   - [ ] Accessibility features
-  - [ ] Email announcement language
+  - [ ] [Draft the Email announcement language](https://github.com/phetsims/tasks/issues/new?assignees=&labels=tasks%3Aemail&projects=&template=sim-announcement-email.md&title=Sim+Announcement+Email)
   - [ ] Teacher Guide created, uploaded, and added to sim design folder
   - [ ] [LoL icons](https://docs.google.com/document/d/1GmLNE31gs8hQYGze3xwmN9k7B6gu7lQ7wJe2phqdH9Y/edit) for each
     screen created and uploaded to Drive
