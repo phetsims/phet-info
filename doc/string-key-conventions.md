@@ -9,27 +9,27 @@ Guidelines:
 
 (1) Strings keys should generally match their values. E.g.:
 
-  ```json
+```json
   "gravityForce": {
     value: "Gravity Force"
   },
   "quadraticTerms": {
     value: "Quadratic Terms"
   }
-  ```
+```
 
 (2) String keys for screen names should have the general form `"screen.{{screenName}}"`. E.g.:
 
-  ```json
+```json
     "screen.explore": {
       "value": "Explore"
     },
-  ```
+```
 
 (3) If a string key would be exceptionally long, use a key name that is an abbreviated form of the string value, or
 that captures the purpose/essence of the value. E.g.:
 
-  ```json
+```js
   // key is abbreviated
   "iWentToTheStore": {
     value: "I went to the store to get milk, eggs, butter, and sugar."
@@ -39,18 +39,18 @@ that captures the purpose/essence of the value. E.g.:
   "describeTheScreen": {
     value: "The Play Area is a small room. The Control Panel has buttons, a checkbox, and radio buttons to change conditions in the room."
   }
-  ```
+```
 
 (4) If string keys would collide, use your judgment to disambiguate them. E.g.:
 
-  ```json
+```json
   "simplifyTitle": {
      value: "Simplify!"
   },
   "simplifyCheckbox": {
      value: "simplify"
   }
-  ```
+```
 
 (5) String patterns that contain placeholders should use keys that are unlikely to conflict with strings that might be needed
 in the future. For example, for value "The price is {{dollars}}"` consider using key `"pricePattern"` or `"thePriceIsDollars"`
