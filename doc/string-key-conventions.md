@@ -53,7 +53,7 @@ that captures the purpose/essence of the value. E.g.:
 ```
 
 (5) String patterns that contain placeholders should use keys that are unlikely to conflict with strings that might be needed
-in the future. For example, for value "The price is {{dollars}}"` consider using key `"pricePattern"` or `"thePriceIsDollars"`
+in the future. For example, for value `"The price is {{dollars}}"` consider using key `"pricePattern"` or `"thePriceIsDollars"`
 instead of `"price"`, if you think there might be a future need for a `"Price"` string value.
 
 (6) It is acceptable to group related strings with a prefix, for example:
