@@ -9,9 +9,9 @@ Guidelines:
 
 (1) Strings keys should generally match their values. E.g.:
 
-  ```js
-  "helloWorld": {
-    value: "Hello World!"
+  ```json
+  "gravityForce": {
+    value: "Gravity Force"
   },
   "quadraticTerms": {
     value: "Quadratic Terms"
@@ -20,7 +20,7 @@ Guidelines:
 
 (2) String keys for screen names should have the general form `"screen.{{screenName}}"`. E.g.:
 
-  ```js
+  ```json
     "screen.explore": {
       "value": "Explore"
     },
@@ -29,7 +29,7 @@ Guidelines:
 (3) If a string key would be exceptionally long, use a key name that is an abbreviated form of the string value, or
 that captures the purpose/essence of the value. E.g.:
 
-  ```js
+  ```json
   // key is abbreviated
   "iWentToTheStore": {
     value: "I went to the store to get milk, eggs, butter, and sugar."
@@ -40,9 +40,10 @@ that captures the purpose/essence of the value. E.g.:
     value: "The Play Area is a small room. The Control Panel has buttons, a checkbox, and radio buttons to change conditions in the room."
   }
   ```
-(4) If string key names would collide, use your judgment to disambiguate. E.g.:
 
-  ```js
+(4) If string keys would collide, use your judgment to disambiguate them. E.g.:
+
+  ```json
   "simplifyTitle": {
      value: "Simplify!"
   },
@@ -52,10 +53,10 @@ that captures the purpose/essence of the value. E.g.:
   ```
 
 (5) String patterns that contain placeholders should use keys that are unlikely to conflict with strings that might be needed
-in the future. For example, for value "The price is ${{dollars}}"` consider using key `"pricePattern"` or `"thePriceIsDollars"`
+in the future. For example, for value "The price is {{dollars}}"` consider using key `"pricePattern"` or `"thePriceIsDollars"`
 instead of `"price"`, if you think there might be a future need for a `"Price"` string value.
 
-(6) It is acceptable to group related strings with a prefix, like so:
+(6) It is acceptable to group related strings with a prefix, for example:
 
 ```json
   "material.brick": {
