@@ -4,6 +4,7 @@ This document described the naming conventions for string keys that appear in
 translated string files. It is important to get these right before publication 
 because keys are difficult to change after a sim has been published, and they
 appear in the PhET-iO API (and Studio) as the phetioIDs for StringProperties.
+_If you're unsure about these conventions, ask another PhET developer._
 
 Guidelines:
 
