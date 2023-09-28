@@ -176,6 +176,7 @@ If any of these items fail, pause code review.
   (5) String patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) should use keys that are
   unlikely to conflict with strings that might be needed in the future. For example, for `"{{price}}"` consider using
   key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
+
   (6) It is acceptable to prefix families of strings with a prefix, like so:
 
 ```json
