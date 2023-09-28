@@ -126,7 +126,7 @@ If any of these items fail, pause code review.
   and a string pattern to ensure that strings are properly localized. This is relevant in cases where order should be
   translatable.
 - [ ] Use named placeholders (e.g. `"{{value}} {{units}}"`) instead of numbered placeholders (e.g. `"{0} {1}"`).
-- [ ] Do all string keys conform to PhET guidelines? They are difficult to change after a sim has been publishe, and they appear
+- [ ] Make sure that all string keys conform to PhET guidelines. They are difficult to change after a sim has been published, and they appear
   in the PhET-iO API (and Studio) as the phetioIDs for StringProperties. Guidelines for string keys are:
 
   (1) Strings keys should generally match their values. E.g.:
