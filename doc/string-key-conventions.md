@@ -18,7 +18,15 @@ Guidelines:
   }
   ```
 
-(2) If a string key would be exceptionally long, use a key name that is an abbreviated form of the string value, or
+(2) String keys for screen names should have the general form `"screen.{{screenName}}"`. E.g.:
+
+  ```js
+    "screen.explore": {
+      "value": "Explore"
+    },
+  ```
+
+(3) If a string key would be exceptionally long, use a key name that is an abbreviated form of the string value, or
 that captures the purpose/essence of the value. E.g.:
 
   ```js
@@ -32,7 +40,7 @@ that captures the purpose/essence of the value. E.g.:
     value: "The Play Area is a small room. The Control Panel has buttons, a checkbox, and radio buttons to change conditions in the room."
   }
   ```
-(3) If string key names would collide, use your judgment to disambiguate. E.g.:
+(4) If string key names would collide, use your judgment to disambiguate. E.g.:
 
   ```js
   "simplifyTitle": {
@@ -43,32 +51,24 @@ that captures the purpose/essence of the value. E.g.:
   }
   ```
 
-(4) String keys for screen names should have the general form `"screen.{{screenName}}"`. E.g.:
-
-  ```js
-    "screen.explore": {
-      "value": "Explore"
-    },
-  ```
-
-(5) String patterns that contain placeholders (e.g. `"My name is {{first}} {{last}}"`) should use keys that are
-unlikely to conflict with strings that might be needed in the future. For example, for `"{{price}}"` consider using
-key `"pricePattern"` instead of `"price"`, if you think there might be a future need for a `"price"` string.
+(5) String patterns that contain placeholders should use keys that are unlikely to conflict with strings that might be needed
+in the future. For example, for value "The price is ${{dollars}}"` consider using key `"pricePattern"` or `"thePriceIsDollars"`
+instead of `"price"`, if you think there might be a future need for a `"Price"` string value.
 
 (6) It is acceptable to group related strings with a prefix, like so:
 
 ```json
-  "material.water": {
-    "value": "Water"
+  "material.brick": {
+    "value": "Brick"
+  },
+  "material.metal": {
+    "value": "Metal"
+  },
+  "material.plastic": {
+    "value": "Plastic"
   },
   "material.wood": {
     "value": "Wood"
-  },
-  "shape.block": {
-    "value": "Block"
-  },
-  "shape.cone": {
-    "value": "Cone"
   },
 ```
 
