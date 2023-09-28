@@ -1,6 +1,6 @@
 # Prototype Checklist
 
-This checklist includes minimal list of things that should be completed before
+This checklist includes a minimal list of tasks that should be completed before
 a prototype version is published.
 
 - [ ] Run with `stringTest=X` to verify that all strings are translatable. You should see nothing but 'X' strings in the
