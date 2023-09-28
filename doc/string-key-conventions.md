@@ -11,10 +11,10 @@ Guidelines:
 
 ```json
   "gravityForce": {
-    value: "Gravity Force"
+    "value": "Gravity Force"
   },
   "quadraticTerms": {
-    value: "Quadratic Terms"
+    "value": "Quadratic Terms"
   }
 ```
 
@@ -32,12 +32,12 @@ that captures the purpose/essence of the value. E.g.:
 ```js
   // key is abbreviated
   "iWentToTheStore": {
-    value: "I went to the store to get milk, eggs, butter, and sugar."
+    "value": "I went to the store to get milk, eggs, butter, and sugar."
   },
 
   // key is based on purpose
   "describeTheScreen": {
-    value: "The Play Area is a small room. The Control Panel has buttons, a checkbox, and radio buttons to change conditions in the room."
+    "value": "The Play Area is a small room. The Control Panel has buttons, a checkbox, and radio buttons to change conditions in the room."
   }
 ```
 
@@ -45,10 +45,10 @@ that captures the purpose/essence of the value. E.g.:
 
 ```json
   "simplifyTitle": {
-     value: "Simplify!"
+     "value": "Simplify!"
   },
   "simplifyCheckbox": {
-     value: "simplify"
+     "value": "simplify"
   }
 ```
 
