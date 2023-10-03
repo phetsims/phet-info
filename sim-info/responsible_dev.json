@@ -389,7 +389,7 @@
   },
   "curve-fitting": {
     "responsibleDevs": [
-      "@jonathanolson"
+      "@AgustinVallejo"
     ],
     "responsibleDesigners": [
       "@amanda-phet"
@@ -497,7 +497,7 @@
   },
   "example-sim": {
     "responsibleDevs": [
-      "@pixelzoom"
+      "@marlitas"
     ],
     "responsibleDesigners": []
   },
@@ -532,7 +532,7 @@
   },
   "fluid-pressure-and-flow": {
     "responsibleDevs": [
-      "@zepumph"
+      "@jessegreenberg"
     ],
     "responsibleDesigners": [
       "@DianaTavares"
@@ -799,7 +799,7 @@
   },
   "make-a-ten": {
     "responsibleDevs": [
-      "@jonathanolson"
+      "@marlitas"
     ],
     "responsibleDesigners": [
       "@amanda-phet"
@@ -1279,7 +1279,7 @@
   },
   "scenery-phet": {
     "responsibleDevs": [
-      "@pixelzoom"
+      "@jessegreenberg"
     ],
     "responsibleDesigners": []
   },
@@ -1303,7 +1303,7 @@
   },
   "simula-rasa": {
     "responsibleDevs": [
-      "@pixelzoom"
+      "@marlitas"
     ],
     "responsibleDesigners": []
   },
