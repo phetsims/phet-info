@@ -324,8 +324,8 @@ Developed and tested on Mac OS + Google Chrome.
     const emptyString = '';
 
     // emails collected from a previous session
-    const savedEmails = JSON.parse( localStorage.getItem( EMAILS_KEY ) );
-    const savedBackupEmails = JSON.parse( localStorage.getItem( EMAILS_BACKUP_KEY ) );
+    const savedEmails = JSON.parse( window.localStorage.getItem( EMAILS_KEY ) );
+    const savedBackupEmails = JSON.parse( window.localStorage.getItem( EMAILS_BACKUP_KEY ) );
 
     // get query parameters
     const queryParameters = new URLSearchParams( window.location.search );
@@ -362,7 +362,7 @@ Developed and tested on Mac OS + Google Chrome.
 
       // handle delete emails button press
       document.getElementById( 'delete-emails-button' ).addEventListener( 'click', () => {
-        localStorage.setItem( EMAILS_KEY, null );
+        window.localStorage.setItem( EMAILS_KEY, null );
         emailsList.innerHTML = emptyString;
         appendToEmailList( noEmailsString );
       } );
@@ -422,8 +422,8 @@ Developed and tested on Mac OS + Google Chrome.
         // add the latest email and save
         emails.push( input );
         backupEmails.push( input );
-        localStorage.setItem( EMAILS_KEY, JSON.stringify( emails ) );
-        localStorage.setItem( EMAILS_BACKUP_KEY, JSON.stringify( backupEmails ) );
+        window.localStorage.setItem( EMAILS_KEY, JSON.stringify( emails ) );
+        window.localStorage.setItem( EMAILS_BACKUP_KEY, JSON.stringify( backupEmails ) );
 
         // show a success message, clear input and placeholder
         showText( successString, 'success' );
