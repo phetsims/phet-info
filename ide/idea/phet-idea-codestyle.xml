@@ -1,7 +1,6 @@
 <code_scheme name="phet-idea-codestyle" version="173">
   <HTMLCodeStyleSettings>
     <option name="HTML_DO_NOT_ALIGN_CHILDREN_OF_MIN_LINES" value="200000" />
-    <option name="HTML_QUOTE_STYLE" value="Single" />
   </HTMLCodeStyleSettings>
   <JSCodeStyleSettings version="0">
     <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACKETS" value="true" />
@@ -18,6 +17,9 @@
     <option name="MIN_LINES_AROUND_HEADER" value="2" />
     <option name="KEEP_LINE_BREAKS_INSIDE_TEXT_BLOCKS" value="false" />
   </Markdown>
+  <MarkdownNavigatorCodeStyleSettings>
+    <option name="RIGHT_MARGIN" value="72" />
+  </MarkdownNavigatorCodeStyleSettings>
   <TypeScriptCodeStyleSettings version="0">
     <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACKETS" value="true" />
     <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
