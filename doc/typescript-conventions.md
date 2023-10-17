@@ -1,4 +1,4 @@
-## TypeScript Conventions
+## PhET TypeScript Conventions
 
 These are the conventions established for TypeScript use by PhET developers. This is an evolving document in an early
 phase. Please bring things up for discussion to add here as you identify new conventions. Conventions enforced by lint
