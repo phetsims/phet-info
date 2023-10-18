@@ -5,6 +5,7 @@
 - [ ] Ensure your address is up to date in myCUinfo. This ensures you will receive your W-2 in a timely manner.
 - [ ] Inform committees/team you are working on of your resignation.
 - [ ] Submit final my.leave timesheet as soon as possible (once your last day is finalized)
+- [ ] (if applicable) Ensure all unreconciled charges in Concur are assigned to a report and submitted before the employee’s last day with the University.  
 
 ### Turn in all university property to Physics department or PhET:
 - [ ] Door Keys. If needed, can be mailed to:
@@ -31,6 +32,7 @@ Boulder, CO 80309
 - [ ] Final payment submitted
 - [ ] Pay up to max of vacation at separation, VCT  for resignation. Prorated leave accruals until last day worked and pay out vacation. 'CUES_HCM_LEAVE_ACCRUAL_SUM' - Leave Accrual Summary, departing employee signs, attached to VCT transaction.
 - [ ] Termination in HCM. Termination effective date in HCM is the following day after last day worked.
+- [ ] (if applicable) Notify PSC to close a separating employee’s Travel and/or Procurement Card upon their departure. This can be done using the new Concur Request Update process, selecting the “Card Services Type” 04. Suspend/Cancel or Reinstate.  
 
 ### Accounts
 - [ ] Remove from PhET google group
