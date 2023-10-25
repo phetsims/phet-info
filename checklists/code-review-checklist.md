@@ -224,6 +224,9 @@ If any of these items fail, pause code review.
   https://github.com/phetsims/scenery-phet/issues/515. Please see
   [GasPropertiesColors.ts](https://github.com/phetsims/gas-properties/blob/main/js/common/GasPropertiesColors.ts)
   for a good example.
+- [ ] Sim-specific preferences (which appear in the Simulation tab of the Preferences dialog) should appear as Properties in
+      `{{PREFIX}}Preferences.ts`, for example KeplersLawsPreferences.ts. The initial value of each such preferences Property
+      should be set via a query parameter from `{{PREFIX}}QueryParameters.js`.
 
 ## **Coding Conventions**
 
