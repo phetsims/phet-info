@@ -15,7 +15,7 @@
   appropriate sim folder on google drive.
 
 - [ ]  **4. Two successes and two improvements**
-- Require participants to bring a list of no more than 2 items that were done well during the project and no more than 2
+- Participants will bring a list of no more than 2 items that were done well during the project, and no more than 2
   items that could be improved upon. Limiting to 2 requires people to think critically about their experience.
 
 - [ ]  **5. Identifying the top five**
