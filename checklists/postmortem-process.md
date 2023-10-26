@@ -1,5 +1,5 @@
 - [ ]  **1. Schedule the meeting**
-- Require the entire sim team to participate, and optionally anyone else who had a significant involvement. Have the
+- Invite the entire sim team to participate, and optionally anyone else who had a significant involvement. Have the
   meeting as soon as possible after the sim is released, so that experiences are still fresh in everyone's mind. Allow
   sufficient time for the meeting, 1.5-2 hours.
 
@@ -9,10 +9,10 @@
   Coordinator. The moderator also documents the important points of the meeting.
 
 - [ ]  **3. Create github postmortem issue and postmortem google doc**
-- Create a github issue in the repository of the sim for which the postmortem is occurring. This checklist will should
+- Create a GitHub issue in the repository of the sim for which the postmortem is occurring. This checklist will should
   be copied into the issue.
-- Create a postmortem google doc for the sim and set phethelp as the owner. This google doc should live within the
-  appropriate sim folder on google drive.
+- Create a postmortem Google doc for the sim and set phethelp as the owner. This Google doc should live within the
+  appropriate sim folder on Google drive.
 
 - [ ]  **4. Two successes and two improvements**
 - Participants will bring a list of no more than 2 items that were done well during the project, and no more than 2
@@ -41,8 +41,8 @@
 - Review the [Sim Checklist](https://github.com/phetsims/phet-info/blob/main/checklists/sim-checklist.md)
 
 - [ ]  **8. Action items**
-- Note important items in the postmortem github issue, and create issues for any tasks the require action (such as
-  updating documents, leftover "todo's", etc.
+- Note important items in the postmortem GitHub issue, and create issues for any tasks the require action, such as
+  updating documents, leftover TODOs, etc.
 - Action Item Questions:
   - Modifications to look and feel?
   - Modifications to sim design process?
@@ -50,8 +50,8 @@
   - Messages to share at status?
 
 - [ ]  **9. Take home messages**
-- From the top 5 successes/improvements, decide what are the "take home messages" that would be useful to note in the
+- From the top 5 successes/improvements, decide what are the "take away" messages that would be useful to note in the
   future, and add these to
   the [HTML5 Postmortem Take Home Messages](https://docs.google.com/document/d/1hayLX0FbhYqGao-5xizAFU9kVBzqrW_RVX88Wk_C_Lc/edit#heading=h.krbf2d24bpav)
-  google doc
+  Google doc
 - Report out at status meeting
