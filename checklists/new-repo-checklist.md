@@ -17,9 +17,9 @@ At https://github.com/phetsims:
 - [ ] In the "Description" text field,
   enter `"{{TITLE}}" is an educational simulation in HTML5, by PhET Interactive Simulations.`
 - [ ] Set visibility to "Public".
-- [ ] Do not check the "Initialize this repository with a README" checkbox.
-- [ ] Do not check "Add .gitignore".
-- [ ] Do not check "Add a license".
+- [ ] Do not check the "Add a README file" checkbox.
+- [ ] Leave the "Add .gitignore" combo box set to "None".
+- [ ] Leave the "Add a license" combo box set to "None".
 
 In your working copy of perennial repo:
 
