@@ -1,0 +1,23 @@
+scenerystack/community:
+  - source: doc/phet-development-overview.md
+    dest: docs/info-sync/simulation-development-overview.md
+  - source: doc/phet-exercises.md
+    dest: docs/info-sync/scenerystack-exercises.md
+  - source: deployment-info/chipper-2.0.md
+    dest: docs/info-sync/chipper-deploy.md
+  - source: doc/accessible-preferences-quickstart-guide.md
+    dest: docs/info-sync/accessible-preferences-quickstart-guide.md
+  - source: doc/coding-conventions.md
+    dest: docs/info-sync/coding-conventions.md
+  - source: doc/dynamic-string-layout-quickstart.md
+    dest: docs/info-sync/dynamic-string-layout-quickstart.md
+  - source: doc/interactive-description-technical-guide.md
+    dest: docs/info-sync/interactive-description-technical-guide.md
+  - source: doc/interactive-highlights-quickstart-guide.md
+    dest: docs/info-sync/interactive-highlights-quickstart-guide.md
+  - source: doc/phet-software-design-patterns.md
+    dest: docs/info-sync/phet-software-design-patterns.md
+  - source: doc/typescript-conventions.md
+    dest: docs/info-sync/typescript-conventions.md
+  - source: doc/typescript-quick-start.md
+    dest: docs/info-sync/typescript-quick-start.md
