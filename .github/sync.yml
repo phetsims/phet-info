@@ -1,7 +1,7 @@
 scenerystack/community:
   - source: doc/phet-development-overview.md
     dest: docs/info-sync/simulation-development-overview.md
-  - source: doc/phet-exercises.md
+  - source: doc/phet-dev-exercises.md
     dest: docs/info-sync/scenerystack-exercises.md
   - source: deployment-info/chipper-2.0.md
     dest: docs/info-sync/chipper-deploy.md
