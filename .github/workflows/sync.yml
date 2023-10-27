@@ -17,5 +17,5 @@ jobs:
           PR_LABELS: false
           REVIEWERS: brettfiedler
           COMMIT_BODY: 'Repo File Sync automated update'
-          DRY_RUN: true
+          # DRY_RUN: true
           
