@@ -16,7 +16,7 @@ At https://github.com/phetsims:
 - [ ] In "Repository name" text field, enter the repository name.
 - [ ] In the "Description" text field,
   enter `"{{TITLE}}" is an educational simulation in HTML5, by PhET Interactive Simulations.`
-- [ ] Set visibility to "Public".
+- [ ] Select the "Public" radio button.
 - [ ] Do not check the "Add a README file" checkbox.
 - [ ] Leave the "Add .gitignore" combo box set to "None".
 - [ ] Leave the "Add a license" combo box set to "None".
