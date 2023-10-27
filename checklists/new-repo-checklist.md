@@ -13,7 +13,7 @@ These steps contain the following placeholders that you'll need to fill in:
 At https://github.com/phetsims:
 
 - [ ] Press the "New" button.
-- [ ] In "Repository' text field, enter the repository name.
+- [ ] In "Repository name' text field, enter the repository name.
 - [ ] In the Description field,
   enter `"{{TITLE}}" is an educational simulation in HTML5, by PhET Interactive Simulations.`
 - [ ] Set visibility to "Public".
