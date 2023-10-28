@@ -515,6 +515,14 @@
     ],
     "responsibleDesigners": []
   },
+  "faradays-electromagnetic-lab": {
+    "responsibleDevs": [
+      "@pixelzoom"
+    ],
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
+  },
   "faradays-law": {
     "responsibleDevs": [
       "@jbphet"
