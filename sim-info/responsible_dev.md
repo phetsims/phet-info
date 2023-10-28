@@ -75,6 +75,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | example-sim | @marlitas |  |  | 
 | expression-exchange | @jbphet | @amanda-phet | Sound | 
 | faraday | @pixelzoom |  |  | 
+| faradays-electromagnetic-lab | @pixelzoom | @arouinfar |  | 
 | faradays-law | @jbphet | @arouinfar | Sound<br/>Interactive Description | 
 | fenster | @jbphet,@jessegreenberg |  |  | 
 | fluid-pressure-and-flow | @jessegreenberg | @DianaTavares |  | 
