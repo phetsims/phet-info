@@ -52,6 +52,7 @@ In your working copy of perennial repo:
 
 Other:
 
+- [ ] If the new repo uses TypeScript, add it to chipper/tsconfig/all/tsconfig.json.
 - [ ] Navigate to https://bayes.colorado.edu/dev/phettest/ and click the "Refresh perennial, perennial-alias, and
   chipper" button. If you do not know the password, please ask another developer.
 - [ ] Apply GitHub labels.
