@@ -23,6 +23,7 @@ dev:phet-io,1FFFFF
 dev:sound,005C5F
 dev:typescript,0074c1
 dev:voicing,07f7db
+good-first-issue,7068FF
 meeting:a11y-team,000000
 meeting:design,000000
 meeting:phet-io,000000
