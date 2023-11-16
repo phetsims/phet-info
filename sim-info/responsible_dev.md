@@ -60,7 +60,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | counting-common | @marlitas | @amanda-phet |  | 
 | curve-fitting | @AgustinVallejo | @amanda-phet |  | 
 | decaf | @samreid |  |  | 
-| density | @jonathanolson | @DianaTavares |  | 
+| density | @jonathanolson | @DianaTavares | Interactive Description | 
 | density-buoyancy-common | @jonathanolson | @DianaTavares |  | 
 | diffusion | @pixelzoom | @arouinfar |  | 
 | dot | @jonathanolson |  |  | 
