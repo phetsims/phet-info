@@ -1185,6 +1185,17 @@
       "@amanda-phet"
     ]
   },
+  "projectile-data-lab": {
+    "responsibleDevs": [
+      "@matthew-blackman",
+      "@samreid"
+    ],
+    "responsibleDesigners": [
+      "@matthew-blackman",
+      "@catherinecarter",
+      "@arouinfar"
+    ]
+  },
   "projectile-motion": {
     "responsibleDevs": [
       "@matthew-blackman"
