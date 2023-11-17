@@ -7,6 +7,6 @@
     "url": "https://github.com/phetsims/phet-info.git"
   },
   "devDependencies": {
-    "@octokit/core": "~4.2.0"
+    "octokit": "^3.1.2"
   }
 }
