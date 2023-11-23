@@ -231,7 +231,7 @@ If any of these items fail, pause code review.
 ## **Coding Conventions**
 
 - [ ] Are coding conventions outlined
-  in [PhET's Coding Conventions Document](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md)
+  in PhET's [Coding Conventions](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md) document
   followed and adhered to? This document deals with PhET coding conventions. You do not need to exhaustively check every
   item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether
   the code generally meets PhET standards.
@@ -239,8 +239,8 @@ If any of these items fail, pause code review.
 ## **TypeScript Conventions**
 
 - [ ] Are TypeScript conventions outlined in
-  the [TypeScript Conventions Document](https://github.com/phetsims/phet-info/blob/main/doc/typescript-conventions.md)
-  followed and adhered to?
+  the [TypeScript Conventions](https://github.com/phetsims/phet-info/blob/main/doc/typescript-conventions.md)
+  document followed and adhered to?
 
 ## **Math Libraries**
 
