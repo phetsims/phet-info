@@ -239,7 +239,7 @@ If any of these items fail, pause code review.
 ## **TypeScript Conventions**
 
 - [ ] Are TypeScript conventions outlined in
-  the [TypeScript Conventions](https://github.com/phetsims/phet-info/blob/main/doc/typescript-conventions.md)
+  PhET's [TypeScript Conventions](https://github.com/phetsims/phet-info/blob/main/doc/typescript-conventions.md)
   document followed and adhered to?
 
 ## **Math Libraries**
