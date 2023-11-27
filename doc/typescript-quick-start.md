@@ -32,12 +32,17 @@ known problems, etc.
    see https://github.com/phetsims/chipper/issues/1121)
 
 ```json
-"../chipper/phet-types.d.ts",
-"../chipper/phet-types-module.d.ts",
-"../chipper/node_modules/@types/lodash/index.d.ts",
-"../chipper/node_modules/@types/qunit/index.d.ts"
+    "js/**/*",
+    "images/**/*",
+    "mipmaps/**/*",
+    "sounds/**/*",
 ```
 
+2. To add support for your repo to type-check along with the rest of the project add it to `chipper/tsconfig/all/tsconfig.json`.
+
+```json
+"../../../{{REPO}}/js/**/*"
+```
 Congratulations!  Now the repo is TypeScript-capable. You can commit these changes if you wish.
 
 ### Transpile TypeScript
