@@ -83,18 +83,14 @@ find . -name "*.js" ! -iname "*phet-io-overrides.js"  -exec bash -c 'mv "$1" "${
 
 ### Caveats and Notes
 
-1. For now, please leave the phet-io-overrides.js file, strings file and namespace file as *.js. The build tools are not
-   set to do those in TypeScript yet.
-2. phettest and CT provide TypeScript support, but do not yet have a good user experience for showing TypeErrors etc.
-   And it is not well-vetted.
-3. Please make sure you are using the commit hooks, which are configured to run type checks on typescript repos.
-4. Ambient type definitions are provided in chipper/phet-types.d.ts and phet-types-module.d.ts
-5. Transitive dependencies are not always tracked correctly in the build system. This bug has been reported to
+1. Please make sure you are using the commit hooks, which are configured to run type checks on typescript repos.
+2. Ambient type definitions are provided in chipper/phet-types.d.ts and phet-types-module.d.ts
+3. Transitive dependencies are not always tracked correctly in the build system. This bug has been reported to
    TypeScript. Details in https://github.com/phetsims/chipper/issues/1067
-6. Some common code repos include code outside their directory. This problem is described
+4. Some common code repos include code outside their directory. This problem is described
    in https://github.com/phetsims/chipper/issues/1096
-7. Conventions and patterns listed in https://github.com/phetsims/phet-info/blob/main/doc/typescript-conventions.md
-8. For certain files, when changing JS=>TS, WebStorm will say it is a rename in the commit dialog, then show a “delete +
+5. Conventions and patterns listed in https://github.com/phetsims/phet-info/blob/main/doc/typescript-conventions.md
+6. For certain files, when changing JS=>TS, WebStorm will say it is a rename in the commit dialog, then show a “delete +
    create” in the history. This is not desirable. For those files, a workaround is to rename the file with no content
    changes, then change the contents in a separate commit. We no longer are using `@ts-nocheck` as part of this process
    because it wasn't worth the cost, and this doesn't prevent downstream errors by files that use your converting file
