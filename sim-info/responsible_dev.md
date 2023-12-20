@@ -24,7 +24,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | balancing-act | @jbphet | @DianaTavares | Sound | 
 | balancing-chemical-equations | @pixelzoom | @arouinfar | Sound | 
 | balloons-and-static-electricity | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
-| bamboo | @samreid |  |  | 
+| bamboo | @samreid |  | Sound<br/>Interactive Description | 
 | beaker | @samreid |  |  | 
 | beers-law-lab | @pixelzoom | @arouinfar |  | 
 | bending-light | @samreid | @arouinfar |  | 
@@ -108,7 +108,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | inverse-square-law-common | @zepumph | @arouinfar |  | 
 | isotopes-and-atomic-mass | @jbphet | @arouinfar |  | 
 | john-travoltage | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description<br/>Voicing | 
-| joist | @zepumph |  |  | 
+| joist | @zepumph |  | Sound<br/>Interactive Description | 
 | keplers-laws | @AgustinVallejo,@jonathanolson | @DianaTavares | Sound<br/>Interactive Description | 
 | kite | @jonathanolson |  |  | 
 | least-squares-regression | @jonathanolson | @amanda-phet |  | 
@@ -194,7 +194,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | states-of-matter-basics | @jbphet | @arouinfar |  | 
 | studio | @zepumph |  |  | 
 | sugar-and-salt-solutions | @samreid | @amanda-phet |  | 
-| sun | @jbphet |  | Interactive Description | 
+| sun | @jbphet |  | Sound<br/>Interactive Description | 
 | tambo | @jbphet |  | Sound<br/>Interactive Description | 
 | tandem | @zepumph |  |  | 
 | tangible | @zepumph |  |  | 
@@ -207,7 +207,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | utterance-queue | @jessegreenberg |  |  | 
 | vector-addition | @pixelzoom | @arouinfar |  | 
 | vector-addition-equations | @pixelzoom | @arouinfar |  | 
-| vegas | @pixelzoom |  | Sound | 
+| vegas | @pixelzoom |  | Sound<br/>Interactive Description | 
 | vibe | @jbphet |  |  | 
 | wave-interference | @samreid | @arouinfar | Sound | 
 | wave-on-a-string | @jonathanolson | @arouinfar |  | 
