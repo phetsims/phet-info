@@ -1089,7 +1089,7 @@
   },
   "phet-io-website": {
     "responsibleDevs": [
-      "@chrisklus"
+      "@zepumph"
     ],
     "responsibleDesigners": []
   },
@@ -1167,7 +1167,7 @@
   },
   "phetmarks": {
     "responsibleDevs": [
-      "@jonathanolson"
+      "@zepumph"
     ],
     "responsibleDesigners": []
   },
