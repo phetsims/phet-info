@@ -149,7 +149,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phet-io | @zepumph |  |  | 
 | phet-io-sim-specific | @samreid | @arouinfar |  | 
 | phet-io-test-sim | @zepumph |  |  | 
-| phet-io-website | @chrisklus |  |  | 
+| phet-io-website | @zepumph |  |  | 
 | phet-io-wrapper-classroom-activity | @zepumph |  |  | 
 | phet-io-wrapper-haptics | @jessegreenberg |  |  | 
 | phet-io-wrapper-hookes-law-energy | @zepumph |  |  | 
@@ -162,7 +162,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phet-partnerships | @kathy-phet |  |  | 
 | phet-sublime-plugin | @jonathanolson |  |  | 
 | phetcommon | @zepumph |  |  | 
-| phetmarks | @jonathanolson |  |  | 
+| phetmarks | @zepumph |  |  | 
 | phettest | @zepumph |  |  | 
 | plinko-probability | [See #214](https://github.com/phetsims/phet-info/issues/214) | @amanda-phet |  | 
 | projectile-data-lab | @matthew-blackman,@samreid | @matthew-blackman,@catherinecarter,@arouinfar | Sound<br/>Interactive Description | 
