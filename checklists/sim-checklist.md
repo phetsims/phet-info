@@ -81,7 +81,7 @@
 - [ ] **Sim is "feature complete"** (Date: //)
 - [ ] **QA team "first look"** (Date: //)
 - [ ] Interviews may happen around here (see above)
-- [ ] **Code review checklist completed"** (Date: //)
+- [ ] **Code review checklist completed** (Date: //)
 - [ ] **Sim team sign-off** (Date: //)
 - [ ] **Code review completed** (Date: //)
 - [ ] **Sim dev test completed** (Date: //)
