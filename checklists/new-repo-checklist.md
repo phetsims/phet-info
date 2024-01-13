@@ -90,7 +90,7 @@ In your working copy of the sim repo:
 - [ ] `git branch -M main`
 - [ ] `git remote add origin https://github.com/phetsims/{{REPO}}.git`
 - [ ] `git push -u origin main`
-- [ ] Copy the pre-commit hooks into .git/hooks
+- [ ] `cp ../phet-info/git-template-dir/hooks/* .git/hooks/`
 
 At https://github.com/phetsims/{{REPO}}:
 - [ ]Go to _Settings => Collaborators and teams_. Press the "Add teams" button.
