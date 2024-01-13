@@ -658,6 +658,14 @@
       "@arouinfar"
     ]
   },
+  "generator": {
+    "responsibleDevs": [
+      "@pixelzoom"
+    ],
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
+  },
   "geometric-optics": {
     "responsibleDevs": [
       "@pixelzoom"
