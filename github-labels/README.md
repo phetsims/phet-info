@@ -26,17 +26,20 @@ build-local.json. See Getting Started for details.
 ### To add a new label to all the organization's repos
 
 1. Choose a new label following the [labeling-scheme](labeling-scheme.md)
-2. Run `./new-label-all-repos.sh {{new-label-name}} {{new-label-color}}`.  `new-label-color` should be the hexcode with
+2. `cd phet-info/github-labels`
+3. Run `./new-label-all-repos.sh {{new-label-name}} {{new-label-color}}`.  `new-label-color` should be the hexcode with
    no # symbol, e.g. FF00AA.
 
 ### To change the text and/or color of a label
 
 1. Update the desired label in [github-labels](github-labels), following the [labeling-scheme](labeling-scheme.md)
-2. Run `./change-label.sh {{old-label-name}} {{new-label-name}} {{new-label-color}}`.  `new-label-color` should be the
+2. `cd phet-info/github-labels`
+3. Run `./change-label.sh {{old-label-name}} {{new-label-name}} {{new-label-color}}`.  `new-label-color` should be the
    hexcode with no # symbol, e.g. `FF00AA`.
 
 ### To remove a label from all repos
 
+1. `cd phet-info/github-labels`
 2. Run `./delete-label.sh {{label-name}}`.
 
 ## FAQ
