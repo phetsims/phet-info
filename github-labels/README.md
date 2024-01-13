@@ -21,7 +21,8 @@ build-local.json. See Getting Started for details.
 
 ### To standardize the labels on a new repo
 
-1. Run `./new-repo-add-labels.sh phetsims/{{new-repo-name}}`
+1. `cd phet-info/github-labels`
+2. Run `./new-repo-add-labels.sh phetsims/{{new-repo-name}}`
 
 ### To add a new label to all the organization's repos
 
