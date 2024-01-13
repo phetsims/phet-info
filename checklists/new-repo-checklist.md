@@ -21,8 +21,9 @@ At https://github.com/phetsims:
 - [ ] Leave the "Add .gitignore" combo box set to "None".
 - [ ] Leave the "Add a license" combo box set to "None".
 
-In your working copy of perennial repo:
+Create your working copy of the sim repo:
 
+- [ ] `cd perennial`
 - [ ] Run `grunt create-sim --repo="{{REPO}}" --author="{{AUTHOR}}" --title="{{TITLE}}"` to create the file structure
   and skeleton code for the sim.
 
