@@ -33,7 +33,7 @@ In your working copy of the sim repo:
 - [ ] `git commit -m "Initial commit"`
 - [ ] `git remote add origin https://github.com/phetsims/{{REPO}}.git`
 - [ ] `git push -u origin main`
-- [ ] Copy the pre-commit hooks into .git/hooks
+- [ ] `cp ../phet-info/git-template-dir/hooks/* .git/hooks/`
 
 At https://github.com/phetsims/{{REPO}}:
 
