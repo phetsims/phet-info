@@ -805,6 +805,14 @@
       "@amanda-phet"
     ]
   },
+  "magnet-and-compass": {
+    "responsibleDevs": [
+      "@pixelzoom"
+    ],
+    "responsibleDesigners": [
+      "@arouinfar"
+    ]
+  },
   "make-a-ten": {
     "responsibleDevs": [
       "@marlitas"
