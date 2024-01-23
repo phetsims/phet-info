@@ -1,8 +1,7 @@
 # Conventions for naming string keys
 
-This document described the naming conventions for string keys that appear in 
-translated string files. It is important to get these right before publication 
-because keys are difficult to change after a sim has been published, and they
+This document described the naming conventions for string keys that appear in translated string files. It is important
+to get these right before publication because keys are difficult to change after a sim has been published, and they
 appear in the PhET-iO API (and Studio) as the phetioIDs for StringProperties.
 _If you're unsure about these conventions, ask another PhET developer._
 
@@ -27,8 +26,8 @@ Guidelines:
     },
 ```
 
-(3) If a string key would be exceptionally long, use a key name that is an abbreviated form of the string value, or
-that captures the purpose/essence of the value. E.g.:
+(3) If a string key would be exceptionally long, use a key name that is an abbreviated form of the string value, or that
+captures the purpose/essence of the value. E.g.:
 
 ```js
   // key is abbreviated
@@ -53,8 +52,9 @@ that captures the purpose/essence of the value. E.g.:
   }
 ```
 
-(5) String patterns that contain placeholders should use keys that are unlikely to conflict with strings that might be needed
-in the future. For example, for value `"The price is {{dollars}}"` consider using key `"pricePattern"` or `"thePriceIsDollars"`
+(5) String patterns that contain placeholders should use keys that are unlikely to conflict with strings that might be
+needed in the future. For example, for value `"The price is {{dollars}}"` consider using key `"pricePattern"`
+or `"thePriceIsDollars"`
 instead of `"price"`, if you think there might be a future need for a `"Price"` string value.
 
 (6) It is acceptable to group related strings with a prefix, for example:

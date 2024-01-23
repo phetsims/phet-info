@@ -222,7 +222,7 @@ notify you about any additional tasks that you will need to take afterwards.
 
 ### Manual maintenance patching
 
-NOTE: Most of these steps can be avoided by using the automated maintenance process! See the "Maintenance patches for a 
+NOTE: Most of these steps can be avoided by using the automated maintenance process! See the "Maintenance patches for a
 suite of sims in RC" section in automated-maintenance-process.md.
 
 If you want to make a change to the sim's own repo on the release branch (and no changes to other dependencies), then

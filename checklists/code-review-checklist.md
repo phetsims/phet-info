@@ -126,8 +126,9 @@ If any of these items fail, pause code review.
   and a string pattern to ensure that strings are properly localized. This is relevant in cases where order should be
   translatable.
 - [ ] Use named placeholders (e.g. `"{{value}} {{units}}"`) instead of numbered placeholders (e.g. `"{0} {1}"`).
-- [ ] Inspect `${REPO}-strings_en.json` and verify that all string keys conform to [string key conventions](https://github.com/phetsims/phet-info/blob/main/doc/string-key-conventions.md).
-  String keys are difficult to change after a sim has been published, and they appear in the PhET-iO API (and Studio) as the
+- [ ] Inspect `${REPO}-strings_en.json` and verify that all string keys conform
+  to [string key conventions](https://github.com/phetsims/phet-info/blob/main/doc/string-key-conventions.md). String
+  keys are difficult to change after a sim has been published, and they appear in the PhET-iO API (and Studio) as the
   phetioIDs for StringProperties.
 - [ ] If the sim was already released, make sure none of the original string keys have changed. If they have changed,
   make sure any changes have a good reason and have been discussed with @jbphet (it is likely that an issue
@@ -224,14 +225,15 @@ If any of these items fail, pause code review.
   https://github.com/phetsims/scenery-phet/issues/515. Please see
   [GasPropertiesColors.ts](https://github.com/phetsims/gas-properties/blob/main/js/common/GasPropertiesColors.ts)
   for a good example.
-- [ ] Sim-specific preferences (which appear in the Simulation tab of the Preferences dialog) should appear as Properties in
-      `{{PREFIX}}Preferences.ts`, for example KeplersLawsPreferences.ts. The initial value of each such preferences Property
-      should be set via a query parameter from `{{PREFIX}}QueryParameters.js`.
+- [ ] Sim-specific preferences (which appear in the Simulation tab of the Preferences dialog) should appear as
+  Properties in
+  `{{PREFIX}}Preferences.ts`, for example KeplersLawsPreferences.ts. The initial value of each such preferences Property
+  should be set via a query parameter from `{{PREFIX}}QueryParameters.js`.
 
 ## **Coding Conventions**
 
-- [ ] Are coding conventions outlined
-  in PhET's [Coding Conventions](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md) document
+- [ ] Are coding conventions outlined in
+  PhET's [Coding Conventions](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md) document
   followed and adhered to? This document deals with PhET coding conventions. You do not need to exhaustively check every
   item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether
   the code generally meets PhET standards.

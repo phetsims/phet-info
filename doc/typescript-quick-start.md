@@ -38,11 +38,13 @@ known problems, etc.
     "sounds/**/*",
 ```
 
-2. To add support for your repo to type-check along with the rest of the project add it to `chipper/tsconfig/all/tsconfig.json`.
+2. To add support for your repo to type-check along with the rest of the project add it
+   to `chipper/tsconfig/all/tsconfig.json`.
 
 ```json
 "../../../{{REPO}}/js/**/*"
 ```
+
 Congratulations!  Now the repo is TypeScript-capable. You can commit these changes if you wish.
 
 ### Transpile TypeScript
