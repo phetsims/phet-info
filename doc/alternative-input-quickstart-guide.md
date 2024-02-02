@@ -1,5 +1,7 @@
 # Alternative Input - Quickstart Guide
 
+@author Chris Malley (PixelZoom, Inc.)
+
 Get started with adding alternative input to your PhET simulation.
 
 ## package.json
