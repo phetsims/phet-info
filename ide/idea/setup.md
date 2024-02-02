@@ -89,3 +89,54 @@ Use at your own risk!
   see how a section of code came to be, but also which devs made the changes. See documentation on
   the [Show History](https://www.jetbrains.com/help/webstorm/investigate-changes.html#file-history) feature (or
   do `Right click > Git > Show History/Show History for Selection`).
+* There are many PhET words that webstorm will flag incorrectly as spelling errors. You may want to preempt this by
+  adding these to your local dictionary in `Editor -> Natural Languages -> Spelling`
+  <details>
+
+  * assistive
+  * autoselect
+  * autoselectable
+  * blackman
+  * bugginess
+  * codap
+  * eall
+  * eslint
+  * falsey
+  * grapher
+  * interoperated
+  * kauzmann
+  * klusendorf
+  * layerable
+  * lightyear
+  * multilink
+  * multitouch
+  * operationalize
+  * optionize
+  * pdom
+  * phet
+  * phetio
+  * phetmarks
+  * phetsim
+  * phetsims
+  * phettest
+  * pickability
+  * pickable
+  * popupable
+  * proccessed
+  * recursed
+  * renameable
+  * runnables
+  * sonification
+  * sonify
+  * substate
+  * toggler
+  * translatability
+  * unbuilt
+  * unclamped
+  * unclickable
+  * undefer
+  * uninstrument
+  * uninstrumentation
+  * uninstrumented
+  * unpickable
+  </details>
