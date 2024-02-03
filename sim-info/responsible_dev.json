@@ -949,7 +949,9 @@
     "responsibleDesigners": []
   },
   "normal-modes": {
-    "responsibleDevs": [],
+    "responsibleDevs": [
+      "@pixelzoom"
+    ],
     "responsibleDesigners": [
       "@DianaTavares"
     ]
