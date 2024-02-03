@@ -950,7 +950,8 @@
   },
   "normal-modes": {
     "responsibleDevs": [
-      "@pixelzoom"
+      "@Hyodar",
+      "@tmildemberger"
     ],
     "responsibleDesigners": [
       "@DianaTavares"
@@ -1588,8 +1589,7 @@
   },
   "xray-diffraction": {
     "responsibleDevs": [
-      "@heldentodd",
-      "@pixelzoom"
+      "@heldentodd"
     ],
     "responsibleDesigners": []
   },
