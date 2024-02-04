@@ -130,7 +130,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | natural-selection | @pixelzoom | @amanda-phet |  | 
 | neuron | @jbphet | @arouinfar |  | 
 | nitroglycerin | @pixelzoom |  |  | 
-| normal-modes |  | @DianaTavares |  | 
+| normal-modes | @Hyodar,@tmildemberger | @DianaTavares |  | 
 | number-compare | @marlitas | @amanda-phet | Sound | 
 | number-line-common | @jbphet | @amanda-phet |  | 
 | number-line-distance | @jbphet | @amanda-phet |  | 
@@ -222,5 +222,5 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | website-scenery | @chrisklus |  |  | 
 | weddell | @jbphet |  |  | 
 | wilder | @jonathanolson |  |  | 
-| xray-diffraction | @heldentodd,@pixelzoom |  |  | 
+| xray-diffraction | @heldentodd |  |  | 
 | yotta | @jonathanolson |  |  | 
