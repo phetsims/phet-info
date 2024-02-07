@@ -61,7 +61,6 @@
 ## Inclusive Features
 
 - [ ] Alternative Input (Started: ) (Completed: )
-- [ ] Pan & Zoom
 - [ ] Sound & Sonification (UI)
 - [ ] Sound & Sonification (Pedagogical) - (include link to relevant sonification design document)
   - [ ] Sound design complete (Started: ) (Completed: )
