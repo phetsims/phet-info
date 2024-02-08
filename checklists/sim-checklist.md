@@ -62,6 +62,7 @@
 
 - [ ] Alternative Input (Started: ) (Completed: )
   - [ ] Interactive Highlights
+  - [ ] Separate ScreenView controls into play area PDOM vs control area PDOM
 - [ ] Sound & Sonification (Completed: )
   - [ ] Sound design requirements determined: date: //
   - [ ] Sound design complete: date: //
