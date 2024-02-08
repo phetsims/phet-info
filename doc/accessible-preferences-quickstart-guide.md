@@ -10,8 +10,7 @@ This document is a quickstart guide for adding Interactive Description to the Pr
 Please see the alternative-input-quickstart-guide.md first. This guide assumes you are familiar with that and have
 enabled Interactive Description in your package.json.
 
-PhET is going to start adding Interactive Description to the Preferences dialog for simulations that support alternative
-input. By adding Interactive Description to our Preferences dialog, learners who rely on screen reader software are
+By adding Interactive Description to a Preferences dialog, learners who rely on screen reader software are
 empowered to access essential features. For example, a blind learner will be able to enable the Voicing feature, even if
 the simulation does not fully support Interactive Description. Having a fully accessible Preferences Menu supports
 learner agency in accessing and using any features in the Preferences Menu that can aid in their learning process.
