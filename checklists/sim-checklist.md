@@ -62,10 +62,11 @@
 
 - [ ] Alternative Input (Started: ) (Completed: )
   - [ ] Interactive Highlights
-- [ ] Sound & Sonification (UI)
-- [ ] Sound & Sonification (Pedagogical) - (include link to relevant sonification design document)
-  - [ ] Sound design complete (Started: ) (Completed: )
-  - [ ] Development complete (Started: ) (Completed: )
+- [ ] Sound & Sonification (Completed: )
+  - [ ] Sound design requirements determined: date: //
+  - [ ] Sound design complete: date: //
+  - [ ] UI Sounds implemented: date: //
+  - [ ] All sounds implemented: date: //
 - [ ] Interactive Description - (link to description design & implementation checklist)
   - [ ] Description design complete (Started: ) (Completed: )
   - [ ] Development complete (Started: ) (Completed: )
