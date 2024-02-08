@@ -54,7 +54,7 @@ Area" and "Control Area", which are two sections of the Parallel DOM. This categ
 when using an assistive device.
 
 The first step is to design the traversal order and categorization. Consult with the simulation designer to determine
-the order and placement of components in your simulation. When ready, order and placement are set with the `pdomOrder`
+the order and placement of components in the simulation. When ready, order and placement are set with the `pdomOrder`
 option to Node.
 
 If `pdomOrder` is not specified, the default is the order in which children are added to a Node.
