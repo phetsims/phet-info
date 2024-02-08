@@ -97,9 +97,9 @@ Potential gotchas:
 * If you need to augment `this.pdomOrder` in a subclass, read about the pitfalls
   in https://github.com/phetsims/scenery/issues/1308.
 
-## Fire using the keyboard
+## Keyboard listeners
 
-If you have a custom Node that needs to fire when the Space or Return keys are pressed, add `tagName: 'button'` to your
+If you have a custom Node that needs to do something when Space or Return keys are pressed, add `tagName: 'button'` to your
 Node's options, then use one of these approaches:
 
 ```js
