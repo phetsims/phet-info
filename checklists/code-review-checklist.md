@@ -321,6 +321,8 @@ various features, not all are always include. Ignore sections that do not apply.
 ### Alternative Input
 
 - [ ] Does the sim pass an accessibility fuzz test? (run with query parameters `fuzzBoard&ea`)
+- [ ] Does the sim use `ScreenView.pdomPlayAreaNode.pdomOrder` and `Screenview.pdomControlAreaNode.pdomOrder` to control
+  the traversal order and categorize Nodes in the PDOM? See alternative-input-quickstart-guide.md for more information.
 - [ ] Does this sim use specific keyboard shortcuts that overlap with global shortcuts? This includes the use of
   modifier keys like in https://github.com/phetsims/ratio-and-proportion/issues/287. **NOTE: There is currently no list
   of global shortcuts, and therefore no way to complete this checklist item.
@@ -333,7 +335,6 @@ various features, not all are always include. Ignore sections that do not apply.
 - [ ] If applicable, are good design patterns used for interactive description,
   see [interactive-description-technical-guide.md](https://github.com/phetsims/phet-info/blob/main/doc/interactive-description-technical-guide.md)
 - [ ] Does resetting the simulation also reset the entire PDOM?
-- [ ] Is `Node.pdomOrder` used appropriately to maintain visual and PDOM layout balance?
 - [ ] Make sure accessibility strings aren't being adjusted with ascii specific javascript methods like `toUpperCase()`.
   Remember that one day these strings will be translatable
 - [ ] Make sure for accessibility strings that all end of sentence periods do not have a leading space before it. Some
