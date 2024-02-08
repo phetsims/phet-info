@@ -1186,6 +1186,12 @@
     ],
     "responsibleDesigners": []
   },
+  "phet-vite-demo": {
+    "responsibleDevs": [
+      "@jonathanolson"
+    ],
+    "responsibleDesigners": []
+  },
   "phetcommon": {
     "responsibleDevs": [
       "@zepumph"
