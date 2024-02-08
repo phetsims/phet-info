@@ -61,6 +61,7 @@
 ## Inclusive Features
 
 - [ ] Alternative Input (Started: ) (Completed: )
+  - [ ] Interactive Highlights
 - [ ] Sound & Sonification (UI)
 - [ ] Sound & Sonification (Pedagogical) - (include link to relevant sonification design document)
   - [ ] Sound design complete (Started: ) (Completed: )
