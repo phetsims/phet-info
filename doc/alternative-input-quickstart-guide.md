@@ -49,42 +49,33 @@ const myNode = new Node( {
 
 ## Traversal Order
 
-Traversal order is the order in which Nodes are visited as you press the Tab key. The order is specified using
-the `pdomOrder` option to Node. If `pdomOrder` is not specified, the default is the order in which children are added to
-a Node.
+Traversal order is the order in which Nodes are visited as you press the Tab key. Nodes are also categorized into "Play
+Area" and "Control Area", which are two sections of the Parallel DOM. This categorization makes them easy to find
+when using an assistive device.
+
+The first step is to design the traversal order and categorization. Consult with the simulation designer to determine
+the order and placement of components in your simulation. When ready, order and placement are set with the `pdomOrder`
+option to Node.
+
+If `pdomOrder` is not specified, the default is the order in which children are added to a Node.
 
 For `FlowBox` (and its subclasses) there is no need to specify traversal order. There is a good match between layout
 order and traversal order; they are typically the same. So for `FlowBox`, you can do nothing.
 
 For non-`FlowBox` classes, it is recommended to explicitly set `this.pdomOrder` at the end of constructor. Do not rely
-on the default ordering - it’s better to decouple rendering order and traversal order by explicitly
-setting `this.pdomOrder`. Note that most of the work here is typically in `ScreenView` subclasses.
+on the default ordering - it’s better to decouple rendering order and traversal order by explicitly setting
+`this.pdomOrder`. Note that most of the work here is typically in `ScreenView` subclasses.
 
 If you need to remove a Node from the traversal order you can do so with the `focusable` option of Node.
 
-For `ScreenView`, `this.pdomOrder` cannot be set directly. There are two approaches you can use to specify traversal
-order at the ScreenView level. Check with your sim designer to see which approach is appropriate.
-
-Approach 1: Add Nodes to either the "Play Area" or "Control Area". Do not add Nodes directly to the ScreenView. Instead,
-use this pattern in your ScreenView constructor:
+Use this pattern in your ScreenView constructor:
 
 ```js
-this.pdomPlayAreaNode.children = [ ... ];
-this.pdomPlayAreaNode.pdomOrder = [ ... ]; // decouple traversal order from rendering order
-this.pdomControlAreaNode.children = [ ... ];
-this.pdomControlAreaNode.pdomOrder = [ ... ]; // decouple traversal order from rendering order
-```
+this.children = [ ... ]; // add children like normal
 
-Approach 2: In some cases (typically before descriptions are added), "Play Area" and "Control Area" can be ignored for
-the purposes of alternative input. If that is appropriate for your sim, then do not add Nodes directly to the base
-ScreenView or ScreenView subclasses. Instead, use this pattern in your base ScreenView constructor:
-
-```js
-const screenViewRootNode = new Node( {
-   children: [...]
-});
-screenViewRootNode.pdomOrder = [...]; // decouple traversal order from rendering order
-this.addChild( screenViewRootNode );
+// Put components in the Play Area and Control Area in order, and decouple traversal order from rendering order
+this.pdomPlayAreaNode.pdomOrder = [ ... ];
+this.pdomControlAreaNode.pdomOrder = [ ... ];
 ```
 
 See `ParallelDOM.setPDOMOrder` for more advanced features of this setter if needed.
@@ -99,8 +90,8 @@ Potential gotchas:
 
 ## Keyboard listeners
 
-If you have a custom Node that needs to do something when Space or Return keys are pressed, add `tagName: 'button'` to your
-Node's options, then use one of these approaches:
+If you have a custom Node that needs to do something when Space or Return keys are pressed, add `tagName: 'button'` to
+your Node's options, then use one of these approaches:
 
 ```js
 this.addInputListener( new PressListener( {
