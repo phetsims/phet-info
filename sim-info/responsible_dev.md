@@ -164,6 +164,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phet-office-add-in | @oliver-phet |  |  | 
 | phet-partnerships | @kathy-phet |  |  | 
 | phet-sublime-plugin | @jonathanolson |  |  | 
+| phet-vite-demo | @jonathanolson |  |  | 
 | phetcommon | @zepumph |  |  | 
 | phetmarks | @zepumph |  |  | 
 | phettest | @zepumph |  |  | 
