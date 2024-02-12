@@ -49,41 +49,67 @@ const myNode = new Node( {
 
 ## Traversal Order
 
-Traversal order is the order in which Nodes are visited as you press the Tab key. Nodes are also categorized into "Play
-Area" and "Control Area", which are two sections of the Parallel DOM. This categorization makes them easy to find when
-using an assistive device.
+Traversal order (or focus order) is the order in which Nodes are visited as you press the Tab key.
 
-The first step is to design the traversal order and categorization. Consult with the simulation designer to determine
-the order and placement of components in the simulation. When ready, order and placement are set with the `pdomOrder`
-option to Node.
+Nodes are also categorized into "Play Area" and "Control Area", which are two sections of the Parallel DOM.
+This categorization makes them easy to find when using an assistive device.
 
-If `pdomOrder` is not specified, the default is the order in which children are added to a Node.
+### Step 1: Prototype the traversal order.
 
-For `FlowBox` (and its subclasses) there is no need to specify traversal order. There is a good match between layout
-order and traversal order; they are typically the same. So for `FlowBox`, you can do nothing.
+This can be done in collaboration with the designer, or by the developer as a strawman proposal.
 
-For non-`FlowBox` classes, it is recommended to explicitly set `this.pdomOrder` at the end of constructor. Do not rely
-on the default ordering - it’s better to decouple rendering order and traversal order by explicitly setting
-`this.pdomOrder`. Note that most of the work here is typically in `ScreenView` subclasses.
+The quickest path to a prototype is to follow the code pattern shown below your ScreenView subclasses. 
+Multiple calls to `screenViewRootNode.addChild` calls are an OK alternative, but will not 
+provide you with a clear specification of rendering order.
 
-If you need to remove a Node from the traversal order you can do so with the `focusable` option of Node.
-
-Use this pattern in your ScreenView constructor:
-
-```js
-
-// a root Node is added so that you don't overwrite children of the superclass
+```ts
+// Rendering order, a single child added to the ScreenView.
 const screenViewRootNode = new Node( {
-   children: [...] // add children like normal
+   children: [
+     // Put all of your Nodes here.
+   ]
 });
 this.addChild( screenViewRootNode );
 
-// Put components in the Play Area and Control Area in order, and decouple traversal order from rendering order
-this.pdomPlayAreaNode.pdomOrder = [ ... ];
-this.pdomControlAreaNode.pdomOrder = [ ... ];
+// Traversal order, decoupled from rendering order.
+screenViewRootNode.pdomOrder = [ ... ]; 
 ```
 
-See `ParallelDOM.setPDOMOrder` for more advanced features of this setter if needed.
+### Step 2: Categorize Nodes as "Play Area" or "Control Area".
+
+Using the prototype created in Step 1 to inform the design, decide how Nodes should be 
+categorized as either "Play Area" or "Control Area".  If Step 1 was done without 
+the designer, this is the time to involve the designer.
+
+Note that "Play Area" will always appear before "Control Area" in the traversal order.
+
+### Step 3: Implement the traversal order for "Play Area" and "Control Area".
+
+Using the design requirements from Step 2, here is the typical change that you'll
+make to ScreenView subclasses:
+
+```diff
+- // Traversal order, decoupled from rendering order.
+- screenViewRootNode.pdomOrder = [...];
++ // Traversal order for the Play Area and Control Area, decoupled from rendering order.
++ this.pdomPlayAreaNode.pdomOrder = [ ... ];
++ this.pdomControlAreaNode.pdomOrder = [ ... ];
+```
+
+### Additional notes:
+
+* If `pdomOrder` is not specified, the default is the order in which children are added to a Node.
+
+* For `FlowBox` (and its subclasses) there is no need to specify traversal order. There is a good match between layout
+order and traversal order; they are typically the same. So for `FlowBox`, you can do nothing.
+
+* For non-`FlowBox` classes, it is recommended to explicitly set `this.pdomOrder` at the end of constructor. Do not rely
+on the default ordering - it’s better to decouple rendering order and traversal order by explicitly setting
+`this.pdomOrder`. Note that most of the work here is typically done in `ScreenView` subclasses.
+
+* If you need to remove a Node from the traversal order, you can do so with the `focusable: false` option of Node.
+
+* See `ParallelDOM.setPDOMOrder` for more advanced features of this setter if needed.
 
 Potential gotchas:
 
