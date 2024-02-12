@@ -92,6 +92,7 @@ Potential gotchas:
   included when setting pdomOrder.
 * If you need to augment `this.pdomOrder` in a subclass, read about the pitfalls
   in https://github.com/phetsims/scenery/issues/1308.
+* Only use `this.addChild` for ScreenViews. If you set `this.children`or call `this.setChildren`, you will blow away `pdomPlayAreaNode` and `pdomControlAreaNode`.
 
 ## Keyboard listeners
 
