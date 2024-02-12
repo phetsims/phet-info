@@ -50,8 +50,8 @@ const myNode = new Node( {
 ## Traversal Order
 
 Traversal order is the order in which Nodes are visited as you press the Tab key. Nodes are also categorized into "Play
-Area" and "Control Area", which are two sections of the Parallel DOM. This categorization makes them easy to find
-when using an assistive device.
+Area" and "Control Area", which are two sections of the Parallel DOM. This categorization makes them easy to find when
+using an assistive device.
 
 The first step is to design the traversal order and categorization. Consult with the simulation designer to determine
 the order and placement of components in the simulation. When ready, order and placement are set with the `pdomOrder`
@@ -71,7 +71,12 @@ If you need to remove a Node from the traversal order you can do so with the `fo
 Use this pattern in your ScreenView constructor:
 
 ```js
-this.children = [ ... ]; // add children like normal
+
+// a root Node is added so that you don't overwrite children of the superclass
+const screenViewRootNode = new Node( {
+   children: [...] // add children like normal
+});
+this.addChild( screenViewRootNode );
 
 // Put components in the Play Area and Control Area in order, and decouple traversal order from rendering order
 this.pdomPlayAreaNode.pdomOrder = [ ... ];
