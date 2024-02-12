@@ -58,7 +58,7 @@ This categorization makes them easy to find when using an assistive device.
 
 This can be done in collaboration with the designer, or by the developer as a strawman proposal.
 
-The quickest path to a prototype is to follow the code pattern shown below your ScreenView subclasses. 
+The quickest path to a prototype is to follow the code pattern shown below in your ScreenView subclasses. 
 Multiple calls to `screenViewRootNode.addChild` calls are an OK alternative, but will not 
 provide you with a clear specification of rendering order.
 
