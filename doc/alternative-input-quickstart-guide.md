@@ -51,7 +51,7 @@ const myNode = new Node( {
 
 Traversal order (or focus order) is the order in which Nodes are visited as you press the Tab key.
 
-Nodes are also categorized into "Play Area" and "Control Area", which are two sections of the Parallel DOM.
+Nodes are categorized as belonging to "Play Area" or "Control Area", which are two sections of the Parallel DOM.
 This categorization makes them easy to find when using an assistive device.
 
 ### Step 1: Prototype the traversal order.
