@@ -3,10 +3,10 @@
 ## Overview
 
 PhET Interactive Simulations creates free, open source educational simulations in science and math, which you can find
-at the PhET website. This document explains PhET’s libraries, practices and patterns for developing interactive
+at the PhET website. This document explains PhET’s libraries ([SceneryStack](https://scenerystack.github.io/community/), practices and patterns for developing interactive
 simulations in HTML5. This document is also available
 at https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md. For discussion and feedback, please
-visit the [GitHub Discussions forum](https://github.com/orgs/phetsims/discussions).
+visit the [SceneryStack Discussions forum](https://github.com/orgs/scenerystack/discussions).
 
 
 <!--@formatter:off-->
@@ -138,7 +138,7 @@ npm install
 ### Questions
 
 * Questions should be directed to
-  the [Developing Interactive Simulations in HTML5 Google Group](https://groups.google.com/g/developing-interactive-simulations-in-html5).
+  the [SceneryStack Discussions forum](https://github.com/orgs/scenerystack/discussions).
 
 ## Creating a New Sim
 
