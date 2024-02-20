@@ -282,7 +282,10 @@ the `Node`.
 
 ```js
 class MyAddChildAndLinkNode extends Node {
-  constructor( aNode, aProperty ) {
+
+  private readonly disposeMyAddChildAndLinkNode: () => void;
+
+  public constructor( aNode: Node, aProperty: Property<...> ) {
 
     super();
 
@@ -301,13 +304,9 @@ class MyAddChildAndLinkNode extends Node {
     }
   }
 
-  /**
-   * @override
-   * @public
-   */
-  dispose() {
-    this.disposeMyAddChildAndLinkNode();
+  public override dispose(): void {
     super.dispose();
+    this.disposeMyAddChildAndLinkNode();
   }
 }
 ```
@@ -321,30 +320,23 @@ method, like below.
 
 ```js
 class MyAddChildAndLinkNode extends Node {
-  constructor( aNode, aProperty ) {
+
+  private readonly aProperty: Property<...>;
+  private readonly aFunction: () => void;
+
+  public constructor( aProperty: Property<...> ) {
 
     super();
 
-    // @private
-    this.aNode = aNode;
     this.aProperty = aProperty;
-
-    this.aNewNode = new Node();
-    this.aNode.addChild( this.aNewNode );
 
     this.aFunction = () => { console.log( 'I love this Property.' )};
     this.aProperty.link( this.aFunction );
-
   }
 
-  /**
-   * @override
-   * @public
-   */
-  dispose() {
-    this.aProperty.unlink( this.aFunction );
-    this.aNode.removeChild( this.aNewNode );
+  public override dispose(): void {
     super.dispose();
+    this.aProperty.unlink( this.aFunction );
   }
 }
 ```
