@@ -62,7 +62,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | decaf | @samreid |  |  | 
 | density | @jonathanolson | @DianaTavares | Sound<br/>Interactive Description | 
 | density-buoyancy-common | @jonathanolson | @DianaTavares |  | 
-| diffusion | @pixelzoom | @arouinfar |  | 
+| diffusion | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | dot | @jonathanolson |  |  | 
 | eating-exercise-and-energy | @samreid | @amanda-phet |  | 
 | energy-forms-and-changes | @jbphet | @arouinfar |  | 
@@ -90,8 +90,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | friction | @zepumph | @arouinfar | Sound<br/>Interactive Description<br/>Voicing | 
 | function-builder | @pixelzoom | @amanda-phet |  | 
 | function-builder-basics | @pixelzoom | @amanda-phet |  | 
-| gas-properties | @pixelzoom | @arouinfar |  | 
-| gases-intro | @pixelzoom | @arouinfar |  | 
+| gas-properties | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
+| gases-intro | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | gene-expression-essentials | @jbphet | @arouinfar |  | 
 | generator | @pixelzoom | @arouinfar |  | 
 | geometric-optics | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
