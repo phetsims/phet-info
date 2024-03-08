@@ -231,6 +231,14 @@
       "@DianaTavares"
     ]
   },
+  "buoyancy-basics": {
+    "responsibleDevs": [
+      "@AgustinVallejo"
+    ],
+    "responsibleDesigners": [
+      "@DianaTavares"
+    ]
+  },
   "calculus-grapher": {
     "responsibleDevs": [
       "@veillette",
