@@ -225,7 +225,8 @@
   },
   "buoyancy": {
     "responsibleDevs": [
-      "@jonathanolson"
+      "@AgustinVallejo",
+      "@zepumph"
     ],
     "responsibleDesigners": [
       "@DianaTavares"
@@ -233,7 +234,8 @@
   },
   "buoyancy-basics": {
     "responsibleDevs": [
-      "@AgustinVallejo"
+      "@AgustinVallejo",
+      "@zepumph"
     ],
     "responsibleDesigners": [
       "@DianaTavares"
@@ -411,7 +413,8 @@
   },
   "density": {
     "responsibleDevs": [
-      "@jonathanolson"
+      "@zepumph",
+      "@AgustinVallejo"
     ],
     "responsibleDesigners": [
       "@DianaTavares"
@@ -419,7 +422,8 @@
   },
   "density-buoyancy-common": {
     "responsibleDevs": [
-      "@jonathanolson"
+      "@zepumph",
+      "@AgustinVallejo"
     ],
     "responsibleDesigners": [
       "@DianaTavares"
