@@ -40,7 +40,7 @@ Follow these steps to add support for alternative input to a simulation.
 Most common code UI components are already focusable. But you can make any Node focusable by using these options from
 ParallelDOM.ts.
 
-```js
+```ts
 const myNode = new Node( {
   tagName: 'div', // creates representation in the parallel DOM
   focusable: true // makes this Node focusable
@@ -58,27 +58,27 @@ This categorization makes them easy to find when using an assistive device.
 
 This can be done in collaboration with the designer, or by the developer as a strawman proposal.
 
-The quickest path to a prototype is to follow the code pattern shown below in your ScreenView subclasses. 
-Multiple calls to `screenViewRootNode.addChild` are also OK, but will not 
+The quickest path to a prototype is to follow the code pattern shown below in your ScreenView subclasses.
+Multiple calls to `screenViewRootNode.addChild` are also OK, but will not
 provide you with a clear specification of rendering order.
 
 ```ts
 // Rendering order, a single child added to the ScreenView.
 const screenViewRootNode = new Node( {
-   children: [
-     // Put all of your Nodes here.
-   ]
-});
+  children: [
+    // Put all of your Nodes here.
+  ]
+} );
 this.addChild( screenViewRootNode );
 
 // Traversal order, decoupled from rendering order.
-screenViewRootNode.pdomOrder = [ ... ]; 
+screenViewRootNode.pdomOrder = [ /* ... */ ]; 
 ```
 
 ### Step 2: Categorize Nodes as "Play Area" or "Control Area".
 
-Using the prototype created in Step 1 to inform the design, decide how Nodes should be 
-categorized as either "Play Area" or "Control Area".  If Step 1 was done without 
+Using the prototype created in Step 1 to inform the design, decide how Nodes should be
+categorized as either "Play Area" or "Control Area". If Step 1 was done without
 the designer, this is the time to involve the designer.
 
 Note that "Play Area" will always appear before "Control Area" in the traversal order.
@@ -101,11 +101,11 @@ make to ScreenView subclasses:
 * If `pdomOrder` is not specified, the default is the order in which children are added to a Node.
 
 * For `FlowBox` (and its subclasses) there is no need to specify traversal order. There is a good match between layout
-order and traversal order; they are typically the same. So for `FlowBox`, you can do nothing.
+  order and traversal order; they are typically the same. So for `FlowBox`, you can do nothing.
 
 * For non-`FlowBox` classes, it is recommended to explicitly set `this.pdomOrder` at the end of constructor. Do not rely
-on the default ordering - it’s better to decouple rendering order and traversal order by explicitly setting
-`this.pdomOrder`. Note that most of the work here is typically done in `ScreenView` subclasses.
+  on the default ordering - it’s better to decouple rendering order and traversal order by explicitly setting
+  `this.pdomOrder`. Note that most of the work here is typically done in `ScreenView` subclasses.
 
 * If you need to remove a Node from the traversal order, you can do so with the `focusable: false` option of Node.
 
@@ -118,20 +118,21 @@ Potential gotchas:
   included when setting pdomOrder.
 * If you need to augment `this.pdomOrder` in a subclass, read about the pitfalls
   in https://github.com/phetsims/scenery/issues/1308.
-* Only use `this.addChild` for ScreenViews. If you set `this.children`or call `this.setChildren`, you will blow away `this.pdomPlayAreaNode` and `this.pdomControlAreaNode`.
+* Only use `this.addChild` for ScreenViews. If you set `this.children`or call `this.setChildren`, you will blow
+  away `this.pdomPlayAreaNode` and `this.pdomControlAreaNode`.
 
 ## Keyboard listeners
 
 If you have a custom Node that needs to do something when Space or Return keys are pressed, add `tagName: 'button'` to
 your Node's options, then use one of these approaches:
 
-```js
+```ts
 this.addInputListener( new PressListener( {
-  press: () => { ... }
+  press: () => { /*...*/ }
 } ) );
 
 this.addInputListener( {
-  click: () => { ... }
+  click: () => { /*...*/ }
 } );
 ```
 
@@ -144,7 +145,7 @@ both `DragListener` and `KeyboardDragListener`.
 
 Your `KeyboardDragListener` will look something like this:
 
-```js
+```ts
 // pdom - dragging using the keyboard
 const keyboardDragListener = new KeyboardDragListener( {
   positionProperty: widget.positionProperty,
@@ -157,9 +158,9 @@ const keyboardDragListener = new KeyboardDragListener( {
 
 You’ll also need to add these options to your Node:
 
-```js
+```
 // pdom options
-tagName: 'div', 
+tagName: 'div',
 focusable: true
 ```
 
@@ -170,25 +171,24 @@ be mixed into a Node to add 1D motion with alternative input. AccessibleSlider w
 accessible for a screen reader user compared to KeyboardDragListener. It is very easy to use when there is a
 NumberProperty driving the position. Here is an example:
 
-```js
+```ts
 type SelfOptions = EmptySelfOptions;
 type ParentOptions = AccessibleSliderOptions & NodeOptions;
 
 class MyDraggable extends AccessibleSlider( Node, 0 ) {
-    public constructor( altitudeProperty: TProperty<number> ) {
-      const options = optionize<ParentOptions>()( {
-        valueProperty: altitudeProperty,
-        enabledRangeProperty: new Property( ALTITUDE_RANGE )
-      }, providedOptions );
-    
-      super( options );
-    
-      // Now use altitudeProperty to position the Node
-      altitudeProperty.link( altitude => {
-        this.centerY = altitude;
-      } );
-    }
-  } 
+  public constructor( altitudeProperty: TProperty<number> ) {
+    const options = optionize<ParentOptions>()( {
+      valueProperty: altitudeProperty,
+      enabledRangeProperty: new Property( ALTITUDE_RANGE )
+    }, providedOptions );
+
+    super( options );
+
+    // Now use altitudeProperty to position the Node
+    altitudeProperty.link( altitude => {
+      this.centerY = altitude;
+    } );
+  }
 }
 ```
 
@@ -200,26 +200,26 @@ functionality.
 
 If your Node has a `KeyboardDragListener`, add hotkeys like this:
 
-```js
-const keyboardDragListener = new KeyboardDragListener( ... );
+```ts
+const keyboardDragListener = new KeyboardDragListener( /* ... */ );
 keyboardDragListener.hotkeys = [
   // Escape
   {
     keys: [ KeyboardUtils.KEY_ESCAPE ],
-    callback: () => { ... }
+    callback: () => { /* ... */ }
   },
-  
+
   // J+O
   {
     keys: [ KeyboardUtils.KEY_J, KeyboardUtils.KEY_O ],
-    callback: () => { ... }
+    callback: () => { /* ... */ }
   }
 ];
 ```
 
 If your Node does not have a `KeyboardDragListener`, add hotkeys with `KeyboardListener` like this:
 
-```js
+```ts
 
 const keyboardListener = new KeyboardListener( {
   keys: [ 'escape', 'j+0' ],
@@ -231,7 +231,7 @@ const keyboardListener = new KeyboardListener( {
       // j and 0 were pressed
     }
   },
-  
+
   // By making this listener "global" it will fire no matter where focus is in the document as long as
   // myNode is visible and has input enabled. If this is false, callback will only fire when myNode has keyboard focus.
   global: true
@@ -249,7 +249,7 @@ See https://github.com/phetsims/phet-info/issues/188.
 For more custom behavior you can add input listeners with Scenery's input system that are related to alternative input.
 For example, if you want to add behavior whenever a Node has focus you can add a listener like this:
 
-```js
+```ts
 myNode.addInputListener( {
   focus: ( event: SceneryEvent ) => {
     console.log( 'Hey, I have focus!' );
@@ -275,7 +275,7 @@ moves. Try to make your focused Node the logical interactive display object. For
 component that is a child of a larger Node, make the draggable component the focused Node so that scenery can keep that
 Node displayed. If you must do something else, you can use animatedPanZoomSingleton to control the panning. For example:
 
-```js
+```ts
 animatedPanZoomSingleton.listener.panToNode( myNode, false );
 ```
 
