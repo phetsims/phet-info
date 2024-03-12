@@ -37,8 +37,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | build-a-nucleus | @Luisav1,@zepumph |  | Interactive Description | 
 | build-an-atom | @jbphet | @DianaTavares | Sound | 
 | bumper | @jonathanolson |  |  | 
-| buoyancy | @jonathanolson | @DianaTavares | Sound<br/>Interactive Description | 
-| buoyancy-basics | @AgustinVallejo | @DianaTavares |  | 
+| buoyancy | @AgustinVallejo,@zepumph | @DianaTavares | Sound<br/>Interactive Description | 
+| buoyancy-basics | @AgustinVallejo,@zepumph | @DianaTavares |  | 
 | calculus-grapher | @veillette,@pixelzoom | @amanda-phet |  | 
 | capacitor-lab-basics | @jonathanolson | @arouinfar |  | 
 | center-and-variability | @samreid,@marlitas | @amanda-phet | Sound<br/>Interactive Description | 
@@ -61,8 +61,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | counting-common | @marlitas | @amanda-phet |  | 
 | curve-fitting | @AgustinVallejo | @amanda-phet |  | 
 | decaf | @samreid |  |  | 
-| density | @jonathanolson | @DianaTavares | Sound<br/>Interactive Description | 
-| density-buoyancy-common | @jonathanolson | @DianaTavares |  | 
+| density | @zepumph,@AgustinVallejo | @DianaTavares | Sound<br/>Interactive Description | 
+| density-buoyancy-common | @zepumph,@AgustinVallejo | @DianaTavares |  | 
 | diffusion | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | dot | @jonathanolson |  |  | 
 | eating-exercise-and-energy | @samreid | @amanda-phet |  | 
