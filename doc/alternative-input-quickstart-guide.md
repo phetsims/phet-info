@@ -8,33 +8,33 @@ Get started with adding alternative input to your PhET simulation.
 
 <!--@formatter:off-->
 
-**[package.json](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart.md#packagejson)**
+**[package.json](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#packagejson)**
 
-**[Make a Node focusable](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart.md#make-a-node-focusable)**
+**[Make a Node focusable](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#make-a-node-focusable)**
 
-**[Traversal Order](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart.md#traversal-order)**
+**[Traversal Order](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#traversal-order)**
 
-**[Keyboard listeners](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart.md#keyboard-listeners)**
+**[Keyboard listeners](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#keyboard-listeners)**
 
-**[Drag using the KeyboardDragListener](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart.md#drag-using-the-keyboarddraglistener)**
+**[Drag using the KeyboardDragListener](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#drag-using-the-keyboarddraglistener)**
 
-**[Drag using AccessibleSlider for 1D Motion](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart.md#drag-using-accessibleslider-for-1d-motion)**
+**[Drag using AccessibleSlider for 1D Motion](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#drag-using-accessibleslider-for-1d-motion)**
 
-**[Hotkeys](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart.md#hotkeys)**
+**[Hotkeys](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#hotkeys)**
 
-**[Scenery Events](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart.md#scenery-events)**
+**[Scenery Events](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#scenery-events)**
 
-**[Focus Highlights](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart.md#focus-highlights)**
+**[Focus Highlights](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#focus-highlights)**
 
-**[Pan and Zoom](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart.md#pan-and-zoom)**
+**[Pan and Zoom](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#pan-and-zoom)**
 
-**[Keyboard Shortcuts dialog](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart.md#keyboard-shortcuts-dialog)**
+**[Keyboard Shortcuts dialog](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#keyboard-shortcuts-dialog)**
 
-**[Pitfalls](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart.md#pitfalls)**
+**[Pitfalls](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#pitfalls)**
 
-**[Not supported? Create an issue!](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart.md#not-supported-create-an-issue)**
+**[Not supported? Create an issue!](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#not-supported-create-an-issue)**
 
-**[Other Resources](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart.md#other-resources)**
+**[Other Resources](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#other-resources)**
 
 <!--@formatter:on-->
 
