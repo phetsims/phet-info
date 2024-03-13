@@ -8,34 +8,22 @@ author: Chris Malley (PixelZoom, Inc.)
 Get started with adding alternative input to your PhET simulation.
 
 ### Table of Contents
+
 <!--@formatter:off-->
-
 * **[package.json](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#packagejson)**
-
 * **[Make a Node focusable](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#make-a-node-focusable)**
-
 * **[Traversal Order](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#traversal-order)**
-
 * **[Keyboard listeners](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#keyboard-listeners)**
-
 * **[Drag using the KeyboardDragListener](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#drag-using-the-keyboarddraglistener)**
-
 * **[Drag using AccessibleSlider for 1D Motion](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#drag-using-accessibleslider-for-1d-motion)**
-
 * **[Hotkeys](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#hotkeys)**
-
 * **[Scenery Events](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#scenery-events)**
-
 * **[Focus Highlights](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#focus-highlights)**
-
 * **[Pan and Zoom](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#pan-and-zoom)**
-
 * **[Keyboard Shortcuts dialog](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#keyboard-shortcuts-dialog)**
-
+* **[Toolboxes](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#toolboxes)**
 * **[Pitfalls](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#pitfalls)**
-
 * **[Not supported? Create an issue!](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#not-supported-create-an-issue)**
-
 * **[Other Resources](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#other-resources)**
 
 <!--@formatter:on-->
@@ -326,6 +314,14 @@ the scope of this guide. Programming by example is recommended, by searching for
 will typically consist of standard "sections" supported by common code
 (e.g. `BasicActionsKeyboardHelpSection`), plus custom sections for sim-specific hotkeys. Consult with your designer
 about the content language and layout.
+
+## Toolboxes
+
+Toolboxes support alt input with a pattern described in https://github.com/phetsims/sun/blob/main/doc/ToolboxPattern.md,
+and can be viewed in [Binder](https://phetsims.github.io/binder/). Basically we treat toolbox icons as buttons, and
+selecting the button focuses the created tool. A simple KeyboardDragListener can support dragging on the tool, and
+`GrabDragInteraction` is not needed for this
+case. ([Original paper trail](https://github.com/phetsims/a11y-research/issues/166))
 
 ## Pitfalls
 
