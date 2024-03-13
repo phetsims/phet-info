@@ -61,8 +61,11 @@
 ## Inclusive Features
 
 - [ ] Alternative Input (Started: ) (Completed: )
-  - [ ] Interactive Highlights
   - [ ] Separate ScreenView controls into play area PDOM vs control area PDOM
+  - [ ] Create screen-specific Keyboard Shortcuts Dialogs.
+    - [ ] Ensure all sim-specific actions come before "Basic Actions".
+    - [ ] Adjust the dialogs default headings and instructions to suit the sim where needed. 
+  - [ ] Interactive Highlights
 - [ ] Sound & Sonification (Completed: )
   - [ ] Sound design requirements determined: date: //
   - [ ] Sound design complete: date: //
