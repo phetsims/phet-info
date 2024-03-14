@@ -94,7 +94,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | gas-properties | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | gases-intro | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | gene-expression-essentials | @jbphet | @arouinfar |  | 
-| generator | @pixelzoom | @arouinfar |  | 
+| generator | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | geometric-optics | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | geometric-optics-basics | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | graphing-lines | @pixelzoom | @amanda-phet | Sound | 
@@ -114,8 +114,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | keplers-laws | @AgustinVallejo,@jonathanolson | @DianaTavares | Sound<br/>Interactive Description | 
 | kite | @jonathanolson |  |  | 
 | least-squares-regression | @jonathanolson | @amanda-phet |  | 
-| magnet-and-compass | @pixelzoom | @arouinfar |  | 
-| magnets-and-electromagnets | @pixelzoom | @arouinfar |  | 
+| magnet-and-compass | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
+| magnets-and-electromagnets | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | make-a-ten | @marlitas | @amanda-phet | Sound | 
 | masses-and-springs | @matthew-blackman | @arouinfar,@matthew-blackman |  | 
 | masses-and-springs-basics | @matthew-blackman | @arouinfar |  | 
