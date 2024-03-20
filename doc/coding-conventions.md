@@ -14,10 +14,6 @@
   const beakerWidth = 150;        // correct
   ```
 
-- [ ] Verify
-  that [Best Practices for Modules](https://github.com/phetsims/phet-info/blob/main/doc/best-practices-for-modules.md)
-  are followed.
-
 - [ ] For constructors, use parameters for things that don’t have a default. Use options for things that have a default
   value. This improves readability at the call site, especially when the number of parameters is large. It also
   eliminates order dependency that is required by using parameters.
