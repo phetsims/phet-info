@@ -49,4 +49,3 @@ const fs = require( 'fs' );
   // Clean up
   await fs.promises.unlink( '.repos.old' );
 } )();
-
