@@ -14,10 +14,7 @@
             "ignorePath": "ABSOLUTE_USER_PATH/phetsims/chipper/eslint/.eslintignore",
             "resolvePluginsRelativeTo": "ABSOLUTE_USER_PATH/phetsims/chipper/",
             "rulePaths": [ "ABSOLUTE_USER_PATH/phetsims/chipper/eslint/rules" ],
-            "extensions": [ ".js", ".ts" ],
-            "baseConfig": {
-                "extends": [ "ABSOLUTE_USER_PATH/phetsims/chipper/eslint/format_eslintrc.js" ]
-            }
+            "extensions": [ ".js", ".ts" ]
         },
         "eslint.workingDirectories": [ { "mode": "auto" } ]
     }
