@@ -119,7 +119,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | make-a-ten | @marlitas | @amanda-phet | Sound | 
 | masses-and-springs | @matthew-blackman | @arouinfar,@matthew-blackman |  | 
 | masses-and-springs-basics | @matthew-blackman | @arouinfar |  | 
-| mean-share-and-balance | @marlitas,@jbphet | @amanda-phet | Interactive Description | 
+| mean-share-and-balance | @marlitas,@jbphet | @amanda-phet | Sound<br/>Interactive Description | 
 | mobius | @jonathanolson |  |  | 
 | models-of-the-hydrogen-atom | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | molarity | @zepumph | @arouinfar | Sound<br/>Interactive Description | 
