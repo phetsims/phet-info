@@ -210,6 +210,9 @@ If any of these items fail, pause code review.
   code repos can have custom README files.
 - [ ] Is the LICENSE file correct? (Generally GPL v3 for sims and MIT for common code,
   see [this thread](https://github.com/phetsims/tasks/issues/875#issuecomment-312168646) for additional information).
+  Note that "common" repos that are mostly sim-specific code (like circuit-construction-kit-common and
+  density-buoyancy-common) should be GPL v3,
+  see [other thread](https://github.com/phetsims/density-buoyancy-common/issues/45).
 - [ ] Does .gitignore match the one in simula-rasa?
 - [ ] In GitHub, verify that all non-release branches have an associated issue that describes their purpose.
 - [ ] Are there any GitHub branches that are no longer needed and should be deleted?
@@ -230,8 +233,8 @@ If any of these items fail, pause code review.
   should be set via a query parameter from `{{PREFIX}}QueryParameters.js`.
 - [ ] Does `package.json` refer to any dependencies that are not used by the sim?
 - [ ] Does `package.json` include any config that was only needed for development? For example:
-    * Lint rules turned off or made more graceful
-    * Certain testing or simFeatures turned off with flags
+  * Lint rules turned off or made more graceful
+  * Certain testing or simFeatures turned off with flags
 
 ## **Coding Conventions**
 
@@ -274,10 +277,12 @@ If any of these items fail, pause code review.
   decouple by narrowing the API using `Pick`, but this is a bit of a hack. Here's an example:
 
 ```ts
+class MyClass {
   public constructor( tickMarksVisibleProperty: Property<boolean>,
                       model: Pick<IntroModel, 'changeWaterLevel'>, // <-- Note the call site can pass the whole model, but we declare we will only use this part of it
                       waterCup: WaterCup, modelViewTransform: ModelViewTransform2,
-                      providedOptions?: WaterCup3DNodeOptions ) {
+                      providedOptions?: WaterCup3DNodeOptions ) {}
+}
 ```
 
 - [ ] Is there too much unnecessary decoupling? (e.g. by passing all of the properties of an object independently
