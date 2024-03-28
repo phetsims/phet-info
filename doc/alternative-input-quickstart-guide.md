@@ -226,7 +226,7 @@ If your Node has a `KeyboardDragListener`, add hotkeys like this:
 
 ```ts
 const keyboardDragListener = new KeyboardDragListener( /* ... */ );
-keyboardDragListener.hotkeys = [
+keyboardDragListener.setHotkeys( [
   // Escape
   {
     keys: [ KeyboardUtils.KEY_ESCAPE ],
@@ -238,7 +238,7 @@ keyboardDragListener.hotkeys = [
     keys: [ KeyboardUtils.KEY_J, KeyboardUtils.KEY_O ],
     callback: () => { /* ... */ }
   }
-];
+] );
 ```
 
 If your Node does not have a `KeyboardDragListener`, add hotkeys with `KeyboardListener` like this:
