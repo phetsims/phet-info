@@ -223,6 +223,6 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | website-meteor | @mattpen |  |  | 
 | website-scenery | @chrisklus |  |  | 
 | weddell | @jbphet |  |  | 
-| wilder | @jonathanolson |  |  | 
+| wilder | @jonathanolson |  | Interactive Description | 
 | xray-diffraction | @heldentodd |  |  | 
 | yotta | @jonathanolson |  |  | 
