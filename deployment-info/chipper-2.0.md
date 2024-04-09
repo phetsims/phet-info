@@ -264,7 +264,7 @@ always have a consistent common code branch for the sim branch.
 
 This would usually be followed by 1+ RC deployments and then a production deployment.
 
-If you need to get back to main, use `grunt checkout-main` from the sim repo.
+If you need to get back to main, use `cd perennial; grunt checkout-main --repo={{SIM}}`.
 
 ## Prototype deployments
 
