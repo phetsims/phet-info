@@ -1251,6 +1251,17 @@
       "@arouinfar"
     ]
   },
+  "projectile-sampling-distributions": {
+    "responsibleDevs": [
+      "@matthew-blackman",
+      "@samreid"
+    ],
+    "responsibleDesigners": [
+      "@matthew-blackman",
+      "@catherinecarter",
+      "@arouinfar"
+    ]
+  },
   "proportion-playground": {
     "responsibleDevs": [
       "@jonathanolson"
