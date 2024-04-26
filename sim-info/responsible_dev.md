@@ -38,7 +38,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | build-an-atom | @jbphet | @DianaTavares | Sound | 
 | bumper | @jonathanolson |  |  | 
 | buoyancy | @AgustinVallejo,@zepumph | @DianaTavares | Sound<br/>Interactive Description | 
-| buoyancy-basics | @AgustinVallejo,@zepumph | @DianaTavares |  | 
+| buoyancy-basics | @AgustinVallejo,@zepumph | @DianaTavares | Interactive Description | 
 | calculus-grapher | @veillette,@pixelzoom | @amanda-phet |  | 
 | capacitor-lab-basics | @jonathanolson | @arouinfar |  | 
 | center-and-variability | @samreid,@marlitas | @amanda-phet | Sound<br/>Interactive Description | 
