@@ -219,27 +219,36 @@ functionality.
 
 ## Hotkeys
 
-Hotkeys are added with `KeyboardListener` like this:
+Hotkeys are added with `KeyboardListener`. A KeyboardListener can be added to a Node, and will fire its callback
+whenever the specified keys are pressed while the Node has focus. Here is an example:
 
 ```ts
 
 const keyboardListener = new KeyboardListener( {
   keys: [ 'escape', 'j+0' ],
-  callback: ( event, keysPressed, listener ) => {
+  fire: ( event, keysPressed, listener ) => {
     if ( keysPressed === 'escape' ) {
       // escape key was pressed
     }
     else if ( keysPressed === 'j+0' ) {
       // j and 0 were pressed
     }
-  },
-
-  // By making this listener "global" it will fire no matter where focus is in the document as long as
-  // myNode is visible and has input enabled. If this is false, callback will only fire when myNode has keyboard focus.
-  global: true
+  }
 } );
 
 myNode.addInputListener( keyboardListener );
+```
+
+You can also add a global Hotkey that will fire regardless of which Node has focus. As long as the target Node can
+receive input events, the listener will fire. Here is an example:
+
+```ts
+const globalKeyboardListener = KeyboardListener.createGlobal( targetNode, {
+  keys: [ 'alt+r' ],
+  fire: ( event, keysPressed, listener ) => {
+    // alt+r was pressed
+  }
+} );
 ```
 
 Be careful not to add hotkeys that collide with other global hotkeys defined by PhET such as hotkeys that pan and zoom
