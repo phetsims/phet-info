@@ -387,7 +387,7 @@ Please discuss questions or problems with @jessegreenberg or @zepumph and update
 who follow in your footsteps!
 
 ### Resources for further understanding:
-[
+
 * [Screen Reader Support for a Complex Interactive Science Simulation](https://osf.io/nxk68))
 * [Description Strategies to Make an Interactive Science Simulation Accessible
   ](http://scholarworks.csun.edu/handle/10211.3/190214)
