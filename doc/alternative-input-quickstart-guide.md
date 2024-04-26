@@ -75,16 +75,15 @@ const myNode = new Node( {
 
 Traversal order (or focus order) is the order in which Nodes are visited as you press the Tab key.
 
-Nodes are categorized as belonging to "Play Area" or "Control Area", which are two sections of the Parallel DOM.
-This categorization makes them easy to find when using an assistive device.
+Nodes are categorized as belonging to "Play Area" or "Control Area", which are two sections of the Parallel DOM. This
+categorization makes them easy to find when using an assistive device.
 
 ### Step 1: Prototype the traversal order.
 
 This can be done in collaboration with the designer, or by the developer as a strawman proposal.
 
-The quickest path to a prototype is to follow the code pattern shown below in your ScreenView subclasses.
-Multiple calls to `screenViewRootNode.addChild` are also OK, but will not
-provide you with a clear specification of rendering order.
+The quickest path to a prototype is to follow the code pattern shown below in your ScreenView subclasses. Multiple calls
+to `screenViewRootNode.addChild` are also OK, but will not provide you with a clear specification of rendering order.
 
 ```ts
 // Rendering order, a single child added to the ScreenView.
@@ -101,16 +100,14 @@ screenViewRootNode.pdomOrder = [ /* ... */ ];
 
 ### Step 2: Categorize Nodes as "Play Area" or "Control Area".
 
-Using the prototype created in Step 1 to inform the design, decide how Nodes should be
-categorized as either "Play Area" or "Control Area". If Step 1 was done without
-the designer, this is the time to involve the designer.
+Using the prototype created in Step 1 to inform the design, decide how Nodes should be categorized as either "Play Area"
+or "Control Area". If Step 1 was done without the designer, this is the time to involve the designer.
 
 Note that "Play Area" will always appear before "Control Area" in the traversal order.
 
 ### Step 3: Implement the traversal order for "Play Area" and "Control Area".
 
-Using the design requirements from Step 2, here is the typical change that you'll
-make to ScreenView subclasses:
+Using the design requirements from Step 2, here is the typical change that you'll make to ScreenView subclasses:
 
 ```diff
 - // Traversal order, decoupled from rendering order.
@@ -222,26 +219,7 @@ functionality.
 
 ## Hotkeys
 
-If your Node has a `KeyboardDragListener`, add hotkeys like this:
-
-```ts
-const keyboardDragListener = new KeyboardDragListener( /* ... */ );
-keyboardDragListener.setHotkeys( [
-  // Escape
-  {
-    keys: [ KeyboardUtils.KEY_ESCAPE ],
-    callback: () => { /* ... */ }
-  },
-
-  // J+O
-  {
-    keys: [ KeyboardUtils.KEY_J, KeyboardUtils.KEY_O ],
-    callback: () => { /* ... */ }
-  }
-] );
-```
-
-If your Node does not have a `KeyboardDragListener`, add hotkeys with `KeyboardListener` like this:
+Hotkeys are added with `KeyboardListener` like this:
 
 ```ts
 
@@ -265,8 +243,8 @@ myNode.addInputListener( keyboardListener );
 ```
 
 Be careful not to add hotkeys that collide with other global hotkeys defined by PhET such as hotkeys that pan and zoom
-into the sim. We need a list of global hotkeys or a way to automatically prevent collisions but do not have that yet.
-See https://github.com/phetsims/phet-info/issues/188.
+into the sim. We need a list of global hotkeys or a way to automatically prevent collisions but do not have that yet. It
+will throw an assertion at runtime though if there is an overlap. See https://github.com/phetsims/phet-info/issues/188.
 
 ## Scenery Events
 
@@ -290,7 +268,7 @@ ParallelDOM.ts called `setFocusHighlight`. Try to use the default highlight or `
 highlights. If you must use something more custom, it will be your responsibility to
 
 1) Style and scale the highlight correctly.
-2) Reposition the highlight if the your focused Node moves.
+2) Reposition the highlight if there is a transformation to the focused Node.
 
 ## Pan and Zoom
 
