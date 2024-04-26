@@ -388,8 +388,10 @@ who follow in your footsteps!
 
 ### Resources for further understanding:
 
-* [Screen Reader Support for a Complex Interactive Science Simulation](https://osf.io/nxk68))
+* [Screen Reader Support for a Complex Interactive Science Simulation](https://osf.io/nxk68)
 * [Description Strategies to Make an Interactive Science Simulation Accessible
   ](http://scholarworks.csun.edu/handle/10211.3/190214)
+* [Parallel DOM Architecture for Accessible Interactive Simulations](https://osf.io/pfta5)
+* [Storytelling to Sensemaking: A Systematic Framework for Designing Auditory Description Display for Interactives](https://osf.io/9sxjh)
 
 ### Happy a11y development!
