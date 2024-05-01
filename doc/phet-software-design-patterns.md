@@ -450,8 +450,6 @@ facilitate debugging) and `Object.freeze`  to prevent unintentional modification
 
 Author: @jessegreenberg
 
-NOTE: TypeScript does NOT support mixins in ways that work well for our project. Please think twice about adding mixins.
-
 Descriptions for each standard pattern can be found here:
 
 - Mixin: https://en.wikipedia.org/wiki/Mixin
@@ -459,7 +457,9 @@ Descriptions for each standard pattern can be found here:
 
 More information about traits can be found here: http://scg.unibe.ch/archive/papers/Scha03aTraits.pdf
 
-Notes on PhET's decisions regarding mixin vs trait can be found here: https://github.com/phetsims/scenery/issues/700
+Notes on PhET's decisions regarding mixin vs trait can be found in: 
+- https://github.com/phetsims/scenery/issues/700
+- https://github.com/phetsims/tasks/issues/1132
 
 Summarizing the above, traits and mixins allow the code reuse benefits of multiple inheritance without using actual
 multiple inheritance.
@@ -479,116 +479,27 @@ It is OK for the type mixing in the mixin or trait to reference properties and m
 However, only traits can use properties or methods from the type using the trait. Mixins cannot use anything from the
 class it is mixed into.
 
-### Shadowing
-
-With the current pattern for mixin/trait, there is no guard against accidentally shadowing properties and methods of the
-class using the mixin. Support for catching this is being investigated
-in https://github.com/phetsims/phet-core/issues/54.
+The general pattern for using Mixins in TypeScript is described in https://www.typescriptlang.org/docs/handbook/mixins.html
 
 ### When to use Mixin and Trait
 
-In general, composition should be favored over inheritance and inheritance should be favored over mixin. If the
+In general, composition should be favored over inheritance and inheritance should be favored over mixins. If the
 composition pattern produces lots of forwarding calls, it is an indication that you should be using inheritance or mixin
 instead. The mixin pattern should only be used as a substitute for multiple inheritance only if single inheritance is
 not desirable or is difficult to use.
 
 ### Examples
 
-An example of PhET mixin is phet-core/Poolable. An example of a PhET trait is scenery/Paintable.
-
-The Mixin and Trait pattern was overhauled when PhET converted to use Typescript.
-
-For recent examples, see the following:
+Please refer to the following:
 
 * SCENERY/Paintable
 * SCENERY/Imageable
 * SCENERY/Voicing
 * SUN/AccessibleValueHandler
 
-Mixins and traits cannot mutate the constructor signature, and also cannot have private or protected members. This is
-due to the implementation which creates an anonymous class that dynamically extends the provided Type. For private
-members, name them prefixed with an underscore (`_myPrivateProperty`). The constructor signature should just pass up
-an `args` param using the spread operator:
-
-```js
-const Mixin = Type => {
-  return class X extends Type {
-    constructor( ...args ) {
-      super( ...args );
-    }
-  };
-};
-```
-
-<details><summary>Old, deprecated Mixin pattern</summary>
-Creating and using mixins and traits will look similar. Both will have
-  - A `mixInto` method that is called on the class using the mixin/trait.
-  - An `initialize{{Name}}` method that will be called in the constructor of the class using the mixin/trait.
-  - If necessary, the mixin/trait should have a `dispose{{Name}}` method that handles disposal, to be called by the
-  type using the mixin/trait when it is disposed. Method should not be named `dispose` to avoid overriding the `dispose`
-  method of the mixing type.
-  - The class using the mixin/trait will have `@mixes Name` annotation at the constructor.
-
-
-<details><summary>Trait Example</summary>
-
-```js
-// the trait to be mixed into a type
-const MyTrait = {
-
-  /**
-   * Adds MyTrait methods to the prototype.
-   * @param {function} myType - must be a subtype of SuperType
-   */
-  mixInto: myType => {
-    assert && assert( _.includes( inheritance( myType ), SuperType ), 'Only SuperType types should mix MyTrait' );
-
-    extend( myType.prototype, {
-
-      /**
-       * This should be called in the constructor of a SuperType.
-       */
-      initializeMyTrait: () => {},
-
-      /**
-       * Called when disposing the type mixing in this trait
-       */
-      disposeMyTrait: () => {},
-
-      //...
-    } );
-  }
-}
-
-// the class mixing in the trait
-class MyClass extends SuperClass {
-
-  /**
-   * @mixes MyTrait
-   */
-  constructor() {
-    super();
-
-    // to initialize features of the trait
-    this.initializeMyTrait();
-  }
-
-  /**
-   * Make eligible for garbage collection.
-   */
-  dispose() {
-
-    // if MyTrait requires/implements disposal
-    this.disposeMyTrait();
-  }
-}
-
-// to mix MyTrait methods into the prototype, after inherit for es5 usages
-MyTrait.mixInto( MyClass );
-```
-
-</details>
-</details>
+Since we are generating d.ts files, we must specify the return type of the mixin. This also means we cannot export protected
+members. For methods that we want to be protected, but have to be public due to this constraint, we annotate them via 
+`// @mixin-protected - made public for use in the mixin only`. For more, please see https://github.com/phetsims/tasks/issues/1132#issuecomment-2080379991
 
 ## Model-View-Controller (MVC)
 
