@@ -165,7 +165,7 @@ simulation using the template.
    `cd ../chipper`
    `node js/scripts/transpile.js --watch --repos=acceleration-lab`
 7. Test the created simulation in the browser and make sure it launches. It should be a blank simulation. Write to the
-   Developing Interactive Simulations in HTML5 Google Group if you run into problems.
+   [SceneryStack Discussions forum](https://github.com/orgs/scenerystack/discussions) if you run into problems.
 
 ## Building and Testing
 
