@@ -1290,6 +1290,14 @@
       "@brettfiedler"
     ]
   },
+  "quantum-measurement": {
+    "responsibleDevs": [
+      "@jbphet"
+    ],
+    "responsibleDesigners": [
+      "@ariel-phet"
+    ]
+  },
   "quake": {
     "responsibleDevs": [
       "@jbphet"
