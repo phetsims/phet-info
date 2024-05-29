@@ -49,7 +49,7 @@
     the [Basic Administration Caches](https://phet.colorado.edu/?wicket:bookmarkablePage=:edu.colorado.phet.website.admin.AdminCachesPage)
     page
 - [ ] **Post-publication items**
-  - [ ] *If a Port:* Review legacy gold star activities, copy over if appropriate
+  - [ ] *If a Port:* Review legacy gold star activities. For appropriate activities, tag the HTML5 version and UNTAG the deprecated version.
   - [ ] Share new features, design challenges, and treats with group!
   - [ ] Email announcement
   - [ ] Deliver
