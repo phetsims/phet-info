@@ -157,14 +157,18 @@ this.addInputListener( {
 } );
 ```
 
-## Drag using the KeyboardDragListener
+## Keyboard drag listeners
 
-`DragListener` does NOT handle keyboard input. For Nodes where you’ve added a `DragListener`, you’ll need to add a
-corresponding `KeyboardDragListener`. The options for your `DragListener` and `KeyboardDragListener` will typically be
-similar, but beware that API differences exist. Avoid duplicating code - factor out any logic that is needed by
-both `DragListener` and `KeyboardDragListener`.
+`DragListener` does NOT handle keyboard input, so you will need to do some additional work for keyboard dragging.
 
-Your `KeyboardDragListener` will look something like this:
+Consider using `scenery-phet/RichDragListener`. It combines a `DragListener` with a `KeyboardDragListener` to support
+both mouse and keyboard dragging. It also includes default PhET drag and drop sounds. This is the recommended approach.
+
+If that doesn't work for you, you can use `KeyboardDragListener` directly. The options for your `DragListener`
+and `KeyboardDragListener` will typically be similar, but beware that API differences exist. Avoid duplicating
+code - factor out any logic that is needed by both `DragListener` and `KeyboardDragListener`.
+
+Your `RichDragListener` will look something like this:
 
 ```ts
 // pdom - dragging using the keyboard
@@ -172,12 +176,12 @@ const keyboardDragListener = new KeyboardDragListener( {
   positionProperty: widget.positionProperty,
   dragBoundsProperty: dragBoundsProperty,
   transform: modelViewTransform,
-  dragVelocity: 100, // velocity - change in position per second
-  shiftDragVelocity: 20 // finer-grained
+  dragSpeed: 100, // velocity - change in position per second
+  shiftDragSpeed: 20 // finer-grained
 } );
 ```
 
-You’ll also need to add these options to your Node:
+You’ll also need to add these options to your Node to make it focusable:
 
 ```
 // pdom options
