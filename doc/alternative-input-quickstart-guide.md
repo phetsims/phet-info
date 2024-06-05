@@ -137,8 +137,6 @@ Potential gotchas:
 * `ParallelDOM.setPDOMOrder` has some interesting quirks, so be sure to read the documentation closely. Of special
   interest is the behavior of `null` in the pdomOrder, and what happens to any focuable Nodes that are not explicitly
   included when setting pdomOrder.
-* If you need to augment `this.pdomOrder` in a subclass, read about the pitfalls
-  in https://github.com/phetsims/scenery/issues/1308.
 * Only use `this.addChild` for ScreenViews. If you set `this.children`or call `this.setChildren`, you will blow
   away `this.pdomPlayAreaNode` and `this.pdomControlAreaNode`.
 
