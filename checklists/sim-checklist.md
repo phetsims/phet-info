@@ -61,10 +61,11 @@
 ## Inclusive Features
 
 - [ ] Alternative Input (Started: ) (Completed: )
-  - [ ] Separate ScreenView controls into play area PDOM vs control area PDOM
-  - [ ] Create screen-specific Keyboard Shortcuts Dialogs.
+  - [ ] Organize interactions in the order of pedagogical importance within the PDOM's Play Area and Control Area.
+  - [ ] Create screen-specific Keyboard Shortcuts dialogs.
     - [ ] Ensure all sim-specific actions come before "Basic Actions".
     - [ ] Adjust the dialogs default headings and instructions to suit the sim where needed. 
+    - [ ] Write accessible text for dialog when Interactive Description or Voicing are present.
   - [ ] Interactive Highlights
 - [ ] Sound & Sonification (Completed: )
   - [ ] Sound design requirements determined: date: //
