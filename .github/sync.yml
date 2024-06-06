@@ -7,6 +7,8 @@ scenerystack/community:
     dest: docs/info-sync/chipper-deploy.md
   - source: doc/accessible-preferences-quickstart-guide.md
     dest: docs/info-sync/accessible-preferences-quickstart-guide.md
+  - source: doc/alternative-input-quickstart-guide.md
+    dest: docs/info-sync/alternative-input-quickstart-guide.md
   - source: doc/coding-conventions.md
     dest: docs/info-sync/coding-conventions.md
   - source: doc/dynamic-string-layout-quickstart.md
