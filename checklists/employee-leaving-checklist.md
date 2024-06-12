@@ -16,7 +16,7 @@
     UCB 53
     Boulder, CO 80309
     ```
-- [ ] Buff OneCard and Eco Pass
+- [ ] Buff OneCard
 - [ ] A-Card or US Bank Cards
 - [ ] Library materials
 - [ ] Departmental property such as computers, and related peripherals (monitors, keyboards)
