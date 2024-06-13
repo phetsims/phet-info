@@ -165,6 +165,7 @@ If any of these items fail, pause code review.
     Gruntfile.js
     LICENSE
     package.json
+    tsconfig.json
     README.md
   ```
   *Any images used in model.md or implementation-notes.md should be added here. Images specific to aiding with
