@@ -156,7 +156,7 @@ If any of these items fail, pause code review.
       (see section below)
     mipmaps/
       license.json
-    sound/
+    sounds/
       license.json
     dependencies.json
     .gitignore
