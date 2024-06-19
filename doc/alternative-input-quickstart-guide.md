@@ -159,14 +159,14 @@ this.addInputListener( {
 
 `DragListener` does NOT handle keyboard input, so you will need to do some additional work for keyboard dragging.
 
-Consider using `scenery-phet/RichDragListener`. It combines a `DragListener` with a `KeyboardDragListener` to support
+Consider using `scenery-phet/SoundRichDragListener`. It combines a `DragListener` with a `KeyboardDragListener` to support
 both mouse and keyboard dragging. It also includes default PhET drag and drop sounds. This is the recommended approach.
 
 If that doesn't work for you, you can use `KeyboardDragListener` directly. The options for your `DragListener`
 and `KeyboardDragListener` will typically be similar, but beware that API differences exist. Avoid duplicating
 code - factor out any logic that is needed by both `DragListener` and `KeyboardDragListener`.
 
-Your `RichDragListener` will look something like this:
+Your `SoundRichDragListener` will look something like this:
 
 ```ts
 // pdom - dragging using the keyboard
