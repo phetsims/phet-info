@@ -62,16 +62,14 @@
 
 - [ ] Alternative Input (Started: ) (Completed: )
   - [ ] Organize interactions in the order of pedagogical importance within the PDOM's Play Area and Control Area.
-  - [ ] Create screen-specific Keyboard Shortcuts dialogs.
-    - [ ] Ensure all sim-specific actions come before "Basic Actions".
-    - [ ] Adjust the dialogs default headings and instructions to suit the sim where needed. 
-    - [ ] Write accessible text for dialog when Interactive Description or Voicing are present.
-  - [ ] Interactive Highlights
+  - [ ] Create screen-specific [Keyboard Shortcuts dialogs](https://docs.google.com/document/d/1cBnuLYYFb6d3eyJlVzjEz9sp2XlAI8upWXUUrcyHu4c/edit). [Ai template](https://o365coloradoedu.sharepoint.com/:u:/r/sites/PHYS-phet-pilot/PhET%20Files/PhET%20Files/PhET%20Design%20Resources/Design%20Resources%20-%20Sim%20Design/Keyboard%20Dialog%20Template.ai?csf=1&web=1&e=th8xeg)
 - [ ] Sound & Sonification (Completed: )
   - [ ] Sound design requirements determined: date: //
   - [ ] Sound design complete: date: //
   - [ ] UI Sounds implemented: date: //
   - [ ] All sounds implemented: date: //
+- [ ] Essential Description
+  - [ ] Accessible names implemented: date: //
 - [ ] Interactive Description - (link to description design & implementation checklist)
   - [ ] Description design complete (Started: ) (Completed: )
   - [ ] Development complete (Started: ) (Completed: )
