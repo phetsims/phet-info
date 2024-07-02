@@ -1144,12 +1144,6 @@
     ],
     "responsibleDesigners": []
   },
-  "phet-io-wrapper-hookes-law-energy": {
-    "responsibleDevs": [
-      "@zepumph"
-    ],
-    "responsibleDesigners": []
-  },
   "phet-io-wrapper-lab-book": {
     "responsibleDevs": [
       "@zepumph"

@@ -43,6 +43,10 @@ build-local.json. See Getting Started for details.
 1. `cd phet-info/github-labels`
 2. Run `./delete-label.sh {{label-name}}`.
 
+### To remove a repo from github label management
+
+1. If you have the file `.repos` (because you have used this tool before), delete the repo line from that file
+
 ## FAQ
 
 * ### Error statuses during label script execution

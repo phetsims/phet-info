@@ -156,7 +156,6 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phet-io-website | @zepumph |  |  | 
 | phet-io-wrapper-classroom-activity | @zepumph |  |  | 
 | phet-io-wrapper-haptics | @jessegreenberg |  |  | 
-| phet-io-wrapper-hookes-law-energy | @zepumph |  |  | 
 | phet-io-wrapper-lab-book | @zepumph |  |  | 
 | phet-io-wrappers | @zepumph |  |  | 
 | phet-ios-app | @mattpen |  |  | 
