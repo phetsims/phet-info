@@ -521,12 +521,6 @@
       "@amanda-phet"
     ]
   },
-  "faraday": {
-    "responsibleDevs": [
-      "@pixelzoom"
-    ],
-    "responsibleDesigners": []
-  },
   "faradays-electromagnetic-lab": {
     "responsibleDevs": [
       "@pixelzoom"
