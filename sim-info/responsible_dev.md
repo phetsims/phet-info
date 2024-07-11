@@ -75,7 +75,6 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | estimation | @jbphet | @amanda-phet |  | 
 | example-sim | @marlitas |  |  | 
 | expression-exchange | @jbphet | @amanda-phet | Sound | 
-| faraday | @pixelzoom |  |  | 
 | faradays-electromagnetic-lab | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | faradays-law | @jbphet | @arouinfar | Sound<br/>Interactive Description | 
 | fenster | @jbphet,@jessegreenberg |  |  | 
