@@ -1011,6 +1011,15 @@
       "@amanda-phet"
     ]
   },
+  "number-pairs": {
+    "responsibleDevs": [
+      "@marlitas",
+      "@pixelzoom"
+    ],
+    "responsibleDesigners": [
+      "@catherinecarter"
+    ]
+  },
   "number-suite-common": {
     "responsibleDevs": [
       "@marlitas"
