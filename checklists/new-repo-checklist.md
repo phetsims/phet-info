@@ -20,6 +20,7 @@ At https://github.com/phetsims:
 - [ ] Do not check the "Add a README file" checkbox.
 - [ ] Leave the "Add .gitignore" combo box set to "None".
 - [ ] Leave the "Add a license" combo box set to "None".
+- [ ] Press the "Create Repository" button.
 
 Create your working copy of the sim repo:
 
