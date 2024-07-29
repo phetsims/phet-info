@@ -4,7 +4,9 @@
 
 - First Steps
 - PatternStringProperty
+- Dynamic Layout
 - Testing
+- Final steps
 
 ### First Steps
 
@@ -32,6 +34,9 @@ we use `StringUtils.fillIn()`. Refer to `PatternStringProperty.ts`
 for implementation documentation. There may be rare/specific situations where `PatternStringProperty` is not needed.
 Also know that these are likely good cases for DerivedStringProperty, which should be used for i18n derived, non-pattern
 strings. We prefer `DerivedStringProperty` to `DerivedProperty<string>` for PhET-iO consistency.
+
+### Dynamic Layout
+Sizable components found in both Scenery and Sun support dynamic strings in sims. Familiarize yourself with the [Scenery Layout Documentation](https://phetsims.github.io/scenery/doc/layout) to learn more about sizable components and how they can help you create a dynamic and robust layout architecture for your sim. It is recommended to use these components instead of listening to `BoundsProperty`.
 
 ### Testing
 
