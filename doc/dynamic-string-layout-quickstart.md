@@ -14,7 +14,7 @@ and every single usage case should be converted.
 Certain components may need to be set to `resizable: true`. If you see that components are not resizing as expected,
 this is a good place to start.
 
-If you know that you will not need to support dynamic locale for your publication, you can opt out in the package.json
+You can define support for dynamic locale in the package.json. It is recommended to wait until all strings have bring converted to use the `*stringProperty` from the strings file. If you know that you will not need to support dynamic locale for your publication, you can opt out in the package.json
 like:
 
 ```json
@@ -52,7 +52,7 @@ expected. Strings will only change if they have been implemented with a `TReadOn
 
 ### Final Steps
 
-To only support dynamic locales in your sim update your `package.json` with:
+To support dynamic locales in your sim update your `package.json` with:
 
 ```json
 {
