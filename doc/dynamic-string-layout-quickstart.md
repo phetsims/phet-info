@@ -21,7 +21,7 @@ Any code that relied on these being a `string` should be refactored to be dynami
 Certain components may need to be set to `resizable: true`. If you see that components are not resizing as expected,
 this is a good place to start.
 
-You can define support for dynamic locale in the package.json. It is recommended to wait until all strings have bring 
+You can define support for dynamic locale in the package.json. It is recommended to wait until all strings have been 
 converted to use the `*stringProperty` from the strings file. If you know that you will not need to support dynamic 
 locale for your publication, you can opt out in the package.json
 like:
