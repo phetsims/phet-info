@@ -49,16 +49,6 @@ and robust layout architecture for your sim. It is recommended to use these comp
 `BoundsProperty`.
 
 ### Testing
-
-**If your sim has been published and has translations:**
-
-Run with `?locales=*` to enable the locale-testing button (globe) in the navigation bar. Open the locale dialog by
-pressing the globe button in the navigation bar. Press and hold while moving the pointer over locale names. This changes
-the locale. Watch for layout problems. Fix any layout problems that are identified. For example, if a Text node needs to
-remain centered on something, then a boundsProperty listener may be needed.
-
-**If you are working on an unpublished sim:**
-
 Use the `stringTest=dynamic` query parameter to change all the strings in your sim at once. `DynamicStringTest` uses a
 keyboard event listener to adjust the length of strings with the arrow keys and space bar. For more specific usage info
 refer to [DynamicStringTest](https://github.com/phetsims/joist/blob/main/js/DynamicStringTest.ts) documentation. This
