@@ -333,10 +333,12 @@ various features, not all are always include. Ignore sections that do not apply.
 - [ ] Does the sim pass an accessibility fuzz test? (run with query parameters `fuzzBoard&ea`)
 - [ ] Does the sim use `ScreenView.pdomPlayAreaNode.pdomOrder` and `Screenview.pdomControlAreaNode.pdomOrder` to control
   the traversal order and categorize Nodes in the PDOM? See alternative-input-quickstart-guide.md for more information.
+- [ ] Does this sim use KeyboardListener? If so, keys should be defined with `HotkeyData`. Both the KeyboardListener and
+      keyboard help dialog content should use the `HotkeyData`. This factors used keys into a single
+      location and supports auto-generated documentation about used keys.
 - [ ] Does this sim use specific keyboard shortcuts that overlap with global shortcuts? This includes the use of
-  modifier keys like in https://github.com/phetsims/ratio-and-proportion/issues/287. **NOTE: There is currently no list
-  of global shortcuts, and therefore no way to complete this checklist item.
-  See https://github.com/phetsims/phet-info/issues/188.**
+  modifier keys like in https://github.com/phetsims/ratio-and-proportion/issues/287. Review https://phetsims.github.io/binder/ 
+  to see a list of all global modifier keys in common code.
 
 ### Interactive Description
 

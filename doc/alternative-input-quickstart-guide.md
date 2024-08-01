@@ -222,19 +222,26 @@ functionality.
 ## Hotkeys
 
 Hotkeys are added with `KeyboardListener`. A KeyboardListener can be added to a Node, and will fire its callback
-whenever the specified keys are pressed while the Node has focus. Here is an example:
+whenever the specified keys are pressed while the Node has focus. The keys should be defined with HotkeyData.
+Create a public static field in your class that is an instance of HotkeyData. Use the HotkeyData in your keyboard
+listener and in your keyboard help dialog so that commands and labels are defined in one place. HotkeyData also
+supports auto-generated documentation for hotkeys.
+
+Here is an example:
 
 ```ts
 
+// a static somewhere in your class
+public static readonly HOTKEY_DATA = new HotkeyData( {
+  keyStringProperties: [ new Property( 'j+0' ) ],
+  keyboardHelpDialogLabelStringProperty: SimRepoStrings.labelForCommand,
+  repoName: simNamespace.name
+} );
+
 const keyboardListener = new KeyboardListener( {
-  keys: [ 'escape', 'j+0' ],
+  keyStringProperties: MyClass.HOTKEY_DATA.keyStringProperties,
   fire: ( event, keysPressed, listener ) => {
-    if ( keysPressed === 'escape' ) {
-      // escape key was pressed
-    }
-    else if ( keysPressed === 'j+0' ) {
-      // j and 0 were pressed
-    }
+    // j+0 was pressed!
   }
 } );
 
@@ -245,17 +252,26 @@ You can also add a global Hotkey that will fire regardless of which Node has foc
 receive input events, the listener will fire. Here is an example:
 
 ```ts
+
+// a static somewhere in your class
+public static readonly HOTKEY_DATA = new HotkeyData( {
+  keyStringProperties: [ new Property( 'alt+r' ) ],
+  keyboardHelpDialogLabelStringProperty: SimRepoStrings.labelForCommand,
+  repoName: simNamespace.name,
+  global: true // for documentation, mark this as a global hotkey
+} );
+
 const globalKeyboardListener = KeyboardListener.createGlobal( targetNode, {
-  keys: [ 'alt+r' ],
+  keyStringProperties: MyClass.HOTKEY_DATA.keyStringProperties,
   fire: ( event, keysPressed, listener ) => {
-    // alt+r was pressed
+    // alt+r was pressed globally!
   }
 } );
 ```
 
-Be careful not to add hotkeys that collide with other global hotkeys defined by PhET such as hotkeys that pan and zoom
-into the sim. We need a list of global hotkeys or a way to automatically prevent collisions but do not have that yet. It
-will throw an assertion at runtime though if there is an overlap. See https://github.com/phetsims/phet-info/issues/188.
+Be careful not to add hotkeys that collide with other global hotkeys defined by PhET. All used hotkeys can be reviewed
+with binder documentation at https://phetsims.github.io/binder/. This list is auto-generated from HotkeyData.
+Scenery will also throw an assertion at runtime though if there is an overlap.
 
 ## Scenery Events
 
