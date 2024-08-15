@@ -144,7 +144,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | paper-land | @jbphet,@jessegreenberg | @brettfiedler |  | 
 | pendulum-lab | @jonathanolson | @arouinfar | Sound | 
 | perennial | @mattpen,@jonathanolson |  |  | 
-| ph-scale | @pixelzoom | @arouinfar | Interactive Description | 
+| ph-scale | @pixelzoom | @arouinfar |  | 
 | ph-scale-basics | @pixelzoom | @arouinfar |  | 
 | phet-android-app | @mattpen |  |  | 
 | phet-core | @jonathanolson |  |  | 
