@@ -209,13 +209,13 @@ For deploying a production version, execute either:
 grunt production --brands={{BRANDS}} --branch={{BRANCH}}
 ```
 
-for a published, non-prototype sim, or
+for a full production (non-prototype) sim, or
 
 ```sh
 grunt prototype --brands={{BRANDS}} --branch={{BRANCH}}
 ```
 
-for a published sim.
+for a prototype sim.
 
 For all of these, follow the prompts. It should handle all of the steps in the older deployment checklist, and will
 notify you about any additional tasks that you will need to take afterwards.
