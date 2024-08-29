@@ -45,6 +45,7 @@
 
 - [ ] Remove from PhET google group
 - [ ] Remove from PhET Sharepoint Employee and Affiliate Group
+- [ ] Remove from [PhET Meetings 2.0 Outlook group](https://outlook.office.com/groups/home)
 - [ ] Remove GitHub access
 - [ ] Remove from Slack
 - [ ] (if applicable) Remove unfuddle access
