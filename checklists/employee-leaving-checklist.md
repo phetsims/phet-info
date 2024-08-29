@@ -48,6 +48,7 @@
 - [ ] Remove from [PhET Meetings 2.0 Outlook group](https://outlook.office.com/groups/home)
 - [ ] Remove GitHub access
 - [ ] Remove from Slack
+- [ ] Contact oithelp@colorado.edu for assistance with ensuring your employee’s IT access is disabled appropriately.
 - [ ] (if applicable) Remove unfuddle access
 - [ ] (if applicable) Cancel A-Card or US Bank Cards
 - [ ] Remove admin access on website
