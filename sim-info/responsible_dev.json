@@ -429,6 +429,13 @@
       "@DianaTavares"
     ]
   },
+  "description-demo": {
+    "responsibleDevs": [
+      "@jonathanolson",
+      "@jessegreenberg"
+    ],
+    "responsibleDesigners": []
+  },
   "diffusion": {
     "responsibleDevs": [
       "@pixelzoom"
