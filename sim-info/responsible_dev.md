@@ -63,6 +63,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | decaf | @samreid |  |  | 
 | density | @zepumph,@AgustinVallejo | @DianaTavares | Sound<br/>Interactive Description | 
 | density-buoyancy-common | @zepumph,@AgustinVallejo | @DianaTavares |  | 
+| description-demo | @jonathanolson,@jessegreenberg |  |  | 
 | diffusion | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | dot | @jonathanolson |  |  | 
 | eating-exercise-and-energy | @samreid | @amanda-phet |  | 
@@ -144,8 +145,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | paper-land | @jbphet,@jessegreenberg | @brettfiedler |  | 
 | pendulum-lab | @jonathanolson | @arouinfar | Sound | 
 | perennial | @mattpen,@jonathanolson |  |  | 
-| ph-scale | @pixelzoom | @arouinfar |  | 
-| ph-scale-basics | @pixelzoom | @arouinfar |  | 
+| ph-scale | @pixelzoom | @arouinfar | Interactive Description | 
+| ph-scale-basics | @pixelzoom | @arouinfar | Interactive Description | 
 | phet-android-app | @mattpen |  |  | 
 | phet-core | @jonathanolson |  |  | 
 | phet-global-initiative | @kathy-phet |  |  | 
