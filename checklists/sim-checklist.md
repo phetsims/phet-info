@@ -55,7 +55,7 @@
   - [ ] Deliver
     to [Legends of Learning](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=0)
   - [ ] Create "sim primer" issue
-  - [ ] Hold postmortem if applicable (Date: //)
+  - [ ] Decide as a team if a postmortem is applicable, and schedule (Date: //)
   - [ ] Send Simulation Notification from the Admin page (to alert translators)
 
 ## Inclusive Features
