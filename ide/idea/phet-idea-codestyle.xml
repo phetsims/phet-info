@@ -30,6 +30,7 @@
     <option name="USE_EXPLICIT_JS_EXTENSION" value="TRUE" />
     <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
     <option name="SPACES_WITHIN_IMPORTS" value="true" />
+    <option name="IMPORT_SORT_MODULE_NAME" value="true" />
   </TypeScriptCodeStyleSettings>
   <codeStyleSettings language="CSS">
     <indentOptions>
