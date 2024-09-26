@@ -8,8 +8,5 @@
   },
   "devDependencies": {
     "octokit": "^3.1.2"
-  },
-  "eslintConfig": {
-    "extends": "../chipper/eslint/sim_eslintrc.js"
   }
 }
