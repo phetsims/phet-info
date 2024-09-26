@@ -44,10 +44,8 @@ get you pointed in the right direction. If you notice errors or a need for clari
 * Select "Manual ESLint configuration"
 * Fill out ESLint package location (unless global, `chipper/node_modules/eslint`). (May be filled in automatically)
 * Configuration file: "Automatic search"
-* "Additional Rules Dir" should be `chipper/eslint/rules`
-* "Extra eslint options" needs to have `--resolve-plugins-relative-to=../chipper/`
 * "Run For Files": add a couple file extensions: `{**/*,*}.{js,ts,jsx,tsx,html,mjs,cjs}`
-* [Here is a picture for a Windows](https://user-images.githubusercontent.com/6396244/157985259-def3f3f5-891f-4916-9276-c3ec7c15d1d8.png)
+* [Here is a picture for a Windows](https://private-user-images.githubusercontent.com/6856943/371339629-d580d305-df11-462e-8564-085c6b80bdcb.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjczOTEzOTMsIm5iZiI6MTcyNzM5MTA5MywicGF0aCI6Ii82ODU2OTQzLzM3MTMzOTYyOS1kNTgwZDMwNS1kZjExLTQ2MmUtODU2NC0wODVjNmI4MGJkY2IucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDkyNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDA5MjZUMjI1MTMzWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9YjIxNjhjMDQ2NDY2MTIxYWJlNjRjYWZjZjcxYTFmZTE2ZmY1YWIwOWRlMmY1ODc0YzhkMTU5MDViM2ZlMTI5MCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.oUY0inWGSToWH-PeLPgSU-rjgRGMJ-8UVGMdq-__Txk)
 
 11. (Optional) Enable Nodejs coding assistance. `File > Settings > Language & Frameworks > Node.js and NPM`. Coding
     Assistance section. "Node.js Core is disabled" Enable it. This is handy if working on build tools/ node often.
