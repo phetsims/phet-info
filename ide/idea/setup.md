@@ -44,6 +44,8 @@ get you pointed in the right direction. If you notice errors or a need for clari
 * Select "Manual ESLint configuration"
 * Fill out ESLint package location (unless global, `chipper/node_modules/eslint`). (May be filled in automatically)
 * Configuration file: "Automatic search"
+* Add command line arguments: `--flag unstable_config_lookup_from_file`. This normalizes the behavior of eslint.config.mjs 
+  file lookup and will be necessary until we migrate to ESLint 10.0, where the flag will no longer be necessary.
 * "Run For Files": add a couple file extensions: `{**/*,*}.{js,ts,jsx,tsx,html,mjs,cjs}`
 
 11. (Optional) Enable Nodejs coding assistance. `File > Settings > Language & Frameworks > Node.js and NPM`. Coding
@@ -58,6 +60,10 @@ get you pointed in the right direction. If you notice errors or a need for clari
 
 * [Here is a list of default keyboard shortcuts for windows and mac](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
 * [Learn how to use multiple cursors!](https://www.jetbrains.com/webstorm/guide/tips/multi-cursor/)
+
+14. Configure TypeScript to use types from the server.
+  * Settings > Languages & Frameworks > TypeScript > "use types from server"
+  * See https://www.jetbrains.com/help/webstorm/typescript-support.html#ws_ts_use_ts_service_checkbox
 
 ## Suggestions
 
