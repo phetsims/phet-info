@@ -22,7 +22,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | axon | @samreid |  |  | 
 | babel | @jbphet |  |  | 
 | balancing-act | @jbphet | @DianaTavares | Sound | 
-| balancing-chemical-equations | @pixelzoom | @arouinfar | Sound | 
+| balancing-chemical-equations | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | balloons-and-static-electricity | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
 | bamboo | @samreid |  | Sound<br/>Interactive Description | 
 | beaker | @samreid |  |  | 
