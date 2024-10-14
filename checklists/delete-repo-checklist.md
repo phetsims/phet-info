@@ -35,7 +35,6 @@ Decide whether the repo is being (a) deleted (b) archived or (c) removed from ac
 - [ ] If archiving, update the repo's README.md file to indicate why it is archived
 - [ ] Remove from github labels tracker/tool in phet-info (see its README)
 - [ ] Remove from `responsible_dev.json`.
-- [ ] Remove from chipper/tsconfig/all/tsconfig.json (if present)
 
 We should explicitly state whether something needs to be done to delete the directory from aqua, build-server, and
 phettest, or whether these directories get automatically deleted, or just hang around forever with no consequences

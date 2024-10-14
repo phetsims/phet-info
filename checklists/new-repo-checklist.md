@@ -71,7 +71,6 @@ Other:
   run `grunt update`.
 - [ ] Add the sim
   to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/main/sim-info/responsible_dev.json).
-- [ ] Add the sim to chipper/tsconfig/all/tsconfig.json
 - [ ] If applicable, add corresponding dependencies from `phetLibs` in package.json to "references" in tsconfig.json.
 
 ## Steps to create a different type of repo
@@ -123,4 +122,3 @@ Other:
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
 - [ ] Add the repo
   to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/main/sim-info/responsible_dev.json).
-- [ ] Add the repo to chipper/tsconfig/all/tsconfig.json

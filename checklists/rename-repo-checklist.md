@@ -15,7 +15,6 @@
 - [ ] Change entry
   in [responsible_dev.json](https://github.com/phetsims/phet-info/blob/main/sim-info/responsible_dev.json).
 - [ ] If applicable, "refresh perennial" on phettest.
-- [ ] Add the sim to chipper/tsconfig/all/tsconfig.json
 - [ ] Remove old repo directories in `chipper/dist/js`, `chipper/dist/declarations`,
   and `chipper/dist/js-cache-status.json` and and restart your transpiler.
 - [ ] Run `rm -rf {{OLD_REPO}}` from the phetsims directory
