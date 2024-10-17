@@ -11,5 +11,5 @@ current_branch=$(git branch --show-current)
 
 # Only run pre-commit hooks in main, see https://github.com/phetsims/perennial/issues/276
 if [[ "$current_branch" == "main" ]]; then
-  node ../chipper/js/scripts/hook-pre-commit.js
+  ../perennial-alias/bin/mint run ../chipper/js/scripts/hook-pre-commit.js
 fi
