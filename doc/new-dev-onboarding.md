@@ -256,11 +256,11 @@ https://github.com/phetsims/chipper/issues/1281.
 
 When you begin working in TypeScript files, you might hear a lot about tsc (TypeScript Compiler):
 
-- tsc runs a type checker that will output type errors in our code. This type checking is already included in pre-commit
-  hooks, but many developers enjoy having a tool where they can check for type errors outside of pre-commit hooks.
-- The recommended method for running tsc is through the
-  script [absolute-tsc.js](https://github.com/phetsims/chipper/blob/main/js/scripts/absolute-tsc.js). Documentation for
-  how to run absolute-tsc from the command line, or as an external tool in Webstorm can be found at the top of the file.
+- `tsc` runs a type checker that will output type errors in our code. This type checking is already included in
+  pre-commit hooks, but many developers enjoy having a tool where they can check for type errors outside of pre-commit
+  hooks.
+- The recommended method for running `tsc` at PhET is with `grunt check`. Documentation for that can be found in the
+  process. Many devs also use this as a webstorm tool, see doc for `--absolute` for supporting that.
 - The [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) is a great resource for diving into
   TypeScript. You can also find PhET specific TypeScript Conventions in the [Reference Documents](#reference-docs)
   section.
