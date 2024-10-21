@@ -14,8 +14,8 @@ known problems, etc.
 
 1. Clone missing repos by running `perennial/bin/clone-missing-repos.sh`. This ensures that you have everything.
 2. Pull all repos by running `perennial/bin/pull-all.sh`. This ensures that you have the latest version of everything.
-3. `npm install` in chipper. This ensures that you have the TypeScript compiler, which is called `tsc`
-4. Add an alias like this to your terminal `alias tsc='node /my-path-to/chipper/node_modules/typescript/bin/tsc'`
+3. `npm install` in chipper. This ensures that you have the TypeScript compiler, which is called `tsc`. You can use
+   `grunt check` in your simulation repo to run type-checking as you develop.
 5. Mark chipper/dist/ as excluded from your IDE. You can create that directory eagerly now, or wait until chipper/dist/
    is created by a compilation step below. Compiled code will be written to chipper/dist/.
 6. Update your IDE to use the code style file from `phet-info/ide/idea/phet-idea-codestyle.xml`. You may need to
@@ -32,10 +32,12 @@ known problems, etc.
    see https://github.com/phetsims/chipper/issues/1121)
 
 ```json
-    "js/**/*",
-    "images/**/*",
-    "mipmaps/**/*",
-    "sounds/**/*",
+[
+  "js/**/*",
+  "images/**/*",
+  "mipmaps/**/*",
+  "sounds/**/*"
+]
 ```
 
 Congratulations!  Now the repo is TypeScript-capable. You can commit these changes if you wish.
