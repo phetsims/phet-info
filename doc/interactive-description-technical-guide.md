@@ -88,7 +88,7 @@ accessibility. It has the following components (with their implementation in par
   times it has been added to the scene graph. The PDOM elements of each `Node` are created and handled with `PDOMPeer`.
   There is a 1x1 relationship of `PDOMInstance` and `PDOMPeer`.
 
-For more information please see `/scenery/doc/accessibility/accessibility.html'`.
+For more information please see https://github.com/phetsims/scenery/blob/main/doc/accessibility/accessibility.html.
 
 ### Parallel DOM
 
