@@ -42,7 +42,7 @@ get you pointed in the right direction. If you notice errors or a need for clari
 10. Configure eslint. In `File > Settings > Language & Frameworks > JavaScript > Code Quality Tools > ESLint`:
 
 * Select "Manual ESLint configuration"
-* Fill out ESLint package location (unless global, `chipper/node_modules/eslint`). (May be filled in automatically)
+* Fill out ESLint package location (unless global, `perennial-alias/node_modules/eslint`). (May be filled in automatically)
 * Configuration file: "Automatic search"
 * Add command line arguments: `--flag unstable_config_lookup_from_file`. This normalizes the behavior of eslint.config.mjs 
   file lookup and will be necessary until we migrate to ESLint 10.0, where the flag will no longer be necessary.

@@ -8,7 +8,7 @@
 
 ```
     {
-        "eslint.nodePath": "ABSOLUTE_USER_PATH/phetsims/chipper/node_modules",
+        "eslint.nodePath": "ABSOLUTE_USER_PATH/phetsims/perennial-alias/node_modules",
         "eslint.options": {
             "cache": true,
             "ignorePath": "ABSOLUTE_USER_PATH/phetsims/chipper/eslint/.eslintignore",

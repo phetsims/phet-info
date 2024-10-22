@@ -22,7 +22,7 @@ known problems, etc.
    re-import the xml file so that your IDE picks up any changes related to TypeScript. Your IDE may not stay in sync
    with what is checked into phet-info.
 7. Turn on TypeScript support in WebStorm: Preferences > Languages & Frameworks > TypeScript. Make sure you are using
-   your system's absolute path for `chipper/node_modules/typescript`, turn on "TypeScript language service" and "Show
+   your system's absolute path for `perennial-alias/node_modules/typescript`, turn on "TypeScript language service" and "Show
    project errors". Turn off "Recompile on changes".
 8. Sublime also has an officially-supported plugin.
 
