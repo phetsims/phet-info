@@ -326,7 +326,7 @@ steps for this are:
    For example, you can run this to add back protection rules to john-travoltage.
 
   ```
-  node perennial/js/scripts/protect-branches-for-repo.js john-travoltage
+  sage run perennial/js/scripts/protect-branches-for-repo.js john-travoltage
   ```
 
 # Deploying pre-chipper-2.0 things
