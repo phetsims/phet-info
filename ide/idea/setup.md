@@ -62,7 +62,9 @@ get you pointed in the right direction. If you notice errors or a need for clari
 * [Learn how to use multiple cursors!](https://www.jetbrains.com/webstorm/guide/tips/multi-cursor/)
 
 14. Configure TypeScript to use types from the server.
-  * Settings > Languages & Frameworks > TypeScript > "use types from server"
+  * Settings > Languages & Frameworks > TypeScript:
+    * "use types from server" should be checked
+    * Typescript package should point to `perennial-alias\node_modules\typescript`
   * See https://www.jetbrains.com/help/webstorm/typescript-support.html#ws_ts_use_ts_service_checkbox
 
 ## Suggestions
