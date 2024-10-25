@@ -15,7 +15,7 @@
  */
 
 const buildLocal = require( '../../perennial-alias/js/common/buildLocal' );
-const { Octokit } = require( 'octokit' ); // eslint-disable-line phet/require-statement-match
+const { Octokit } = require( 'octokit' );
 const octokit = new Octokit( {
   auth: buildLocal.phetDevGitHubAccessToken
 } );
