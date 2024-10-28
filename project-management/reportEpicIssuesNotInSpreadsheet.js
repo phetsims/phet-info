@@ -20,8 +20,8 @@
  * @author Michael Kauzmann (PhET Interactive Simulations)
  */
 
-const _ = require( '../../perennial/node_modules/lodash' );
-const buildLocal = require( '../../perennial/js/common/buildLocal' );
+const _ = require( '../../perennial/node_modules/lodash.js' );
+const buildLocal = require( '../../perennial/js/common/buildLocal.js' );
 const https = require( 'https' );
 
 const linksInSpreadsheet = [];
