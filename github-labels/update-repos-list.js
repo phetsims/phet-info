@@ -6,7 +6,7 @@
 //  a newline separated list of all repos in the phetsims organization.
 // @author Matt Pennington (PhET Interactive Simulations)
 
-const axios = require( '../../perennial/node_modules/axios.js' );
+const axios = require( '../../perennial/node_modules/axios' );
 const buildLocal = require( '../../perennial/js/common/buildLocal.js' );
 const fs = require( 'fs' );
 
