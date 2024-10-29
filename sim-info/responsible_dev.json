@@ -1370,6 +1370,12 @@
     ],
     "responsibleDesigners": []
   },
+  "scenery-stack-test": {
+    "responsibleDevs": [
+      "@jonathanolson"
+    ],
+    "responsibleDesigners": []
+  },
   "sherpa": {
     "responsibleDevs": [
       "@samreid"
