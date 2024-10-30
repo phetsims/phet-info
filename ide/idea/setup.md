@@ -9,8 +9,8 @@ get you pointed in the right direction. If you notice errors or a need for clari
 2. Run `npm install` (or if already existing, `npm prune` and `npm update`) under `chipper/` and `perennial/`
 3. Make a new project in the same directory where you cloned all git repos. When asked, create a "Static Web" module for
    the same directory (if in Intellij IDEA).
-4. Add your github credentials in `File > Settings > Version Control > Github`, and test your credentials with
-   the `Test` button. (May need to hit "Create API Token")
+4. Add your github credentials in `File > Settings > Version Control > Github`, and test your credentials with the
+   `Test` button. (May need to hit "Create API Token")
 5. Set up version control by adding each repo to git. This can be more automatic, because `.git` dirs are found by the
    system and you just have to 'Add Roots' in the event log.
    See https://www.jetbrains.com/help/idea/2017.1/using-git-integration.html. You can confirm that all repos are
@@ -23,8 +23,8 @@ get you pointed in the right direction. If you notice errors or a need for clari
 * `sherpa/`.
 * `dist/`,
 * `babel/` (not all devs like doing this, up to you)
-* Here is an example command to paste into the
-  setting: `build;node_modules;dist;images;sounds;mipmaps;*phet-io-elements-overrides.js;*phet-io-elements-baseline.js`
+* Here is an example command to paste into the setting:
+  `build;node_modules;dist;images;sounds;mipmaps;*phet-io-elements-overrides.js;*phet-io-elements-baseline.js`
   into "Excluded Files".
 
 7. Set the right margin to appear after 120 characters. `File> Settings> Editor > Code Style` Set Default Options to
@@ -42,17 +42,19 @@ get you pointed in the right direction. If you notice errors or a need for clari
 10. Configure eslint. In `File > Settings > Language & Frameworks > JavaScript > Code Quality Tools > ESLint`:
 
 * Select "Manual ESLint configuration"
-* Fill out ESLint package location (unless global, `perennial-alias/node_modules/eslint`). (May be filled in automatically)
+* Fill out ESLint package location (unless global, `perennial-alias/node_modules/eslint`). (May be filled in
+  automatically)
 * Configuration file: "Automatic search"
-* Add command line arguments: `--flag unstable_config_lookup_from_file`. This normalizes the behavior of eslint.config.mjs 
-  file lookup and will be necessary until we migrate to ESLint 10.0, where the flag will no longer be necessary.
+* Add command line arguments: `--flag unstable_config_lookup_from_file`. This normalizes the behavior of
+  eslint.config.mjs file lookup and will be necessary until we migrate to ESLint 10.0, where the flag will no longer be
+  necessary.
 * "Run For Files": add a couple file extensions: `{**/*,*}.{js,ts,jsx,tsx,html,mjs,cjs}`
 
 11. (Optional) Enable Nodejs coding assistance. `File > Settings > Language & Frameworks > Node.js and NPM`. Coding
     Assistance section. "Node.js Core is disabled" Enable it. This is handy if working on build tools/ node often.
 12. We as a project prefer to use `@returns` over `@return` in jsdoc (there is even a lint rule for this), see
-    https://github.com/phetsims/chipper/issues/557. To get Webstorm to auto filling `@returns` when using
-    the `/**[Enter]`
+    https://github.com/phetsims/chipper/issues/557. To get Webstorm to auto filling `@returns` when using the
+    `/**[Enter]`
     template, follow these instructions: https://youtrack.jetbrains.com/issue/WEB-7516#comment=27-611256. Basically type
     `@retur` in a jsdoc comment and then select manually `returns` from the dialog that pops up. Webstorm will remember
     you selection.
@@ -62,20 +64,21 @@ get you pointed in the right direction. If you notice errors or a need for clari
 * [Learn how to use multiple cursors!](https://www.jetbrains.com/webstorm/guide/tips/multi-cursor/)
 
 14. Configure TypeScript to use types from the server.
-  * Settings > Languages & Frameworks > TypeScript:
-    * "use types from server" should be checked
-    * Typescript package should point to `perennial-alias\node_modules\typescript`
-  * See https://www.jetbrains.com/help/webstorm/typescript-support.html#ws_ts_use_ts_service_checkbox
+
+* Settings > Languages & Frameworks > TypeScript:
+  * "use types from server" should be checked
+  * Typescript package should point to `perennial-alias\node_modules\typescript`
+* See https://www.jetbrains.com/help/webstorm/typescript-support.html#ws_ts_use_ts_service_checkbox
 
 ## Suggestions
 
 These may not be required, but are settings or features that other developers have found useful for their coding style.
 Use at your own risk!
 
-* View Markdown preview horizontally split instead of
-  vertically: `Languages & Frameworks > Markdown > Editor and Preview Panel Layout: Split horizontally`
-* Move Editor tabs from the top to the right to maximize vertical
-  space: `Editor > General > Editor Tabs > Tab placement: Right`
+* View Markdown preview horizontally split instead of vertically:
+  `Languages & Frameworks > Markdown > Editor and Preview Panel Layout: Split horizontally`
+* Move Editor tabs from the top to the right to maximize vertical space:
+  `Editor > General > Editor Tabs > Tab placement: Right`
 * Name collisions with built-in types can make adding imports difficult. The following suggestions are ways to get
   around this problem.
   * Using "Code completion->Basic" (ctrl+space from default MacOS bindings) will only work if you are already importing
@@ -90,10 +93,12 @@ Use at your own risk!
   * Sending code changes over Slack when developers are pairing together and they need to switch who is leading
   * Adding code changes to a GitHub issue for other devs to try out. Often times, you may see patches contained in a "
     details" dropdown (notated as `<details>`) since they can be very long.
+* The "find" modal has a preview section that some want to see more than 100 items in it, instead of needing to open the
+  Find view. Increase this number with "Settings > Advanced Settings > Maximum number of results to show in Find in Files/Show Usages preview"
 * It can be helpful to see the history of a file or section of a file that you're working in. This is not only a way to
   see how a section of code came to be, but also which devs made the changes. See documentation on
-  the [Show History](https://www.jetbrains.com/help/webstorm/investigate-changes.html#file-history) feature (or
-  do `Right click > Git > Show History/Show History for Selection`).
+  the [Show History](https://www.jetbrains.com/help/webstorm/investigate-changes.html#file-history) feature (or do
+  `Right click > Git > Show History/Show History for Selection`).
 * There are many PhET words that webstorm will flag incorrectly as spelling errors. You may want to preempt this by
   adding these to your local dictionary in `Editor -> Natural Languages -> Spelling`
   <details>
