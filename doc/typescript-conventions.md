@@ -7,7 +7,7 @@ or other tooling are not listed here.
 ### ESLint
 
 Many of PhET's TypeScript conventions are embodied in TypeScript-specific lint rules. We use the `@typescript-eslint`
-plugin to add these rules. Please see [.eslintrc](https://github.com/phetsims/chipper/blob/main/eslint/.eslintrc.js)
+plugin to add these rules and augment with our own under the phet plugin. Please see [perennial/eslint](https://github.com/phetsims/perennial/blob/main/js/eslint/)
 for details and context about conventions based on lint rules.
 
 ### Philosophy

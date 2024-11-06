@@ -1,5 +1,8 @@
 # Using eslint through the SublimeLinter plugin
 
+UPDATE: As of Nov 2024, these instructions are out of date. We have upgraded to ESLint 9 which uses the flat config,
+and have not tested Sublime support for ESLint since then.
+
 These steps were verified on Ubuntu 16.04 and Mac OS X 10.11 with Sublime Text 3, node 5.3.0 and eslint 2.9.0. Other
 setups and versions are also likely to work.
 
