@@ -45,10 +45,8 @@ Congratulations!  Now the repo is TypeScript-capable. You can commit these chang
 ### Transpile TypeScript
 
 * Change directory to the build tools: `cd chipper/`
-* Run the TypeScript transpiler: `node js/scripts/transpile.js --watch` which starts a process that will auto-transpile
+* Run the TypeScript transpiler: `grunt transpile --watch` which starts a process that will auto-transpile
   when files change.
-* If you prefer to experiment with using WebStorm/IDEA File Watchers, please
-  see https://github.com/phetsims/phet-info/blob/main/doc/typescript-webstorm-file-watcher.md
 
 ### Experiment with your new TypeScript repo
 
