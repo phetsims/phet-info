@@ -55,7 +55,8 @@ review until the issues have been created and addressed by the responsible dev._
 If any of these items fail, pause code review.
 
 - [ ] Does the sim build without warnings or errors?
-- [ ] Does the html file size seem reasonable, compared to other similar sims?
+- [ ] Does the html file size seem reasonable, compared to other similar sims? Run profile-file-size.ts to see how the 
+size breaks down, and see if anything is unexpected. 
 - [ ] Does the sim start up? (unbuilt and built versions)
 - [ ] Does the sim experience any assertion failures? (run with query parameter `ea`)
 - [ ] Does the sim pass a scenery fuzz test? (run with query parameters `fuzz&ea`)
