@@ -13,7 +13,7 @@
  * Step 2: run this script:
  * - Paste the list of URLs as the value below of "linksInSpreadsheet"
  * - Make sure you have the appropriate github credentials in your buildLocal.json file.
- * - Run this file with `node` on the command line, it will print out the github issues that are labelled with epic but
+ * - Run this file with `sage run` on the command line, it will print out the github issues that are labelled with epic but
  *    not in the spreadsheet.
  *
  *

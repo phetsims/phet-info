@@ -16,7 +16,7 @@ To print out a list, by developer, of all repos a dev is responsible for:
 
 ```bash
 cd phet-info/../
-node phet-info/sim-info/printReposPerDev.mjs
+sage run phet-info/sim-info/printReposPerDev.mjs
 ```
 
 ----------------------
