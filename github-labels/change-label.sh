@@ -16,8 +16,8 @@ else
 fi
 
 binDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-creds=`node ${binDir}/printGithubAuthorization.js`
-node ./update-repos-list.js
+creds=`../../perennial/bin/sage run ${binDir}/printGithubAuthorization.js`
+../../perennial/bin/sage run ./update-repos-list.js
 
 echo 'For each repo, this script should print "200 OK" to indicate success'
 echo 'If a 404 Not Found is printed, that repo is likely missing the standard label set.'

@@ -17,6 +17,8 @@ build-local.json. See Getting Started for details.
 
 - The node scripts in this repo require running `npm install` in the phet-info/github-labels directory.
 
+3. Github label code requires a checkout of `perennial/`.
+
 ## PhET Github Label operations
 
 ### To standardize the labels on a new repo
