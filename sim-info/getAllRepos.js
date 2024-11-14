@@ -9,7 +9,7 @@
  * @author Michael Kauzmann (PhET Interactive Simulations)
  */
 
-const buildLocal = require( '../../perennial/js/common/buildLocal.js' );
+const buildLocal = require( '../../perennial/js/common/buildLocal' );
 const https = require( 'https' );
 
 const getSomeRepos = async pageNumber => {
