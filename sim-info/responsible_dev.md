@@ -71,8 +71,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | energy-skate-park | @jessegreenberg | @arouinfar |  | 
 | energy-skate-park-basics | @jessegreenberg | @arouinfar |  | 
 | equality-explorer | @pixelzoom | @amanda-phet | Sound | 
-| equality-explorer-basics | @pixelzoom | @amanda-phet |  | 
-| equality-explorer-two-variables | @pixelzoom | @amanda-phet |  | 
+| equality-explorer-basics | @pixelzoom | @amanda-phet | Sound | 
+| equality-explorer-two-variables | @pixelzoom | @amanda-phet | Sound | 
 | estimation | @jbphet | @amanda-phet |  | 
 | example-sim | @marlitas |  |  | 
 | expression-exchange | @jbphet | @amanda-phet | Sound | 
