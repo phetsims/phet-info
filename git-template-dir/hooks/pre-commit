@@ -9,7 +9,7 @@
 # for installation instructions.
 #-----------------------------------------------------------------------------------------------------------------------
 
-PRE_COMMIT_SCRIPT="../perennial-alias/bin/hook-launcher-pre-commit.sh"
+PRE_COMMIT_SCRIPT="../perennial-alias/bin/hook-pre-commit.sh"
 
 # only run the file if it exists. This helps with backwards compatibility if on an older version of perennial-alias.
 if test -f "$PRE_COMMIT_SCRIPT"; then
