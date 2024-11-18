@@ -1,15 +1,17 @@
 #!/bin/bash
 #-----------------------------------------------------------------------------------------------------------------------
-# git pre-commit hooks
+# git pre-commit hooks for the PhET Codebase. These are installed on all repos.
+#
+# This script only launches another bash script, and new logic should NOT be added here. This way, changes can be made
+# without the need to reinstall git hooks across all repos.
 #
 # Please see https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md#utilities-and-instrumentation-for-development-and-testing
 # for installation instructions.
 #-----------------------------------------------------------------------------------------------------------------------
 
-# Detect the current branch. Requires git 2.22.0 or higher
-current_branch=$(git branch --show-current)
+PRE_COMMIT_SCRIPT="../perennial-alias/bin/hook-launcher-pre-commit.sh"
 
-# Only run pre-commit hooks in main, see https://github.com/phetsims/perennial/issues/276
-if [[ "$current_branch" == "main" ]]; then
-  ../perennial-alias/bin/sage run ../chipper/js/scripts/hook-pre-commit.js
+# only run the file if it exists. This helps with backwards compatibility if on an older version of perennial-alias.
+if test -f "$PRE_COMMIT_SCRIPT"; then
+  $PRE_COMMIT_SCRIPT
 fi

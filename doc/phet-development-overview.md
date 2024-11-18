@@ -84,7 +84,7 @@ Method 1 (recommended): Get all PhET repos
 
 * Change directory to phetsims: `cd phetsims`
 * Get [phetsims/perennial](https://github.com/phetsims/perennial): `git clone https://github.com/phetsims/perennial`
-* Run "clone-missing-repos.sh": `./perennial/bin/clone-missing-repos.sh`
+* Run "clone-missing-repos.sh": `./perennial-alias/bin/clone-missing-repos.sh`
 
 Method 2: Manually get specific PhET repos
 
@@ -475,8 +475,8 @@ https://github.com/phetsims/chipper/blob/main/js/initialize-globals.js
 13. Install PhET's git hooks to run basic checks as part of the git lifecycle. Run this from the root of your checkout.
     First it clears any pre-existing commit hooks, then installs the new hooks.
 
-```
-perennial/bin/for-each.sh perennial/data/active-repos "rm .git/hooks/pre-commit; git init --template=../phet-info/git-template-dir"
+```sh
+perennial-alias/bin/for-each.sh perennial-alias/data/active-repos "rm .git/hooks/pre-commit; git init --template=../phet-info/git-template-dir"
 ```
 
 Getting to optimal performance on all supported platforms can be tricky--this section enumerates possible optimizations
