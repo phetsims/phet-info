@@ -164,7 +164,7 @@ the constructor, where `{{CLASS_NAME}}` should exactly match the class name. (b)
     .gitignore
     my-repo_en.html
     my-repo-strings_en.json
-    Gruntfile.js
+    Gruntfile.cjs
     LICENSE
     package.json
     tsconfig.json
