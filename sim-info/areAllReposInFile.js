@@ -9,7 +9,7 @@
  *
  * @author Michael Kauzmann (PhET Interactive Simulations)
  */
-const getAllRepos = require( './getAllRepos' );
+const getAllRepos = require( './getAllRepos.js' );
 const fs = require( 'fs' );
 
 ( async () => {

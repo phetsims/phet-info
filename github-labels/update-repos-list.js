@@ -7,7 +7,7 @@
 // @author Matt Pennington (PhET Interactive Simulations)
 
 const axios = require( '../../perennial/node_modules/axios' );
-const buildLocal = require( '../../perennial/js/common/buildLocal' );
+const buildLocal = require( '../../perennial/js/common/buildLocal.js' );
 const fs = require( 'fs' );
 
 ( async () => {
