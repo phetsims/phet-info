@@ -45,7 +45,7 @@ Congratulations!  Now the repo is TypeScript-capable. You can commit these chang
 ### Transpile TypeScript
 
 * Change directory to the build tools: `cd chipper/`
-* Run the TypeScript transpiler: `grunt transpile --watch` which starts a process that will auto-transpile
+* Run the TypeScript transpiler: `grunt transpile --live` which starts a process that will auto-transpile
   when files change.
 
 ### Experiment with your new TypeScript repo

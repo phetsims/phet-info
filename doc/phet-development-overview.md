@@ -113,7 +113,7 @@ npm install
 ### Transpile TypeScript
 
 * Change directory to the build tools: `cd chipper/`
-* Run the TypeScript transpiler: `grunt transpile --watch` which starts a process that will auto-transpile
+* Run the TypeScript transpiler: `grunt transpile --live` which starts a process that will auto-transpile
   when files change.
 * For more details about TypeScript, please
   see [PhET's TypeScript Quick Start Guide](https://github.com/phetsims/phet-info/blob/main/doc/typescript-quick-start.md)
@@ -163,7 +163,7 @@ simulation using the template.
    `grunt create-sim --repo=acceleration-lab --author="Jane Doe"`
 6. In your simulation directory, run the transpiler watch process and specify your new repo as a target:
    `cd ../acceleration-lab`
-   `grunt output-js-project --watch`
+   `grunt output-js-project --live`
 7. Test the created simulation in the browser and make sure it launches. It should be a blank simulation. Write to the
    [SceneryStack Discussions forum](https://github.com/orgs/scenerystack/discussions) if you run into problems.
 
