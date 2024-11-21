@@ -564,7 +564,7 @@ class PhetLintCommand(sublime_plugin.TextCommand):
 class PhetLintEverythingCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     view = self.view
-    execute('grunt', ['lint-everything', '--no-color'], get_git_root(view) + '/perennial', show_lint_output)
+    execute('grunt', ['lint', '--all', '--no-color'], get_git_root(view) + '/perennial', show_lint_output)
 
 class PhetUpdateCommand(sublime_plugin.TextCommand):
   def run(self, edit):
