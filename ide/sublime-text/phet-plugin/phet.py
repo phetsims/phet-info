@@ -2,9 +2,16 @@
 #
 # @author Jonathan Olson <jonathan.olson@colorado.edu>
 
-import sublime, sublime_plugin, os, re, subprocess, webbrowser, json, threading
-
+import json
+import os
+import re
+import subprocess
+import threading
+import webbrowser
 from functools import reduce
+
+import sublime
+import sublime_plugin
 
 # Useful URLs:
 # https://www.sublimetext.com/docs/3/api_reference.html
