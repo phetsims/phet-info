@@ -429,7 +429,7 @@ specification:
 Many aspects of a simulation must be developed properly and working well in order for the simulation to behave properly
 across our many supported platforms. PhET has developed several utilities and instruments to make this development and
 testing easier. The most up-to-date documentation for the query parameters is available here:
-https://github.com/phetsims/chipper/blob/main/js/initialize-globals.js
+https://github.com/phetsims/chipper/blob/main/js/browser/initialize-globals.js
 
 1. Query parameter: `?screenIndex`. This query parameter may be used to specify the initial screen of the simulation. It
    can be paired with standalone above to launch just a specific screen of the simulation. For instance:
