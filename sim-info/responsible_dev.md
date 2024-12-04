@@ -208,7 +208,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | tangible | @zepumph |  |  | 
 | tappi | @jessegreenberg |  |  | 
 | tasks | @zepumph |  |  | 
-| trig-tour | @jessegreenberg | @amanda-phet |  | 
+| trig-tour | @jessegreenberg | @amanda-phet | Interactive Description | 
 | twixt | @jonathanolson |  |  | 
 | under-pressure | @samreid | @DianaTavares |  | 
 | unit-rates | @pixelzoom | @arouinfar |  | 
