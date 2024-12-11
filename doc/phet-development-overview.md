@@ -84,6 +84,9 @@ Method 1 (recommended): Get all PhET repos
 
 * Change directory to phetsims: `cd phetsims`
 * Get [phetsims/perennial](https://github.com/phetsims/perennial): `git clone https://github.com/phetsims/perennial`
+* Change directory to perennial: `cd perennial`
+* Run npm install: `npm install`
+* Change directory back: `cd ..`
 * Run "clone-missing-repos.sh": `./perennial/bin/clone-missing-repos.sh`
 
 Method 2: Manually get specific PhET repos
