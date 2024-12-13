@@ -19,6 +19,7 @@ point, but aren't in every sim, so they can be skimmed and referenced when neede
   - Options (TypeScript)
   - Dispose
   - Enumeration
+  - Assertions and Affirmations
 - *Patterns to be aware of and reference when needed:*
   - Mixin and Trait
   - Singleton
@@ -35,6 +36,7 @@ point, but aren't in every sim, so they can be skimmed and referenced when neede
 * [Dependency Injection](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#dependency-injection)
 * [Dispose](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#dispose)
 * [Enumeration](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#enumeration)
+* [Assertions](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#assertions)
 * [Mixin and Trait](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#mixin-and-trait)
 * [Model-View-Controller (MVC)](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#model-view-controller-mvc)
 * [Model-View Transform](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#model-view-transform)
@@ -104,8 +106,8 @@ Variants or Alternate problems:
 * It is possible to use the drag forwarding pattern without dynamically creating instances. For instance, in Wave
   Interference, there is only one Wave Meter Node, so dragging the icon displays the view and forwards the event without
   creating a new one.
-* A subtle and challenging error can occur when you forward from NodeA to NodeB. If
-  using `DragListener.positionProperty`
+* A subtle and challenging error can occur when you forward from NodeA to NodeB. If using
+  `DragListener.positionProperty`
   and these Nodes do not share the same parent, then you should specify `targetNode: NodeB` to avoid an unexpected
   translation offset.
 * Forces and Motion: Basics doesn't dynamically create elements. The real elements are already in the toolbox, hence no
@@ -280,12 +282,12 @@ within `this.dispose` is to call `this.dispose{{TypeName}}` before calling for t
 Here is an example of using this disposal method. Note that the `Property` is unlinked before the child is removed from
 the `Node`.
 
-```js
+```ts
 class MyAddChildAndLinkNode extends Node {
 
   private readonly disposeMyAddChildAndLinkNode: () => void;
 
-  public constructor( aNode: Node, aProperty: Property<...> ) {
+  public constructor( aNode: Node, aProperty: Property<X> ) {
 
     super();
 
@@ -318,13 +320,13 @@ closure for each instance. That method can be adapted, and the constructor closu
 variables that would be needed for disposal to `@private` instance fields and move that logic directly to the `dispose`
 method, like below.
 
-```js
+```ts
 class MyAddChildAndLinkNode extends Node {
 
-  private readonly aProperty: Property<...>;
+  private readonly aProperty: Property<X>;
   private readonly aFunction: () => void;
 
-  public constructor( aProperty: Property<...> ) {
+  public constructor( aProperty: Property<X> ) {
 
     super();
 
@@ -446,6 +448,60 @@ facilitate debugging) and `Object.freeze`  to prevent unintentional modification
 
 </details>
 
+## Assertions
+
+Assertions are a way to confirm truthy values. In many assert libraries, there are a variety of functions to do this,
+but at PhET, we have implemented our own library for asserting values.
+
+### window.assert
+
+In PhET simulations, there is a global `window.assert` to be used to assert values. This global only exists when the sim
+is running with assertions, and in the production build of the sim, assertions are stripped out. To support this, we
+write assertions like this:
+
+`assert && assert( myValue, 'my message' );`
+
+If there is a block of code that you only want run when assertions are enabled:
+
+```
+if ( assert ) { ... }
+```
+
+The whole block will be stripped out on a build.
+
+To enable assertions in simulations, add the `?ea` query parameter.
+
+### affirm()
+
+A newer member of the PhET codebase, affirm is a module and supports being imported. It also has extra TypeScript type
+safety because of the `asserts` keyword. It is implemented identically to `node:assert()`. Still this doesn't support
+the full collection of functions that most assert libraries do, like `assert.ok()` etc. Affirmations are enabled
+whenever assertions are enabled (`?ea`). `affirm` can be run by simulations, and by our build tools in NodeJS (where it
+is always enabled).
+
+usage:
+
+`affirm( myValue, 'my message' );`
+
+Affirm is really cool because of TypeScript. Look at the type narrowing it will do:
+
+```
+const x: string | null = ‘hi’; 
+affirm( x ); // Would error if x was null 
+function append( str: string ){...}
+append( x ); // No type error!
+```
+
+affirm is also stripped out on build, but because there is no truthy check prefixing the call, the predicate is always
+run. Thus, if you have an expensive predicate, you only want to run it when affirmations are enabled. Thus we added to
+the api:
+
+* `affirm()` - imported module function
+* `affirmCallback( ()=>{} )` - provide a function that returns the predicate, and is only run when affirmations are
+  enabled.
+
+* `isAffirmEnabled()` - a parallel to using `window.assert` like `if ( assert ) { ... }`, to be stripped out on build.
+
 ## Mixin and Trait
 
 Author: @jessegreenberg
@@ -457,7 +513,8 @@ Descriptions for each standard pattern can be found here:
 
 More information about traits can be found here: http://scg.unibe.ch/archive/papers/Scha03aTraits.pdf
 
-Notes on PhET's decisions regarding mixin vs trait can be found in: 
+Notes on PhET's decisions regarding mixin vs trait can be found in:
+
 - https://github.com/phetsims/scenery/issues/700
 - https://github.com/phetsims/tasks/issues/1132
 
@@ -479,7 +536,8 @@ It is OK for the type mixing in the mixin or trait to reference properties and m
 However, only traits can use properties or methods from the type using the trait. Mixins cannot use anything from the
 class it is mixed into.
 
-The general pattern for using Mixins in TypeScript is described in https://www.typescriptlang.org/docs/handbook/mixins.html
+The general pattern for using Mixins in TypeScript is described
+in https://www.typescriptlang.org/docs/handbook/mixins.html
 
 ### When to use Mixin and Trait
 
@@ -497,9 +555,11 @@ Please refer to the following:
 * SCENERY/Voicing
 * SUN/AccessibleValueHandler
 
-Since we are generating d.ts files, we must specify the return type of the mixin. This also means we cannot export protected
-members. For methods that we want to be protected, but have to be public due to this constraint, we annotate them via 
-`// @mixin-protected - made public for use in the mixin only`. For more, please see https://github.com/phetsims/tasks/issues/1132#issuecomment-2080379991
+Since we are generating d.ts files, we must specify the return type of the mixin. This also means we cannot export
+protected members. For methods that we want to be protected, but have to be public due to this constraint, we annotate
+them via
+`// @mixin-protected - made public for use in the mixin only`. For more, please
+see https://github.com/phetsims/tasks/issues/1132#issuecomment-2080379991
 
 ## Model-View-Controller (MVC)
 
@@ -589,11 +649,10 @@ It's the most typical case where you're positioning Nodes relative to the Screen
 ```js
 
 const modelViewTransform = ModelViewTransform2.createSinglePointScaleInvertedYMapping(
-  Vector2.ZERO, // map (0, 0) in the model...
-  this.layoutBounds.center // ...to be at the center of the sim's layout
-10 // set the scale factor to adjust for big or small models in comparison to pixels
-)
-;
+    Vector2.ZERO, // map (0, 0) in the model...
+    this.layoutBounds.center, // ...to be at the center of the sim's layout
+    10 // set the scale factor to adjust for big or small models in comparison to pixels
+  );
 
 ```
 
@@ -649,7 +708,7 @@ imports and exports, so import statements will generally look like:
 
 ```js
   import Vector2 from '../../../dot/js/Vector2.js';
-  import Touch from '../input/Touch.js';
+import Touch from '../input/Touch.js';
 ```
 
 The shortest possible relative path should be used, and the imports should be sorted lexicographically by the import
@@ -659,8 +718,8 @@ after the copyright and file-description comments).
 It's possible to declare circular dependencies, but directly invoking and running code from both parts of the circular
 dependency at load time will not work.
 
-Some code is loaded in our "preloads" section, and is available through the global `phet` object,
-like `phet.chipper.queryParameters`. These do not need any import statements to work, and should be available for all
+Some code is loaded in our "preloads" section, and is available through the global `phet` object, like
+`phet.chipper.queryParameters`. These do not need any import statements to work, and should be available for all
 module-based code.
 
 #### Anatomy of a Module:
@@ -795,12 +854,12 @@ code base.
 #### [Property](https://github.com/phetsims/axon/blob/main/js/Property.ts)
 
 Property is our most basic and simplest form of the Observer pattern. It is used as a wrapper of a JavaScript field,
-called its value. Observers are notified when its value is set to a different value. Observers add listeners through
-the `link` and `lazyLink` methods and remove listeners through the `unlink` method.
+called its value. Observers are notified when its value is set to a different value. Observers add listeners through the
+`link` and `lazyLink` methods and remove listeners through the `unlink` method.
 
 In general, with PhET simulation code, it is encouraged to use the many subtypes of Property, which depend on the type
-of its internal value (i.e. the values of `NumberProperty` are numbers). Some other common sub-types that are used
-are `StringProperty`, `BooleanProperty`, `Vector2Property`, etc.
+of its internal value (i.e. the values of `NumberProperty` are numbers). Some other common sub-types that are used are
+`StringProperty`, `BooleanProperty`, `Vector2Property`, etc.
 
 ##### Role in MVC
 
@@ -952,8 +1011,8 @@ this.carts.elementAddedEmitter.addListener( cart => this.addChild( new CartNode(
 
 Then, wherever `this.carts.push( new Cart() )` is called, a new CartNode is added through the observer.
 
-As a reminder from above, observers are referenced as a listener in the ObservableArrayDef, so be sure to
-call `elementAddedEmitter.removeListener` to release listeners when needed.
+As a reminder from above, observers are referenced as a listener in the ObservableArrayDef, so be sure to call
+`elementAddedEmitter.removeListener` to release listeners when needed.
 
 #### [Emitter](https://github.com/phetsims/axon/blob/main/js/Emitter.ts)
 
@@ -977,8 +1036,8 @@ may propagate and affect model properties or may create new model objects, as de
 the [Creator pattern](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#creator-with-drag-forwarding)
 section.
 
-As a reminder from above, Input Listeners (such as `DragListener`) are internally referenced in Node, so be sure to
-call `removeInputListener()` to release listeners if needed.
+As a reminder from above, Input Listeners (such as `DragListener`) are internally referenced in Node, so be sure to call
+`removeInputListener()` to release listeners if needed.
 
 ## Options and Config (JavaScript)
 
@@ -1158,8 +1217,8 @@ class MyPanel extends Panel {
 }
 ```
 
-(5) Use `config` judiciously and appropriately. If your API has too many parameters, don't immediately reach
-for `config` as the solution. Review your API to understand _why_ it has too many parameters, and possibly redesign.
+(5) Use `config` judiciously and appropriately. If your API has too many parameters, don't immediately reach for
+`config` as the solution. Review your API to understand _why_ it has too many parameters, and possibly redesign.
 
 ## Options (TypeScript)
 
@@ -1192,7 +1251,7 @@ constructor
 
 ```typescript
 // Our parent class is Path, whose options type is PathOptions.
-class MyPath extends Path { 
+class MyPath extends Path {
   // ... 
 }
 
@@ -1206,7 +1265,7 @@ type SelfOptions = {
 type MyPathOptions = SelfOptions;
 
 // correct, intersects with PathOptions
-type SelfOptions = { 
+type SelfOptions = {
   aSelfOption?: boolean // documentation goes here about aSelfOption
   // ...
 };
@@ -1214,8 +1273,8 @@ type SelfOptions = {
 type MyPathOptions = SelfOptions & PathOptions & PickRequired<PathOptions, 'tandem'>; 
 ```
 
-(2) If your class does not have any class-specific options, it's still recommended to
-use `type SelfOptions = EmptySelfOptions`. This makes it very easy to add class-specific options later, by replacing 1
+(2) If your class does not have any class-specific options, it's still recommended to use
+`type SelfOptions = EmptySelfOptions`. This makes it very easy to add class-specific options later, by replacing 1
 occurrence of `EmptySelfOptions` with `{…}`. Otherwise you have to remember to change to `SelfOptions` in 3 places.
 Here's the general pattern:
 
@@ -1224,12 +1283,12 @@ type SelfOptions = EmptySelfOptions;
 type MyClassOptions = SelfOptions & SuperclassOptions;
 
 class MyClass extends Superclass {
-  constructor( ..., providedOptions?: MyClassOptions ) {
+  constructor( arg, providedOptions?: MyClassOptions ) {
     const options = optionize<MyClassOptions, SelfOptions, SuperclassOptions>()( {
-       ... // set defaults
+      ... // set defaults
     }, providedOptions );
-    ... 
-  } 
+  //...
+  }
 }
 ```
 
@@ -1242,7 +1301,7 @@ by your options type.
 // In this example, MyNode is responsible for setting the children option.
 // StrictOmit is used to prevent clients from being able to set options.children.
 
-type SelfOptions = { 
+type SelfOptions = {
   // ... 
 };
 type MyNodeOptions = SelfOptions & StrictOmit<NodeOptions, 'children'>;
@@ -1268,7 +1327,7 @@ type SelfOptions = {
 };
 type MyNodeOptions = SelfOptions & PickRequired<NodeOptions, 'tandem'>;
 
-class MyNode extends Node { 
+class MyNode extends Node {
   constructor( providedOptions?: MyNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
       // ...
@@ -1282,20 +1341,37 @@ class MyNode extends Node {
 // In this example, we want to exclude the parent class’s options from our API, and make tandem required, 
 // and make phetioDocumentation optional.  We use PickRequired and PickOptional respectively.
 
-type SelfOptions = { 
+type
+SelfOptions = {
   // ... 
 };
-type MyNodeOptions = SelfOptions & 
-  PickRequired<NodeOptions, 'tandem'> &
-  PickOptional<NodeOptions, 'phetioDocumentation'>;
+type
+MyNodeOptions = SelfOptions &
+                PickRequired < NodeOptions, 'tandem' > &
+                                            PickOptional < NodeOptions, 'phetioDocumentation' >;
 
-class MyNode extends Node { 
-  constructor( ..., providedOptions?: MyNodeOptions ) {
-    const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
-      // ...
-    }, providedOptions );
-    // ...
-  }
+class MyNode extends Node {
+  constructor( ..., providedOptions
+
+?:
+  MyNodeOptions
+) {
+  const
+  options = optionize < MyNodeOptions
+,
+  SelfOptions
+,
+  NodeOptions
+>()( {
+  // ...
+}
+
+,
+providedOptions
+)
+;
+// ...
+}
 }
 ```
 
@@ -1328,7 +1404,7 @@ type SelfOptions = {
 type AtomizerOptions = SelfOptions;
 
 class Atomizer {
-  constructor( providedOptions: AtomizerOptions ) { 
+  constructor( providedOptions: AtomizerOptions ) {
     // ...
   }
 }
@@ -1338,8 +1414,8 @@ class Atomizer {
 type SelfOptions = EmptySelfOptions;
 
 // Make numberOfAtoms optional. Note that it must be omitted, then made required.
-type MyAtomizerOptions = SelfOptions & 
-  StrictOmit<AtomizerOptions, 'numberOfAtoms'> & 
+type MyAtomizerOptions = SelfOptions &
+  StrictOmit<AtomizerOptions, 'numberOfAtoms'> &
   PickOptional<AtomizerOptions, 'numberOfAtoms'>;
 
 class MyAtomizer extends Atomizer {
@@ -1358,7 +1434,7 @@ fields.
 
 ```typescript
 // Our parent class is Path, whose options type is PathOptions.
-class MyPath extends Path { 
+class MyPath extends Path {
   // ...
 }
 
@@ -1381,7 +1457,7 @@ field’s definition.
 
 ```typescript
 // Our class has no parent class.
-class MyClass { 
+class MyClass {
   // ...
 }
 
@@ -1401,30 +1477,30 @@ type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
 
 ```typescript
 // Our parent class is Path, whose options type is PathOptions.
-class MyPath extends Path { 
+class MyPath extends Path {
   // ...
 }
 
 // incorrect, picks tandem from ancestor class PhetioObjectOptions
-type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>; 
+type MyClassOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
 
 // correct, picks tandem from parent class PathOptions
 type MyClassOptions = SelfOptions & PickRequired<PathOptions, 'tandem'>; 
 ```
 
-(8) An exception to (6) is when you want to narrow the API of `NodeOptions`. You can do this
-using `NodeTranslationOptions`, `NodeTransformOptions`, or `NodeBoundsBasedTranslationOptions`.
+(8) An exception to (6) is when you want to narrow the API of `NodeOptions`. You can do this using
+`NodeTranslationOptions`, `NodeTransformOptions`, or `NodeBoundsBasedTranslationOptions`.
 
 ```typescript
 // Limit the API to include only the parent options related to translation.
 // In this case, it is acceptable to assume that Path is a subclass of Node.
 
-type SelfOptions = { 
+type SelfOptions = {
   // ... 
 };
 type MyNodeOptions = SelfOptions & NodeTranslationOptions;
 
-class MyNode extends Path { 
+class MyNode extends Path {
   // ... 
 }
 ```
@@ -1449,13 +1525,15 @@ class MyCommonNode extends Node {
   // providedOptions can be an optional param because tandem is optional
   constructor( providedOptions?: MyCommonCodeNodeOptions ) {
     const options = optionize<MyCommonCodeNodeOptions, SelfOptions, NodeOptions>()( {
-    
+
       // Provide a tandem default here, because it's optional, and we want MyCommonNode to be instrumented.
       tandem: Tandem.REQUIRED
-    }, providedOptions ); 
+    }, providedOptions );
   }
+
   // ...
   super( options );
+
   // ...
 }
 ```
@@ -1478,10 +1556,12 @@ class MySimNode extends Node {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
       // ...
       // No need for tandem default here, because it's a required option.
-    }, providedOptions ); 
+    }, providedOptions );
   }
+
   // ...
   super( options );
+
   // ...
 }
 ```
@@ -1499,7 +1579,7 @@ type MyNodeOptions = SelfOptions & NodeOptions;
 
 export default class MyNode extends Node {
   constructor( providedOptions?: MyNodeOptions ) {
-  
+
     // omit helloButtonOptions from SelfOptions
     const options = optionize<MyNodeOptions, StrictOmit<SelfOptions, 'helloButtonOptions'>, NodeOptions>()( {
       // no default for helloButtonOptions is needed
@@ -1608,7 +1688,7 @@ export default class MyNode extends Node {
   constructor( providedOptions?: MyNodeOptions ) {
     const options = optionize<MyNodeOptions, SelfOptions, NodeOptions>()( {
       helloButtonOptions: {
-      
+
         // Provide defaults for nested options that are the responsibility of MyNode.
         content: new Text( 'hello' ),
         listener: () => console.log( 'hello' )
@@ -1649,13 +1729,13 @@ export type MyCheckboxOptions = SelfOptions & ParentOptions;
 class MyCheckbox extends Voicing( Checkbox ) {
 
   constructor( ..., providedOptions?: MyCheckboxOptions ) {
-  
+
     // Use ParentOptions for the 3rd parameter to optionize -- 
     // not VoicingOptions, CheckboxOptions, or (duplicated) VoicingOptions & CheckboxOptions.
     const options = optionize<MyCheckboxOptions, SelfOptions, ParentOptions>()( {
       ...
     } );
-    ...
+  ...
   }
 }
 ```
