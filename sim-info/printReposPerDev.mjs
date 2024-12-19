@@ -7,7 +7,7 @@ import fs from 'fs';
  *
  * Usage:
  * cd root
- * node phet-info/sim-info/printReposPerDev.mjs
+ * sage run phet-info/sim-info/printReposPerDev.mjs
  *
  * @author Sam Reid (PhET Interactive Simulations)
  */

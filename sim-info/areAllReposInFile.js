@@ -5,7 +5,7 @@
  *
  * Usage:
  * cd root
- * node ./phet-info/sim-info/areAllReposInFile.js
+ * sage run ./phet-info/sim-info/areAllReposInFile.js
  *
  * @author Michael Kauzmann (PhET Interactive Simulations)
  */

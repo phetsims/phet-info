@@ -7,7 +7,7 @@ import fs from 'fs';
  *
  * Usage:
  * cd root
- * node phet-info/sim-info/generateMarkdownOutput.mjs
+ * sage run phet-info/sim-info/generateMarkdownOutput.mjs
  *
  * @author Michael Kauzmann (PhET Interactive Simulations)
  */
