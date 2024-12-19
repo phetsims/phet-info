@@ -169,7 +169,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phetcommon | @zepumph |  |  | 
 | phetmarks | @zepumph |  |  | 
 | phettest | @zepumph |  |  | 
-| plinko-probability | [See #214](https://github.com/phetsims/phet-info/issues/214) | @amanda-phet |  | 
+| plinko-probability | @marlitas | @amanda-phet |  | 
 | projectile-data-lab | @matthew-blackman,@samreid | @matthew-blackman,@catherinecarter,@arouinfar | Sound<br/>Interactive Description | 
 | projectile-motion | @matthew-blackman | @matthew-blackman,@catherinecarter,@arouinfar |  | 
 | projectile-sampling-distributions | @matthew-blackman,@samreid | @matthew-blackman,@catherinecarter,@arouinfar | Sound<br/>Interactive Description | 
