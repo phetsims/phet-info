@@ -2,7 +2,7 @@
 
 These steps contain the following placeholders that you'll need to fill in:
 
-- `{{AUTHOR}}}` - the name that will appear in `@author` code annotations, e.g. `Jane Doe`
+- `{{AUTHOR}}` - the name that will appear in `@author` code annotations, e.g. `Jane Doe`
 - `{{REPO}}` - the repository name, e.g. `gas-properties`. This should be composed of lower-case characters and dashes,
   and should have <=214 characters (see naming constraints
   in https://docs.npmjs.com/cli/v7/configuring-npm/package-json).
