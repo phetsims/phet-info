@@ -876,6 +876,15 @@
       "@amanda-phet"
     ]
   },
+  "membrane-channels": {
+    "responsibleDevs": [
+      "@samreid",
+      "@jessegreenberg"
+    ],
+    "responsibleDesigners": [
+      "@brettfiedler"
+    ]
+  },
   "mobius": {
     "responsibleDevs": [
       "@jonathanolson"
