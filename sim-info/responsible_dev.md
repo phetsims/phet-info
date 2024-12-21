@@ -178,7 +178,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | protein-synthesis | @samreid |  |  | 
 | qa | @KatieWoe |  |  | 
 | quadrilateral | @jessegreenberg | @brettfiedler | Sound<br/>Interactive Description<br/>Voicing | 
-| quantum-measurement | @jbphet | @ariel-phet | Interactive Description | 
+| quantum-measurement | @jbphet | @ariel-phet | Sound<br/>Interactive Description | 
 | quake | @jbphet |  |  | 
 | query-string-machine | @samreid |  |  | 
 | ratio-and-proportion | @zepumph | @brettfiedler | Sound<br/>Interactive Description<br/>Voicing | 
