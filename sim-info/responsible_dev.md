@@ -189,7 +189,6 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | seasons | @samreid |  |  | 
 | scenery | @jonathanolson |  |  | 
 | scenery-phet | @jessegreenberg |  | Sound<br/>Interactive Description | 
-| scenery-stack-test | @jonathanolson |  |  | 
 | sherpa | @samreid |  |  | 
 | shred | @jbphet |  |  | 
 | skiffle | @jbphet |  |  | 
