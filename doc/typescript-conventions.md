@@ -253,7 +253,7 @@ type MyEnum = /*...*/;
 class Node { /*...*/}
 
 export { NodeOptions, MyEnum };
-export { Node as default };
+export default Node;
 ```
 
 Exports can be done at end of the file (as shown above), or at declaration sites like so:
