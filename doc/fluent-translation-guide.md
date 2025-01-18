@@ -105,3 +105,11 @@ If you do not do this, reloading the sim will not show your changes.** ⚠️
 To review example of Fluent.js strings and translations, see the following:
 - [Greenhouse Effect English Fluent Strings](https://github.com/phetsims/greenhouse-effect/tree/main/strings)
 - [Greenhouse Effect French Fluent Strings](https://github.com/phetsims/babel/blob/main/fluent/greenhouse-effect)
+
+
+### Questions to discuss with team
+- Is greenhouse-effect the best example to use? Confusion around molecules-and-light relationship.
+- Did we have any other translations finished that we can include?
+- What documentation should we point to for "PhET Development Environment Setup"?
+- What links should we include for rosetta?
+- Steps for submitting a pull request?
