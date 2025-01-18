@@ -18,26 +18,25 @@ For more information about Rosetta, see [Rosetta Documentation]({{LINK TO ROSETT
 
 Ensure you have the following tools and resources before starting:
 
-1) Fluent Syntax Knowledge
-  - Review the the Fluent documentation to understand how to structure and format translations effectively.
-    - Project Fluent - https://projectfluent.org/
-    - Fluent Syntax Guide - https://projectfluent.org/fluent/guide/
-    - The most important Fluent.js concepts for PhET simulations include Terms, Messages, and Placeables, and Selectors.
+### Fluent Syntax Knowledge
+- Review the the Fluent documentation to understand how to structure and format translations effectively.
+  - Project Fluent - https://projectfluent.org/
+  - Fluent Syntax Guide - https://projectfluent.org/fluent/guide/
+  - The most important Fluent.js concepts for PhET simulations include Terms, Messages, and Placeables, and Selectors.
 
-2) PhET Development Environment Setup
-  - Set up a development environment for the simulation you want to translate by following the PhET Development Overview.
+### PhET Development Environment Setup
+- Set up a development environment for the simulation you want to translate by following the PhET Development Overview.
 Make sure you can run the simulation locally in your browser and access and edit the code.
 
 ## Steps to Create and Submit Translations
 
 1) Run the A11y View
   - Use the Accessibility (A11y) View to understand the content that requires translation.
-
-2) Understanding the content
+  - The a11y view is an HTML file that can be found next to the simulation's HTML file. For example, navigate to `http://localhost:8080/greenhouse-effect/greenhouse-effect_a11y_view.html` when you are running a development server.
   - The A11y View displays the screen reader content in a simulation and provides documentation on how and when content is read to the user.
   - Run the simulation in English first to familiarize yourself with the content. Then, run it in your language by adding the query parameter ?locale={{LOCALE_CODE}} to the URL (e.g., ?locale=es for Spanish).
 
-3) Locate English Strings in the Code
+2) Locate English Strings in the Code
   - Find the English strings that need translation in the .ftl files. Most strings are located in the simulation repository. You can find them at files like this: `{{ROOT_SIMS_DIRECTORY}}/{{SIM_REPO}}/strings/{{SimName}}_en.ftl`
   - Example: `phetsims/ohms-law/strings/OhmsLaw_en.ftl`
 
