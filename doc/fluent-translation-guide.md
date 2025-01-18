@@ -60,6 +60,7 @@ phetsims/scenery-phet/strings/FaucetNode_en.ftl
 ```
 
 Example:
+
 ```
 phetsims/babel/fluent/ohms-law/OhmsLaw_es.ftl
 phetsims/babel/fluent/scenery-phet/SceneryPhet_es.ftl
