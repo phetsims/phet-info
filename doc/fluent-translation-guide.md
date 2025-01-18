@@ -67,13 +67,13 @@ phetsims/babel/fluent/scenery-phet/SceneryPhet_es.ftl
 phetsims/babel/fluent/scenery-phet/FaucetNode_es.ftl
 ```
 
-    - For each English .ftl file you want to translate:
-      - If the file exists: Open it for editing.
-      - If the file does not exist: Create a new file with the same name as the english file, replacing _en with your language code (e.g., _es for Spanish).
+  - For each English .ftl file you want to translate:
+    - If the file exists: Open it for editing.
+    - If the file does not exist: Create a new file with the same name as the english file, replacing _en with your language code (e.g., _es for Spanish).
 
-    - Example:
-      - From: phetsims/ohms-law/strings/OhmsLaw_en.ftl
-      - Create or Edit: phetsims/babel/fluent/ohms-law/OhmsLaw_es.ftl
+  - Example:
+    - From: phetsims/ohms-law/strings/OhmsLaw_en.ftl
+    - Create or Edit: phetsims/babel/fluent/ohms-law/OhmsLaw_es.ftl
 
 5) Generate an Initial Translation (optional)
   - Use an AI-based tool such as ChatGPT or Gemini to create an initial translation of the English .ftl file. Save the generated translations into the corresponding files in the babel repository.
