@@ -31,10 +31,10 @@ Make sure you can run the simulation locally in your browser and access and edit
 ## Steps to Create and Submit Translations
 
 1) Run the A11y View
-  - Use the Accessibility (A11y) View to understand the content that requires translation.
-  - The a11y view is an HTML file that can be found next to the simulation's HTML file. For example, navigate to `http://localhost:8080/greenhouse-effect/greenhouse-effect_a11y_view.html` when you are running a development server.
-  - The A11y View displays the screen reader content in a simulation and provides documentation on how and when content is read to the user.
-  - Run the simulation in English first to familiarize yourself with the content. Then, run it in your language by adding the query parameter ?locale={{LOCALE_CODE}} to the URL (e.g., ?locale=es for Spanish).
+    - Use the Accessibility (A11y) View to understand the content that requires translation.
+    - The a11y view is an HTML file that can be found next to the simulation's HTML file. For example, navigate to `http://localhost:8080/greenhouse-effect/greenhouse-effect_a11y_view.html` when you are running a development server.
+    - The A11y View displays the screen reader content in a simulation and provides documentation on how and when content is read to the user.
+    - Run the simulation in English first to familiarize yourself with the content. Then, run it in your language by adding the query parameter ?locale={{LOCALE_CODE}} to the URL (e.g., ?locale=es for Spanish).
 
 2) Locate English Strings in the Code
   - Find the English strings that need translation in the .ftl files. Most strings are located in the simulation repository. You can find them at files like this: `{{ROOT_SIMS_DIRECTORY}}/{{SIM_REPO}}/strings/{{SimName}}_en.ftl`
