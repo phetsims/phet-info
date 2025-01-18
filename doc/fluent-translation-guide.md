@@ -37,8 +37,8 @@ Make sure you can run the simulation locally in your browser and access and edit
     - Run the simulation in English first to familiarize yourself with the content. Then, run it in your language by adding the query parameter ?locale={{LOCALE_CODE}} to the URL (e.g., ?locale=es for Spanish).
 
 2) Locate English Strings in the Code
-  - Find the English strings that need translation in the .ftl files. Most strings are located in the simulation repository. You can find them at files like this: `{{ROOT_SIMS_DIRECTORY}}/{{SIM_REPO}}/strings/{{SimName}}_en.ftl`
-  - Example: `phetsims/ohms-law/strings/OhmsLaw_en.ftl`
+    - Find the English strings that need translation in the .ftl files. Most strings are located in the simulation repository. You can find them at files like this: `{{ROOT_SIMS_DIRECTORY}}/{{SIM_REPO}}/strings/{{SimName}}_en.ftl`
+    - Example: `phetsims/ohms-law/strings/OhmsLaw_en.ftl`
 
 Some strings will be located in other PhET repositories used by the simulation. They can be found in files like this:
 ```
@@ -52,10 +52,8 @@ phetsims/scenery-phet/strings/SceneryPhet_en.ftl
 phetsims/scenery-phet/strings/FaucetNode_en.ftl
 ```
 
-4) Find or Create Translated Strings in the babel Repository
-
-Translated accessibility strings using Fluent.js are stored in the Babel repository:
-
+3) Find or Create Translated Strings in the babel Repository
+    - Translated accessibility strings using Fluent.js are stored in the Babel repository:
 ```
 {{ROOT_SIMS_DIRECTORY}}/babel/fluent/{{repo-name}}/{{RepoName}}_{{LOCALE_CODE}}.ftl
 {{ROOT_SIMS_DIRECTORY}}/babel/fluent/{{repo-name}}/{{ComponentName}}_{{LOCALE_CODE}}.ftl
@@ -68,13 +66,13 @@ phetsims/babel/fluent/scenery-phet/SceneryPhet_es.ftl
 phetsims/babel/fluent/scenery-phet/FaucetNode_es.ftl
 ```
 
-For each English .ftl file you want to translate:
-  - If the file exists: Open it for editing.
-  - If the file does not exist: Create a new file with the same name as the english file, replacing _en with your language code (e.g., _es for Spanish).
+    - For each English .ftl file you want to translate:
+      - If the file exists: Open it for editing.
+      - If the file does not exist: Create a new file with the same name as the english file, replacing _en with your language code (e.g., _es for Spanish).
 
-Example:
-  - From: phetsims/ohms-law/strings/OhmsLaw_en.ftl
-  - Create or Edit: phetsims/babel/fluent/ohms-law/OhmsLaw_es.ftl
+    - Example:
+      - From: phetsims/ohms-law/strings/OhmsLaw_en.ftl
+      - Create or Edit: phetsims/babel/fluent/ohms-law/OhmsLaw_es.ftl
 
 5) Generate an Initial Translation (optional)
   - Use an AI-based tool such as ChatGPT or Gemini to create an initial translation of the English .ftl file. Save the generated translations into the corresponding files in the babel repository.
