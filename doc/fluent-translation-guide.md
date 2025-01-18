@@ -1,65 +1,121 @@
 # Fluent Translation Guide
 
-## Steps for creating and submitting a translation for a PhET simulation using Fluent.js.
+This guide will help you understand how to create and submit translations for PhET simulations using Fluent.js.
 
-1. Learn Fluent Syntax
-Review the Fluent Syntax Guide to understand how to structure and format translations effectively.
+## Introduction to Fluent
 
- 2. Set Up Translation Tools
-Install necessary tools such as a text editor (e.g., VS Code) and a version control system (e.g., Git).
-Clone the relevant PhET simulation repository from PhET's GitHub page.
+### What is Fluent?
+Fluent is a localization system developed by Mozilla that allows for more flexible and expressive translations than basic
+formatting. It is particularly useful for complex strings that require dynamic content or context-specific translations,
+such as long descriptions for accessibility.
 
-3. Run the A11y View
-Run the simulation in the a11y view to understand the content. Run it in English to review description strings in context. Then, run in your language. There may be strings that are already translated if they live in common code repositories.
+### Difference Between Fluent.js Translations and Rosetta
 
-4. Find the English strings in code.
-English strings will live in multiple files. The files can be found in both the sim repo and common code repos. These files hold the contents that require translations.
-{{ROOT_SIMS_DIRECTORY}}/{{SIM_REPO}}/strings/{{SimName}}_en.ftl
+PhET uses an existing translation system called Rosetta for strings that can be seen visually in the simulation.
+However, Fluent.js is necessary for translations that require more complex formatting or context-specific content, like detailed descriptions for accessibility features.
+For more information about Rosetta, see [Rosetta Documentation]({{LINK TO ROSETTA DOCS}}).
+
+## Prerequisites
+
+Ensure you have the following tools and resources before starting:
+
+1) Fluent Syntax Knowledge
+Review the the Fluent documentation to understand how to structure and format translations effectively.
+Project Fluent - https://projectfluent.org/
+Fluent Syntax Guide - https://projectfluent.org/fluent/guide/
+
+The most important Fluent.js concepts for PhET simulations include Terms, Messages, and Selectors.
+
+2) PhET Development Environment Setup
+Set up a development environment for the simulation you want to translate by following the PhET Development Overview.
+Make sure you can run the simulation locally in your browser and access and edit the code.
+
+## Steps to Create and Submit Translations
+
+1) Run the A11y View
+Use the Accessibility (A11y) View to understand the content that requires translation.
+
+2) Understanding the content
+The A11y View displays the screen reader content in a simulation and provides documentation on how and when content is read to the user.
+Run the simulation in English first to familiarize yourself with the content. Then, run it in your language by adding the query parameter ?locale={{LOCALE_CODE}} to the URL (e.g., ?locale=es for Spanish).
+
+3) Locate English Strings in the Code
+Find the English strings that need translation in the .ftl files. Most strings are located in the simulation repository. You can find them
+at files like this:
+```{{ROOT_SIMS_DIRECTORY}}/{{SIM_REPO}}/strings/{{SimName}}_en.ftl```
+
+Example:
+```phetsims/ohms-law/strings/OhmsLaw_en.ftl```
+
+Some strings will be located in other PhET repositories used by the simulation. They can be found in files like this:
 {{ROOT_SIMS_DIRECTORY}}/{{COMMON_CODE_REPO}}/strings/{{RepoName}}_en.ftl
 {{ROOT_SIMS_DIRECTORY}}/{{COMMON_CODE_REPO}}/strings/{{ComponentName}}_en.ftl
 
-Examples:
-phetsims/ohms-law/strings/OhmsLaw_en.ftl
-phetsims/scenery-phet/strings/SceneryPhet_en.ftl
-phetsims/scenery-phet/strings/FaucetNode_en.ftl
+Example:
+```phetsims/scenery-phet/strings/SceneryPhet_en.ftl```
+```phetsims/scenery-phet/strings/FaucetNode_en.ftl```
 
-5. Find translated strings in babel repo.
-Babel holds PhET's translated strings. Accessibility strings using fluent.js will live in {{ROOT_SIMS_DIRECTORY}}/babel/fluent/{{repo-name}/. Example: phetsims/babel/fluent/ohms-law/.
+4) Find or Create Translated Strings in the babel Repository
 
-6. For each file that you want to translate, find the corresponding file in the babel repo.
-If the file does not exist, create it. The file needs to have the same name as the English file, but with the language code changed. For example: phetsims/ohms-law/strings/OhmsLaw_en.ftl to phetsims/babel/fluent/ohms-law/OhmsLaw_es.ftl
+Translated accessibility strings using Fluent.js are stored in the Babel repository:
 
- 7. Generate an AI Translation
-Use an AI-based translation tool (e.g., Google Translate or DeepL) to create an initial translation of the English `.ftl` file.
-Save the generated translations into the files that you created in the babel repo.
+```
+{{ROOT_SIMS_DIRECTORY}}/babel/fluent/{{repo-name}}/{{RepoName}}_{{LOCALE_CODE}}.ftl
+{{ROOT_SIMS_DIRECTORY}}/babel/fluent/{{repo-name}}/{{ComponentName}}_{{LOCALE_CODE}}.ftl
+```
 
- 8. Refine and Contextualize Translations
-Review and edit the AI-generated translations for accuracy, cultural relevance, and context-specific appropriateness.
-Ensure key terms align with the simulation's intended meaning, referencing documentation where needed.
-Refer to the (PhET’s) fluent syntax guide to adjust for language differences commonly found in sims, e.g., adjusting for gender, number and word order. Tip: Fluent has a way to handle reusable strings. Add reusable strings to top of translation file.
+Example:
+```phetsims/babel/fluent/ohms-law/OhmsLaw_es.ftl```
+```phetsims/babel/fluent/scenery-phet/SceneryPhet_es.ftl```
+```phetsims/babel/fluent/scenery-phet/FaucetNode_es.ftl```
 
-9. Save and compile strings (aka modulify).
-Strings are built into modules that are loadable by the simulation. To do this, run `grunt modulify` in the command line in the sim repo.
-    $ cd {{ROOT_SIMS_DIRECTORY}}/{{SIM_REPO}}
-    $ grunt modulify
-   You will need to do this after every change to see the updated strings.
+For each English .ftl file you want to translate:
+If the file exists: Open it for editing.
+If the file does not exist: Create a new file with the same name as the english file, replacing _en with your language code (e.g., _es for Spanish).
 
- 6. Validate Translation Syntax
- Run the simulation with the new `.ftl` files to verify the translation displays correctly without syntax errors.
-(Hopefully specific error messages will be shown in the dev tools.)
+Example:
+From: phetsims/ohms-law/strings/OhmsLaw_en.ftl
+Create or Edit: phetsims/babel/fluent/ohms-law/OhmsLaw_es.ftl
 
- 7. Test Translation for Accuracy and Usability
-Play with the simulation using the A11y View to check the simulation’s functionality with the translated descriptions to ensure names for user interface elements, help text, and other surrounding descriptions remain clear and effective. Don’t forget to check description strings in both panels of the A11y View.
-Instructions on how to find all the content to translate.
+5) Generate an Initial Translation (optional)
+Use an AI-based tool such as ChatGPT or Gemini to create an initial translation of the English .ftl file. Save the generated translations into the corresponding files in the babel repository.
 
- 8. Submit the Translation
- Commit the finalized `.ftl` file to a new branch in your forked repository.
- Open a pull request to the main PhET repository, including a summary of your translation process and any decisions made during refinement.
+6) Refine and Contextualize Translations
+Review and edit the AI-generated translations for:
+- Accuracy: Ensure the translation accurately reflects the original meaning.
+- Context Appropriateness: Confirm that the translation fits the simulation's context.
+- Quality: Ensure that translations are correct for all cases and that reused Terms and Messages are correct in all contexts they are used.
 
- 9. Address Feedback
-Respond to reviewer comments, refining translations as necessary to meet project standards.
-Once your pull request is accepted, have another translator review your translation using the A11y View of the sim.
+Adjust for language differences, such as gender, number, and word order. Consider adding reusable Terms or Messages at the top of the translation file if needed.
 
- 10. Reflect on the Process
-Document your experience, including challenges encountered and strategies used.
-Share insights with the community to support other contributors.
+7) Compile Strings (Modulify)
+
+Compile the Fluent strings into modules that the simulation can load.
+
+!! You will need to need to do this every time you make changes to the .ftl files !!
+
+- Open the command line and navigate to the simulation repository:
+```cd {{ROOT_SIMS_DIRECTORY}}/{{SIM_REPO}}```
+
+- Run the modulify command:
+```grunt modulify```
+
+8) Test the Translation
+
+- Run the simulation in your browser with the locale query parameter set to your language code (e.g., ?locale=es for Spanish).
+- Check the developer tools console for any error messages that may indicate issues with the translation files.
+- Interact with the simulation to verify the content.
+
+9) Submit the Translation
+
+Once you are satisfied with the translations, submit a pull request to the PhET GitHub repository with the changes.
+- Commit Changes: Commit the changes to the .ftl files in the babel repository.
+- Open a Pull Request: Create a pull request with the changes to the PhET GitHub repository.
+- Review and Approval: The PhET team will review and approve the submission to verify functionality. Addres any feedback or changes.
+- Finalization: Once approved, your translation will be merged into the main repository. Your translation will be included in future releases of the simulation.
+
+## Examples
+
+To review an example of Fluent.js files, see the following:
+- [Greenhouse Effect English Fluent Strings](https://github.com/phetsims/greenhouse-effect/tree/main/strings)
+- [Greenhouse Effect French Fluent Strings](https://github.com/phetsims/babel/blob/main/fluent/greenhouse-effect)
