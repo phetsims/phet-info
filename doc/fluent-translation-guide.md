@@ -82,8 +82,8 @@ Example:
   - Language Specifics: Adjust for language differences, such as gender, number, and word order. Consider adding reusable Terms or Messages at the top of the translation file if needed.
 
 ### 6) Compile Strings (Modulify)
-⚠️ **You will need to need to do this every time you make changes to any of the .ftl files.** ⚠️
-If you do not do this, reloading the sim will not show your changes.
+⚠️ **You will need to need to do this every time you make changes to any of the .ftl files.
+If you do not do this, reloading the sim will not show your changes.** ⚠️
 - Compile the Fluent strings into modules that the simulation can load.
   - Open the command line and navigate to the simulation repository: `cd {{ROOT_SIMS_DIRECTORY}}/{{SIM_REPO}}`
   - Run the modulify command: `grunt modulify`
