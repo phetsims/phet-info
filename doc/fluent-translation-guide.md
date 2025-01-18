@@ -66,9 +66,9 @@ phetsims/babel/fluent/scenery-phet/FaucetNode_es.ftl
   - If the file exists: Open it for editing.
   - If the file does not exist: Create a new file with the same name as the english file, replacing _en with your language code (e.g., _es for Spanish).
 
-  - Example:
-    - From: phetsims/ohms-law/strings/OhmsLaw_en.ftl
-    - Create or Edit: phetsims/babel/fluent/ohms-law/OhmsLaw_es.ftl
+Example:
+  - From: phetsims/ohms-law/strings/OhmsLaw_en.ftl
+  - Create or Edit: phetsims/babel/fluent/ohms-law/OhmsLaw_es.ftl
 
 ### 4) Generate an Initial Translation (optional)
 - Use an AI-based tool such as ChatGPT or Gemini to create an initial translation of the English .ftl file. Save the generated translations into the corresponding files in the babel repository.
@@ -81,18 +81,18 @@ phetsims/babel/fluent/scenery-phet/FaucetNode_es.ftl
   - Quality: Ensure that translations are correct for all cases and that reused Terms and Messages are correct in all contexts they are used.
   - Language Specifics: Adjust for language differences, such as gender, number, and word order. Consider adding reusable Terms or Messages at the top of the translation file if needed.
 
-### 7) Compile Strings (Modulify)
+### 6) Compile Strings (Modulify)
 ⚠️ **You will need to need to do this every time you make changes to any of the .ftl files** ⚠️
 - Compile the Fluent strings into modules that the simulation can load.
   - Open the command line and navigate to the simulation repository: `cd {{ROOT_SIMS_DIRECTORY}}/{{SIM_REPO}}`
   - Run the modulify command: `grunt modulify`
 
-### 8) Test the Translation
+### 7) Test the Translation
   - Run the simulation in your browser with the locale query parameter set to your language code (e.g., ?locale=es for Spanish).
   - Check the developer tools console for any error messages that may indicate issues with the translation files.
   - Interact with the simulation to verify the content.
 
-### 9) Submit the Translation
+### 8) Submit the Translation
   - Once you are satisfied with the translations, submit a pull request to the PhET GitHub repository with the changes.
     - Commit Changes: Commit the changes to the .ftl files in the babel repository.
     - Open a Pull Request: Create a pull request with the changes to the PhET GitHub repository.
