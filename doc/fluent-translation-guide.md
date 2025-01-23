@@ -8,11 +8,12 @@ This guide will help you understand how to create and submit translations for Ph
 Fluent is a localization system developed by Mozilla. It is particularly useful for complex strings that
 require dynamic content or context-specific translations, such as long descriptions for accessibility.
 
-### Difference Between Fluent.js Translations and Rosetta
+### Difference Between Fluent.js Translations and PhET Translation Utility (HTML5)
 
-PhET uses another translation system called Rosetta for strings that can be seen visually in the simulation.
-However, Fluent.js is necessary for translations that require more complex language differences, like detailed descriptions for accessibility features.
-For more information about Rosetta, see [Rosetta Documentation]({{LINK TO ROSETTA DOCS}}).
+PhET has another system for submitting translations for strings that you can see visually in the simulation. While that system
+works well for simple strings, Fluent.js is necessary for translations that require more complex language differences.
+For more information about the PhET Translation Utility (HTML5), see [documentation here]({{https://docs.google.com/document/u/1/d/e/2PACX-1vSYc8f01StQ7e2nQWBA38BZfLoqkm6rkn-F9BzTmxdNgazOzFfLDm5RI-3I3IdKccuBFQpFdT2ST5Px/pub
+https://phet.colorado.edu/en/for-translators}}).
 
 ## Prerequisites
 
@@ -116,12 +117,7 @@ To review example of Fluent.js strings and translations, see the following:
 - Did we have any other translations finished that we can include?
 - What documentation should we point to for "PhET Development Environment Setup"?
   - FOR NOW, refer to the phet-development-overview.md
-- What links should we include for rosetta?
-  - See below.
 - Steps for submitting a pull request?
-
-
-Don't call it Rosetta, call "PhET Translation Utility (HTML5)"
 
 References to translation documentation:
 https://docs.google.com/document/u/1/d/e/2PACX-1vSYc8f01StQ7e2nQWBA38BZfLoqkm6rkn-F9BzTmxdNgazOzFfLDm5RI-3I3IdKccuBFQpFdT2ST5Px/pub
