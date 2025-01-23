@@ -109,6 +109,10 @@ To review example of Fluent.js strings and translations, see the following:
 
 ### Questions to discuss with team
 - Is greenhouse-effect the best example to use? Confusion around molecules-and-light relationship.
+    - It is our most complete example. Just make it clear in the documentation.
+    - Consider renaming greenhouse effect strings to MoleculesAndLightStrings_en.ftl
+    - Try to find the ohms law strings if we can. That would be a more simple example.
+
 - Did we have any other translations finished that we can include?
 - What documentation should we point to for "PhET Development Environment Setup"?
   - FOR NOW, refer to the phet-development-overview.md
@@ -129,3 +133,12 @@ https://phet.colorado.edu/en/for-translators
 - Right now, the process is set up for PhET code contributions
 
 Making changes to PhET code through SceneryStack: https://scenerystack.org/learn/modifying-scenerystack/#getting-the-latest-code
+
+Add a note to the translation info page on the website referring to this document.
+
+Refer to key terms document glossary.
+    The glossary will refer to the description design course or other materials.
+
+
+Add a section here about the format and organization of the file. Reusable terms at the top. For sim translation files,
+strings are organized by the order in which they appear in the a11y view.
