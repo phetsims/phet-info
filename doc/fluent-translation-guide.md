@@ -111,5 +111,21 @@ To review example of Fluent.js strings and translations, see the following:
 - Is greenhouse-effect the best example to use? Confusion around molecules-and-light relationship.
 - Did we have any other translations finished that we can include?
 - What documentation should we point to for "PhET Development Environment Setup"?
+  - FOR NOW, refer to the phet-development-overview.md
 - What links should we include for rosetta?
+  - See below.
 - Steps for submitting a pull request?
+
+
+Don't call it Rosetta, call "PhET Translation Utility (HTML5)"
+
+References to translation documentation:
+https://docs.google.com/document/u/1/d/e/2PACX-1vSYc8f01StQ7e2nQWBA38BZfLoqkm6rkn-F9BzTmxdNgazOzFfLDm5RI-3I3IdKccuBFQpFdT2ST5Px/pub
+https://phet.colorado.edu/en/for-translators
+
+- These steps are not compatible whith the "SceneryStack" development setup/environment.
+- Decide how integrated this system needs to be with SceneryStack. Understand the changed required for the process and
+  create new steps for that process.
+- Right now, the process is set up for PhET code contributions
+
+Making changes to PhET code through SceneryStack: https://scenerystack.org/learn/modifying-scenerystack/#getting-the-latest-code
