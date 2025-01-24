@@ -1,24 +1,23 @@
-# Fluent Translation Guide
+# Translation Guide Description Features
 
-This guide will help you understand how to create and submit translations for PhET simulations using Fluent.js.
+This guide will help you understand how to create and submit translations using the Fluent System, the system of fluent.js files we use for accessible descriptions (i.e., the descriptions available through PhET's inclusive features, Voicing and Interactive Description, more about inclusive features ((https://phet.colorado.edu/en/inclusive-design/features))). These _accessible descriptions_ are in addition to the visual text that appears on-screen. Fluent.js provides options so that translators can make language-specific changes in order to address common grammatical needs that arise in longer phrases. For example, Fluent.js provides options to easily address number and gender agreement, word order, and other language-specific differences differences.
+
+## Two Systems for Translations 
+
+PhET has two systems for submitting translations, one for short visual strings and one for longer accessible descriptions:
+1. The _PhET Translation Utility (a.k.a Rosetta)_ works very well for the short strings that you can see visually in the simulation, e.g., labels for checkboxes. At this time, the translation utility cannot handle longer phrases found in the accessible descriptions. These descriptions require a higher level system for accurate and grammatical translation. For more information about the PhET Translation Utility (HTML5), see [documentation here]({{https://docs.google.com/document/u/1/d/e/2PACX-1vSYc8f01StQ7e2nQWBA38BZfLoqkm6rkn-F9BzTmxdNgazOzFfLDm5RI-3I3IdKccuBFQpFdT2ST5Px/pub
+https://phet.colorado.edu/en/for-translators}}).
+2. The _Fluent System_ developed by Mozilla is designed to address the translation needs for longer texts, like PhET's accessible descriptions. We now organize accessible descriptions in fluent.js files. Once a translator is familiar with some basic fluent syntax, they can create, test and submit translations of accessible descriptions for their language. This guide is about how to create translations for accessible descriptions using Fluent.
 
 ## Introduction to Fluent
 
 ### What is Fluent?
-Fluent is a localization system developed by Mozilla. It is particularly useful for complex strings that
-require dynamic content or context-specific translations, such as long descriptions for accessibility.
+Fluent is a localization system developed by Mozilla. It is particularly useful for the translation of complex dynamic content such as the descriptions designed for accessibility.
 
-### Difference Between Fluent.js Translations and PhET Translation Utility (HTML5)
 
-PhET has another system for submitting translations for strings that you can see visually in the simulation. While that system
-works well for simple strings, Fluent.js is necessary for translations that require more complex language differences.
-For more information about the PhET Translation Utility (HTML5), see [documentation here]({{https://docs.google.com/document/u/1/d/e/2PACX-1vSYc8f01StQ7e2nQWBA38BZfLoqkm6rkn-F9BzTmxdNgazOzFfLDm5RI-3I3IdKccuBFQpFdT2ST5Px/pub
-https://phet.colorado.edu/en/for-translators}}).
-
-## Prerequisites
+## Prerequisites for Translating Accessible Descriptions
 
 Ensure you have the following tools and resources before starting:
-
 ### Fluent Syntax Knowledge
 - Review the the Fluent documentation to understand how to structure and format translations effectively.
   - Project Fluent - https://projectfluent.org/
@@ -28,6 +27,9 @@ Ensure you have the following tools and resources before starting:
 ### PhET Development Environment Setup
 - Set up a development environment for the simulation you want to translate by following the PhET Development Overview.
 Make sure you can run the simulation locally in your browser and access and edit the code.
+
+### Description Framework Terminology 
+- PhET has developed a description design framework that assists designers in designing the the complex strings needed foe an accessible and interactive described experience. We refer to the framework in comments as we organize the descriptions. Familiarizing yourself with this terminology may assist you in your translation effort. (See more in glossary of terms)
 
 ## Steps to Create and Submit Translations
 
