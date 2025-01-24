@@ -1,4 +1,4 @@
-# Translation Guide Description Features
+# Translation Guide for Description Features
 
 This guide will help you understand how to create and submit translations using the Fluent System, the system of fluent.js files we use for accessible descriptions (i.e., the descriptions available through PhET's inclusive features, Voicing and Interactive Description, more about inclusive features ((https://phet.colorado.edu/en/inclusive-design/features))). These _accessible descriptions_ are in addition to the visual text that appears on-screen. Fluent.js provides options so that translators can make language-specific changes in order to address common grammatical needs that arise in longer phrases. For example, Fluent.js provides options to easily address number and gender agreement, word order, and other language-specific differences differences.
 
