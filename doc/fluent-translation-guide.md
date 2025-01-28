@@ -8,9 +8,11 @@ using the Fluent system.
 
 PhET has two systems for submitting translations, one for short visual strings and one for longer _accessible descriptions_.
 1. The _PhET Translation Utility (HTML5)_ works well for the short strings that you can see visually in the simulation - visual strings like labels for checkboxes. At this time, this system cannot handle longer phrases found in the _accessible descriptions_. To learn more about the PhET Translation Utility (HTML5), you can find [information here](https://phet.colorado.edu/en/for-translators) and [documentation here](https://docs.google.com/document/u/1/d/e/2PACX-1vSYc8f01StQ7e2nQWBA38BZfLoqkm6rkn-F9BzTmxdNgazOzFfLDm5RI-3I3IdKccuBFQpFdT2ST5Px/pub).
-2. Fluent provides a higher level translation system in order to address the language-specific changes required when translating the longer phrases found in _accessible descriptions_. Once a translator is familiar with some basic fluent syntax, they can create, test and submit grammatically correct translations of _accessible descriptions_.
+2. Fluent provides a higher level translation system in order to address the language-specific changes required when translating the longer phrases found in _accessible descriptions_. Once a translator is familiar with some basic fluent syntax, they can create, test and submit grammatically correct translations of _accessible descriptions_ using a system of Fluent files.
 
-**Note: Translators may need to use both systems to create a complete translation. Some accessible descriptions may use the same strings as the visual strings. In this case, both the PhET Translation Utiltiy (HTML5) and Fluent must be used to create a complete translation.** 
+**Notes:**
+- Translators may need to use both systems to create a complete translation. Some accessible descriptions may use the same strings as the visual strings. In this case, both the PhET Translation Utiltiy (HTML5) and Fluent must be used to create a complete translation.
+- In the future, PhET may have one translation utility that can handle both visual strings and _accessible descriptions_.
 ## Introduction to Fluent
 
 ### What is Fluent?
@@ -35,8 +37,14 @@ Make sure you can run the simulation locally in your browser and access and edit
   - Fluent Syntax Guide - https://projectfluent.org/fluent/guide/
   - The most important Fluent concepts for PhET simulations include Terms, Messages, Placeables, and Selectors. Ensure you are familair with the syntax for these four Fluent concepts.
 
+### Fluent File Organization
+- Fluent files can be found in sim repositories, common code repositories (like scenery-phet), and the babel repository.
+- Example: `phetsims/ohms-law/strings/OhmsLaw_en.ftl`
+- Example: `phetsims/joist/strings/Joist_en.ftl` **(NOTE: this example file does not exist yet)**
+- Example: `phetsims/babel/fluent/ohms-law/OhmsLaw_es.ftl`
+
 ### Description Framework Terminology 
-- PhET has developed a simple description design framework that assists designers in designing the complex strings needed to create dynamci _accessible descriptions_. As you work with the Fluent files you will notice references to description categories in the comments surrounding the descriptions. Familiarizing yourself with the description design framework terminology may assist you in your translation effort. [[See more in glossary of terms]].
+- PhET has developed a simple description design framework that assists designers in designing the complex strings needed to create dynamci _accessible descriptions_. As you work with the Fluent files you will notice references to description categories in the comments surrounding the descriptions. Familiarizing yourself with the description design framework terminology may assist you in your translation effort. See more in [glossary of terms](https://github.com/phetsims/phet-info/blob/main/doc/fluent-description-glossary.md).
 
 ## Steps to Create and Submit Translations
 
@@ -48,9 +56,9 @@ Make sure you can run the simulation locally in your browser and access and edit
 {{ROOT_SIMS_DIRECTORY}}/{{COMMON_CODE_REPO}}/strings/{{RepoName}}_en.ftl
 {{ROOT_SIMS_DIRECTORY}}/{{COMMON_CODE_REPO}}/strings/{{ComponentName}}_en.ftl
 ```
-Example:
+Example: **(NOTE: These example files do not exist yet)**
 ```
-phetsims/scenery-phet/strings/SceneryPhet_en.ftl
+phetsims/scenery-phet/strings/SceneryPhet_en.ftl 
 phetsims/scenery-phet/strings/FaucetNode_en.ftl
 ```
 
@@ -59,7 +67,7 @@ phetsims/scenery-phet/strings/FaucetNode_en.ftl
 - The a11y view is an HTML file that can be found next to the simulation's HTML file. For example, navigate to `http://localhost:8080/greenhouse-effect/greenhouse-effect_a11y_view.html` when you are running a development server.
 - The A11y View displays the screen reader content in a simulation and provides documentation on how and when content is read to the user.
 - Run the simulation in English first to familiarize yourself with the content. Then, run it in your language by adding the query parameter ?locale={{LOCALE_CODE}} to the URL (e.g., ?locale=es for Spanish).
-- If the simulation supports Voicing, enable it in the Preferences Dialog. Play with the simulation to hear the Voicing content in context.
+- If the simulation supports Voicing, enable it in the Preferences menu. Play with the simulation to test the Voicing content in context.
 
 ### 3) Find or Create Translated Strings in the babel Repository
 - Translated accessibility strings using Fluent.js are stored in the Babel repository:
@@ -116,3 +124,7 @@ If you do not do this, reloading the sim will not show your changes.** ⚠️
 To review example of Fluent.js strings and translations, see the following:
 - [Greenhouse Effect English Fluent Strings](https://github.com/phetsims/greenhouse-effect/tree/main/strings)
 - [Greenhouse Effect French Fluent Strings](https://github.com/phetsims/babel/blob/main/fluent/greenhouse-effect)
+
+## General Usage of Fluent
+The above documentation is specific to the translation of PhET simulations. Fluent can be used in any SceneryStack project. For more information about
+SceneryStack and using Fluent, see https://scenerystack.org/.
