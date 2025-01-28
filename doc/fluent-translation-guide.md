@@ -19,7 +19,7 @@ Fluent is a localization system developed by Mozilla.
 It is particularly useful for the translation of complex
 dynamic content such as the descriptions designed for accessibility.
 More information about inclusive features can be found [here](https://phet.colorado.edu/en/inclusive-design/features). 
-These _accessible descriptions_ are in addition to and seperate from the visual text that appears on-screen.  Using Fluent, translators can effectively handle language-specific challenges like number
+These _accessible descriptions_ are in addition to and seperate from the visual text that appfears on-screen.  Using Fluent, translators can effectively handle language-specific challenges like number
 and gender agreement, word order, and other differences that exist across languages.
 
 ## Prerequisites for Translating Accessible Descriptions
@@ -41,7 +41,6 @@ Make sure you can run the simulation locally in your browser and access and edit
 
 ## Steps to Create and Submit Translations
 
-
 ### 1) Check for Existing Accessible Descriptions
 - maybe a step to verify there is somethign to translate?
 
@@ -50,6 +49,7 @@ Make sure you can run the simulation locally in your browser and access and edit
 - The a11y view is an HTML file that can be found next to the simulation's HTML file. For example, navigate to `http://localhost:8080/greenhouse-effect/greenhouse-effect_a11y_view.html` when you are running a development server.
 - The A11y View displays the screen reader content in a simulation and provides documentation on how and when content is read to the user.
 - Run the simulation in English first to familiarize yourself with the content. Then, run it in your language by adding the query parameter ?locale={{LOCALE_CODE}} to the URL (e.g., ?locale=es for Spanish).
+- If the simulation supports Voicing, enable it in the Preferences Dialog. Play with the simulation to hear the Voicing content in context.
 
 ### 3) Locate English Strings in the Code
 - Find the English strings that need translation. Fluent files use the .ftl extension. Most strings are located in the simulation repository. You can find them at files like this: `{{ROOT_SIMS_DIRECTORY}}/{{SIM_REPO}}/strings/{{SimName}}_en.ftl`
