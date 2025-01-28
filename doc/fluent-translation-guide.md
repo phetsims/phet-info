@@ -1,21 +1,26 @@
 # Translation Guide for Accessible Descriptions
-[[Maybe a "Who is this Guide For? section instead of this intro?]]
-This guide is about how to create translations for accessible descriptions using Fluent.
 
-This guide will help you understand how to create and submit translations using the Fluent system. Fluent is used to manage _accessible descriptions_ (i.e., the descriptions available through the inclusive features Voicing and Interactive Description; more about inclusive features (https://phet.colorado.edu/en/inclusive-design/features). These _accessible descriptions_ are in addition to and seperate from the visual text that appears on-screen. Fluent provides methods for translators to make language-specific changes in order to address common grammatical needs that arise in longer phrases. For example, using Fluent transltors can easily address number and gender agreement, word order, and other differences that exist across languages.
+## Who is this guide for?
+This guide is designed for translators looking to create and submit translations for _accessible descriptions_
+using the Fluent system.
 
 ## Two Systems for Translations 
 
 PhET has two systems for submitting translations, one for short visual strings and one for longer _accessible descriptions_.
-1. The _PhET Translation Utility (HTML5)_ works well for the short strings that you can see visually in the simulation - visual strings like labels for checkboxes. Volunteer translators have used the PhET Translation Utility (HTML5) to translate the visual strings of sims into more than 129 languages. At this time, this system cannot handle longer phrases found in the _accessible descriptions_. To find more information about the PhET Translation Utility (HTML5), you can find [information here](https://phet.colorado.edu/en/for-translators) and [documentation here](https://docs.google.com/document/u/1/d/e/2PACX-1vSYc8f01StQ7e2nQWBA38BZfLoqkm6rkn-F9BzTmxdNgazOzFfLDm5RI-3I3IdKccuBFQpFdT2ST5Px/pub).
-2. Fluent provides a higher level translation system in order to address the language-specific changes required when translating the longer phrases found in _accessible descriptions_. We now organize _accessible descriptions_ in fluent files. Once a translator is familiar with some basic fluent syntax, they can create, test and submit grammatically correct translations of _accessible descriptions_.
+1. The _PhET Translation Utility (HTML5)_ works well for the short strings that you can see visually in the simulation - visual strings like labels for checkboxes. Volunteer translators have used the PhET Translation Utility (HTML5) to translate the visual strings of sims into more than 129 languages. At this time, this system cannot handle longer phrases found in the _accessible descriptions_. To learn more about the PhET Translation Utility (HTML5), you can find [information here](https://phet.colorado.edu/en/for-translators) and [documentation here](https://docs.google.com/document/u/1/d/e/2PACX-1vSYc8f01StQ7e2nQWBA38BZfLoqkm6rkn-F9BzTmxdNgazOzFfLDm5RI-3I3IdKccuBFQpFdT2ST5Px/pub).
+2. Fluent provides a higher level translation system in order to address the language-specific changes required when translating the longer phrases found in _accessible descriptions_. Once a translator is familiar with some basic fluent syntax, they can create, test and submit grammatically correct translations of _accessible descriptions_.
 
 **Note: Translators may need to use both systems to create a complete translation. Or they may find that the visual strings have already been translated by another translator.**
 
 ## Introduction to Fluent
 
 ### What is Fluent?
-Fluent is a localization system developed by Mozilla. It is particularly useful for the translation of complex dynamic content such as the descriptions designed for accessibility.
+Fluent is a localization system developed by Mozilla.
+It is particularly useful for the translation of complex
+dynamic content such as the descriptions designed for accessibility.
+More information about inclusive features can be found [here](https://phet.colorado.edu/en/inclusive-design/features). 
+These _accessible descriptions_ are in addition to and seperate from the visual text that appears on-screen.  Using Fluent, translators can effectively handle language-specific challenges like number
+and gender agreement, word order, and other differences that exist across languages.
 
 ## Prerequisites for Translating Accessible Descriptions
 
