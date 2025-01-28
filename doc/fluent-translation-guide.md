@@ -10,8 +10,7 @@ PhET has two systems for submitting translations, one for short visual strings a
 1. The _PhET Translation Utility (HTML5)_ works well for the short strings that you can see visually in the simulation - visual strings like labels for checkboxes. Volunteer translators have used the PhET Translation Utility (HTML5) to translate the visual strings of sims into more than 129 languages. At this time, this system cannot handle longer phrases found in the _accessible descriptions_. To learn more about the PhET Translation Utility (HTML5), you can find [information here](https://phet.colorado.edu/en/for-translators) and [documentation here](https://docs.google.com/document/u/1/d/e/2PACX-1vSYc8f01StQ7e2nQWBA38BZfLoqkm6rkn-F9BzTmxdNgazOzFfLDm5RI-3I3IdKccuBFQpFdT2ST5Px/pub).
 2. Fluent provides a higher level translation system in order to address the language-specific changes required when translating the longer phrases found in _accessible descriptions_. Once a translator is familiar with some basic fluent syntax, they can create, test and submit grammatically correct translations of _accessible descriptions_.
 
-**Note: Translators may need to use both systems to create a complete translation. Or they may find that the visual strings have already been translated by another translator.**
-
+**Note: Translators may need to use both systems to create a complete translation. Some accessible descriptions may use the same strings as the visual strings. In this case, both the PhET Translation Utiltiy (HTML5) and Fluent must be used to create a complete translation.** 
 ## Introduction to Fluent
 
 ### What is Fluent?
