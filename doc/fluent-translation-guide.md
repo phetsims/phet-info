@@ -18,7 +18,7 @@ Fluent is a localization system developed by Mozilla.
 It is particularly useful for the translation of complex
 dynamic content such as the descriptions designed for accessibility.
 More information about inclusive features can be found [here](https://phet.colorado.edu/en/inclusive-design/features). 
-These _accessible descriptions_ are in addition to and seperate from the visual text that appfears on-screen.  Using Fluent, translators can effectively handle language-specific challenges like number
+These _accessible descriptions_ are in addition to and seperate from the visual text that appears on-screen.  Using Fluent, translators can effectively handle language-specific challenges like number
 and gender agreement, word order, and other differences that exist across languages.
 
 ## Prerequisites for Translating Accessible Descriptions
