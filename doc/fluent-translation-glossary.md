@@ -22,7 +22,7 @@ This glossary of terms covers key terms and concepts translators may need to be 
  - ***Description Design Framework***
  	- PhET has designed and uses a simple *Description Design Framework* [Smith and Moore, 2020](https://dl.acm.org/doi/abs/10.1145/3313831.3376460) to do description design. We even have a coursera course about it, see [Description Design for Interactive Resources](https://www.coursera.org/learn/description-design-for-interactive-learning-resources). References to different categories of description can be seen in the comments of Fluent files. Familiarity with the different categories may provide some helpful context for translation. *State Descriptions* can be *static* or *dynamic* and are designed to capture the ***current state*** of the interactive when a user is not actively making changes. *Responsive Descriptions* can include both *object* and *context responses* designed to describe ***relevant changes*** as they occur in response to user interaction or ongoing changes to the model.
 
--*** Static State Descriptions***
+- ***Static State Descriptions***
 	- Descriptions that are constant - always accurate and true with regard to the model. These descriptions are the easiest to translate, and require no additional knowledge of *Fluent* syntax. Common static state descriptions are:
 		- The first part of the screen summary, often refered to as the 'sim overview'. 
 		- Names of interactive controls.
