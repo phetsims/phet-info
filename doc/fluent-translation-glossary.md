@@ -19,9 +19,6 @@ This glossary of terms covers key terms and concepts translators may need to be 
 	- The *A11y View* is a tool that displays all the descriptions that are currently designed to be delivered through the *Interactive Desction feature* - these descriptions can be pulled in from multiple places, including the sim repository, common code repositories, and the babel repository. The *A11y View* tool is very useful for first checking to see if parts of the sim have already been translated, and for testing translation coming from fluent files. At the time of writing (January 2025), the *A11y View* was limited to displaying the accessible descriptions that are available in the *Interactive Description feature* and only available for PhET Simulations. Future effort may expand the use of this tool.  
 
 ## Description Terminology
- - ***Description Design Framework***
- 	- PhET has designed and uses a simple *Description Design Framework* [Smith and Moore, 2020](https://dl.acm.org/doi/abs/10.1145/3313831.3376460) to do description design. We even have a coursera course about it, see [Description Design for Interactive Resources](https://www.coursera.org/learn/description-design-for-interactive-learning-resources). References to different categories of description can be seen in the comments of Fluent files. Familiarity with the different categories may provide some helpful context for translation. *State Descriptions* can be *static* or *dynamic* and are designed to capture the ***current state*** of the interactive when a user is not actively making changes. *Responsive Descriptions* can include both *object* and *context responses* designed to describe ***relevant changes*** as they occur in response to user interaction or ongoing changes to the model.
-
 - ***Static State Descriptions***
 	- Descriptions that are constant - always accurate and true with regard to the model. These descriptions are the easiest to translate, and require no additional knowledge of *Fluent* syntax. Common static state descriptions are:
 		- The first part of the screen summary, often refered to as the 'sim overview'. 
@@ -49,7 +46,10 @@ This glossary of terms covers key terms and concepts translators may need to be 
 	 -  Sub-strings - often used in more than one description - that fill in the changing parts of *State* and *Responsive descriptions*. *Parameters* are designed to capture all meaningful states of a particular description and to minimize wording changes. Because *parameter* are often used in more than one description, they are often listed in the ***re-usable strings*** section at the top of the Fluent file. Translators may find the need to add to the re-usable strings section to handle language specific changes. Doing so, is optional, but can make translations more efficient.
 
 - ***Voicing Responses***
-	- *Voicing responses* are the *accessible descriptions* that are delivered through the *Voicing feature*. This feature 
+	- *Voicing responses* are the *accessible descriptions* that are delivered through the *Voicing feature*. They are often the same as the ones used for Interactive Description, but they can differ. You might find a seperate section in the Fluent file with *accessible description* just for the* Voicing feature*.
+	
+ - ***Description Design Framework***
+ 	- PhET has designed and uses a simple *Description Design Framework* [Smith and Moore, 2020](https://dl.acm.org/doi/abs/10.1145/3313831.3376460) to design *accessible descriptions*. We even have a coursera course about it, see [Description Design for Interactive Resources](https://www.coursera.org/learn/description-design-for-interactive-learning-resources). The descritpion terminology above can be referenced in the comments of *Fluent* files. Familiarity with the types of descriptions may provide some helpful context for translation. All *accessible descriptions* are either *State Descriptions* designed to capture the ***current state*** when a user is not actively making changes, or *Responsive Descriptions* designed to describe ***relevant changes*** as they occur in response to user interaction or ongoing changes to the model. There is a high amount of overlap (ideally a perfect overlap) between the *accessible descriptions* delivered via the *Interactive Description* and *Voicing features*.
 
 
 
