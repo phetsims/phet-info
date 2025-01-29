@@ -394,7 +394,7 @@ people, and will have "sub-issues" created for the individual tasks that will go
 <a id='reference-docs'>
 
 ## 📖 Reference Documents
-
+</a>
 Below is a list of documents that are helpful for reference. It's important to know that these exist. New developers
 should skim through them, then reference them as needed while developing code. This list doesn't include *all*
 documents that might be useful, it's just a good list to start with. If a new developer is looking for a document on a
@@ -403,12 +403,12 @@ it's probably best to ask around.
 
 | Doc                                                                                                               | Contents                                                                          |
 |-------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| [Deployment Info for chipper 2.0](../deployment-info/chipper-2.0.md)                                              | A guide to deploying simulations for testing and ultimately to the website        |
 | [New Dev Onboarding](./new-dev-onboarding.md)                                                                     | A guide and resource for new sim developers (this document)                       |
-| [PhET Code Review Checklist](../checklists/code-review-checklist.md)                                              | A checklist for evaluating simulation code                                        |
-| [PhET Development Overview](./phet-development-overview.md)                                                       | A checklist for evaluating simulation code                                        |
-| [PhET Quarterly Goal Planning](https://github.com/orgs/phetsims/projects/41/views/1)                              | Goals for current quarter (not really a doc, but important)                       |
 | [PhET Software Design Patterns](./phet-software-design-patterns.md)                                               | Provides information on how PhET uses various software design patterns            |
+| [Coding Conventions](./coding-conventions.md)                                                                     | PhET's TypeScript coding conventions                                              |
+| [PhET Development Overview](./phet-development-overview.md)                                                       | A checklist for evaluating simulation code                                        |
+| [PhET Code Review Checklist](../checklists/code-review-checklist.md)                                              | Yet another checklist for evaluating simulation code                              |
+| [Deployment Info for chipper 2.0](../deployment-info/chipper-2.0.md)                                              | A guide to deploying simulations for testing and ultimately to the website        |
+| [PhET Quarterly Goal Planning](https://github.com/orgs/phetsims/projects/41/views/1)                              | Goals for current quarter (not really a doc, but important)                       |
 | [Private Features for PhET Team Members](https://github.com/phetsims/special-ops/blob/main/doc/phetTeamMember.md) | Information on hidden features. This comes up most often during game development. |
 | [Responsible Devs](../sim-info/responsible_dev.md)                                                                | Associates repos with the developer who is responsible for maintenance            |
-| [TypeScript Conventions](./typescript-conventions.md)                                                             | PhET's TypeScript conventions                                                     |

@@ -4,10 +4,14 @@
   See [phet-idea-code-style.xml](https://github.com/phetsims/phet-info/blob/main/ide/idea/phet-idea-codestyle.xml) for
   IntelliJ IDEA code style.
 
+- [ ] Is the code structured in a way that follows [PhET Software Design Patterns](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md)?
+
+- [ ] Similarly, look through other convention files to check that the code complies with relevant conventions. See the [documentation folder](https://github.com/phetsims/phet-info/blob/main/doc).
+
 - [ ] Names (types, variables, properties, Properties, functions,...) should be sufficiently descriptive and specific,
   and should avoid non-standard abbreviations. For example:
 
-  ```js
+  ```ts
   const numPart = 100;            // incorrect
   const numberOfParticles = 100;  // correct
   const width = 150;              // incorrect
@@ -21,7 +25,7 @@
   For example, this constructor uses parameters for everything. At the call site, the semantics of the arguments are
   difficult to determine without consulting the constructor.
 
-  ```js
+  ```ts
   class BallNode extends Node {
 
     /**
@@ -42,7 +46,7 @@
   Here’s the same constructor with an appropriate use of options. The call site is easier to read, and the order of
   options is flexible.
 
-  ```js
+  ```ts
   class BallNode extends Node {
 
     /**
@@ -70,51 +74,12 @@
   } );
   ```
 
-- [ ] When options are passed through one constructor to another, a "nested options" pattern should be used. This helps
-  to avoid duplicating option names and/or accidentally overwriting options for different components that use the same
-  option names. Make sure to use PHET_CORE/merge instead of `_.extend` or `_.merge`. `merge` will automatically recurse
-  to keys named `*Options` and extend those as well.
-
-  Example:
-  ```js
-  class ParticleBoxNode extends Node {
-
-    /**
-     * @param {ParticleBox} particleBox - model element
-     * @param {Property.<boolean>} visibleProperty - are the box and its contents visible?
-     * @param {Object} [options]
-     */
-    constructor( particleBox, visibleProperty, options ) {
-
-      options = merge( {
-        fill: 'white',  // {Color|string} fill color
-        stroke: 'black', // {Color|string} stroke color
-        lineWidth: 1, // {number} width of the stroke
-        particleNodeOptions: {
-          fill: 'red',
-          stroke: 'gray',
-          lineWidth: 0.5
-        },
-      }, options );
-
-      // add particle
-      this.addChild( new ParticleNode( particleBox.particle, options.particleNodeOptions ) );
-      ...
-    }
-  }
-  ```
-
-  A possible exception to this guideline is when the constructor API is improved by hiding the implementation details,
-  i.e. not revealing that a sub-component exists. In that case, it may make sense to use new top-level options. This is
-  left to developer and reviewer discretion.
-
-  For more information on the history and thought process around the "nested options" pattern, please
-  see https://github.com/phetsims/tasks/issues/730.
+- [ ] When options are passed through one constructor to another, use the `optionize` pattern. See more [here](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#options-typescript).
 
 - [ ] If references are needed to the enclosing object, such as for a closure, `self` should be defined, but it should
   only be used in closures. The `self` variable should not be defined unless it is needed in a closure. Example:
 
-  ```js
+  ```ts
   const self = this;
   someProperty.link( function(){
     self.doSomething();
@@ -128,7 +93,7 @@
 
 - [ ] Functions should be invoked using the dot operator rather than the bracket operator. For more details, please
   see https://github.com/phetsims/gravity-and-orbits/issues/9. For example:
-  ```js
+  ```ts
   // avoid
   this[ isFaceSmile ? 'smile' : 'frown' ]();
 
@@ -147,7 +112,7 @@
 - [ ] It is not uncommon to use conditional shorthand and short circuiting for invocation. Use parentheses to maximize
   readability.
 
-  ```js
+  ```ts
   ( expression ) && statement;
   ( expression ) ? statement1 : statement2;
   ( foo && bar ) ? fooBar() : fooCat();
@@ -158,7 +123,7 @@
 
   If the expression is only one item, the parentheses can be omitted. This is the most common use case.
 
-  ```js
+  ```ts
   assert && assert( happy, 'Why aren\'t you happy?' );
   happy && smile();
   const thoughts = happy ? 'I am happy' : 'I am not happy :(';
@@ -186,7 +151,7 @@
 - [ ] If you need to namespace an inner class, use `{{namespace}}.register`, and include a comment about why the inner
   class needs to be namespaced. Use the form `'{{outerClassname}}.{{innerClassname}}'` for the key. For example:
 
-  ```js
+  ```ts
   import myNamespace from '...';
 
   class SlotMachineNode extends Node {
@@ -214,7 +179,7 @@
 
   For example, both of these are acceptable:
 
-  ```js
+  ```ts
   Multilink.multilink(
     [ styleProperty, activeProperty, colorProperty ],
     ( style, active, color ) => {
@@ -230,7 +195,7 @@
 
   This is not acceptable, because the 3rd parameter is incorrect.
 
-  ```js
+  ```ts
   Multilink.multilink(
     [ styleProperty, activeProperty, colorProperty ],
     ( style, active, lineWidth ) => {
@@ -277,7 +242,7 @@ generally meets PhET standards.
 
 - [ ] Line comments should generally be preceded by a blank line. For example:
 
-  ```js
+  ```ts
   // Randomly choose an existing crystal to possibly bond to
   const crystal = this.crystals.get( _.random( this.crystals.length - 1 ) );
 
@@ -293,7 +258,7 @@ generally meets PhET standards.
      no space between the `if`/`else if`/`else` and the comment), with a space below it as to not be confused with a
      comment about logic below.
 
-    ```js
+    ```ts
 
     // Comment about the reason to split on peppers were pickled.
     if( peterPiperPickedAJarOfPickledPeppers ){
@@ -314,239 +279,387 @@ generally meets PhET standards.
 
 - [ ] Do the `@author` annotations seem correct?
 
-- [ ] Constructor and function documentation. Parameter types and names should be clearly specified for each constructor
-  and function using `@param` annotations. The description for each parameter should follow a hyphen. Primitive types
-  should use lower case. For example:
-
-  ```js
-  /**
-   * The PhetDeveloper is responsible for creating code for simulations and documenting their code thoroughly.
-   */
-  class PhetDeveloper {
-
-    /**
-     * @param {string} name - full name
-     * @param {number} age - age, in years
-     * @param {boolean} isEmployee - whether this developer is an employee of CU
-     * @param {function} callback - called immediate after coffee is consumed
-     * @param {Property.<number>} hoursProperty - cumulative hours worked
-     * @param {string[]} friendNames - names of friends
-     * @param {Object} [options]
-     */
-    constructor( name, age, isEmployee, callback, hoursProperty, friendNames, options ) {
-      ...
-    }
-
-    ...
-  }
-  ```
-
-- [ ] For most functions, the same form as above should be used, with a `@returns` annotation which identifies the
-  return type and the meaning of the returned value. Functions should also document any side effects. For extremely
-  simple functions that are just a few lines of simple code, an abbreviated line-comment can be used, for
-  example: `// Computes {Number} distance based on {Foo} foo.`
-
-
-- [ ] Abstract methods should be annotated with `@abstract` and should typically throw an Error. For example:
-
-  ```js
-  /**
-   * Updates this node.
-   * @abstract
-   * @protected
-   */
-  update()
-  {
-    throw new Error( 'update must be implemented by subclass' );
-  }
-  ```
-
-#### Type Expressions
-
-This section deals with PhET conventions for type expressions. You do not need to exhaustively check every item in this
-section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code
-generally meets PhET standards.
-
-- [ ] Type expressions should conform approximately
-  to [Google Closure Compiler](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler)
-  syntax. PhET stretches the syntax in many cases (beyond the scope of this document to describe).
-
-- [ ] Prefer the most basic/restrictive type expression when defining APIs. For example, if a client only needs to know
-  that a parameter is `{Node}`, don’t describe the parameter as `{Rectangle}`.
-
-- [ ] All method parameters should have type expressions. For example `@param {number} width`.
-
-- [ ] In sim-specific code, options and fields should have type expressions when their type is not obvious from the
-  context. “Obvious” typically means that the value type is clearly shown in the righthand-side of the definition.
-  E.g. `const width = 42` clear shows that `width` is `{number}`. E.g. `const checkbox = new Checkbox(…)` clearly shows
-  that `checkbox` is `{Checkbox}`. If the type is obvious from the context, the developer may still provide a type
-  expression at his/her discretion. Examples:
-
-  ```js
-  // @public {GameState} the current state of the game
-  this.gameState = this.computeGameState();
-
-  // @public (read-only) the width of the container
-  this.containerWidth = 150;
-
-  // @private the checkbox used to show particles
-  this.particlesVisibleCheckbox = new Checkbox(...);
-  ```
-
-- [ ] In common code repositories all options and fields should have type expressions, regardless of their visibility,
-  and regardless whether their type is obvious from the context. If the same examples from above appeared in common
-  code:
-
-  ```js
-  // @public {GameState} the current state of the game
-  this.gameState = this.computeGameState();
-
-  // @public (read-only) {number} the width of the container
-  this.containerWidth = 150;
-
-  // @private {Checkbox} the checkbox used to show particles
-  this.particlesVisibleCheckbox = new Checkbox(...);
-  ```
-
-- [ ] Type expressions for `EnumerationDeprecated` values should be annotated as instances of that
-  EnumerationDeprecated, see examples in https://github.com/phetsims/phet-core/blob/main/js/EnumerationDeprecated.js
-  for more.
-  ```js
-  /**
-   * @param {LeftOrRight} - whichHand
-   */
-   function getHand( whichHand ){
-     if( whichHand === LeftOrRight.LEFT ){
-       return new LeftHand();
-     }
-     else if( whichHand === LeftOrRight.RIGHT ){
-       return new RightHand();
-     }
-    }
-  ```
-
-- [ ] Type expressions for functions have a variety of possibilities, increasing in complexity depending on the case. In
-  general note that `{function}` is not enough information. Here are some better options:
-
-  1. The most basic option it to use Google Closure Type syntax, for more info
-     see https://github.com/google/closure-compiler/wiki/Types-in-the-Closure-Type-System. This specifies the
-     param/return types, but nothing more. Here are some examples:
-
-  * `@param {function()} noParamsAndNoReturnValue`
-  * `@param {function(number)} giveMeNumberAndReturnNothing`
-  * `@param {function(number, number):Vector2} getVector2`
-  * `@param {function(new:Node)} createNode - a function that takes the Node constructor`
-
-  2. When needing to be a bit more specific, add a name to parameters of the function. Sometimes this is all that is
-     needed for clarity on what the param does:
-
-  * `@param {function(model:MyModel, length:number, name:string): Node} getLengthNode`
-  * `@param {function(aSelfExplanatoryNameForAString:string): Node} getStringNode`
-
-  3. If (2) isn't enough, use English to explain the parameters and return values. This is easy because they are named,
-     and can be easily mentioned:
-
-  * `@param {function(model:MyModel, length:number, name:string): Node} getLengthNode - returns the length Node that you have always wanted, name is the name of the source of your aspirations, length is a special number according to the following 24 criteria. . .`
-
-  4. If needing more complexity, or using jsdoc rendering tools (like PhET-iO documentation does), you must use a JSDoc
-     compatible format, not (2) or (3), and you may need to use the more complicated solution. See JSDoc docs for more
-     info. Here is an example of a named callback:
-      ```js
-      /**
-       * @name mySpecialCallback
-       * Converts a string to a number
-       * @param {string}
-       * @returns {number}
-       */
-      /**
-       * @param {mySpecialCallback} callback
-      */
-      x = function( callback) { callback( 'still chocolate' ) };
-      ```
-
-- [ ] Type expressions for anonymous Objects have a variety of possibilities, increasing in complexity depending on the
-  case.
-  1. When the documentation is close by, then {Object} is still acceptable. This mainly applies to options and similar
-     patterns:
-
-  * `@param {Object} [options] // this is great because of the extend call 5 lines down`
-
-  2. When using an `Object` with specific properties, name them and their types like so:
-
-  * `@param {name:string, address:{street:string}, returnNode:function(number):Node, [shoeSize:number]} personalData // note that shoeSize is optional here`
-
-  3. When you need a bit more explanation, keep the same type expression as (2), but feel free to outline specifics in
-     English after the param name.
-      ```
-      @ param {name:string, address:{street:string}, returnNode:function(number):Node, [shoeSize:number]} personalData - use english after to explain pieces of this
-          (if needed, outline properties on their own lines)
-          name is something
-          address is something else
-          returnNode does this thing
-      ```
-  4. Not all objects have named keys like (2) and (3). Here is how to document dictionary-like `Object`s, where each key
-     is some type, and the value is another type. For key value pairs use this:
-
-  * `{Object.<string, number>}` Where keys are strings, and values are numbers.
-  * `{Object.<phetioID:string, count:number>}` - naming each of these can help identify them too. Feel free to explain
-    in English after the type expression if needed.
-
-  5. If things are too complicated for the above cases, use a `*Def.js` file (especially is used in more than one file),
-     or a `@typedef` declaration right above the jsdoc that uses the typedef.
-
-- [ ] Look for cases where the use of type expressions involving Property subclasses are incorrect. Because of the
-  structure of the `Property` class hierarchy, specifying type-specific Properties (`{BooleanProperty}`
-  , `{NumberProperty}`,...) may be incorrect, because it precludes values of type `{DerivedProperty}`
-  and `{DynamicProperty}`. Similarly, use of `{DerivedProperty}` and `{DynamicProperty}` precludes values of (
-  e.g.) `{BooleanProperty}`. Especially in common code, using `{Property.<TYPE>}` is typically correct, unless some
-  specific feature of the `Property` subclass is required. For example, `{Property.<boolean>}` instead
-  of `{BooleanProperty}`.
 
 #### Visibility Annotations
 
-This section deals with PhET conventions for visibility annotations. You do not need to exhaustively check every item in
-this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code
-generally meets PhET standards.
+# Visibility Annotations in TypeScript
 
-Because JavaScript lacks visibility modifiers (public, protected, private), PhET uses JSdoc visibility annotations to
-document the intent of the programmer, and define the public API. Visibility annotations are required for anything that
-JavaScript makes public. Information about these annotations can be found here. (Note that other documentation systems
-like the Google Closure Compiler use slightly different syntax in some cases. Where there are differences, JSDoc is
-authoritative. For example, use `Array.<Object>` or `Object[]` instead of `Array<Object>`). PhET guidelines for
-visibility annotations are as follows:
+This section deals with PhET conventions for visibility annotations in **TypeScript**, which *does* include language-level access modifiers (`public`, `protected`, `private`), plus additional features like `readonly`. Instead of relying on JSDoc annotations for visibility, you can leverage TypeScript’s built-in features. You may still use TSDoc/JSDoc comments to document details of your API or annotate more specialized visibility scenarios (e.g. “scenery-internal”).
 
-- [ ] Use `@public` for anything that is intended to be part of the public API.
-- [ ] Use `@protected` for anything that is intended for use by subtypes.
-- [ ] Use `@private` for anything that is NOT intended to be part of the public or protected API.
-- [ ] Put qualifiers in parenthesis after the annotation, for example:
-  * To qualify that something is read-only, use `@public (read-only)`. This indicates that the given Property (AND its
-    value) should not be changed by outside code (e.g. a Property should not have its value changed)
-  * To qualify that something is public to a specific repository, use (for example) `@public (scenery-internal)`
-  * For something made public solely for a11y, use `@public (a11y)`
-  * For something made public solely for phet-io, use `@public (phet-io)`
-  * Separate multiple qualifiers with commas. For example: `@public (scenery-internal, read-only)`
-- [ ] For JSDoc-style comments, the annotation should appear in context like this:
+---
 
-  ```js
-  /**
-   * Creates the icon for the "Energy" screen, a cartoonish bar graph.
-   * @returns {Node}
-   * @public
-   */
+## Visibility Modifiers in TypeScript
+
+TypeScript provides first-class support for visibility through its access modifiers. As part of PhET conventions, here is how you can map those modifiers to the intended usage:
+
+- **`public`**  
+  Anything that is part of your *public API*—callers outside the class should be free to access or invoke it.
+
+- **`protected`**  
+  Intended *only* for derived (sub) classes. External callers should not access or modify these members.
+
+- **`private`**  
+  Members that should not be used outside of the containing class.
+
+Additionally, TypeScript provides several other useful keywords for refining your API:
+
+- **`readonly`**  
+  Indicates that a property is set once (typically in the constructor) and should not be reassigned later.
+
+  ```ts
+  class SomeModel {
+    public readonly id: string;
+    constructor( id: string ) {
+      this.id = id;
+    }
+    // Attempting to reassign id outside of constructor will cause a TypeScript error
+  }
   ```
 
-- [ ] For Line comments, the annotation can appear like this:
+# TypeScript Specific Conventions
 
-  ```js
-  // @public {function(listener:function)} - Adds a listener
-  addListener: function( listener ) { /*...*/ }
-  ```
+These are the conventions established for TypeScript use by PhET developers. This is an evolving document in an early
+phase. Please bring things up for discussion to add here as you identify new conventions. Conventions enforced by lint
+or other tooling are not listed here.
 
-- [ ] Verify that every JavaScript property and function has a visibility annotation. Here are some helpful regular
-  expressions to search for these declarations as PhET uses them.
-  * Regex for property assignment like `x.y = something`: `[\w]+\.[\w]+\s=`
-  * Regex for function declarations: `[\w]+: function\(`
+### ESLint
 
-- [ ] For private fields, a preceding underscore should generally *not* be used in the variable name. For example, for a
-  private variable that represents the background, the name ```background``` is preferred over ```_background```. An
-  exception is when trying to avoid a collision with and ES5 getter/setter.
+Many of PhET's TypeScript conventions are embodied in TypeScript-specific lint rules. We use the `@typescript-eslint`
+plugin to add these rules and augment with our own under the phet plugin. Please see [perennial/eslint](https://github.com/phetsims/perennial/blob/main/js/eslint/)
+for details and context about conventions based on lint rules.
+
+### Philosophy
+
+Familiarize yourself with the TypeScript Design
+Goals: https://github.com/Microsoft/TypeScript/wiki/TypeScript-Design-Goals. An important one that is often forgotten is
+the following:
+
+- "\[the goal is not to\] Apply a sound or "provably correct" type system. Instead, strike a balance between correctness
+  and productivity."
+
+TypeScript should work for us and the project, instead of the other way around.
+
+### Leveraging Type Inference
+
+From _Effective TypeScript_ (Dan Vanderkam), page 87, Item 19, "Avoid Cluttering Your Code with Inferable Types":
+
+* Avoid writing type annotations when TypeScript can infer the same type.
+* Ideally your code has type annotations in function/method signatures but not on local variables in their bodies.
+* Consider using explicit annotations for object literals and function return types even when they can be inferred. This
+  will help prevent implementation errors from surfacing in user code.
+
+It is PhET convention to provide return types when declaring methods and functions. This includes explicitly specifying
+`void` for everything that is a method and/or part of a public API.
+(Arrow functions as args are up to dev discretion.)
+
+TypeScript has a powerful type inference system, and we recommend to leverage that type inference in the general case.
+For example:
+
+```ts
+// Recommended: infers type x:number
+const x = 7;
+
+// Not recommended, the type information is redundant.
+const x: number = 7;
+```
+
+However, if there is a complicated or volatile (API hasn't stabilized) expression on the right-hand side, it may be
+valuable to specify the type on the left-hand side. For example:
+
+```ts
+// OK to specify the type manually in complex or volatile cases
+const x: number = someComplicatedExpressionOrVolatileStatementThatHasntStabilized();
+```
+
+This same principle applies to generic type parameters. For instance, TypeScript can infer the parametric type
+of `new Property`
+based on the value of the first parameter. For example:
+
+```ts
+// Recommended
+new Property( new Laser() );
+
+// Not recommended, type information is redundant
+new Property<Laser>( new Laser() );
+```
+
+Again, in complex or volatile cases, at the developer preference, the redundant type annotations may prove useful.
+
+### Enumerations
+
+* String literal unions are idiomatic in TypeScript.
+* You can also use the string[] `as const` pattern for accessing string union literals and values at runtime.  
+  This works well with `StringUnionProperty`.
+* `EnumerationValue` adds rich methods on the instances. Use `EnumerationProperty` for this.
+* Careful!  If you change from string literal union to `EnumerationValue`, the casing convention is different and you
+  will break the PhET-iO API.
+* Please see https://github.com/phetsims/wilder/blob/main/js/wilder/model/WilderEnumerationPatterns.ts for details and
+  examples.
+
+### Parameters should be as general as possible
+
+This relates to Vanderkam's Item 29 "Be liberal in what you accept and strict in what you produce.". For example:
+
+```ts
+class Animal {name = 'animalName';}
+
+class Dog extends Animal {bark() {}}
+
+function computeHabitat( dog: Dog ) {
+  lookup( dog.name );
+}
+```
+
+Since the `computeHabitat` method doesn't call `bark`, it may be rewritten to accept `computeHabitat( animal: Animal )`.
+
+However, something that has to be PhET-iO instrumented should use `Property` instead of `TProperty` even if the
+additional
+`Property` methods are not exercised. This will help clients know that it must be a fully-instrumentable axon Property.
+
+### Prefer TReadOnlyProperty to DerivedProperty for type annotations.
+
+Prefer `TReadOnlyProperty` to `DerivedProperty` for type declarations,
+see https://github.com/phetsims/build-a-nucleus/issues/13
+
+```ts
+class HalfLifeInformationNode extends Node {
+
+  constructor( halfLifeNumberProperty: DerivedProperty<number,
+                 [ protonCount: number, neutronCount: number, doesNuclideExist: boolean, isStable: boolean ]>,
+               isStableBooleanProperty: DerivedProperty<boolean, [ protonCount: number, neutronCount: number ]> ) {
+    super();
+```
+
+should be simplified as:
+
+```ts
+class HalfLifeInformationNode extends Node {
+
+  constructor( halfLifeNumberProperty: TReadOnlyProperty<number>,
+               isStableBooleanProperty: TReadOnlyProperty<boolean> ) {
+    super();
+```
+
+### Options
+
+See https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#options-typescript and
+https://github.com/phetsims/wilder/blob/main/js/wilder/model/WilderOptionsPatterns.ts.
+
+#### Use `optionize` instead of `merge`
+
+In the vast majority of cases, `optionize` should be used instead of `merge`. This provided extra type information on
+top of the implementation of merge. While there are still some cases where `merge` is in TypeScript code, it is the
+exception and not the rule. Please bring any potential new `merge` usage in TypeScript to the attention of the devs so
+that it can be discussed.
+
+### Initialization of instance properties
+
+Instance properties can be initialized either where they are declared, or in the constructor, or as parameter properties
+in the constructor parameters. It is up to developer discretion, but please try to be consistent, and adhere to the
+spirit of existing code. In addition, please keep potential future PhET-iO instrumentation in mind. Initializing where
+declaration occurs may result in refactoring when it comes time to pass Tandems to those objects
+(see [example issue](https://github.com/phetsims/keplers-laws/issues/103)).
+
+```ts
+// Initialized where declared
+class EventCounter {
+  public numberOfEvents: number = 0;
+  public numberOfEventsProperty: TProperty<number> = new NumberProperty( 0 );
+
+  // ...
+}
+
+// Initialized in constructor
+class EventCounter {
+  public numberOfEvents: number;
+
+  constructor( ... ) {
+    super( ... );
+    this.numberOfEvents = 0;
+    // ...
+  }
+}
+
+// Initialized as parameter property in constructor
+class EventCounter {
+
+  constructor( public numberOfEvents = 0 ) {
+    super( ... );
+  }
+}
+```
+
+#### Statics (class properties)
+
+One-line static properties will likely be better and clearer when grouped with the instance properties declared at the
+top of a class. That said, it is developer preference whether to group them or put them at the bottom of the class
+definition:
+
+```ts
+class Person {
+
+  readonly name: string;
+
+  // here is a bit better
+  static QUALITIES: [ 'height', 'age' ];
+
+  constructor( name: string ) {
+    this.name = name;
+  }
+
+  sayName() {
+    console.log( name );
+  }
+
+  // or here because it is long
+  static QUALITIES: [
+    'height',
+    'age'
+  ];
+}
+```
+
+#### Documentation
+
+Documentation for instance properties should be placed with the declaration, not the instantiation. For example:
+
+```ts
+class Person {
+
+  // First and last name, separated by a whitespace
+  readonly name: string;
+
+  constructor( name: string ) {
+    this.name = name;
+  }
+}
+```
+
+If implementation details are needed about the instantiation value, then those should be included at the instantiation
+point.
+
+```ts
+class Person {
+
+  // First and last name, separated by a whitespace
+  name: string;
+
+  constructor() {
+
+    // All new people get assigned a random name. A specific name can be assigned later if desired.
+    this.name = Person.getRandomName();
+  }
+
+  // ...
+}
+```
+
+The same documentation pattern applies to options. Documentation should generally be placed at the declaration, but
+explanation for defaults should be described where the default values are assigned.
+
+### Multiple Exports
+
+PhET uses babel to do transpilation, and it only operates on a single file at a time. This means that it can’t apply
+code transforms that depend on understanding the full type system, and we are restricted to
+specifying [isolatedModules](https://www.typescriptlang.org/tsconfig#isolatedModules) in tsconfig. This in turn requires
+that types must be exported separately from other modules. For example:
+
+```ts
+type NodeOptions = /*...*/;
+type MyEnum = /*...*/;
+
+class Node { /*...*/}
+
+export { NodeOptions, MyEnum };
+export default Node;
+```
+
+Exports can be done at end of the file (as shown above), or at declaration sites like so:
+
+```ts
+
+export type DotPlotNodeOptions = /*...*/;
+
+export default class DotPlotNode extends Node {
+  // ...
+}
+```
+
+### Multiple Imports in One Expression
+
+Multiple imports from the same file should be combined into one statement. This helps clarify that they are related.
+This does not suffer from the same `isolatedModules` constraint as exports; all modules can be imported in the same
+statement.
+
+```ts
+// Preferred
+import BendingLightScreenView, { BendingLightScreenViewOptions } from '../../common/view/BendingLightScreenView.js';
+
+// Not preferred
+import BendingLightScreenView from '../../common/view/BendingLightScreenView.js';
+import { BendingLightScreenViewOptions } from '../../common/view/BendingLightScreenView.js';
+```
+
+If this exceeds the line limit and the WebStorm formatter wants to format it on multiple lines, please use
+`// eslint-disable-line single-line-import`
+
+### Assertions
+
+In general, assertions should be used to check run-time conditions that can't be validated by the type checker.
+
+When converting from JS to TS, `assert` statements that checked types can and should be removed.
+
+### JSDoc and TSDoc
+
+It is recommended that you do not duplicate parameter and return type information in JSDoc and in Typescript types. If
+you have a need to explain one or more parameters, then add `@param` for _all_ parameters to the JSDoc and add
+explanations as needed. The same for `@returns`.
+
+### Non-null assertion operator
+
+The non-null assertion operator `!` indicates to the TypeScript compiler that a value can be treated as non-null and
+non-undefined. This operator should be used judiciously. It can sometimes be preferable to write code that doesn't
+require it at all (for instance, by using values that can never be `null` or `undefined`). In cases where the non-null
+assertion operator is appropriate:
+
+* Consider adding documentation that explains why the value is not expected to be null or undefined at that point.
+* Add an assertion guard where necessary. Cases like `if ( this.someNumber! < 50 ) {` require an assertion guard,
+  since `null < 50` evaluates to true. Cases like `something!.method` do not require a guard, since you already get a
+  helpful runtime error.
+* Consider factoring out a variable rather than repeating the non-null assertion operator several times on the same
+  variable.
+
+### Leverage Excess Property Checking
+
+TypeScript is structurally typed, but has a feature called excess property checking that can, in some situations, guard
+against typos or any form of incorrect object keys. Excess property checking identifies when an object literal is
+compatible with a target type and disallows properties that are not known in that type. For example:
+
+```ts
+type Person = {
+  age?: number;
+  name: string;
+};
+
+const p: Person = {
+  name: 'John',
+  agee: 42 // Hooray, it caught a typo
+};
+
+const otherThing = {
+  name: 'John',
+  agee: 42
+};
+
+const p2: Person = otherThing; // Missed opportunity, did not catch my typo. 
+```
+
+Leveraging excess property checking can help us catch potential bugs in the form of typos or incorrect object keys at
+compile time, enhancing the robustness of our code and reducing the likelihood of runtime errors.
+
+For further reading, please see Item 11 "Recognize the Limits of Excess Property Checking" in the book Effective
+Typescript by Vanderkam.
+---
+
+Please see other notes in https://github.com/phetsims/ratio-and-proportion/issues/405
+and https://github.com/phetsims/phet-info/blob/main/doc/typescript-quick-start.md 

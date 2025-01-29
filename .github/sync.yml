@@ -19,7 +19,7 @@ scenerystack/community:
     dest: docs/info-sync/interactive-highlights-quickstart-guide.md
   - source: doc/phet-software-design-patterns.md
     dest: docs/info-sync/phet-software-design-patterns.md
-  - source: doc/typescript-conventions.md
-    dest: docs/info-sync/typescript-conventions.md
+  - source: doc/coding-conventions.md
+    dest: docs/info-sync/coding-conventions.md
   - source: doc/typescript-quick-start.md
     dest: docs/info-sync/typescript-quick-start.md
