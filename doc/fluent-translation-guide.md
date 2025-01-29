@@ -25,7 +25,7 @@ and gender agreement, word order, and other differences that exist across langua
 
 ## Prerequisites for Translating Accessible Descriptions
 
-Using Fluent requires a working development environment, basic knowledge of Fluent's syntax, and some familiarity with how we refer to and organize _accessible descriptions_ in the Fluent files.
+Using Fluent requires a working development environment, basic knowledge of Fluent's syntax, and some familiarity with how we refer to and organize _accessible descriptions_ in the Fluent files. Review teh following steps, and please reach out to the SceneryStack community if you have trouble with any of them. **Note:** At this time translating *accessible descriptions* requires working direclty in Fluent files, rather than a simplified user interface.
 
 ### PhET Development Environment Setup
 - Set up a development environment for the simulation you want to translate by following the [PhET Development Overview](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md).
