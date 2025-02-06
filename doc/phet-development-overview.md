@@ -86,8 +86,7 @@ Method 1 (recommended): Get all PhET repos
 * Get [phetsims/perennial](https://github.com/phetsims/perennial): `git clone https://github.com/phetsims/perennial`
 * Change directory to perennial: `cd perennial`
 * Run npm install: `npm install`
-* Change directory back: `cd ..`
-* Run "clone-missing-repos.sh": `./perennial/bin/clone-missing-repos.sh`
+* Update codebase with `grunt sync-codebase`
 
 Method 2: Manually get specific PhET repos
 

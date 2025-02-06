@@ -7,7 +7,7 @@
 - [ ] Rename in `perennial/data/active-repos` and any other perennial data files it occurs in,
   like `active-runnables`, `active-sims`, `phet-io`, etc. Push the change to perennial and then pull perennial-alias.
 - [ ] Delete the old repo
-- [ ] Run `perennial/bin/clone-missing-repos.sh`.
+- [ ] Clone the new repo by running `grunt sync-codebase`.
 - [ ] Update `package.json` accordingly. Including but not necessarily limited to:
   * `name`
   * `repository.url`
@@ -19,9 +19,8 @@
   and `chipper/dist/js-cache-status.json` and and restart your transpiler.
 - [ ] Run `rm -rf {{OLD_REPO}}` from the phetsims directory
 - [ ] Notify Slack channel dev-public that the repo has been renamed. E.g. "I just renamed repository {{OLD_REPO}} to
-  {{NEW_REPO}}. Please pull perennial and perennial-alias, run `clone-missing-repos.sh` at your convenience, remove
-  {{OLD_REPO}} in `chipper/dist/js`, `chipper/dist/declarations`, and `chipper/dist/js-cache-status.json` and restart
-  your transpiler."
+  {{NEW_REPO}}. Please sync-codebase at your convenience, remove
+  {{OLD_REPO}} in `chipper/dist/` directories, and restart your transpiler."
 
 ### If this is a simulation. . .
 

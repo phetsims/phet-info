@@ -63,8 +63,6 @@ Other:
 - [ ] Apply branch protection rules
   using [protect-branches-for-repo.js](https://github.com/phetsims/perennial/blob/main/js/scripts/protect-branches-for-repo.js).
   Follow the instructions in the documentation at the top of the script.
-- [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}.
-  Please pull perennial and perennial-alias and run `clone-missing-repos.sh` at your convenience."
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
 - [ ] Follow any remaining "Implementation" tasks in the Main Checklist issue that you created above.
 - [ ] If applicable, add any needed dependencies to `phetLibs` in package.json. If you change package.json,
@@ -113,8 +111,6 @@ If this repo is a common code dependency for all sims:
 
 Other:
 
-- [ ] Notify Slack channel dev-public that the repo has been created. E.g. "I just added a new repository, {{REPO}}.
-  Please pull perennial and perennial-alias and run `clone-missing-repos.sh` at your convenience."
 - [ ] Apply GitHub labels.
   See [github-labels/README.md](https://github.com/phetsims/phet-info/blob/main/github-labels/README.md).
 - [ ] Apply branch protection rules.
