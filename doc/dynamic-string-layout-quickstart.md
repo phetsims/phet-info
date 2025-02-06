@@ -44,7 +44,7 @@ strings. We prefer `DerivedStringProperty` to `DerivedProperty<string>` for PhET
 
 ### Dynamic Layout
 Sizable components found in both Scenery and Sun support dynamic strings in sims. Familiarize yourself with the 
-[Scenery Layout Documentation](https://phetsims.github.io/scenery/doc/layout) to learn more about sizable components and how they can help you create a dynamic 
+[Scenery Layout Documentation](https://scenerystack.org/learn/scenery-layout/) to learn more about sizable components and how they can help you create a dynamic 
 and robust layout architecture for your sim. It is recommended to use these components instead of listening to 
 `BoundsProperty`.
 
