@@ -745,7 +745,6 @@ Putting it all together modules will usually follow this format:
  * @author Denzell Barnett (PhET Interactive Simulations)
  */
 
-import { Node } from '../../../scenery/js/imports.js';
 import Vector2 from '../../../dot/js/Vector2.js';
 import fooRepo from '../fooRepo.js';
 
@@ -779,7 +778,7 @@ Here are some things to do and to avoid when creating modules for use in PhET's 
   WebStorm "Organize Imports".
 * Rename on import only if you have a name collision between imports, e.g.
   ```js
-    import { Line as SceneryLine } from '../../../../scenery/js/imports.js';
+    import { Line as SceneryLine } from '../../../../scenery/js/nodes/Line.js';
     import Line from '../model/Line.js';
   ```
 * Use existing modules as examples to be followed, and gravitate towards more recent ones, since these are most likely
