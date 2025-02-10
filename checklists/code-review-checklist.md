@@ -235,7 +235,7 @@ the constructor, where `{{CLASS_NAME}}` should exactly match the class name. (b)
   `{{PREFIX}}Preferences.ts`, for example KeplersLawsPreferences.ts. The initial value of each such preferences Property
   should be set via a query parameter from `{{PREFIX}}QueryParameters.js`.
 - [ ] Does `package.json` refer to any dependencies that are not used by the sim?
-- [ ] Does `package.json` include any config that was only needed for development? For example:
+- [ ] Does `package.json`, `tsconfig.json`, or `eslint.config.mjs` include any config that was only needed for development? For example:
   * Lint rules turned off or made more graceful
   * Certain testing or simFeatures turned off with flags
 
