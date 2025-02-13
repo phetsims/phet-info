@@ -105,7 +105,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | gravity-force-lab-basics | @zepumph | @arouinfar | Sound<br/>Interactive Description<br/>Voicing | 
 | greenhouse-effect | @jbphet | @arouinfar | Sound<br/>Interactive Description | 
 | griddle | @samreid |  |  | 
-| hookes-law | @pixelzoom | @arouinfar |  | 
+| hookes-law | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | interaction-dashboard | @zepumph | @DianaTavares |  | 
 | inverse-square-law-common | @zepumph | @arouinfar |  | 
 | isotopes-and-atomic-mass | @jbphet | @arouinfar |  | 
