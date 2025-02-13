@@ -12,7 +12,7 @@ known problems, etc.
 
 ### Getting Started
 
-1. Update your codebase to support typescript features with `cd perennial; grunt sync-codebase;`
+1. Update your codebase to support typescript features with `cd perennial; grunt sync;`
 5. Mark chipper/dist/ as excluded from your IDE. You can create that directory eagerly now, or wait until chipper/dist/
    is created by a compilation step below. Compiled code will be written to chipper/dist/.
 6. Update your IDE to use the code style file from `phet-info/ide/idea/phet-idea-codestyle.xml`. You may need to

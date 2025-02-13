@@ -4,7 +4,7 @@
 WebStorm and IDEA. But there may be differences between tools, or between versions. These instructions are intended to
 get you pointed in the right direction. If you notice errors or a need for clarification, please update this document.*
 
-1. Make sure that you have a checked out code base. Clone perennial manually, run `npm install`, and then `grunt sync-codebase`.
+1. Make sure that you have a checked out code base. Clone perennial manually, run `npm install`, and then `grunt sync`.
 3. Make a new project in the same directory where you cloned all git repos. When asked, create a "Static Web" module for
    the same directory (if in Intellij IDEA).
 4. Add your github credentials in `File > Settings > Version Control > Github`, and test your credentials with the
