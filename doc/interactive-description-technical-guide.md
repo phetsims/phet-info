@@ -161,7 +161,7 @@ description". In general, the process looks like this:
 * Determine where visual objects can map directly to elements in the PDOM, and provide options to them. Otherwise, you
   will need to create different Node structure to satisfy the design of the PDOM.
 * Passing `tagName` will add them to the PDOM, but use all ParallelDOM options to create the structure needed. The
-  options to be used most often will be `accessibleName`, and `helpText`, as almost all interactive components will have
+  options to be used most often will be `accessibleName`, and `accessibleHelpText`, as almost all interactive components will have
   these. See notes below about setting accessibleName
 * Make sure that the keyboard navigation order is correct for interactive elements
 * Note: at this time, there is no support for automatically setting heading levels within Node structure, but if this
