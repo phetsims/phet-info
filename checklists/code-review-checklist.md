@@ -248,12 +248,6 @@ the constructor, where `{{CLASS_NAME}}` should exactly match the class name. (b)
   item in this section, nor do you necessarily need to check these items one at a time. The goal is to determine whether
   the code generally meets PhET standards.
 
-## **TypeScript Conventions**
-
-- [ ] Are TypeScript conventions outlined in
-  PhET's [TypeScript Conventions](https://github.com/phetsims/phet-info/blob/main/doc/typescript-conventions.md)
-  document followed and adhered to?
-
 ## **Math Libraries**
 
 - [ ] `DOT/Utils.toFixed` or `DOT/Utils.toFixedNumber` should be used instead of `toFixed`. JavaScript's `toFixed` is
