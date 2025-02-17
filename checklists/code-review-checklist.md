@@ -48,6 +48,7 @@ review until the issues have been created and addressed by the responsible dev._
 - [ ] results of memory testing for `brands=phet-io` (if the sim is instrumented for PhET-iO), see {{GITHUB_ISSUE_LINK}}
 - [ ] performance testing and sign-off, see {{GITHUB_ISSUE_LINK}}
 - [ ] review of pointer areas, see {{GITHUB_ISSUE_LINK}}
+- [ ] If description is included, description review, polishing, and sign-off, see {{GITHUB_ISSUE_LINK}}.
 - [ ] credits (will not be completed until after RC testing), see {{GITHUB_ISSUE_LINK}}
 
 ## **Build and Run Checks**
