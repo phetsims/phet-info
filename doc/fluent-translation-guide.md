@@ -7,25 +7,23 @@ using the Fluent system.
 ## Two Systems for Translations 
 
 PhET has two systems for submitting translations, one for short visual strings and one for longer _accessible descriptions_.
-1. The _PhET Translation Utility (HTML5)_ works well for the short strings that you can see visually in the simulation - visual strings like labels for checkboxes. At this time, this system cannot handle longer phrases found in the _accessible descriptions_. To learn more about the PhET Translation Utility (HTML5), you can find [information here](https://phet.colorado.edu/en/for-translators) and [documentation here](https://docs.google.com/document/u/1/d/e/2PACX-1vSYc8f01StQ7e2nQWBA38BZfLoqkm6rkn-F9BzTmxdNgazOzFfLDm5RI-3I3IdKccuBFQpFdT2ST5Px/pub).
-2. Fluent provides a higher level translation system in order to address the language-specific changes required when translating the longer phrases found in _accessible descriptions_. Once a translator is familiar with some basic fluent syntax, they can create, test and submit grammatically correct translations of _accessible descriptions_ using a system of Fluent files.
+1. The _PhET Translation Utility (HTML5)_ works well for the short strings displayed visually in the simulation - visual strings like labels for checkboxes. At this time, this system cannot handle longer phrases found in the _accessible descriptions_. To learn more about the PhET Translation Utility (HTML5), you can find [information here](https://phet.colorado.edu/en/for-translators) and [documentation here](https://docs.google.com/document/u/1/d/e/2PACX-1vSYc8f01StQ7e2nQWBA38BZfLoqkm6rkn-F9BzTmxdNgazOzFfLDm5RI-3I3IdKccuBFQpFdT2ST5Px/pub).
+2. Fluent provides a higher-level translation system in order to address the language-specific changes required when translating longer phrases found in _accessible descriptions_. Once a translator is familiar with some basic fluent syntax, they can create, test and submit grammatically correct translations of _accessible descriptions_ using a system of Fluent files.
 
 **Notes:**
-- Translators may need to use both systems to create a complete translation. Some accessible descriptions may use the same strings as the visual strings. In this case, both the PhET Translation Utiltiy (HTML5) and Fluent must be used to create a complete translation.
+- Translators may need to use both systems to create a complete translation. Some accessible descriptions may use the same strings as the visual strings. In this case, both the PhET Translation Utility (HTML5) and Fluent must be used to create a complete translation.
 - In the future, PhET may have one translation utility that can handle both visual strings and _accessible descriptions_.
 ## Introduction to Fluent
 
 ### What is Fluent?
 Fluent is a localization system developed by Mozilla.
-It is particularly useful for the translation of complex
-dynamic content such as the descriptions designed for accessibility.
+It is particularly useful for the translation of complex dynamic content such as the descriptions designed for accessibility.
 More information about inclusive features can be found [here](https://phet.colorado.edu/en/inclusive-design/features). 
-These _accessible descriptions_ are in addition to and seperate from the visual text that appears on-screen.  Using Fluent, translators can effectively handle language-specific challenges like number
-and gender agreement, word order, and other differences that exist across languages.
+These _accessible descriptions_ are in addition to and separate from the visual text displayed on-screen.  Using Fluent, translators can effectively handle language-specific challenges like number and gender agreement, word order, and other differences that exist across languages.
 
 ## Prerequisites for Translating Accessible Descriptions
 
-Using Fluent requires a working development environment, basic knowledge of Fluent's syntax, and some familiarity with how we refer to and organize _accessible descriptions_ in the Fluent files. Review teh following steps, and please reach out to the SceneryStack community if you have trouble with any of them. **Note:** At this time translating *accessible descriptions* requires working direclty in Fluent files, rather than a simplified user interface.
+Using Fluent requires a working development environment, basic knowledge of Fluent's syntax, and some familiarity with how we refer to and organize _accessible descriptions_ in the Fluent files. Review the following steps, and please reach out to the SceneryStack community if you have trouble with any of them. **Note:** At this time translating *accessible descriptions* requires working directly in Fluent files.
 
 ### PhET Development Environment Setup
 - Set up a development environment for the simulation you want to translate by following the [PhET Development Overview](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md).
@@ -44,7 +42,7 @@ Make sure you can run the simulation locally in your browser and access and edit
 - Example: `phetsims/babel/fluent/ohms-law/OhmsLaw_es.ftl`
 
 ### Description Framework Terminology 
-- PhET has developed a simple description design framework that assists designers in designing the complex strings needed to create dynamci _accessible descriptions_. As you work with the Fluent files you will notice references to description categories in the comments surrounding the descriptions. Familiarizing yourself with the description design framework terminology may assist you in your translation effort. See more in [glossary of terms](https://github.com/phetsims/phet-info/blob/main/doc/fluent-description-glossary.md).
+- PhET has developed a simple description design framework that assists in designing the complex strings needed to create dynamic _accessible descriptions_. As you work with the Fluent files you will notice references to description categories in the comments surrounding the descriptions. Familiarizing yourself with the description design framework terminology may assist you in your translation efforts. See more in [glossary of terms](https://github.com/phetsims/phet-info/blob/main/doc/fluent-description-glossary.md).
 
 ## Steps to Create and Submit Translations
 
