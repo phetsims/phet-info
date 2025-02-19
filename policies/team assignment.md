@@ -1,4 +1,4 @@
-When creating a new repo, access should be managed by adding Teams, not individuals.
+Repo access should be managed by adding Teams, not individuals.
 
 _NOTE:
 The 'phet-dev' machine user is a member of APPS_DEV, BROWSER_SIDE_COMMON_CODE, PhET-iO, SERVER_CODE, SIMS_DEV, and
