@@ -25,8 +25,7 @@ get you pointed in the right direction. If you notice errors or a need for clari
   `build;node_modules;dist;images;sounds;mipmaps;*phet-io-elements-overrides.js;*phet-io-elements-baseline.js`
   into "Excluded Files".
 
-7. Set the right margin to appear after 120 characters. `File> Settings> Editor > Code Style` Set Default Options to
-120.
+7. Set the right margin to appear after 120 characters. `File> Settings> Editor > Code Style` Set Default Options to 120.
 8. Import the PhET code style (located in `phet-info/ide/idea/phet-idea-codestyle.xml`).
 
 * See https://www.jetbrains.com/help/idea/2017.1/copying-code-style-settings.html. Press the drop-down "settings"
