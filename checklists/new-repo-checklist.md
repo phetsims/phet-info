@@ -14,8 +14,8 @@ At https://github.com/phetsims:
 
 - [ ] Press the "New" button.
 - [ ] In "Repository name" text field, enter the repository name.
-- [ ] In the "Description" text field,
-  enter `"{{TITLE}}" is an educational simulation in HTML5, by PhET Interactive Simulations.`
+- [ ] In the "Description" text field, enter
+  `"{{TITLE}}" is an educational simulation in HTML5, by PhET Interactive Simulations.`
 - [ ] Select the "Public" radio button.
 - [ ] Do not check the "Add a README file" checkbox.
 - [ ] Leave the "Add .gitignore" combo box set to "None".
@@ -102,6 +102,8 @@ In your working copy of perennial repo:
 - [ ] If applicable: Add the new repo to `perennial/data/active-repos`. Commit and push. Pull perennial-alias. If needed
   immediately, run `cd perennial/ && grunt generate-data` and commit and push to update data lists. Otherwise it is done
   every night as part of daily grunt work.
+- [ ] If applicable: Add to any other lists in `perennial/data/`. For example, `active-common-sim-repos` (likely if your
+  repo ends in `-common`).
 
 If this repo is a common code dependency for all sims:
 
