@@ -379,3 +379,5 @@ This section may be omitted if the sim has not been instrumented for PhET-iO, bu
   use `AXON/EnabledProperty`. This should be done in both the model and the view. If you're using a DerivedProperty,
   skip this item.
 - [ ] Do not use translated strings in `phetioDocumentaton` - it changes the PhET-iO API!
+- [ ] Make sure phet-io features don't have package.json opt-outs: `validation` and `fuzzValuesOverride` should not be
+  in the packageJSON "phet-io" section.
