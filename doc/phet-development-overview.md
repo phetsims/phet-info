@@ -115,7 +115,7 @@ npm install
 ### Transpile TypeScript
 
 * Change directory to the build tools: `cd chipper/`
-* Run the TypeScript transpiler: `grunt transpile --live` which starts a process that will auto-transpile
+* Run the TypeScript transpiler: `grunt transpile --all --live` which starts a process that will auto-transpile
   when files change.
 * For more details about TypeScript, please
   see [PhET's TypeScript Quick Start Guide](https://github.com/phetsims/phet-info/blob/main/doc/typescript-quick-start.md)
