@@ -36,7 +36,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | build-a-molecule | @jonathanolson | @arouinfar | Sound | 
 | build-a-nucleus | @Luisav1,@zepumph |  | Interactive Description | 
 | build-an-atom | @jbphet | @DianaTavares | Sound | 
-| bumper | @jonathanolson |  |  | 
+| bumper | @jonathanolson |  | Interactive Description | 
 | buoyancy | @AgustinVallejo,@zepumph | @DianaTavares | Sound<br/>Interactive Description | 
 | buoyancy-basics | @AgustinVallejo,@zepumph | @DianaTavares | Sound<br/>Interactive Description | 
 | calculus-grapher | @veillette,@pixelzoom | @amanda-phet |  | 
