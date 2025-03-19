@@ -76,7 +76,7 @@ find . -name "*.js" ! -iname "*phet-io-overrides.js"  -exec bash -c 'mv "$1" "${
 ### Caveats and Notes
 
 1. Please make sure you are using the commit hooks, which are configured to run type checks on typescript repos.
-2. Ambient type definitions are provided in chipper/phet-types.d.ts and phet-types-module.d.ts
+2. Ambient type definitions are provided in perennial-alias/phet-types.d.ts and chipper/phet-types-module.d.ts
 3. Transitive dependencies are not always tracked correctly in the build system. This bug has been reported to
    TypeScript. Details in https://github.com/phetsims/chipper/issues/1067
 4. Some common code repos include code outside their directory. This problem is described
