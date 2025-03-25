@@ -21,6 +21,7 @@
   * [JSDoc and TSDoc](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#jsdoc-and-tsdoc)
   * [Non-null assertion operator](https://github.com/phetsims/phet-info/edit/main/doc/coding-conventions.md#non-null-assertion-operator)
   * [Leverage Excess Property Checking](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#leverage-excess-property-checking)
+  * [Read vs Write APIs](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#read-vs-write-apis)
 * [Further Reading](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#further-reading)
 
 ## JavaScript
@@ -674,7 +675,7 @@ const p2: Person = otherThing; // Missed opportunity, did not catch my typo.
 Leveraging excess property checking can help us catch potential bugs in the form of typos or incorrect object keys at
 compile time, enhancing the robustness of our code and reducing the likelihood of runtime errors.
 
-### Public read access, Private/Protected write access
+### Read vs Write APIs
 
 When designing an API, you will often encounter the need to make a field read-only in the public API, while
 making it writeable in the private/protected API.  This section shows some patterns for accomplishing that 
