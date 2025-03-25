@@ -674,6 +674,93 @@ const p2: Person = otherThing; // Missed opportunity, did not catch my typo.
 Leveraging excess property checking can help us catch potential bugs in the form of typos or incorrect object keys at
 compile time, enhancing the robustness of our code and reducing the likelihood of runtime errors.
 
+### Public read access, Private/Protected write access
+
+When designing an API, you will often encounter the need to make a field read-only in the public API, while
+making it writeable in the private/protected API.  This section shows some patterns for accomplishing that 
+for Property fields, but the concept can extend to other types of fields. 
+
+Anti-pattern:  A single reference is provided that is writeable in the public API, with documentation saying
+"don't write to this", or an implicit hope that no one will write to it. Do not do this.
+
+```ts
+class MyClass {
+
+  // Do not modify! Only MyClass should write to positionProperty.
+  public readonly positionProperty: Property<Vector2>;
+
+  public constructor() {
+     this. positionProperty = new Vector2Property( ... );
+  }
+
+  public reset(): void {
+    this.positionProperty.reset();
+  }
+}
+```
+
+Pattern 1: This pattern uses 2 references to the same Property instance. The public reference is read-only for getting the value.
+The private reference is for setting and resetting the instance internal to the class. The convention is for the private field
+name to begin with an underscore (`_positionProperty`).
+
+```ts
+class MyClass {
+
+  public readonly positionProperty: TReadOnlyProperty<Vector2>;
+  private readonly _positionProperty: Property<Vector2>;
+
+  public constructor() {
+     this. _positionProperty = new Vector2Property( ... );
+     this. positionProperty = this.positionProperty;
+  }
+
+  public reset(): void {
+    this._positionProperty.reset();
+  }
+}
+```
+
+Pattern 2: Provide public read-only access to the Property value (but not the Property) via an ES5 getter.
+
+```ts
+class MyClass {
+
+  private readonly positionProperty: Property<Vector2>;
+
+  public constructor() {
+     this. positionProperty = new Vector2Property( ... );
+  }
+
+  public reset(): void {
+    this.positionProperty.reset();
+  }
+
+  get position(): Vector2 {
+    return this.positionProperty.value;
+  }
+}
+```
+
+Pattern 3: A variation of Pattern 2, this pattern provides public read-only access to the Property (not just the Property value) via an ES5 getter.
+
+```
+class MyClass {
+  private readonly _positionProperty: Property<Vector2>;
+
+  public constructor() {
+    this._positionProperty = new Vector2Property(...);
+  }
+
+  public get positionProperty(): TReadOnlyProperty<Vector2> {
+    return this._positionProperty;
+  }
+
+  public reset(): void {
+    this._positionProperty.reset();
+  }
+}
+```
+
 ## Further Reading
 
 * [PhET Software Design Patterns](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md)
