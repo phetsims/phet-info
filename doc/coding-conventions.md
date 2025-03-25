@@ -11,17 +11,17 @@
   * [Leveraging Type Inference](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#leveraging-type-inference)
   * [Enumerations](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#enumerations)
   * [Parameter Types](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#parameter-types)
-  * Prefer TReadOnlyProperty to DerivedProperty for type annotations
+  * [Prefer TReadOnlyProperty to DerivedProperty for type annotations](https://github.com/phetsims/phet-info/edit/main/doc/coding-conventions.md#prefer-treadonlyproperty-to-derivedproperty-for-type-annotations)
   * [Options](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#options)
   * [Instance Properties](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#instance-properties)
-  * Class Properties (static)
+  * [Class Properties (static)](https://github.com/phetsims/phet-info/edit/main/doc/coding-conventions.md#class-properties-static)
   * Documentation
   * [Multiple Exports](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#multiple-exports)
   * [Multiple Imports in One Expression](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#multiple-imports-in-one-expression)
   * [Assertions](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#assertions)
   * [JSDoc and TSDoc](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#jsdoc-and-tsdoc)
-  * Non-null assertion operator
-  * [Leverage Excess Property Checking](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#leveraging-excess-property-checking)
+  * [Non-null assertion operator](https://github.com/phetsims/phet-info/edit/main/doc/coding-conventions.md#non-null-assertion-operator)
+  * [Leverage Excess Property Checking](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#leverage-excess-property-checking)
 * [Further Reading](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#further-reading)
 
 ## JavaScript
@@ -509,7 +509,7 @@ class EventCounter {
 }
 ```
 
-#### Class Properties (static)
+### Class Properties (static)
 
 One-line static properties will likely be better and clearer when grouped with the instance properties declared at the
 top of a class. That said, it is developer preference whether to group them or put them at the bottom of the class
