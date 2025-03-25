@@ -675,6 +675,8 @@ const p2: Person = otherThing; // Missed opportunity, did not catch my typo.
 Leveraging excess property checking can help us catch potential bugs in the form of typos or incorrect object keys at
 compile time, enhancing the robustness of our code and reducing the likelihood of runtime errors.
 
+See also Item 11 "Distinguish Excess Property Checking from Type Checking" in [Effective Typescript](https://effectivetypescript.com) by Dan Vanderkam.
+
 ### Read vs Write APIs
 
 When designing an API, you will often encounter the need to make a field read-only in the public API, while
@@ -767,6 +769,5 @@ class MyClass {
 ## Further Reading
 
 * [PhET Software Design Patterns](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md)
-* Item 11 "Distinguish Excess Property Checking from Type Checking" in [Effective Typescript](https://effectivetypescript.com) by Dan Vanderkam.
 * Notes in https://github.com/phetsims/ratio-and-proportion/issues/405
 * Notes in https://github.com/phetsims/phet-info/blob/main/doc/typescript-quick-start.md 
