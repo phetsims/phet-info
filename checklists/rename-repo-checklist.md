@@ -6,7 +6,6 @@
 - [ ] On Github.com, go to repo -> Settings -> Options -> "Repository name"  and rename.
 - [ ] Rename in `perennial/data/active-repos` and any other perennial data files it occurs in,
   like `active-runnables`, `active-sims`, `phet-io`, etc. Push the change to perennial and then pull perennial-alias.
-- [ ] Delete the old repo
 - [ ] Clone the new repo by running `grunt sync`.
 - [ ] Update `package.json` accordingly. Including but not necessarily limited to:
   * `name`
