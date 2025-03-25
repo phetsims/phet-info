@@ -1,4 +1,4 @@
-# Coding Conventions
+# PhET Coding Conventions
 
 ## Table of Contents
 
@@ -676,9 +676,8 @@ compile time, enhancing the robustness of our code and reducing the likelihood o
 
 ## Further Reading
 
-Please see Item 11 "Recognize the Limits of Excess Property Checking" in the book _Effective
+* [PhET Software Design Patterns](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md)
+* Item 11 "Recognize the Limits of Excess Property Checking" in the book _Effective
 Typescript_ by Vanderkam.
-
-Please see other notes in:
-* https://github.com/phetsims/ratio-and-proportion/issues/405
-* https://github.com/phetsims/phet-info/blob/main/doc/typescript-quick-start.md 
+* Notes in https://github.com/phetsims/ratio-and-proportion/issues/405
+* Notes in https://github.com/phetsims/phet-info/blob/main/doc/typescript-quick-start.md 
