@@ -10,7 +10,7 @@
   * [Philosophy](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#philosophy)
   * [Leveraging Type Inference](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#leveraging-type-inference)
   * [Enumerations](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#enumerations)
-  * [Parameters](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#parameters)
+  * [Parameter Types](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#parameter-types)
   * Prefer TReadOnlyProperty to DerivedProperty for type annotations
   * [Options](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#options)
   * [Initialization of instance properties](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#initialization-of-instance-properties)
@@ -415,9 +415,9 @@ Again, in complex or volatile cases, at the developer preference, the redundant 
 * Please see https://github.com/phetsims/wilder/blob/main/js/wilder/model/WilderEnumerationPatterns.ts for details and
   examples.
 
-### Parameters
+### Parameter Types
 
-Parameters should be as general as possible.
+Parameter types should be as general as possible.
 
 This relates to Vanderkam's Item 29 "Be liberal in what you accept and strict in what you produce.". For example:
 
