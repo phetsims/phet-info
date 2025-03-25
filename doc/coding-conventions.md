@@ -2,9 +2,27 @@
 
 ## Table of Contents
 
-* [JavaScript](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#JavaScript)
-* [Documentation](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#Documentation)
-* [TypeScript](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#TypeScript)
+* [JavaScript](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#javaScript)
+* [Documentation](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#documentation)
+* [TypeScript](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#typeScript)
+  * [Access Modifiers](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#access-modifiers)
+  * [ESLint](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#eslint)
+  * [Philosophy](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#philosophy)
+  * [Leveraging Type Inference](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#leveraging-type-inference)
+  * [Enumerations](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#enumerations)
+  * [Parameters](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#parameters)
+  * Prefer TReadOnlyProperty to DerivedProperty for type annotations
+  * [Options](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#options)
+  * [Initialization of instance properties](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#initialization-of-instance-properties)
+  * Statics (class properties)
+  * Documentation
+  * [Multiple Exports](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#multiple-exports)
+  * [Multiple Imports in One Expression](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#multiple-imports-in-one-expression)
+  * [Assertions](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#assertions)
+  * [JSDoc and TSDoc](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#jsdoc-and-tsdoc)
+  * Non-null assertion operator
+  * [Leverage Excess Property Checking](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#leveraging-excess-property-checking)
+* [Further Reading](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#further-reading)
 
 ## JavaScript
 - [ ] Is the code formatted according to PhET conventions?
@@ -293,7 +311,7 @@ These are the conventions established for TypeScript use by PhET developers. Thi
 phase. Please bring things up for discussion to add here as you identify new conventions. Conventions enforced by lint
 or other tooling are not listed here.
 
-## Access Modifiers
+### Access Modifiers
 
 This section deals with PhET conventions for TypeScript access modifiers (`public`, `protected`, `private`), and additional modifiers like `readonly`. Instead of relying on JSDoc annotations to document visibility, you can leverage TypeScript’s built-in features. You may still use TSDoc/JSDoc comments to document details of your API or annotate more specialized visibility scenarios (e.g. “scenery-internal”).
 
@@ -397,7 +415,9 @@ Again, in complex or volatile cases, at the developer preference, the redundant 
 * Please see https://github.com/phetsims/wilder/blob/main/js/wilder/model/WilderEnumerationPatterns.ts for details and
   examples.
 
-### Parameters should be as general as possible
+### Parameters
+
+Parameters should be as general as possible.
 
 This relates to Vanderkam's Item 29 "Be liberal in what you accept and strict in what you produce.". For example:
 
@@ -417,7 +437,7 @@ However, something that has to be PhET-iO instrumented should use `Property` ins
 additional
 `Property` methods are not exercised. This will help clients know that it must be a fully-instrumentable axon Property.
 
-### Prefer TReadOnlyProperty to DerivedProperty for type annotations.
+### Prefer TReadOnlyProperty to DerivedProperty for type annotations
 
 Prefer `TReadOnlyProperty` to `DerivedProperty` for type declarations,
 see https://github.com/phetsims/build-a-nucleus/issues/13
@@ -446,9 +466,8 @@ class HalfLifeInformationNode extends Node {
 See https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#options-typescript and
 https://github.com/phetsims/wilder/blob/main/js/wilder/model/WilderOptionsPatterns.ts.
 
-#### Use `optionize` instead of `merge`
-
-In the vast majority of cases, `optionize` should be used instead of `merge`. This provided extra type information on
+**Use `optionize` instead of `merge`.** In the vast majority of cases, `optionize` should be used instead of `merge`.
+This provided extra type information on
 top of the implementation of merge. While there are still some cases where `merge` is in TypeScript code, it is the
 exception and not the rule. Please bring any potential new `merge` usage in TypeScript to the attention of the devs so
 that it can be discussed.
