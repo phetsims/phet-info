@@ -701,9 +701,9 @@ class MyClass {
 }
 ```
 
-**Pattern 1**: This pattern uses 2 references to the same Property instance. The public reference is read-only for getting the value.
-The private reference is for setting and resetting the instance internal to the class. The convention is for the private field
-name to begin with an underscore (`_positionProperty`).
+**Pattern 1**: This pattern uses two fields that are references to the same Property instance. The `public` reference is read-only for getting the value.
+The `private` reference is for setting and resetting the instance internal to the class. Use `protected` here if it is appropriate for subclasses to 
+modify the Property. The convention is for the private/protected field name to begin with an underscore (`_positionProperty`).
 
 ```ts
 class MyClass {
@@ -744,6 +744,7 @@ class MyClass {
 ```
 
 **Pattern 3**: A variation of Pattern 2, this pattern provides public read-only access to the Property (not just the Property value) via an ES5 getter.
+Note that the field name must begin with an underscore (`_positionProperty`) so that it does not conflict with the ES5 getter name.
 
 ```
 class MyClass {
