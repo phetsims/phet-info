@@ -648,7 +648,7 @@ assertion operator is appropriate:
 
 ### Leverage Excess Property Checking
 
-TypeScript is structurally typed, but has a feature called excess property checking that can, in some situations, guard
+TypeScript is structurally typed, but has a feature called _excess property checking_ that can, in some situations, guard
 against typos or any form of incorrect object keys. Excess property checking identifies when an object literal is
 compatible with a target type and disallows properties that are not known in that type. For example:
 
