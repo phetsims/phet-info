@@ -1,5 +1,6 @@
-## Coding Conventions
+# Coding Conventions
 
+## JavaScript
 - [ ] Is the code formatted according to PhET conventions?
   See [phet-idea-code-style.xml](https://github.com/phetsims/phet-info/blob/main/ide/idea/phet-idea-codestyle.xml) for
   IntelliJ IDEA code style.
@@ -216,7 +217,7 @@
 - [ ] The PhET pattern for Enumerations should typically be deeply immutable. Mutable instances most likely shouldn't be
   Enumerations. If you see a mutable enumeration value that isn't a bug, that's interesting and let the developers know!
 
-### Documentation
+## Documentation
 
 This section deals with PhET documentation conventions. You do not need to exhaustively check every item in this
 section, nor do you necessarily need to check these items one at a time. The goal is to determine whether the code
@@ -280,17 +281,17 @@ generally meets PhET standards.
 - [ ] Do the `@author` annotations seem correct?
 
 
-#### Visibility Annotations
+## TypeScript-Specific Conventions
 
-# Visibility Annotations in TypeScript
+These are the conventions established for TypeScript use by PhET developers. This is an evolving document in an early
+phase. Please bring things up for discussion to add here as you identify new conventions. Conventions enforced by lint
+or other tooling are not listed here.
 
-This section deals with PhET conventions for visibility annotations in **TypeScript**, which *does* include language-level access modifiers (`public`, `protected`, `private`), plus additional features like `readonly`. Instead of relying on JSDoc annotations for visibility, you can leverage TypeScript’s built-in features. You may still use TSDoc/JSDoc comments to document details of your API or annotate more specialized visibility scenarios (e.g. “scenery-internal”).
+## Access Modifiers
 
----
+This section deals with PhET conventions for TypeScript access modifiers (`public`, `protected`, `private`), and additional modifiers like `readonly`. Instead of relying on JSDoc annotations to document visibility, you can leverage TypeScript’s built-in features. You may still use TSDoc/JSDoc comments to document details of your API or annotate more specialized visibility scenarios (e.g. “scenery-internal”).
 
-## Visibility Modifiers in TypeScript
-
-TypeScript provides first-class support for visibility through its access modifiers. As part of PhET conventions, here is how you can map those modifiers to the intended usage:
+TypeScript provides first-class support for visibility and access through its access modifiers. As part of PhET conventions, here is how you can map those modifiers to the intended usage:
 
 - **`public`**  
   Anything that is part of your *public API*—callers outside the class should be free to access or invoke it.
@@ -301,7 +302,7 @@ TypeScript provides first-class support for visibility through its access modifi
 - **`private`**  
   Members that should not be used outside of the containing class.
 
-Additionally, TypeScript provides several other useful keywords for refining your API:
+Additionally, TypeScript provides several other useful modifiers for refining your API:
 
 - **`readonly`**  
   Indicates that a property is set once (typically in the constructor) and should not be reassigned later.
@@ -315,12 +316,6 @@ Additionally, TypeScript provides several other useful keywords for refining you
     // Attempting to reassign id outside of constructor will cause a TypeScript error
   }
   ```
-
-# TypeScript Specific Conventions
-
-These are the conventions established for TypeScript use by PhET developers. This is an evolving document in an early
-phase. Please bring things up for discussion to add here as you identify new conventions. Conventions enforced by lint
-or other tooling are not listed here.
 
 ### ESLint
 
