@@ -1,5 +1,11 @@
 # Coding Conventions
 
+## Table of Contents
+
+* [JavaScript](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#JavaScript)
+* [Documentation](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#Documentation)
+* [TypeScript](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#TypeScript)
+
 ## JavaScript
 - [ ] Is the code formatted according to PhET conventions?
   See [phet-idea-code-style.xml](https://github.com/phetsims/phet-info/blob/main/ide/idea/phet-idea-codestyle.xml) for
@@ -281,7 +287,7 @@ generally meets PhET standards.
 - [ ] Do the `@author` annotations seem correct?
 
 
-## TypeScript-Specific Conventions
+## TypeScript
 
 These are the conventions established for TypeScript use by PhET developers. This is an evolving document in an early
 phase. Please bring things up for discussion to add here as you identify new conventions. Conventions enforced by lint
@@ -514,7 +520,7 @@ class Person {
 }
 ```
 
-#### Documentation
+### Documentation
 
 Documentation for instance properties should be placed with the declaration, not the instantiation. For example:
 
@@ -652,9 +658,11 @@ const p2: Person = otherThing; // Missed opportunity, did not catch my typo.
 Leveraging excess property checking can help us catch potential bugs in the form of typos or incorrect object keys at
 compile time, enhancing the robustness of our code and reducing the likelihood of runtime errors.
 
-For further reading, please see Item 11 "Recognize the Limits of Excess Property Checking" in the book Effective
-Typescript by Vanderkam.
----
+## Further Reading
 
-Please see other notes in https://github.com/phetsims/ratio-and-proportion/issues/405
-and https://github.com/phetsims/phet-info/blob/main/doc/typescript-quick-start.md 
+Please see Item 11 "Recognize the Limits of Excess Property Checking" in the book _Effective
+Typescript_ by Vanderkam.
+
+Please see other notes in:
+* https://github.com/phetsims/ratio-and-proportion/issues/405
+* https://github.com/phetsims/phet-info/blob/main/doc/typescript-quick-start.md 
