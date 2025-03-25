@@ -683,7 +683,7 @@ for Property fields, but the concept can extend to other types of fields.  Other
 and the pattern used is up to the developer.
 
 **Anti-pattern**:  A single reference is provided that is writeable in the public API, with documentation saying
-"don't write to this", or an implicit hope that no one will write to it. Do not do this.
+"don't write to this", or an implicit hope that no one will write to it. _Do not do this._
 
 ```ts
 class MyClass {
