@@ -4,51 +4,51 @@
 NOTE: This file is generated, do not edit directly. It is created from `responsible_dev.json`, see `./generateMarkdownOutput.mjs`.
 
 
-| Simulation  | Developer | Designer | Features |
-| :---------- | :------------- | :------------- | :------------- |
-| a11y-research | @jessegreenberg |  |  | 
-| acid-base-solutions | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
-| alpenglow | @jonathanolson |  |  | 
-| aqua | @zepumph |  |  | 
-| area-builder | @jbphet | @amanda-phet | Sound | 
-| area-model-algebra | @jonathanolson | @amanda-phet | Sound | 
-| area-model-common | @jonathanolson | @amanda-phet |  | 
-| area-model-decimals | @jonathanolson | @amanda-phet |  | 
-| area-model-introduction | @jonathanolson | @amanda-phet |  | 
-| area-model-multiplication | @jonathanolson | @amanda-phet | Sound | 
-| arithmetic | @jbphet | @amanda-phet | Sound | 
-| assert | @jonathanolson |  |  | 
-| atomic-interactions | @jbphet | @arouinfar |  | 
-| axon | @samreid |  |  | 
-| babel | @jbphet |  |  | 
-| balancing-act | @jbphet | @DianaTavares | Sound | 
-| balancing-chemical-equations | @pixelzoom | @arouinfar | Sound | 
-| balloons-and-static-electricity | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
-| bamboo | @samreid |  | Sound<br/>Interactive Description | 
-| beaker | @samreid |  |  | 
-| beers-law-lab | @pixelzoom | @arouinfar |  | 
-| bending-light | @samreid | @arouinfar |  | 
-| binder | @zepumph |  |  | 
-| blackbody-spectrum | @AgustinVallejo,@jbphet | @DianaTavares |  | 
-| blast | @samreid |  |  | 
-| brand | @zepumph |  |  | 
-| build-a-fraction | @jonathanolson | @amanda-phet | Sound | 
-| build-a-molecule | @jonathanolson | @arouinfar | Sound | 
-| build-a-nucleus | @Luisav1,@zepumph |  | Interactive Description | 
-| build-an-atom | @jbphet | @DianaTavares | Sound | 
-| bumper | @jonathanolson |  | Interactive Description | 
-| buoyancy | @AgustinVallejo,@zepumph | @DianaTavares | Sound<br/>Interactive Description | 
-| buoyancy-basics | @AgustinVallejo,@zepumph | @DianaTavares | Sound<br/>Interactive Description | 
-| calculus-grapher | @veillette,@pixelzoom | @amanda-phet |  | 
-| capacitor-lab-basics | @jonathanolson | @arouinfar |  | 
-| center-and-variability | @samreid,@marlitas | @amanda-phet | Sound<br/>Interactive Description | 
-| chains | @jbphet |  |  | 
-| charges-and-fields | @jonathanolson | @arouinfar |  | 
-| chipper | @jonathanolson |  |  | 
-| circuit-construction-ios-app | @samreid |  |  | 
-| circuit-construction-kit-ac | @samreid | @arouinfar |  | 
-| circuit-construction-kit-ac-virtual-lab | @samreid | @arouinfar |  | 
-| circuit-construction-kit-basics | @samreid | @arouinfar |  | 
+| Simulation                               | Developer | Designer | Features |
+|:-----------------------------------------| :------------- | :------------- | :------------- |
+| a11y-research                            | @jessegreenberg |  |  | 
+| acid-base-solutions                      | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
+| alpenglow                                | @jonathanolson |  |  | 
+| aqua                                     | @zepumph |  |  | 
+| area-builder                             | @jbphet | @amanda-phet | Sound | 
+| area-model-algebra                       | @jonathanolson | @amanda-phet | Sound | 
+| area-model-common                        | @jonathanolson | @amanda-phet |  | 
+| area-model-decimals                      | @jonathanolson | @amanda-phet |  | 
+| area-model-introduction                  | @jonathanolson | @amanda-phet |  | 
+| area-model-multiplication                | @jonathanolson | @amanda-phet | Sound | 
+| arithmetic                               | @jbphet | @amanda-phet | Sound | 
+| assert                                   | @jonathanolson |  |  | 
+| atomic-interactions                      | @jbphet | @arouinfar |  | 
+| axon                                     | @samreid |  |  | 
+| babel                                    | @jbphet |  |  | 
+| balancing-act                            | @jbphet | @DianaTavares | Sound | 
+| balancing-chemical-equations             | @pixelzoom | @arouinfar | Sound | 
+| balloons-and-static-electricity          | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
+| bamboo                                   | @samreid |  | Sound<br/>Interactive Description | 
+| beaker                                   | @samreid |  |  | 
+| beers-law-lab                            | @pixelzoom | @arouinfar |  | 
+| bending-light                            | @samreid | @arouinfar |  | 
+| binder                                   | @zepumph |  |  | 
+| blackbody-spectrum                       | @AgustinVallejo,@jbphet | @DianaTavares |  | 
+| blast                                    | @samreid |  |  | 
+| brand                                    | @zepumph |  |  | 
+| build-a-fraction                         | @jonathanolson | @amanda-phet | Sound | 
+| build-a-molecule                         | @jonathanolson | @arouinfar | Sound | 
+| build-a-nucleus                          | @Luisav1,@zepumph |  | Interactive Description | 
+| build-an-atom                            | @jbphet | @DianaTavares | Sound | 
+| bumper                                   | @jonathanolson |  | Interactive Description | 
+| buoyancy                                 | @AgustinVallejo,@zepumph | @DianaTavares | Sound<br/>Interactive Description | 
+| buoyancy-basics                          | @AgustinVallejo,@zepumph | @DianaTavares | Sound<br/>Interactive Description | 
+| calculus-grapher                         | @veillette,@pixelzoom | @amanda-phet |  | 
+| capacitor-lab-basics                     | @jonathanolson | @arouinfar |  | 
+| center-and-variability                   | @samreid,@marlitas | @amanda-phet | Sound<br/>Interactive Description | 
+| chains                                   | @jbphet |  |  | 
+| charges-and-fields                       | @jonathanolson | @arouinfar |  | 
+| chipper                                  | @jonathanolson |  |  | 
+| circuit-construction-ios-app             | @samreid |  |  | 
+| circuit-construction-kit-ac              | @samreid | @arouinfar |  | 
+| circuit-construction-kit-ac-virtual-lab  | @samreid | @arouinfar |  | 
+| circuit-construction-kit-basics          | @samreid | @arouinfar |  | 
 | circuit-construction-kit-black-box-study | @samreid | @arouinfar |  | 
 | circuit-construction-kit-common | @samreid | @arouinfar |  | 
 | circuit-construction-kit-dc | @samreid | @arouinfar |  | 
