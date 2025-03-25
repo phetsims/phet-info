@@ -15,8 +15,7 @@
 - [ ] Change entry
   in [responsible_dev.json](https://github.com/phetsims/phet-info/blob/main/sim-info/responsible_dev.json).
 - [ ] If applicable, "Sync" on phettest.
-- [ ] Remove old repo directories in `chipper/dist/js`, `chipper/dist/declarations`,
-  and `chipper/dist/js-cache-status.json` and and restart your transpiler.
+- [ ] Remove old repo directories in `chipper/dist/**/${oldRepo}`
 - [ ] Run `rm -rf {{OLD_REPO}}` from the phetsims directory
 - [ ] Notify Slack channel dev-public that the repo has been renamed. E.g. "I just renamed repository {{OLD_REPO}} to
   {{NEW_REPO}}. Please sync at your convenience, remove
