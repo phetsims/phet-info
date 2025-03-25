@@ -679,9 +679,10 @@ compile time, enhancing the robustness of our code and reducing the likelihood o
 
 When designing an API, you will often encounter the need to make a field read-only in the public API, while
 making it writeable in the private/protected API.  This section shows some patterns for accomplishing that 
-for Property fields, but the concept can extend to other types of fields. 
+for Property fields, but the concept can extend to other types of fields.  Other patterns are certainly possible,
+and the pattern used is up to the developer.
 
-Anti-pattern:  A single reference is provided that is writeable in the public API, with documentation saying
+**Anti-pattern**:  A single reference is provided that is writeable in the public API, with documentation saying
 "don't write to this", or an implicit hope that no one will write to it. Do not do this.
 
 ```ts
@@ -700,7 +701,7 @@ class MyClass {
 }
 ```
 
-Pattern 1: This pattern uses 2 references to the same Property instance. The public reference is read-only for getting the value.
+**Pattern 1**: This pattern uses 2 references to the same Property instance. The public reference is read-only for getting the value.
 The private reference is for setting and resetting the instance internal to the class. The convention is for the private field
 name to begin with an underscore (`_positionProperty`).
 
@@ -721,7 +722,7 @@ class MyClass {
 }
 ```
 
-Pattern 2: Provide public read-only access to the Property value (but not the Property) via an ES5 getter.
+**Pattern 2**: Provide public read-only access to the Property value (but not the Property) via an ES5 getter.
 
 ```ts
 class MyClass {
@@ -742,7 +743,7 @@ class MyClass {
 }
 ```
 
-Pattern 3: A variation of Pattern 2, this pattern provides public read-only access to the Property (not just the Property value) via an ES5 getter.
+**Pattern 3**: A variation of Pattern 2, this pattern provides public read-only access to the Property (not just the Property value) via an ES5 getter.
 
 ```
 class MyClass {
