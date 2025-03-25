@@ -15,7 +15,6 @@
   * [Options](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#options)
   * [Instance Properties](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#instance-properties)
   * [Class Properties (static)](https://github.com/phetsims/phet-info/edit/main/doc/coding-conventions.md#class-properties-static)
-  * Documentation
   * [Multiple Exports](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#multiple-exports)
   * [Multiple Imports](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#multiple-imports)
   * [Assertions](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#assertions)
@@ -509,38 +508,6 @@ class EventCounter {
 }
 ```
 
-### Class Properties (static)
-
-One-line static properties will likely be better and clearer when grouped with the instance properties declared at the
-top of a class. That said, it is developer preference whether to group them or put them at the bottom of the class
-definition:
-
-```ts
-class Person {
-
-  readonly name: string;
-
-  // here is a bit better
-  static QUALITIES: [ 'height', 'age' ];
-
-  constructor( name: string ) {
-    this.name = name;
-  }
-
-  sayName() {
-    console.log( name );
-  }
-
-  // or here because it is long
-  static QUALITIES: [
-    'height',
-    'age'
-  ];
-}
-```
-
-### Documentation
-
 Documentation for instance properties should be placed with the declaration, not the instantiation. For example:
 
 ```ts
@@ -574,8 +541,38 @@ class Person {
 }
 ```
 
-The same documentation pattern applies to options. Documentation should generally be placed at the declaration, but
-explanation for defaults should be described where the default values are assigned.
+The same documentation pattern applies to class properties (statics) and options. Documentation should generally be placed
+at the declaration, but explanation for defaults should be described where the default values are assigned.
+
+### Class Properties (static)
+
+One-line static properties will likely be better and clearer when grouped with the instance properties declared at the
+top of a class. That said, it is developer preference whether to group them or put them at the bottom of the class
+definition:
+
+```ts
+class Person {
+
+  readonly name: string;
+
+  // here is a bit better
+  static QUALITIES: [ 'height', 'age' ];
+
+  constructor( name: string ) {
+    this.name = name;
+  }
+
+  sayName() {
+    console.log( name );
+  }
+
+  // or here because it is long
+  static QUALITIES: [
+    'height',
+    'age'
+  ];
+}
+```
 
 ### Multiple Exports
 
