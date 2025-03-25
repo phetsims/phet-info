@@ -746,7 +746,7 @@ class MyClass {
 **Pattern 3**: A variation of Pattern 2, this pattern provides public read-only access to the Property (not just the Property value) via an ES5 getter.
 Note that the field name must begin with an underscore (`_positionProperty`) so that it does not conflict with the ES5 getter name.
 
-```
+```ts
 class MyClass {
   private readonly _positionProperty: Property<Vector2>;
 
