@@ -13,8 +13,8 @@
   * [Parameter Types](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#parameter-types)
   * Prefer TReadOnlyProperty to DerivedProperty for type annotations
   * [Options](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#options)
-  * [Initialization of instance properties](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#initialization-of-instance-properties)
-  * Statics (class properties)
+  * [Instance Properties](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#instance-properties)
+  * Class Properties (static)
   * Documentation
   * [Multiple Exports](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#multiple-exports)
   * [Multiple Imports in One Expression](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#multiple-imports-in-one-expression)
@@ -472,7 +472,7 @@ top of the implementation of merge. While there are still some cases where `merg
 exception and not the rule. Please bring any potential new `merge` usage in TypeScript to the attention of the devs so
 that it can be discussed.
 
-### Initialization of instance properties
+### Instance Properties
 
 Instance properties can be initialized either where they are declared, or in the constructor, or as parameter properties
 in the constructor parameters. It is up to developer discretion, but please try to be consistent, and adhere to the
@@ -509,7 +509,7 @@ class EventCounter {
 }
 ```
 
-#### Statics (class properties)
+#### Class Properties (static)
 
 One-line static properties will likely be better and clearer when grouped with the instance properties declared at the
 top of a class. That said, it is developer preference whether to group them or put them at the bottom of the class
