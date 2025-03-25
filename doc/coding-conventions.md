@@ -17,7 +17,7 @@
   * [Class Properties (static)](https://github.com/phetsims/phet-info/edit/main/doc/coding-conventions.md#class-properties-static)
   * Documentation
   * [Multiple Exports](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#multiple-exports)
-  * [Multiple Imports in One Expression](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#multiple-imports-in-one-expression)
+  * [Multiple Imports](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#multiple-imports)
   * [Assertions](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#assertions)
   * [JSDoc and TSDoc](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#jsdoc-and-tsdoc)
   * [Non-null assertion operator](https://github.com/phetsims/phet-info/edit/main/doc/coding-conventions.md#non-null-assertion-operator)
@@ -605,7 +605,7 @@ export default class DotPlotNode extends Node {
 }
 ```
 
-### Multiple Imports in One Expression
+### Multiple Imports
 
 Multiple imports from the same file should be combined into one statement. This helps clarify that they are related.
 This does not suffer from the same `isolatedModules` constraint as exports; all modules can be imported in the same
