@@ -767,6 +767,6 @@ class MyClass {
 ## Further Reading
 
 * [PhET Software Design Patterns](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md)
-* Item 11 "Recognize the Limits of Excess Property Checking" in [Effective Typescript](https://effectivetypescript.com) by Dan Vanderkam.
+* Item 11 "Distinguish Excess Property Checking from Type Checking" in [Effective Typescript](https://effectivetypescript.com) by Dan Vanderkam.
 * Notes in https://github.com/phetsims/ratio-and-proportion/issues/405
 * Notes in https://github.com/phetsims/phet-info/blob/main/doc/typescript-quick-start.md 
