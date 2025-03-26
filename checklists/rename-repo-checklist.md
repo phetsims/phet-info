@@ -32,3 +32,6 @@
 - [ ] update usages of the Namespace file
 - [ ] Looks through all usages in the repo of the previous name to make sure issues links, comments and code are
   updated. This especially applies to imports for the namespace and strings.
+- [ ] Use  `find` to search for files with the old repo name in generated files outside of the sim repo. For example, from your root directory:
+  * `find . -name quantum-measurement* -print`
+- [ ] Search the entire codebase references to the old repo name.
