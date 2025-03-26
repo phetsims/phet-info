@@ -18,7 +18,7 @@
 - [ ] Run `rm -rf {{OLD_REPO}}` from the phetsims directory
 - [ ] Notify Slack channel dev-public that the repo has been renamed. E.g. "I just renamed repository {{OLD_REPO}} to
   {{NEW_REPO}}. Please sync at your convenience, remove
-  {{OLD_REPO}} in `chipper/dist/` directories, and restart your transpiler."
+  {{OLD_REPO}} references from `chipper/dist/` directories (such as `tsc/outdir/` and `eslint/cache/`), and restart your transpiler."
 
 ### If this is a simulation. . .
 
