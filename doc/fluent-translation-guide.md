@@ -114,7 +114,7 @@ If you do not do this, reloading the sim will not show your changes.** ⚠️
   - Once you are satisfied with the translations, submit a pull request to the PhET GitHub repository with the changes.
     - Commit Changes: Commit the changes to the .ftl files in the babel repository.
     - Open a Pull Request: Create a pull request with the changes to the PhET GitHub repository.
-    - Review and Approval: The PhET team will review and approve the submission to verify functionality. Addres any feedback or changes.
+    - Review and Approval: The PhET team will review and approve the submission to verify functionality. Address any feedback or changes.
     - Finalization: Once approved, your translation will be merged into the main repository. Your translation will be included in future releases of the simulation.
 
 ## Examples
