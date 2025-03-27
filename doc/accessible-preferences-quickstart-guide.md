@@ -103,7 +103,7 @@ const myRadioButtonGroup = new AquaRadioButtonGroup( someProperty, items, {
 ```js
 // optional context responses that describe the result of the changing Property
 //someProperty.lazyLink( value => {
-//  myRadioButtonGroup.alertDescriptionUtterance( value );
+//  myRadioButtonGroup.addAccessibleResponse( value );
 //} );
 ```
 
