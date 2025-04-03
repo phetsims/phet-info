@@ -65,18 +65,12 @@ visit the [SceneryStack Discussions forum](https://github.com/orgs/scenerystack/
   tools. The instructions for that are at
   https://git-scm.com/book/en/v2/Getting-Started-Installing-Git.
 * `node` and `npm` are necessary to install dependencies and run build code processes. Download & install node+npm
-  from https://nodejs.org/en/
+  from https://nodejs.org/en/. Install via `nvm` so that permissions are simpler for the `npm install -g` steps below. 
   * After installing, run `npm config set save false` and `npm config set package-lock false` so that package-lock.json
     files are not created.
 * Create a directory where you intend to check out the PhET source code: `mkdir phetsims`
-* For building the simulations, install the grunt command line utility: `npm install -g grunt-cli` (May require `sudo`
-  if you don't have sufficient permissions).
-* An HTTP Server is necessary to launch the simulations during development (though not necessary for built simulations).
-  Some systems already have Apache, or you can install something like `npm install http-server -g`. (May require `sudo`
-  if you don't have sufficient permissions).
-* Serve files from the `phetsims/` directory. For `http-server` this can be done like so:
-  * Change into the phetsims directory `cd phetsims/`
-  * Run the http server program (with caching turned off to help with iteration) `http-server -c-1`
+* For building the simulations, install the grunt command line utility: `npm install -g grunt-cli`
+* After checking out the code (see below), run a development server from one of the repos like so: `grunt dev-server` 
 
 ### Checking out the code
 
