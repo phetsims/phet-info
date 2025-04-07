@@ -44,14 +44,14 @@ After modifying package.json, run `grunt update` to apply changes.
 
 ## Screen Summary
 
-Use ScreenSummaryContent.ts in joist to implement the screen summary.
+Use `ScreenSummaryContent.ts` in joist to implement the screen summary.
 
 For each screen, the design document provides text for the play area, control area, current details, and an interaction
-hint. Pass these to ScreenSummaryContent, then include that content as an option in the ScreenView constructor.
+hint. Pass these to `ScreenSummaryContent`, then include that content as an option in the `ScreenView` constructor.
 
 ## Basic options
 
-The options `accessibleName`, `accessibleHelpText`, and `accessibleParagraph` are defined in scenery's ParallelDOM.ts.
+The options `accessibleName`, `accessibleHelpText`, and `accessibleParagraph` are defined in scenery's `ParallelDOM.ts`.
 These are most of what you will use to implement Tier 1 Interactive Description.
 
 ### accessibleName and accessibleHelpText

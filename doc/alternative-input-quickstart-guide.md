@@ -55,10 +55,6 @@ Follow these steps to add support for alternative input to a simulation.
    See https://github.com/phetsims/phet-info/blob/main/doc/interactive-highlights-quickstart-guide.md for more
    information about this feature.
 
-4. Sims that support alternative input also need an accessible Preferences dialog. See
-   https://github.com/phetsims/phet-info/blob/main/doc/accessible-preferences-quickstart-guide.md for information about
-   this.
-
 ## Make a Node focusable
 
 Most common code UI components are already focusable. But you can make any Node focusable by using these options from
