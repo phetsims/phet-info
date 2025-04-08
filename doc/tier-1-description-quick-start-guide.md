@@ -177,6 +177,20 @@ interactions.
 To make a component fully keyboard accessible, pass `AccessibleDraggableOptions` to the target Node. These options add
 the necessary support for screen-reader interaction.
 
+### Roles
+
+Certain components benefit from a custom role description, which explains their purpose and how to interact with them.
+You can set it with the option `accessibleRoleDescription`:
+
+```ts
+const draggableCircle = new Circle( 5, {
+  accessibleRoleDescription: 'Draggable',
+
+  tagName: 'div',
+  focusable: true,
+} );
+```
+
 ## Internationalization
 
 Accessibility strings are not yet translatable. However, plan for future translation by keeping string patterns simple
