@@ -183,8 +183,8 @@ Certain components benefit from a custom role description, which explains their 
 You can set it with the option `accessibleRoleDescription`:
 
 ```ts
-const draggableCircle = new Circle( 5, {
-  accessibleRoleDescription: 'Draggable',
+const movableCircle = new Circle( 5, {
+  accessibleRoleDescription: 'Movable',
 
   tagName: 'div',
   focusable: true,
