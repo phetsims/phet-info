@@ -184,7 +184,7 @@ You can set it with the option `accessibleRoleDescription`:
 
 ```ts
 const movableCircle = new Circle( 5, {
-  accessibleRoleDescription: 'Movable',
+  accessibleRoleDescription: 'movable',
 
   tagName: 'div',
   focusable: true,
