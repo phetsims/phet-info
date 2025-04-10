@@ -3,10 +3,11 @@
 ## Overview
 
 PhET Interactive Simulations creates free, open source educational simulations in science and math, which you can find
-at the PhET website. This document explains PhET’s libraries ([SceneryStack](https://scenerystack.org/), practices and patterns for developing interactive
-simulations in HTML5. This document is also available
-at https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md. For discussion and feedback, please
-visit the [SceneryStack Discussions forum](https://github.com/orgs/scenerystack/discussions).
+at the PhET website. PhET Interactive Simulations are created using the [SceneryStack](https://scenerystack.org/) web development libraries. This document explains the internal development process using SceneryStack libraries, and practices and patterns for developing interactive simulations in HTML5. 
+
+If you are developing a simulation, but are not working directly with PhET, please refer to the [SceneryStack documentation](https://scenerystack.org/learn/simulation/) for best practices developing simulations using the bundled NPM package.
+
+This document is also available at https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md.
 
 
 <!--@formatter:off-->
@@ -131,11 +132,6 @@ npm install
   simulations: http://localhost:8080/example-sim/build/adapted-from-phet/example-sim_en_adapted-from-phet.html (port or
   path may depend on your HTTP server configuration)
 
-### Questions
-
-* Questions should be directed to
-  the [SceneryStack Discussions forum](https://github.com/orgs/scenerystack/discussions).
-
 ## Creating a New Sim
 
 After checking out the dependencies and installing grunt-cli in the preceding instructions, you can create your own
@@ -160,8 +156,7 @@ simulation using the template.
 6. In your simulation directory, run the transpiler watch process and specify your new repo as a target:
    `cd ../acceleration-lab`
    `grunt output-js-project --live`
-7. Test the created simulation in the browser and make sure it launches. It should be a blank simulation. Write to the
-   [SceneryStack Discussions forum](https://github.com/orgs/scenerystack/discussions) if you run into problems.
+7. Test the created simulation in the browser and make sure it launches. It should be a blank simulation.
 
 ## Building and Testing
 
@@ -269,10 +264,16 @@ as common dependencies are changed.
 The main branch of the PhET simulation and library repositories is constantly under development and not guaranteed to be
 stable. It is our intent that the main branch of simulations + libraries will build and run properly, but sometimes the
 code goes through intermediate states where errors can be introduced. On the other hand, our published simulations have
-been rigorously tested across 18+ platforms and are the most stable option. If you are adapting a PhET simulation, or
-would like to access simulation code that corresponds directly to one of our published versions, then you will need to
-check out specific SHA revisions in all of the appropriate repositories. Checking out these fixed, tested revisions is
-also important when working on a release-candidate branch of a simulation. Here are the instructions:
+been rigorously tested across 18+ platforms and are the most stable option. 
+
+If you are building a simulation from scratch using [SceneryStack](https://scenerystack.org/learn/overview), 
+you will only need to worry about potential breaking changes when updating the NPM package to a newer version. 
+See [SceneryStack Versioning](https://scenerystack.org/community/versioning/) for more information.
+
+If you are adapting a PhET simulation, or would like to access simulation code that corresponds directly to one 
+of our published versions, then you will need to check out specific SHA revisions in all of the appropriate repositories. 
+Checking out these fixed, tested revisions is also important when working on a release-candidate branch of a simulation. 
+Here are the instructions:
 
 1. First, identify the version for which you want to check out the source code, for
    example: https://phet.colorado.edu/sims/html/area-builder/latest/area-builder_en.html
