@@ -42,6 +42,15 @@ In package.json, set the following flag to enable interactive description:
 
 After modifying package.json, run `grunt update` to apply changes.
 
+## Testing
+
+After enabling Interactive Description in package.json, launch the a11y-view from phetmarks. An iframe on the left shows
+the simulation, and on the right you’ll see a representation of the accessible content. This right pane displays what a
+screen reader can read. As you add or revise accessibility content, refresh the page to see your changes.
+
+To test directly with a screen reader, run the simulation without the a11y-view and enable your screen reader. For
+details on installing and using screen readers, see the resources at the end of this document.
+
 ## Screen Summary
 
 Use `ScreenSummaryContent.ts` in joist to implement the screen summary.
