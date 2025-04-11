@@ -107,11 +107,8 @@ cd ../${directory of the sim you are working on}
 npm install
 ```
 
-### Transpile TypeScript
+###  TypeScript
 
-* Change directory to the build tools: `cd chipper/`
-* Run the TypeScript transpiler: `grunt transpile --all --live` which starts a process that will auto-transpile
-  when files change.
 * For more details about TypeScript, please
   see [PhET's TypeScript Quick Start Guide](https://github.com/phetsims/phet-info/blob/main/doc/typescript-quick-start.md)
 
@@ -153,9 +150,9 @@ simulation using the template.
    `grunt create-sim --repo=NAME --author=AUTHOR`
    For instance, if the simulation is going to be named Acceleration Lab and the author is Jane Doe, then you could put:
    `grunt create-sim --repo=acceleration-lab --author="Jane Doe"`
-6. In your simulation directory, run the transpiler watch process and specify your new repo as a target:
+6. In your simulation directory, run the dev-server:
    `cd ../acceleration-lab`
-   `grunt output-js-project --live`
+   `grunt dev-server`
 7. Test the created simulation in the browser and make sure it launches. It should be a blank simulation.
 
 ## Building and Testing
