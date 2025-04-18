@@ -72,7 +72,7 @@ Tier 1 Voicing needs by providing a name and hint for the component.
 
 Many components already determine their default Voicing content.
 
-- If a component has an `accessibleName`, it iss used for `voicingNameResponse`
+- If a component has an `accessibleName`, it is used for `voicingNameResponse`
 - If it has an `accessibleHelpText`, that is used for `voicingHintResponse`.
 
 As a result, Tier 1 Voicing often comes for free once Tier 1 Interactive Description is in place. However, you can
