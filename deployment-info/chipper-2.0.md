@@ -61,8 +61,8 @@ chipper may be needed. I'll notify for any further module changes.
 
 Note that all perennial commands (including those for dev/rc/production deployments) can be run from newer (as of
 sometime December 2017) simulations from the simulation directory. For instance, `grunt checkout-shas` now lives in
-perennial, but newer chipper SHAs will detect this and spawn the correct perennial grunt task. It will add
-a `--repo={{REPO}}` command line flag to the perennial command so that it knows which repository is the target.
+perennial, but newer chipper SHAs will detect this and spawn the correct perennial grunt task. It will add a
+`--repo={{REPO}}` command line flag to the perennial command so that it knows which repository is the target.
 
 So, for example,
 
@@ -84,8 +84,8 @@ perennial# grunt dev --repo=chains --brands=phet,phet-io
 
 ## Configure build-local.json settings
 
-Your default build configuration is specified in `~/.phet/build-local.json`. Describing or identifying the entries
-in `build-local.json` is beyond the scope of this document; ask a PhET developer for help in setting up this file. At a
+Your default build configuration is specified in `~/.phet/build-local.json`. Describing or identifying the entries in
+`build-local.json` is beyond the scope of this document; ask a PhET developer for help in setting up this file. At a
 minimum you will need `devUsername` and `buildServerAuthorizationCode`. A few handy keys:
 
 - `buildServerNotifyEmail`: add your email to be notified on the success or failure of your builds to the build server.
@@ -124,11 +124,11 @@ Configure an RSA key, or you will be prompted multiple times for a password duri
 
 - Add your public key (found in `localhost@~/.ssh/id_rsa.pub`) to `bayes@~/.ssh/authorized_keys`.
   - This can usually be accomplished by running `ssh-copy-id bayes`.
-  - If you don't have `ssh-copy-id`,
-    use `cat ~/.ssh/id_rsa.pub | ssh {{IDENTIKEY}}@bayes.colorado.edu "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"`
+  - If you don't have `ssh-copy-id`, use
+    `cat ~/.ssh/id_rsa.pub | ssh {{IDENTIKEY}}@bayes.colorado.edu "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"`
 - Change the permissions of `authorized_keys` so it is not group writable: `chmod g-w authorized_keys`
-- Test ssh from your local machine at least once so that you can accept the remote RSA key from bayes by
-  running `ssh bayes`.
+- Test ssh from your local machine at least once so that you can accept the remote RSA key from bayes by running
+  `ssh bayes`.
 
 ## Dev deployments
 
@@ -150,8 +150,8 @@ increment the version test number (e.g. the 2 in 1.3-dev.2). For example, if the
 These are like dev deployments, but should be done from a named branch (where the name does not contain any `-` or `.`
 characters).
 
-Prior to branch creation, be sure to create a GitHub issue within the associated repo. Its title should be of the
-form `branch: {{branchName}}`, and the description should describe the purpose of the branch, expected lifetime of the
+Prior to branch creation, be sure to create a GitHub issue within the associated repo. Its title should be of the form
+`branch: {{branchName}}`, and the description should describe the purpose of the branch, expected lifetime of the
 branch, and links to any other relevant issues.
 
 To create a branch (easily) for one-off deployments, run:
@@ -172,8 +172,8 @@ from the branch.
 
 ## RC/production deployments and release branches
 
-Chipper 2.0 release branches support building of all brands. The branch name will ONLY ever be of the
-format `{{MAJOR}}.{{MINOR}}`, e.g. `1.7`, and that branch will only support building/deploying versions that match that
+Chipper 2.0 release branches support building of all brands. The branch name will ONLY ever be of the format
+`{{MAJOR}}.{{MINOR}}`, e.g. `1.7`, and that branch will only support building/deploying versions that match that
 major/minor combination.
 
 NOTE: Release branches are created for RCs. If you need to make a change after the first RC (but before publication),
@@ -186,14 +186,13 @@ also deploy an RC (which is typical when creating the release branch), just run 
 prompt you whether the release branch should be created. For example, if `1.6` was the latest release branch, and you
 want to create `1.7` and deploy an RC, just fire off `grunt rc --branch=1.7 --brands={{BRANDS}}`.
 
-If you do not want to deploy an RC when creating the release branch, instead directly
-do `grunt create-release --branch=1.7 --brands={{BRANDS}}` (which will handle all steps to create the new branch).
-Release branches should be created using either `grunt rc` or `grunt create-release`, as this sets them up with the
-correct package.json version and dependencies.json content.
+If you do not want to deploy an RC when creating the release branch, instead directly do
+`grunt create-release --branch=1.7 --brands={{BRANDS}}` (which will handle all steps to create the new branch). Release
+branches should be created using either `grunt rc` or `grunt create-release`, as this sets them up with the correct
+package.json version and dependencies.json content.
 
-NOTE: The `--brands` you include in the command will be set as the only supported brands for the release branch in
-the `package.json`. NOTE: It will initialize the branch to a version of 1.0.0-rc.0, and then increment/deploy to
-1.0.0-rc.1.
+NOTE: The `--brands` you include in the command will be set as the only supported brands for the release branch in the
+`package.json`. NOTE: It will initialize the branch to a version of 1.0.0-rc.0, and then increment/deploy to 1.0.0-rc.1.
 
 ### RC/production deployment on an existing branch
 
@@ -228,24 +227,24 @@ suite of sims in RC" section in automated-maintenance-process.md.
 If you want to make a change to the sim's own repo on the release branch (and no changes to other dependencies), then
 generally first do the following:
 
-- From perennial, `grunt checkout-target --repo={{REPO}} --target={{BRANCH}}`,
-  e.g. `grunt checkout-target --repo=chains --target=1.2`.
-- Apply the change to the sim's branch (either a usual commit, or by cherry-picking a change,
-  e.g. `git cherry-pick -x {{SHA}}` in the sim repo).
+- From perennial, `grunt checkout-target --repo={{REPO}} --target={{BRANCH}}`, e.g.
+  `grunt checkout-target --repo=chains --target=1.2`.
+- Apply the change to the sim's branch (either a usual commit, or by cherry-picking a change, e.g.
+  `git cherry-pick -x {{SHA}}` in the sim repo).
 - Test it. You can `grunt` in the sim repo (the `checkout-target` above did the NPM magic for it to work)
 - Push the change to the sim branch (e.g. `git push origin 1.2`).
 
 Otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
 
-- From perennial, `grunt checkout-target --repo={{SIM}} --target={{BRANCH}}`,
-  e.g. `grunt checkout-target --repo=chains --target=1.2`.
+- From perennial, `grunt checkout-target --repo={{SIM}} --target={{BRANCH}}`, e.g.
+  `grunt checkout-target --repo=chains --target=1.2`.
 - Check the common repo to see if it has a branch named `{{SIM}}-{{BRANCH}}`, e.g. does scenery have a branch named
   chains-1.2
   - If it HAS the branch, ensure that the branch's HEAD commit is the same as the currently-checked-out commit. THEN
     checkout the branch (e.g. `git checkout chains-1.2`) in the common repo. If the commits don't match, INVESTIGATE as
     something went wrong before. Talk to @jonathanolson?
-  - If there IS NO branch, create it in the common repo with `git checkout -b {{SIM}}-{{BRANCH}}`,
-    e.g. `git checkout -b chains-1.2`
+  - If there IS NO branch, create it in the common repo with `git checkout -b {{SIM}}-{{BRANCH}}`, e.g.
+    `git checkout -b chains-1.2`
 - Apply the change to the dependency's branch (it's almost always a cherry-pick, e.g. `git cherry-pick -x {{SHA}}` in
   the common repo).
 - Test it. You can `grunt` in the sim repo (the `checkout-target` above did the NPM magic for it to work)
