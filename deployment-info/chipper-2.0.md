@@ -7,6 +7,7 @@
 * [Building standalone repositories](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#building-standalone-repositories)
 * [Building wrapper repositories](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#building-standalone-repositories)
 * [Deploying simulations](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#deploying-simulations)
+  * [Running commands in perennial](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#running-commands-in-perennial)
   * [If working off campus, install the VPN](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#if-working-off-campus-install-the-vpn)
   * [Configure build-local.json settings](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#configure-remote-bashrc)
   * [Configure remote ~/.bashrc](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#configure-remote-bashrc)
@@ -32,11 +33,6 @@ brands you would like to build by default).
 `grunt --brands=phet,phet-io` (using `--brands`) will override and build the desired brands. If any brand given like
 this is not supported, the build will fail out.
 
-Chipper 2.0 also adds the `--debugHTML` option to builds (will build another version with the `_debug` suffix), and has
-the `-allHTML` option (not relevant for the phet-io brand). Additionally, it is possible to build a sim with a one-off
-version identifier with `--oneOff={{ONE_OFF_NAME}}`, which will be included in the version identifier. This is a build
-flag, and is not provided to deployment tasks.
-
 # Updating supported brands
 
 In each sim's package.json, it lists the brands that are supported. When a phet-io sim is instrumented, it should be
@@ -49,19 +45,15 @@ Scenery/Kite/Dot/etc. can be built as a standalone file that can be included (e.
 examples and documentation). Just `grunt` in the repository should do the trick, and note that there are no brands, so
 it does not create brand directories.
 
-# Building wrapper repositories
-
-Repositories like phet-io-wrapper-sonification can also be built with `grunt`, placing the files to be uploaded in the
-build directory.
-
 # Deploying simulations
 
 If you haven't run perennial commands in a while, `npm prune` and `npm update` under perennial, perennial-alias and
 chipper may be needed. I'll notify for any further module changes.
 
-Note that all perennial commands (including those for dev/rc/production deployments) can be run from newer (as of
-sometime December 2017) simulations from the simulation directory. For instance, `grunt checkout-shas` now lives in
-perennial, but newer chipper SHAs will detect this and spawn the correct perennial grunt task. It will add a
+## Running commands in perennial
+
+Note that all perennial commands (including those for dev/rc/production deployments) can be run from the simulation
+directory (post 12/2017). For instance, `grunt checkout-shas` now lives in perennial, and so it will add a
 `--repo={{REPO}}` command line flag to the perennial command so that it knows which repository is the target.
 
 So, for example,
@@ -75,6 +67,9 @@ will run
 ```
 perennial# grunt dev --repo=chains --brands=phet,phet-io
 ```
+
+You can always run these commands from perennial directly by just adding the `--repo={{REPO}}` option. Commands listed
+below that do not include the `--repo` option assume you are running from the simulation repo.
 
 ## If working off campus, install the VPN
 
@@ -147,28 +142,30 @@ increment the version test number (e.g. the 2 in 1.3-dev.2). For example, if the
 
 ## One-off deployments
 
-These are like dev deployments, but should be done from a named branch (where the name does not contain any `-` or `.`
-characters).
+These are like dev deployments, but are done from a named branch that is not "main" (where the branch name does not
+contain any `-` or `.` characters). One-offs are useful to keep track of shas for maintenance or reproducibility, but
+are not a formal, versioned release.
 
 Prior to branch creation, be sure to create a GitHub issue within the associated repo. Its title should be of the form
 `branch: {{branchName}}`, and the description should describe the purpose of the branch, expected lifetime of the
 branch, and links to any other relevant issues.
 
-To create a branch (easily) for one-off deployments, run:
+To create a branch (easily) for one-off deployments run the following command from the exact SHAs that you want in your
+one-off. You may want to run `grunt checkout-target` first to create the one-off from a release branch instead of
+`main`.
 
 ```sh
 grunt create-one-off --branch={{BRANCH}}
 ```
 
-This will create the branch with the relevant name, and set up the package.json appropriately.
-
-Thus a normal `grunt` will build with the one-off version from the branch. To deploy a one-off version:
+This will create the branch with the relevant name, and set up the package.json appropriately. Thus a normal `grunt`
+will build with the one-off version from the branch. To deploy a one-off version:
 
 ```sh
-grunt one-off --brands={{BRANDS}}
+grunt one-off --brands={{BRANDS}} --branch={{BRANCH}}
 ```
 
-from the branch.
+This will checkout the branch and its dependencies, and deploy using the "dev" version deployment algorithm.
 
 ## RC/production deployments and release branches
 
