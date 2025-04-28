@@ -72,11 +72,14 @@ Tier 1 Voicing needs by providing a name and hint for the component.
 
 Many components already determine their default Voicing content.
 
-- If a component has an `accessibleName`, it is used for `voicingNameResponse`
+- If a component has an `accessibleName`, it is used for `voicingNameResponse`.
 - If it has an `accessibleHelpText`, that is used for `voicingHintResponse`.
 
 As a result, Tier 1 Voicing often comes for free once Tier 1 Interactive Description is in place. However, you can
 always override these defaults by supplying your own `voicingNameResponse` and `voicingHintResponse` options.
+
+NOTE: PhET is in the process of implementing this behavior in common code components. If you find a component where
+these options do not work as expected, please create an issue in the component repository.
 
 ## Sim Specific Components
 
