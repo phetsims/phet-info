@@ -77,6 +77,9 @@ const myCheckBox = new Checkbox( checkedProperty, {
 } );
 ```
 
+NOTE: PhET is in the process of implementing accessibleName and accessibleHelpText in common code components. If you find a component where
+these options do not work as expected, please create an issue in the component repository.
+
 For sim-specific interactive components, specify a `tagName` to enable accessibility. If the component is in the
 traversal order, make it `focusable: true`.
 
@@ -99,7 +102,7 @@ const myImage = new Image( imageData, {
 } );
 ```
 
-### accessibleHeading (UNDER CONSTRUCTION)
+### accessibleHeading
 
 Use `accessibleHeading` to define headings within the simulation. Headings help users navigate sections easily and
 maintain accessible structure. Scenery automatically determines the heading level based on the scene graph and
@@ -108,8 +111,7 @@ maintain accessible structure. Scenery automatically determines the heading leve
 ```ts
 const controlsContainer = new VBox( {
   children: controls,
-  accessibleHeading: accessibleHeadingStringProperty,
-  tagName: 'div'
+  accessibleHeading: accessibleHeadingStringProperty
 } ); 
 ```
 
@@ -121,18 +123,21 @@ their children. For details, see ParallelDOM.setAccessibleHeading.
 Many UI components with a visual label will automatically use that label as their `accessibleName`. If needed, you can
 override it by setting `accessibleName` in the component’s options.
 
+NOTE: PhET is in the process of implementing this default. If you find a component that does not do this, please
+create an issue in the component repository.
+
 ## pdomOrder
 
 Use pdomOrder to define the navigation order for both focusable and non-focusable elements. This ensures that items
-using accessibleParagraph or accessibleHeading appear in the correct reading sequence and follow a logical structure in
+using `accessibleParagraph` or `accessibleHeading` appear in the correct reading sequence and follow a logical structure in
 the DOM.
 
 ## String Properties
 
-Use a LocalizedStringProperty for all accessibility content so it’s ready for dynamic locales and future translation
+Use a `LocalizedStringProperty` for all accessibility content so it’s ready for dynamic locales and future translation
 support.
 
-When describing model values in plain language, DerivedProperty.fromRecord can help select the correct string based on
+When describing model values in plain language, `DerivedProperty.fromRecord` can help select the correct string based on
 the current state:
 
 ```ts
@@ -140,12 +145,12 @@ const diagram = new Node( {
   children: [ graphics ],
   accessibleParagraph: DerivedProperty.fromRecord( selectedValuesProperty, {
     time: new StringProperty( 'Describes the diagram when plotting against time.' ),
-    energy: new StringProperty( 'Describes the diagram when plotting against energy.' )
+    distance: new StringProperty( 'Describes the diagram when plotting against distance.' )
   } )
 } );
 ```
 
-For controlling how many digits to display, use DerivedProperty.toFixed. For example:
+For controlling how many digits to display, use `DerivedProperty.toFixed`. For example:
 
 ```ts
 const fixedValueProperty = DerivedProperty.toFixed( modelValueProperty, 2 );
@@ -208,7 +213,7 @@ pluralization, and other grammatical rules when translated.
 
 ### Accessibility Strings
 
-Accessibility strings should be placed under the "a11y" key to keep them separate from translatable strings (they are
+Accessibility strings should be placed under the `a11y` key to keep them separate from translatable strings (they are
 not yet translated).
 
 It’s generally fine to reuse the same string for visual text and accessibility if the meaning is truly identical.
@@ -303,4 +308,4 @@ Interactive Description includes alternative input. Refer to the Alternative Inp
 ### Tier 1 Voicing
 
 For Tier 1 Voicing implementation guide, see
-[Tier 1 Voicing Quickstart Guide](link to  guide).
+[Tier 1 Voicing Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/tier-1-voicing-quick-start-guide.md).
