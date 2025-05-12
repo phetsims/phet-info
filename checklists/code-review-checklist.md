@@ -135,7 +135,8 @@ the constructor, where `{{CLASS_NAME}}` should exactly match the class name. (b)
   phetioIDs for StringProperties.
 - [ ] If the sim was already released, make sure none of the original string keys have changed. If they have changed,
   make sure any changes have a good reason and have been discussed with @jbphet (it is likely that an issue
-  like https://github.com/phetsims/gravity-force-lab/issues/166 should be created).
+  like https://github.com/phetsims/gravity-force-lab/issues/166 should be created). Changes and deletions are OK, it just
+  means that translations will be lost.
 
 ## **Repository Structure**
 
