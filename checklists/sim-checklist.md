@@ -1,4 +1,4 @@
-# {{SIM_NAME}} main checklist
+# {{SIM_NAME}} 1.0 main checklist
 
 ## Design
 
