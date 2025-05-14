@@ -34,6 +34,9 @@
     <option name="SPACES_WITHIN_IMPORTS" value="true" />
     <option name="IMPORT_SORT_MODULE_NAME" value="true" />
   </TypeScriptCodeStyleSettings>
+  <yaml>
+    <option name="ALIGN_VALUES_PROPERTIES" value="1" />
+  </yaml>
   <codeStyleSettings language="CSS">
     <indentOptions>
       <option name="INDENT_SIZE" value="2" />
