@@ -1,8 +1,13 @@
 # {{SIM_NAME}} version {{1.2}} checklist
 
+## Prep
+- [ ] **Schedule kick-off meeting** 
+- [ ] **Triage open issues and decide what to include in this release**
+- [ ] **Establish scope of this release**
+  - [ ] {{paste issues that will be included in this release}}  
+
 ## Design
 
-- [ ] **Review user feedback**
 - [ ] **Update design doc to reflect sim updates, as needed**
 - [ ] **Pre-publication items**
   - [ ] Update teacher tips
@@ -24,8 +29,6 @@
   - [ ] Finalize with designer
 - [ ] **Sim team sign-off** (Date: //)
 - [ ] **Code review completed** (Date: //)
-- [ ] **Sim dev test completed** (Date: //)
-- [ ] **Sim RC tests completed** (Date: //)
 - [ ] **Pre-publication items**
   - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks -
     see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
