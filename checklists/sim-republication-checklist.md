@@ -17,7 +17,9 @@
 
 ## Implementation
 
-- [ ] **Release Notes completed** 
+- [ ] **Release Notes completed**
+  - [ ] Copy [release notes template](https://github.com/phetsims/simula-rasa/blob/main/doc/release-notes.md) into sim repo
+  - [ ] Developer and designer collaborate on what to include
 - [ ] **Sim team sign-off** (Date: //)
 - [ ] **Code review completed** (Date: //)
 - [ ] **Sim dev test completed** (Date: //)
