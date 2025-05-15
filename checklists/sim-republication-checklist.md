@@ -1,4 +1,4 @@
-# {{SIM_NAME}} version {{1.2.3}} checklist
+# {{SIM_NAME}} version {{1.2}} checklist
 
 ## Design
 
