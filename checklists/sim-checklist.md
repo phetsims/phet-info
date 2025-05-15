@@ -51,7 +51,9 @@
 - [ ] **Post-publication items**
   - [ ] *If a Port:* Review legacy gold star activities. For appropriate activities, tag the HTML5 version and UNTAG the deprecated version.
   - [ ] Share new features, design challenges, and treats with group!
-  - [ ] Email announcement
+  - [ ] Write newsletter entry
+  - [ ] Ask web devs to add to PhET Studio
+  - [ ] Create 2-3 example presets
   - [ ] Deliver
     to [Legends of Learning](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=0)
   - [ ] Create "sim primer" issue
