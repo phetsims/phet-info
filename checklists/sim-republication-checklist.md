@@ -13,7 +13,8 @@
   - [ ] Alert translators if there have been significant string changes
   - [ ] Write newsletter announcement
   - [ ] Update website credits
-  - [ ] Ask web devs to add to PhET Studio 
+  - [ ] Ask web devs to add to PhET Studio
+  - [ ] Create 2-3 example presets
   - [ ] Decide as a team if a postmortem is applicable, and schedule (Date: //)
 
 ## Implementation
