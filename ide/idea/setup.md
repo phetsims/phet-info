@@ -102,6 +102,16 @@ Use at your own risk!
       * Arguments: -c "export FORCE_COLOR=true; ./perennial/bin/sage run ./website-build/gitFlow/updateWebsiteRepos.ts
         --sync"
       * Working Directory: GIT_REPOS
+  * Mac:
+    * Sync
+      * Program: /bin/zsh
+      * Arguments: -c "source ~/.intellijprofilesr; grunt sync --checkoutMain=false"
+      * Working Directory: GIT_REPOS/perennial
+    * Precommit Hooks on repos with changes
+      * Program: /bin/zsh
+        * Arguments: -c "source ~/.intellijprofilesr; bin/sage run ../chipper/js/grunt/tasks/pre-commit.ts --changed --lint --report-media --type-check --test --absolute"
+        * Working Directory: GIT_REPOS/perennial-alias
+        * Output Filters: $FILE_PATH$\($LINE$\,$COLUMN$\)
 * It can be helpful to see the history of a file or section of a file that you're working in. This is not only a way to
   see how a section of code came to be, but also which devs made the changes. See documentation on
   the [Show History](https://www.jetbrains.com/help/webstorm/investigate-changes.html#file-history) feature (or do
