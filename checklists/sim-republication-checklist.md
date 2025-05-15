@@ -3,10 +3,11 @@
 ## Design
 
 - [ ] **Review user feedback**
+- [ ] **Update design doc to reflect sim updates, as needed**
 - [ ] **Pre-publication items**
   - [ ] Update teacher tips
   - [ ] Update screenshots
-  - [ ] Update release notes
+  - [ ] Update release notes with developer
 - [ ] **Post-publication items**
   - [ ] Tag new features on website
   - [ ] Alert translators if there have been significant string changes
@@ -19,7 +20,7 @@
 
 - [ ] **Release Notes completed**
   - [ ] Copy [release notes template](https://github.com/phetsims/simula-rasa/blob/main/doc/release-notes.md) into sim repo
-  - [ ] Developer and designer collaborate on what to include
+  - [ ] Finalize with designer
 - [ ] **Sim team sign-off** (Date: //)
 - [ ] **Code review completed** (Date: //)
 - [ ] **Sim dev test completed** (Date: //)
