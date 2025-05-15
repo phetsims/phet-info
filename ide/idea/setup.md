@@ -25,7 +25,8 @@ get you pointed in the right direction. If you notice errors or a need for clari
   `build;node_modules;dist;images;sounds;mipmaps;*phet-io-elements-overrides.js;*phet-io-elements-baseline.js`
   into "Excluded Files".
 
-7. Set the right margin to appear after 120 characters. `File> Settings> Editor > Code Style` Set Default Options to 120.
+7. Set the right margin to appear after 120 characters. `File> Settings> Editor > Code Style` Set Default Options to
+120.
 8. Import the PhET code style (located in `phet-info/ide/idea/phet-idea-codestyle.xml`).
 
 * See https://www.jetbrains.com/help/idea/2017.1/copying-code-style-settings.html. Press the drop-down "settings"
@@ -87,7 +88,20 @@ Use at your own risk!
   * Adding code changes to a GitHub issue for other devs to try out. Often times, you may see patches contained in a "
     details" dropdown (notated as `<details>`) since they can be very long.
 * The "find" modal has a preview section that some want to see more than 100 items in it, instead of needing to open the
-  Find view. Increase this number with "Settings > Advanced Settings > Maximum number of results to show in Find in Files/Show Usages preview"
+  Find view. Increase this number with "Settings > Advanced Settings > Maximum number of results to show in Find in
+  Files/Show Usages preview"
+* **External Tools** can be incredibly helpful. @samreid and @zepumph are great resources for this. They can also be
+  bound to keyboard shortcuts. For example, syncing and pushing scripts.
+  * Windows:
+    * To add a shell script tool that runs sync:
+      * Program:  C:\Program Files\Git\bin\bash.exe
+      * Arguments: bin\sage run js\grunt\tasks\sync.ts --AN_OPTION_HERE
+      * Working Directory: GIT_REPOS\perennial
+    * To add an external tool on Windows that supports full color, do something like this:
+      * Program:  C:\Program Files\Git\bin\bash.exe
+      * Arguments: -c "export FORCE_COLOR=true; ./perennial/bin/sage run ./website-build/gitFlow/updateWebsiteRepos.ts
+        --sync"
+      * Working Directory: GIT_REPOS
 * It can be helpful to see the history of a file or section of a file that you're working in. This is not only a way to
   see how a section of code came to be, but also which devs made the changes. See documentation on
   the [Show History](https://www.jetbrains.com/help/webstorm/investigate-changes.html#file-history) feature (or do
