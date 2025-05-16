@@ -1,10 +1,12 @@
 # {{SIM_NAME}} version {{1.2}} checklist
 
 ## Prep
+- [ ] **Review all open issues** 
 - [ ] **Schedule kick-off meeting** 
-- [ ] **Triage open issues and decide what to include in this release**
-- [ ] **Establish scope of this release**
-  - [ ] {{paste issues that will be included in this release}}  
+  - [ ] Establish scope of this release 
+  - [ ] Triage open issues and decide what to include or defer 
+- [ ] **Scope of this release**
+  - [ ] optional: paste all issues that will be included
 
 ## Design
 
