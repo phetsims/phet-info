@@ -1,4 +1,4 @@
-# {{SIM_NAME}} version {{VERSION}} checklist
+# {{SIM_NAME}} {{VERSION}} checklist
 
 ## Prep
 - [ ] **Review all open issues** 
