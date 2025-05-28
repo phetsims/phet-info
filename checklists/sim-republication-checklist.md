@@ -5,23 +5,24 @@
 - [ ] **Schedule kick-off meeting** 
   - [ ] Establish scope of this release 
   - [ ] Triage open issues and decide what to include or defer 
+- [ ] **Ensure design doc has sections for relevant features and/or create feature-specific design docs**
 - [ ] **Scope of this release**
-  - [ ] optional: paste all issues that will be included
+  - [ ] optional: paste all issues that will be included, or list features - these will be useful for release notes
 
 ## Design
 
-- [ ] **Update design doc to reflect sim updates, as needed**
+- [ ] **Update design doc to reflect sim updates, as needed** 
 - [ ] **Pre-publication items**
   - [ ] Update teacher tips
   - [ ] Update screenshots
   - [ ] Update release notes with developer
 - [ ] **Post-publication items**
-  - [ ] Tag new features on website
+  - [ ] Tag new inclusive features on website
   - [ ] Alert translators if there have been significant string changes
   - [ ] Write newsletter announcement
   - [ ] Update website credits
   - [ ] Ask web devs to add to PhET Studio
-  - [ ] Create 2-3 example presets
+  - [ ] Create 2-3 example presets ([guidelines](https://docs.google.com/document/d/1gZmobd5h1VBZxjwT6ZuDhFIRWWQvQUKD_VgUDZW5-io/edit?tab=t.0))
   - [ ] Decide as a team if a postmortem is applicable, and schedule (Date: //)
 
 ## Implementation
