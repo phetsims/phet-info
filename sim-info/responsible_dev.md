@@ -26,7 +26,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | balloons-and-static-electricity | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
 | bamboo | @samreid |  | Sound<br/>Interactive Description | 
 | beaker | @samreid |  |  | 
-| beers-law-lab | @pixelzoom | @arouinfar |  | 
+| beers-law-lab | @pixelzoom | @arouinfar | Interactive Description | 
 | bending-light | @samreid | @arouinfar |  | 
 | binder | @zepumph |  |  | 
 | blackbody-spectrum | @AgustinVallejo,@jbphet | @DianaTavares |  | 
@@ -56,7 +56,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | collision-lab | @jonathanolson | @arouinfar |  | 
 | color-vision | @jbphet | @DianaTavares | Sound<br/>Interactive Description | 
 | community | @samreid | @brettfiedler |  | 
-| concentration | @pixelzoom | @arouinfar |  | 
+| concentration | @pixelzoom | @arouinfar | Interactive Description | 
 | coulombs-law | @zepumph | @arouinfar | Interactive Description | 
 | counting-common | @marlitas | @amanda-phet |  | 
 | curve-fitting | @AgustinVallejo | @amanda-phet |  | 
