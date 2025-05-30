@@ -25,6 +25,7 @@
 - [ ] **Lead designer "sign off"** (Date: //)
   - [ ] Performance acceptable
   - [ ] Carefully review ?showPointerAreas
+    - [ ] All pointer areas are at least 44x44 pixels 
   - [ ] No new feature requests
 - [ ] **Prototype items**
   - [ ] Auxiliary screenshots (at least 1 additional)
