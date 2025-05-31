@@ -98,7 +98,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | geometric-optics | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | geometric-optics-basics | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | graphing-lines | @pixelzoom | @amanda-phet | Sound | 
-| graphing-quadratics | @pixelzoom | @amanda-phet |  | 
+| graphing-quadratics | @pixelzoom | @amanda-phet | Sound<br/>Interactive Description | 
 | graphing-slope-intercept | @pixelzoom | @amanda-phet | Sound | 
 | gravity-and-orbits | @samreid | @arouinfar |  | 
 | gravity-force-lab | @zepumph | @arouinfar | Sound<br/>Interactive Description | 
