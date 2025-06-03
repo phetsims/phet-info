@@ -150,10 +150,10 @@ const diagram = new Node( {
 } );
 ```
 
-For controlling how many digits to display, use `DerivedProperty.toFixed`. For example:
+For controlling how many digits to display, use `DerivedProperty.toFixedProperty`. For example:
 
 ```ts
-const fixedValueProperty = DerivedProperty.toFixed( modelValueProperty, 2 );
+const fixedValueProperty = DerivedProperty.toFixedProperty( modelValueProperty, 2 );
 const numberReadout = new Text( fixedValueProperty, {
   accessibleParagraph: fixedValueProperty
 } );
