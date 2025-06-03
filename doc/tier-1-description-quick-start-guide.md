@@ -98,6 +98,22 @@ const interactiveCircle = new Circle( 25, {
 } );
 ```
 
+#### Default accessibleName
+
+Many UI components with a visual label will use the same string for the `accessibleName`. Occasionally, you will need to supply an
+`accessibleName` that is different from the default visible name. This is typically the case when the label is unclear when spoken
+(for example, when it contains an abbreviation). The design team will indicate when this is necessary in the design document.
+The default can be overridden by passing an `accessibleName` option to the component constructor.
+
+```ts
+const checkbox = new Checkbox( checkedProperty, new Text( 'Show Cos Plot' ), {
+  accessibleName: 'Show Cosine Plot'
+} );
+```
+
+NOTE: PhET is in the process of implementing this default. If you find a component that does not do this, please create
+an issue in the component repository.
+
 ### accessibleHelpText
 Some components also have `accessibleHelpText`, which explains how to use the UI component or give the user more context.
 
@@ -134,14 +150,6 @@ const controlsContainer = new VBox( {
 
 Nodes with `accessibleHeading` are typically parents for other accessible content, establishing the heading scope for
 their children. For details, see ParallelDOM.setAccessibleHeading.
-
-## Default accessibleName
-
-Many UI components with a visual label will automatically use that label as their `accessibleName`. If needed, you can
-override it by setting `accessibleName` in the component’s options.
-
-NOTE: PhET is in the process of implementing this default. If you find a component that does not do this, please create
-an issue in the component repository.
 
 ## pdomOrder
 
