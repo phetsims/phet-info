@@ -51,7 +51,7 @@ and enable Voicing. A toolbar will then appear on the left with buttons that pla
 Some components already support Voicing by default. Click them to hear their audio. For other UI elements, add Voicing
 using the appropriate options and setters.
 
-For debugging, use the ?printVoicingResponses query parameter to log spoken output in the console.
+For debugging, use the ?logVoicingResponses query parameter to log spoken output in the console.
 
 ## Screen Summary
 
