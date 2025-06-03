@@ -77,8 +77,8 @@ const myCheckBox = new Checkbox( checkedProperty, {
 } );
 ```
 
-NOTE: PhET is in the process of implementing accessibleName and accessibleHelpText in common code components. If you find a component where
-these options do not work as expected, please create an issue in the component repository.
+NOTE: PhET is in the process of implementing accessibleName and accessibleHelpText in common code components. If you
+find a component where these options do not work as expected, please create an issue in the component repository.
 
 For sim-specific interactive components, specify a `tagName` to enable accessibility. If the component is in the
 traversal order, make it `focusable: true`.
@@ -123,14 +123,14 @@ their children. For details, see ParallelDOM.setAccessibleHeading.
 Many UI components with a visual label will automatically use that label as their `accessibleName`. If needed, you can
 override it by setting `accessibleName` in the component’s options.
 
-NOTE: PhET is in the process of implementing this default. If you find a component that does not do this, please
-create an issue in the component repository.
+NOTE: PhET is in the process of implementing this default. If you find a component that does not do this, please create
+an issue in the component repository.
 
 ## pdomOrder
 
 Use pdomOrder to define the navigation order for both focusable and non-focusable elements. This ensures that items
-using `accessibleParagraph` or `accessibleHeading` appear in the correct reading sequence and follow a logical structure in
-the DOM.
+using `accessibleParagraph` or `accessibleHeading` appear in the correct reading sequence and follow a logical structure
+in the DOM.
 
 ## String Properties
 
@@ -213,8 +213,8 @@ pluralization, and other grammatical rules when translated.
 
 ### Accessibility Strings
 
-Accessibility strings should be placed under the `a11y` key to keep them separate from translatable strings (they are
-not yet translated).
+Accessibility strings should be placed under the `a11y` key in the strings.json file. This keeps them separate from
+translatable strings (they are not yet translated).
 
 It’s generally fine to reuse the same string for visual text and accessibility if the meaning is truly identical.
 However, if the string is used in multiple contexts or has a different meaning, create a separate key to allow for
