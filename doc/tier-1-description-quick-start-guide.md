@@ -194,7 +194,8 @@ the necessary support for screen-reader interaction.
 ### Roles
 
 Certain components benefit from a custom role description, which explains their purpose and how to interact with them.
-You can set it with the option `accessibleRoleDescription`:
+The `accessibleRoleDescription` will be provided by the design team. The string should be localized, so put it in the
+strings.json file. See Accessibility Strings section below. You can set it with the option `accessibleRoleDescription`:
 
 ```ts
 const movableCircle = new Circle( 5, {
