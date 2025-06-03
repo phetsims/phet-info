@@ -63,22 +63,18 @@ hint. Pass these to `ScreenSummaryContent`, then include that content as an opti
 The options `accessibleName`, `accessibleHelpText`, and `accessibleParagraph` are defined in scenery's `ParallelDOM.ts`.
 These are most of what you will use to implement Tier 1 Interactive Description.
 
-### accessibleName and accessibleHelpText
+NOTE: PhET is in the process of implementing accessibleName and accessibleHelpText in common code components. If you
+find a component where these options do not work as expected, please create an issue in the component repository.
 
-Each interactive component needs to have an `accessibleName`, which is how screen readers identify the UI element. Some
-components also have `accessibleHelpText`, which explains how to use the UI component or give the user more context.
-
-For common code components (e.g., buttons, checkboxes, dialogs), these can be set as options or via setters:
+### accessibleName
+Each interactive component needs to have an `accessibleName`, which is how screen readers identify the UI element. For common code components
+(e.g., buttons, checkboxes, sliders), you can set `accessibleName` as an option or via setters:
 
 ```ts
 const myCheckBox = new Checkbox( checkedProperty, {
-  accessibleName: myAccessibleNameStringProperty,
-  accessibleHelpText: myAccessibleHelpTextStringProperty
+  accessibleName: myAccessibleNameStringProperty
 } );
 ```
-
-NOTE: PhET is in the process of implementing accessibleName and accessibleHelpText in common code components. If you
-find a component where these options do not work as expected, please create an issue in the component repository.
 
 For sim-specific interactive components, specify a `tagName` to enable accessibility. If the component is in the
 traversal order, make it `focusable: true`.
@@ -87,7 +83,17 @@ traversal order, make it `focusable: true`.
 const interactiveCircle = new Circle( 25, {
   tagName: 'div',
   focusable: true,
-  accessibleName: myAccessibleNameStringProperty,
+  accessibleName: myAccessibleNameStringProperty
+} );
+```
+
+### accessibleHelpText
+Some components also have `accessibleHelpText`, which explains how to use the UI component or give the user more context.
+
+For common code components (e.g., buttons, checkboxes, dialogs), `accessibleHelpText` can be set as options or via setters:
+
+```ts
+const myCheckBox = new Checkbox( checkedProperty, {
   accessibleHelpText: myAccessibleHelpTextStringProperty
 } );
 ```
