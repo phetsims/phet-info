@@ -118,7 +118,7 @@ const controlsContainer = new VBox( {
 Nodes with `accessibleHeading` are typically parents for other accessible content, establishing the heading scope for
 their children. For details, see ParallelDOM.setAccessibleHeading.
 
-## Default accessible names
+## Default accessibleName
 
 Many UI components with a visual label will automatically use that label as their `accessibleName`. If needed, you can
 override it by setting `accessibleName` in the component’s options.
