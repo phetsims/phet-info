@@ -58,6 +58,17 @@ Use `ScreenSummaryContent.ts` in joist to implement the screen summary.
 For each screen, the design document provides text for the play area, control area, current details, and an interaction
 hint. Pass these to `ScreenSummaryContent`, then include that content as an option in the `ScreenView` constructor.
 
+```ts
+const screenView = new ScreenView( {
+  screenSummaryContent: new ScreenSummaryContent( {
+    playAreaContent: playAreaDescriptionStringProperty,
+    controlAreaContent: controlAreaDescriptionStringProperty,
+    currentDetailsContent: [ firstDescriptionStringProperty, secondDescriptionStringProperty ],
+    interactionHintContent: interactionHintStringProperty
+  } )
+} );
+```
+
 ## Basic options
 
 The options `accessibleName`, `accessibleHelpText`, and `accessibleParagraph` are defined in scenery's `ParallelDOM.ts`.
