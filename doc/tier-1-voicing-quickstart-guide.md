@@ -63,6 +63,22 @@ Description, you can customize with options.
 For each screen, the design document provides text for the play area, control area, current details, and an interaction
 hint. Pass these to the `ScreenSummaryContent`, then include that content as an option in the `ScreenView` constructor.
 
+```ts
+const screenView = new ScreenView( {
+  screenSummaryContent: new ScreenSummaryContent( {
+    playAreaContent: playAreaDescriptionStringProperty,
+    controlAreaContent: controlAreaDescriptionStringProperty,
+    currentDetailsContent: [ firstDescriptionStringProperty, secondDescriptionStringProperty ],
+    
+    // An example of how to set content that will be customized for Voicing.
+    interactionHintContent: {
+      descriptionContent: [ descriptionInteractionHintStringProperty ],
+      voicingContent: [ voicingInteractionHintStringProperty ]
+    }
+  } )
+} );
+```
+
 ## Basic options
 
 In scenery’s Voicing.ts, you can set `voicingNameResponse` and `voicingHintResponse`. These two options cover almost all
