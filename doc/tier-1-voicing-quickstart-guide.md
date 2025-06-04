@@ -79,10 +79,22 @@ const screenView = new ScreenView( {
 } );
 ```
 
-## Basic options
+## Voicing.ts
 
-In scenery’s Voicing.ts, you can set `voicingNameResponse` and `voicingHintResponse`. These two options cover almost all
-Tier 1 Voicing needs by providing a name and hint for the component.
+`Voicing.ts` is a trait defined in Scenery that you mix into any Scenery Node.
+
+```ts
+const voicingRectangle = new ( Voicing( Rectangle ) )( 0, 0, 40, 40, {
+  fill: 'green',
+
+  // Voicing options
+  voicingNameResponse: nameStringProperty,
+  voicingHintResponse: hintStringProperty
+} );
+```
+`voicingNameResponse` specifies the accessible name, spoken when the component is focused or activated.
+`voicingHintResponse` adds a brief hint, spoken after the name when focused.
+Together, these options satisfy almost all Tier 1 Voicing requirements.
 
 ## Default Content for common code
 
