@@ -231,6 +231,27 @@ const movableCircle = new Circle( 5, {
 } );
 ```
 
+## Numeric Precision
+
+Expose numeric values at the same precision in the PDOM as on-screen.
+- Use the same formatter (toFixed, NumberFormatter, or DerivedProperty.toFixedProperty) for both visual text and PDOM strings.
+- If a value is shown with units or a label visually, include the same units or label in the PDOM string.
+- For components that supply their own PDOM value text (such as AccessibleSlider or AccessibleValueHandler), override the default with pdomCreateAriaValueText if necessary to keep precision consistent.
+
+```ts
+// Show the value to two decimal places both visually and in the PDOM.
+const formattedValueProperty = DerivedProperty.toFixedProperty( modelValueProperty, 2 );
+
+const readoutText = new Text( formattedValueProperty, {
+  accessibleParagraph: formattedValueProperty
+} );
+
+const slider = new HSlider( modelValueProperty, range, {
+  pdomCreateAriaValueText: value => `${formattedValueProperty.value} meters`,
+  accessibleName: accessibleSliderNameStringProperty
+} );
+```
+
 ## Internationalization
 
 Accessibility strings are not yet translatable. However, plan for future translation by keeping string patterns simple
