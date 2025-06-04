@@ -126,11 +126,11 @@ const voicingRichText = new VoicingRichText( myStringProperty );
 By default, they also add their text to the PDOM for Interactive Description. Make sure they appear in the correct
 location in the `pdomOrder`.
 
-## Interactive Highlighting
+## Interactive Highlights
 
-Interactive Highlighting is already included through Voicing, so you don’t need to separately mix in
-`InteractiveHighlighting`. Any Node using Voicing will automatically gain interactive highlighting features. For more
-details, see the Interactive Highlighting guide.
+Interactive Highlights is already included through Voicing, so you don’t need to separately mix in
+`InteractiveHighlighting`. Any Node using Voicing will automatically gain Interactive Highlights features. For more
+details, see [the Interactive Highlights quickstart guide](https://github.com/phetsims/phet-info/blob/f9fcab965f857627b7a2da4d0bb90f95ea9edc1e/doc/interactive-highlights-quickstart-guide.md).
 
 ## Accessibility Strings
 
