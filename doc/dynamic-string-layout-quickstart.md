@@ -68,7 +68,9 @@ To support dynamic locales in your sim update your `package.json` with:
 ```
 
 This will create a Typescript error if the old style of strings is used, forcing you to access i18n strings via
-the `*StringProperty` key.
+the `*StringProperty` key. 
+
+Also make sure to run `grunt update`.
 
 CM tracked some useful roadblocks that came up during Natural Selection conversion
 here: https://github.com/phetsims/natural-selection/issues/319
