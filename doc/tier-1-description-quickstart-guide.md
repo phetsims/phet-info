@@ -69,6 +69,34 @@ const screenView = new ScreenView( {
 } );
 ```
 
+## AccessibleListNode
+
+The design document often includes lists of description. Lists help simplify the strings and break up content into
+understandable parts. Use AccessibleListNode for this. They are most often used in the Screen Summary.
+
+```ts
+const screenView = new ScreenView( {
+  screenSummaryContent: new ScreenSummaryContent( {
+    currentDetailsContent: new AccessibleListNode( [
+      new StringProperty( '1 apple' ),
+      new StringProperty( '2 oranges' ),
+      new StringProperty( '4 strawberries' )
+    ], {
+      leadingParagraphStringProperty: new StringProperty( 'Currently, the fruit basket has:' )
+    } )
+  } )
+} );
+```
+
+The above will produce the following list content in the PDOM:
+```text
+Currently, the fruit basket has:
+- 1 apple
+- 2 oranges
+- 4 strawberries
+```
+
+
 ## Basic options
 
 The options `accessibleName`, `accessibleHelpText`, and `accessibleParagraph` are defined in scenery's `ParallelDOM.ts`.
