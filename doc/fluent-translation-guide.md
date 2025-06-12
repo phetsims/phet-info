@@ -1,5 +1,9 @@
 # Translation Guide for Accessible Descriptions
 
+# NOTE
+This guide is out of date. PhET no longer maintains its strings in the way that is described in this file. To translation PhET simulation
+strings, please see the [PhET Translation Utility (HTML5)](https://phet.colorado.edu/en/for-translators).
+
 ## Who is this guide for?
 This guide is designed for translators looking to create and submit translations for _accessible descriptions_
 using the Fluent system.
