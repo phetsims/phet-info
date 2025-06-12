@@ -7,7 +7,8 @@
   - [ ] Triage open issues and decide what to include or defer 
 - [ ] **Ensure design doc has sections for relevant features and/or create feature-specific design docs**
 - [ ] **Scope of this release**
-  - [ ] optional: paste all issues that will be included, or list features - these will be useful for release notes
+  - [ ] Verify [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0)
+  - [ ] Optional: paste all issues that will be included, or list features - these will be useful for release notes
 
 ## Design
 
