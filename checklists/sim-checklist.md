@@ -16,7 +16,7 @@
 - [ ] **Design concept complete**  (Date: //)
 - [ ] **Wireframes complete** (Date: //)
 - [ ] **Mockups complete** (Date: //)
-  - [ ] Mockups checked for colorblind and greyscale
+  - [ ] Mockups checked for [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0)
 - [ ] **Features for PhET-iO discussion**
 - [ ] **Interviews complete** (Date: //)
   - [ ] Results reported to team
