@@ -25,6 +25,7 @@ includes:
 - Accessible names for interactive components.
 - Accessible help text for interactive components.
 - Accessible paragraphs for non-interactive UI elements.
+- Accessible responses (alerts) for important events or changes in the simulation.
 
 ## package.json
 
@@ -89,13 +90,13 @@ const screenView = new ScreenView( {
 ```
 
 The above will produce the following list content in the PDOM:
+
 ```text
 Currently, the fruit basket has:
 - 1 apple
 - 2 oranges
 - 4 strawberries
 ```
-
 
 ## Basic options
 
@@ -106,7 +107,9 @@ NOTE: PhET is in the process of implementing accessibleName and accessibleHelpTe
 find a component where these options do not work as expected, please create an issue in the component repository.
 
 ### accessibleName
-Each interactive component needs to have an `accessibleName`, which is how screen readers identify the UI element. For common code components
+
+Each interactive component should have an `accessibleName`, which is how screen readers identify the UI element. For
+common code components
 (e.g., buttons, checkboxes, sliders), you can set `accessibleName` as an option or via setters:
 
 ```ts
@@ -128,10 +131,12 @@ const interactiveCircle = new Circle( 25, {
 
 #### Default accessibleName
 
-Many UI components with a visual label will use the same string for the `accessibleName`. Occasionally, you will need to supply an
-`accessibleName` that is different from the default visible name. This is typically the case when the label is unclear when spoken
-(for example, when it contains an abbreviation). The design team will indicate when this is necessary in the design document.
-The default can be overridden by passing an `accessibleName` option to the component constructor.
+Many UI components with a visual label will use the same string for the `accessibleName`. Occasionally, you will need to
+supply an
+`accessibleName` that is different from the default visible name. This is typically the case when the label is unclear
+when spoken
+(for example, when it contains an abbreviation). The design team will indicate when this is necessary in the design
+document. The default can be overridden by passing an `accessibleName` option to the component constructor.
 
 ```ts
 const checkbox = new Checkbox( checkedProperty, new Text( 'Show Cos Plot' ), {
@@ -143,9 +148,12 @@ NOTE: PhET is in the process of implementing this default. If you find a compone
 an issue in the component repository.
 
 ### accessibleHelpText
-Some components also have `accessibleHelpText`, which explains how to use the UI component or give the user more context.
 
-For common code components (e.g., buttons, checkboxes, dialogs), `accessibleHelpText` can be set as options or via setters:
+Some components also have `accessibleHelpText`, which explains how to use the UI component or give the user more
+context.
+
+For common code components (e.g., buttons, checkboxes, dialogs), `accessibleHelpText` can be set as options or via
+setters:
 
 ```ts
 const myCheckBox = new Checkbox( checkedProperty, {
@@ -178,6 +186,91 @@ const controlsContainer = new VBox( {
 
 Nodes with `accessibleHeading` are typically parents for other accessible content, establishing the heading scope for
 their children. For details, see ParallelDOM.setAccessibleHeading.
+
+## Accessible responses
+
+Responses alert the screen-reader user to important changes or guidance while the sim is running.  
+The design document labels each string with one of three response types:
+
+- Accessible Object Response – state info about a specific object
+- Accessible Context Response – broader information about the simulation
+- Accessible Help Response – brief instructions or tips
+
+### Common-code components
+
+Many UI components expose convenience options that wire everything up for you.  
+For example, `ButtonNode` supports `accessibleContextResponse`:
+
+```ts
+const importantButton = new RectangularPushButton( {
+  accessibleName: accessibleNameStringProperty,
+  accessibleContextResponse: accessibleContextResponseStringProperty
+} );
+```
+
+NOTE: PhET is in the process of implementing responses in common code components. If you find a component where a
+required response type is not implemented, please create an issue in the component repository.
+
+### Sim-specific components
+
+For custom Nodes, use the helper functions defined in scenery’s ParallelDOM.
+
+#### addAccessibleObjectResponse
+
+Should be spoken when the object receives focus and when its value or state changes.
+
+```ts
+const draggableCircle = new Circle( 25, combineOptions<CircleOptions>( {
+  accessibleName: 'Draggable Circle'
+} ) );
+
+const positionStatementStringProperty = new PatternStringProperty( 'The circle is at {{x}}, {{y}}', {
+  x: xProperty,
+  y: yProperty
+} );
+
+draggableCircle.focusedProperty.link( focused => {
+  if ( focused ) {
+    draggableCircle.addAccessibleObjectResponse( positionStatementStringProperty );
+  }
+} );
+
+draggableCircle.addInputListener( new DragListener( {
+  end: () => {
+    draggableCircle.addAccessibleObjectResponse( positionStatementStringProperty );
+  }
+} ) );
+```
+
+#### addAccessibleContextResponse
+
+Should be spoken immediately after interaction.
+
+```ts
+const clickableImage = new Image( img, {
+  tagName: 'div',
+  focusable: true,
+  accessibleName: 'My Clickable Image'
+} );
+
+clickableImage.addInputListener( new PressListener( {
+  press: () => {
+    clickableImage.addAccessibleContextResponse( 'Something happened because you clicked the image.' );
+  }
+} ) );
+```
+
+### addAccessibleHelpResponse
+
+Used sparingly; most hints should live in accessibleHelpText.
+
+```ts
+clickableImage.focusedProperty.link( focused => {
+  if ( focused ) {
+    clickableImage.addAccessibleHelpResponse( 'This image can be clicked to do something.' );
+  }
+} );
+```
 
 ## pdomOrder
 
@@ -242,7 +335,13 @@ while the key is held down. This is often incompatible with screen readers that 
 interactions.
 
 To make a component fully keyboard accessible, pass `AccessibleDraggableOptions` to the target Node. These options add
-the necessary support for screen-reader interaction.
+the necessary support for screen-reader interaction. For example:
+
+```ts
+const accessibleDraggableOptions = combineOptions<ParallelDOMOptions>( {}, AccessibleDraggableOptions, {
+  accessibleName: 'Circle'
+} );
+```
 
 ### Roles
 
@@ -262,9 +361,12 @@ const movableCircle = new Circle( 5, {
 ## Numeric Precision
 
 Expose numeric values at the same precision in the PDOM as on-screen.
-- Use the same formatter (toFixed, NumberFormatter, or DerivedProperty.toFixedProperty) for both visual text and PDOM strings.
+
+- Use the same formatter (toFixed, NumberFormatter, or DerivedProperty.toFixedProperty) for both visual text and PDOM
+  strings.
 - If a value is shown with units or a label visually, include the same units or label in the PDOM string.
-- For components that supply their own PDOM value text (such as AccessibleSlider or AccessibleValueHandler), override the default with pdomCreateAriaValueText if necessary to keep precision consistent.
+- For components that supply their own PDOM value text (such as AccessibleSlider or AccessibleValueHandler), override
+  the default with pdomCreateAriaValueText if necessary to keep precision consistent.
 
 ```ts
 // Show the value to two decimal places both visually and in the PDOM.
