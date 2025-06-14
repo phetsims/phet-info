@@ -28,7 +28,7 @@ In order for patterns to be translatable in a grammatically correct way, we use 
 multiline values, we use YAML. To support Rosetta and backward compatibility, we output to the legacy JSON format. We
 preserve support for our legacy placeholder formats `{0}` and `{{myValue}}` for backward compatibility.
 
-YAML and Fluent are new languages for our project, and you should dedicate time to learning them.
+**YAML and Fluent are new languages for our project, and you should dedicate time to learning them.**
 
 For YAML, we recommend reading
 the [YAML specification](https://yaml.org/spec/1.2/spec.html), [YAML quick start guide](https://quickref.me/yaml.html) (
@@ -43,14 +43,14 @@ Note that we do not support 100% of Fluent syntax, such as attributes.
 1. We do not currently have a script that converts the legacy sim_en.json files to YAML, that is currently a manual
    process.
 2. For the YAML file, each value is either a constant, one of the legacy placeholders, or a Fluent pattern.
-3. Once the YAML file is created, run `grunt modulify` to autogenerate the json file, and the corresponding SimFluent.ts
+3. Once the YAML file is created or edited, run `grunt modulify --targets=strings` to autogenerate the json file, and the corresponding SimFluent.ts
    file.
 4. Note that once a sim has a {{simName}}_en.yaml file, the legacy {{simName}}_en.json file should be treated as a
    read-only build-artifact (created by the `grunt modulify` command), and should not be edited directly. To that end,
    it is recommended to exclude the legacy JSON file from the IDE project to avoid finding it is search results.
 5. Set up your IDE to align the values for YAML. In WebStorm, this can be done by going to
-   `Preferences > Editor > Code Style > YAML`, and setting the `Align values` option to `true`. This will help with
-   readability and maintainability of the YAML files. You can also import the code style settings from
+   `Preferences > Editor > Code Style > YAML`, and setting the `Align values in maps` option to `value`. This will help with
+   readability and maintainability of the YAML files. You can also achieve this by importing the code style settings from
    phet-info/ide/idea/phet-idea-codestyle.xml
 
 # Syntax and Gotchas
