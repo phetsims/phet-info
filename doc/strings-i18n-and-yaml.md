@@ -32,11 +32,9 @@ compatibility.
 
 1. We do not currently have a script that converts the legacy sim_en.json files to YAML, that is currently a manual
    process.
-2. To create a new YAML file, copy an existing one and change the name to match the sim name, e.g. `my-sim-en.yaml`.
-3. For the YAML file, each value is either a constant, one of the legacy placeholders, or a Fluent pattern.
-4. Once the YAML file is created, run `grunt modulify` to autogenerate the json file, and the corresponding SimFluent.ts
+2. For the YAML file, each value is either a constant, one of the legacy placeholders, or a Fluent pattern.
+3. Once the YAML file is created, run `grunt modulify` to autogenerate the json file, and the corresponding SimFluent.ts
    file.
-5. See below for more about YAML syntax:
 
 # YAML Syntax
 
