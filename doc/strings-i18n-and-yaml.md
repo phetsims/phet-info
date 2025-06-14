@@ -32,8 +32,7 @@ YAML and Fluent are new languages for our project, and you should dedicate time 
 
 For YAML, we recommend reading
 the [YAML specification](https://yaml.org/spec/1.2/spec.html), [YAML quick start guide](https://quickref.me/yaml.html) (
-watch out for ads) for more details on YAML syntax. Note that YAML is whitespace sensitive, so indentation is
-important.
+watch out for ads) for more details on YAML syntax. Note that YAML is whitespace sensitive, so indentation is important.
 
 For Fluent, we recommend reading the [Fluent Project](https://projectfluent.org/), and experimenting with
 the [Fluent Playground](https://projectfluent.org/play/) is a great resource for experimenting with Fluent patterns.
@@ -53,6 +52,7 @@ Note that we do not support 100% of Fluent syntax, such as attributes.
    `Preferences > Editor > Code Style > YAML`, and setting the `Align values` option to `true`. This will help with
    readability and maintainability of the YAML files. You can also import the code style settings from
    phet-info/ide/idea/phet-idea-codestyle.xml
+6. simMetadata can be provided via a `__simMetadata` key, see convertStringsYamlToJson.ts
 
 # Syntax and Gotchas
 
