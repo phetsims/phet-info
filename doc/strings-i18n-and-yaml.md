@@ -52,7 +52,6 @@ Note that we do not support 100% of Fluent syntax, such as attributes.
    `Preferences > Editor > Code Style > YAML`, and setting the `Align values` option to `true`. This will help with
    readability and maintainability of the YAML files. You can also import the code style settings from
    phet-info/ide/idea/phet-idea-codestyle.xml
-6. simMetadata can be provided via a `__simMetadata` key, see convertStringsYamlToJson.ts
 
 # Syntax and Gotchas
 
@@ -70,3 +69,4 @@ grabbedLigandResponseWithEmptyMembraneHintPattern: "{ a11y.grabbedLigandResponse
 ```
 
 3. A multiline block scalar needs to start with a space so that the fluent syntax is valid.
+4. simMetadata can be provided via a `__simMetadata` key, see convertStringsYamlToJson.ts
