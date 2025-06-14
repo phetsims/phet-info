@@ -1,6 +1,6 @@
 # Overview
 
-PhET Simulations can be translated into many languages. The translated strings have many overlapping concerns, and must
+PhET Simulations can be translated into many languages. The string system relates to many overlapping parts, and must
 support the following features:
 
 1. Visual and non-visual strings must be translatable.
@@ -14,6 +14,12 @@ support the following features:
 7. Strings must support patterns/placeholders, and be translated into other languages in a grammatically correct way.
    This is important because grammatical incorrectness can create a barrier, dissonance, or confusion, and impede
    streamlined usage of the sim.
+8. There should be one way of doing things (as much as possible), while retaining backward compatibility with legacy
+   string formats.
+9. Type safety for constants and patterns.
+10. Support for Axon Properties
+11. Readability and maintainability of the string files, so that they are easy to read, understand, and modify by
+    developers, designers, and can support hundreds of strings.
 
 To this end, we have developed a custom string management system to address these concerns.
 
@@ -46,3 +52,15 @@ compatibility.
 ```yaml
 grabbedLigandResponseWithEmptyMembraneHintPattern: "{ a11y.grabbedLigandResponsePattern } Space to release. Add transport proteins."
 ```
+
+3. A multiline block scalar needs to start with a space so that the fluent syntax is valid.
+
+# Resources
+
+When in doubt, refer to
+the [YAML specification](https://yaml.org/spec/1.2/spec.html), [YAML quick start guide](https://quickref.me/yaml.html) (
+watch out for ads) for more details on YAML syntax.
+
+The [Fluent Playground](https://projectfluent.org/play/) is a great resource for experimenting with Fluent patterns.
+
+See membrane-transport-strings_en.yaml for an example of a YAML file that uses Fluent patterns and multiline strings.
