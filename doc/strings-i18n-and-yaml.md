@@ -20,6 +20,7 @@ support the following features:
 10. Support for Axon Properties
 11. Readability and maintainability of the string files, so that they are easy to read, understand, and modify by
     developers, designers, and can support hundreds of strings.
+12. PhET-iO studio string autoselect, so strings can be automatically discovered in mouseover.
 
 To this end, we have developed a custom string management system to address these concerns.
 
