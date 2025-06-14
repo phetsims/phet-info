@@ -24,10 +24,20 @@ support the following features:
 
 To this end, we have developed a custom string management system to address these concerns.
 
-In order for patterns to be translatable in a grammatically correct way, we use Fluent, see https://projectfluent.org/.
-To support structuring and multiline values, we use YAML. To support Rosetta and backward compatibility, we output to
-the legacy JSON format. We preserve support for our legacy placeholder formats `{0}` and `{{myValue}}` for backward
-compatibility.
+In order for patterns to be translatable in a grammatically correct way, we use Fluent. To support structuring and
+multiline values, we use YAML. To support Rosetta and backward compatibility, we output to the legacy JSON format. We
+preserve support for our legacy placeholder formats `{0}` and `{{myValue}}` for backward compatibility.
+
+YAML and Fluent are new languages for our project, and you should dedicate time to learning them.
+
+For YAML, we recommend reading
+the [YAML specification](https://yaml.org/spec/1.2/spec.html), [YAML quick start guide](https://quickref.me/yaml.html) (
+watch out for ads) for more details on YAML syntax. Note that YAML is whitespace sensitive, so indentation is
+important.
+
+For Fluent, we recommend reading the [Fluent Project](https://projectfluent.org/), and experimenting with
+the [Fluent Playground](https://projectfluent.org/play/) is a great resource for experimenting with Fluent patterns.
+Note that we do not support 100% of Fluent syntax, such as attributes.
 
 # Getting Started with YAML and Fluent
 
@@ -36,11 +46,15 @@ compatibility.
 2. For the YAML file, each value is either a constant, one of the legacy placeholders, or a Fluent pattern.
 3. Once the YAML file is created, run `grunt modulify` to autogenerate the json file, and the corresponding SimFluent.ts
    file.
-4. Note that once a sim has a {{simName}}_en.yaml file, the legacy {{simName}}_en.json file should be treated as a read-only
-   build-artifact (created by the `grunt modulify` command), and should not be edited directly. To that end, it is recommended
-   to exclude the legacy JSON file from the IDE project to avoid finding it is search results.
+4. Note that once a sim has a {{simName}}_en.yaml file, the legacy {{simName}}_en.json file should be treated as a
+   read-only build-artifact (created by the `grunt modulify` command), and should not be edited directly. To that end,
+   it is recommended to exclude the legacy JSON file from the IDE project to avoid finding it is search results.
+5. Set up your IDE to align the values for YAML. In WebStorm, this can be done by going to
+   `Preferences > Editor > Code Style > YAML`, and setting the `Align values` option to `true`. This will help with
+   readability and maintainability of the YAML files. You can also import the code style settings from
+   phet-info/ide/idea/phet-idea-codestyle.xml
 
-# YAML Syntax
+# Syntax and Gotchas
 
 1. YAML does not support newline `\n` escaped characters, but instead should be converted to a multiline string using
    the `|-` syntax. For example:
@@ -56,13 +70,3 @@ grabbedLigandResponseWithEmptyMembraneHintPattern: "{ a11y.grabbedLigandResponse
 ```
 
 3. A multiline block scalar needs to start with a space so that the fluent syntax is valid.
-
-# Resources
-
-When in doubt, refer to
-the [YAML specification](https://yaml.org/spec/1.2/spec.html), [YAML quick start guide](https://quickref.me/yaml.html) (
-watch out for ads) for more details on YAML syntax.
-
-The [Fluent Playground](https://projectfluent.org/play/) is a great resource for experimenting with Fluent patterns.
-
-See membrane-transport-strings_en.yaml for an example of a YAML file that uses Fluent patterns and multiline strings.
