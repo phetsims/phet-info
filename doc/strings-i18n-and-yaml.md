@@ -35,6 +35,9 @@ compatibility.
 2. For the YAML file, each value is either a constant, one of the legacy placeholders, or a Fluent pattern.
 3. Once the YAML file is created, run `grunt modulify` to autogenerate the json file, and the corresponding SimFluent.ts
    file.
+4. Note that once a sim has a {{simName}}_en.yaml file, the legacy {{simName}}_en.json file should be treated as a read-only
+   build-artifact (created by the `grunt modulify` command), and should not be edited directly. To that end, it is recommended
+   to exclude the legacy JSON file from the IDE project to avoid finding it is search results.
 
 # YAML Syntax
 
