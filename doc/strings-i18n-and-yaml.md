@@ -4,23 +4,26 @@ PhET Simulations can be translated into many languages. The string system relate
 support the following features:
 
 1. Visual and non-visual strings must be translatable.
-2. Strings must appear as PhET-iO instrumented objects which can be changed at runtime.
-3. Strings must support metadata, such as phetioReadOnly or phetioDocumentation.
-4. Strings must be interoperable with Rosetta (the translation utility), so must be discoverable, editable, testable,
-   storable, and maintenance-releasable.
-5. Strings must be prunable, so that only specific strings used in a sim are shown in Rosetta.
-6. Strings must be structured, so one object can have multiple "children" or recursively nested descendants, and so that
-   strings can be grouped together in a way that makes sense for the sim.
-7. Strings must support patterns/placeholders, and be translated into other languages in a grammatically correct way.
+2. Strings must support patterns/placeholders, and be translated into other languages in a grammatically correct way.
    This is important because grammatical incorrectness can create a barrier, dissonance, or confusion, and impede
    streamlined usage of the sim.
-8. There should be one way of doing things (as much as possible), while retaining backward compatibility with legacy
+3. There should be one way of doing things (as much as possible), while retaining backward compatibility with legacy
    string formats.
-9. Type safety for constants and patterns.
-10. Support for Axon Properties
-11. Readability and maintainability of the string files, so that they are easy to read, understand, and modify by
-    developers, designers, and can support hundreds of strings.
-12. PhET-iO studio string autoselect, so strings can be automatically discovered in mouseover.
+4. Support for Axon Properties. This means the resultant strings should implement `TReadOnlyProperty<string>`, and
+   pattern-based strings should accept `string` or `TReadOnlyProperty<string>` parameters.
+5. Type safety for constants and patterns. This includes but is not limited to string literal unions for selector types.
+6. Readability and maintainability of the string files, so that they are easy to read, understand, and modify by
+   developers, designers, and can support hundreds of strings.
+7. Strings must be structured, so one object can have multiple "children" or recursively nested descendants, and so that
+   strings can be grouped together in a way that makes sense for the sim.
+8. Strings must be interoperable with Rosetta (the translation utility), so must be discoverable, editable, testable,
+   storable, and maintenance-releasable.
+9. Strings must be prunable, so that only specific strings used in a sim are shown in Rosetta. For instance, if a sim
+   does not have a FaucetNode, then the FaucetNode strings should not be shown in Rosetta.
+10. Strings must appear as PhET-iO instrumented objects which can be changed at runtime.
+11. Strings must support metadata, such as phetioReadOnly or phetioDocumentation.
+12. Strings must be selectable using PhET-iO studio string autoselect, so strings can be automatically discovered in
+    mouseover. this is necessary for constant strings, and not required for pattern strings.
 
 To this end, we have developed a custom string management system to address these concerns.
 
@@ -28,11 +31,12 @@ In order for patterns to be translatable in a grammatically correct way, we use 
 multiline values, we use YAML. To support Rosetta and backward compatibility, we output to the legacy JSON format. We
 preserve support for our legacy placeholder formats `{0}` and `{{myValue}}` for backward compatibility.
 
-**YAML and Fluent are new languages for our project, and you should dedicate time to learning them.**
+**YAML and Fluent are new languages for our project, our team must dedicate time to learning them.**
 
 For YAML, we recommend reading
-the [YAML specification](https://yaml.org/spec/1.2/spec.html), [YAML quick start guide](https://quickref.me/yaml.html) (
-watch out for ads) for more details on YAML syntax. Note that YAML is whitespace sensitive, so indentation is important.
+the [YAML specification](https://yaml.org/spec/1.2/spec.html), [Learn YAML in Y minutes](https://learnxinyminutes.com/yaml/),
+[YAML quick start guide](https://quickref.me/yaml.html) ( watch out for ads) for more details on YAML syntax. Note that
+YAML is whitespace sensitive, so indentation is important.
 
 For Fluent, we recommend reading the [Fluent Project](https://projectfluent.org/), and experimenting with
 the [Fluent Playground](https://projectfluent.org/play/) is a great resource for experimenting with Fluent patterns.
@@ -43,15 +47,15 @@ Note that we do not support 100% of Fluent syntax, such as attributes.
 1. We do not currently have a script that converts the legacy sim_en.json files to YAML, that is currently a manual
    process.
 2. For the YAML file, each value is either a constant, one of the legacy placeholders, or a Fluent pattern.
-3. Once the YAML file is created or edited, run `grunt modulify --targets=strings` to autogenerate the json file, and the corresponding SimFluent.ts
-   file.
+3. Once the YAML file is created or edited, run `grunt modulify --targets=strings` to autogenerate the json file, and
+   the corresponding SimFluent.ts file.
 4. Note that once a sim has a {{simName}}_en.yaml file, the legacy {{simName}}_en.json file should be treated as a
    read-only build-artifact (created by the `grunt modulify` command), and should not be edited directly. To that end,
    it is recommended to exclude the legacy JSON file from the IDE project to avoid finding it is search results.
 5. Set up your IDE to align the values for YAML. In WebStorm, this can be done by going to
-   `Preferences > Editor > Code Style > YAML`, and setting the `Align values in maps` option to `value`. This will help with
-   readability and maintainability of the YAML files. You can also achieve this by importing the code style settings from
-   phet-info/ide/idea/phet-idea-codestyle.xml
+   `Preferences > Editor > Code Style > YAML`, and setting the `Align values in maps` option to `value`. This will help
+   with readability and maintainability of the YAML files. You can also achieve this by importing the code style
+   settings from phet-info/ide/idea/phet-idea-codestyle.xml
 
 # Syntax and Gotchas
 
@@ -70,3 +74,9 @@ grabbedLigandResponseWithEmptyMembraneHintPattern: "{ a11y.grabbedLigandResponse
 
 3. A multiline block scalar needs to start with a space so that the fluent syntax is valid.
 4. simMetadata can be provided via a `__simMetadata` key, see convertStringsYamlToJson.ts
+5. Note that some YAML values parse as non-string primitives, such as `true`, `false`, `yes`, `no`, and `null`. To ensure
+   that these values are treated as strings, they should be quoted. For example:
+   ```yaml
+   myBooleanString: "true"
+   myNullString: "null"
+   ```
