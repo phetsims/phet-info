@@ -74,9 +74,13 @@ grabbedLigandResponseWithEmptyMembraneHintPattern: "{ a11y.grabbedLigandResponse
 
 3. A multiline block scalar needs to start with a space so that the fluent syntax is valid.
 4. simMetadata can be provided via a `__simMetadata` key, see convertStringsYamlToJson.ts
-5. Note that some YAML values parse as non-string primitives, such as `true`, `false`, `yes`, `no`, and `null`. To ensure
-   that these values are treated as strings, they should be quoted. For example:
+5. Note that some YAML values parse as non-string primitives, such as `true`, `false`, `yes`, `no`, and `null`. To
+   ensure that these values are treated as strings, they should be quoted. For example:
    ```yaml
    myBooleanString: "true"
    myNullString: "null"
    ```
+
+# References
+
+1. Please refer to membrane-transport-strings_en.yaml for an example of a YAML file.
