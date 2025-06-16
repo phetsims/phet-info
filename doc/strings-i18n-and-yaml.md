@@ -74,12 +74,32 @@ grabbedLigandResponseWithEmptyMembraneHintPattern: "{ a11y.grabbedLigandResponse
 
 3. A multiline block scalar needs to start with a space so that the fluent syntax is valid.
 4. simMetadata can be provided via a `__simMetadata` key, see convertStringsYamlToJson.ts
-5. Note that some YAML values parse as non-string primitives, such as `true`, `false`, `yes`, `no`, and `null`. To
-   ensure that these values are treated as strings, they should be quoted. For example:
-   ```yaml
-   myBooleanString: "true"
-   myNullString: "null"
-   ```
+5. Normally YAML values parse as non-string primitives, such as `true`, `false`, `yes`, `no`, and `null`. To ensure that
+   these values are treated as strings, our system uses `FAILSAFE_SCHEMA` to ensure that all values are treated as
+   strings.
+6. chipper and scenerystack also provide direct support for *.ftl files, but this is not recommended for PhET
+   simulations, as it does not support the same features as the YAML system, such PhET-iO support, Rosetta integration,
+   etc. It is recommended to use the YAML system for all PhET simulations.
+
+# Implementation Notes
+
+The conversion from YAML to JSON and Fluent processing during the modulify build step is handled by a sophisticated
+pipeline that preserves type safety while enabling internationalization. When grunt modulify --targets=strings is
+executed, the system first checks for the existence of a {repo}-strings_en.yaml file. If found, it processes this file
+using the js-yaml library with a FAILSAFE_SCHEMA to ensure all values are preserved as strings (preventing automatic
+type conversion of values like "true" or "null"). The conversion transforms the flat YAML structure by nesting string
+values under a "value" key (e.g., "text" becomes { "value": "text" }), handles special __simMetadata keys by merging
+them as simMetadata properties, and processes Fluent references by converting dot notation to underscores for
+compatibility with PhET's naming conventions.
+
+After JSON generation, the system creates TypeScript type definitions and Fluent objects through
+generateFluentTypes.ts. This process analyzes the YAML structure to distinguish between simple constant strings and
+parameterized patterns, generating FluentConstant objects for basic strings and FluentPattern objects for strings with
+variables. The system maintains backward compatibility by detecting legacy placeholder patterns ({{value}} or {0}) and
+handling them separately from modern Fluent syntax ({ variable }). The resulting artifacts include the auto-generated
+JSON file for Rosetta compatibility, TypeScript modules with proper typing for development, and Fluent message objects
+that support runtime string resolution with proper parameterization. This architecture enables PhET simulations to
+leverage modern internationalization practices while preserving the existing toolchain and translation workflow.
 
 # References
 
