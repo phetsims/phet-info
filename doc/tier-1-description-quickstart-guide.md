@@ -10,6 +10,7 @@ Tier 1 Interactive Description implements critical screen reader accessibility f
 - Accessible help text for interactive objects
 - A screen summary for each screen (overview, current details, and hints)
 - Descriptions for non-interactive visual content
+- Accessible responses (alerts) for important events or changes in the simulation
 
 Implementing Tier 1 significantly improves a simulation’s accessibility. This guide outlines the process and introduces
 the fundamental options and tools for the implementation. Refer to the source code documentation for more detailed
