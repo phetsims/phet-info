@@ -80,6 +80,8 @@ grabbedLigandResponseWithEmptyMembraneHintPattern: "{ a11y.grabbedLigandResponse
 6. chipper and scenerystack also provide direct support for *.ftl files, but this is not recommended for PhET
    simulations, as it does not support the same features as the YAML system, such PhET-iO support, Rosetta integration,
    etc. It is recommended to use the YAML system for all PhET simulations.
+7. When used with RichText, you can HTML markup as needed, but keep in mind this is a burden for translators, so use
+   sparingly.
 
 # Implementation Notes
 
@@ -92,14 +94,14 @@ values under a "value" key (e.g., "text" becomes { "value": "text" }), handles s
 them as simMetadata properties, and processes Fluent references by converting dot notation to underscores for
 compatibility with PhET's naming conventions.
 
-After JSON generation, the system creates TypeScript type definitions and Fluent objects through
-generateFluentTypes.ts. This process analyzes the YAML structure to distinguish between simple constant strings and
-parameterized patterns, generating FluentConstant objects for basic strings and FluentPattern objects for strings with
-variables. The system maintains backward compatibility by detecting legacy placeholder patterns ({{value}} or {0}) and
-handling them separately from modern Fluent syntax ({ variable }). The resulting artifacts include the auto-generated
-JSON file for Rosetta compatibility, TypeScript modules with proper typing for development, and Fluent message objects
-that support runtime string resolution with proper parameterization. This architecture enables PhET simulations to
-leverage modern internationalization practices while preserving the existing toolchain and translation workflow.
+After JSON generation, the system creates TypeScript type definitions and Fluent objects through generateFluentTypes.ts.
+This process analyzes the YAML structure to distinguish between simple constant strings and parameterized patterns,
+generating FluentConstant objects for basic strings and FluentPattern objects for strings with variables. The system
+maintains backward compatibility by detecting legacy placeholder patterns ({{value}} or {0}) and handling them
+separately from modern Fluent syntax ({ variable }). The resulting artifacts include the auto-generated JSON file for
+Rosetta compatibility, TypeScript modules with proper typing for development, and Fluent message objects that support
+runtime string resolution with proper parameterization. This architecture enables PhET simulations to leverage modern
+internationalization practices while preserving the existing toolchain and translation workflow.
 
 # References
 
