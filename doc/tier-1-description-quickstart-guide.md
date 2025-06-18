@@ -223,7 +223,7 @@ Should be spoken when the object receives focus and when its value or state chan
 ```ts
 const draggableCircle = new Circle( 25, combineOptions<CircleOptions>( {
   accessibleName: 'Draggable Circle'
-} ) );
+}, AccessibleDraggableOptions ) );
 
 const positionStatementStringProperty = new PatternStringProperty( 'The circle is at {{x}}, {{y}}', {
   x: xProperty,
