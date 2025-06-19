@@ -42,6 +42,17 @@ For Fluent, we recommend reading the [Fluent Project](https://projectfluent.org/
 the [Fluent Playground](https://projectfluent.org/play/) is a great resource for experimenting with Fluent patterns.
 Note that we do not support 100% of Fluent syntax, such as attributes.
 
+NOTE: Due to numerous technical constraints, we are not writing full Fluent *.ftl files, but rather using a subset of
+Fluent syntax in YAML files. In the future, if we abandon the legacy JSON format and some of the related constraints, we
+may be able to use full Fluent format.
+
+NOTE: Rosetta does not yet support translating Fluent fragments, so please do not use Fluent patterns in the visual
+strings. If you need a pattern in the visual strings, please use the legacy `{{myValue}}` pattern for now.
+
+NOTE: When porting a legacy sim JSON to YAML, you should preserve the placeholder syntax as it was. Sim code and
+translations cannot be seamlessly transitioned to Fluent patterns without significant effort. So you can consider the
+fluent syntax for new strings, or when it is important to redo legacy pattern strings.
+
 # Getting Started with YAML and Fluent
 
 1. We do not currently have a script that converts the legacy sim_en.json files to YAML, that is currently a manual
@@ -66,6 +77,10 @@ Note that we do not support 100% of Fluent syntax, such as attributes.
      This is a multiline string.
      It can have multiple lines.
    ```
+
+Please note that this is just one of many syntax options for multiline strings, and that depending on your multiline
+string needs the syntax may be different.
+
 2. Strings that start with curly braces or end with colons must be quoted:
 
 ```yaml
