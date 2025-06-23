@@ -7,10 +7,11 @@ A quick guide for adding Tier 1 Interactive Description to a PhET simulation.
 Tier 1 Interactive Description implements critical screen reader accessibility features, including:
 
 - Accessible names for interactive objects
+- Accessible headings for important areas of the simulation
 - Accessible help text for interactive objects
 - A screen summary for each screen (overview, current details, and hints)
 - Descriptions for non-interactive visual content
-- Accessible responses (alerts) for important events or changes in the simulation
+- Accessible responses (alerts) for important events or changes in the simulation or for voicing values that are not otherwise available.
 
 Implementing Tier 1 significantly improves a simulation’s accessibility. This guide outlines the process and introduces
 the fundamental options and tools for the implementation. Refer to the source code documentation for more detailed
@@ -26,7 +27,7 @@ includes:
 - Accessible names for interactive components.
 - Accessible help text for interactive components.
 - Accessible paragraphs for non-interactive UI elements.
-- Accessible responses (alerts) for important events or changes in the simulation.
+- Accessible responses (alerts) for important events or changes in the simulation, or for voicing values that are not otherwise available.
 
 ## package.json
 
