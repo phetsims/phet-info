@@ -218,7 +218,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | vegas | @pixelzoom |  | Sound<br/>Interactive Description | 
 | vibe | @jbphet |  |  | 
 | wave-interference | @samreid | @arouinfar | Sound | 
-| wave-on-a-string | @jonathanolson | @arouinfar | Sound | 
+| wave-on-a-string | @jonathanolson | @arouinfar | Sound<br/>Interactive Description | 
 | waves-intro | @samreid | @arouinfar | Sound<br/>Interactive Description | 
 | website | @mattpen |  |  | 
 | website-docker | @mattpen |  |  | 
