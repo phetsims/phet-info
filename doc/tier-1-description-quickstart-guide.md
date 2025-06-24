@@ -482,13 +482,13 @@ values to nodes that toggle visibility based on state. Only the relevant descrip
 ```ts
 const emptyStringProperty = new StringProperty( 'The basket is empty.' );
 const emptyStateText = new Text( emptyStringProperty, {
-  visible: emptyBasketProperty,
+  visibleProperty: DerivedProperty.not( isBasketFilledProperty ),
   accessibleParagraph: emptyStringProperty
 } );
 
 const filledStringProperty = new StringProperty( 'The basket contains 3 apples and 2 oranges.' );
 const filledStateText = new Text( filledStringProperty, {
-  visible: DerivedProperty.not( emptyBasketProperty ),
+  visibleProperty: isBasketFilledProperty,
   accessibleParagraph: filledStringProperty
 } );
 ```
