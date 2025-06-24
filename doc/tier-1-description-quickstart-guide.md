@@ -475,8 +475,8 @@ For example:
 
 ### Use visibility to manage accessible content
 
-When a node is not visible, its accessible content is also hidden from screen readers. You can
-leverage this to manage dynamic descriptions. For example, assign different `accessibleParagraph`
+When a node is not visible, its accessible content is also hidden from screen readers. You can leverage this to manage
+dynamic descriptions. For example, assign different `accessibleParagraph`
 values to nodes that toggle visibility based on state. Only the relevant description will be available.
 
 ```ts
