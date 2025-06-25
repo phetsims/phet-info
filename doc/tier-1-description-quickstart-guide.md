@@ -417,6 +417,9 @@ For example:
 {
   "a11y": {
     "screenA": {
+      "screenButtonsHelpText": {
+        "value": "Use a light source to explore the atom's energy states."
+      },
       "screenSummary": {
         "playArea": {
           "value": "Contains a light source and..."
