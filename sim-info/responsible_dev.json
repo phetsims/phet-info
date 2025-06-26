@@ -909,7 +909,7 @@
   },
   "molecule-polarity": {
     "responsibleDevs": [
-      "@pixelzoom"
+      "@jonathanolson"
     ],
     "responsibleDesigners": [
       "@arouinfar"
@@ -1087,7 +1087,7 @@
   },
   "ph-scale": {
     "responsibleDevs": [
-      "@pixelzoom"
+      "@marlitas"
     ],
     "responsibleDesigners": [
       "@arouinfar"
@@ -1095,7 +1095,7 @@
   },
   "ph-scale-basics": {
     "responsibleDevs": [
-      "@pixelzoom"
+      "@marlitas"
     ],
     "responsibleDesigners": [
       "@arouinfar"
