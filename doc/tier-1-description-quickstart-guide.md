@@ -405,11 +405,14 @@ Use the following guidelines for naming and organization:
 
 - Keys under the `a11y` key should be nested for readability.
 - Use key names that match the tandem name of the component using the string.
-- Under the component name key, use a nested key that matches the accessibility option you are using.
-- For screen summary content, use a key called `screenSummary` and nest each section under it.
-- For string patterns, include `Pattern` in the suffix of the key.
+- Under the component name key, nest a key for the specific accessibility option (e.g., accessibleName, accessibleHelpText, accessibleParagraph, etc.).
+- For screen summary content, use the screen name as a key, then nest a screenSummary key, with playArea, controlArea, currentDetails, and interactionHint as sub-keys.
+- Nest `screenButtonsHelpText` under the screen name.
+- Avoid unnecessary nesting under screen name keys; this makes reuse harder. For example, even if a checkbox appears in only one screen,
+  do not nest its strings under that screen name.
 - For entries that have string patterns with values to fill in, use additional nesting for readability.
 - For strings that do not fit into these categories, use a descriptive key that indicates how it is used.
+- Prefer longer or duplicated strings over complex string patterns. This simplifies code and translation. Patterns often assume English-specific grammar.
 
 For example:
 
