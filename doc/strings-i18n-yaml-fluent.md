@@ -40,7 +40,8 @@ YAML is whitespace sensitive, so indentation is important.
 
 For Fluent, we recommend reading the [Fluent Project](https://projectfluent.org/), and experimenting with
 the [Fluent Playground](https://projectfluent.org/play/) is a great resource for experimenting with Fluent patterns.
-Note that we do not support 100% of Fluent syntax, such as attributes.
+Note that we do not support 100% of Fluent syntax, such as attributes. Note Fluent is also whitespace sensitive, so
+its own indentation is also important.
 
 NOTE: Due to numerous technical constraints, we are not writing full Fluent *.ftl files, but rather using a subset of
 Fluent syntax in YAML files. In the future, if we abandon the legacy JSON format and some of the related constraints, we
