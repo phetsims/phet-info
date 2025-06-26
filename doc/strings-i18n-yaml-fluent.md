@@ -1,4 +1,4 @@
-# Strings, i18n, and YAML
+# Strings, i18n, YAML, and Fluent
 
 PhET Simulations can be translated into many languages. The string system relates to many overlapping parts, and must
 support the following features:
