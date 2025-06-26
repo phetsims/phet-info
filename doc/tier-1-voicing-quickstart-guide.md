@@ -92,8 +92,8 @@ const voicingRectangle = new ( Voicing( Rectangle ) )( 0, 0, 40, 40, {
   voicingHintResponse: hintStringProperty
 } );
 ```
-`voicingNameResponse` specifies the accessible name, spoken when the component is focused or activated.
-`voicingHintResponse` adds a brief hint, spoken after the name when focused.
+- `voicingNameResponse` is the name for the component and is spoken when the component is focused or activated.
+- `voicingHintResponse` is a brief hint and is spoken after the name when the component is focused.
 Together, these options satisfy almost all Tier 1 Voicing requirements.
 
 ## Default Content for common code
