@@ -82,21 +82,31 @@ fluent syntax for new strings, or when it is important to redo legacy pattern st
 Please note that this is just one of many syntax options for multiline strings, and that depending on your multiline
 string needs the syntax may be different.
 
-2. Strings that start with curly braces or end with colons must be quoted:
+2. Fluent and YAML are both whitespace sensitive, and in Fluent, subsequent lines must be indented. Note the indent on the Data values and Median lines:
+
+```yaml
+   accessibleParagraph: |-
+   Median is the number that splits a sorted data set in half.
+     
+     Data Values (in meters): {$values}
+     Median = {$median}
+```
+
+3. Strings that start with curly braces or end with colons must be quoted:
 
 ```yaml
 grabbedLigandResponseWithEmptyMembraneHintPattern: "{ a11y.grabbedLigandResponsePattern } Space to release. Add transport proteins."
 ```
 
-3. A multiline block scalar needs to start with a space so that the fluent syntax is valid.
-4. simMetadata can be provided via a `__simMetadata` key, see convertStringsYamlToJson.ts
-5. Normally YAML values parse as non-string primitives, such as `true`, `false`, `yes`, `no`, and `null`. To ensure that
+4. A multiline block scalar needs to start with a space so that the fluent syntax is valid.
+5. simMetadata can be provided via a `__simMetadata` key, see convertStringsYamlToJson.ts
+6. Normally YAML values parse as non-string primitives, such as `true`, `false`, `yes`, `no`, and `null`. To ensure that
    these values are treated as strings, our system uses `FAILSAFE_SCHEMA` to ensure that all values are treated as
    strings.
-6. chipper and scenerystack also provide direct support for *.ftl files, but this is not recommended for PhET
+7. chipper and scenerystack also provide direct support for *.ftl files, but this is not recommended for PhET
    simulations, as it does not support the same features as the YAML system, such PhET-iO support, Rosetta integration,
    etc. It is recommended to use the YAML system for all PhET simulations.
-7. When used with RichText, you can HTML markup as needed, but keep in mind this is a burden for translators, so use
+8. When used with RichText, you can HTML markup as needed, but keep in mind this is a burden for translators, so use
    sparingly.
 
 # Implementation Notes
