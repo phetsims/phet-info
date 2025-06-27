@@ -124,7 +124,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | mobius | @jonathanolson |  |  | 
 | models-of-the-hydrogen-atom | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | molarity | @zepumph | @arouinfar | Sound<br/>Interactive Description | 
-| molecule-polarity | @pixelzoom | @arouinfar |  | 
+| molecule-polarity | @jonathanolson | @arouinfar |  | 
 | molecule-shapes | @jonathanolson | @arouinfar |  | 
 | molecule-shapes-basics | @jonathanolson | @arouinfar |  | 
 | molecules-and-light | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
@@ -146,8 +146,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | paper-land | @jbphet,@jessegreenberg | @brettfiedler |  | 
 | pendulum-lab | @jonathanolson | @arouinfar | Sound | 
 | perennial | @zepumph,@jonathanolson |  |  | 
-| ph-scale | @pixelzoom | @arouinfar | Interactive Description | 
-| ph-scale-basics | @pixelzoom | @arouinfar | Interactive Description | 
+| ph-scale | @marlitas | @arouinfar | Interactive Description | 
+| ph-scale-basics | @marlitas | @arouinfar | Interactive Description | 
 | phet-android-app | @mattpen |  |  | 
 | phet-core | @jonathanolson |  |  | 
 | phet-global-initiative | @kathy-phet |  |  | 
