@@ -154,8 +154,8 @@ the constructor, where `{{CLASS_NAME}}` should exactly match the class name. (b)
     doc/
       images/
         *see annotation
-      model.md
       implementation-notes.md
+      model.md
     images/
       license.json
     js/
@@ -165,14 +165,15 @@ the constructor, where `{{CLASS_NAME}}` should exactly match the class name. (b)
     sounds/
       license.json
     dependencies.json
+    eslint.config.mjs
     .gitignore
     my-repo_en.html
     my-repo-strings_en.json
     Gruntfile.cjs
     LICENSE
     package.json
-    tsconfig.json
     README.md
+    tsconfig.json
   ```
   *Any images used in model.md or implementation-notes.md should be added here. Images specific to aiding with
   documentation do not need their own license.
