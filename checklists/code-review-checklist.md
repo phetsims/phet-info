@@ -343,8 +343,7 @@ various features, not all are always include. Ignore sections that do not apply.
 
 - [ ] Run the entire built sim HTML file through an [HTML validator](https://validator.w3.org/nu/#textarea), does the
   HTML pass?
-  - The following warnings are expected and acceptable:
-    - "Consider adding a lang attribute to the html start tag to declare the language of this document."
+  - The following warning is expected and acceptable:
     - "Consider avoiding viewport values that prevent users from resizing documents." 
 - [ ] If applicable, are good design patterns used for interactive description,
   see [interactive-description-technical-guide.md](https://github.com/phetsims/phet-info/blob/main/doc/interactive-description-technical-guide.md)
