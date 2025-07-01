@@ -1,10 +1,10 @@
-# Tier 1 Description - Quickstart Guide
+# Core Description - Quickstart Guide
 
 @author Jesse Greenberg
 
-A quick guide for adding Tier 1 Interactive Description to a PhET simulation.
+A quick guide for adding Core Description to a PhET simulation.
 
-Tier 1 Interactive Description implements critical screen reader accessibility features, including:
+Core Description implements critical screen reader accessibility features, including:
 
 - Accessible names for interactive objects
 - Accessible headings for important areas of the simulation
@@ -14,13 +14,13 @@ Tier 1 Interactive Description implements critical screen reader accessibility f
 - Accessible responses (alerts) for important events or changes in the simulation or for voicing values that are not
   otherwise available
 
-Implementing Tier 1 significantly improves a simulation’s accessibility. This guide outlines the process and introduces
+Implementing Core Description significantly improves a simulation’s accessibility. This guide outlines the process and introduces
 the fundamental options and tools for the implementation. Refer to the source code documentation for more detailed
 information.
 
 ## Overall Process
 
-The simulation design team provides the content required for Tier 1 Interactive Description in a design document. This
+The simulation design team provides the content required for Core Description in a design document. This
 includes:
 
 - A screen summary for each screen (covering the play area, control area, current details, and interaction hint)
@@ -105,7 +105,7 @@ Currently, the fruit basket has:
 ## Basic options
 
 The options `accessibleName`, `accessibleHelpText`, and `accessibleParagraph` are defined in scenery's `ParallelDOM.ts`.
-These are most of what you will use to implement Tier 1 Interactive Description.
+These are most of what you will use to implement Core Description.
 
 NOTE: PhET is in the process of implementing accessibleName and accessibleHelpText in common code components. If you
 find a component where these options do not work as expected, please create an issue in the component repository.
@@ -514,7 +514,7 @@ The following resources contain information about how to use a screen reader:
 Interactive Description includes alternative input. Refer to the Alternative Input quickstart guide for setup:
 [Alternative Input Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md).
 
-### Tier 1 Voicing
+### Core Voicing
 
-For Tier 1 Voicing implementation guide, see
-[Tier 1 Voicing Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/tier-1-voicing-quick-start-guide.md).
+For Core Voicing implementation guide, see
+[Core Voicing Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/core-voicing-quick-start-guide.md).

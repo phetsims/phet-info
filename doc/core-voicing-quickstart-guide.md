@@ -1,13 +1,13 @@
-# Tier 1 Voicing - Quickstart Guide
+# Core Voicing - Quickstart Guide
 
 @author Jesse Greenberg
 
-A quick guide for adding Tier 1 Voicing to a PhET simulation.
+A quick guide for adding Core Voicing to a PhET simulation.
 
 Voicing uses speech synthesis to make PhET simulations more accessible. Unlike Interactive Description, which primarily
 uses the Parallel DOM for screen reader support, Voicing provides a built-in solution that self-voices content.
 
-Tier 1 Voicing is a subset of the full Voicing feature. It focuses on four main elements:
+Core Voicing is a subset of the full Voicing feature. It focuses on four main elements:
 
 - Voicing names for interactive objects
 - Voicing hint responses
@@ -17,25 +17,25 @@ Tier 1 Voicing is a subset of the full Voicing feature. It focuses on four main 
 These features are generally quicker to design and implement but still significantly improve accessibility. Because
 Voicing content often overlaps with Interactive Description, it is recommended to implementing both at once.
 
-This guide outlines the fundamentals of Tier 1 Voicing and shows how to integrate it into your simulation. Refer to the
+This guide outlines the fundamentals of Core Voicing and shows how to integrate it into your simulation. Refer to the
 source code documentation for more advanced details.
 
 ## Overall Process
 
-The simulation design team typically provides Tier 1 Voicing content in a table, often alongside Interactive Description
+The simulation design team typically provides Core Voicing content in a table, often alongside Interactive Description
 details. Developers then reference those tables to apply the appropriate Voicing options in the code. For sim-specific
 components, you will use scenery’s Voicing classes and mixins to ensure interactive objects speak their assigned
 content.
 
 ## package.json
 
-In package.json, set the following flag to enable Tier 1 Voicing:
+In package.json, set the following flag to enable Core Voicing:
 
 ```json
 {
   "phet": {
     "simFeatures": {
-      "supportsTier1Voicing": true
+      "supportsCoreVoicing": true
     }
   }
 }
@@ -45,7 +45,7 @@ After modifying package.json, run `grunt update` to apply changes.
 
 ## Testing
 
-Once Tier 1 Voicing is enabled in package.json, launch the simulation. In the Preferences dialog, go to the Audio tab
+Once Core Voicing is enabled in package.json, launch the simulation. In the Preferences dialog, go to the Audio tab
 and enable Voicing. A toolbar will then appear on the left with buttons that play screen summary content.
 
 Some components already support Voicing by default. Click them to hear their audio. For other UI elements, add Voicing
@@ -57,7 +57,7 @@ For debugging, use the ?logVoicingResponses query parameter to log spoken output
 
 Use `ScreenSummaryContent.ts` in joist to implement the screen summary.
 
-By default, this pulls the same content used by Interactive Description. If the Voicing content differs from Tier 1
+By default, this pulls the same content used by Interactive Description. If the Voicing content differs from Core
 Description, you can customize with options.
 
 For each screen, the design document provides text for the play area, control area, current details, and an interaction
@@ -94,7 +94,7 @@ const voicingRectangle = new ( Voicing( Rectangle ) )( 0, 0, 40, 40, {
 ```
 - `voicingNameResponse` is the name for the component and is spoken when the component is focused or activated.
 - `voicingHintResponse` is a brief hint and is spoken after the name when the component is focused.
-Together, these options satisfy almost all Tier 1 Voicing requirements.
+Together, these options satisfy almost all Core Voicing requirements.
 
 ## Default Content for common code
 
@@ -103,7 +103,7 @@ Many components already determine their default Voicing content.
 - If a component has an `accessibleName`, it is used for `voicingNameResponse`.
 - If it has an `accessibleHelpText`, that is used for `voicingHintResponse`.
 
-As a result, Tier 1 Voicing often comes for free once Tier 1 Interactive Description is in place. However, you can
+As a result, Core Voicing often comes for free once Core Interactive Description is in place. However, you can
 always override these defaults by supplying your own `voicingNameResponse` and `voicingHintResponse` options.
 
 NOTE: PhET is in the process of implementing this behavior in common code components. If you find a component where
@@ -146,8 +146,8 @@ details, see [the Interactive Highlights quickstart guide](https://github.com/ph
 
 ## Accessibility Strings
 
-Accessibility strings for Tier 1 Voicing follow the same guidelines as Tier 1 Interactive Description. For details, see
-the Tier 1 Description quickstart guide.
+Accessibility strings for Core Voicing follow the same guidelines as Core Interactive Description. For details, see
+the Core Description quickstart guide.
 
 - If a string is only used for Voicing, include the option name of its usage site (like `voicingNameResponse`) in the
   key.
@@ -199,8 +199,8 @@ Voicing is closely integrated with alternative input. Refer to the Alternative I
 implementation:
 [Alternative Input Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md).
 
-### Tier 1 Description
+### Core Description
 
-Tier 1 Voicing complements Tier 1 Interactive Description. If you already support Interactive Description, much of your
+Core Voicing complements Core Interactive Description. If you already support Interactive Description, much of your
 voicing content will come “for free.” For details,
-see [Tier 1 Description Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/tier-1-description-quick-start-guide.md).
+see [Core Description Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/core-description-quick-start-guide.md).
