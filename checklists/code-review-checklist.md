@@ -189,18 +189,18 @@ the constructor, where `{{CLASS_NAME}}` should exactly match the class name. (b)
   ```
   my-repo/
     js/
-    common/
-      model/
-      view/
-    introduction/
-      model/
-      view/
-    lab/
-      model/
-      view/
-    my-repo-main.js
-    myRepo.js
-    myRepoStrings.js
+      common/
+        model/
+        view/
+      introduction/
+        model/
+        view/
+      lab/
+        model/
+        view/
+      my-repo-main.js
+      myRepo.js
+      MyRepoStrings.js
   ```
 
 - [ ] Do filenames use an appropriate prefix? Some filenames may be prefixed with the repository name,
