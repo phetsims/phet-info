@@ -103,7 +103,7 @@ Many components already determine their default Voicing content.
 - If a component has an `accessibleName`, it is used for `voicingNameResponse`.
 - If it has an `accessibleHelpText`, that is used for `voicingHintResponse`.
 
-As a result, Core Voicing often comes for free once Core Interactive Description is in place. However, you can
+As a result, Core Voicing often comes for free once Core Description is in place. However, you can
 always override these defaults by supplying your own `voicingNameResponse` and `voicingHintResponse` options.
 
 NOTE: PhET is in the process of implementing this behavior in common code components. If you find a component where
@@ -146,7 +146,7 @@ details, see [the Interactive Highlights quickstart guide](https://github.com/ph
 
 ## Accessibility Strings
 
-Accessibility strings for Core Voicing follow the same guidelines as Core Interactive Description. For details, see
+Accessibility strings for Core Voicing follow the same guidelines as Core Description. For details, see
 the Core Description quickstart guide.
 
 - If a string is only used for Voicing, include the option name of its usage site (like `voicingNameResponse`) in the
@@ -201,6 +201,6 @@ implementation:
 
 ### Core Description
 
-Core Voicing complements Core Interactive Description. If you already support Interactive Description, much of your
+Core Voicing complements Core Description. If you already support Core Description, much of your
 voicing content will come “for free.” For details,
 see [Core Description Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/core-description-quick-start-guide.md).
