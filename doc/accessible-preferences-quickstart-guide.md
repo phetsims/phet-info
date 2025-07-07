@@ -66,8 +66,8 @@ const myCheckbox = new Checkbox( someBooleanProperty, someContentNode, {
   descriptionContent: 'Play additional sound that may be helpful for some learners.',
 
   // Context responses that describe or confirm the changed context upon toggling the checkbox
-  checkedContextResponse: 'Extra sounds on.',
-  uncheckedContextResponse: 'Extra sounds off.'
+  accessibleContextResponseChecked: 'Extra sounds on.',
+  accessibleContextResponseUnchecked: 'Extra sounds off.'
 } );
 ```
 
@@ -76,8 +76,8 @@ const myCheckbox = new Checkbox( someBooleanProperty, someContentNode, {
   labelContent: 'Voice surrounding context changes',
 
   // Context responses that describe or confirm the changed context upon toggling the checkbox
-  checkedContextResponse: 'Voicing surrounding context changes.',
-  uncheckedContextResponse: 'Surrounding context changes muted.'
+  accessibleContextResponseChecked: 'Voicing surrounding context changes.',
+  accessibleContextResponseUnchecked: 'Surrounding context changes muted.'
 } );
 ```
 
