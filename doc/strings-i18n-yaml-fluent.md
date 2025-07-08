@@ -23,7 +23,7 @@ support the following features:
 10. Strings must appear as PhET-iO instrumented objects which can be changed at runtime.
 11. Strings must support metadata, such as phetioReadOnly or phetioDocumentation.
 12. Strings must be selectable using PhET-iO Studio string autoselect, so strings can be automatically discovered in
-    mouseover. this is necessary for constant strings, and not required for pattern strings.
+    mouseover. This is necessary for constant strings, and not required for pattern strings.
 
 To this end, we have developed a custom string management system to address these concerns.
 
