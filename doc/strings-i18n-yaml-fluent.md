@@ -56,14 +56,15 @@ Fluent syntax for new strings, or when it is important to redo legacy pattern st
 
 # Getting Started with YAML and Fluent
 
-1. To convert a legacy {{REPO}}-strings_en.json file to a YAML file, run `grunt create-yaml` from the sim directory, then
-   use WebStorm autoformat to align the values. If you are creating a new sim, you can start with an empty {{REPO}}-strings_en.yaml file.
+1. To convert a legacy {{REPO}}-strings_en.json file to a YAML file, run `grunt create-yaml` from the sim directory,
+   then use WebStorm autoformat to align the values. If you are creating a new sim, you can start with an empty
+   {{REPO}}-strings_en.yaml file.
 2. For the YAML file, each value is either a constant, one of the legacy placeholders, or a Fluent pattern.
 3. Once the YAML file is created or edited, run `grunt modulify --targets=strings` to autogenerate the JSON file, and
    the corresponding {{REPO}}Fluent.ts file.
-4. Note that once a sim has a {{REPO}}-strings_en.yaml file, the legacy {{REPO}}-strings_en.json file should be treated as a
-   read-only build artifact (created by the `grunt modulify` command), and should not be edited directly. To that end,
-   it is recommended to exclude the legacy JSON file from the IDE project to avoid finding it is search results.
+4. Note that once a sim has a {{REPO}}-strings_en.yaml file, the legacy {{REPO}}-strings_en.json file should be treated
+   as a read-only build artifact (created by the `grunt modulify` command), and should not be edited directly. To that
+   end, it is recommended to exclude the legacy JSON file from the IDE project to avoid finding it is search results.
 5. Set up your IDE to align the values for YAML. In WebStorm, this can be done by going to
    `Preferences > Editor > Code Style > YAML`, and setting the `Align values in maps` option to `value`. This will help
    with readability and maintainability of the YAML files. You can also achieve this by importing the Code Style
@@ -79,10 +80,11 @@ Fluent syntax for new strings, or when it is important to redo legacy pattern st
      It can have multiple lines.
    ```
 
-Please note that this is just one of many syntax options for multiline strings, and the syntax may be different depending on your multiline
-string.
+Please note that this is just one of many syntax options for multiline strings, and the syntax may be different
+depending on your multiline string.
 
-2. Fluent and YAML are both whitespace sensitive, and in Fluent, subsequent lines must be indented. In this example, note the indent on the Data Values and Median lines:
+2. Fluent and YAML are both whitespace sensitive, and in Fluent, subsequent lines must be indented. In this example,
+   note the indent on the Data Values and Median lines:
 
 ```yaml
    accessibleParagraph: |-
@@ -106,8 +108,8 @@ grabbedLigandResponseWithEmptyMembraneHintPattern: "{ a11y.grabbedLigandResponse
 7. chipper and scenerystack also provide direct support for *.ftl files, but this is not recommended for PhET
    simulations, as it does not support the same features as the YAML system, such PhET-iO support, Rosetta integration,
    etc. It is recommended to use the YAML system for all PhET simulations.
-8. When used with RichText, you can use HTML markup as needed. But keep in mind that this is a burden for translators, so use
-   markup sparingly.
+8. When used with RichText, you can use HTML markup as needed. But keep in mind that this is a burden for translators,
+   so use markup sparingly.
 
 # Implementation Notes
 
@@ -116,8 +118,8 @@ pipeline that preserves type-safety while enabling internationalization. When `g
 executed, the system first checks for the existence of a {{REPO}}-strings_en.yaml file. If found, it processes this file
 using the js-yaml library with a FAILSAFE_SCHEMA to ensure all values are preserved as strings (preventing automatic
 type conversion of values like "true" or "null"). The conversion transforms the flat YAML structure by nesting string
-values under a `"value"` key (e.g., `"text"` becomes `{ "value": "text" }`), handles special `__simMetadata` keys by merging
-them as simMetadata properties, and processes Fluent references by converting dot notation to underscores for
+values under a `"value"` key (e.g., `"text"` becomes `{ "value": "text" }`), handles special `__simMetadata` keys by
+merging them as simMetadata properties, and processes Fluent references by converting dot notation to underscores for
 compatibility with PhET's naming conventions.
 
 After JSON generation, the system creates TypeScript type definitions and Fluent objects through generateFluentTypes.ts.
