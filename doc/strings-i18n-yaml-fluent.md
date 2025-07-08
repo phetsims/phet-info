@@ -56,8 +56,8 @@ Fluent syntax for new strings, or when it is important to redo legacy pattern st
 
 # Getting Started with YAML and Fluent
 
-1. We do not currently have a script that converts the legacy {{REPO}}-strings_en.json files to YAML. That is currently a manual
-   process.
+1. To convert a legacy {{REPO}}-strings_en.json file to a YAML file, run `grunt create-yaml` from the sim directory, then
+   use WebStorm autoformat to align the values. If you are creating a new sim, you can start with an empty {{REPO}}-strings_en.yaml file.
 2. For the YAML file, each value is either a constant, one of the legacy placeholders, or a Fluent pattern.
 3. Once the YAML file is created or edited, run `grunt modulify --targets=strings` to autogenerate the JSON file, and
    the corresponding {{REPO}}Fluent.ts file.
