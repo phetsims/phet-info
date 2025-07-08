@@ -66,7 +66,7 @@ Fluent syntax for new strings, or when it is important to redo legacy pattern st
    as a read-only build artifact (created by the `grunt modulify` command), and should not be edited directly. To that
    end, it is recommended to exclude the legacy JSON file from the IDE project to avoid finding it is search results.
 5. Set up your IDE to align the values for YAML. In WebStorm, this can be done by going to
-   `Preferences > Editor > Code Style > YAML`, and setting the `Align values in maps` option to `value`. This will help
+   `Settings > Editor > Code Style > YAML`, and setting the `Align values in maps` option to `value`. This will help
    with readability and maintainability of the YAML files. You can also achieve this by importing the Code Style
    settings from phet-info/ide/idea/phet-idea-codestyle.xml
 
