@@ -1,5 +1,241 @@
 # Strings, i18n, YAML, and Fluent
 
+## 1. Purpose
+
+This document is a quickstart guide for developers on how to use PhET's YAML/Fluent-based internationalization (i18n)
+system. Its goal is to answer:
+
+* How do I use this system to localize a simulation?
+* How do I convert a simulation from the legacy JSON-based system?
+* What are the key APIs and workflows?
+
+This system was introduced to support more powerful and grammatically correct translations, especially for complex
+strings with placeholders.
+
+### Core Concepts: YAML and Fluent
+
+The new system uses two languages:
+
+* **YAML**: Provides the **structure** for the string files. It organizes strings into a nested, readable, key-value
+  format.
+* **Fluent**: Provides the **syntax for the string values**. It is a powerful localization system designed for
+  natural-sounding translations, especially for strings with dynamic parts (placeholders).
+
+In short: **YAML is the container, and Fluent provides the content.**
+
+## 2. The Old System vs. The New System
+
+Here is a comparison of the artifacts and APIs for both systems.
+
+### The Legacy System (JSON-based)
+
+* **Source File**: `{{REPO}}-strings_en.json`
+* **Generated Artifacts**: Running `grunt modulify` creates `{{REPO}}Strings.ts`.
+* **API**:
+  * `{{REPO}}Strings.ts` contains `LocalizedStringProperty` instances for all strings.
+  * For patterns, developers used `PatternStringProperty`, `StringUtils.fillIn`, or `StringUtils.format` with
+    `{{placeholder}}` or `{0}` style placeholders.
+
+### The New System (YAML/Fluent-based)
+
+* **Source File**: `{{REPO}}-strings_en.yaml` (this is the single source of truth).
+* **Generated Artifacts**: Running `grunt modulify --targets=strings` creates:
+  1. `{{REPO}}-strings_en.json`: A JSON version for backward compatibility with the Rosetta translation tool. **This
+     file is a build artifact and should not be edited directly.**
+  2. `{{REPO}}Strings.ts`: Preserved for backward compatibility, allowing for gradual refactoring.
+  3. `{{REPO}}Fluent.ts`: The primary file for development. It contains typed objects for interacting with your strings.
+* **API**:
+  * `FluentConstant`: For simple, static strings. It is a `TReadOnlyProperty<string>`.
+  * `FluentPattern`: For strings with placeholders.
+    * `FluentPattern.createProperty(...)`: Creates a reactive `TReadOnlyProperty<string>` that automatically updates
+      when its placeholder values (which can be other Properties) change.
+    * `FluentPattern.format(...)`: A static function to format a string once with a given set of values.
+
+## 3. How to Convert a Simulation to YAML/Fluent
+
+Follow these steps to migrate a sim from the legacy JSON system.
+
+**Step 1: Create the YAML file**
+
+From your sim's root directory, run:
+
+```bash
+grunt create-yaml
+```
+
+This command reads your existing `{{REPO}}-strings_en.json` file and creates a new `{{REPO}}-strings_en.yaml` file.
+
+**Step 2: Generate the new artifacts**
+
+Next, run `modulify` to generate the JSON, `...Strings.ts`, and `...Fluent.ts` files from your new YAML file:
+
+```bash
+grunt modulify --targets=strings
+```
+
+**Step 3: Verify backward compatibility**
+
+After running `modulify`, check that `{{REPO}}Strings.ts` has not changed. This is important because it confirms that
+the conversion has not broken any existing string usages, allowing you to refactor gradually.
+
+**Step 4: Refactor code to use the Fluent API**
+
+Now you can begin updating your sim's code to use the new, more powerful API from `{{REPO}}Fluent.ts`.
+
+* **For constant strings**:
+  * **Old:** `import myStringProperty from '../../{{REPO}}Strings.js';`
+  * **New:** `import { myStringConstant } from '../../js/{{REPO}}Fluent.js';` (Note: `myStringConstant` is a
+    `FluentConstant`, which is a `TReadOnlyProperty<string>`)
+
+* **For pattern strings**:
+  * **Old:** `new PatternStringProperty( somePatternStringProperty, { ... } )` or `StringUtils.fillIn(...)`
+  * **New:** `import { somePattern } from '../../js/{{REPO}}Fluent.js';`
+    * Use `somePattern.createProperty( { ... } )` to create a reactive Property.
+    * Use `somePattern.format( { ... } )` to format the string once.
+
+## 4. Practical Usage and Syntax ("Implementation Patterns")
+
+Here are examples of how to write strings in your `.yaml` file and use them in code.
+
+### YAML: The Structure
+
+PhET uses a small subset of YAML's features. The most important concept is that **indentation creates nesting**.
+
+```yaml
+# parent is a key
+parent:
+  # child is nested under parent
+  child: 'Some string value'
+```
+
+For readability, we recommend configuring your IDE to align values in maps. In WebStorm, this is
+`Settings > Editor > Code Style > YAML > Align values in maps`.
+
+### Fluent: The Content
+
+#### Constant Strings
+
+A simple key-value pair.
+
+```yaml
+# In {{REPO}}-strings_en.yaml
+myCoolButton:
+  label: 'My Cool Button'
+
+# In code
+import { myCoolButton } from '../../js/{{REPO}}Fluent.js';
+const button = new PushButton( myCoolButton.label.constant, { ... } );
+```
+
+#### Pattern Strings (Placeholders)
+
+Use `{ $variableName }` for placeholders. The spaces around the variable name do not matter (`{$value}` is the same as
+`{ $value }`).
+
+```yaml
+# In {{REPO}}-strings_en.yaml
+valueLabelPattern: 'Value: { $value }'
+
+# In code
+import { valueLabelPattern } from '../../js/{{REPO}}Fluent.js';
+
+const valueProperty = new NumberProperty( 5 );
+
+// Create a reactive Property that updates when valueProperty changes
+const labelProperty = valueLabelPattern.createProperty( { value: valueProperty } ); // "Value: 5"
+
+// Or format it once
+const labelString = valueLabelPattern.format( { value: 10 } ); // "Value: 10"
+```
+
+> **IMPORTANT**: Currently, Fluent syntax (e.g., `{ $variable }`) should **only** be used for strings under the `a11y`
+> key. Rosetta, our translation tool, does not yet support Fluent syntax for visual strings. For any visual string that
+> requires a placeholder, you must continue to use the legacy `{{placeholder}}` syntax.
+
+#### Multiline Strings
+
+Use `|-` for multiline strings. In Fluent, subsequent lines of a single message must be indented.
+
+```yaml
+# Note the indentation on the second and third lines
+myMultilineString: |-
+  This is the first line.
+    This is the second line.
+    This is the third line.
+```
+
+#### Quoting
+
+You must quote strings that start with `{` or end with `:`.
+
+```yaml
+myQuotedString: '{ a11y.somePattern } is a pattern.'
+```
+
+#### Nesting Styles
+
+You may see two different nesting styles in `.yaml` files:
+
+1. **Dot-notation keys (for UI strings)**: `screen.home.title: 'My Sim'`
+2. **Indented keys (for a11y strings)**:
+   ```yaml
+   a11y:
+     section:
+       description: 'This is an accessible description.'
+   ```
+
+This is a convention. The dot-notation style is currently required outside of the `a11y` subtree, and the nested style
+is preferred within the `a11y` subtree.
+
+#### Metadata (`__simMetadata`)
+
+You can add metadata like `phetioDocumentation` or `phetioReadOnly` using the `__simMetadata` key.
+
+```yaml
+myString:
+  value: 'Some Value'
+  __simMetadata:
+    phetioDocumentation: 'This is documentation for PhET-iO.'
+    phetioReadOnly: true
+```
+
+## 5. Syntax and Gotchas
+
+* **Newlines**: YAML does not support the `\n` escape character for newlines. Use the `|-` multiline syntax instead (see
+  the "Multiline Strings" example above).
+* **IDE Configuration**: It is highly recommended to exclude the generated `{{REPO}}-strings_en.json` file from your
+  IDE's project view. This prevents it from appearing in search results, ensuring you always edit the authoritative
+  `.yaml` file.
+* **Direct `.ftl` support**: While `chipper` and `scenerystack` have some direct support for `.ftl` files, the
+  YAML-based system described here is the standard for PhET simulations, as it integrates with PhET-iO, Rosetta, and
+  other required features.
+* **HTML in RichText**: You can use HTML markup in strings that will be displayed with `RichText`. However, be aware
+  that this increases the complexity for translators, so use it sparingly.
+
+## 6. Tooling and Workflow
+
+* `grunt create-yaml`: Converts a legacy `...-strings_en.json` file to `...-strings_en.yaml`.
+* `grunt modulify --targets=strings`: Generates all derived string artifacts from the YAML source file.
+* **Rosetta**: The translation tool has **not changed**. It continues to read from and write to the auto-generated
+  `{{REPO}}-strings_en.json` file. Translators will not see or edit YAML/Fluent files directly.
+* **Linting**: A lint rule (`require-fluent`) exists to help enforce the use of the new Fluent API where appropriate.
+
+### What is `FAILSAFE_SCHEMA`?
+
+You may see `FAILSAFE_SCHEMA` mentioned in the build tools. This is a technical detail of the YAML parser configuration.
+It ensures that all values in the `.yaml` file (like `true`, `no`, `null`) are treated as strings, preventing the parser
+from automatically converting them to booleans or other types. You do not need to do anything about this; it's handled
+by the build process.
+
+## 6. Further Reading
+
+* For a complete, real-world example, see `membrane-transport/membrane-transport-strings_en.yaml`.
+* For more about Fluent's capabilities (like pluralization and selectors), see
+  the [Fluent Syntax Guide](https://projectfluent.org/fluent/guide/). Note that PhET does not support all Fluent
+  features (e.g., attributes).
+
+## Appendix 1. Requirements for PhET's i18n Concerns
+
 PhET Simulations can be translated into many languages. The string system relates to many overlapping parts, and must
 support the following features:
 
@@ -25,93 +261,7 @@ support the following features:
 12. Strings must be selectable using PhET-iO Studio string autoselect, so strings can be automatically discovered in
     mouseover. This is necessary for constant strings, and not required for pattern strings.
 
-To this end, we have developed a custom string management system to address these concerns.
-
-In order for patterns to be translatable in a grammatically correct way, we use Fluent. To support structuring and
-multiline values, we use YAML. To support Rosetta and backward compatibility, we output to the legacy JSON format. We
-preserve support for our legacy placeholder formats `{0}` and `{{value}}` for backward compatibility.
-
-**YAML and Fluent are new languages for our project, our team must dedicate time to learning them.**
-
-For YAML, we recommend reading
-the [YAML specification](https://yaml.org/spec/1.2/spec.html), [Learn YAML in Y minutes](https://learnxinyminutes.com/yaml/),
-[YAML quick start guide](https://quickref.me/yaml.html) (watch out for ads) for more details on YAML syntax. Note that
-YAML is whitespace sensitive, so indentation is important.
-
-For Fluent, we recommend reading the [Fluent Project](https://projectfluent.org/), and experimenting with
-the [Fluent Playground](https://projectfluent.org/play/) is a great resource for experimenting with Fluent patterns.
-Note that we do not support 100% of Fluent syntax, such as attributes. Note that Fluent is also whitespace sensitive, so
-its own indentation is also important.
-
-NOTE: Due to numerous technical constraints, we are not writing full Fluent *.ftl files, but rather using a subset of
-Fluent syntax in YAML files. In the future, if we abandon the legacy JSON format and some of the related constraints, we
-may be able to use full Fluent format.
-
-NOTE: Rosetta does not yet support translating Fluent fragments, so please do not use Fluent patterns in the visual
-strings. If you need a pattern in the visual strings, please use the legacy `{{value}}` pattern for now.
-
-NOTE: When porting a legacy sim's JSON to YAML, you should preserve the placeholder syntax as it was. Sim code and
-translations cannot be seamlessly transitioned to Fluent patterns without significant effort. So you can consider the
-Fluent syntax for new strings, or when it is important to redo legacy pattern strings.
-
-# Getting Started with YAML and Fluent
-
-1. To convert a legacy {{REPO}}-strings_en.json file to a YAML file, run `grunt create-yaml` from the sim directory,
-   then use WebStorm autoformat to align the values. If you are creating a new sim, you can start with an empty
-   {{REPO}}-strings_en.yaml file.
-2. For the YAML file, each value is either a constant, one of the legacy placeholders, or a Fluent pattern.
-3. Once the YAML file is created or edited, run `grunt modulify --targets=strings` to autogenerate the JSON file, and
-   the corresponding {{REPO}}Fluent.ts file.
-4. Note that once a sim has a {{REPO}}-strings_en.yaml file, the legacy {{REPO}}-strings_en.json file should be treated
-   as a read-only build artifact (created by the `grunt modulify` command), and should not be edited directly. To that
-   end, it is recommended to exclude the legacy JSON file from the IDE project to avoid finding it is search results.
-5. Set up your IDE to align the values for YAML. In WebStorm, this can be done by going to
-   `Settings > Editor > Code Style > YAML`, and setting the `Align values in maps` option to `value`. This will help
-   with readability and maintainability of the YAML files. You can also achieve this by importing the Code Style
-   settings from phet-info/ide/idea/phet-idea-codestyle.xml
-
-# Syntax and Gotchas
-
-1. YAML does not support newline `\n` escaped characters, but instead should be converted to a multiline string using
-   the `|-` syntax. For example:
-   ```yaml
-   myMultilineString: |-
-     This is a multiline string.
-     It can have multiple lines.
-   ```
-
-Please note that this is just one of many syntax options for multiline strings, and the syntax may be different
-depending on your multiline string.
-
-2. Fluent and YAML are both whitespace sensitive, and in Fluent, subsequent lines must be indented. In this example,
-   note the indent on the Data Values and Median lines:
-
-```yaml
-   accessibleParagraph: |-
-   Median is the number that splits a sorted data set in half.
-     
-     Data Values (in meters): {$values}
-     Median = {$median}
-```
-
-3. Strings that start with curly braces or end with colons must be quoted:
-
-```yaml
-grabbedLigandResponseWithEmptyMembraneHintPattern: "{ a11y.grabbedLigandResponsePattern } Space to release. Add transport proteins."
-```
-
-4. A multiline block scalar needs to start with a space so that the Fluent syntax is valid.
-5. simMetadata can be provided via a `__simMetadata` key, see convertStringsYamlToJson.ts
-6. Normally YAML values parse as non-string primitives, such as `true`, `false`, `yes`, `no`, and `null`. To ensure that
-   these values are treated as strings, our system uses `FAILSAFE_SCHEMA` to ensure that all values are treated as
-   strings.
-7. chipper and scenerystack also provide direct support for *.ftl files, but this is not recommended for PhET
-   simulations, as it does not support the same features as the YAML system, such PhET-iO support, Rosetta integration,
-   etc. It is recommended to use the YAML system for all PhET simulations.
-8. When used with RichText, you can use HTML markup as needed. But keep in mind that this is a burden for translators,
-   so use markup sparingly.
-
-# Implementation Notes
+## Appendix 2. Implementation Notes
 
 The conversion from YAML to JSON and Fluent processing during the modulify build step is handled by a sophisticated
 pipeline that preserves type-safety while enabling internationalization. When `grunt modulify --targets=strings` is
@@ -130,7 +280,3 @@ separately from modern Fluent syntax (`{ variable }`). The resulting artifacts i
 Rosetta compatibility, TypeScript modules with proper typing for development, and Fluent message objects that support
 runtime string resolution with proper parameterization. This architecture enables PhET simulations to leverage modern
 internationalization practices while preserving the existing toolchain and translation workflow.
-
-# References
-
-1. Please refer to membrane-transport-strings_en.yaml for an example of a YAML file.
