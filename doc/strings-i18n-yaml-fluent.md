@@ -42,11 +42,11 @@ Here is a comparison of the artifacts and APIs for both systems.
 * **Generated Artifacts**: Running `grunt modulify --targets=strings` creates:
   1. `{{REPO}}-strings_en.json`: A JSON version for backward compatibility with the Rosetta translation tool. **This
      file is a build artifact and should not be edited directly.**
-  2. `{{REPO}}Strings.ts`: Preserved for backward compatibility, allowing for gradual refactoring.
+  2. `{{REPO}}Strings.ts`: Preserved for backward compatibility, allowing for gradual refactoring. It contains the same `LocalizedStringProperty` instances as the old system.
   3. `{{REPO}}Fluent.ts`: The primary file for development. It contains typed objects for interacting with your strings.
 * **API**:
-  * `FluentConstant`: For simple, static strings. It is a `TReadOnlyProperty<string>`.
-  * `FluentPattern`: For strings with placeholders.
+  * `FluentConstant`: For simple, static strings. It is a `TReadOnlyProperty<string>`. Found in `{{REPO}}Fluent.ts`. A FluentConstant does not have any external inputs, though it may cross-reference other variables within the fluent file.
+  * `FluentPattern`: For strings with placeholders. Found in `{{REPO}}Fluent.ts`.
     * `FluentPattern.createProperty(...)`: Creates a reactive `TReadOnlyProperty<string>` that automatically updates
       when its placeholder values (which can be other Properties) change.
     * `FluentPattern.format(...)`: A static function to format a string once with a given set of values.
@@ -63,7 +63,7 @@ From your sim's root directory, run:
 grunt create-yaml
 ```
 
-This command reads your existing `{{REPO}}-strings_en.json` file and creates a new `{{REPO}}-strings_en.yaml` file.
+This command reads your existing `{{REPO}}-strings_en.json` file and creates a new `{{REPO}}-strings_en.yaml` file. This automates the initial conversion.
 
 **Step 2: Generate the new artifacts**
 
@@ -83,13 +83,12 @@ the conversion has not broken any existing string usages, allowing you to refact
 Now you can begin updating your sim's code to use the new, more powerful API from `{{REPO}}Fluent.ts`.
 
 * **For constant strings**:
-  * **Old:** `import myStringProperty from '../../{{REPO}}Strings.js';`
-  * **New:** `import { myStringConstant } from '../../js/{{REPO}}Fluent.js';` (Note: `myStringConstant` is a
-    `FluentConstant`, which is a `TReadOnlyProperty<string>`)
+  * **Old:** import from `'{{REPO}}Strings.js'` this gives LocalizedStringProperty instances.
+  * **New:** import from `{{REPO}}Fluent.js` this gives `FluentPattern | FluentConstant` instances.
 
 * **For pattern strings**:
   * **Old:** `new PatternStringProperty( somePatternStringProperty, { ... } )` or `StringUtils.fillIn(...)`
-  * **New:** `import { somePattern } from '../../js/{{REPO}}Fluent.js';`
+  * **New:** import from `'{{REPO}}Fluent.js';`
     * Use `somePattern.createProperty( { ... } )` to create a reactive Property.
     * Use `somePattern.format( { ... } )` to format the string once.
 
@@ -104,7 +103,7 @@ PhET uses a small subset of YAML's features. The most important concept is that 
 ```yaml
 # parent is a key
 parent:
-  # child is nested under parent
+  # child is nested under parent because it is indented
   child: 'Some string value'
 ```
 
@@ -119,30 +118,28 @@ A simple key-value pair.
 
 ```yaml
 # In {{REPO}}-strings_en.yaml
-myCoolButton:
-  label: 'My Cool Button'
+myCoolButton: 'My Cool Button'
 
 # In code
-import { myCoolButton } from '../../js/{{REPO}}Fluent.js';
-const button = new PushButton( myCoolButton.label.constant, { ... } );
+import MyRepoFluent from '../../js/{{REPO}}Fluent.js';
+const button = new PushButton( MyRepoFluent.myCoolButton, { ... } );
 ```
 
 #### Pattern Strings (Placeholders)
 
-Use `{ $variableName }` for placeholders. The spaces around the variable name do not matter (`{$value}` is the same as
-`{ $value }`).
+Use `{ $variableName }` for placeholders. The spacing is flexible: `{ $value }`, `{$value}`, and `{ $value}` are all equivalent.
 
 ```yaml
 # In {{REPO}}-strings_en.yaml
 valueLabelPattern: 'Value: { $value }'
 
 # In code
-import { valueLabelPattern } from '../../js/{{REPO}}Fluent.js';
+import MyRepoFluent from '../../js/{{REPO}}Fluent.js';
 
 const valueProperty = new NumberProperty( 5 );
 
 // Create a reactive Property that updates when valueProperty changes
-const labelProperty = valueLabelPattern.createProperty( { value: valueProperty } ); // "Value: 5"
+const labelProperty = MyRepoFluent.valueLabelPattern.createProperty( { value: valueProperty } ); // "Value: 5"
 
 // Or format it once
 const labelString = valueLabelPattern.format( { value: 10 } ); // "Value: 10"
@@ -160,8 +157,8 @@ Use `|-` for multiline strings. In Fluent, subsequent lines of a single message 
 # Note the indentation on the second and third lines
 myMultilineString: |-
   This is the first line.
-    This is the second line.
-    This is the third line.
+   This is the second line.
+   This is the third line.
 ```
 
 #### Quoting
@@ -174,17 +171,20 @@ myQuotedString: '{ a11y.somePattern } is a pattern.'
 
 #### Nesting Styles
 
-You may see two different nesting styles in `.yaml` files:
+You will see two different key styles in `.yaml` files. This is a convention based on how strings are organized.
 
-1. **Dot-notation keys (for UI strings)**: `screen.home.title: 'My Sim'`
-2. **Indented keys (for a11y strings)**:
-   ```yaml
-   a11y:
-     section:
-       description: 'This is an accessible description.'
-   ```
+1.  **Dot-notation keys (for UI strings)**: Used for most strings outside of the `a11y` tree.
+    ```yaml
+    screen.home.title: 'My Sim'
+    ```
+2.  **Indented keys (for a11y strings)**: Used for descriptive `a11y` strings for readability.
+    ```yaml
+    a11y:
+      section:
+        description: 'This is an accessible description.'
+    ```
 
-This is a convention. The dot-notation style is currently required outside of the `a11y` subtree, and the nested style
+The dot-notation style is currently required outside of the `a11y` subtree, and the nested style
 is preferred within the `a11y` subtree.
 
 #### Metadata (`__simMetadata`)
@@ -216,18 +216,14 @@ myString:
 
 * `grunt create-yaml`: Converts a legacy `...-strings_en.json` file to `...-strings_en.yaml`.
 * `grunt modulify --targets=strings`: Generates all derived string artifacts from the YAML source file.
-* **Rosetta**: The translation tool has **not changed**. It continues to read from and write to the auto-generated
-  `{{REPO}}-strings_en.json` file. Translators will not see or edit YAML/Fluent files directly.
+* **Rosetta**: The translation tool has **not changed**. It continues to read from and write to the auto-generated `{{REPO}}-strings_en.json` file. Translators will not see or edit YAML/Fluent files directly.
 * **Linting**: A lint rule (`require-fluent`) exists to help enforce the use of the new Fluent API where appropriate.
 
-### What is `FAILSAFE_SCHEMA`?
+## 6. What is `FAILSAFE_SCHEMA`?
 
-You may see `FAILSAFE_SCHEMA` mentioned in the build tools. This is a technical detail of the YAML parser configuration.
-It ensures that all values in the `.yaml` file (like `true`, `no`, `null`) are treated as strings, preventing the parser
-from automatically converting them to booleans or other types. You do not need to do anything about this; it's handled
-by the build process.
+You may see `FAILSAFE_SCHEMA` mentioned in the build tools. This is a technical detail of the YAML parser configuration. It ensures that all values in the `.yaml` file (like `true`, `no`, `null`, or `1.0`) are treated as strings, preventing the parser from automatically converting them to booleans, numbers, or other types. You do not need to do anything about this; it's handled automatically by the build process.
 
-## 6. Further Reading
+## 7. Further Reading
 
 * For a complete, real-world example, see `membrane-transport/membrane-transport-strings_en.yaml`.
 * For more about Fluent's capabilities (like pluralization and selectors), see
@@ -275,8 +271,8 @@ compatibility with PhET's naming conventions.
 After JSON generation, the system creates TypeScript type definitions and Fluent objects through generateFluentTypes.ts.
 This process analyzes the YAML structure to distinguish between simple constant strings and parameterized patterns,
 generating FluentConstant objects for basic strings and FluentPattern objects for strings with variables. The system
-maintains backward compatibility by detecting legacy placeholder patterns (`{0} and `{{value}}`) and handling them
-separately from modern Fluent syntax (`{ variable }`). The resulting artifacts include the auto-generated JSON file for
+maintains backward compatibility by detecting legacy placeholder patterns (`{0}` and `{{value}}`) and handling them
+separately from modern Fluent syntax (`{ $variable }`). The resulting artifacts include the auto-generated JSON file for
 Rosetta compatibility, TypeScript modules with proper typing for development, and Fluent message objects that support
 runtime string resolution with proper parameterization. This architecture enables PhET simulations to leverage modern
 internationalization practices while preserving the existing toolchain and translation workflow.
