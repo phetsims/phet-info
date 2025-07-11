@@ -125,6 +125,25 @@ import MyRepoFluent from '../../js/{{REPO}}Fluent.js';
 const button = new PushButton( MyRepoFluent.myCoolButton, { ... } );
 ```
 
+##### More Constant Examples from membrane-transport
+
+```yaml
+# Simple constants
+solutes:                     Solutes
+outside:                     Outside
+inside:                      Inside
+
+# Constants with HTML formatting
+oxygen:                      O<sub>2</sub>
+carbonDioxide:               CO<sub>2</sub>
+sodiumIon:                   Na<sup>+</sup>
+potassiumIon:                K<sup>+</sup>
+
+# Longer descriptive constants
+animateLipidsDescription:    Whether the phospholipids forming the cell membrane should be animated.
+glucoseMetabolismDescription: Glucose fades from the inside of the cell. Barcharts display constant high concentration of glucose inside the cell.
+```
+
 #### Pattern Strings (Placeholders)
 
 Use `{ $variableName }` for placeholders. The spacing is flexible: `{ $value }`, `{$value}`, and `{ $value}` are all equivalent.
@@ -145,6 +164,128 @@ const labelProperty = MyRepoFluent.valueLabelPattern.createProperty( { value: va
 const labelString = valueLabelPattern.format( { value: 10 } ); // "Value: 10"
 ```
 
+##### Simple Pattern Examples from membrane-transport
+
+```yaml
+# Basic patterns with single variables
+accessibleName:     "{ a11y.soluteCapitalized } Outside Cell"
+accessibleName:     "{ a11y.soluteCapitalized } Inside Cell"
+
+# Patterns with cross-references to other Fluent strings
+initialResponse:    "{ a11y.soluteCapitalized } crossing membrane, { a11y.soluteConcentrationsAccordionBox.barChart.comparison }."
+```
+
+#### Fluent Selectors (Pluralization and Conditionals)
+
+Fluent's most powerful feature is selectors, which allow for grammatically correct translations based on variable values. This is especially important for pluralization and conditional text.
+
+##### Basic Pluralization Examples from membrane-transport
+
+```yaml
+# Simple pluralization with count
+soluteTypesOnOutside: |-
+  { $count ->
+    [one] { $count } solute type on outside
+   *[other] { $count } solute types on outside
+  }
+
+soluteTypesOnInside: |-
+  { $count ->
+    [one] { $count } solute type on inside
+   *[other] { $count } solute types on inside
+  }
+```
+
+##### Conditional Selectors from membrane-transport
+
+```yaml
+# Conditional text based on enum values
+membranePotentialValue: |-
+  { $membranePotential ->
+    [-70] negative 70
+    [-50] negative 50
+    *[30] positive 30
+  } millivolts
+
+# Conditional text for different amounts
+accessibleObjectResponse: |-
+  { $amount ->
+    [none] no
+    [few] a few
+    [some] some
+    [smallAmount] small amount of
+    [several] several
+    [many] many
+    [largeAmount] large amount of
+    [hugeAmount] huge amount of
+    *[maxAmount] max amount of
+  } { a11y.solute }
+```
+
+##### Reusable Selectors with Cross-References
+
+```yaml
+# A multiline selector defined once, then reused elsewhere
+a11y:
+  # Capitalized names for the solute type. Reused in various places.
+  soluteCapitalized:      |-
+                          { $soluteType ->
+                            [oxygen]        Oxygen Molecules
+                            [carbonDioxide] Carbon Dioxide molecules
+                            [sodiumIon]     Sodium Ions
+                            [potassiumIon]  Potassium Ions
+                            [glucose]       Glucose Molecules
+                           *[atp]           Atp Molecules
+                          }
+  myLabel:
+    accessibleName:     "{ a11y.soluteCapitalized } Outside Cell"
+```
+
+#### Complex Pattern Examples
+
+These examples demonstrate advanced Fluent features combining multiple variables, cross-references, and complex conditional logic.
+
+##### Multi-Variable Complex Patterns from membrane-transport
+
+```yaml
+# Complex pluralization with multiple variables
+transportProteins: |-
+  { $proteinCount ->
+    [one] { $proteinCount} transport protein
+    *[other] { $proteinCount} transport proteins
+  } of { $proteinTypeCount ->
+    [one] { $proteinTypeCount } type
+   *[other] { $proteinTypeCount} types
+  }, in membrane
+
+# Complex pattern with multiple variables and cross-references
+accessibleContextResponse: |-
+  { $amount ->
+    [aLittle] A little
+    *[aLot]    A lot
+  } { $addedOrRemoved ->
+    [added]   added
+    *[removed] removed
+  }. Now,
+  { $moreOrLessOrSameOrNone ->
+    [none] no { a11y.solute } outside or inside.
+    [same] same amount of solute inside and outside.
+    *[other] { $differenceSize ->
+      [aLittle] a little
+     *[aLot]    a lot
+    }
+    { $moreOrLessOrSameOrNone ->
+      [more] more
+     *[less] less
+    }
+    { a11y.solute }
+    { $directionality ->
+      [insideThanOutside] inside than outside
+     *[outsideThanInside] outside than inside
+    }.
+  }
+```
+
 > **IMPORTANT**: Currently, Fluent syntax (e.g., `{ $variable }`) should **only** be used for strings under the `a11y`
 > key. Rosetta, our translation tool, does not yet support Fluent syntax for visual strings. For any visual string that
 > requires a placeholder, you must continue to use the legacy `{{placeholder}}` syntax.
@@ -159,6 +300,36 @@ myMultilineString: |-
   This is the first line.
    This is the second line.
    This is the third line.
+```
+
+##### Multiline Examples from membrane-transport
+
+```yaml
+# Simple multiline descriptive text
+intro: |-
+  An observation window zooms in on a cross-section of a cell's membrane.
+    The membrane consists of a wiggling phospholipid bilayer, a double-layered sheet
+    that separates fluids inside and outside of cell. When added to outside or inside,
+    solute particles are suspended in fluid and randomly move with Brownian motion.
+
+# Multiline accessibility help text
+accessibleHelpText: |-
+  Add up to 7 proteins to membrane. Use keyboard shortcuts to grab, sort,
+    and release proteins into membrane.
+
+# Multiline with Fluent selectors
+accessibleName: |-
+  { $ligandType ->
+    [starLigand]     Star Ligand
+    *[triangleLigand] Triangle Ligand
+  }
+
+# Complex multiline with multiple conditional branches
+accessibleHelpText: |-
+  Membrane potential is { a11y.membranePotentialValue }. Proteins in membrane, {$typeCount ->
+    [one] { $typeCount } type
+    *[other] { $typeCount } types
+  }. Look for Solute Controls to add or remove solutes types.
 ```
 
 #### Quoting
