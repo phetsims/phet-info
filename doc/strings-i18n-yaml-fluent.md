@@ -392,6 +392,7 @@ myString:
 * `grunt modulify --targets=strings`: Generates all derived string artifacts from the YAML source file.
 * **Rosetta**: The translation tool has **not changed**. It continues to read from and write to the auto-generated `{{REPO}}-strings_en.json` file. Translators will not see or edit YAML/Fluent files directly.
 * **Linting**: A lint rule (`phet/require-fluent`) exists to help enforce the use of the new Fluent API where appropriate. See membrane-transport/eslint.config.mjs for an example of how to enable it.
+* **Fluent Table** You can show the fluent strings with a UI for selecting them by launching a Fluent-enabled sim with ?fluentTable=xx, where xx is the locale code.
 
 ## 6. What is `FAILSAFE_SCHEMA`?
 
