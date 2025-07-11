@@ -121,7 +121,7 @@ A simple key-value pair.
 myCoolButton: 'My Cool Button'
 
 # In code
-import MyRepoFluent from '../../js/{{REPO}}Fluent.js';
+import MyRepoFluent from '{{REPO}}Fluent.js';
 const button = new PushButton( MyRepoFluent.myCoolButton, { ... } );
 ```
 
@@ -153,7 +153,7 @@ Use `{ $variableName }` for placeholders. The spacing is flexible: `{ $value }`,
 valueLabelPattern: 'Value: { $value }'
 
 # In code
-import MyRepoFluent from '../../js/{{REPO}}Fluent.js';
+import MyRepoFluent from '{{REPO}}Fluent.js';
 
 const valueProperty = new NumberProperty( 5 );
 
