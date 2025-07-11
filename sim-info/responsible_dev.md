@@ -146,8 +146,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | paper-land | @jbphet,@jessegreenberg | @brettfiedler |  | 
 | pendulum-lab | @jonathanolson | @arouinfar | Sound | 
 | perennial | @zepumph,@jonathanolson |  |  | 
-| ph-scale | @marlitas | @arouinfar | Interactive Description | 
-| ph-scale-basics | @marlitas | @arouinfar | Interactive Description | 
+| ph-scale | @marlitas | @arouinfar | Sound<br/>Interactive Description | 
+| ph-scale-basics | @marlitas | @arouinfar | Sound<br/>Interactive Description | 
 | phet-android-app | @mattpen |  |  | 
 | phet-core | @jonathanolson |  |  | 
 | phet-global-initiative | @kathy-phet |  |  | 
