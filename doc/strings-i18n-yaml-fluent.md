@@ -50,6 +50,7 @@ Here is a comparison of the artifacts and APIs for both systems.
     * `FluentPattern.createProperty(...)`: Creates a reactive `TReadOnlyProperty<string>` that automatically updates
       when its placeholder values (which can be other Properties) change.
     * `FluentPattern.format(...)`: A static function to format a string once with a given set of values.
+  * `FluentConstant` is generated from the YAML `#` comments, so that we can access the comments at runtime, for display in tooling.
 
 ## 3. How to Convert a Simulation to YAML/Fluent
 
@@ -111,6 +112,8 @@ For readability, we recommend configuring your IDE to align values in maps. In W
 `Settings > Editor > Code Style > YAML > Align values in maps`.
 
 ### Fluent: The Content
+
+Examples below show how to write strings in Fluent syntax, which is used for both constant strings and patterns.  Note that we do not support 100% of Fluent syntax, such as attributes.
 
 #### Constant Strings
 
@@ -388,7 +391,7 @@ myString:
 * `grunt create-yaml`: Converts a legacy `...-strings_en.json` file to `...-strings_en.yaml`.
 * `grunt modulify --targets=strings`: Generates all derived string artifacts from the YAML source file.
 * **Rosetta**: The translation tool has **not changed**. It continues to read from and write to the auto-generated `{{REPO}}-strings_en.json` file. Translators will not see or edit YAML/Fluent files directly.
-* **Linting**: A lint rule (`require-fluent`) exists to help enforce the use of the new Fluent API where appropriate.
+* **Linting**: A lint rule (`phet/require-fluent`) exists to help enforce the use of the new Fluent API where appropriate. See membrane-transport/eslint.config.mjs for an example of how to enable it.
 
 ## 6. What is `FAILSAFE_SCHEMA`?
 
@@ -397,9 +400,11 @@ You may see `FAILSAFE_SCHEMA` mentioned in the build tools. This is a technical 
 ## 7. Further Reading
 
 * For a complete, real-world example, see `membrane-transport/membrane-transport-strings_en.yaml`.
-* For more about Fluent's capabilities (like pluralization and selectors), see
-  the [Fluent Syntax Guide](https://projectfluent.org/fluent/guide/). Note that PhET does not support all Fluent
-  features (e.g., attributes).
+* For YAML, we recommend reading
+the [YAML specification](https://yaml.org/spec/1.2/spec.html), [Learn YAML in Y minutes](https://learnxinyminutes.com/yaml/),
+[YAML quick start guide](https://quickref.me/yaml.html) (watch out for ads) for more details on YAML syntax.
+* For Fluent, we recommend reading the [Fluent Project](https://projectfluent.org/), and experimenting with
+the [Fluent Playground](https://projectfluent.org/play/) is a great resource for experimenting with Fluent patterns.
 
 ## Appendix 1. Requirements for PhET's i18n Concerns
 
