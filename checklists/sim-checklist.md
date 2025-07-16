@@ -69,7 +69,7 @@
 - [ ] Sound & Sonification (Completed: )
   - [ ] Sound design requirements determined: date: //
   - [ ] Sound design complete: date: //
-  - [ ] UI Sounds implemented: date: //
+  - [ ] Basic Sound implemented: date: //
   - [ ] All sounds implemented: date: //
 - [ ] Essential Description
   - [ ] Accessible names implemented: date: //
