@@ -51,8 +51,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | circuit-construction-kit-basics | @samreid | @arouinfar |  | 
 | circuit-construction-kit-black-box-study | @samreid | @arouinfar |  | 
 | circuit-construction-kit-common | @samreid | @arouinfar |  | 
-| circuit-construction-kit-dc | @samreid | @arouinfar | Interactive Description | 
-| circuit-construction-kit-dc-virtual-lab | @samreid | @arouinfar | Interactive Description | 
+| circuit-construction-kit-dc | @samreid | @arouinfar | Sound<br/>Interactive Description | 
+| circuit-construction-kit-dc-virtual-lab | @samreid | @arouinfar | Sound<br/>Interactive Description | 
 | collision-lab | @jonathanolson | @arouinfar |  | 
 | color-vision | @jbphet | @DianaTavares | Sound<br/>Interactive Description | 
 | community | @samreid | @brettfiedler |  | 
