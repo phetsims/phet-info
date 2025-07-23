@@ -7,10 +7,10 @@ A quick guide for adding Core Description to a PhET simulation.
 Core Description implements critical screen reader accessibility features, including:
 
 - Accessible names for interactive objects
-- Accessible headings for important areas of the simulation
 - Accessible help text for interactive objects
 - A screen summary for each screen (overview, current details, and hints)
 - Descriptions for non-interactive visual content
+- Accessible headings for important areas of the simulation
 - Accessible responses (alerts) for important events or changes in the simulation or for voicing values that are not
   otherwise available
 
