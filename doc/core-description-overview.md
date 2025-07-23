@@ -22,7 +22,6 @@
 # Guidance on where to draw the line between Core and Interactive Description.
  - Qualitative information related to custom interactions
  - Quality of content in the screen summary
- - 
 
 # References to relevant existing design documents for Core Description
 
