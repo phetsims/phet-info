@@ -80,7 +80,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | faradays-law | @jbphet | @arouinfar | Sound<br/>Interactive Description | 
 | fenster | @jbphet,@jessegreenberg |  |  | 
 | fluid-pressure-and-flow | @jessegreenberg | @DianaTavares |  | 
-| forces-and-motion-basics | @jessegreenberg | @arouinfar | Sound | 
+| forces-and-motion-basics | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
 | fourier-making-waves | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | fraction-comparison | @samreid | @amanda-phet |  | 
 | fraction-matcher | @jonathanolson | @amanda-phet | Sound | 
