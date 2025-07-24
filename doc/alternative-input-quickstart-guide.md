@@ -229,7 +229,7 @@ Here is an example:
 
 // a static somewhere in your class
 public static readonly HOTKEY_DATA = new HotkeyData( {
-  keyStringProperties: [ new Property( 'j+0' ) ],
+  keys: [ 'j+0' ],
   keyboardHelpDialogLabelStringProperty: SimRepoStrings.labelForCommand,
   repoName: simNamespace.name
 } );
@@ -251,7 +251,7 @@ receive input events, the listener will fire. Here is an example:
 
 // a static somewhere in your class
 public static readonly HOTKEY_DATA = new HotkeyData( {
-  keyStringProperties: [ new Property( 'alt+r' ) ],
+  keys: [ 'alt+r' ],
   keyboardHelpDialogLabelStringProperty: SimRepoStrings.labelForCommand,
   repoName: simNamespace.name,
   global: true // for documentation, mark this as a global hotkey
