@@ -17,6 +17,7 @@
   - [ ] Update teacher tips
   - [ ] Update screenshots
   - [ ] Update release notes with developer
+  - [ ] Add to Essential Exceptions doc ([guidelines](https://docs.google.com/document/d/1NjLGmGr2Oi9A9D9SCH5WAgOhpA7ysmuvv0Jn_batPVU/edit?tab=t.0#heading=h.c063kqhkkg))
 - [ ] **Post-publication items**
   - [ ] Tag new inclusive features on website
   - [ ] Alert translators if there have been significant string changes
