@@ -63,18 +63,18 @@
 
 ## Inclusive Features
 
-- [ ] Alternative Input (Started: ) (Completed: )
+- [ ] Alternative Input
   - [ ] Create screen-specific [Keyboard Shortcuts dialogs](https://docs.google.com/document/d/1cBnuLYYFb6d3eyJlVzjEz9sp2XlAI8upWXUUrcyHu4c/edit). [Ai template](https://o365coloradoedu.sharepoint.com/:u:/r/sites/PHYS-phet-pilot/PhET%20Files/PhET%20Files/PhET%20Design%20Resources/Design%20Resources%20-%20Sim%20Design/Keyboard%20Dialog%20Template.ai?csf=1&web=1&e=th8xeg)
-- [ ] Sound & Sonification (Completed: )
-  - [ ] Sound design requirements determined: date: //
+- [ ] Sound & Sonification 
+  - [ ] Sound design requirements determined
   - [ ] Sound design complete: date: //
   - [ ] Basic Sound implemented: date: //
   - [ ] All sounds implemented: date: //
-- [ ] Essential Description
-  - [ ] Accessible names implemented: date: //
+- [ ] Core Description
+      - ToDo: Link to Core Description Resource
 - [ ] Interactive Description - (link to description design & implementation checklist)
-  - [ ] Description design complete (Started: ) (Completed: )
-  - [ ] Development complete (Started: ) (Completed: )
+  - [ ] Description design complete 
+  - [ ] Development complete 
   - [ ] Mobile description included
 - [ ] Voicing - (include links to relevant voicing design document)
 
