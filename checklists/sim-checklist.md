@@ -18,6 +18,7 @@
 - [ ] **Mockups complete** (Date: //)
   - [ ] Mockups checked for [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0)
   - [ ] ToDo: Determine what WCAG AA items need to be in this checklist, or link to ACR (VPAT)
+  - [ ] Create screen-specific [Keyboard Shortcuts dialogs](https://docs.google.com/document/d/1cBnuLYYFb6d3eyJlVzjEz9sp2XlAI8upWXUUrcyHu4c/edit) and descriptions. [Ai template](https://o365coloradoedu.sharepoint.com/:u:/r/sites/PHYS-phet-pilot/PhET%20Files/PhET%20Files/PhET%20Design%20Resources/Design%20Resources%20-%20Sim%20Design/Keyboard%20Dialog%20Template.ai?csf=1&web=1&e=th8xeg).
 - [ ] **Features for PhET-iO discussion**
 - [ ] **Interviews complete** (Date: //)
   - [ ] Results reported to team
