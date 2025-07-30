@@ -120,7 +120,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | masses-and-springs | @matthew-blackman | @arouinfar,@matthew-blackman |  | 
 | masses-and-springs-basics | @matthew-blackman | @arouinfar |  | 
 | mean-share-and-balance | @marlitas,@jbphet | @amanda-phet | Sound<br/>Interactive Description | 
-| membrane-transport | @samreid,@jessegreenberg | @brettfiedler | Sound<br/>Interactive Description<br/>Voicing | 
+| membrane-transport | @samreid,@jessegreenberg | @brettfiedler | Sound<br/>Interactive Description | 
 | mobius | @jonathanolson |  |  | 
 | models-of-the-hydrogen-atom | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | molarity | @zepumph | @arouinfar | Sound<br/>Interactive Description | 
