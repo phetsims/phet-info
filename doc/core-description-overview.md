@@ -1,4 +1,4 @@
-# Core Description Overview
+# Core Description Overview (IN PROGRESS)
 
 @author Taliesin Smith
 @author Jesse Greenberg
@@ -28,11 +28,22 @@ _Core Description_ does not explicitly exclude anything. If it is easy to design
     - Simple statements tied to a UI component or user interaction.
     - {{pedagogically critical quantitative information?}}
 
-# Guidance and examples for each Core Description piece
 
-# Guidance on where to draw the line between Core and Interactive Description.
- - Qualitative information related to custom interactions
- - Quality of content in the screen summary
+
+# Drawing the line between Core and Interactive Description.
+ - Try to break this into general do's and don'ts
+ - Qualitative information in dynamic strings
+ - Descriptions around custom objects
+ - Keep current details to the absolute essentials (practices in process - will summarize)
+
+# Punctuation
+- accessibleName: Title case, no punctuation. Example: “Concentration Probe”
+- accessibleHelpText: Sentence case, with punctuation. Example: “Move the probe.”
+- accessibleObjectResponse: Fragment, no sentence casing, no punctuation. Example: “5 centemeters”,  “dispensing”
+- accessibleContextResponse: Sentence case, with punctuation. Example: "Vector added to graph area."
+- accessibleParagraph: a paragraph of full sentences, with sentence case and punctuation.
+
+# Examples for each Core Description piece
 
 # References to relevant existing design documents for Core Description
 
