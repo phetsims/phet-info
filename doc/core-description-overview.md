@@ -13,7 +13,7 @@ _Core Description_ is a phased description design approach that aims to meet WCA
 Additionally, design and develoopment of _Core Description_ of several sims at once and all news sims allows us to improve SceneryStack's high-lelvel APIs, and all the entire team to gain design and development expertise that will make phase 2, full Interactive Description design, much easier. 
 
 # What is included and excluded in Core Description
-_Core Description_ does not explicitly exclude anything. If it is easy to design and implement, we want it included.
+_Core Description_ does not explicitly exclude anything. If it is easy to design and implement, we want to include it. That said, there are clear boundary lines for some of the more dynamic strings found in for Object and Context Responses, and some Dynamic State Descriptions.
 
 
 # Core Description pieces (a definition of each and high level overview)
