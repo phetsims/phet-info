@@ -18,7 +18,10 @@ known problems, etc.
 
 ### Porting from JavaScript
 
-1. Rename the file from *.js to *.ts. This must be committed as a pure rename, without changing contents. If you change
+1. Create an issue in the repo you are converting to connect your commits to. If you are converting a sim, publish a dev
+   version before making any changes and point the build to the issue using the `--message` option in `grunt dev`. Do
+   the same after the conversion is complete to do any regression testing.
+2. Rename the file from *.js to *.ts. This must be committed as a pure rename, without changing contents. If you change
    the content more than a small amount, git will think it is a delete and create, which will lose the history of the
    file. Use `git mv` to rename the file, or if you are using WebStorm, it will do this automatically for you. See https://github.com/phetsims/sun/issues/732#issuecomment-995330513 and https://github.com/phetsims/charges-and-fields/issues/208#issuecomment-3134618756
 2. I have found it efficient to convert a single file (or a small batch of related files) at a time. Rename the file
