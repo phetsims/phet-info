@@ -241,17 +241,17 @@ Author: @zepumph
 
 Disposal is the process of freeing up memory so that it can be garbage collected. In general, JavaScript will garbage
 collect. A memory leak is when an Object in the sim keeps a reference to something that should be garbage collected.
-This reference inhibits garbage collection from happening. The dispose pattern helps to prevent. An instance needs to be
-disposed if any code outside that Type has a reference to it. For example a Type needs to be disposed if a listener is
+This reference inhibits garbage collection from happening. The dispose pattern helps to prevent this. An instance needs to be
+disposed if any code outside that Type has a reference to it. For example, a Type needs to be disposed if a listener is
 added to an `AXON/Emitter` that was passed into that Type's constructor. You do not need to dispose an instance if
-references are only between type and its children. Because it is self contained, it can be garbage collected as a whole.
+references are only between the type and its children. Because it is self-contained, it can be garbage collected as a whole.
 For more information about the general pattern, see https://en.wikipedia.org/wiki/Dispose_pattern
 
 A leak often happens due to the Observer pattern. If you own the observable and ALL of its observers (and there is no
-chance of outside observers being added), then you don't need to dispose. if you own only the observable or the
+chance of outside observers being added), then you don't need to dispose. If you own only the observable or the
 observers, then you need to dispose by cutting those references.
 
-Note: when use `SCENERY/Node` that need disposal, be careful about disposing when using DAG (directed acyclic graph)
+Note: when using `SCENERY/Node` that needs disposal, be careful about disposing when using DAG (directed acyclic graph)
 features.
 
 [Here](https://github.com/phetsims/sun/issues/121#issuecomment-209141994) is a helpful list of actions that likely need
@@ -264,8 +264,8 @@ doing while disposing:
 Once establishing that you need to dispose a type, add the `dispose` method to the prototype. This method should be
 `@public` and is likely an `@override`. The `dispose` method on the prototype, when called, should completely release
 this object from any references that would otherwise keep it from being garbage collected. Make sure that this method
-calls its parent and mixin disposals as well. In the view a type will likely extend from `{{Node}}` and, as such, you
-will call `Node.prototype.dispose.call( this );` (for es5). In general call `this` type's dispose before the parent's
+calls its parent and mixin disposals as well. In the view, a type will likely extend from `Node` and, as such, you
+will call `Node.prototype.dispose.call( this );` (for ES5). In general, call this type's dispose before the parent's
 call to tear down code in the opposite order of construction.
 
 Below are a few methods to implement disposal specifics. They are listed in order of preference, and the first should be
@@ -316,7 +316,7 @@ class MyAddChildAndLinkNode extends Node {
 ----------
 
 If performance is an important consideration for a type, then the above pattern is less desirable because it creates a
-closure for each instance. That method can be adapted, and the constructor closure removed. Instead promote any local
+closure for each instance. That method can be adapted, and the constructor closure removed. Instead, promote any local
 variables that would be needed for disposal to `@private` instance fields and move that logic directly to the `dispose`
 method, like below.
 
@@ -343,7 +343,7 @@ class MyAddChildAndLinkNode extends Node {
 }
 ```
 
-Sometimes the above, preferred patterns won't work. For example sometimes components are conditionally created, and
+Sometimes the above, preferred patterns won't work. For example, sometimes components are conditionally created, and
 therefore are only conditionally disposed. If there are these sorts of complex disposal constraints, then create an
 `AXON/Emitter` to manage disposal tasks, and add a listener to the Emitter for each disposal task.
 
@@ -366,6 +366,65 @@ Here are some issues that have investigated trying to bring creation and disposa
 
 * https://github.com/phetsims/axon/issues/84
 * https://github.com/phetsims/axon/issues/93
+
+### Disposer Option Pattern
+
+The `disposer` option is a pattern that helps automatically manage disposal of listeners when their parent object is disposed. This pattern is particularly useful for preventing memory leaks when setting up listeners on objects that may outlive the listener's owner. This feature was designed and implemented as part of https://github.com/phetsims/axon/issues/455.
+
+The following methods support the `disposer` option:
+- `ReadOnlyProperty.link`
+- `ReadOnlyProperty.lazyLink`
+- `Emitter.addListener`
+- `Node.addInputListener`
+
+When using any of these methods, you can pass a `disposer` option that specifies which object is responsible for cleaning up the listener:
+
+```ts
+// Examples: Adding listeners that will be automatically removed when 'this' is disposed
+property.link( value => { /* ... */ }, { disposer: this } );
+property.lazyLink( value => { /* ... */ }, { disposer: this } );
+emitter.addListener( () => { /* ... */ }, { disposer: this } );
+node.addInputListener( dragListener, { disposer: this } );
+
+// All listeners will be automatically removed when 'this.dispose()' is called
+```
+
+This pattern works because:
+1. The `disposer` object must have a `disposeEmitter` property (typically by extending `Disposable`)
+2. When the disposer is disposed, it automatically removes the listener
+3. This eliminates the need to manually track and remove listeners in your dispose method
+
+### addDisposable Method
+
+The `addDisposable` method allows you to register objects that should be disposed when the parent object is disposed. This is useful for managing the lifecycle of child components:
+
+```ts
+class MyNode extends Node {
+  private readonly mySubcomponent: SomeDisposableType;
+
+  public constructor() {
+    super();
+    
+    this.mySubcomponent = new SomeDisposableType();
+    
+    // Ensure mySubcomponent is disposed when this node is disposed
+    this.addDisposable( this.mySubcomponent );
+  }
+  
+  // No need to manually dispose mySubcomponent in dispose() method
+}
+```
+
+Multiple disposables can be added at once:
+
+```ts
+this.addDisposable( component1, component2, component3 );
+```
+
+This pattern simplifies disposal by:
+1. Automatically disposing child components when the parent is disposed
+2. Reducing boilerplate code in dispose methods
+3. Ensuring disposal happens in the correct order
 
 ## Enumeration
 
