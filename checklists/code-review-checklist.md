@@ -297,7 +297,8 @@ cd {{repo}}/js ; wc -l `find . -name "*.ts" -print` | sort
 ```
 
 - [ ] Are any significant chunks of code duplicated? In addition to manual identification, tools include: WebStorm
-  _Code > Analyze Code > Locate Duplicates_ and https://github.com/danielstjules/jsinspect.
+  _Code > Inspect Code... > Analyze_ (as long as you have "Duplicates" items checked in "Configure") and 
+  https://github.com/danielstjules/jsinspect.
 - [ ] Is there anything that should be generalized and migrated to common code?
 - [ ] Are there any `TODO` or `FIXME` or `REVIEW` comments in the code? They should be addressed or promoted to GitHub
   issues.
