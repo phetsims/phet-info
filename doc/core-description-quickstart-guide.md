@@ -14,14 +14,13 @@ Core Description implements critical screen reader accessibility features, inclu
 - Accessible responses (alerts) for important events or changes in the simulation or for voicing values that are not
   otherwise available
 
-Implementing Core Description significantly improves a simulation’s accessibility. This guide outlines the process and introduces
-the fundamental options and tools for the implementation. Refer to the source code documentation for more detailed
-information.
+Implementing Core Description significantly improves a simulation’s accessibility. This guide outlines the process and
+introduces the fundamental options and tools for the implementation. Refer to the source code documentation for more
+detailed information.
 
 ## Overall Process
 
-The simulation design team provides the content required for Core Description in a design document. This
-includes:
+The simulation design team provides the content required for Core Description in a design document. This includes:
 
 - A screen summary for each screen (covering the play area, control area, current details, and interaction hint)
 - A heading structure outlining major areas of the simulation
@@ -333,17 +332,30 @@ const slider = new HSlider( valueProperty, range, {
 
 ### KeyboardDragListener
 
-Draggable components will likely use `KeyboardDragListener`. Use `dragDelta` instead of `dragSpeed` options if possible.
-This approach moves the object in discrete steps for each key press. Avoid `dragSpeed`, which tries to move the object
-while the key is held down. This is often incompatible with screen readers that do not support press-and-hold
-interactions.
+KeyboardDragListener is the preferred way to make a draggable object keyboard-accessible. Whenever possible, use
+`dragDelta` (one key press -> one discrete move) instead of `dragSpeed` (move while the key is held), because many
+screen-reader/OS combinations do not recognize press-and-hold interactions.
 
-To make a component fully keyboard accessible, pass `AccessibleDraggableOptions` to the target Node. These options add
-the necessary support for screen-reader interaction. For example:
+To make a component fully accessible, use `AccessibleDraggableOptions` with the target Node. These options add the
+necessary support for screen-reader interaction. For example:
 
 ```ts
 const accessibleDraggableOptions = combineOptions<ParallelDOMOptions>( {}, AccessibleDraggableOptions, {
   accessibleName: 'Circle'
+} );
+```
+
+### KeyboardListener
+
+KeyboardListener is used to add general keyboard input to a Node. You can use KeyboardListener
+to make a Node respond to key presses without "dragging" behavior.
+
+To make the component fully accessible, use `AccessibleInteractiveOptions` with the target Node. These options add the
+necessary support for screen-reader interaction. For example:
+
+```ts
+const accessibleInteractiveOptions = combineOptions<ParallelDOMOptions>( {}, AccessibleInteractiveOptions, {
+  accessibleName: 'My Interactive Node'
 } );
 ```
 
@@ -405,14 +417,17 @@ Use the following guidelines for naming and organization:
 
 - Keys under the `a11y` key should be nested for readability.
 - Use key names that match the tandem name of the component using the string.
-- Under the component name key, nest a key for the specific accessibility option (e.g., accessibleName, accessibleHelpText, accessibleParagraph, etc.).
-- For screen summary content, use the screen name as a key, then nest a screenSummary key, with playArea, controlArea, currentDetails, and interactionHint as sub-keys.
+- Under the component name key, nest a key for the specific accessibility option (e.g., accessibleName,
+  accessibleHelpText, accessibleParagraph, etc.).
+- For screen summary content, use the screen name as a key, then nest a screenSummary key, with playArea, controlArea,
+  currentDetails, and interactionHint as sub-keys.
 - Nest `screenButtonsHelpText` under the screen name.
-- Avoid unnecessary nesting under screen name keys; this makes reuse harder. For example, even if a checkbox appears in only one screen,
-  do not nest its strings under that screen name.
+- Avoid unnecessary nesting under screen name keys; this makes reuse harder. For example, even if a checkbox appears in
+  only one screen, do not nest its strings under that screen name.
 - For entries that have string patterns with values to fill in, use additional nesting for readability.
 - For strings that do not fit into these categories, use a descriptive key that indicates how it is used.
-- Prefer longer or duplicated strings over complex string patterns. This simplifies code and translation. Patterns often assume English-specific grammar.
+- Prefer longer or duplicated strings over complex string patterns. This simplifies code and translation. Patterns often
+  assume English-specific grammar.
 
 For example:
 
