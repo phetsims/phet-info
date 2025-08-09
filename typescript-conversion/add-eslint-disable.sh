@@ -1,3 +1,5 @@
+# Copy and run from the root of the repository.
+#
 #!/bin/bash
 
 # Find all .ts files under js/ directory
