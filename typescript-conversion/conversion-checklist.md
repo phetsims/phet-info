@@ -1,6 +1,7 @@
 For https://github.com/phetsims/chipper/issues/1616, we would like to convert the sim to TypeScript.
 
-- [ ] Publish dev version before. Use `--message="before TypeScript conversion, see {{issue number URL}}"` option in grunt build to connect to the conversion issue.
+- [ ] Identify what brands and feature sets are supported. Is it a phet-io sim? Does it have a stable API?
+- [ ] Publish dev version before. Use `grunt dev --brands={{brands}} --message="before TypeScript conversion, see {{issue number URL}}"` option in grunt build to connect to the conversion issue.
 - [ ] Create a branch
 - [ ] Create a harness that will test for snapshot-comparison regressions. Record the URL and SHAs. Set up to run in `npm test`
 - [ ] Use typescript-quick-start.md to familiarize yourself with the typescript conversion process.
@@ -11,7 +12,7 @@ For https://github.com/phetsims/chipper/issues/1616, we would like to convert th
 - [ ] merge to main
 - [ ] delete branch
 - [ ] test on CT
-- [ ] Publish dev version after. Use `--message="after TypeScript conversion, see {{issue number URL}}"`
+- [ ] Publish dev version after. Use `grunt dev --brands={{brands}} --message="after TypeScript conversion, see {{issue number URL}}"`
 - [ ] Compare between both versions to identify any regression due to the typescript conversion.
 - [ ] If needed, schedule a QA test for regressions
 - [ ] consult with the lead developer about any remaining work
