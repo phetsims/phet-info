@@ -8,9 +8,9 @@
 PhET's _Description Design Framework_ divides the design of the Interactive Description feature, the entire interactive story of the sim, into manageable chunks. To meet the goals of _Core Description_, we are designing descriptions of all categories, but we are not designing all descriptions found in the full Interactive Description feature. For _Core Description_ we want to focus on the subset of descriptions pieces that will provide both broad access to learners **AND** meet WCAG Level AA design guidance success ciriteria.
 
 # What is “Core Description”?
-_Core Description_ is a sub set of descriptions needed for the Interactive Description feature that aims to meet WCAG A and AA Success Criteria while at the same time creating a phased description design process that allows the team open up simulation access to more learners who rely on descriptions. 
+_Core Description_ is a sub set of descriptions needed for the Interactive Description feature that aims to meet WCAG A and AA Success Criteria while at the same time creating a phased description design process that allows the team to open simulation access to learners who rely on description. 
 
-Additionally, design and develoopment of _Core Description_ of several sims at once and all new sims allows us to improve SceneryStack's high-lelvel APIs, and all the inclusive design and develpment skills of the entire team. Creating a phased design approach allow us to gain the skills and expertise needed when we get the Interactive Description design phase. 
+Additionally, design and development of _Core Description_ of several sims at once and all new sims allows us to improve SceneryStack's high-lelvel APIs, and all the inclusive design and develpment skills of the entire team. Creating a phased design approach allow us to gain the skills and expertise needed when we get the Interactive Description design phase. 
 
 # What is included and excluded in Core Description
 _Core Description_ does not explicitly exclude anything. If it is easy to design and implement, we want to include it. That said, there are clear boundary lines for some of the more dynamic strings found in for Object and Context Responses, and some Dynamic State Descriptions.
