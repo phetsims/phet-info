@@ -5,8 +5,8 @@ For https://github.com/phetsims/chipper/issues/1616, we would like to convert th
 - [ ] Create a branch
 - [ ] Create a harness that will test for snapshot-comparison regressions. Record the URL and SHAs. Set up to run in `npm test`
 - [ ] Use [typescript-quick-start.md](https://github.com/phetsims/phet-info/blob/cdee426ece5ea24fff45d92194ce9638b8cf1bb0/doc/typescript-quick-start.md) to familiarize yourself with the typescript conversion process.
-- [ ] Rename all files as a batch and commit *just the renames*, see https://github.com/phetsims/balancing-act/issues/168#issuecomment-3146720372
-- [ ] Add `// @ts-nocheck` to the top of all files, and commit
+- [ ] Rename all files as a batch and commit *just the renames*, see https://github.com/phetsims/balancing-act/issues/168#issuecomment-3146720372 (You can use `rename-js-to-ts.sh`)
+- [ ] Add `// @ts-nocheck` to the top of all files, and commit (You can use `add-eslint-disable.sh`)
 - [ ] **Convert to TypeScript** This is where all the work is done
 - [ ] Test in wrappers as appropriate: the PhET-iO State wrapper as you go if the sim supports PhET-iO. The a11y view, etc.
 - [ ] merge to main
