@@ -176,19 +176,51 @@ const myImage = new Image( imageData, {
 
 ### accessibleHeading
 
-Use `accessibleHeading` to define headings within the simulation. Headings help users navigate sections easily and
-maintain accessible structure. Scenery automatically determines the heading level based on the scene graph and
+`accessibleHeading` adds a semantic heading for screen-reader users. Headings help users navigate sections easily and
+maintain accessible structure. Scenery picks the correct level (h1–h6) from the node’s place in the scene graph and
 `pdomOrder`.
+
+When you set an `accessibleHeading` on a Node, all child Nodes and all Nodes listed in its `pdomOrder` will be
+considered "under" that heading.
+
+The Node with `accessibleHeading` must be a child in the scene graph, or it will not appear in the accessible content.
+
+Prefer `pdomOrder` over `children` to place Nodes under a heading. This lets you position accessible content under a
+heading without changing the visual rendering order. It keeps the logical heading structure intact if the visual layout
+changes. Using `children` is fine for layout containers like `VBox` or `Panel` where the visual and logical order
+usually match.
+
+#### Implementation Examples
+
+The design document indicates where each “Accessible Heading” is needed and lists the content under it.
+
+1) Create a wrapper Node and set the `accessibleHeading` option to the string `Property` that contains the heading text.
+2) Use `pdomOrder` to place Nodes under the heading.
+3) Add the wrapper Node to the scene graph, and place it in the parent's `pdomOrder` (often in the Play Area or Control
+   Area).
+
+```ts
+const accessibleHeadingNode = new Node( {
+  accessibleHeading: accessibleHeadingStringProperty,
+  pdomOrder: [ firstNode, secondNode, thirdNode ]
+} );
+screenView.addChild( accessibleHeadingNode );
+
+screenView.pdomPlayAreaNode.pdomOrder = [
+  someNode,
+  accessibleHeadingNode,
+  anotherNode
+];
+```
+
+Layout container variant:
 
 ```ts
 const controlsContainer = new VBox( {
-  children: controls,
-  accessibleHeading: accessibleHeadingStringProperty
+  accessibleHeading: accessibleHeadingStringProperty,
+  children: controls
 } ); 
 ```
-
-Nodes with `accessibleHeading` are typically parents for other accessible content, establishing the heading scope for
-their children. For details, see ParallelDOM.setAccessibleHeading.
 
 ## Accessible responses
 
@@ -347,8 +379,8 @@ const accessibleDraggableOptions = combineOptions<ParallelDOMOptions>( {}, Acces
 
 ### KeyboardListener
 
-KeyboardListener is used to add general keyboard input to a Node. You can use KeyboardListener
-to make a Node respond to key presses without "dragging" behavior.
+KeyboardListener is used to add general keyboard input to a Node. You can use KeyboardListener to make a Node respond to
+key presses without "dragging" behavior.
 
 To make the component fully accessible, use `AccessibleInteractiveOptions` with the target Node. These options add the
 necessary support for screen-reader interaction. For example:
