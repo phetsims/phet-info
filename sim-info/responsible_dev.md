@@ -35,7 +35,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | build-a-fraction | @jonathanolson | @amanda-phet | Sound | 
 | build-a-molecule | @jonathanolson | @arouinfar | Sound | 
 | build-a-nucleus | @Luisav1,@zepumph |  | Interactive Description | 
-| build-an-atom | @jbphet | @DianaTavares | Sound | 
+| build-an-atom | @jbphet | @DianaTavares | Sound<br/>Interactive Description | 
 | bumper | @jonathanolson |  | Interactive Description | 
 | buoyancy | @AgustinVallejo,@zepumph | @DianaTavares | Sound<br/>Interactive Description | 
 | buoyancy-basics | @AgustinVallejo,@zepumph | @DianaTavares | Sound<br/>Interactive Description | 
