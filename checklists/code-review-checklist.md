@@ -122,7 +122,8 @@ the constructor, where `{{CLASS_NAME}}` should exactly match the class name. (b)
 - [ ] Does the sim layout gracefully handle internationalized strings that are longer than the English strings? (run
   with query parameters `stringTest=double` and `stringTest=long`)
 - [ ] If the sim can display negative numbers, does it handle them correctly in RTL languages, meaning that the minus 
-  sign is shown on the left side of the number? (run with query parameter `stringTest=rtl`)
+  sign is shown on the left side of the number? To identify problems, run with query parameter `stringTest=rtl`, and 
+  inspect manually. To fix problems, see `StringUtils.wrapLTR` and `StringUtils.toFixedLTR`.
 - [ ] Does the sim stay on the sim page (doesn't redirect to an external page) when running with the query parameter
   `stringTest=xss`? This test passes if sim does not redirect, OK if sim crashes or fails to fully start. Only test on
   one desktop platform. For PhET-iO sims, additionally test `?stringTest=xss` in Studio to make sure i18n strings didn't
