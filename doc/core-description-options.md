@@ -2,7 +2,9 @@
 
 This document was written in response to https://github.com/phetsims/phet-info/issues/243 so designers and developers
 could see all the options for specifying descriptive text in one place, with the exact option names. I do not know how
-to automatically keep this in sync with the code. @author Sam Reid (PhET Interactive Simulations).
+to automatically keep this in sync with the code.
+
+* @author Sam Reid (PhET Interactive Simulations).
 
 ## SCENERY
 
