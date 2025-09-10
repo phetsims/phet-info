@@ -57,14 +57,6 @@ to automatically keep this in sync with the code.
 
 ## SCENERY PHET
 
-
-### GrabDragInteraction
-
-* objectToGrabString
-* idleStateAccessibleName
-* accessibleHelpText
-* gestureHelpText
-
 ### PlayPauseStepButtonGroup
 
 * playingHelpText
