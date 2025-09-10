@@ -59,8 +59,8 @@ to automatically keep this in sync with the code.
 
 ### PlayPauseStepButtonGroup
 
-* playingHelpText
-* pausedHelpText
+* playingHelpText (to be renamed to accessibleHelpTextPlaying soon)
+* pausedHelpText (to be renamed to accessibleHelpTextPaused soon)
 
 ### ZoomButtonGroup
 
