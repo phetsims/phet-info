@@ -55,6 +55,11 @@ to automatically keep this in sync with the code.
 * shiftKeyboardStep
 * pageKeyboardStep
 
+### ABSwitch
+
+* valueAAccessibleName (to be renamed to accessibleNameValueA soon)
+* valueBAccessibleName (to be renamed to accessibleNameValueB soon)
+
 ## SCENERY PHET
 
 ### PlayPauseStepButtonGroup
