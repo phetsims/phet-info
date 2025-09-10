@@ -44,6 +44,13 @@ to automatically keep this in sync with the code.
 * accessibleContextResponseValueOn
 * accessibleContextResponseValueOff
 
+### AccessibleSlider
+* pdomCreateAriaValueText (for object responses, to be renamed soon)
+* pdomCreateContextResponseAlert (for context responses, to be renamed soon)
+* keyboardStep
+* shiftKeyboardStep
+* pageKeyboardStep
+
 ## SCENERY PHET
 
 
