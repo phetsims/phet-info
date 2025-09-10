@@ -1,4 +1,4 @@
-# Description Options
+# Core Description Options
 
 This document was written in response to https://github.com/phetsims/phet-info/issues/243 so designers and developers
 could see all the options for specifying descriptive text in one place, with the exact option names. I do not know how
