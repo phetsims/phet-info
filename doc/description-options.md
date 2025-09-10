@@ -67,6 +67,11 @@ to automatically keep this in sync with the code.
 * playingHelpText (to be renamed to accessibleHelpTextPlaying soon)
 * pausedHelpText (to be renamed to accessibleHelpTextPaused soon)
 
+### PlayControlButton
+
+* startPlayingAccessibleName (to be renamed to accessibleNameStartPlaying soon)
+* endPlayingAccessibleName (to be renamed to accessibleNameEndPlaying soon)
+
 ### ZoomButtonGroup
 
 * accessibleNameZoomIn
