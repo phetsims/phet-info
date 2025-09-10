@@ -16,6 +16,10 @@ to automatically keep this in sync with the code.
 * accessibleHeading
 * accessibleRoleDescription
 
+### Most buttons and simple components
+
+* accessibleContextResponse
+
 ## SUN
 
 ### Checkbox
