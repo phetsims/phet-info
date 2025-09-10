@@ -14,6 +14,7 @@ to automatically keep this in sync with the code.
 * accessibleHelpText
 * accessibleParagraph
 * accessibleHeading
+* accessibleRoleDescription
 
 and those each have their associated "Behavior", such as `accessibleNameBehavior`. The rest of the options are here in
 the details:
