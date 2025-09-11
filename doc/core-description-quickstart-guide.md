@@ -101,6 +101,9 @@ Currently, the fruit basket has:
 - 4 strawberries
 ```
 
+AccessibleListNode is a Node. If not in the screen summary, add the AccessibleListNode to the scene graph with
+`addChild`. Use `pdomOrder` to put it in the correct place in the reading order.
+
 ## Basic options
 
 The options `accessibleName`, `accessibleHelpText`, and `accessibleParagraph` are defined in scenery's `ParallelDOM.ts`.
@@ -366,8 +369,7 @@ const slider = new HSlider( valueProperty, range, {
 
 KeyboardDragListener is the preferred way to make a draggable object keyboard-accessible. Whenever possible, use
 `dragDelta` (one key press -> one discrete move) instead of `dragSpeed` (move while the key is held), because many
-screen-reader/OS combinations do not recognize press-and-hold interactions.
-g1
+screen-reader/OS combinations do not recognize press-and-hold interactions. g1
 
 To make a component fully accessible, use `AccessibleDraggableOptions` with the target Node. These options add the
 necessary support for screen-reader interaction. For example:
