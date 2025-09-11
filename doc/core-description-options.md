@@ -84,3 +84,10 @@ to automatically keep this in sync with the code.
 ### Screen
 
 * screenButtonsHelpText
+
+### ScreenSummaryContents
+
+* playAreaContent
+* controlAreaContent
+* currentDetailsContent
+* interactionHintContent
