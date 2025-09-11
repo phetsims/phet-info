@@ -22,6 +22,11 @@ to automatically keep this in sync with the code.
 
 ## SUN
 
+### AccessibleValueHandler
+
+* pdomCreateAriaValueText
+* pdomCreateContextResponseAlert
+
 ### Checkbox
 
 * accessibleContextResponseChecked
