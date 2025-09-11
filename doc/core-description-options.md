@@ -85,7 +85,7 @@ to automatically keep this in sync with the code.
 
 * screenButtonsHelpText
 
-### ScreenSummaryContents
+### ScreenSummaryContent
 
 * playAreaContent
 * controlAreaContent
