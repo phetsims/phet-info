@@ -16,7 +16,7 @@
 - [ ] **Pre-publication items**
   - [ ] Update teacher tips (query parameters, new features, model simplification changes, etc.)
   - [ ] Update screenshots
-  - [ ] Update release notes with developer
+  - [ ] Update release-notes.md with developer
   - [ ] Add to Essential Exceptions doc ([guidelines](https://docs.google.com/document/d/1NjLGmGr2Oi9A9D9SCH5WAgOhpA7ysmuvv0Jn_batPVU/edit?tab=t.0#heading=h.c063kqhkkg))
 - [ ] **Post-publication items**
   - [ ] Tag new inclusive features on website
@@ -30,17 +30,16 @@
 
 ## Implementation
 
-- [ ] **Release Notes completed**
-  - [ ] Copy [release notes template](https://github.com/phetsims/simula-rasa/blob/main/doc/release-notes.md) into sim repo
-  - [ ] Finalize with designer
-- [ ] **Sim team sign-off** (Date: //)
-- [ ] **Code review completed** (Date: //)
-- [ ] **Pre-publication items**
+- [ ] Feature-complete (Date: //)
+- [ ] Sim team sign-off (Date: //)
+- [ ] Code review completed (Date: //)
+- [ ] Pre-publication items
   - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks -
     see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
+  - [ ] Finalize release-notes.md with designer.
   - [ ] Add CT tests for public query parameters that need testing. See examples
     in [listContinuousTests.js](https://github.com/phetsims/perennial/blob/main/js/listContinuousTests.js)
-- [ ] **Published** (Date: //)
+- [ ] Published (Date: //)
 
 ## QA
 
