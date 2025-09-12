@@ -48,12 +48,11 @@ Test using the simulation [A11y View](https://bayes.colorado.edu/dev/phettest/ph
 - [Tip sheet NVDA](https://docs.google.com/document/d/1pgfyEER7ZlpJlXSwvSCbNBuoCa5oOexc7QvTuFZu-Mo/edit)  
 - [Tip sheet JAWS](https://docs.google.com/document/d/1aggemqGsb2CdR7PxgLG50kOg4ZwBPM2M3eI3okyZHJ8/edit)
 
-### Self-Review Per-line Description Mini-Mental-Reminders
+As you work through the list, keep these 'general good-practice' reminders in the forefront.
 
-- Does it sound natural? (Read it aloud to yourself)  
+- Does each description component sound natural? (Read it aloud to yourself)  
 - Does it need more grammar/syntax? Less?
 - Are descriptions (names, help text, summaries, etc.) pedagogically relevant? Decorative content and sometimes spatial placement are not critical for all sims.
-- Are descriptions ordered such that changing information is prioritized?
 - Anything the team has already decided is out of scope, for example, is [documented](#determined-to-be-out-of-scope-for-core-description) to inform the reviewer in advance
 
 ## Sim-Specific Instructions
