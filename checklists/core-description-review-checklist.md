@@ -23,7 +23,7 @@ Helpful Links
 **To begin Core Description review, the responsible designer should:**
 
 * Copy this checklist to a new GitHub issue titled "Core Description Review" and labeled `design:description`.
-* Complete (or delete) the **Specific Instructions** section.
+* Complete (or delete) the **Sim-Specific Instructions** section.
 * Delete (or ~~strikethrough~~) checklist items and sections that are not relevant.
 * Replace {{GITHUB_ISSUE_LINK}} with links to GitHub issues.
 * Assign the GitHub issue to the designer who is doing the review.
@@ -32,21 +32,11 @@ Helpful Links
 * A checked-off item doesn't mean "no problem here", it means "it was reviewed"
 * Problems can be noted in side issues that reference this issue
 
-!! DELETE THIS COMMENT WHEN COPYING THE CHECKLIST !!
+!! DELETE THIS COMMENT BLOCK WHEN COPYING THE CHECKLIST !!
 
 -->
 
 # {{SIM_NAME}} {{VERSION}} Core Description Review Checklist
-
-## SPECIFIC INSTRUCTIONS
-
-- {{INSTRUCTIONS FOR REVIEWER WRITTEN BY RESPONSIBLE DESIGNER}}
-
-### Determined to be out of scope for Core Description
-
-1. {{ NOTE }} or {{GITHUB_ISSUE_LINK}}  
-2. {{ NOTE }} or {{GITHUB_ISSUE_LINK}}  
-3. …
 
 ## General Instructions
 
@@ -65,6 +55,16 @@ Test using the simulation [A11y View](https://bayes.colorado.edu/dev/phettest/ph
 - Are descriptions (names, help text, summaries, etc.) pedagogically relevant? Decorative content and sometimes spatial placement are not critical for all sims.
 - Are descriptions ordered such that changing information is prioritized?
 - Anything the team has already decided is out of scope, for example, is [documented](#determined-to-be-out-of-scope-for-core-description) to inform the reviewer in advance
+
+## Sim-Specific Instructions
+
+- {{INSTRUCTIONS FOR REVIEWER WRITTEN BY RESPONSIBLE DESIGNER}}
+
+### Determined to be out of scope for Core Description
+
+1. {{ NOTE }} or {{GITHUB_ISSUE_LINK}}  
+2. {{ NOTE }} or {{GITHUB_ISSUE_LINK}}  
+3. …
 
 ## Reviewer Checklist
 
