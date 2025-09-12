@@ -16,26 +16,16 @@ to automatically keep this in sync with the code.
 * accessibleHeading
 * accessibleRoleDescription
 
-### Most buttons and simple components
+### Most buttons and simple components, including but not limited to AquaRadioButton | ComboBox | ButtonNode
 
 * accessibleContextResponse
 
 ## SUN
 
-### AccessibleValueHandler
+### ABSwitch
 
-* pdomCreateAriaValueText
-* pdomCreateContextResponseAlert
-
-### Checkbox
-
-* accessibleContextResponseChecked
-* accessibleContextResponseUnchecked
-
-### ToggleSwitch
-
-* accessibleContextResponseLeftValue
-* accessibleContextResponseRightValue
+* valueAAccessibleName (to be renamed to accessibleNameValueA soon)
+* valueBAccessibleName (to be renamed to accessibleNameValueB soon)
 
 ### AccordionBox
 
@@ -44,7 +34,32 @@ to automatically keep this in sync with the code.
 * accessibleHelpTextExpanded
 * accessibleHelpTextCollapsed
 
-### AquaRadioButton | ComboBox | ButtonNode
+### AccessibleSlider
+* pdomCreateAriaValueText (for object responses, to be renamed soon)
+* pdomCreateContextResponseAlert (for context responses, to be renamed soon)
+* keyboardStep
+* shiftKeyboardStep
+* pageKeyboardStep
+
+### AccessibleValueHandler
+
+* pdomCreateAriaValueText
+* pdomCreateContextResponseAlert
+
+### AquaRadioButton
+
+* accessibleContextResponse
+
+### ButtonNode
+
+* accessibleContextResponse
+
+### Checkbox
+
+* accessibleContextResponseChecked
+* accessibleContextResponseUnchecked
+
+### ComboBox
 
 * accessibleContextResponse
 
@@ -53,29 +68,22 @@ to automatically keep this in sync with the code.
 * accessibleContextResponseValueOn
 * accessibleContextResponseValueOff
 
-### AccessibleSlider
-* pdomCreateAriaValueText (for object responses, to be renamed soon)
-* pdomCreateContextResponseAlert (for context responses, to be renamed soon)
-* keyboardStep
-* shiftKeyboardStep
-* pageKeyboardStep
+### ToggleSwitch
 
-### ABSwitch
-
-* valueAAccessibleName (to be renamed to accessibleNameValueA soon)
-* valueBAccessibleName (to be renamed to accessibleNameValueB soon)
+* accessibleContextResponseLeftValue
+* accessibleContextResponseRightValue
 
 ## SCENERY PHET
-
-### PlayPauseStepButtonGroup
-
-* playingHelpText (to be renamed to accessibleHelpTextPlaying soon)
-* pausedHelpText (to be renamed to accessibleHelpTextPaused soon)
 
 ### PlayControlButton
 
 * startPlayingAccessibleName (to be renamed to accessibleNameStartPlaying soon)
 * endPlayingAccessibleName (to be renamed to accessibleNameEndPlaying soon)
+
+### PlayPauseStepButtonGroup
+
+* playingHelpText (to be renamed to accessibleHelpTextPlaying soon)
+* pausedHelpText (to be renamed to accessibleHelpTextPaused soon)
 
 ### ZoomButtonGroup
 
