@@ -20,7 +20,7 @@
   - [ ] Add to Essential Exceptions doc ([guidelines](https://docs.google.com/document/d/1NjLGmGr2Oi9A9D9SCH5WAgOhpA7ysmuvv0Jn_batPVU/edit?tab=t.0#heading=h.c063kqhkkg))
 - [ ] **Post-publication items**
   - [ ] Tag new inclusive features on website
-  - [ ] Create a github issue for @oliver-phet to alert translators if there have been significant string changes (manual process since Nov 2024)
+  - [ ] Create a GitHub issue for @oliver-phet to alert translators if there have been significant string changes (manual process since Nov 2024)
   - [ ] Write newsletter announcement
   - [ ] Update website credits
   - [ ] Message #website-public to ask web devs to add the latest version to PhET Studio
