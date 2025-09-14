@@ -76,10 +76,10 @@ There is no hard and fast line, but if it difficult to design or implement, you 
 - [PhET's Interactive Style Guide (Binder)](https://phetsims.github.io/binder/)
 
 # References on how to use a screen reader
-Tip Sheets from [Description Design for Interactive Learning Resources](https://www.coursera.org/learn/description-design-for-interactive-learning-resources):
-- [Using VoiceOver with a PhET Sim](https://docs.google.com/document/d/1qz0Dm2lA67tRhgw1GaHVeOSnldBoMj7AT5UE_UaXz1U/edit?tab=t.0#heading=h.rj5etgrq1nf7)
-- [Using NVDA with a PhET Sim] (https://docs.google.com/document/d/1pgfyEER7ZlpJlXSwvSCbNBuoCa5oOexc7QvTuFZu-Mo/edit?tab=t.0#heading=h.rj5etgrq1nf7)
-- [Using JAWS with a PhET Sim] (https://docs.google.com/document/d/1aggemqGsb2CdR7PxgLG50kOg4ZwBPM2M3eI3okyZHJ8/edit?tab=t.0#heading=h.rj5etgrq1nf7)
+From the description course: [Description Design for Interactive Learning Resources](https://www.coursera.org/learn/description-design-for-interactive-learning-resources):
+- Tip Sheet - [Using VoiceOver with a PhET Sim](https://docs.google.com/document/d/1qz0Dm2lA67tRhgw1GaHVeOSnldBoMj7AT5UE_UaXz1U/edit?tab=t.0#heading=h.rj5etgrq1nf7)
+- Tip Sheet - [Using NVDA with a PhET Sim](https://docs.google.com/document/d/1pgfyEER7ZlpJlXSwvSCbNBuoCa5oOexc7QvTuFZu-Mo/edit?tab=t.0#heading=h.rj5etgrq1nf7)
+- Tip Sheet - [Using JAWS with a PhET Sim](https://docs.google.com/document/d/1aggemqGsb2CdR7PxgLG50kOg4ZwBPM2M3eI3okyZHJ8/edit?tab=t.0#heading=h.rj5etgrq1nf7)
 
 # References to the development overview
 - [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md)
