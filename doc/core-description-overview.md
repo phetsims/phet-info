@@ -15,8 +15,7 @@ Additionally, design and development of _Core Description_ of several sims at on
 # What is included and excluded in Core Description
 _Core Description_ does not explicitly exclude any categories of description. If it is easy to design and implement, we want to include it. That said, there are clear boundary lines around the design of qualitative parameters needed for more dynamic strings found in Object and Context Responses, and Dynamic State Descriptions.
 
-# Core Description Options
-## Definitions for some [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md): 
+# Definitions for some [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md): 
   - screen summary - A _State Description_ that includes static and dynamic descriptions meant to capture a big-picture summary of the current screen. 
   - accessible name - The name (or label) of the interactive object.
   - accessible help text - The supporting descriptions needed to scaffold interaction. Design needs vary by interactive object.
