@@ -55,7 +55,7 @@ There is no hard and fast line, but if it difficult to design or implement, you 
 - When ready to interact, users have many strategies for finding interactive objects:
     - Tab-navigation.
     - Use screen screen reader hot keys to search for common interactions, such as buttons.
-    - Use screen screen reader hot keys to find something know to them.
+    - Use screen screen reader hot keys to find something known to them.
     - Use special navigation modes, e.g. "Forms mode" (JAWS), "Quick Nav" (VoiceOver).
        
 - When navigating by interactive object, e.g., Tab-navigation, what users will hear from the scren reader software varies. They expect to hear:
