@@ -67,7 +67,7 @@ There is no hard and fast line, but if it is difficult to design or implement, y
    - changes to surrounding context in accessible context responses.  
 
 # Examples for each Core Description piece
-- Do we need this section? There ar
+- ToDo - What kinds of examples are needed here?
 
 # References to Description Design Resources
 - [Descriptipn Design Guide: Core](https://docs.google.com/document/d/1kCivjmuXiMzrFkYUigZFgDkssoEWGW_-OaXDk9myV00/edit?tab=t.0#heading=h.rj5etgrq1nf7)
