@@ -1,4 +1,4 @@
-# Core Description Overview (IN PROGRESS)
+# Core Description Overview
 
 @author Taliesin Smith
 @author Jesse Greenberg
