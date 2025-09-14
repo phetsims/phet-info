@@ -10,7 +10,7 @@ PhET's _Description Design Framework_ divides the design of the Interactive Desc
 # What is “Core Description”?
 _Core Description_ is a sub set of descriptions needed for the Interactive Description feature that aims to meet WCAG A and AA Success Criteria while at the same time creating a phased description design process that allows the team to open simulation access to learners who rely on description. 
 
-Additionally, design and development of _Core Description_ of several sims at once allows us to improve SceneryStack's high-level APIs, and all the inclusive design and develpment skills of the entire team. Creating a phased description design approach (_Core Description,_ then full _Interactive Description_) allows us to gain the skills and expertise needed when for the second descriptin design phase. 
+Additionally, design and development of _Core Description_ of several sims at once allows us to improve SceneryStack's high-level APIs, and all the inclusive design and development skills of the entire team. Creating a phased description design approach (_Core Description,_ then full _Interactive Description_) allows us to gain the skills and expertise needed for the second description design phase. 
 
 # What is included and excluded in Core Description
 _Core Description_ does not explicitly exclude any categories of description. If it is easy to design and implement, we want to include it. That said, there are clear boundary lines around the design of qualitative parameters needed for more dynamic strings found in Object and Context Responses, and Dynamic State Descriptions.
@@ -21,16 +21,15 @@ _Core Description_ does not explicitly exclude any categories of description. If
   - accessible help text - The supporting descriptions needed to scaffold interaction. Design needs vary by interactive object.
   - accessible headings - The descriptions that provide navigable sections within the PDOM. Headings help create information relationships. 
   - accessible paragraph - A description in the PDOM that is not directly part of an interactive object. Used to contain static or dynamic state descriptions. 
-  - accessible object response - a response containing a new value or new state of an interactive object. Not all objects have designed object responses. Slider objects deliver object responses via _aria-valuetext._ Custom objects deliver object responses along side context responses via _ARIA Live._ For _Core Description_ design effort should concentrate on human readable quantitative values relevant to learning. 
+  - accessible object response - a response containing a new value or new state of an interactive object. Not all objects have designed object responses. Slider objects deliver object responses via _aria-valuetext._ Custom objects deliver object responses alonoside context responses via _ARIA Live._ For _Core Description_ design effort should concentrate on human readable quantitative values relevant to learning. 
   - accessible context response - a response describing surrounding changes to the context as an object is being interacted with. For _Core Description_ design effort should focus on the context responses needed for simple UI components first, and then as respurces allow more complex interactions.
 
 # Drawing the line between Core and Interactive Description
-There is no hard and fast line, but if it difficult to design or implement, you can:
-- Call in other team memebrs with more experience, and/or discuss at Design Meeting.
-- You may need to simplify the information you want to provide.
-- Changing qualitative information requiring multiple paraemters with ranges scales are generably not feasible in the _Core Description_ design phase. 
-- Descriptions around custom objects
+There is no hard and fast line, but if it is difficult to design or implement, you can:
 - Keep current details to the absolute essentials. Use binary states if possible, and then provide additional state information close to the interactive object.
+- Call in other team members with more experience, and/or discuss at the weekly Design Meeting.
+- You may need to simplify the information you want to provide.
+- Changing qualitative information requiring multiple parameters with range-scales are generably not feasible in the _Core Description_ design phase. 
 
 # Punctuation
 - accessibleName: Title case, no punctuation. Example: “Detector Probe”
@@ -48,8 +47,8 @@ There is no hard and fast line, but if it difficult to design or implement, you 
     - Descriptions in accessible paragraphs and lists, and
     - The current accessibleObjectResponse for objects like a slider, number picker, number spinner.
   
-- Users have many strategeies to read, skim, or scan informtion in the PDOM:
-    -  Read continuously from the top, read line-by-line, read by word, or read by letter to reslove ambiguities.
+- Users have many strategies to read, skim, or scan information in the PDOM:
+    -  Read continuously from the top, read line-by-line, read by word, or read by letter to resolve ambiguities.
     -  Use screen reader hot keys to navigate document structures such as headings, paragraphs and list items.
  
 - When ready to interact, users have many strategies for finding interactive objects:
@@ -58,8 +57,8 @@ There is no hard and fast line, but if it difficult to design or implement, you 
     - Use screen screen reader hot keys to find something known to them.
     - Use special navigation modes, e.g. "Forms mode" (JAWS), "Quick Nav" (VoiceOver).
        
-- When navigating by interactive object, e.g., Tab-navigation, what users will hear from the scren reader software varies. They expect to hear:
-    - an accessble name
+- When navigating by interactive object, e.g., Tab-navigation, what users will hear from the screen reader software varies. They expect to hear:
+    - an accessible name
     - a current value if the interaction has a value 
     - the role of the interactive object, e.g., button, checkbox, slider
  
@@ -68,9 +67,9 @@ There is no hard and fast line, but if it difficult to design or implement, you 
    - changes to surrounding context in accessible context responses.  
 
 # Examples for each Core Description piece
-- Do we need this secction? There ar
+- Do we need this section? There ar
 
-# References to Descriptoin Design Resources
+# References to Description Design Resources
 - [Descriptipn Design Guide: Core](https://docs.google.com/document/d/1kCivjmuXiMzrFkYUigZFgDkssoEWGW_-OaXDk9myV00/edit?tab=t.0#heading=h.rj5etgrq1nf7)
 - [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md)
 - [PhET's Interactive Style Guide (Binder)](https://phetsims.github.io/binder/)
