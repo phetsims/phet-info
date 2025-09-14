@@ -66,7 +66,7 @@ There is no hard and fast line, but if it is difficult to design or implement, y
    - changing states in "built-in" or accessible object responses  present on the object.
    - changes to surrounding context in accessible context responses.  
 
-# Examples for each Core Description piece
+# Examples for each Core Description Options
 - ToDo - What kinds of examples are needed here?
 
 # References to Description Design Resources
