@@ -1,18 +1,5 @@
 <!-- 
 
-Goals of the Checklist
-
-1. Meet WCAG: Ensure WCAG for Core Description requirements are being met, as often as possible.  
-2. Meet PhET Standard: Provide best possible user experience given resource constraints.  
-3. Reduce the time that QA spends reviewing sim for items that could be caught earlier in design.  
-4. Provide Quick Reference as complement to the Core Description Guide
-
-Audience (who will use this?)
-
-1. Designer who created the Core Description to ensure they haven’t forgotten anything.  
-2. Additional content expert to ensure language is pedagogically correct and relevant.  
-3. An external reviewer (less desirable) to ensure quality of description is there.
-
 Helpful Links
 
 - Core Description Guide: [Description Design Guide and Tips:  Core](https://docs.google.com/document/d/1kCivjmuXiMzrFkYUigZFgDkssoEWGW_-OaXDk9myV00/edit?tab=t.0#heading=h.rj5etgrq1nf7)  
@@ -38,6 +25,19 @@ Helpful Links
 
 # {{SIM_NAME}} {{VERSION}} Core Description Review Checklist
 
+Goals of the Checklist
+
+1. Meet WCAG: Ensure WCAG for Core Description requirements are being met, as often as possible.  
+2. Meet PhET Standard: Provide best possible user experience given resource constraints.  
+3. Reduce the time that QA spends reviewing sim for items that could be caught earlier in design.  
+4. Provide Quick Reference as complement to the Core Description Guide
+
+Audience (who will use this?)
+
+1. Designer who created the Core Description to ensure they haven’t forgotten anything.  
+2. Additional content expert to ensure language is pedagogically correct and relevant.  
+3. An external reviewer (less desirable) to ensure quality of description is there.
+   
 ## General Instructions
 
 As you work through this list, be sure to keep notes to share with others at weekly Core Description meeting (idea of “continuous learning”).
