@@ -63,7 +63,7 @@ to automatically keep this in sync with the code.
 
 * accessibleContextResponse
 
-### RectangularMomentaryButton | RoundMomentaryButton
+### RectangularMomentaryButton | RoundMomentaryButton | RectangularToggleButton | RoundToggleButton
 
 * accessibleContextResponseValueOn
 * accessibleContextResponseValueOff
