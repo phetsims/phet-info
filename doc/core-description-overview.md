@@ -80,7 +80,7 @@ TODO: Make this more about core description.
    - changing states in "built-in" or accessible object responses  present on the object.
    - changes to surrounding context in accessible context responses.  
 
-# Core Description Examples
+# Core Description Exemaplrs and Examples
 
 ## The "Current Details" and "Interaction Hint" in pH Scale's Screen Summary
 In _pH Scale_ and _pH Scale:Basics_ the designers made good choices to keep the Screen Summary simple, while at the same time providing essential scaffolds for interactive exploration:
@@ -90,13 +90,13 @@ The rest of the details such as which solution, the current volume, the current 
 
 Compare the description design of [Molarity]() with [pH Scale]() to see how Molarity's _Interactive Description_ design includes more details in both the Screen Summary and the Play Area. Molarity's dynamic descriptions use both qualitative and quantitative scales to describe the different states of the solution, whereas the dynmaic description in the _Core Description_ design of _pH Scale_ rely on visually available quantitative scales, and only uses qualitative descriptions to compare 2 states, e.g., "beaker contains liquid" or "beaker is empty." 
 
-## Examples Description Options For Interactive Components
+## General Requirements and Considerations for Interactive Components
 Description options vary for each interactive component. Always keep the stategies listed above in mind when working on _Core Description_.
-### Requirements and Considerations for All Interactive Components
+
 For _Core Description_:
  - You always need to design an accessibleName. 
  - You always need to consider designing accessibleHelpText. 
- - You need to review the options for each component listed in [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md), then depending the interaction, you need to determine if you have the resources to design and implement all listed options. If design and development of a paricular option is difficult review the strategies above to find a path forward.  
+ - You need to review the options for each component listed in [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md), then depending the interaction, determine if you have the resources to design and implement all listed options. Review the strategies above if/when you encounter design challenges.  
 
 ### Requirements for Common Interactive Components (THIS SECTION IN PROGRESS)
 For an slider:
