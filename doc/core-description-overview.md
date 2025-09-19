@@ -80,21 +80,26 @@ TODO: Make this more about core description.
    - changing states in "built-in" or accessible object responses  present on the object.
    - changes to surrounding context in accessible context responses.  
 
-# Examples for each Core Description Options
-- ToDo - What kinds of examples are needed here?
+# Core Description Examples
 
-Example of how to keep the Screen Summary simple:
- - See the screen summary in ph-scale for a good example of a simple "Current Details".
-   - The screen summary is kept simple by using a binary state describing whether the beaker has a liquid or not.
-   - Additionally, provides a dynamic interaction hint, supporting these two states.
+## The "Current Details" and "Interaction Hint" in pH Scale's Screen Summary
+In _pH Scale_ and _pH Scale:Basics_ the designers made good choices to keep the Screen Summary simple, while at the same time providing essential scaffolds for interactive exploration:
+   - The "Current Details" describes whether the beaker "contains liquid" or "is empty".
+   - The "Interaction Hint" prompts to either, "Move probe to start exploring," or "Add a solution to beaker and play," depending on the state of the beaker.
+The rest of the details such as which solution, the current volume, the current pH reading, and the color of solution, are left for a learner to interactively discover further down, either directly from the state of the interactive objects or through accessible paragraphs and lists near the interactive objects.
 
-For each interactive component
- - Design an accessibleName
- - Consider accessibleHelpText
- - Design en entry for each of the other Core Description options for the component listed in [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md)
+Compare the description design of [Molarity]() with [pH Scale]() to see how Molarity's _Interactive Description_ design includes more details in both the Screen Summary and the Play Area. Molarity's dynamic descriptions use both qualitative and quantitative scales to describe the different states of the solution, whereas the dynmaic description in the _Core Description_ design of _pH Scale_ rely on visually available quantitative scales, and only uses qualitative descriptions to compare 2 states, e.g., "beaker contains liquid" or "beaker is empty." 
 
-For example:
-  - For a slider:
+## Examples Description Options For Interactive Components
+Description options vary for each interactive component. Always keep the stategies listed above in mind when working on _Core Description_.
+### Requirements and Considerations for All Interactive Components
+For _Core Description_:
+ - You always need to design an accessibleName. 
+ - You always need to consider designing accessibleHelpText. 
+ - You need to review the options for each component listed in [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md), then depending the interaction, you need to determine if you have the resources to design and implement all listed options. If design and development of a paricular option is difficult review the strategies above to find a path forward.  
+
+### Requirements for Common Interactive Components (THIS SECTION IN PROGRESS)
+For an slider:
     - accessibleName
     - accessibleHelpText (optional)
     - accessible object response (currently option pdomCreateAriaValueText) (numeric value, rounded to human-readable value)
