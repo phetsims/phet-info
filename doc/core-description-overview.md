@@ -26,11 +26,21 @@ _Core Description_ does not explicitly exclude any categories of description. If
   - accessible context response - a response describing surrounding changes to the context as an object is being interacted with. For _Core Description_ design effort should focus on the context responses needed for simple UI components first, and then as respurces allow more complex interactions.
 
 # Drawing the line between Core and Interactive Description
-There is no hard and fast line, but if it is difficult to design or implement, you can:
-- Keep current details to the absolute essentials. Use binary states if possible, and then provide additional state information close to the interactive object.
+Core Description is focused on these categories:
+- Basic screen summary
+- accessible names
+- accessible help text (optional)
+- accessible headings necessary for scaffolding and relationships (optional)
+- accessible paragraphs for state information and graphics
+- Accessible object responses for objects that have a well-defined value or a numeric value.
+- Accessible context responses for simple UI components.
+
+# Use the following strategies
+- Keep the current details of the screen summary simple.
+  - Use binary states if possible, and then provide additional state information close to the interactive object.
+- Consider simplifying the information you want to provide.
+- Avoid qualitative information requiring multiple parameters with described scales.
 - Call in other team members with more experience, and/or discuss at the weekly Design Meeting.
-- You may need to simplify the information you want to provide.
-- Changing qualitative information requiring multiple parameters with range-scales are generably not feasible in the _Core Description_ design phase. 
 
 # Punctuation
 - accessibleName: Title case, no punctuation. Example: “Detector Probe”
@@ -39,7 +49,10 @@ There is no hard and fast line, but if it is difficult to design or implement, y
 - accessibleContextResponse: Sentence case, with punctuation. Example: "In light source path, centered in cuvette. Transmittance is 52.69 percent."
 - accessibleParagraph: a paragraph of full sentences, with sentence case and punctuation. Example: "Transmittance is 52.96 percent."
 
-# Delivery of Descriptions with Screen Reader Software 
+# Delivery of Descriptions with Screen Reader Software
+
+TODO: Make this more about core description.
+
 - Information users can find and read in the PDOM with their cursor keys without changing the state of the simualtion includes:
     - All information in the screen summary, 
     - Accessible headings, 
@@ -70,6 +83,23 @@ There is no hard and fast line, but if it is difficult to design or implement, y
 # Examples for each Core Description Options
 - ToDo - What kinds of examples are needed here?
 
+Example of how to keep the Screen Summary simple:
+ - See the screen summary in ph-scale for a good example of a simple "Current Details".
+   - The screen summary is kept simple by using a binary state describing whether the beaker has a liquid or not.
+   - Additionally, provides a dynamic interaction hint, supporting these two states.
+
+For each interactive component
+ - Design an accessibleName
+ - Consider accessibleHelpText
+ - Design en entry for each of the other Core Description options for the component listed in [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md)
+
+For example:
+  - For a slider:
+    - accessibleName
+    - accessibleHelpText (optional)
+    - accessible object response (currently option pdomCreateAriaValueText) (numeric value, rounded to human-readable value)
+    - accessible context response (currently option pdomCreateContextResponseAlert) (if simple)
+
 # References on how to use a screen reader
 From the description course: [Description Design for Interactive Learning Resources](https://www.coursera.org/learn/description-design-for-interactive-learning-resources):
 - Tip Sheet - [Using VoiceOver with a PhET Sim](https://docs.google.com/document/d/1qz0Dm2lA67tRhgw1GaHVeOSnldBoMj7AT5UE_UaXz1U/edit?tab=t.0#heading=h.rj5etgrq1nf7)
@@ -80,5 +110,5 @@ From the description course: [Description Design for Interactive Learning Resour
 - [Descriptipn Design Guide: Core](https://docs.google.com/document/d/1kCivjmuXiMzrFkYUigZFgDkssoEWGW_-OaXDk9myV00/edit?tab=t.0#heading=h.rj5etgrq1nf7)
 - [PhET's Interactive Style Guide (Binder)](https://phetsims.github.io/binder/)
 - [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md)
-- [Core Description Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/core-description-quickstart-guide.md)
-- [Core Voicing Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/core-voicing-quickstart-guide.md)
+- [Core Description Quickstart Guide (Development)](https://github.com/phetsims/phet-info/blob/main/doc/core-description-quickstart-guide.md)
+- [Core Voicing Quickstart Guide (Development)](https://github.com/phetsims/phet-info/blob/main/doc/core-voicing-quickstart-guide.md)
