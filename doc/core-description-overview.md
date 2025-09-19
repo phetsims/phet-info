@@ -17,7 +17,7 @@ _Core Description_ does not explicitly exclude any categories of description. If
 
 # Definitions for [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md): 
   - screen summary - A _State Description_ that includes static and dynamic descriptions meant to capture a big-picture summary of the current screen. 
-  - accessible name - The name (or label) of the interactive object.
+  - accessible name - A state description (typically static) that names (or labels) the interactive object.
   - accessible help text - The supporting descriptions needed to scaffold interaction. Design needs vary by interactive object.
   - accessible headings - The descriptions that provide navigable sections within the PDOM. Headings help create information relationships. 
   - accessible paragraph - A description in the PDOM that is not directly part of an interactive object. Used to contain static or dynamic state descriptions. 
