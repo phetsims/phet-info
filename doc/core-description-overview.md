@@ -80,7 +80,7 @@ TODO: Make this more about core description.
    - changing states in "built-in" or accessible object responses  present on the object.
    - changes to surrounding context in accessible context responses.  
 
-# Core Description Exemaplrs and Examples
+# Core Description Exemplars and Examples
 
 ## The "Current Details" and "Interaction Hint" in pH Scale's Screen Summary
 In _pH Scale_ and _pH Scale:Basics_ the designers made good choices to keep the Screen Summary simple, while at the same time providing essential scaffolds for interactive exploration:
