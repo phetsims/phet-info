@@ -5,12 +5,13 @@
 
 # Description Design Framework
 ![alt text "PhET's Description Design Framework."](images/descriptionDesignFramework.png "Description Design Framework")
-PhET's _Description Design Framework_ divides the design of the Interactive Description feature, the entire interactive story of the sim, into manageable chunks. To meet the goals of _Core Description_, we are designing descriptions of all categories, but we are not designing all descriptions found in the full _Interactive Description_ feature. For _Core Description_ we want to focus on the subset of descriptions pieces that will provide both broad access to learners **AND** meet WCAG Level AA design guidance success criteria.
+
+PhET's _Description Design Framework_ divides the design of the Interactive Description feature, the entire interactive story of the sim, into manageable chunks. To meet the goals of _Core Description_, we are designing descriptions in all four categories defined in the design framework, but we are not designing all descriptions that will eventually be needed for a fully designed _Interactive Description_ feature. 
 
 # What is “Core Description”?
-_Core Description_ is a sub set of descriptions needed for the Interactive Description feature that aims to meet WCAG A and AA Success Criteria while at the same time creating a phased description design process that allows the team to open simulation access to learners who rely on description. 
-
-Additionally, design and development of _Core Description_ of several sims at once allows us to improve SceneryStack's high-level APIs, and all the inclusive design and development skills of the entire team. Creating a phased description design approach (_Core Description,_ then full _Interactive Description_) allows us to gain the skills and expertise needed for the second description design phase. 
+_Core Description_ is part of a phased description design process to scale the design and implementation of description in simulations. _Core Description_ allows PhET to open simulation access up to learners who rely on description, **AND** create a sim designs that meet most, if not all, relevant WCAG success criteria to be WCAG AA compliant.
+ 
+Additionally, design and development of _Core Description_ of several simulations all at once allows the PhET Team to improve SceneryStack's high-level APIs, and the inclusive design and development skills of the entire team. Creating a phased description design process (_Core Description,_ then full _Interactive Description_) allows us to gain the skills and expertise needed for the second description design phase. 
 
 # What is included and excluded in Core Description
 _Core Description_ does not explicitly exclude any categories of description. If it is easy to design and implement, we want to include it. That said, there are clear boundary lines around the design of qualitative parameters needed for more dynamic strings found in Object and Context Responses, and Dynamic State Descriptions.
