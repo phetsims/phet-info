@@ -82,13 +82,13 @@ TODO: Make this more about core description.
 
 # Core Description Exemplars and Examples
 
-## The "Current Details" and "Interaction Hint" in pH Scale's Screen Summary
-In _pH Scale_ and _pH Scale:Basics_ the designers made good choices to keep the Screen Summary simple, while at the same time providing essential scaffolds for interactive exploration:
+## pH Scale and pH Scale:Basics
+In _pH Scale_ the designers made good choices to keep the Screen Summary simple, while at the same time providing essential scaffolds for interactive exploration:
    - The "Current Details" describes whether the beaker "contains liquid" or "is empty".
    - The "Interaction Hint" prompts to either, "Move probe to start exploring," or "Add a solution to beaker and play," depending on the state of the beaker.
 The rest of the details such as which solution, the current volume, the current pH reading, and the color of solution, are left for a learner to interactively discover further down, either directly from the state of the interactive objects or through accessible paragraphs and lists near the interactive objects.
 
-Compare the description design of [Molarity]() with [pH Scale]() to see how Molarity's _Interactive Description_ design includes more details in both the Screen Summary and the Play Area. Molarity's dynamic descriptions use both qualitative and quantitative scales to describe the different states of the solution, whereas the dynmaic description in the _Core Description_ design of _pH Scale_ rely on visually available quantitative scales, and only uses qualitative descriptions to compare 2 states, e.g., "beaker contains liquid" or "beaker is empty." 
+Compare the description design of [Molarity]() with [pH Scale]() to see how Molarity's _Interactive Description_ design includes more detail and more qualitative detail in both the Screen Summary and the Play Area. The dynamic states in the _Core Description_ design of _pH Scale_ rely mainly on visually available quantitative values, and use qualitative descriptions sparingly to describe 2 or 3 essentail states rather than all states (e.g., "beaker contains liquid" or "beaker is empty.") 
 
 ## General Requirements and Considerations for Interactive Components
 Description options vary for each interactive component. Always keep the stategies listed above in mind when working on _Core Description_.
