@@ -13,13 +13,14 @@ These steps contain the following placeholders that you'll need to fill in:
 At https://github.com/phetsims:
 
 - [ ] At the top right, press the "+" button and select "New repository".
+- [ ] Set the "Owner" combo box to "phetsims".
 - [ ] In "Repository name" text field, enter the repository name.
 - [ ] In the "Description" text field, enter
   `"{{TITLE}}" is an educational simulation in HTML5, by PhET Interactive Simulations.`
-- [ ] Select the "Public" radio button.
-- [ ] Do not check the "Add a README file" checkbox.
-- [ ] Leave the "Add .gitignore" combo box set to "None".
-- [ ] Leave the "Add a license" combo box set to "None".
+- [ ] Leave the "Choose visibility" combo box set to "Public".
+- [ ] Leave the "Add a README" toggle switch set to Off.
+- [ ] Leave the "Add .gitignore" combo box set to "No .gitignore".
+- [ ] Leave the "Add a license" combo box set to "No license".
 - [ ] Press the "Create Repository" button.
 
 Create your working copy of the sim repo:
@@ -45,7 +46,7 @@ At https://github.com/phetsims/{{REPO}}:
   assignments by repo type.
 - [ ] Create a Sim Checklist issue using
   template [sim-checklist.md](https://github.com/phetsims/phet-info/blob/main/checklists/sim-checklist.md). Use "
-  {{TITLE}} main checklist" as the issue name.
+  {{TITLE}} 1.0 main checklist" as the issue name.
 
 In your working copy of perennial repo:
 
