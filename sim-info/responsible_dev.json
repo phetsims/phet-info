@@ -695,6 +695,14 @@
       "@arouinfar"
     ]
   },
+  "grafana": {
+    "responsibleDevs": [
+      "@brent-phet"
+    ],
+    "responsibleDesigners": [
+      "@brent-phet"
+    ]
+  },
   "graphing-lines": {
     "responsibleDevs": [
       "@pixelzoom"
