@@ -16,10 +16,10 @@ At https://github.com/phetsims:
 - [ ] In "Repository name" text field, enter the repository name.
 - [ ] In the "Description" text field, enter
   `"{{TITLE}}" is an educational simulation in HTML5, by PhET Interactive Simulations.`
-- [ ] Select the "Public" radio button.
-- [ ] Do not check the "Add a README file" checkbox.
-- [ ] Leave the "Add .gitignore" combo box set to "None".
-- [ ] Leave the "Add a license" combo box set to "None".
+- [ ] Leave the "Choose visibility" combo box set to "Public".
+- [ ] Leave the "Add a README" toggle switch set to Off.
+- [ ] Leave the "Add .gitignore" combo box set to "No .gitignore".
+- [ ] Leave the "Add a license" combo box set to "No license".
 - [ ] Press the "Create Repository" button.
 
 Create your working copy of the sim repo:
