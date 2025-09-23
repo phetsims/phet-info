@@ -13,41 +13,40 @@ _Core Description_ is part of a phased description design process to scale the d
  
 Additionally, design and development of _Core Description_ of several simulations all at once allows the PhET Team to improve SceneryStack's high-level APIs, and the inclusive design and development skills of the entire team. Creating a phased description design process (_Core Description,_ then full _Interactive Description_) allows the team to gain the skills and expertise needed for the second description design phase. 
 
-# What is included and excluded in Core Description
+# Definitions for [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md): 
+  - Screen Summary - A _State Description_ that includes static and dynamic descriptions meant to capture a big-picture summary of the current screen. 
+  - Accessible Name - A state description (typically static) that names (or labels) the interactive object.
+  - Accessible Help Text - The supporting descriptions needed to scaffold interaction. Design needs vary by interactive object.
+  - Accessible Heading - The descriptions that provide navigable sections within the PDOM. Headings help create information relationships. 
+  - Accessible Paragraph - A description in the PDOM that is not directly part of an interactive object. Used to contain static or dynamic state descriptions. 
+  - Accessible Object Response - a response containing a new value or new state of an interactive object. Not all objects have designed object responses. Slider objects deliver object responses via _aria-valuetext._ Custom objects deliver object responses alonoside context responses via _ARIA Live._ For _Core Description_ design effort should concentrate on human readable quantitative values relevant to learning. 
+  - Accessible Context Response - a response describing surrounding changes to the context as an object is being interacted with. For _Core Description_ design effort should focus on the context responses needed for simple UI components first, and then as respurces allow more complex interactions.
+
+# Deciding what is included and excluded in Core Description
 _Core Description_ does not explicitly exclude any categories of description. If it is easy to design and implement, we want to include it. That said, there are clear boundary lines around the design of qualitative parameters needed for more dynamic strings found in Object and Context Responses, and Dynamic State Descriptions.
 
-# Definitions for [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md): 
-  - screen summary - A _State Description_ that includes static and dynamic descriptions meant to capture a big-picture summary of the current screen. 
-  - accessible name - A state description (typically static) that names (or labels) the interactive object.
-  - accessible help text - The supporting descriptions needed to scaffold interaction. Design needs vary by interactive object.
-  - accessible headings - The descriptions that provide navigable sections within the PDOM. Headings help create information relationships. 
-  - accessible paragraph - A description in the PDOM that is not directly part of an interactive object. Used to contain static or dynamic state descriptions. 
-  - accessible object response - a response containing a new value or new state of an interactive object. Not all objects have designed object responses. Slider objects deliver object responses via _aria-valuetext._ Custom objects deliver object responses alonoside context responses via _ARIA Live._ For _Core Description_ design effort should concentrate on human readable quantitative values relevant to learning. 
-  - accessible context response - a response describing surrounding changes to the context as an object is being interacted with. For _Core Description_ design effort should focus on the context responses needed for simple UI components first, and then as respurces allow more complex interactions.
-
-# Drawing the line between Core and Interactive Description
-Core Description is focused on these categories:
-- Basic screen summary
-- accessible names
-- accessible help text (optional)
-- accessible headings necessary for scaffolding and relationships (optional)
-- accessible paragraphs for state information and graphics
+Core Description is focused on the following:
+- Creating a basic screen summary to quickly scaffold interaction.
+- Accessible names for all interactive components.
+- Accessible help text, while always optional, design help text for the components that benefit from additional scaffolding.
+- Accessible headings necessary for creating relationships within the PDOM. Like help text, headings are optional.
+- Accessible paragraphs for state information and graphics. Description content in accessible paragraphs can be dynamic.
 - Accessible object responses for objects that have a well-defined value or a numeric value.
-- Accessible context responses for simple UI components.
+- Accessible context responses for simple UI components like checkboxes and buttons.
 
-# Use the following strategies
+# Use the following strategies to keep Core Description design focused
 - Keep the current details of the screen summary simple.
   - Use binary states if possible, and then provide additional state information close to the interactive object.
 - Consider simplifying the information you want to provide.
-- Avoid qualitative information requiring multiple parameters with described scales.
-- Call in other team members with more experience, and/or discuss at the weekly Design Meeting.
+- Avoid qualitative information requiring multiple parameters with qualitatively described scales.
+- Call in other team members with more experience, and/or discuss challenges at the weekly Design Meeting.
 
 # Punctuation
-- accessibleName: Title case, no punctuation. Example: “Detector Probe”
-- accessibleHelpText: Sentence case, with punctuation. Example: “Move probe or jump to useful positions with keyboard shortcut.”
-- accessibleObjectResponse: Fragment, no sentence casing, no punctuation. Example: “1.07 centimeters”
-- accessibleContextResponse: Sentence case, with punctuation. Example: "In light source path, centered in cuvette. Transmittance is 52.69 percent."
-- accessibleParagraph: a paragraph of full sentences, with sentence case and punctuation. Example: "Transmittance is 52.96 percent."
+- accessibleName: Is like a proper name. Use title case, and generally no punctuation. Example: “Detector Probe”
+- accessibleHelpText: Is generally a full sentence or a complete phrase. Use sentence case, with punctuation. Example: “Move probe or jump to useful positions with keyboard shortcut.”
+- accessibleObjectResponse: Is generally a phrase fragment rather than a full phrase. Does not need sentence casing and no final punctuation is needed. Example: “1.07 centimeters”
+- accessibleContextResponse: Is genrally a phrase or sentence. Use sentence case, with punctuation. Example: "In light source path, centered in cuvette. Transmittance is 52.69 percent."
+- accessibleParagraph: a paragraph includes full sentences. Use sentence case and appropriate punctuation. Example: "Transmittance is 52.96 percent."
 
 # Delivery of Descriptions with Screen Reader Software
 
