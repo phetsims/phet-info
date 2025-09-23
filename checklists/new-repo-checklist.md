@@ -46,7 +46,7 @@ At https://github.com/phetsims/{{REPO}}:
   assignments by repo type.
 - [ ] Create a Sim Checklist issue using
   template [sim-checklist.md](https://github.com/phetsims/phet-info/blob/main/checklists/sim-checklist.md). Use "
-  {{TITLE}} main checklist" as the issue name.
+  {{TITLE}} 1.0 main checklist" as the issue name.
 
 In your working copy of perennial repo:
 
