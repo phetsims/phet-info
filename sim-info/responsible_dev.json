@@ -1303,6 +1303,15 @@
       "@brettfiedler"
     ]
   },
+  "quantum-bound-states": {
+    "responsibleDevs": [
+      "@pixelzoom"
+    ],
+    "responsibleDesigners": [
+      "@ariel-phet",
+      "@brettfiedler"
+    ]
+  },
   "quantum-measurement": {
     "responsibleDevs": [
       "@jbphet"
