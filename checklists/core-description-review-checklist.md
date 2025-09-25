@@ -57,6 +57,7 @@ As you work through the list, keep these 'general good-practice' reminders in th
 
 ## Sim-Specific Instructions
 
+- {{LINK TO DESIGN DOC WHERE DESCRIPTION IS FOUND}}
 - {{INSTRUCTIONS FOR REVIEWER WRITTEN BY RESPONSIBLE DESIGNER}}
 
 ### Determined to be out of scope for Core Description
