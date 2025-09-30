@@ -36,7 +36,7 @@ Audience (who will use this?)
 
 1. Designer who created the Core Description to ensure they haven’t forgotten anything.  
 2. Additional content expert to ensure language is pedagogically correct and relevant.  
-3. An external reviewer (less desirable) to ensure quality of description is there.
+3. An external reviewer (preferably someone with either content knowledge or core description knowledge) to ensure quality of description is there.
    
 ## General Instructions
 
@@ -58,7 +58,7 @@ As you work through the list, keep these 'general good-practice' reminders in th
 ## Sim-Specific Instructions
 
 - {{LINK TO DESIGN DOC WHERE DESCRIPTION IS FOUND}}
-- {{INSTRUCTIONS FOR REVIEWER WRITTEN BY RESPONSIBLE DESIGNER}}
+- {{INSTRUCTIONS FOR REVIEWER WRITTEN BY RESPONSIBLE DESIGNER, SUCH AS HOW TO DOCUMENT SUGGESTED CHANGES}}
 
 ### Determined to be out of scope for Core Description
 
