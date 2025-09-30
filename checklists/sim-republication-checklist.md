@@ -32,6 +32,8 @@
 
 - [ ] Feature-complete (Date: //)
 - [ ] Sim team sign-off (Date: //)
+- [ ] Update model.md, if needed. (Date: //)
+- [ ] Update implementation-notes.md, if needed. (Date: //)
 - [ ] Code review completed (Date: //)
 - [ ] Pre-publication items
   - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks -
