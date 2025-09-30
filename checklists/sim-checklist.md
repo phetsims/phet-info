@@ -30,12 +30,14 @@
     - [ ] All pointer areas are at least 44x44 pixels 
   - [ ] No new feature requests
 - [ ] **Prototype items**
+  - [ ] Main screenshot (read [this](https://github.com/phetsims/QA/blob/main/documentation/qa-book.md#screenshots))
   - [ ] Auxiliary screenshots (at least 1 additional)
   - [ ] Accessories (keywords, categories, description, learning goals, related sims, NSDL) as appropriate
   - [ ] Email/Twitter announcement language
   - [ ] Teacher Guide created, uploaded, and added to sim design folder
   - [ ] Send Simulation Notification from the Admin page (to alert translators)
 - [ ] **Pre-publication items**
+  - [ ] Main screenshot (read [this](https://github.com/phetsims/QA/blob/main/documentation/qa-book.md#screenshots))
   - [ ] Auxiliary screenshots (up to 3 additional)
   - [ ] Screen-specific screenshots for metadata service (
     see [naming convention](https://github.com/phetsims/website/issues/1322#issuecomment-1010320827))
@@ -94,7 +96,6 @@
 - [ ] **Sim dev test completed** (Date: //)
 - [ ] **Sim RC tests completed** (Date: //)
 - [ ] **Pre-publication items**
-  - [ ] Main screenshot (read [this](https://github.com/phetsims/QA/blob/main/documentation/qa-book.md#screenshots))
   - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks -
     see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
   - [ ] Add CT tests for public query parameters that need testing. See examples
