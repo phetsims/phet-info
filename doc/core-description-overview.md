@@ -13,17 +13,26 @@ _Core Description_ is part of a phased description design process to scale the d
  
 Additionally, design and development of _Core Description_ of several simulations all at once allows the PhET Team to improve SceneryStack's high-level APIs, and the inclusive design and development skills of the entire team. Creating a phased description design process (_Core Description,_ then full _Interactive Description_) allows the team to gain the skills and expertise needed for the second description design phase. 
 
-# Definitions for [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md): 
-  - Screen Summary - A _State Description_ that includes static and dynamic descriptions meant to capture a big-picture summary of the current screen. 
-  - Accessible Name - A state description (typically static) that names (or labels) the interactive object.
-  - Accessible Help Text - The supporting descriptions needed to scaffold interaction. Design needs vary by interactive object.
-  - Accessible Heading - The descriptions that provide navigable sections within the PDOM. Headings help create information relationships. 
-  - Accessible Paragraph - A description in the PDOM that is not directly part of an interactive object. Used to contain static or dynamic state descriptions. 
-  - Accessible Object Response - a response containing a new value or new state of an interactive object. Not all objects have designed object responses. Slider objects deliver object responses via _aria-valuetext._ Custom objects deliver object responses alonoside context responses via _ARIA Live._ For _Core Description_ design effort should concentrate on human readable quantitative values relevant to learning. 
-  - Accessible Context Response - a response describing surrounding changes to the context as an object is being interacted with. For _Core Description_ design effort should focus on the context responses needed for simple UI components first, and then as respurces allow more complex interactions.
+## Definitions for Core Description Options
+ Our high-level API has specific options for each node or interactive component, see [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md) for a complete list of current description options.
+ 
+ Core Description Design focuses on the following description options, allbeit that some interactive components have a more specific name for their "accessibleObjectResponse", "accessibleContextResponse," or even "accessibleHelpText." 
+   
+  - **Screen Summary Content** - A modular _State Description_ that includes the following static and dynamic descriptions meant to capture enough detail to scaffold productive interaction. *Note that design goal for full Interactive Description has been to create a big-picture summary of the entire screen. Core Descrition aims to be simpler.* 
+      - playAreaContent (static)
+	  - controlAreaContent (static)
+	  - currentDetailsContent (dynamic)
+	  - interactionHintContent (static or dynamic)
+  - **Accessible Name** - A state description (typically static) that names (or labels) the interactive object.
+  - **Accessible Help Text** - The supporting descriptions needed to scaffold interaction. Design needs vary by interactive object.
+  - **Accessible Heading** - The descriptions that provide navigable sections within the PDOM. Headings help create information relationships. 
+  - **Accessible Paragraph** - A description in the PDOM that is not directly part of an interactive object. Used to contain static or dynamic state descriptions.
+  - *Accessible List (NOT YET in High-level-API)*
+  - **Accessible Object Response** - A response containing a new value or new state of an interactive object. Not all objects have designed object responses. Slider objects deliver object responses natively via _aria-valuetext._ Custom objects deliver object responses alongside context responses via _ARIA Live._ For _Core Description_ design effort should concentrate on human readable quantitative values relevant to learning. 
+  - **Accessible Context Response** - A response describing surrounding changes to the context as an object is being interacted with. For _Core Description_ design effort should focus on the context responses needed for simple UI components first, and then as resources allow, consider context responses for more complex interactions.
 
-# Deciding what is included and excluded in Core Description
-_Core Description_ does not explicitly exclude any categories of description. If it is easy to design and implement, we want to include it. That said, there are clear boundary lines around the design of qualitative parameters needed for more dynamic strings found in Object and Context Responses, and Dynamic State Descriptions.
+## Deciding What is Included in Core Description Design
+_Core Description_ does not explicitly exclude any categories of description. If it is easy to design and implement, we want to include it. That said, there are clear boundary lines around the design of qualitative parameters needed for dynamic strings found in Object and Context Responses, and Dynamic State Descriptions.
 
 Core Description is focused on the following:
 - Creating a basic screen summary to quickly scaffold interaction.
@@ -34,21 +43,50 @@ Core Description is focused on the following:
 - Accessible object responses for objects that have a well-defined value or a numeric value.
 - Accessible context responses for simple UI components like checkboxes and buttons.
 
-# Use the following strategies to keep Core Description design focused
+## Strategies to Keep Core Description Design Focused
 - Keep the current details of the screen summary simple.
   - Use binary states if possible, and then provide additional state information close to the interactive object.
 - Consider simplifying the information you want to provide.
 - Avoid qualitative information requiring multiple parameters with qualitatively described scales.
 - Call in other team members with more experience, and/or discuss challenges at the weekly Design Meeting.
 
-# Punctuation
-- accessibleName: Is like a proper name. Use title case, and generally no punctuation. Example: “Detector Probe”
-- accessibleHelpText: Is generally a full sentence or a complete phrase. Use sentence case, with punctuation. Example: “Move probe or jump to useful positions with keyboard shortcut.”
-- accessibleObjectResponse: Is generally a phrase fragment rather than a full phrase. Does not need sentence casing and no final punctuation is needed. Example: “1.07 centimeters”
-- accessibleContextResponse: Is genrally a phrase or sentence. Use sentence case, with punctuation. Example: "In light source path, centered in cuvette. Transmittance is 52.69 percent."
-- accessibleParagraph: a paragraph includes full sentences. Use sentence case and appropriate punctuation. Example: "Transmittance is 52.96 percent."
+## General Requirements and Considerations for Interactive Components
+Description options vary for each interactive component. Always keep the stategies listed above in mind when working on _Core Description_.
 
-# Delivery of Descriptions with Screen Reader Software
+For _Core Description_:
+ - You always need to design an accessibleName. 
+ - You always need to consider designing accessibleHelpText. 
+ - You need to review the options for each component listed in [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md), then depending the interaction, determine if you have the resources to design and implement all listed options. Review the strategies above if/when you encounter design challenges.
+ 
+# Punctuation in Description Options
+- **accessibleName:** Is like a proper name. Use title case, and generally no punctuation. Example: “Detector Probe”
+- **accessibleHelpText:** Is generally a full sentence or a complete phrase. Use sentence case, with punctuation. Example: “Move probe or jump to useful positions with keyboard shortcut.”
+- **accessibleObjectResponse:** Is generally a phrase fragment rather than a full phrase. Does not need sentence casing and no final punctuation is needed. Example: “1.07 centimeters”
+- **accessibleContextResponse:** Is genrally a phrase or sentence. Use sentence case, with punctuation. Example: "In light source path, centered in cuvette. Transmittance is 52.69 percent."
+- **accessibleParagraph:** Is a sentence or paragraph that contains full sentences. Use sentence case and appropriate punctuation. Example: "Transmittance is 52.96 percent."
+
+
+# Core Description Exemplars and Examples
+
+## pH Scale and pH Scale:Basics
+In _pH Scale_ the designers made good choices to keep the Screen Summary simple, while at the same time providing essential scaffolds for interactive exploration:
+   - The "Current Details" describes whether the beaker "contains liquid" or "is empty".
+   - The "Interaction Hint" prompts to either, "Move probe to start exploring," or "Add a solution to beaker and play," depending on the state of the beaker.
+The rest of the details such as which solution, the current volume, the current pH reading, and the color of solution, are left for a learner to interactively discover further down, either directly from the state of the interactive objects or through accessible paragraphs and lists near the interactive objects.
+
+Compare the description design of [Molarity]() with [pH Scale]() to see how Molarity's _Interactive Description_ design includes more detail and more qualitative detail in both the Screen Summary and the Play Area. The dynamic states in the _Core Description_ design of _pH Scale_ rely mainly on visually available quantitative values, and use qualitative descriptions sparingly to describe 2 or 3 essentail states rather than all states (e.g., "beaker contains liquid" or "beaker is empty.") 
+
+  
+
+
+# Requirements for Common Interactive Components (THIS SECTION IN PROGRESS)
+Slider:
+-  accessibleName
+- accessibleHelpText (optional)
+- accessible object response (currently option pdomCreateAriaValueText) (numeric value, rounded to human-readable value)
+- accessible context response (currently option pdomCreateContextResponseAlert) (if simple)
+
+# Delivery of Core Description with Screen Reader Software
 
 TODO: Make this more about core description.
 
@@ -78,32 +116,7 @@ TODO: Make this more about core description.
 - Once making changes, they hear:
    - changing states in "built-in" or accessible object responses  present on the object.
    - changes to surrounding context in accessible context responses.  
-
-# Core Description Exemplars and Examples
-
-## pH Scale and pH Scale:Basics
-In _pH Scale_ the designers made good choices to keep the Screen Summary simple, while at the same time providing essential scaffolds for interactive exploration:
-   - The "Current Details" describes whether the beaker "contains liquid" or "is empty".
-   - The "Interaction Hint" prompts to either, "Move probe to start exploring," or "Add a solution to beaker and play," depending on the state of the beaker.
-The rest of the details such as which solution, the current volume, the current pH reading, and the color of solution, are left for a learner to interactively discover further down, either directly from the state of the interactive objects or through accessible paragraphs and lists near the interactive objects.
-
-Compare the description design of [Molarity]() with [pH Scale]() to see how Molarity's _Interactive Description_ design includes more detail and more qualitative detail in both the Screen Summary and the Play Area. The dynamic states in the _Core Description_ design of _pH Scale_ rely mainly on visually available quantitative values, and use qualitative descriptions sparingly to describe 2 or 3 essentail states rather than all states (e.g., "beaker contains liquid" or "beaker is empty.") 
-
-## General Requirements and Considerations for Interactive Components
-Description options vary for each interactive component. Always keep the stategies listed above in mind when working on _Core Description_.
-
-For _Core Description_:
- - You always need to design an accessibleName. 
- - You always need to consider designing accessibleHelpText. 
- - You need to review the options for each component listed in [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md), then depending the interaction, determine if you have the resources to design and implement all listed options. Review the strategies above if/when you encounter design challenges.  
-
-### Requirements for Common Interactive Components (THIS SECTION IN PROGRESS)
-For an slider:
-    - accessibleName
-    - accessibleHelpText (optional)
-    - accessible object response (currently option pdomCreateAriaValueText) (numeric value, rounded to human-readable value)
-    - accessible context response (currently option pdomCreateContextResponseAlert) (if simple)
-
+   
 # References on how to use a screen reader
 From the description course: [Description Design for Interactive Learning Resources](https://www.coursera.org/learn/description-design-for-interactive-learning-resources):
 - Tip Sheet - [Using VoiceOver with a PhET Sim](https://docs.google.com/document/d/1qz0Dm2lA67tRhgw1GaHVeOSnldBoMj7AT5UE_UaXz1U/edit?tab=t.0#heading=h.rj5etgrq1nf7)
