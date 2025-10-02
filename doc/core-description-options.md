@@ -68,6 +68,10 @@ to automatically keep this in sync with the code.
 * accessibleContextResponseValueOn
 * accessibleContextResponseValueOff
 
+### RectangularToggleButton | RoundToggleButton
+* accessibleNameOn
+* accessibleNameOff
+
 ### ToggleSwitch
 
 * accessibleContextResponseLeftValue
