@@ -1,24 +1,24 @@
 # {{SIM_NAME}} {{VERSION}} checklist
 
 ## Prep
-- [ ] **Review all open issues** 
-- [ ] **Schedule kick-off meeting** 
+- [ ] Review all open issues
+- [ ] Schedule kick-off meeting
   - [ ] Establish scope of this release 
   - [ ] Triage open issues and decide what to include or defer 
-- [ ] **Ensure design doc has sections for relevant features and/or create feature-specific design docs**
-- [ ] **Scope of this release**
+- [ ] Ensure design doc has sections for relevant features and/or create feature-specific design docs
+- [ ] Scope of this release
   - [ ] Verify [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0)
   - [ ] Optional: paste all issues that will be included, or list features - these will be useful for release notes
 
 ## Design
 
-- [ ] **Update design doc to reflect sim updates, as needed** 
-- [ ] **Pre-publication items**
+- [ ] Update design doc to reflect sim updates, as needed
+- [ ] Pre-publication items
   - [ ] Update teacher tips (query parameters, new features, model simplification changes, etc.)
   - [ ] Update screenshots
   - [ ] Update release-notes.md with developer
   - [ ] Add to Essential Exceptions doc ([guidelines](https://docs.google.com/document/d/1NjLGmGr2Oi9A9D9SCH5WAgOhpA7ysmuvv0Jn_batPVU/edit?tab=t.0#heading=h.c063kqhkkg))
-- [ ] **Post-publication items**
+- [ ] Post-publication items
   - [ ] Tag new inclusive features on website
   - [ ] Create a GitHub issue for @oliver-phet to alert translators if there have been significant string changes (manual process since Nov 2024)
   - [ ] Write newsletter announcement
@@ -45,9 +45,9 @@
 
 ## QA
 
-- [ ] **Dev testing started** (Date: //)
-- [ ] **Dev testing completed** (Date: //)
-- [ ] **First RC published** (Date: //)
+- [ ] Dev testing started (Date: //)
+- [ ] Dev testing completed (Date: //)
+- [ ] First RC published (Date: //)
   - [ ] Test matrices put
     in [Testing Matrices Folder](https://drive.google.com/drive/folders/0B6CMwxdP0NGYbW9fTGNCODdYVjQ)
-- [ ] **RC testing completed** (Date: //)
+- [ ] RC testing completed (Date: //)
