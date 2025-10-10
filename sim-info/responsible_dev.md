@@ -140,7 +140,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | number-line-integers | @jbphet | @amanda-phet |  | 
 | number-line-operations | @jbphet | @amanda-phet |  | 
 | number-play | @marlitas | @amanda-phet | Sound | 
-| number-pairs | @marlitas,@pixelzoom | @catherinecarter | Sound<br/>Interactive Description | 
+| number-pairs | @marlitas | @catherinecarter | Sound<br/>Interactive Description | 
 | number-suite-common | @marlitas | @amanda-phet |  | 
 | ohms-law | @jbphet | @DianaTavares | Sound<br/>Interactive Description | 
 | optics-lab | @veillette,@jbphet | @arouinfar |  | 
