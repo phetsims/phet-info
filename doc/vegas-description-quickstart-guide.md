@@ -145,3 +145,10 @@ placed somewhere reasonable when the screen changes or UI components disappear.
   The `LevelSelectionScreenNode` will place focus on the most recently pressed level selection button. The `GameScreenNode` will
   put focus on its top most "Challenge" heading. These methods may also trigger designed context responses
   that should happen after the new screen becomes visible.
+
+- When the CheckButton is pressed, focus should usually move to the TryAgainButton or the NextButton depending on the challenge results.
+- When the ShowAnswerButton is pressed, focus should usually move to the NextButton.
+- When the GameInfoButton is pressed, focus should move into the GameInfoDialog. This should happen automatically.
+
+### Section on Responses when buttons are pressed
+For example, when the "Check Answer" is pressed, there will be a designed response for different game cases.
