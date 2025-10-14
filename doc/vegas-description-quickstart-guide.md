@@ -9,12 +9,11 @@ Most importantly, you should be familiar with `pdomOrder`, `accessibleName`, and
 
 ## Overall Process
 
-The overall process for instrumenting a game with accessibility includes the following.
-This is also the order in which we will walk through implementation steps in this guide.
+This is the overall process for instrumenting a game:
 
 - Opt out of default ScreenView sections with `includeAccessibleSectionNodes: false`.
-- Use prepared classes for level selection, challenge, and reward screens to help with pdomOrder and focus management.
-- Use `pdomOrder` in each the level selection, challenge, and reward screens to place game UI components into logical sections.
+- Use prepared classes for level selection, challenge, and reward screens to help with `pdomOrder` and focus management.
+- Use `pdomOrder` in each of the level selection, challenge, and reward screens to place game UI components into logical sections.
 - Use vegas buttons and controls to get default accessibility content like `accessibleName`, `accessibleHelpText`, and `accessibleContextResponse`.
 - Implement focus management to avoid loss of focus when components change visibility.
 
@@ -46,6 +45,12 @@ The `LevelSelectionScreenNode` includes a boilerplate introductory description. 
 take one of two forms, depending on if your level selection screen has game options.
 If it does, provide option `accessibleIncludeOptionsDescription`.
 
+Use `pdomOrder` with the sections in `LevelSelectionScreenNode` to place UI components
+into the right section. There is a section for the level selection buttons and a section
+for other game options. The design team will specify where components should go. But generally,
+the level selection and info button goes in the level buttons section, and everything
+else goes in the controls section.
+
 ```ts
 class MyLevelSelectionScreen extends LevelSelectionScreenNode {
   public constructor() {
@@ -53,6 +58,12 @@ class MyLevelSelectionScreen extends LevelSelectionScreenNode {
     super( screenNameStringProperty, levelButtons, {
       accessibleIncludeOptionsDescription: true
     } );
+    
+    const timerButton = new GameTimerToggleButton();
+    const resetAllButton = new ResetAllButton();
+
+    this.accessibleLevelsSectionNode.pdomOrder = [ levelButtons, infoButton ];
+    this.accessibleControlsSectionNode.pdomOrder = [ timerButton, resetAllButton ];
   }
 }
 ```
@@ -67,6 +78,13 @@ status components.
 If your game has a number of levels, number of challenges, or level challenge count, include
 this information in options.
 
+Use `pdomOrder` with the sections in `ChallengeScreenNode` to place UI components
+into the right section. There is a section for the "challenge" content, a section for
+"answer" content, and a section for "status" content. The design team will specify
+where components should go. Generally, gameplay challenge content goes into the "challenge"
+section, while answer buttons and controls go into the "answer" section. The "status" section
+almost always has a `FiniteStatusBar` or `InfiniteStatusBar`.
+
 ```ts
 class MyGameChallenge extends ChallengeScreenNode {
   public constructor() {
@@ -74,7 +92,19 @@ class MyGameChallenge extends ChallengeScreenNode {
       challengeNumberProperty: challengeNumberProperty,
       challengeCountProperty: challengeCountProperty,
       levelNumberProperty: levelNumberProperty
-    } )
+    } );
+
+    const gameDiagram = new GameDiagram();
+    const gameNumberControl = new NumberControl();
+
+    const checkAnswerButton = new CheckButton();
+    const tryAgainButton = new TryAgainButton();
+    
+    const finiteStatusBar = new FiniteStatusBar();
+
+    this.accessibleChallengeSectionNode.pdomOrder = [ gameDiagram, gameNumberControl ];
+    this.accessibleAnswerSectionNode.pdomOrder = [ checkAnswerButton, tryAgainButton ];
+    this.accessibleStatusSectionNode.pdomOrder = [ finiteStatusBar ];
   }
 }
 ```
@@ -85,12 +115,33 @@ Games often have a reward screen, usually with a RewardDialog or a LevelComplete
 screen that shows this content should extend or add content as children to the `RewardScreenNode`.
 The `RewardScreenNode` provides an accessible section for all reward content.
 
-```ts
-import RewardScreenNode from './RewardScreenNode.js';
+Use `pdomOrder` with the section in RewardScreenNode to place UI components into the 
+right section. There is only one section for reward content. It will usually contain
+a LevelCompletedNode or a RewardDialog.
 
+```ts
 class MyRewardScreen extends RewardScreenNode {
   public constructor() {
     super();
+
+    const levelCompletedNodde = new LevelCompletedNode()
+    this.accessibleRewardSectionNode.pdomOrder = [ levelCompletedNode ];
   }
 }
 ```
+
+### 5) Use Vegas UI components
+
+Vegas has some prepared buttons that should be used in games. These buttons contain
+default label strings and may include accessible names, accessible help text, and
+accessible context responses. The buttons do not include any visual styling or other behavior.
+
+### 6) Focus Management
+
+Games require extra work for focus management. You need to make sure that focus is
+placed somewhere reasonable when the screen changes or UI components disappear.
+
+- Use `show()` and `hide()` methods on the vegas screen Nodes. The vegas screen Nodes handle focus management for you.
+  The `LevelSelectionScreenNode` will place focus on the most recently pressed level selection button. The `GameScreenNode` will
+  put focus on its top most "Challenge" heading. These methods may also trigger designed context responses
+  that should happen after the new screen becomes visible.
