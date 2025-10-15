@@ -152,3 +152,5 @@ placed somewhere reasonable when the screen changes or UI components disappear.
 
 ### Section on Responses when buttons are pressed
 For example, when the "Check Answer" is pressed, there will be a designed response for different game cases.
+
+### Section on using hide/show on various vegas dialogs and screens to get built-in behavior.
