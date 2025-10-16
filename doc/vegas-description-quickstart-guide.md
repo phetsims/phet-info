@@ -11,7 +11,7 @@ strings organization described there. The focus here is on vegas-specific struct
 
 ## Overall Process
 
-- Disable the default ScreenView accessible sections that are tailored to standard sims.
+- Disable the default `ScreenView` accessible sections that are tailored to standard sims.
 - Build each game phase on the vegas screen node classes (`LevelSelectionScreenNode`, `ChallengeScreenNode`,
   `RewardScreenNode`) to get consistent structure and heading hierarchy.
 - Use `pdomOrder` within each vegas screen node to organize headings, controls, and descriptive content exactly as
@@ -26,7 +26,7 @@ strings organization described there. The focus here is on vegas-specific struct
 
 ### 1. Prepare the ScreenView
 
-ScreenView includes accessible sections that work for most sims but not for vegas games. Disable them so you can control
+`ScreenView` includes accessible sections that work for most sims but not for vegas games. Disable them so you can control
 the structure with vegas screen nodes.
 
 ```ts
