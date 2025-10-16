@@ -57,7 +57,7 @@ class MyLevelSelectionScreen extends LevelSelectionScreenNode {
     const timerToggleButton = new GameTimerToggleButton();
     const resetAllButton = new ResetAllButton();
 
-    this.accessibleLevelsSectionNode.pdomOrder = [ headerText, levelButtons, infoButton ];
+    this.accessibleLevelsSectionNode.pdomOrder = [ levelButtons, infoButton ];
     this.accessibleControlsSectionNode.pdomOrder = [ timerToggleButton, resetAllButton ];
   }
 }
@@ -84,7 +84,7 @@ class MyChallengeScreen extends ChallengeScreenNode {
     } );
 
     const interactionArea = new GameDiagram();
-    const numberControl = new NumberControl( valueProperty, sliderOptions );
+    const numberControl = new NumberControl();
     const checkAnswerButton = new CheckButton();
     const tryAgainButton = new TryAgainButton();
     const statusBar = new FiniteStatusBar();
