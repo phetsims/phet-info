@@ -2,91 +2,80 @@
 
 @author Jesse Greenberg
 
-A quick guide for adding Core Description to a game screen in a PhET simulation using vegas.
+A quick guide for adding Core Description to PhET game screens that use vegas components.
 
-This guide builds off of the [Core Description Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/core-description-quickstart-guide.md).
-Most importantly, you should be familiar with `pdomOrder`, `accessibleName`, and `accessibleHelpText`.
+This guide assumes you have already implemented the patterns in
+the [Core Description Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/core-description-quickstart-guide.md).
+You should be comfortable with `accessibleName`, `accessibleHelpText`, `accessibleParagraph`, `pdomOrder`, and the
+strings organization described there. The focus here is on vegas-specific structure, components, and focus management.
 
 ## Overall Process
 
-This is the overall process for instrumenting a game:
-
-- Opt out of default ScreenView sections with `includeAccessibleSectionNodes: false`.
-- Use prepared classes for level selection, challenge, and reward screens to help with `pdomOrder` and focus management.
-- Use `pdomOrder` in each of the level selection, challenge, and reward screens to place game UI components into logical sections.
-- Use vegas buttons and controls to get default accessibility content like `accessibleName`, `accessibleHelpText`, and `accessibleContextResponse`.
-- Implement focus management to avoid loss of focus when components change visibility.
+- Disable the default ScreenView accessible sections that are tailored to standard sims.
+- Build each game phase on the vegas screen node classes (`LevelSelectionScreenNode`, `ChallengeScreenNode`,
+  `RewardScreenNode`) to get consistent structure and heading hierarchy.
+- Use `pdomOrder` within each vegas screen node to organize headings, controls, and descriptive content exactly as
+  specified in the design document.
+- Prefer vegas UI components for default accessible names, help text, and context responses.
+- Manage focus transitions whenever content hides or changes. Call the vegas `show()`/`hide()` helpers whenever they are
+  available.
+- Verify context responses (alerts) for button actions and game outcomes, augmenting the vegas defaults with
+  sim-specific behavior.
 
 ## Implementation Steps
 
-### 1) Remove default accessibility sections from ScreenView
+### 1. Prepare the ScreenView
 
-ScreenView includes default accessibility content that works well for PhET simulations
-but does not work for games. Remove these sections with ScreenView options 
-`includeAccessibleSectionNodes: false`
+ScreenView includes accessible sections that work for most sims but not for vegas games. Disable them so you can control
+the structure with vegas screen nodes.
 
 ```ts
-const myScreenView = new ScreenView( {
+const gameScreenView = new ScreenView( {
   includeAccessibleSectionNodes: false
 } );
 ```
 
-### 2) Use LevelSelectionScreenNode
+From this point forward, one of the vegas screen node classes should own the accessible structure for each game phase.
 
-Many games have a level selection screen. The implementation of this screen should extend
-or be a child of a `LevelSelectionScreenNode`.
+### 2. Level Selection Screens
 
-The `LevelSelectionScreenNode` provides accessible sections for UI components in the
-level selection screen. Similar to how ScreenView provides "Play Area" and "Control Area"
-sections, the `LevelSelectionScreenNode` provides sections for "Choose Your Level" and
-"Game Options".
+Extend `LevelSelectionScreenNode`, or compose with it, for any UI where the player chooses a level or game mode.
 
-The `LevelSelectionScreenNode` includes a boilerplate introductory description. It can
-take one of two forms, depending on if your level selection screen has game options.
-If it does, provide option `accessibleIncludeOptionsDescription`.
-
-Use `pdomOrder` with the sections in `LevelSelectionScreenNode` to place UI components
-into the right section. There is a section for the level selection buttons and a section
-for other game options. The design team will specify where components should go. But generally,
-the level selection and info button goes in the level buttons section, and everything
-else goes in the controls section.
+- The node supplies headings and sections for "Choose Your Level" and (optionally) "Game Options".
+- Set `accessibleIncludeOptionsDescription` if the screen includes game option controls.
+- Use `pdomOrder` on the provided section nodes to arrange content as specified by the design document.
 
 ```ts
 class MyLevelSelectionScreen extends LevelSelectionScreenNode {
   public constructor() {
     const levelButtons = new LevelSelectionButtonGroup();
-    super( screenNameStringProperty, levelButtons, {
+    super( simScreenNameProperty, levelButtons, {
       accessibleIncludeOptionsDescription: true
     } );
-    
-    const timerButton = new GameTimerToggleButton();
+
+    const infoButton = new GameInfoButton();
+    const timerToggleButton = new GameTimerToggleButton();
     const resetAllButton = new ResetAllButton();
 
-    this.accessibleLevelsSectionNode.pdomOrder = [ levelButtons, infoButton ];
-    this.accessibleControlsSectionNode.pdomOrder = [ timerButton, resetAllButton ];
+    this.accessibleLevelsSectionNode.pdomOrder = [ headerText, levelButtons, infoButton ];
+    this.accessibleControlsSectionNode.pdomOrder = [ timerToggleButton, resetAllButton ];
   }
 }
 ```
 
-### 3) Use ChallengeScreenNode
+### 3. Challenge Screens
 
-For each game challenge screen, extend or add content as children to a `ChallengeScreenNode`.
-The `ChallengeScreenNode` provides accessible sections for UI components in the challenge.
-There are sections for the challenge components, answer submission components, and game
-status components.
+Use `ChallengeScreenNode` for gameplay challenges. It provides headings and sections for the main challenge, answer
+controls, and status indicators.
 
-If your game has a number of levels, number of challenges, or level challenge count, include
-this information in options.
-
-Use `pdomOrder` with the sections in `ChallengeScreenNode` to place UI components
-into the right section. There is a section for the "challenge" content, a section for
-"answer" content, and a section for "status" content. The design team will specify
-where components should go. Generally, gameplay challenge content goes into the "challenge"
-section, while answer buttons and controls go into the "answer" section. The "status" section
-almost always has a `FiniteStatusBar` or `InfiniteStatusBar`.
+- Pass level/challenge counts so vegas can describe progress.
+- Populate each section via `pdomOrder`, keeping interactive elements grouped logically.
+  - The game challenge content goes in the `accessibleChallengeSectionNode`.
+  - Buttons and controls for submitting answers go in the `accessibleAnswerSectionNode`.
+  - Status bars go in the `accessibleStatusSectionNode`.
 
 ```ts
-class MyGameChallenge extends ChallengeScreenNode {
+class MyChallengeScreen extends ChallengeScreenNode {
   public constructor() {
     super( {
       challengeNumberProperty: challengeNumberProperty,
@@ -94,103 +83,100 @@ class MyGameChallenge extends ChallengeScreenNode {
       levelNumberProperty: levelNumberProperty
     } );
 
-    const gameDiagram = new GameDiagram();
-    const gameNumberControl = new NumberControl();
-
+    const interactionArea = new GameDiagram();
+    const numberControl = new NumberControl( valueProperty, sliderOptions );
     const checkAnswerButton = new CheckButton();
     const tryAgainButton = new TryAgainButton();
-    
-    const finiteStatusBar = new FiniteStatusBar();
+    const statusBar = new FiniteStatusBar();
 
-    this.accessibleChallengeSectionNode.pdomOrder = [ gameDiagram, gameNumberControl ];
+    this.accessibleChallengeSectionNode.pdomOrder = [ interactionArea, numberControl ];
     this.accessibleAnswerSectionNode.pdomOrder = [ checkAnswerButton, tryAgainButton ];
-    this.accessibleStatusSectionNode.pdomOrder = [ finiteStatusBar ];
+    this.accessibleStatusSectionNode.pdomOrder = [ statusBar ];
   }
 }
 ```
 
-### 4) Use RewardScreenNode
+If the design calls for an accessible prompt or answer summary, populate `accessibleChallengePrompt` or
+`accessibleAnswerSummary` (see options below). If your game challenge does not include one of these sections, you can
+make it invisible with the `visible` setter.
 
-Games often have a reward screen, usually with a RewardDialog or a LevelCompletedNode. Your game
-screen that shows this content should extend or add content as children to the `RewardScreenNode`.
-The `RewardScreenNode` provides an accessible section for all reward content.
+### 4. Reward Screens
 
-Use `pdomOrder` with the section in RewardScreenNode to place UI components into the 
-right section. There is only one section for reward content. It will usually contain
-a LevelCompletedNode or a RewardDialog.
+For end-of-level feedback, use `RewardScreenNode`. It exposes a single section for reward content.
 
 ```ts
 class MyRewardScreen extends RewardScreenNode {
   public constructor() {
     super();
 
-    const levelCompletedNodde = new LevelCompletedNode()
+    const levelCompletedNode = new LevelCompletedNode();
     this.accessibleRewardSectionNode.pdomOrder = [ levelCompletedNode ];
   }
 }
 ```
 
-### 5) Use Vegas UI components
+When using `RewardDialog` or `LevelCompletedNode`, use `show()` and `hide()` helpers so focus and responses fire
+correctly.
 
-Vegas has some prepared buttons that should be used in games. These buttons contain
-default label strings and may include accessible names, accessible help text, and
-accessible context responses. The buttons do not include any visual styling or other behavior.
+### 5. Prefer Vegas Components
 
-For example, see GameInfoButton, GameTimerToggleButton, TryAgainButton.
+Vegas buttons and controls include default labels, accessible names, accessible help text, and context responses that
+match PhET game design language. Use them whenever the UI design aligns.
 
-See vegas/js/buttons/ for all available buttons.
+- GameInfoButton, GameTimerToggleButton, TryAgainButton, etc.
+- Review vegas/js/buttons/ for the full list.
 
-### 6) Focus Management
+If you need to override defaults, supply string properties through the options, matching the naming conventions from the
+core guide.
 
-Games require extra work for focus management. You will need to make sure that focus appears somewhere logical
-when screens change or UI components disappear. Some vegas components will help, but often you will need to manage
-focus in game logic.
+### 6. Manage Focus Transitions
 
-- Use `show()` and `hide()` methods on the vegas screen Nodes. The vegas screen Nodes handle focus management for you.
-  - The `LevelSelectionScreenNode` will place focus on the most recently pressed level selection button.
-  - The `GameScreenNode` will put focus on its top most "Challenge" heading.
-  - These methods may also include default responses that should happen after the new screen becomes visible.
-- On the `RewardScreenNode`, focus management depends on the reward content you are showing.
-  - If using LevelCompletedNode, use `LevelCompletedNode`'s `show()` and `hide()` methods to manage focus.
-  - If using RewardDialog, use `RewardDialog`'s `show()` and `hide()` methods to manage focus.
+Screen content in vegas games is dynamic. Ensure focus is never lost during a transition and always moves somewhere
+meaningful:
 
-#### Focus Management for common game buttons
-The following only applies if the button is hidden as soon as it is pressed.
-- When the CheckButton is pressed, focus should usually move to the TryAgainButton, NextButton, or ShowAnswerButton, depending on the challenge results.
-- When the ShowAnswerButton is pressed, focus should usually move to the NextButton.
-- When the GameInfoButton is pressed, focus should move into the GameInfoDialog. This should happen automatically.
+- Call `show()` and `hide()` on `LevelSelectionScreenNode` and `ChallengeScreenNode` so those screens manage visibility,
+  focus, and default context responses for you.
+- When you swap in reward content, call the corresponding `show()`/`hide()` helpers on `LevelCompletedNode`
+  or `RewardDialog` so focus lands correctly and the built-in responses fire once.
+- If a button hides itself (e.g., `CheckButton`, `ShowAnswerButton`), move focus explicitly to the next logical
+  control (TryAgainButton, NextButton, or ShowAnswerButton). The flow will be outlined in the game design document.
+- When the `GameInfoButton` opens a dialog, focus is moved inside the dialog automatically. Make sure closing the dialog
+  returns focus to the element that launched it or to a follow-up control if the design specifies one.
 
-### Section on Responses when buttons are pressed
-Use the `show()` and `hide()` methods on vegas screens and dialogs to get default context responses.
+### 7. Context Responses and Alerts
 
-There will often be game-specific responses that need to be implemented with game logic. For example,
-when "Check Answer" is pressed, the design team may provide you with content to guide the user.
+Vegas provides standard context responses for common game states. Use them before creating custom strings:
 
-There are default responses in vegas strings for these cases. Use these if you can. For example, see
-`VegasFluent.checkButton.accessibleContextResponseIncorrect` or `VegasFluent.checkButton.accessibleContextResponseCorrectPoints` 
-For example, when the "Check Answer" is pressed, there will be a designed response for different game cases.
+- Example keys: `VegasFluent.checkButton.accessibleContextResponseIncorrect`,
+  `VegasFluent.checkButton.accessibleContextResponseCorrectPoints`.
+- For unique scenarios, implement additional alerts in your game logic with `addAccessibleContextResponse`.
 
-### Vegas options for accessibility
-In this section, we list the options available in vegas components that are useful for accessibility.
-See the API documentation for each option for information.
+### 8. Strings and Naming
 
-#### LevelSelectionScreenNode
-- accessibleIncludeOptionsDescription
+Continue to store accessibility strings under the `a11y` key in the sim's strings.json. See the core guide for details.
 
-#### ChallengeScreenNode
-When these should be used, they will be specified by name in the design document.
-- accessibleChallengePrompt
-- accessibleAnswerSummary
+## Vegas Accessibility Options Reference
 
-#### InfiniteStatusBar
-- accessibleMessageStringProperty
+Refer to vegas source code for information about each of these.
 
-#### LevelSelectionButton
-When this should be used, it will be specified by name in the design document.
-- accessibleBriefLevelName
+The design document will call out when to use these options:
 
-#### RewardDialog
-- focusAfterDismissal
+- ChallengeScreenNode
+  - accessibleChallengePrompt
+  - accessibleAnswerSummary
+- InfiniteStatusBar
+  - accessibleMessageStringProperty
 
-### Reference examples
-Point to build-an-atom and possibly number-pairs.
+Additional options relating to vegas accessibility:
+
+- LevelSelectionScreenNode
+  - accessibleIncludeOptionsDescription
+- LevelSelectionButton
+  - accessibleBriefLevelName
+- RewardDialog
+  - focusAfterDismissal
+
+## Reference Implementations
+
+- build-an-atom
+- vegas/js/demo/ (lightweight samples for most vegas components)
