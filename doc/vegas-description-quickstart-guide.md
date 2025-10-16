@@ -157,3 +157,6 @@ For example, when the "Check Answer" is pressed, there will be a designed respon
 
 ### Specific options like
 accessibleBriefLevelName
+
+### Reference examples
+Point to build-an-atom and possibly number-pairs.
