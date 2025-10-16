@@ -136,27 +136,61 @@ Vegas has some prepared buttons that should be used in games. These buttons cont
 default label strings and may include accessible names, accessible help text, and
 accessible context responses. The buttons do not include any visual styling or other behavior.
 
+For example, see GameInfoButton, GameTimerToggleButton, TryAgainButton.
+
+See vegas/js/buttons/ for all available buttons.
+
 ### 6) Focus Management
 
-Games require extra work for focus management. You need to make sure that focus is
-placed somewhere reasonable when the screen changes or UI components disappear.
+Games require extra work for focus management. You will need to make sure that focus appears somewhere logical
+when screens change or UI components disappear. Some vegas components will help, but often you will need to manage
+focus in game logic.
 
 - Use `show()` and `hide()` methods on the vegas screen Nodes. The vegas screen Nodes handle focus management for you.
-  The `LevelSelectionScreenNode` will place focus on the most recently pressed level selection button. The `GameScreenNode` will
-  put focus on its top most "Challenge" heading. These methods may also trigger designed context responses
-  that should happen after the new screen becomes visible.
+  - The `LevelSelectionScreenNode` will place focus on the most recently pressed level selection button.
+  - The `GameScreenNode` will put focus on its top most "Challenge" heading.
+  - These methods may also include default responses that should happen after the new screen becomes visible.
+- On the `RewardScreenNode`, focus management depends on the reward content you are showing.
+  - If using LevelCompletedNode, use `LevelCompletedNode`'s `show()` and `hide()` methods to manage focus.
+  - If using RewardDialog, use `RewardDialog`'s `show()` and `hide()` methods to manage focus.
 
-- When the CheckButton is pressed, focus should usually move to the TryAgainButton or the NextButton depending on the challenge results.
+#### Focus Management for common game buttons
+The following only applies if the button is hidden as soon as it is pressed.
+- When the CheckButton is pressed, focus should usually move to the TryAgainButton, NextButton, or ShowAnswerButton, depending on the challenge results.
 - When the ShowAnswerButton is pressed, focus should usually move to the NextButton.
 - When the GameInfoButton is pressed, focus should move into the GameInfoDialog. This should happen automatically.
 
 ### Section on Responses when buttons are pressed
+Use the `show()` and `hide()` methods on vegas screens and dialogs to get default context responses.
+
+There will often be game-specific responses that need to be implemented with game logic. For example,
+when "Check Answer" is pressed, the design team may provide you with content to guide the user.
+
+There are default responses in vegas strings for these cases. Use these if you can. For example, see
+`VegasFluent.checkButton.accessibleContextResponseIncorrect` or `VegasFluent.checkButton.accessibleContextResponseCorrectPoints` 
 For example, when the "Check Answer" is pressed, there will be a designed response for different game cases.
 
-### Section on using hide/show on various vegas dialogs and screens to get built-in behavior.
+### Vegas options for accessibility
+In this section, we list the options available in vegas components that are useful for accessibility.
+See the API documentation for each option for information.
 
-### Specific options like
-accessibleBriefLevelName
+#### LevelSelectionScreenNode
+- accessibleIncludeOptionsDescription
+
+#### ChallengeScreenNode
+When these should be used, they will be specified by name in the design document.
+- accessibleChallengePrompt
+- accessibleAnswerSummary
+
+#### InfiniteStatusBar
+- accessibleMessageStringProperty
+
+#### LevelSelectionButton
+When this should be used, it will be specified by name in the design document.
+- accessibleBriefLevelName
+
+#### RewardDialog
+- focusAfterDismissal
 
 ### Reference examples
 Point to build-an-atom and possibly number-pairs.
