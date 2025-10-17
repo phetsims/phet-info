@@ -58,7 +58,7 @@ class MyLevelSelectionScreen extends LevelSelectionScreenNode {
     const resetAllButton = new ResetAllButton();
 
     this.accessibleLevelsSectionNode.pdomOrder = [ levelButtons, infoButton ];
-    this.accessibleControlsSectionNode.pdomOrder = [ timerToggleButton, resetAllButton ];
+    this.accessibleOptionsSectionNode.pdomOrder = [ timerToggleButton, resetAllButton ];
   }
 }
 ```
