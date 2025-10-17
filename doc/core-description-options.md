@@ -116,3 +116,18 @@ to automatically keep this in sync with the code.
 * listType ('ordered' or 'unordered')
 * punctuationStyle (`null`, 'comma', or 'semicolon') - prefer `null` unless you need punctuation to change with the number of items
 * Each item in the list can be a string or a string Property, with changing visibility.
+
+## VEGAS
+
+### ChallengeScreenNode
+* accessibleChallengePrompt - A leading prompt for the game challenge.
+* accessibleAnswerSummary - A summary of the revealed answer.
+
+### InfiniteStatusBar
+* accessibleMessageStringProperty
+
+### LevelSelectionScreenNode
+* accessibleIncludeOptionsDescription
+
+### LevelSelectionButton
+* accessibleBriefLevelName
