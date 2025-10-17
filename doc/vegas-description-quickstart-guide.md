@@ -170,8 +170,6 @@ Additional options relating to vegas accessibility:
   - accessibleIncludeOptionsDescription
 - LevelSelectionButton
   - accessibleBriefLevelName
-- RewardDialog
-  - focusAfterDismissal
 
 ## Reference Implementations
 
