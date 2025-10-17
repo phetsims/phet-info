@@ -17,8 +17,8 @@ strings organization described there. The focus here is on vegas-specific struct
 - Use `pdomOrder` within each vegas screen node to organize headings, controls, and descriptive content exactly as
   specified in the design document.
 - Prefer vegas UI components for default accessible names, help text, and context responses.
-- Manage focus transitions whenever content hides or changes. Call the vegas `show()`/`hide()` helpers whenever they are
-  available.
+- Manage focus transitions whenever content hides or changes. Some of this will be automatic in `visibleProperty`
+  observers.
 - Verify context responses (alerts) for button actions and game outcomes, augmenting the vegas defaults with
   sim-specific behavior.
 
@@ -115,9 +115,6 @@ class MyRewardScreen extends RewardScreenNode {
 }
 ```
 
-When using `RewardDialog` or `LevelCompletedNode`, use `show()` and `hide()` helpers so focus and responses fire
-correctly.
-
 ### 5. Prefer Vegas Components
 
 Vegas buttons and controls include default labels, accessible names, accessible help text, and context responses that
@@ -134,10 +131,10 @@ core guide.
 Screen content in vegas games is dynamic. Ensure focus is never lost during a transition and always moves somewhere
 meaningful:
 
-- Call `show()` and `hide()` on `LevelSelectionScreenNode` and `ChallengeScreenNode` so those screens manage visibility,
-  focus, and default context responses for you.
-- When you swap in reward content, call the corresponding `show()`/`hide()` helpers on `LevelCompletedNode`
-  or `RewardDialog` so focus lands correctly and the built-in responses fire once.
+- Set `visibleProperty` on `LevelSelectionScreenNode` and `ChallengeScreenNode` so those screens manage
+  focus and default context responses for you when visibility changes.
+- When you swap in reward content, set `visibleProperty` on `LevelCompletedNode`
+  or use `show()`/`hide()` on `RewardDialog` so focus lands correctly and the built-in responses fire.
 - If a button hides itself (e.g., `CheckButton`, `ShowAnswerButton`), move focus explicitly to the next logical
   control (TryAgainButton, NextButton, or ShowAnswerButton). The flow will be outlined in the game design document.
 - When the `GameInfoButton` opens a dialog, focus is moved inside the dialog automatically. Make sure closing the dialog
