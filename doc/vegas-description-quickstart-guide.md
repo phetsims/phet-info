@@ -121,7 +121,7 @@ Vegas buttons and controls include default labels, accessible names, accessible 
 match PhET game design language. Use them whenever the UI design aligns.
 
 - GameInfoButton, GameTimerToggleButton, TryAgainButton, etc.
-- Review vegas/js/buttons/ for the full list.
+- Review [vegas/js/buttons/](https://github.com/phetsims/vegas/tree/1813f86482644ea54db15299159fa8072a264b32/js/buttons) for the full list.
 
 If you need to override defaults, supply string properties through the options, matching the naming conventions from the
 core guide.
