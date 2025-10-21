@@ -334,15 +334,6 @@ const diagram = new Node( {
 } );
 ```
 
-For controlling how many digits to display, use `DerivedProperty.toFixedProperty`. For example:
-
-```ts
-const fixedValueProperty = DerivedProperty.toFixedProperty( modelValueProperty, 2 );
-const numberReadout = new Text( fixedValueProperty, {
-  accessibleParagraph: fixedValueProperty
-} );
-```
-
 ## Disposal
 
 Accessibility options take axon `Property` instances, so dispose of Nodes when they are no longer needed to avoid memory
@@ -413,7 +404,7 @@ const movableCircle = new Circle( 5, {
 
 Expose numeric values at the same precision in the PDOM as on-screen.
 
-- Use the same formatter (toFixed, NumberFormatter, or DerivedProperty.toFixedProperty) for both visual text and PDOM
+- Use the same formatter (toFixed, NumberFormatter) for both visual text and PDOM
   strings.
 - If a value is shown with units or a label visually, include the same units or label in the PDOM string.
 - For components that supply their own PDOM value text (such as AccessibleSlider or AccessibleValueHandler), override
@@ -421,7 +412,9 @@ Expose numeric values at the same precision in the PDOM as on-screen.
 
 ```ts
 // Show the value to two decimal places both visually and in the PDOM.
-const formattedValueProperty = DerivedProperty.toFixedProperty( modelValueProperty, 2 );
+const formattedValueProperty = new DerivedProperty( [ modelValueProperty ], modelValue => {
+  return toFixed( modelValue, 2 );
+} );
 
 const readoutText = new Text( formattedValueProperty, {
   accessibleParagraph: formattedValueProperty
