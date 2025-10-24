@@ -174,4 +174,4 @@ Additional options relating to vegas accessibility:
 ## Reference Implementations
 
 - build-an-atom
-- vegas/js/demo/ (lightweight samples for most vegas components)
+- vegas/js/demo/ (lightweight samples for vegas buttons)
