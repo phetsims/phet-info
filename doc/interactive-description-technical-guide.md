@@ -165,9 +165,6 @@ description". In general, the process looks like this:
   options to be used most often will be `accessibleName`, and `accessibleHelpText`, as almost all interactive components will have
   these. See notes below about setting accessibleName
 * Make sure that the keyboard navigation order is correct for interactive elements
-* Note: at this time, there is no support for automatically setting heading levels within Node structure, but if this
-  would be valuable to you, please let the Interactive Description feature leads (@jessegreenberg and @zepumph) know,
-  and note in https://github.com/phetsims/scenery/issues/855.
 
 ### PDOM Order for PhET Sims
 
