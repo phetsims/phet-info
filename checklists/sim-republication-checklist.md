@@ -1,4 +1,4 @@
-# {{SIM_NAME}} {{VERSION}} checklist
+# {{SIM_NAME}} {{VERSION}} Republication Checklist
 
 ## Prep
 - [ ] Review all open issues
