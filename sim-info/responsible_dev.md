@@ -39,7 +39,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | bumper | @jonathanolson |  | Interactive Description | 
 | buoyancy | @AgustinVallejo,@zepumph | @DianaTavares | Sound<br/>Interactive Description | 
 | buoyancy-basics | @AgustinVallejo,@zepumph | @DianaTavares | Sound<br/>Interactive Description | 
-| calculus-grapher | @veillette,@pixelzoom | @amanda-phet |  | 
+| calculus-grapher | @veillette,@pixelzoom | @amanda-phet | Sound<br/>Interactive Description | 
 | capacitor-lab-basics | @jonathanolson | @arouinfar |  | 
 | center-and-variability | @samreid,@marlitas | @amanda-phet | Sound<br/>Interactive Description | 
 | chains | @jbphet |  |  | 
