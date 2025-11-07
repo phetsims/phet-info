@@ -23,6 +23,7 @@
   - [ ] Optional: paste all issues that will be included, or list features - these will be useful for release notes
     - [{{GITHUB PLACEHOLDER LINK}}](https://github.com/phetsims/phet-info)
     - {{NEW SIM FEATURE PLACEHOLDER, e.g., Stopwatch added.}}
+- [ ] Identify any common code components that do not yet have support for features, and elevate need to #planning channel
 
 ### Design (Pre-QA)
 
