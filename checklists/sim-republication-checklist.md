@@ -1,34 +1,65 @@
 # {{SIM_NAME}} {{VERSION}} Republication Checklist
 
-## Prep
-- [ ] Review all open issues
-- [ ] Schedule kick-off meeting
-  - [ ] Establish scope of this release 
-  - [ ] Triage open issues and decide what to include or defer 
-- [ ] Ensure design doc has sections for relevant features and/or create feature-specific design docs
-- [ ] Scope of this release
-  - [ ] Verify [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0)
-  - [ ] Optional: paste all issues that will be included, or list features - these will be useful for release notes
+(see [Sim Checklist](https://github.com/phetsims/phet-info/blob/main/checklists/sim-checklist.md#design-pre-qa) for any items missing from this checklist that are a part of your sim update (e.g., PhET-iO))
 
 ## Design
 
-- [ ] Update design doc to reflect sim updates, as needed
-- [ ] Pre-publication items
-  - [ ] Update teacher tips (query parameters, new features, model simplification changes, etc.)
-  - [ ] Update screenshots
-  - [ ] Update release-notes.md with developer
-  - [ ] Add to Essential Exceptions doc ([guidelines](https://docs.google.com/document/d/1NjLGmGr2Oi9A9D9SCH5WAgOhpA7ysmuvv0Jn_batPVU/edit?tab=t.0#heading=h.c063kqhkkg))
-- [ ] Post-publication items
-  - [ ] Tag new inclusive features on website
-  - [ ] Create a GitHub issue for @oliver-phet to alert translators if there have been significant string changes (manual process since Nov 2024)
-  - [ ] Write newsletter announcement
-  - [ ] Update website credits
-  - [ ] Message #website-public to ask web devs to add the latest version to PhET Studio
-  - [ ] Create 2-3 example presets ([guidelines](https://docs.google.com/document/d/1gZmobd5h1VBZxjwT6ZuDhFIRWWQvQUKD_VgUDZW5-io/edit?tab=t.0))
-      - [ ] If already in PhET Studio, recreate the example presets on latest ([instructions](https://docs.google.com/document/d/1gZmobd5h1VBZxjwT6ZuDhFIRWWQvQUKD_VgUDZW5-io/edit?tab=t.0#heading=h.tk5tep7h8l7a))
-  - [ ] Decide as a team if a postmortem is applicable, and schedule (Date: //)
+### Prep
 
-## Implementation
+- [ ] Review all open issues
+- [ ] Revise design doc or create new doc for updated version.
+
+### Scope
+
+- [ ] Schedule kick-off meeting
+  - [ ] Establish scope of this release (what new features are being added?)
+  - [ ] Triage open issues and decide what to include or defer
+- Scope of additional features for this release (Basics Sounds, Core Description, Alternative Input, Pan and Zoom, Interactive Highlights, Dynamic Locale, PhET-iO/Studio are assumed as of Nov 2025)
+  - [ ] Sound & Sonification (beyond Basic)
+  - [ ] Interactive Description (beyond Core)
+    - [ ] Mobile description included
+  - [ ] Voicing (specify Core or Full)
+  - [ ] Regional Character Sets
+  - [ ] Optional: paste all issues that will be included, or list features - these will be useful for release notes
+    - [{{GITHUB PLACEHOLDER LINK}}](https://github.com/phetsims/phet-info)
+    - {{NEW SIM FEATURE PLACEHOLDER, e.g., Stopwatch added.}}
+
+### Design (Pre-QA)
+
+- [ ] Update (or create) design doc(s) to reflect sim updates and feature additions, as needed
+- **If applicable to your update:**
+  - [ ] Core Description reviewed by external designer - [CORE REVIEW CHECKLIST](https://github.com/phetsims/phet-info/blob/main/checklists/core-description-review-checklist.md)
+  - [ ] Verify [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0)
+  - [ ] Add to Essential Exceptions doc ([guidelines](https://docs.google.com/document/d/1NjLGmGr2Oi9A9D9SCH5WAgOhpA7ysmuvv0Jn_batPVU/edit?tab=t.0#heading=h.c063kqhkkg))
+  - [ ] Carefully review `?showPointerAreas` for mouse and touch areas
+  - [ ] Check strings using `?stringTest=dynamic` for layout changes and readability
+  - [ ] PhET-iO
+    - [ ] Determine any custom PhET-iO needs
+    - [ ] PhET-iO tree review complete
+    - [ ] `phetioFeatured` elements identified/updated
+    - [ ] Create/update examples.md
+- [ ] Lead designer final review before QA (Date: //)
+  - [ ] (if applicable) Obtain external design team/partners approval
+
+### Publication Prep
+
+- [ ] Update teacher tips (query parameters, new features, model simplification changes, etc.)
+- [ ] Update screenshots (including screen-specific screenshots)
+- [ ] Update release-notes.md with developer
+- [ ] Verify updates to credits with team (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
+
+### Post Publication
+
+- [ ] Update Sim Page Info, including tagging any new inclusive features on website
+- [ ] Create a GitHub issue for @oliver-phet to alert translators if there have been significant string changes (manual process since Nov 2024)
+- [ ] Write newsletter announcement
+- [ ] Update website credits
+- [ ] Message #website-public to ask web devs to add the latest version to PhET Studio
+- [ ] Create 2-3 example presets ([guidelines](https://docs.google.com/document/d/1gZmobd5h1VBZxjwT6ZuDhFIRWWQvQUKD_VgUDZW5-io/edit?tab=t.0))
+  - [ ] If already in PhET Studio, recreate the example presets on latest ([instructions](https://docs.google.com/document/d/1gZmobd5h1VBZxjwT6ZuDhFIRWWQvQUKD_VgUDZW5-io/edit?tab=t.0#heading=h.tk5tep7h8l7a))
+- [ ] Decide as a team if a postmortem is applicable, and schedule (Date: //)
+
+## Developer Implementation
 
 - [ ] Feature-complete (Date: //)
 - [ ] Sim team sign-off (Date: //)
