@@ -10,7 +10,7 @@ axe DevTools is a free browser plugin that automatically scans for common access
 2. Open **DevTools** in the browser (`F12` or `Cmd+Opt+I` / `Ctrl+Shift+I`).  
 3. Select the **axe DevTools** tab.
 
-> ⚠️ There is a bug in the tool where the icon can be invisible. You should be able to find it in the top tabs in your development tools.
+⚠️ There is a bug in the tool where the icon can be invisible. You should be able to find it in the top tabs in your development tools.
 ![Tool Location](./images/axe-DevTools-location.png)
 
 ## Using axe DevTools
@@ -20,7 +20,7 @@ axe DevTools is a free browser plugin that automatically scans for common access
 4. Review issues in the results panel.
 
 ## Procedure for Testing PhET Simulations
-> ⚠️ axe ignores invisible elements. It only reports on what’s visible when you run the scan.
+⚠️ axe ignores invisible elements. It only reports on what’s visible when you run the scan.
 
 To get good coverage:
 - Run a scan on each **screen** in its **default startup state**.  
@@ -31,6 +31,10 @@ To get good coverage:
 Most issues are in **common code libraries**.  
 - If you can identify the source, open an issue in the correct repo.  
 - If not, file in `scenery` and assign to `@jessegreenberg` for triage.
+
+## Scope of Testing
+- Run axe DevTools only against the **standalone simulation build**. Don’t test in Studio, wrappers, or other embed contexts because they add markup that hides true sim issues and produces noise we can’t act on.  
+- Skip axe DevTools when the **Voicing feature** is enabled. Voicing manipulates the DOM in ways that we expect to be incompatible with axe DevTools, so the results are unreliable.
 
 ## Acceptable Problems
 Some axe issues are expected and **can be ignored** for now:
