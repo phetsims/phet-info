@@ -132,7 +132,8 @@ Screen content in vegas games is dynamic. Ensure focus is never lost during a tr
 meaningful:
 
 - Set `visibleProperty` on `LevelSelectionScreenNode` and `ChallengeScreenNode` so those screens manage
-  focus and default context responses for you when visibility changes.
+  focus and default context responses for you when visibility changes. If you cannot use `visibleProperty`, call
+  `handleShow()` directly after the screen appears.
 - When you swap in reward content, set `visibleProperty` on `LevelCompletedNode`
   or use `show()`/`hide()` on `RewardDialog` so focus lands correctly and the built-in responses fire.
 - If a button hides itself (e.g., `CheckButton`, `ShowAnswerButton`), move focus explicitly to the next logical
