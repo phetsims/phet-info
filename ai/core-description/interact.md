@@ -19,6 +19,8 @@ cd your-sim-repo
 grunt interact-daemon --screens=2
 ```
 
+This is a "blocking" process that runs until you stop it (Ctrl+C).
+
 NOTE: It may already be running from a prior session. Check `interact status` to see if it is active.
 
 ## Core Commands
