@@ -16,7 +16,7 @@ Reload: `source ~/.zshrc`
 Start the keyboard daemon in a separate terminal:
 ```bash
 cd your-sim-repo
-grunt keyboard-daemon --screens=2
+grunt interact-daemon --screens=2
 ```
 
 ## Core Commands
