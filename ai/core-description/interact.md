@@ -153,7 +153,7 @@ The `tab` command has two modes:
 
 Named tabbing only works for **tab stops** (focusable elements). It won't find:
 - Plain text or headings
-- Radio button options (tab to the group, then use arrow keys)
+- Radio button options (IMPORTANT: for radio buttons, tab to the selected item which is tab-focusable, then use arrow keys)
 - Items inside composite widgets
 
 Check `focusOrder` from `interact look` to see what's actually tab-focusable.
