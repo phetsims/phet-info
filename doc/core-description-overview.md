@@ -84,7 +84,7 @@ Slider:
 -  accessibleName
 - accessibleHelpText (optional)
 - accessible object response (currently option createAriaValueText) (numeric value, rounded to human-readable value)
-- accessible context response (currently option pdomCreateContextResponseAlert) (if simple)
+- accessible context response (currently option createContextResponseAlert) (if simple)
 
 # Delivery of Core Description with Screen Reader Software
 

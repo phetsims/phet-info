@@ -124,7 +124,7 @@ const mySlider = new Slider( someProperty, {
   createAriaValueText: value => { `${value} values` }
 
   // optional context responses that describe the result of the action
-  // pdomCreateContextResponseAlert: value => { `The value has changed to ${value}.` }
+  // createContextResponseAlert: value => { `The value has changed to ${value}.` }
 } );
 ```
 
