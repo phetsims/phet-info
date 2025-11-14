@@ -11,6 +11,10 @@ alias interact='sage run ~/phet/root/chipper/js/grunt/tasks/interact.ts'
 
 Reload: `source ~/.zshrc`
 
+If you don't have the alias, you can run the same command directly, e.g.
+`~/phet/root/perennial/bin/sage run ~/phet/root/chipper/js/grunt/tasks/interact.ts peek`. That's how we've been
+invoking it during this project when the alias wasn't available.
+
 ## Prerequisites
 
 Start the keyboard daemon in a separate terminal:
