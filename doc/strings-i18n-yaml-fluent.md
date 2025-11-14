@@ -244,6 +244,34 @@ a11y:
     accessibleName:     "{ a11y.soluteCapitalized } Outside Cell"
 ```
 
+#### Custom `select_*` Syntax for UI Logic
+
+Fluent selectors like the ones above **must stay focused on linguistic logic** (pluralization, grammatical gender, noun cases, etc.). Translators should only have to reason about language, not about our UI/business rules. For UI- or simulation-specific branching—representation type, challenge state, screen layout, etc.—use PhET's custom YAML-driven `select_*` syntax instead of Fluent selectors.
+
+This syntax is demonstrated throughout `number-pairs/number-pairs-strings_en.yaml`:
+
+```yaml
+a11y:
+  tenOrTwentyScreen:
+    screenSummary:
+      interactionHint:
+        select_representationType:
+          beads:      Navigate to and grab bead to create groups, or move across divider to change color.
+          kittens:    Choose kitten to move, organize or change its color.
+          numberLine: Move addend splitter knob to change length of yellow and blue sections.
+          location:   '{ a11y.introScreen.screenSummary.interactionHint }'
+```
+
+Each `select_<placeholderName>` block expands to a `FluentPattern` that expects a value for that placeholder when you call `createProperty`/`format`. The generator infers the exact union of allowed values (e.g., `'beads' | 'kittens' | 'numberLine' | 'location'`) and enforces it in the TypeScript types, so your code becomes fully type safe and autocompletion-friendly:
+
+```ts
+const interactionHintProperty = NumberPairsFluent.a11y.tenOrTwentyScreen.screenSummary.interactionHint.createProperty( {
+  representationType: representationTypeProperty // must be one of the allowed variants
+} );
+```
+
+Because the YAML branches are just normal key/value entries, auto-formatters keep each branch tidy without the indentation gymnastics required by Fluent's `{ $value -> ... }` syntax. You can also freely nest `select_*` blocks (e.g., `select_shownSides` containing another `select_representationType`) to compose UI logic. Reserve Fluent selectors for true linguistic needs, and reach for `select_*` whenever a string needs to describe different UI scenarios or simulation states.
+
 #### Complex Pattern Examples
 
 These examples demonstrate advanced Fluent features combining multiple variables, cross-references, and complex conditional logic.
