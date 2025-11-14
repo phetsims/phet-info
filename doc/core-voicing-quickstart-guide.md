@@ -35,7 +35,7 @@ In package.json, set the following flag to enable Core Voicing:
 {
   "phet": {
     "simFeatures": {
-      "supportsCoreVoicing": true
+      "supportsVoicing": true
     }
   }
 }
