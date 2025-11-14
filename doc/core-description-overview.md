@@ -83,7 +83,7 @@ Compare the description design of [Molarity]() with [pH Scale]() to see how Mola
 Slider:
 -  accessibleName
 - accessibleHelpText (optional)
-- accessible object response (currently option pdomCreateAriaValueText) (numeric value, rounded to human-readable value)
+- accessible object response (currently option createAriaValueText) (numeric value, rounded to human-readable value)
 - accessible context response (currently option pdomCreateContextResponseAlert) (if simple)
 
 # Delivery of Core Description with Screen Reader Software

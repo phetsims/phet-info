@@ -345,12 +345,12 @@ leaks.
 
 Sliders use `AccessibleValueHandler` to report their numeric value through a screen reader. This value is read in
 addition to the component’s `accessibleName`. Be sure to use a readable level of precision, and include units if needed.
-You can customize the text that’s read by providing a function to `AccessibleSlider`’s `pdomCreateAriaValueText` option,
+You can customize the text that’s read by providing a function to `AccessibleSlider`’s `createAriaValueText` option,
 for example:
 
 ```ts
 const slider = new HSlider( valueProperty, range, {
-  pdomCreateAriaValueText: value => {
+  createAriaValueText: value => {
     return `${toFixed( value, 2 )} units`
   }
 } );
@@ -408,7 +408,7 @@ Expose numeric values at the same precision in the PDOM as on-screen.
   strings.
 - If a value is shown with units or a label visually, include the same units or label in the PDOM string.
 - For components that supply their own PDOM value text (such as AccessibleSlider or AccessibleValueHandler), override
-  the default with pdomCreateAriaValueText if necessary to keep precision consistent.
+  the default with createAriaValueText if necessary to keep precision consistent.
 
 ```ts
 // Show the value to two decimal places both visually and in the PDOM.
@@ -421,7 +421,7 @@ const readoutText = new Text( formattedValueProperty, {
 } );
 
 const slider = new HSlider( modelValueProperty, range, {
-  pdomCreateAriaValueText: value => `${formattedValueProperty.value} meters`,
+  createAriaValueText: value => `${formattedValueProperty.value} meters`,
   accessibleName: accessibleSliderNameStringProperty
 } );
 ```

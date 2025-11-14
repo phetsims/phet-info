@@ -35,7 +35,7 @@ to automatically keep this in sync with the code.
 * accessibleHelpTextCollapsed
 
 ### AccessibleSlider
-* pdomCreateAriaValueText (for object responses, to be renamed soon)
+* createAriaValueText (for object responses, to be renamed soon)
 * pdomCreateContextResponseAlert (for context responses, to be renamed soon)
 * keyboardStep
 * shiftKeyboardStep
@@ -43,7 +43,7 @@ to automatically keep this in sync with the code.
 
 ### AccessibleValueHandler
 
-* pdomCreateAriaValueText
+* createAriaValueText
 * pdomCreateContextResponseAlert
 
 ### AquaRadioButton
