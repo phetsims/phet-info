@@ -63,6 +63,10 @@ to automatically keep this in sync with the code.
 
 * accessibleContextResponse
 
+### Carousel
+
+* buttonAccessibleContextResponsePatternProperty - accessible context response for arrow buttons
+
 ### RectangularMomentaryButton | RoundMomentaryButton | RectangularToggleButton | RoundToggleButton | RectangularStickyToggleButton | RoundStickyToggleButton
 
 * accessibleContextResponseOn
