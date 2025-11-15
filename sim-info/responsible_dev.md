@@ -210,7 +210,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | tangible | @zepumph |  |  | 
 | tappi | @jessegreenberg |  |  | 
 | tasks | @zepumph |  |  | 
-| trig-tour | @jessegreenberg | @amanda-phet | Sound<br/>Interactive Description | 
+| trig-tour | @jessegreenberg | @amanda-phet | Sound<br/>Interactive Description<br/>Voicing | 
 | twixt | @jonathanolson |  |  | 
 | under-pressure | @samreid | @DianaTavares |  | 
 | unit-rates | @pixelzoom | @arouinfar |  | 
