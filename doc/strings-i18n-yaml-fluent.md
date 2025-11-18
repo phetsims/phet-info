@@ -199,31 +199,21 @@ soluteTypesOnInside: |-
   }
 ```
 
-##### Conditional Selectors from membrane-transport
+##### Linguistic Selectors (Gender, etc)
+
+Fluent selectors should be used **only** for linguistic logic, such as pluralization (shown above) or grammatical gender. Do not use them for application logic or UI state.
 
 ```yaml
-# Conditional text based on enum values
-membranePotentialValue: |-
-  { $membranePotential ->
-    [-70] negative 70
-    [-50] negative 50
-    *[30] positive 30
-  } millivolts
-
-# Conditional text for different amounts
-accessibleObjectResponse: |-
-  { $amount ->
-    [none] no
-    [few] a few
-    [some] some
-    [smallAmount] small amount of
-    [several] several
-    [many] many
-    [largeAmount] large amount of
-    [hugeAmount] huge amount of
-    *[maxAmount] max amount of
-  } { a11y.solute }
+# Example of gender-based translation
+friendStatus: |-
+  { $gender ->
+    [male] He is your friend.
+    [female] She is your friend.
+   *[other] They are your friend.
+  }
 ```
+
+> **Note**: For conditional text based on simulation state (e.g., `beads` vs `numbers` representation) or UI logic, do **not** use Fluent selectors. Instead, use the custom `select_*` syntax described in the next section.
 
 ##### Reusable Selectors with Cross-References
 
@@ -271,51 +261,6 @@ const interactionHintProperty = NumberPairsFluent.a11y.tenOrTwentyScreen.screenS
 ```
 
 Because the YAML branches are just normal key/value entries, auto-formatters keep each branch tidy without the indentation gymnastics required by Fluent's `{ $value -> ... }` syntax. You can also freely nest `select_*` blocks (e.g., `select_shownSides` containing another `select_representationType`) to compose UI logic. Reserve Fluent selectors for true linguistic needs, and reach for `select_*` whenever a string needs to describe different UI scenarios or simulation states.
-
-#### Complex Pattern Examples
-
-These examples demonstrate advanced Fluent features combining multiple variables, cross-references, and complex conditional logic.
-
-##### Multi-Variable Complex Patterns from membrane-transport
-
-```yaml
-# Complex pluralization with multiple variables
-transportProteins: |-
-  { $proteinCount ->
-    [one] { $proteinCount} transport protein
-    *[other] { $proteinCount} transport proteins
-  } of { $proteinTypeCount ->
-    [one] { $proteinTypeCount } type
-   *[other] { $proteinTypeCount} types
-  }, in membrane
-
-# Complex pattern with multiple variables and cross-references
-accessibleContextResponse: |-
-  { $amount ->
-    [aLittle] A little
-    *[aLot]    A lot
-  } { $addedOrRemoved ->
-    [added]   added
-    *[removed] removed
-  }. Now,
-  { $moreOrLessOrSameOrNone ->
-    [none] no { a11y.solute } outside or inside.
-    [same] same amount of solute inside and outside.
-    *[other] { $differenceSize ->
-      [aLittle] a little
-     *[aLot]    a lot
-    }
-    { $moreOrLessOrSameOrNone ->
-      [more] more
-     *[less] less
-    }
-    { a11y.solute }
-    { $directionality ->
-      [insideThanOutside] inside than outside
-     *[outsideThanInside] outside than inside
-    }.
-  }
-```
 
 > **IMPORTANT**: Currently, Fluent syntax (e.g., `{ $variable }`) should **only** be used for strings under the `a11y`
 > key. Rosetta, our translation tool, does not yet support Fluent syntax for visual strings. For any visual string that
