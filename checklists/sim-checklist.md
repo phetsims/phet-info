@@ -22,7 +22,7 @@
   - [ ] Sound & Sonification (beyond Basic)
   - [ ] Interactive Description (beyond Core)
     - [ ] Mobile description included
-  - [ ] Voicing (specify Core or Full)
+  - [ ] Voicing (specify if beyond Core)
   - [ ] Regional Character Sets
 - [ ] *For Ports*: Paste all issues that will be included OR list features (useful for release notes):
   - [{{GITHUB PLACEHOLDER LINK}}](https://github.com/phetsims/phet-info)
