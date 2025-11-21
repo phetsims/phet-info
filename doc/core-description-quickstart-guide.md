@@ -385,6 +385,35 @@ const accessibleInteractiveOptions = combineOptions<ParallelDOMOptions>( {}, Acc
 } );
 ```
 
+#### Activation
+
+For button-like controls, prefer click activation so assistive technology that only sends logical clicks still works.
+This should be done instead of a `KeyboardListener` that responds to Enter/Space key events.
+
+1) Give the Node button semantics so the browser and screen readers treat it as a button:
+
+```ts
+const node = new Node( {
+  tagName: 'button',
+  accessibleName: accessibleNameStringProperty
+} );
+```
+
+2) Handle activation with KeyboardListener in click mode. This listens for click events (including Enter/Space from the
+screen reader) and runs only the `fire` callback:
+
+```ts
+node.addInputListener( new KeyboardListener( {
+  fireOnClick: true,
+  fire: () => {
+    // activation behavior
+  }
+} ) );
+```
+
+Only use keyboard events for Enter/Space when the Node (or an ancestor) has `ariaRole: 'application'` or another
+role that puts the device into "focus" mode.
+
 ### Roles
 
 Certain components benefit from a custom role description, which explains their purpose and how to interact with them.
