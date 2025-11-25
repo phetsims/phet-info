@@ -106,6 +106,7 @@
 ## QA
 
 - [ ] *If a Port:* Legacy sim tested for bugs; issues reported in repo
+- [ ] Dev testing issue created (Date: //)
 - [ ] Dev testing started (Date: //)
 - [ ] Dev testing completed (Date: //)
 - [ ] First RC published (Date: //)
