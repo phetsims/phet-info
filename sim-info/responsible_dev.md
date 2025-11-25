@@ -125,7 +125,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | mobius | @jonathanolson |  |  | 
 | models-of-the-hydrogen-atom | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | molarity | @zepumph | @arouinfar | Sound<br/>Interactive Description | 
-| molecule-polarity | @jonathanolson | @arouinfar |  | 
+| molecule-polarity | @jonathanolson | @arouinfar | Interactive Description | 
 | molecule-shapes | @jonathanolson | @arouinfar |  | 
 | molecule-shapes-basics | @jonathanolson | @arouinfar |  | 
 | molecules-and-light | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
