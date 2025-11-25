@@ -69,6 +69,7 @@
 - [ ] Update implementation-notes.md, if needed. (Date: //)
 - [ ] Code review completed (Date: //)
 - [ ] Pre-publication items
+  - [ ] Memory leak testing
   - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks -
     see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
   - [ ] Finalize release-notes.md with designer.
