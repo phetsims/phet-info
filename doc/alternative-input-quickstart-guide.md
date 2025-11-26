@@ -67,6 +67,8 @@ const myNode = new Node( {
 } );
 ```
 
+There's also `AccessibleInteractiveOptions` which have default options for any Scenery Node that implements a custom interaction with the keyboar.
+
 ## Traversal Order
 
 Traversal order (or focus order) is the order in which Nodes are visited as you press the Tab key.
