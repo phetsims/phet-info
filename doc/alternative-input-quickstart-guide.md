@@ -67,7 +67,31 @@ const myNode = new Node( {
 } );
 ```
 
-There's also `AccessibleInteractiveOptions` which have default options for any Scenery Node that implements a custom interaction with the keyboar.
+When you make a custom Node `focusable: true`, you almost always need to use `AccessibleInteractiveOptions` or
+`AccessibleDraggableOptions`. These options have important defaults for assistive technology. See
+the [Core Description Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/core-description-quick-start-guide.md)
+for more information.
+
+## focusable vs accessibleVisible
+
+Use `focusable: false` to pull a Node out of traversal while keeping its description in the Parallel DOM. Assistive tech can still reach it via virtual cursor or group navigation. Example: a draggable that should not take focus during an animation, but still needs to be described when its parent group is explored.
+
+Use `accessibleVisible: false` when the Node’s accessible content should disappear entirely. This removes it from the Parallel DOM, so a screen reader cannot discover it and it will not appear in the a11y view. Example: a control that sits under a modal panel; when the modal opens, hide the underlying control so it isn’t discoverable until the modal closes.
+
+```ts
+const colorToolButton = new Node( {
+  accessibleVisible: !modalOpenProperty.value
+} );
+```
+
+## Disabled components
+
+Keep disabled UI in traversal order. Screen readers announce the control and its disabled state, so
+users know the feature exists and why it cannot be activated yet. Use `inputEnabled: false` (or `inputEnabledProperty`)
+so Scenery adds the proper ARIA attributes automatically. If you cannot use `inputEnabled`, set the attribute directly
+with `setPDOMAttribute( 'aria-disabled', false )`. Do not fake disabling by toggling `focusable` or `accessibleVisible`.
+See the [Core Description Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/core-description-quick-start-guide.md)
+for more information about description.
 
 ## Traversal Order
 
