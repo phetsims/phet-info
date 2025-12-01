@@ -122,8 +122,10 @@ A simple key-value pair.
 ```yaml
 # In {{REPO}}-strings_en.yaml
 myCoolButton: 'My Cool Button'
+```
 
 # In code
+```ts
 import MyRepoFluent from '{{REPO}}Fluent.js';
 const button = new PushButton( MyRepoFluent.myCoolButton, { ... } );
 ```
@@ -154,8 +156,10 @@ Use `{ $variableName }` for placeholders. The spacing is flexible: `{ $value }`,
 ```yaml
 # In {{REPO}}-strings_en.yaml
 valueLabelPattern: 'Value: { $value }'
+```
 
-# In code
+```ts
+// In code
 import MyRepoFluent from '{{REPO}}Fluent.js';
 
 const valueProperty = new NumberProperty( 5 );
