@@ -15,7 +15,7 @@
   - [ ] Establish scope of this release (what new features are being added?)
   - [ ] Triage open issues and decide what to include or defer
 - Scope of additional features for this release (Basics Sounds, Core Description, Alternative Input, Pan and Zoom, Interactive Highlights, Dynamic Locale, PhET-iO/Studio are assumed as of Nov 2025)
-  - [ ] Sound & Sonification (beyond Basic)
+  - [ ] Sound & Sonification
   - [ ] Interactive Description
     - [ ] Mobile description included
   - [ ] Voicing (specify Core or Full)
