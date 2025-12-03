@@ -50,6 +50,7 @@ Test using the simulation [A11y View](https://bayes.colorado.edu/dev/phettest/ph
 
 As you work through the list, keep these 'general good-practice' reminders in the forefront.
 
+**Goals:** Verify Descriptions/A11y View captures the spirit of the design doc with reasonable accuracy
 - Does each description component sound natural? (Read it aloud to yourself)  
 - Does it need more grammar/syntax? Less?
 - Are descriptions (names, help text, summaries, etc.) pedagogically relevant? Decorative content and sometimes spatial placement are not critical for all sims.
@@ -74,7 +75,6 @@ As you work through the list, keep these 'general good-practice' reminders in th
 
 ### PDOM Structure & Navigation
 
-- [ ] Verify Descriptions/A11y View matches the Simulation Design Doc  
 - [ ] Ensure tab order makes sense (limit bouncing, similar items grouped)  
 - [ ] Headings are used only when necessary, limit sub-levels  
 - [ ] Components in each heading section make sense for the context of the sim (e.g., Play Area vs. Control Area)
