@@ -19,10 +19,10 @@
     sim:* [Google Form suggestions reviewed](https://docs.google.com/spreadsheets/d/1KkvutfIVwZLi5-jz_DVP3zC8jXkzF32-hzMI4ztB1uY/edit?resourcekey#gid=324007787&fvid=898967246)
 - [ ] Schedule kick-off meeting
 - Scope of additional features for this release (Basics Sounds, Core Description, Alternative Input, Pan and Zoom, Interactive Highlights, Dynamic Locale, PhET-iO/Studio are assumed as of Nov 2025)
-  - [ ] Sound & Sonification (beyond Basic)
-  - [ ] Interactive Description (beyond Core)
+  - [ ] Sound & Sonification
+  - [ ] Interactive Description
     - [ ] Mobile description included
-  - [ ] Voicing (specify if beyond Core)
+  - [ ] Voicing (specify Core or Full)
   - [ ] Regional Character Sets
 - [ ] *For Ports*: Paste all issues that will be included OR list features (useful for release notes):
   - [{{GITHUB PLACEHOLDER LINK}}](https://github.com/phetsims/phet-info)
