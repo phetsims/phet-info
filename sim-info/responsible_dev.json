@@ -826,6 +826,13 @@
     ],
     "responsibleDesigners": []
   },
+  "learnosity-integrations": {
+    "responsibleDevs": [
+      "@brent-phet"
+    ],
+    "responsibleDesigners": [
+    ]
+  },
   "least-squares-regression": {
     "responsibleDevs": [
       "@jonathanolson"
