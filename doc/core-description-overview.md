@@ -62,7 +62,7 @@ For _Core Description_:
 - **accessibleName:** Is like a proper name. Use title case, and generally no punctuation. Example: “Detector Probe”
 - **accessibleHelpText:** Is generally a full sentence or a complete phrase. Use sentence case, with punctuation. Example: “Move probe or jump to useful positions with keyboard shortcut.”
 - **accessibleObjectResponse:** Is generally a phrase fragment rather than a full phrase. Does not need sentence casing and no final punctuation is needed. Example: “1.07 centimeters”
-- **accessibleContextResponse:** Is genrally a phrase or sentence. Use sentence case, with punctuation. Example: "In light source path, centered in cuvette. Transmittance is 52.69 percent."
+- **accessibleContextResponse:** Is generally a phrase or sentence. Use sentence case, with punctuation. Example: "In light source path, centered in cuvette. Transmittance is 52.69 percent."
 - **accessibleParagraph:** Is a sentence or paragraph that contains full sentences. Use sentence case and appropriate punctuation. Example: "Transmittance is 52.96 percent."
 
 
