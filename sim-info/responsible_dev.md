@@ -114,6 +114,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | joist | @zepumph |  | Sound<br/>Interactive Description | 
 | keplers-laws | @AgustinVallejo,@jonathanolson | @DianaTavares | Sound<br/>Interactive Description | 
 | kite | @jonathanolson |  |  | 
+| learnosity-integrations | @brent-phet |  |  | 
 | least-squares-regression | @jonathanolson | @amanda-phet |  | 
 | magnet-and-compass | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | magnets-and-electromagnets | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
