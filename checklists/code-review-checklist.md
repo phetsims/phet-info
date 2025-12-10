@@ -140,6 +140,7 @@ the constructor, where `{{CLASS_NAME}}` should exactly match the class name. (b)
   make sure any changes have a good reason and have been discussed with @jbphet (it is likely that an issue
   like https://github.com/phetsims/gravity-force-lab/issues/166 should be created). Changes and deletions are OK, it just
   means that translations will be lost.
+- [ ] Make sure PDOM strings are translated by testing with `?a11yStringTest=hello`, and inspecting the a11y view.
 
 ## **Repository Structure**
 
