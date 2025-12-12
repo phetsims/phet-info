@@ -46,8 +46,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | charges-and-fields | @jonathanolson | @arouinfar |  | 
 | chipper | @jonathanolson |  |  | 
 | circuit-construction-ios-app | @samreid |  |  | 
-| circuit-construction-kit-ac | @samreid | @arouinfar |  | 
-| circuit-construction-kit-ac-virtual-lab | @samreid | @arouinfar |  | 
+| circuit-construction-kit-ac | @samreid | @arouinfar | Interactive Description | 
+| circuit-construction-kit-ac-virtual-lab | @samreid | @arouinfar | Interactive Description | 
 | circuit-construction-kit-basics | @samreid | @arouinfar |  | 
 | circuit-construction-kit-black-box-study | @samreid | @arouinfar |  | 
 | circuit-construction-kit-common | @samreid | @arouinfar |  | 
