@@ -109,9 +109,14 @@ Use at your own risk!
       * Working Directory: GIT_REPOS/perennial
     * Precommit Hooks on repos with changes
       * Program: /bin/zsh
-        * Arguments: -c "source ~/.intellijprofilesr; bin/sage run ../chipper/js/grunt/tasks/pre-commit.ts --changed --lint --report-media --type-check --test --absolute"
+        * Arguments: -c "source ~/.intellijprofilesr; bin/sage run ../chipper/js/grunt/tasks/pre-commit.ts --changed
+          --lint --report-media --type-check --test --absolute"
         * Working Directory: GIT_REPOS/perennial-alias
-        * Output Filters: $FILE_PATH$\($LINE$\,$COLUMN$\)
+        * Output Filters, two lines. The first one highlights typescript errors, the second is for lint errors
+          ```
+          $FILE_PATH$\($LINE$\,$COLUMN$\)
+          $FILE_PATH$
+          ```
 * It can be helpful to see the history of a file or section of a file that you're working in. This is not only a way to
   see how a section of code came to be, but also which devs made the changes. See documentation on
   the [Show History](https://www.jetbrains.com/help/webstorm/investigate-changes.html#file-history) feature (or do
