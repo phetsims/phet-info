@@ -123,7 +123,7 @@ this.addChild( myNode );
 
 // somewhere else, like in an input listener
 massUtterance.alert = getMassChangedResponse();
-myNode.addAccessibleResponse( massUtterance )
+myNode.addAccessibleContextResponse( massUtterance )
 ```
 
 There are a variety of options in `Utterance` used to hone the output of alerts. Common problems include a build up of
