@@ -108,7 +108,7 @@ As you work through the list, keep these 'general good-practice' reminders in th
 
 ### Custom Objects
 
-- [ ] Confirm custom objects have a designed accessible role description (to avoid default: `web-application`)  
+- [ ] Confirm custom objects have a designed accessible role description (to override default: `web-application`)  
 - [ ] Role and name and/or help text and consistent (e.g., when role is movable, use ‘move’ not ‘drag’)  
 - [ ] Multi-step interactions: Descriptions accurate at each step (SEE [DESIGN GUIDE](https://docs.google.com/document/d/1kCivjmuXiMzrFkYUigZFgDkssoEWGW_-OaXDk9myV00/edit?tab=t.0#heading=h.rj5etgrq1nf7) FOR DETAILS)
 
