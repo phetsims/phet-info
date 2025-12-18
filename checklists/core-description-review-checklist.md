@@ -134,7 +134,7 @@ If present, review responses given when pedagogically important events or state 
 
 ### **Preferences & Keyboard Help Dialog**
 
-- [ ] Verify Keyboard Help Dialog has clear accessible alternative to the visual text description/icons.  
+- [ ] Verify the auto-generated Keyboard Help Dialog visuals and accessible content are clear and correct.  
 - [ ] Verify Sim-specific controls in Preferences have accessible text.
 
 ### **Capitalization for Core Description**
