@@ -96,7 +96,7 @@ As you work through the list, keep these 'general good-practice' reminders in th
 
 - [ ] Unique  
 - [ ] Clear  
-- [ ] aria-roledescription not repeated in name  
+- [ ] accessibleRoleDescription not repeated in name  
 - [ ] Title case
 
 ### Accessible Help Text
