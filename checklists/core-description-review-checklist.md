@@ -103,7 +103,8 @@ As you work through the list, keep these 'general good-practice' reminders in th
 
 - [ ] Implicitly guides users, as needed. Adds interest or gives a bit of "why try this?"  
 - [ ] Starts with verb when appropriate, consistent with role  
-- [ ] Always true for any state  
+- [ ] Always true for any state
+- [ ] Consider benefits of a single instance (or combined wording) of help text for similar interactions (e.g., Beaker Solution Controls in Molarity: "Solute amount and solution volume allow changes to chosen solution.")
 - [ ] Sentence case with punctuation
 
 ### Custom Objects
