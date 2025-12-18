@@ -97,7 +97,7 @@ As you work through the list, keep these 'general good-practice' reminders in th
 - [ ] Unique  
 - [ ] Clear  
 - [ ] accessibleRoleDescription not repeated in name  
-- [ ] Generaly, title case with no punctuation. Exception: Critical visual details can be added to names and seperated with commas in certain cases (e.g., Molecule names in Molecules and Light: "Carbon Monoxide⁩, ⁨CO⁩, ⁨Linear⁩")
+- [ ] Generaly, title case with no punctuation. Exceptions: Visual name is not capitalized ("Move mass 1"), and critical visual details are added to name using commas ("Carbon Monoxide⁩, ⁨CO⁩, ⁨Linear⁩").
 
 ### Accessible Help Text
 
@@ -105,13 +105,13 @@ As you work through the list, keep these 'general good-practice' reminders in th
 - [ ] Starts with verb when appropriate, consistent with role  
 - [ ] Always true for any state
 - [ ] Consider benefits of a single instance (or combined wording) of help text for similar interactions (e.g., Beaker Solution Controls in Molarity: "Solute amount and solution volume allow changes to chosen solution.")
-- [ ] Sentence case with punctuation
+- [ ] Generally, sentence case with punctuation. Exceptions: An accessible name can appear with title casing when it used as a parameter in a dynamic help text description. Section headings referred to in help text can also appear like a proper name with title casing. (e.g., "Reset Balloon to start position and an unchanged state.")
 
 ### Custom Objects
 
 - [ ] Confirm custom objects have a designed accessible role description (to override default: `web-application`)  
-- [ ] Role and name and/or help text are consistent (e.g., when role is movable, use ‘move’ not ‘drag’)  
-- [ ] Multi-step interactions: Descriptions accurate at each step (SEE [DESIGN GUIDE](https://docs.google.com/document/d/1kCivjmuXiMzrFkYUigZFgDkssoEWGW_-OaXDk9myV00/edit?tab=t.0#heading=h.rj5etgrq1nf7) FOR DETAILS)
+- [ ] Role and name and/or help text are consistent (e.g., when role is movable, use ‘move’ not ‘drag’)
+- [ ] Help Text for custom objects can get complicated, especially for multi-step interaction. Guidance needs to be accurate at each step, and to keep the the help text simple it can be helpful to refer to the Keyboard Shorcuts dialog. (e.g., "Look for grab button to play. Once grabbed, use keyboard shortcuts to move balloon. Space to release.") (SEE [DESIGN GUIDE](https://docs.google.com/document/d/1kCivjmuXiMzrFkYUigZFgDkssoEWGW_-OaXDk9myV00/edit?tab=t.0#heading=h.rj5etgrq1nf7) FOR DETAILS)
 
 ### Visual Content Descriptions
 
@@ -140,12 +140,12 @@ If present, review responses given when pedagogically important events or state 
 
 ### **Capitalization for Core Description**
 
-- [ ] accessibleName: Title case, no punctuation. Example: “Concentration Probe”  
-- [ ] accessibleHelpText: Sentence case, with punctuation. Example: “Move probe.”  
-- [ ] accessibleObjectResponse: Phrase fragments, no sentence casing, no period at end. Example: “2 kilometers from mass 1”  
-- [ ] accessibleContextResponse: Full phrases, sentence casing, with punctuation. Example: “Current parabola saved to grid.”  
-- [ ] accessibleParagraph: a paragraph of full sentences, with sentence case and punctuation  
-- [ ] accessibleListNode: Strive for consistency (stick with natural and either all phrases or all sentences with all the same punctuation)
+- [ ] accessibleName: Title case, no punctuation. Example: “Concentration Probe". Mentioned exceptions above.
+- [ ] accessibleHelpText: Sentence case, with punctuation. Example: “Move spheres, closer or further from each other.” 
+- [ ] accessibleObjectResponse: generally, phrase fragments, requiring no sentence casing, and no period at end. Example: "4 billion kilograms"  
+- [ ] accessibleContextResponse: full phrases, sentence casing, with punctuation. Example: “Current parabola saved to grid.”  
+- [ ] accessibleParagraph: contains full sentences, with sentence case and punctuation  
+- [ ] accessibleListNode: Strive for consistency (stick with what sounds natural and either all phrases or all sentences with all the same punctuation)
 
 ### **Component-Specific Criteria (recent areas of concern/confusion)**
 
