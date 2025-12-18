@@ -111,7 +111,7 @@ As you work through the list, keep these 'general good-practice' reminders in th
 
 - [ ] Confirm custom objects have a designed accessible role description (to override default: `web-application`)  
 - [ ] Role and name and/or help text are consistent (e.g., when role is movable, use ‘move’ not ‘drag’)
-- [ ] Help Text for custom objects can get complicated, especially for multi-step interaction. Guidance needs to be accurate at each step, and to keep the the help text simple it can be helpful to refer to the Keyboard Shorcuts dialog. (e.g., "Look for grab button to play. Once grabbed, use keyboard shortcuts to move balloon. Space to release.") (SEE [DESIGN GUIDE](https://docs.google.com/document/d/1kCivjmuXiMzrFkYUigZFgDkssoEWGW_-OaXDk9myV00/edit?tab=t.0#heading=h.rj5etgrq1nf7) FOR DETAILS)
+- [ ] Help Text for custom objects can get complicated, especially for multi-step interaction. Guidance needs to be accurate at each step, and to keep the help text simple it can be helpful to refer to the Keyboard Shorcuts dialog. (e.g., "Look for grab button to play. Once grabbed, use keyboard shortcuts to move balloon. Space to release.") (SEE [DESIGN GUIDE](https://docs.google.com/document/d/1kCivjmuXiMzrFkYUigZFgDkssoEWGW_-OaXDk9myV00/edit?tab=t.0#heading=h.rj5etgrq1nf7) FOR DETAILS)
 
 ### Visual Content Descriptions
 
