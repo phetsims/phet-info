@@ -97,7 +97,7 @@ As you work through the list, keep these 'general good-practice' reminders in th
 - [ ] Unique  
 - [ ] Clear  
 - [ ] accessibleRoleDescription not repeated in name  
-- [ ] Title case
+- [ ] Generaly, title case with no punctuation. Exception: Critical visual details can be added to names and seperated with commas in certain cases (e.g., Molecule names in Molecules and Light: "Carbon Monoxide⁩, ⁨CO⁩, ⁨Linear⁩")
 
 ### Accessible Help Text
 
