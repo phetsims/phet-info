@@ -101,7 +101,7 @@ As you work through the list, keep these 'general good-practice' reminders in th
 
 ### Accessible Help Text
 
-- [ ] Implicitly guides users, as needed  
+- [ ] Implicitly guides users, as needed. Adds interest or gives a bit of "why try this?"  
 - [ ] Starts with verb when appropriate, consistent with role  
 - [ ] Always true for any state  
 - [ ] Sentence case with punctuation
