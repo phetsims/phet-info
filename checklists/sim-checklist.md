@@ -27,6 +27,7 @@
 - [ ] *For Ports*: Paste all issues that will be included OR list features (useful for release notes):
   - [{{GITHUB PLACEHOLDER LINK}}](https://github.com/phetsims/phet-info)
   - {{NEW SIM FEATURE PLACEHOLDER, e.g., Stopwatch added.}}
+- [ ] Create feature-specific milestone deadlines for simulation sub-epics in Monday. Reviewed and updated on a regular basis.
 
 ### Design (Pre-QA)
 
