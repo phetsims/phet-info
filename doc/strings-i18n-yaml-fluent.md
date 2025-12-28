@@ -219,25 +219,6 @@ friendStatus: |-
 
 > **Note**: For conditional text based on simulation state (e.g., `beads` vs `numbers` representation) or UI logic, do **not** use Fluent selectors. Instead, use the custom `select_*` syntax described in the next section.
 
-##### Reusable Selectors with Cross-References
-
-```yaml
-# A multiline selector defined once, then reused elsewhere
-a11y:
-  # Capitalized names for the solute type. Reused in various places.
-  soluteCapitalized:      |-
-                          { $soluteType ->
-                            [oxygen]        Oxygen Molecules
-                            [carbonDioxide] Carbon Dioxide molecules
-                            [sodiumIon]     Sodium Ions
-                            [potassiumIon]  Potassium Ions
-                            [glucose]       Glucose Molecules
-                           *[atp]           Atp Molecules
-                          }
-  myLabel:
-    accessibleName:     "{ a11y.soluteCapitalized } Outside Cell"
-```
-
 #### Custom `select_*` Syntax for UI Logic
 
 Fluent selectors like the ones above **must stay focused on linguistic logic** (pluralization, grammatical gender, noun cases, etc.). Translators should only have to reason about language, not about our UI/business rules. For UI- or simulation-specific branching—representation type, challenge state, screen layout, etc.—use PhET's custom YAML-driven `select_*` syntax instead of Fluent selectors.
