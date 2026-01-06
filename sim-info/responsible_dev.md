@@ -216,8 +216,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | under-pressure | @samreid | @DianaTavares |  | 
 | unit-rates | @pixelzoom | @arouinfar |  | 
 | utterance-queue | @jessegreenberg |  |  | 
-| vector-addition | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
-| vector-addition-equations | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
+| vector-addition | @pixelzoom | @arouinfar,@matthew-blackman | Sound<br/>Interactive Description | 
+| vector-addition-equations | @pixelzoom | @arouinfar,@matthew-blackman | Sound<br/>Interactive Description | 
 | vegas | @pixelzoom |  | Sound<br/>Interactive Description | 
 | vibe | @jbphet |  |  | 
 | wave-interference | @samreid | @arouinfar | Sound | 
