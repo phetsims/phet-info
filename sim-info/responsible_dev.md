@@ -127,8 +127,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | models-of-the-hydrogen-atom | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | molarity | @zepumph | @arouinfar | Sound<br/>Interactive Description | 
 | molecule-polarity | @jonathanolson | @arouinfar | Sound<br/>Interactive Description | 
-| molecule-shapes | @jonathanolson | @arouinfar |  | 
-| molecule-shapes-basics | @jonathanolson | @arouinfar |  | 
+| molecule-shapes | @jonathanolson | @arouinfar | Interactive Description | 
+| molecule-shapes-basics | @jonathanolson | @arouinfar | Interactive Description | 
 | molecules-and-light | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
 | my-solar-system | @AgustinVallejo,@jonathanolson | @DianaTavares | Sound<br/>Interactive Description | 
 | natural-selection | @pixelzoom | @amanda-phet |  | 
