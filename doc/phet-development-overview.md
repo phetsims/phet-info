@@ -70,7 +70,8 @@ This document is also available at https://github.com/phetsims/phet-info/blob/ma
   * After installing, run `npm config set save false` and `npm config set package-lock false` so that package-lock.json
     files are not created.
 * Create a directory where you intend to check out the PhET source code: `mkdir phetsims`
-* For building the simulations, install the grunt command line utility: `npm install -g grunt-cli`
+* For building the simulations or running the development server, install the grunt command line utility: `npm install -g grunt-cli`.
+  Note that you can alternatively run `npx grunt` without installing grunt-cli globally.
 * After checking out the code (see below), run a development server from one of the repos like so: `grunt dev-server` 
 
 ### Checking out the code
