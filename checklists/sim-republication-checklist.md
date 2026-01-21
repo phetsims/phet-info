@@ -46,7 +46,7 @@
 ### Publication Prep
 
 - [ ] Update teacher tips (query parameters, new features, model simplification changes, etc.)
-- [ ] Update screenshots (including screen-specific screenshots)
+- [ ] Upload new screenshots to assets folder in github (including screen-specific screenshots)
 - [ ] Update release-notes.md with developer
 - [ ] Update responsible_dev.json, as appropriate
 - [ ] Verify updates to credits with team (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
