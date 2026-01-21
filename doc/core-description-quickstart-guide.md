@@ -310,6 +310,99 @@ clickableImage.focusedProperty.link( focused => {
 } );
 ```
 
+### Response interruption and queuing (interruptible + flush)
+
+Accessible responses are queued. By default, they are not interrupted, so they will be spoken in order unless you ask
+for interruption. Use the `interruptible` and `flush` options to control how responses replace each other.
+
+#### 1) Default: queue politely, do not interrupt
+
+Use this when you want every response to be heard in order.
+
+```ts
+node.addAccessibleContextResponse( `Speed is 1 m/s` );
+node.addAccessibleContextResponse( `Speed is 2 m/s` );
+```
+
+Example output:
+- Speed is 1 m/s.
+- Speed is 2 m/s.
+
+#### 2) Interruptible: newer responses cancel earlier ones
+
+Use this for fast‑changing values where you only want the latest.
+
+```ts
+node.addAccessibleContextResponse( `Speed is 1 m/s`, { interruptible: true } );
+node.addAccessibleContextResponse( `Speed is 2 m/s`, { interruptible: true } );
+node.addAccessibleContextResponse( `Speed is 3 m/s`, { interruptible: true } );
+```
+
+Example output:
+- Speed is 3 m/s.
+
+#### 3) Self‑interrupting stream: replace itself, not others
+
+Use a reusable Utterance to keep only the latest value from that source while leaving other responses alone. 
+The key is that you reuse the *same Utterance instance* each time; the queue replaces earlier entries of that instance.
+
+```ts
+const utterance = ParallelDOM.createSelfInterruptingUtterance( { alert: 'UTTERANCE' } );
+node.addAccessibleContextResponse( 'A' );
+node.addAccessibleContextResponse( utterance );
+node.addAccessibleContextResponse( utterance );
+node.addAccessibleContextResponse( utterance );
+node.addAccessibleContextResponse( 'B' );
+```
+
+Example output:
+- A.
+- UTTERANCE.
+- B.
+
+A more realistic pattern:
+```ts
+const concentrationUtterance = ParallelDOM.createSelfInterruptingUtterance();
+
+valueProperty.lazyLink( value => {
+  concentrationUtterance.alert = createConcentrationDescription( value );
+  node.addAccessibleContextResponse( concentrationUtterance );
+} );
+```
+
+This is useful for fast‑changing values (like a numeric readout). You only want the most recent value from that
+source, but you don’t want it to cancel other important messages (like other UI responses).
+
+#### 4) Self‑interrupting + interruptible
+
+If you need the self interrupting Utterance to also be interruptible, you can still use it
+
+```
+  const statusUtterance = ParallelDOM.createSelfInterruptingUtterance();
+
+  statusProperty.link( status => {
+    statusUtterance.alert = `Status: ${status}`;
+    node.addAccessibleContextResponse( statusUtterance, { interruptible: true } );
+  } );
+  ```
+
+Example output:
+- Status: running.
+
+#### 5) Flush then speak (rare)
+
+Use this when a critical alert must preempt everything. This clears the entire queue, including non‑interruptible
+responses.
+
+```ts
+node.addAccessibleContextResponse( `Warmer.` );
+node.addAccessibleContextResponse( `Warmer.` );
+node.addAccessibleContextResponse( `Overheating.`, { flush: true } );
+```
+
+Example output:
+- Overheating.
+
 ## pdomOrder
 
 Use pdomOrder to define the navigation order for both focusable and non-focusable elements. This ensures that items
@@ -345,8 +438,8 @@ leaks.
 
 Sliders use `AccessibleValueHandler` to report their numeric value through a screen reader. This value is read in
 addition to the component’s `accessibleName`. Be sure to use a readable level of precision, and include units if needed.
-You can customize the text that’s read by providing a function to `AccessibleSlider`’s `createAriaValueText` option,
-for example:
+You can customize the text that’s read by providing a function to `AccessibleSlider`’s `createAriaValueText` option, for
+example:
 
 ```ts
 const slider = new HSlider( valueProperty, range, {
@@ -400,7 +493,7 @@ const node = new Node( {
 ```
 
 2) Handle activation with KeyboardListener in click mode. This listens for click events (including Enter/Space from the
-screen reader) and runs only the `fire` callback:
+   screen reader) and runs only the `fire` callback:
 
 ```ts
 node.addInputListener( new KeyboardListener( {
@@ -411,8 +504,8 @@ node.addInputListener( new KeyboardListener( {
 } ) );
 ```
 
-Only use keyboard events for Enter/Space when the Node (or an ancestor) has `ariaRole: 'application'` or another
-role that puts the device into "focus" mode.
+Only use keyboard events for Enter/Space when the Node (or an ancestor) has `ariaRole: 'application'` or another role
+that puts the device into "focus" mode.
 
 ### Roles
 
@@ -433,8 +526,7 @@ const movableCircle = new Circle( 5, {
 
 Expose numeric values at the same precision in the PDOM as on-screen.
 
-- Use the same formatter (toFixed, NumberFormatter) for both visual text and PDOM
-  strings.
+- Use the same formatter (toFixed, NumberFormatter) for both visual text and PDOM strings.
 - If a value is shown with units or a label visually, include the same units or label in the PDOM string.
 - For components that supply their own PDOM value text (such as AccessibleSlider or AccessibleValueHandler), override
   the default with createAriaValueText if necessary to keep precision consistent.
