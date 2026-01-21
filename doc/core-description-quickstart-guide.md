@@ -377,17 +377,23 @@ source, but you don’t want it to cancel other important messages (like other U
 
 If you need the self interrupting Utterance to also be interruptible, you can still use it
 
-```
+```ts
   const statusUtterance = ParallelDOM.createSelfInterruptingUtterance();
 
   statusProperty.link( status => {
     statusUtterance.alert = `Status: ${status}`;
     node.addAccessibleContextResponse( statusUtterance, { interruptible: true } );
   } );
+  
+  
+  node.addAccessibleContextResponse( 'A first message' );
+  statusProperty.value = 'running';
+  node.addAccessibleContextResponse( 'A second message' ); // Interrupts the interruptible statusUtterance response.
   ```
 
 Example output:
-- Status: running.
+- A first message.
+- A second message.
 
 #### 5) Flush then speak (rare)
 
@@ -396,7 +402,7 @@ responses.
 
 ```ts
 node.addAccessibleContextResponse( `Warmer.` );
-node.addAccessibleContextResponse( `Warmer.` );
+node.addAccessibleContextResponse( `Warmer.`, { interruptible: false } );
 node.addAccessibleContextResponse( `Overheating.`, { flush: true } );
 ```
 
