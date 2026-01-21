@@ -62,6 +62,7 @@
 - [ ] Create Main screenshot and Auxiliary screenshots (up to 3 additional) for sim assets folder (read [this](https://github.com/phetsims/QA/blob/main/documentation/qa-book.md#screenshots))
 - [ ] Create Screen-specific screenshots for metadata service (
   see [naming convention](https://github.com/phetsims/website/issues/1322#issuecomment-1010320827))
+- [ ] Upload screenshots to Assets folder in Github
 - [ ] [Prepare and Update Sim Page Info](https://docs.google.com/document/d/1JtFR0paPJIU19ybn3SwkMO-ZvRCr2a_KRMPUe-OikAc/edit?tab=t.0#heading=h.94p3cgxenan4) (keywords, (filter) categories, description, learning goals, related sims, inclusive features)
 - [ ] **Make sim visible on website (Invisible -> Published)**
   - [ ] Clear "Metadata caches" on
