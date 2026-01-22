@@ -371,7 +371,7 @@ valueProperty.lazyLink( value => {
 ```
 
 This is useful for fast‑changing values (like a numeric readout). You only want the most recent value from that
-source, but you don’t want it to cancel other important messages (like other UI responses).
+source, but you don’t want it to be canceled by other important messages (like other UI responses).
 
 #### 4) Self‑interrupting + interruptible
 
