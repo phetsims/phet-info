@@ -341,61 +341,40 @@ node.addAccessibleContextResponse( `Speed is 3 m/s`, { interruptible: true } );
 Example output:
 - Speed is 3 m/s.
 
-#### 3) Self‑interrupting stream: replace itself, not others
+#### 3) Self‑interrupting channel: interrupts itself, not others
 
-Use a reusable Utterance to keep only the latest value from that source while leaving other responses alone. 
-The key is that you reuse the *same Utterance instance* each time; the queue replaces earlier entries of that instance.
+Use a channel to keep only the latest value from that source while leaving other responses alone. Responses that
+share the same channel replace earlier entries on that channel. Responses on other channels (or no channel) do not
+replace it unless you set `interruptible: true`.
 
-```ts
-const utterance = ParallelDOM.createSelfInterruptingUtterance( { alert: 'UTTERANCE' } );
-node.addAccessibleContextResponse( 'A' );
-node.addAccessibleContextResponse( utterance );
-node.addAccessibleContextResponse( utterance );
-node.addAccessibleContextResponse( utterance );
+
+  ```ts
+  node.addAccessibleContextResponse( 'A' );
+node.addAccessibleContextResponse( `Value is 1`, { channel: 'value-readout' } );
+node.addAccessibleContextResponse( `Value is 2`, { channel: 'value-readout' } );
+node.addAccessibleContextResponse( `Value is 3`, { channel: 'value-readout' } );
 node.addAccessibleContextResponse( 'B' );
-```
+  ```
 
 Example output:
 - A.
-- UTTERANCE.
+- Value is 3.
 - B.
 
 A more realistic pattern:
 ```ts
-const concentrationUtterance = ParallelDOM.createSelfInterruptingUtterance();
-
 valueProperty.lazyLink( value => {
-  concentrationUtterance.alert = createConcentrationDescription( value );
-  node.addAccessibleContextResponse( concentrationUtterance );
+  node.addAccessibleContextResponse(
+    `The new concentration: ${toFixed( value, 2 )}.`,
+    { channel: 'concentration-info' }
+  );
 } );
 ```
 
-This is useful for fast‑changing values (like a numeric readout). You only want the most recent value from that
-source, but you don’t want it to be canceled by other important messages (like other UI responses).
+This is useful for fast‑changing values (like a numeric readout). You only want the most recent value from that source,
+but you do not want it to cancel other responses.
 
-#### 4) Self‑interrupting + interruptible
-
-If you need the self interrupting Utterance to also be interruptible, you can still use it
-
-```ts
-  const statusUtterance = ParallelDOM.createSelfInterruptingUtterance();
-
-  statusProperty.link( status => {
-    statusUtterance.alert = `Status: ${status}`;
-    node.addAccessibleContextResponse( statusUtterance, { interruptible: true } );
-  } );
-  
-  
-  node.addAccessibleContextResponse( 'A first message' );
-  statusProperty.value = 'running';
-  node.addAccessibleContextResponse( 'A second message' ); // Interrupts the interruptible statusUtterance response.
-  ```
-
-Example output:
-- A first message.
-- A second message.
-
-#### 5) Flush then speak (rare)
+#### 4) Flush then speak (rare)
 
 Use this when a critical alert must preempt everything. This clears the entire queue, including non‑interruptible
 responses.
