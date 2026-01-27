@@ -73,7 +73,7 @@
   - [ ] Memory leak testing
   - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks -
     see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
-  - [ ] Finalize release-notes.md with designer.
+  - [ ] Submit RC.1 to QA and Finalize release-notes.md with designer.
   - [ ] Add CT tests for public query parameters that need testing. See examples
     in [listContinuousTests.js](https://github.com/phetsims/perennial/blob/main/js/listContinuousTests.js)
 - [ ] Published (Date: //)
