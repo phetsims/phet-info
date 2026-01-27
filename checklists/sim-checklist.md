@@ -105,6 +105,7 @@
 - [ ] Sim team sign-off (Date: //)
 - [ ] Code review completed (Date: //)
 - [ ] Sim dev test completed (Date: //)
+- [ ] Submit RC.1 to QA and create Release Notes
 - [ ] Sim RC tests completed (Date: //)
 - [ ] Pre-publication items
   - [ ] Add CT tests for public query parameters that need testing. See examples
