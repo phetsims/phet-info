@@ -310,7 +310,7 @@ clickableImage.focusedProperty.link( focused => {
 } );
 ```
 
-### Response interruption and queuing (`interruptible` and `flush`)
+### Response interruption and queuing
 
 Accessible responses are queued. By default, they are not interrupted, so they will be spoken in order unless you ask
 for interruption. Use the `interruptible` and `flush` options to control how responses replace each other.
