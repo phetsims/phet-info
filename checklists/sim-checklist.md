@@ -56,7 +56,7 @@
 
 ### Publication Prep
 
-- [ ] Finalize Simulation Name, submit RC.1 to QA and complete the following sub-tasks (on average the publication date will be 4 weeks after submitting RC.1 to QA)
+- [ ] Finalize Simulation Name (repo name), submit RC.1 to QA and complete the following sub-tasks (on average the publication date will be 4 weeks after submitting RC.1 to QA)
   - [ ] Set the Publication Date
   - [ ] *If a Port:* If the legacy sim or project name differs from HTML5, notify the website team ([example](https://github.com/phetsims/models-of-the-hydrogen-atom/issues/161))
   - [ ] The sim url will be https://phet.colorado.edu/sims/html/sim-name/latest/sim-name_all.html (for use in teacher tips, activities and marketing materials)
