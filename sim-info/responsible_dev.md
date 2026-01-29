@@ -188,7 +188,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | reactants-products-and-leftovers | @pixelzoom | @arouinfar | Sound | 
 | resistance-in-a-wire | @jbphet | @DianaTavares | Sound<br/>Interactive Description | 
 | rosetta | @jbphet |  |  | 
-| rutherford-scattering | @jessegreenberg | @arouinfar |  | 
+| rutherford-scattering | @jessegreenberg | @arouinfar | Sound | 
 | seasons | @samreid |  |  | 
 | scenery | @jonathanolson |  |  | 
 | scenery-phet | @jessegreenberg |  | Sound<br/>Interactive Description | 
