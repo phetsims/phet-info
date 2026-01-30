@@ -345,14 +345,13 @@ Example output:
 
 Use a channel to keep only the latest value from that source while leaving other responses alone. Responses that
 share the same channel replace earlier entries on that channel. Responses on other channels (or no channel) do not
-replace it unless you set `interruptible: true`.
-
+replace it.
 
   ```ts
   node.addAccessibleContextResponse( 'A' );
-node.addAccessibleContextResponse( `Value is 1`, { channel: 'value-readout' } );
-node.addAccessibleContextResponse( `Value is 2`, { channel: 'value-readout' } );
-node.addAccessibleContextResponse( `Value is 3`, { channel: 'value-readout' } );
+node.addAccessibleContextResponse( `Value is 1`, { responseGroup: 'value-readout' } );
+node.addAccessibleContextResponse( `Value is 2`, { responseGroup: 'value-readout' } );
+node.addAccessibleContextResponse( `Value is 3`, { responseGroup: 'value-readout' } );
 node.addAccessibleContextResponse( 'B' );
   ```
 
@@ -366,7 +365,7 @@ A more realistic pattern:
 valueProperty.lazyLink( value => {
   node.addAccessibleContextResponse(
     `The new concentration: ${toFixed( value, 2 )}.`,
-    { channel: 'concentration-info' }
+    { responseGroup: 'concentration-info' }
   );
 } );
 ```
