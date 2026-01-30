@@ -341,11 +341,11 @@ node.addAccessibleContextResponse( `Speed is 3 m/s`, { interruptible: true } );
 Example output:
 - Speed is 3 m/s.
 
-#### 3) Self‑interrupting channel: interrupts itself, not others
+#### 3) Self‑interrupting responseGroup: interrupts itself, not others
 
-Use a channel to keep only the latest value from that source while leaving other responses alone. Responses that
-share the same channel replace earlier entries on that channel. Responses on other channels (or no channel) do not
-replace it.
+Use a responseGroup to keep only the latest value from that source while leaving other responses alone. Responses that
+share the same responseGroup replace earlier entries on that responseGroup. Responses on other responseGroups (or no
+responseGroup) do not replace it.
 
   ```ts
   node.addAccessibleContextResponse( 'A' );
@@ -371,7 +371,7 @@ valueProperty.lazyLink( value => {
 ```
 
 This is useful for fast‑changing values (like a numeric readout). You only want the most recent value from that source,
-but you do not want it to cancel other responses.
+but you do not want it to be cancelled by later responses from other sources.
 
 #### 4) Flush then speak (rare)
 
