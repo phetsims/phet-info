@@ -74,8 +74,6 @@ instead of `"price"`, if you think there might be a future need for a `"Price"` 
   },
 ```
 
-Note that nested substructure is not yet fully supported for string keys.
-
 (7) For strings that begin with a number, the string key should also begin with a number. For example:
 
 ```json
