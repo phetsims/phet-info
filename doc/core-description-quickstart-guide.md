@@ -531,101 +531,10 @@ const slider = new HSlider( modelValueProperty, range, {
 } );
 ```
 
-## Internationalization
+## Internationalization and Accessibility Strings
 
-Accessibility strings are not yet translatable. However, plan for future translation by keeping string patterns simple
-and avoiding multiple placeholders. Complex strings with multiple placeholders can create challenges for gender,
-pluralization, and other grammatical rules when translated.
-
-### Accessibility Strings
-
-Accessibility strings should be placed under the `a11y` key in the strings.json file. This keeps them separate from
-translatable strings (they are not yet translated).
-
-It’s generally fine to reuse the same string for visual text and accessibility if the meaning is truly identical.
-However, if the string is used in multiple contexts or has a different meaning, create a separate key to allow for
-unique translations or messaging later.
-
-Use the following guidelines for naming and organization:
-
-- Keys under the `a11y` key should be nested for readability.
-- For key names, use the UI class name when it makes sense; this makes it easier to identify which component a string
-  is related to. Avoid this when the simulation language differs from class names or PhET-iO tandems. In that case,
-  use a key that matches the description language.
-- Under the component name key, nest a key for the specific accessibility option (e.g., accessibleName,
-  accessibleHelpText, accessibleParagraph, etc.).
-- For screen summary content, use the screen name as a key, then nest a screenSummary key, with playArea, controlArea,
-  currentDetails, and interactionHint as sub-keys.
-- Nest `screenButtonsHelpText` under the screen name.
-- Avoid unnecessary nesting under screen name keys; this makes reuse harder. For example, even if a checkbox appears in
-  only one screen, do not nest its strings under that screen name.
-- For entries that have string patterns with values to fill in, use additional nesting for readability.
-- For strings that do not fit into these categories, use a descriptive key that indicates how it is used.
-- Prefer longer or duplicated strings over complex string patterns. This simplifies code and translation. Patterns often
-  assume English-specific grammar.
-
-For example:
-
-```json
-{
-  "a11y": {
-    "screenA": {
-      "screenButtonsHelpText": {
-        "value": "Use a light source to explore the atom's energy states."
-      },
-      "screenSummary": {
-        "playArea": {
-          "value": "Contains a light source and..."
-        },
-        "controlArea": {
-          "value": "Contains buttons and checkboxes that..."
-        },
-        "currentDetails": {
-          "pattern": {
-            "value": "Currently, the atom is in its {{level}} energy state."
-          },
-          "highest": {
-            "value": "highest"
-          },
-          "lowest": {
-            "value": "lowest"
-          }
-        },
-        "interactionHint": {
-          "value": "Turn on light source to start exploring."
-        }
-      }
-    },
-    "visibilityCheckbox": {
-      "accessibleName": {
-        "value": "Units Visible"
-      },
-      "accessibleHelpText": {
-        "value": "Toggle to hide all units in the simulation."
-      }
-    },
-    "energyDiagram": {
-      "accessibleParagraph": {
-        "value": "A plot of energy vs time with..."
-      }
-    },
-    "atom": {
-      "accessibleName": {
-        "value": "Atom"
-      },
-      "accessibleParagraphPattern": {
-        "value": "Atom energy state: {{state}}."
-      },
-      "highest": {
-        "value": "highest"
-      },
-      "lowest": {
-        "value": "lowest"
-      }
-    }
-  }
-}
-```
+For notes about accessibility strings and internationalization, see the
+[String Key Conventions](https://github.com/phetsims/phet-info/blob/84042af95cdb7434ae2b83a20952daa4f56c6dd3/doc/string-key-conventions.md#accessibility-strings-and-internationalization)
 
 ## Implementation Tips
 
