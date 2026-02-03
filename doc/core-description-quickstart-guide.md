@@ -549,7 +549,9 @@ unique translations or messaging later.
 Use the following guidelines for naming and organization:
 
 - Keys under the `a11y` key should be nested for readability.
-- Use key names that match the tandem name of the component using the string.
+- For key names, use the UI class name when it makes sense; this makes it easier to identify which component a string
+  is related to. Avoid this when the simulation language differs from class names or PhET-iO tandems. In that case,
+  use a key that matches the description language.
 - Under the component name key, nest a key for the specific accessibility option (e.g., accessibleName,
   accessibleHelpText, accessibleParagraph, etc.).
 - For screen summary content, use the screen name as a key, then nest a screenSummary key, with playArea, controlArea,
