@@ -52,8 +52,10 @@ After enabling Interactive Description in package.json, launch the a11y-view fro
 the simulation, and on the right you’ll see a representation of the accessible content. This right pane displays what a
 screen reader can read. As you add or revise accessibility content, refresh the page to see your changes.
 
-To test directly with a screen reader, run the simulation without the a11y-view and enable your screen reader. For
-details on installing and using screen readers, see the resources at the end of this document.
+To test directly with a screen reader, run the simulation without the a11y-view and enable your screen reader. Do not 
+test the a11y view with a screen reader because the a11y view itself can interrupt or duplicate speech.
+
+For details on installing and using screen readers, see the resources at the end of this document.
 
 ## Screen Summary
 
