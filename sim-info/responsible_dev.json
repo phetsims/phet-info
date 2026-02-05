@@ -1538,6 +1538,13 @@
       "@amanda-phet"
     ]
   },
+  "turing": {
+    "responsibleDevs": [
+      "@samreid",
+      "@AgustinVallejo"
+    ],
+    "responsibleDesigners": []
+  },
   "twixt": {
     "responsibleDevs": [
       "@jonathanolson"
