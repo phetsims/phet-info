@@ -68,8 +68,8 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | dot | @jonathanolson |  |  | 
 | eating-exercise-and-energy | @samreid | @amanda-phet |  | 
 | energy-forms-and-changes | @jbphet | @arouinfar |  | 
-| energy-skate-park | @jessegreenberg | @arouinfar |  | 
-| energy-skate-park-basics | @jessegreenberg | @arouinfar |  | 
+| energy-skate-park | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description<br/>Interactive Highlights | 
+| energy-skate-park-basics | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
 | equality-explorer | @pixelzoom | @amanda-phet | Sound | 
 | equality-explorer-basics | @pixelzoom | @amanda-phet | Sound | 
 | equality-explorer-two-variables | @pixelzoom | @amanda-phet | Sound | 
@@ -212,6 +212,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | tappi | @jessegreenberg |  |  | 
 | tasks | @zepumph |  |  | 
 | trig-tour | @jessegreenberg | @amanda-phet | Sound<br/>Interactive Description<br/>Voicing | 
+| turing | @samreid,@AgustinVallejo |  |  | 
 | twixt | @jonathanolson |  |  | 
 | under-pressure | @samreid | @DianaTavares |  | 
 | unit-rates | @pixelzoom | @arouinfar |  | 
