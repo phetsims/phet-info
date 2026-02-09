@@ -56,7 +56,7 @@
 
 ### Publication Prep
 
-- [ ] When RC.1 is submmited to QA, complete the following sub-tasks (on average the publication date will be 3 weeks after submitting RC.1 to QA)
+- [ ] When RC.1 is submitted to QA, complete the following sub-tasks (on average the publication date will be 3 weeks after submitting RC.1 to QA)
   - [ ] Set a Target Publication Date
   - [ ] *If a Port:* If the sim is being ported from JAVA or Flash to HTML5, notify the website team ([example](https://github.com/phetsims/models-of-the-hydrogen-atom/issues/161))
   - [ ] The sim url will be https://phet.colorado.edu/sims/html/sim-name/latest/sim-name_all.html (for use in teacher tips, activities and marketing materials)
