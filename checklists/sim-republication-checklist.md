@@ -36,7 +36,7 @@
   - [ ] Carefully review `?showPointerAreas` for mouse and touch areas
   - [ ] Check strings using `?stringTest=dynamic` for layout changes and readability
   - [ ] PhET-iO
-    - [ ] Determine any custom PhET-iO needs
+    - [ ] (after wireframing) Determine any custom PhET-iO needs (schedule separate PhET-iO design meeting if needed)
     - [ ] PhET-iO tree review complete
     - [ ] `phetioFeatured` elements identified/updated
     - [ ] Create/update examples.md
