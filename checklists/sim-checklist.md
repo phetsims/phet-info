@@ -60,7 +60,7 @@
   - [ ] Set a Target Publication Date
   - [ ] *If a Port:* If the sim is being ported from JAVA or Flash to HTML5, notify the website team ([example](https://github.com/phetsims/models-of-the-hydrogen-atom/issues/161))
   - [ ] The sim url will be https://phet.colorado.edu/sims/html/sim-name/latest/sim-name_all.html (for use in teacher tips, activities and marketing materials)
-  - [ ] Schedule Newsletter/Emails here(https://docs.google.com/document/d/1LQYwDdGngcJkbOu2M4rP-Yr-dX-W5KQHavScRRluRHg/edit?usp=sharing)
+  - [ ] Schedule Newsletter/Emails [here](https://docs.google.com/document/d/1LQYwDdGngcJkbOu2M4rP-Yr-dX-W5KQHavScRRluRHg/edit?usp=sharing)
 - [ ] After submitting RC.1 to QA and at least X week(s) prior to the Publication Date (to be used for marketing communications):
   - [ ] Teacher Tips created, uploaded, and added to sim design folder on SharePoint
   - [ ] Verify credits with team (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
