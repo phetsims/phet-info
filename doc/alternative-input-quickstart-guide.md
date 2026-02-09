@@ -48,10 +48,9 @@ Follow these steps to add support for alternative input to a simulation.
 }
 ```
 
-2. In your sim's repository, run `grunt update`. This will generate `{{REPO}}_a11y_view.html` and
-   modify `{{REPO}}_en.html`.
-
-3. Adding `"supportsInteractiveDescription": true` will by default also enable Interactive Highlights.
+2. In your sim's repository, run `grunt update`. This will modify `{{REPO}}_en.html`.
+3. In your sim's repository run `grunt generate-data`. This will add the sim to the appropriate lists in perennial which enables access to the a11y view in phetmarks.
+4. Adding `"supportsInteractiveDescription": true` will by default also enable Interactive Highlights.
    See https://github.com/phetsims/phet-info/blob/main/doc/interactive-highlights-quickstart-guide.md for more
    information about this feature.
 
