@@ -1,6 +1,7 @@
 // Copyright 2021, University of Colorado Boulder
 
 import fs from 'fs';
+import yaml from 'js-yaml';
 
 /**
  * List repos per developer
@@ -11,20 +12,20 @@ import fs from 'fs';
  *
  * @author Michael Kauzmann (PhET Interactive Simulations)
  */
-const responsibleDevObject = JSON.parse( fs.readFileSync( './phet-info/sim-info/responsible_dev.json', 'utf8' ) );
+const responsibleDevObject = yaml.load( fs.readFileSync( './phet-info/sim-info/responsible_team.yaml', 'utf8' ) );
 
 const repos = Object.keys( responsibleDevObject );
 let responsibleTableString = `
 ## HTML5 Sim and Common Code Repos - Developer/Designer Responsibility List
 
-NOTE: This file is generated, do not edit directly. It is created from \`responsible_dev.json\`, see \`./generateMarkdownOutput.mjs\`.
+NOTE: This file is generated, do not edit directly. It is created from \`responsible_team.yaml\`, see \`./generateMarkdownOutput.mjs\`.
 
 
 | Simulation  | Developer | Designer | Features |
 | :---------- | :------------- | :------------- | :------------- |
 `;
 
-
+// TODO: This will probably be out of date soon once the metadata work is completed. https://github.com/phetsims/phet-info/issues/252
 // look at the repo's package.json in phet.simFeatures and note selected features for the sim.
 const getFeatures = repo => {
   const features = [];
@@ -59,4 +60,4 @@ repos.forEach( repoName => {
   responsibleTableString += `| ${repoName} | ${responsibleDeveloper} | ${responsibleDesigner} | ${features} | \n`;
 } );
 
-fs.writeFileSync( './phet-info/sim-info/responsible_dev.md', responsibleTableString );
+fs.writeFileSync( './phet-info/sim-info/responsible_team.md', responsibleTableString );
