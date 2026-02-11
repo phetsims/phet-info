@@ -42,7 +42,7 @@ Audience (who will use this?)
 
 As you work through this list, be sure to keep notes to share with others at weekly Core Description meeting (idea of “continuous learning”).
 
-Test using the simulation [A11y View](https://bayes.colorado.edu/dev/phettest/phetmarks/), as well as testing with screen-reader software to confirm the content is accessible and accurate.
+Test using the simulation [A11y View](https://bayes.colorado.edu/launchpad/), as well as testing with screen-reader software to confirm the content is accessible and accurate.
 
 - [Tip sheet VoiceOver](https://docs.google.com/document/d/1qz0Dm2lA67tRhgw1GaHVeOSnldBoMj7AT5UE_UaXz1U/edit)  
 - [Tip sheet NVDA](https://docs.google.com/document/d/1pgfyEER7ZlpJlXSwvSCbNBuoCa5oOexc7QvTuFZu-Mo/edit)  
