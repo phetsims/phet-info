@@ -97,7 +97,7 @@ As you work through the list, keep these 'general good-practice' reminders in th
 - [ ] Unique  
 - [ ] Clear  
 - [ ] accessibleRoleDescription not repeated in name  
-- [ ] Generaly, title case with no punctuation. Exceptions: Visual name is not capitalized ("Move mass 1"), and critical visual details are added to name using commas ("Carbon Monoxide⁩, ⁨CO⁩, ⁨Linear⁩").
+- [ ] Generally, title case with no punctuation. Exceptions: Visual name is not capitalized ("Move mass 1"), and critical visual details are added to name using commas ("Carbon Monoxide⁩, ⁨CO⁩, ⁨Linear⁩").
 
 ### Accessible Help Text
 
@@ -105,7 +105,7 @@ As you work through the list, keep these 'general good-practice' reminders in th
 - [ ] Starts with verb when appropriate, consistent with role  
 - [ ] Always true for any state
 - [ ] Consider benefits of a single instance (or combined wording) of help text for similar interactions (e.g., Beaker Solution Controls in Molarity: "Solute amount and solution volume allow changes to chosen solution.")
-- [ ] Generally, sentence case with punctuation. Exceptions: An accessible name can appear with title casing when it used as a parameter in a dynamic help text description. Section headings referred to in help text can also appear like a proper name with title casing. (e.g., "Reset Balloon to start position and an unchanged state.")
+- [ ] Generally, sentence case with punctuation. Exceptions: An accessible name can appear with title casing when used as a parameter in a dynamic help text description. Section headings referred to in help text can also appear like a proper name with title casing. (e.g., "Reset Balloon to start position and an unchanged state.")
 
 ### Custom Objects
 
@@ -131,12 +131,12 @@ If present, review responses given when pedagogically important events or state 
 - [ ] Review order of content responses  
   - e.g., changing info is prioritized as first-read info, (“2.74, \-1.89, on primary parabola” rather than “on primary parabola, 2.74, \-1.89”)  
   - e.g., object responses come before context responses  
-- [ ] Provide suggestions for any obvious and simple responses you feel are missing from the sim.
+- [ ] Provide suggestions for any obvious and simple responses you feel are missing from the sim
 
 ### **Preferences & Keyboard Help Dialog**
 
-- [ ] Verify the auto-generated Keyboard Help Dialog visuals and accessible content are clear and correct.  
-- [ ] Verify Sim-specific controls in Preferences have accessible text.
+- [ ] Verify the auto-generated Keyboard Help Dialog visuals and accessible content are clear and correct  
+- [ ] Verify Sim-specific controls in Preferences have accessible text
 
 ### **Capitalization for Core Description**
 
