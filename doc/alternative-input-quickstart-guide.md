@@ -1,5 +1,5 @@
 ---
-title: Alternative Input - Quickstart Guide
+title:  Alternative Input - Quickstart Guide
 author: Chris Malley (PixelZoom, Inc.)
 ---
 
@@ -49,7 +49,8 @@ Follow these steps to add support for alternative input to a simulation.
 ```
 
 2. In your sim's repository, run `grunt update`. This will modify `{{REPO}}_en.html`.
-3. In your sim's repository run `grunt generate-data`. This will add the sim to the appropriate lists in perennial which enables access to the a11y view in phetmarks.
+3. In your sim's repository run `grunt generate-data`. This will add the sim to the appropriate lists in perennial which
+   enables access to the a11y view in phetmarks.
 4. Adding `"supportsInteractiveDescription": true` will by default also enable Interactive Highlights.
    See https://github.com/phetsims/phet-info/blob/main/doc/interactive-highlights-quickstart-guide.md for more
    information about this feature.
@@ -73,9 +74,14 @@ for more information.
 
 ## focusable vs accessibleVisible
 
-Use `focusable: false` to pull a Node out of traversal while keeping its description in the Parallel DOM. Assistive tech can still reach it via virtual cursor or group navigation. Example: a draggable that should not take focus during an animation, but still needs to be described when its parent group is explored.
+Use `focusable: false` to pull a Node out of traversal while keeping its description in the Parallel DOM. Assistive tech
+can still reach it via virtual cursor or group navigation. Example: a draggable that should not take focus during an
+animation, but still needs to be described when its parent group is explored.
 
-Use `accessibleVisible: false` when the Node’s accessible content should disappear entirely. This removes it from the Parallel DOM, so a screen reader cannot discover it and it will not appear in the a11y view. Example: a control that sits under a modal panel; when the modal opens, hide the underlying control so it isn’t discoverable until the modal closes.
+Use `accessibleVisible: false` when the Node’s accessible content should disappear entirely. This removes it from the
+Parallel DOM, so a screen reader cannot discover it and it will not appear in the a11y view. Example: a control that
+sits under a modal panel; when the modal opens, hide the underlying control so it isn’t discoverable until the modal
+closes.
 
 ```ts
 const colorToolButton = new Node( {
@@ -85,11 +91,12 @@ const colorToolButton = new Node( {
 
 ## Disabled components
 
-Keep disabled UI in traversal order. Screen readers announce the control and its disabled state, so
-users know the feature exists and why it cannot be activated yet. Use `inputEnabled: false` (or `inputEnabledProperty`)
+Keep disabled UI in traversal order. Screen readers announce the control and its disabled state, so users know the
+feature exists and why it cannot be activated yet. Use `inputEnabled: false` (or `inputEnabledProperty`)
 so Scenery adds the proper ARIA attributes automatically. If you cannot use `inputEnabled`, set the attribute directly
 with `setPDOMAttribute( 'aria-disabled', false )`. Do not fake disabling by toggling `focusable` or `accessibleVisible`.
-See the [Core Description Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/core-description-quick-start-guide.md)
+See
+the [Core Description Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/core-description-quick-start-guide.md)
 for more information about description.
 
 ## Traversal Order
@@ -158,8 +165,8 @@ Potential gotchas:
 * `ParallelDOM.setPDOMOrder` has some interesting quirks, so be sure to read the documentation closely. Of special
   interest is the behavior of `null` in the pdomOrder, and what happens to any focuable Nodes that are not explicitly
   included when setting pdomOrder.
-* Only use `this.addChild` for ScreenViews. If you set `this.children`or call `this.setChildren`, you will blow
-  away `this.pdomPlayAreaNode` and `this.pdomControlAreaNode`.
+* Only use `this.addChild` for ScreenViews. If you set `this.children`or call `this.setChildren`, you will blow away
+  `this.pdomPlayAreaNode` and `this.pdomControlAreaNode`.
 
 ## Keyboard listeners
 
@@ -180,12 +187,13 @@ this.addInputListener( {
 
 `DragListener` does NOT handle keyboard input, so you will need to do some additional work for keyboard dragging.
 
-Consider using `scenery-phet/SoundRichDragListener`. It combines a `DragListener` with a `KeyboardDragListener` to support
-both mouse and keyboard dragging. It also includes default PhET drag and drop sounds. This is the recommended approach.
+Consider using `scenery-phet/SoundRichDragListener`. It combines a `DragListener` with a `KeyboardDragListener` to
+support both mouse and keyboard dragging. It also includes default PhET drag and drop sounds. This is the recommended
+approach.
 
 If that doesn't work for you, you can use `KeyboardDragListener` directly. The options for your `DragListener`
-and `KeyboardDragListener` will typically be similar, but beware that API differences exist. Avoid duplicating
-code - factor out any logic that is needed by both `DragListener` and `KeyboardDragListener`.
+and `KeyboardDragListener` will typically be similar, but beware that API differences exist. Avoid duplicating code -
+factor out any logic that is needed by both `DragListener` and `KeyboardDragListener`.
 
 Your `SoundRichDragListener` will look something like this:
 
@@ -243,17 +251,18 @@ functionality.
 ## Hotkeys
 
 Hotkeys are added with `KeyboardListener`. A KeyboardListener can be added to a Node, and will fire its callback
-whenever the specified keys are pressed while the Node has focus. The keys should be defined with HotkeyData.
-Create a public static field in your class that is an instance of HotkeyData. Use the HotkeyData in your keyboard
-listener and in your keyboard help dialog so that commands and labels are defined in one place. HotkeyData also
-supports auto-generated documentation for hotkeys.
+whenever the specified keys are pressed while the Node has focus. The keys should be defined with HotkeyData. Create a
+public static field in your class that is an instance of HotkeyData. Use the HotkeyData in your keyboard listener and in
+your keyboard help dialog so that commands and labels are defined in one place. HotkeyData also supports auto-generated
+documentation for hotkeys.
 
 Here is an example:
 
 ```ts
 
 // a static somewhere in your class
-public static readonly HOTKEY_DATA = new HotkeyData( {
+public static readonly
+HOTKEY_DATA = new HotkeyData( {
   keys: [ 'j+0' ],
   keyboardHelpDialogLabelStringProperty: SimRepoStrings.labelForCommand,
   repoName: simNamespace.name
@@ -275,7 +284,8 @@ receive input events, the listener will fire. Here is an example:
 ```ts
 
 // a static somewhere in your class
-public static readonly HOTKEY_DATA = new HotkeyData( {
+public static readonly
+HOTKEY_DATA = new HotkeyData( {
   keys: [ 'alt+r' ],
   keyboardHelpDialogLabelStringProperty: SimRepoStrings.labelForCommand,
   repoName: simNamespace.name,
@@ -290,9 +300,10 @@ const globalKeyboardListener = KeyboardListener.createGlobal( targetNode, {
 } );
 ```
 
-Be careful not to add hotkeys that collide with other global hotkeys defined by PhET. All used hotkeys can be reviewed
-with binder documentation at https://phetsims.github.io/binder/. This list is auto-generated from HotkeyData.
-Scenery will also throw an assertion at runtime though if there is an overlap.
+Choose hotkeys that follow PhET’s existing conventions and don’t conflict with other global hotkeys. Before adding new
+ones, review the current set in the binder documentation at https://phetsims.github.io/binder/, which is auto-generated
+from HotkeyData and shows how hotkeys are used across the project. This supports consistency and discoverability as well
+as avoiding collisions. If an overlap does occur, Scenery will throw an assertion at runtime.
 
 ## Scenery Events
 
