@@ -121,8 +121,7 @@ Use the following guidelines for naming and organization:
   - If tandem terminology differs from description terminology, it is acceptable to use the description terminology.
   - Nested keys should use the option names in the code (e.g., accessibleName, accessibleHelpText,
     accessibleParagraph, etc.).
-  - If a string needs multiple variants with unique values, nest them under the option key rather than separate
-    top-level keys (see example below).
+  - If a string needs multiple variants with unique values, nest them under the option key (see example below).
 - For screen summary content, use the screen name as a key, then nest a screenSummary key, with playArea, controlArea,
   currentDetails, and interactionHint as sub-keys.
 - Nest `screenButtonsHelpText` under the screen name.
@@ -137,35 +136,35 @@ a11y:
   # Tandem name is pushButtonGroup. Use that for the key name.
   pushButtonGroup:
 
-    # These keys are the option names in the code for the pushButtonGroup.
+    # Option names.
     accessibleHeading:  Actions
     accessibleHelpText: Choose action to take.
 
-    # Match the tandem name for the button.
-    eyeToggleButton:
+  # Match the tandem name for the button.
+  eyeToggleButton:
 
-      # Matching the option name.
-      accessibleNameOn:
+    # Matching the option name.
+    accessibleNameOn:
 
-        # Different instances require a unique accessibleName.
-        buttonA: Hide Object A
-        buttonB: Hide Object B
-        buttonC: Hide Object C
-        buttonD: Hide Object D
+      # Different instances require a unique accessibleName.
+      buttonA: Hide Object A
+      buttonB: Hide Object B
+      buttonC: Hide Object C
+      buttonD: Hide Object D
 
-      # Matching the option name.
-      accessibleNameOff:
+    # Matching the option name.
+    accessibleNameOff:
 
-        # Different instances require a unique accessibleName.
-        buttonA: Show Object A
-        buttonB: Show Object B
-        buttonC: Show Object C
-        buttonD: Show Object D
+      # Different instances require a unique accessibleName.
+      buttonA: Show Object A
+      buttonB: Show Object B
+      buttonC: Show Object C
+      buttonD: Show Object D
 
-      # Option names.
-      accessibleHelpText:           Show or hide object.
-      accessibleContextResponseOff: Object hidden.
-      accessibleContextResponseOn:  Object shown.
+    # Option names.
+    accessibleHelpText:           Show or hide object.
+    accessibleContextResponseOff: Object hidden.
+    accessibleContextResponseOn:  Object shown.
       
   # Matching the tandem name for the checkbox.
   visibilityCheckbox:
