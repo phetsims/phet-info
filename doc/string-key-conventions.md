@@ -113,22 +113,70 @@ the [YAML/Fluent documentation](https://github.com/phetsims/phet-info/blob/main/
 
 Use the following guidelines for naming and organization:
 
-- Keys under the `a11y` key should be nested for readability.
-- For key names, use the UI class name when it makes sense; this makes it easier to identify which component a string is
-  related to. Avoid this when the simulation language differs from class names or PhET-iO tandem names. In that case, use a
-  key that matches the description language.
-- Nested keys should correspond to the code option for the UI element (e.g., accessibleName, accessibleHelpText,
-  accessibleParagraph, etc.).
+- Key structure:
+  - Keys under the `a11y` key should be nested for readability.
+  - Match key names to PhET-iO tandem names when possible. This keeps design, phet-io, and accessibility terminology
+    aligned and makes usage easier to identify.
+  - If a component has no tandem name, use the class or instance variable name.
+  - If tandem terminology differs from description terminology, it is acceptable to use the description terminology.
+  - Nested keys should use the option names in the code (e.g., accessibleName, accessibleHelpText,
+    accessibleParagraph, etc.).
+  - If a string needs multiple variants with unique values, nest them under the option key rather than separate
+    top-level keys (see example below).
 - For screen summary content, use the screen name as a key, then nest a screenSummary key, with playArea, controlArea,
   currentDetails, and interactionHint as sub-keys.
 - Nest `screenButtonsHelpText` under the screen name.
 - Prefer longer or duplicated strings over complex string patterns. This simplifies code and translation. Patterns often
   assume English-specific grammar.
 
-For example:
+Here is a documented example:
 
 ```yaml
 a11y:
+
+  # Tandem name is pushButtonGroup. Use that for the key name.
+  pushButtonGroup:
+
+    # These keys are the option names in the code for the pushButtonGroup.
+    accessibleHeading:  Actions
+    accessibleHelpText: Choose action to take.
+
+    # Match the tandem name for the button.
+    eyeToggleButton:
+
+      # Matching the option name.
+      accessibleNameOn:
+
+        # Different instances require a unique accessibleName.
+        buttonA: Hide Object A
+        buttonB: Hide Object B
+        buttonC: Hide Object C
+        buttonD: Hide Object D
+
+      # Matching the option name.
+      accessibleNameOff:
+
+        # Different instances require a unique accessibleName.
+        buttonA: Show Object A
+        buttonB: Show Object B
+        buttonC: Show Object C
+        buttonD: Show Object D
+
+      # Option names.
+      accessibleHelpText:           Show or hide object.
+      accessibleContextResponseOff: Object hidden.
+      accessibleContextResponseOn:  Object shown.
+      
+  # Matching the tandem name for the checkbox.
+  visibilityCheckbox:
+    
+    # Matching option names in the code.
+    accessibleName:                     Units Visible
+    accessibleHelpText:                 Toggle to hide all units in the simulation.
+    accessibleContextResponseChecked:   Units are visible.
+    accessibleContextResponseUnchecked: Units are hidden.
+
+  # Example structure for screen summary content.
   screenA:
     screenButtonsHelpText: "Use a light source to explore the atom's energy states."
     screenSummary:
@@ -139,16 +187,15 @@ a11y:
         highest:     "highest"
         lowest:      "lowest"
       interactionHint: "Turn on light source to start exploring."
-  visibilityCheckbox:
-    accessibleName:                     "Units Visible"
-    accessibleHelpText:                 "Toggle to hide all units in the simulation."
-    accessibleContextResponseChecked:   "Units are visible."
-    accessibleContextResponseUnchecked: "Units are hidden."
-  energyDiagram:
-    accessibleParagraph: "A plot of energy vs time with..."
+
+  # Example structure for component with no tandem. Imagine an instance variable "atom".
   atom:
+
+    # Option names.
     accessibleName:      "Atom"
     accessibleParagraph: "Atom energy state: {{state}}."
+
+    # Values for the {{state}} placeholder in the accessibleParagraph.
     highest:             "highest"
     lowest:              "lowest"
 ```
