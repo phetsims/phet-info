@@ -106,7 +106,10 @@ It’s generally fine to reuse the same string for visual text and accessibility
 However, if the string is used in multiple contexts or has a different meaning, create a separate key to allow for
 unique translations or messaging later.
 
-For more information about YAML and Fluent, see the [YAML/Fluent documentation](https://github.com/phetsims/phet-info/blob/main/doc/strings-i18n-yaml-fluent.md).
+It is recommended to use YAML files for accessibility strings. Using YAML allows for better organization, readability,
+and more complicated string patterns that will eventually support translations. For more information about YAML and
+Fluent, see
+the [YAML/Fluent documentation](https://github.com/phetsims/phet-info/blob/main/doc/strings-i18n-yaml-fluent.md).
 
 Use the following guidelines for naming and organization:
 
@@ -144,8 +147,8 @@ a11y:
   energyDiagram:
     accessibleParagraph: "A plot of energy vs time with..."
   atom:
-    accessibleName:             "Atom"
-    accessibleParagraphPattern: "Atom energy state: {{state}}."
-    highest:                    "highest"
-    lowest:                     "lowest"
+    accessibleName:      "Atom"
+    accessibleParagraph: "Atom energy state: {{state}}."
+    highest:             "highest"
+    lowest:              "lowest"
 ```
