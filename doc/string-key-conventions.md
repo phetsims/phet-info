@@ -115,7 +115,7 @@ Use the following guidelines for naming and organization:
 
 - Keys under the `a11y` key should be nested for readability.
 - For key names, use the UI class name when it makes sense; this makes it easier to identify which component a string is
-  related to. Avoid this when the simulation language differs from class names or PhET-iO tandems. In that case, use a
+  related to. Avoid this when the simulation language differs from class names or PhET-iO tandem names. In that case, use a
   key that matches the description language.
 - Nested keys should correspond to the code option for the UI element (e.g., accessibleName, accessibleHelpText,
   accessibleParagraph, etc.).
