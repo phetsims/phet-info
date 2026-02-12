@@ -45,10 +45,10 @@
 
 ### Publication Prep
 
-- [ ] When RC.1 is submitted to QA, complete the following sub-tasks (on average the publication date will be 3 weeks after submitting RC.1 to QA)
+- [ ] When RC.1 is submitted to QA, complete the following sub-tasks (on average the publication date has been 3 weeks after submitting RC.1 to QA)
   - [ ] Set a Target Publication Date
   - [ ] Schedule Newsletter/Emails [here](https://docs.google.com/document/d/1LQYwDdGngcJkbOu2M4rP-Yr-dX-W5KQHavScRRluRHg/edit?usp=sharing)
-- [ ] After submitting RC.1 to QA and at least 2 week(s) prior to the Publication Date (to be used for marketing communications):
+- [ ] After submitting RC.1 to QA and at least 2 week(s) prior to the Target Publication Date (to be used for marketing communications):
   - [ ] Update teacher tips (query parameters, new features, model simplification changes, etc.)
   - [ ] Upload new screenshots to assets folder in github (including screen-specific screenshots)
   - [ ] Update release-notes.md with developer
