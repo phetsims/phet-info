@@ -11,19 +11,19 @@ Guidelines:
 
 ```json
   "gravityForce": {
-    "value": "Gravity Force"
-  },
-  "quadraticTerms": {
-    "value": "Quadratic Terms"
-  }
+"value": "Gravity Force"
+},
+"quadraticTerms": {
+"value": "Quadratic Terms"
+}
 ```
 
 (2) String keys for screen names should have the general form `"screen.{{screenName}}"`. E.g.:
 
 ```json
     "screen.explore": {
-      "value": "Explore"
-    },
+"value": "Explore"
+},
 ```
 
 (3) If a string key would be exceptionally long, use a key name that is an abbreviated form of the string value, or that
@@ -31,25 +31,34 @@ captures the purpose/essence of the value. E.g.:
 
 ```js
   // key is abbreviated
-  "iWentToTheStore": {
-    "value": "I went to the store to get milk, eggs, butter, and sugar."
-  },
+"iWentToTheStore"
+:
+{
+  "value"
+:
+  "I went to the store to get milk, eggs, butter, and sugar."
+}
+,
 
-  // key is based on purpose
-  "describeTheScreen": {
-    "value": "The Play Area is a small room. The Control Panel has buttons, a checkbox, and radio buttons to change conditions in the room."
-  }
+// key is based on purpose
+"describeTheScreen"
+:
+{
+  "value"
+:
+  "The Play Area is a small room. The Control Panel has buttons, a checkbox, and radio buttons to change conditions in the room."
+}
 ```
 
 (4) If string keys would collide, use your judgment to disambiguate them. E.g.:
 
 ```json
   "simplifyTitle": {
-     "value": "Simplify!"
-  },
-  "simplifyCheckbox": {
-     "value": "simplify"
-  }
+"value": "Simplify!"
+},
+"simplifyCheckbox": {
+"value": "simplify"
+}
 ```
 
 (5) String patterns that contain placeholders should use keys that are unlikely to conflict with strings that might be
@@ -61,25 +70,25 @@ instead of `"price"`, if you think there might be a future need for a `"Price"` 
 
 ```json
   "material.brick": {
-    "value": "Brick"
-  },
-  "material.metal": {
-    "value": "Metal"
-  },
-  "material.plastic": {
-    "value": "Plastic"
-  },
-  "material.wood": {
-    "value": "Wood"
-  },
+"value": "Brick"
+},
+"material.metal": {
+"value": "Metal"
+},
+"material.plastic": {
+"value": "Plastic"
+},
+"material.wood": {
+"value": "Wood"
+},
 ```
 
 (7) For strings that begin with a number, the string key should also begin with a number. For example:
 
 ```json
   "3DHeight": {
-    "value": "3D Height"
-  },
+"value": "3D Height"
+},
 ```
 
 ## Accessibility strings and Internationalization
@@ -97,83 +106,46 @@ It’s generally fine to reuse the same string for visual text and accessibility
 However, if the string is used in multiple contexts or has a different meaning, create a separate key to allow for
 unique translations or messaging later.
 
+For more information about YAML and Fluent, see the [YAML/Fluent documentation](https://github.com/phetsims/phet-info/blob/main/doc/strings-i18n-yaml-fluent.md).
+
 Use the following guidelines for naming and organization:
 
 - Keys under the `a11y` key should be nested for readability.
-- For key names, use the UI class name when it makes sense; this makes it easier to identify which component a string
-  is related to. Avoid this when the simulation language differs from class names or PhET-iO tandems. In that case,
-  use a key that matches the description language.
-- Under the component name key, nest a key for the specific accessibility option (e.g., accessibleName,
-  accessibleHelpText, accessibleParagraph, etc.).
+- For key names, use the UI class name when it makes sense; this makes it easier to identify which component a string is
+  related to. Avoid this when the simulation language differs from class names or PhET-iO tandems. In that case, use a
+  key that matches the description language.
+- Nested keys should correspond to the code option for the UI element (e.g., accessibleName, accessibleHelpText,
+  accessibleParagraph, etc.).
 - For screen summary content, use the screen name as a key, then nest a screenSummary key, with playArea, controlArea,
   currentDetails, and interactionHint as sub-keys.
 - Nest `screenButtonsHelpText` under the screen name.
-- Avoid unnecessary nesting under screen name keys; this makes reuse harder. For example, even if a checkbox appears in
-  only one screen, do not nest its strings under that screen name.
-- For entries that have string patterns with values to fill in, use additional nesting for readability.
-- For strings that do not fit into these categories, use a descriptive key that indicates how it is used.
 - Prefer longer or duplicated strings over complex string patterns. This simplifies code and translation. Patterns often
   assume English-specific grammar.
 
 For example:
 
-```json
-{
-  "a11y": {
-    "screenA": {
-      "screenButtonsHelpText": {
-        "value": "Use a light source to explore the atom's energy states."
-      },
-      "screenSummary": {
-        "playArea": {
-          "value": "Contains a light source and..."
-        },
-        "controlArea": {
-          "value": "Contains buttons and checkboxes that..."
-        },
-        "currentDetails": {
-          "pattern": {
-            "value": "Currently, the atom is in its {{level}} energy state."
-          },
-          "highest": {
-            "value": "highest"
-          },
-          "lowest": {
-            "value": "lowest"
-          }
-        },
-        "interactionHint": {
-          "value": "Turn on light source to start exploring."
-        }
-      }
-    },
-    "visibilityCheckbox": {
-      "accessibleName": {
-        "value": "Units Visible"
-      },
-      "accessibleHelpText": {
-        "value": "Toggle to hide all units in the simulation."
-      }
-    },
-    "energyDiagram": {
-      "accessibleParagraph": {
-        "value": "A plot of energy vs time with..."
-      }
-    },
-    "atom": {
-      "accessibleName": {
-        "value": "Atom"
-      },
-      "accessibleParagraphPattern": {
-        "value": "Atom energy state: {{state}}."
-      },
-      "highest": {
-        "value": "highest"
-      },
-      "lowest": {
-        "value": "lowest"
-      }
-    }
-  }
-}
+```yaml
+a11y:
+  screenA:
+    screenButtonsHelpText: "Use a light source to explore the atom's energy states."
+    screenSummary:
+      playArea:        "Contains a light source and..."
+      controlArea:     "Contains buttons and checkboxes that..."
+      currentDetails:
+        energyState: "Currently, the atom is in its {{level}} energy state."
+        highest:     "highest"
+        lowest:      "lowest"
+      interactionHint: "Turn on light source to start exploring."
+  visibilityCheckbox:
+    accessibleName:                     "Units Visible"
+    accessibleHelpText:                 "Toggle to hide all units in the simulation."
+    accessibleContextResponseChecked:   "Units are visible."
+    accessibleContextResponseUnchecked: "Units are hidden."
+  energyDiagram:
+    accessibleParagraph: "A plot of energy vs time with..."
+  atom:
+    accessibleName:             "Atom"
+    accessibleParagraphPattern: "Atom energy state: {{state}}."
+    highest:                    "highest"
+    lowest:                     "lowest"
 ```
