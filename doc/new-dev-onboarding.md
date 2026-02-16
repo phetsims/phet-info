@@ -337,7 +337,7 @@ graph LR
   B2-->B2.1(<a href='https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md'>Software Design Patterns</a>) & B2.2(Resources as Needed)
   B3-->B3.1(<a href='https://github.com/phetsims/phet-info/blob/main/doc/new-dev-onboarding.md#helpful-docs'>Accessing Documentation</a>) & B3.2(Accessing the Showcases) & B3.3(Using UI Componenets in example-sim)
   C-->C1(File Structure Overview) & C2(Module Creation)
-  C2-->C2.1(Module Design Pattern) & C2.2(<a href='https://github.com/phetsims/phet-info/blob/main/doc/typescript-conventions.md'>Typescript Conventions</a>) & C2.3(Class Inheritance & Options) & C2.4(Instancing Custom Modules)
+  C2-->C2.1(Module Design Pattern) & C2.2(<a href='https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#typeScript'>Typescript Conventions</a>) & C2.3(Class Inheritance & Options) & C2.4(Instancing Custom Modules)
   D-->D1(Node Tree Structure) & D2(Flexbox & Gridbox)
 ```
 

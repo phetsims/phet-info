@@ -39,7 +39,7 @@ known problems, etc.
 ### Caveats and Notes
 
 1. Ambient type definitions are provided in perennial-alias/phet-types.d.ts and chipper/phet-types-module.d.ts
-2. Conventions and patterns listed in https://github.com/phetsims/phet-info/blob/main/doc/typescript-conventions.md
+2. Conventions and patterns listed in https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#typeScript
 3. For certain files, when changing JS=>TS, WebStorm will say it is a rename in the commit dialog, then show a “delete +
    create” in the history. This is not desirable. For those files, a workaround is to rename the file with no content
    changes, then change the contents in a separate commit. We no longer are using `@ts-nocheck` as part of this process
