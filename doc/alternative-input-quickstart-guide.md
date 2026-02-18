@@ -195,6 +195,9 @@ If that doesn't work for you, you can use `KeyboardDragListener` directly. The o
 and `KeyboardDragListener` will typically be similar, but beware that API differences exist. Avoid duplicating code -
 factor out any logic that is needed by both `DragListener` and `KeyboardDragListener`.
 
+Note: For `KeyboardDragListener`, prefer `dragDelta` over `dragSpeed` when possible. See the
+`KeyboardDragListener` section in `doc/core-description-quickstart-guide.md`.
+
 Your `SoundRichDragListener` will look something like this:
 
 ```ts
