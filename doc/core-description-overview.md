@@ -90,7 +90,7 @@ Slider:
 
 TODO: Make this more about core description.
 
-- Information users can find and read in the PDOM with their cursor keys without changing the state of the simualtion includes:
+- Information users can find and read in the PDOM with their cursor keys without changing the state of the simulation includes:
     - All information in the screen summary, 
     - Accessible headings, 
     - Accessible names, 
