@@ -15,6 +15,7 @@ to automatically keep this in sync with the code.
 * accessibleParagraph
 * accessibleHeading
 * accessibleRoleDescription
+* pdomTemplate
 
 ### Most buttons and simple components, including but not limited to AquaRadioButton | ComboBox | ButtonNode
 
