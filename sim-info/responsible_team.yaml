@@ -1031,6 +1031,13 @@ quantum-measurement:
   responsibleDesigners:
     - "@ariel-phet"
 
+quantum-wave-interference:
+  responsibleDevs:
+    - "@samreid"
+    - "@matthew-blackman"
+  responsibleDesigners:
+    - "@matthew-blackman"
+
 quake:
   responsibleDevs:
     - "@jbphet"
