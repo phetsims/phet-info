@@ -179,6 +179,10 @@ const myImage = new Image( imageData, {
 } );
 ```
 
+By default, the paragraph is placed before the interactive element and its children. If it should follow the
+control (for example, when it is supplemental or would otherwise interrupt the control's name/help text),
+set `appendAccessibleParagraph: true`.
+
 ### accessibleHeading
 
 `accessibleHeading` adds a semantic heading for screen-reader users. Headings help users navigate sections easily and
