@@ -67,7 +67,7 @@ Other:
 - [ ] If applicable, add any needed dependencies to `phetLibs` in package.json. If you change package.json,
   run `grunt update`.
 - [ ] Add the sim
-  to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/main/sim-info/responsible_team.md).
+  to [responsible_team.yaml](hhttps://github.com/phetsims/phet-info/blob/main/sim-info/responsible_team.yaml).
 - [ ] If applicable, add corresponding dependencies from `phetLibs` in package.json to "references" in tsconfig.json.
 
 ## Steps to create a different type of repo
