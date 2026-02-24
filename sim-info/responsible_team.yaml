@@ -1196,6 +1196,11 @@ tasks:
     - "@zepumph"
   responsibleDesigners: []
 
+totality:
+  responsibleDevs:
+    - "@samreid"
+  responsibleDesigners: []
+
 trig-tour:
   responsibleDevs:
     - "@jessegreenberg"
