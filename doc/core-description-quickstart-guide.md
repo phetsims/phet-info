@@ -75,37 +75,6 @@ const screenView = new ScreenView( {
 } );
 ```
 
-## AccessibleListNode
-
-The design document often includes lists of description. Lists help simplify the strings and break up content into
-understandable parts. Use AccessibleListNode for this. They are most often used in the Screen Summary.
-
-```ts
-const screenView = new ScreenView( {
-  screenSummaryContent: new ScreenSummaryContent( {
-    currentDetailsContent: new AccessibleListNode( [
-      new StringProperty( '1 apple' ),
-      new StringProperty( '2 oranges' ),
-      new StringProperty( '4 strawberries' )
-    ], {
-      leadingParagraphStringProperty: new StringProperty( 'Currently, the fruit basket has:' )
-    } )
-  } )
-} );
-```
-
-The above will produce the following list content in the PDOM:
-
-```text
-Currently, the fruit basket has:
-- 1 apple
-- 2 oranges
-- 4 strawberries
-```
-
-AccessibleListNode is a Node. If not in the screen summary, add the AccessibleListNode to the scene graph with
-`addChild`. Use `pdomOrder` to put it in the correct place in the reading order.
-
 ## Basic options
 
 The options `accessibleName`, `accessibleHelpText`, and `accessibleParagraph` are defined in scenery's `ParallelDOM.ts`.
@@ -229,6 +198,76 @@ const controlsContainer = new VBox( {
   accessibleHeading: accessibleHeadingStringProperty,
   children: controls
 } ); 
+```
+
+## accessibleTemplate
+
+`accessibleTemplate` lets you provide arbitrary HTML snippets for the PDOM. Use it to combine multiple paragraphs or
+other structure without adding extra scene graph Nodes. The template is written with lit-html `html` and provided as a
+`Property<TemplateResult>`.
+
+By default, the template appears before the Node's accessible children or focusable element. Set
+`appendAccessibleTemplate: true` to place the template after them.
+
+```ts
+const paragraphTemplateProperty = new DerivedProperty(
+  [ firstParagraphStringProperty, secondParagraphStringProperty, thirdParagraphStringProperty ],
+  ( firstParagraph, secondParagraph, thirdParagraph ) => html`
+    <p>${firstParagraph}</p>
+    <p>${secondParagraph}</p>
+    <p>${thirdParagraph}</p>
+  `
+);
+
+const descriptionNode = new Image( src, {
+  accessibleTemplate: paragraphTemplateProperty
+} );
+descriptionNode.addDisposable( paragraphTemplateProperty );
+```
+
+Guidelines:
+- Use `accessibleParagraph`, `accessibleHelpText`, and other basic options first; use templates only when additional
+  complexity is required.
+- Do not include focusable elements in templates.
+- Dispose of the template Property when you are finished with it.
+
+### AccessibleList.createTemplate
+
+The design document often includes lists of description. Lists help simplify the strings and break up content into
+understandable parts. Use `AccessibleList.createTemplate` for this. They are most often used in the Screen Summary.
+
+```ts
+const appleStringProperty = new StringProperty( 'there is 1 apple' );
+const orangeStringProperty = new StringProperty( 'there are 2 oranges' );
+const strawberryStringProperty = new StringProperty( 'there are 4 strawberries' );
+const strawberriesVisibleProperty = new BooleanProperty( true );
+
+const listTemplateProperty = AccessibleList.createTemplate( {
+  leadingParagraphStringProperty: new StringProperty( 'In the basket:' ),
+  listItems: [
+    appleStringProperty,
+    orangeStringProperty,
+    {
+      stringProperty: strawberryStringProperty,
+      visibleProperty: strawberriesVisibleProperty
+    }
+  ],
+  punctuationStyle: 'semicolon'
+} );
+
+const fruitBasketNode = new Image( imageData, {
+  accessibleTemplate: listTemplateProperty
+} );
+fruitBasketNode.addDisposable( listTemplateProperty );
+```
+
+The above will produce the following list content in the PDOM:
+
+```text
+Currently, the fruit basket has:
+- 1 apple;
+- 2 oranges;
+- 4 strawberries.
 ```
 
 ## Accessible responses
