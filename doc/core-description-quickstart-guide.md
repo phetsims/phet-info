@@ -238,13 +238,13 @@ understandable parts. Use `AccessibleList.createTemplate` for this. They are mos
 `AccessibleList.createTemplate` simply returns a template with list markup abstracted for you.
 
 ```ts
-const appleStringProperty = new StringProperty( 'there is 1 apple' );
-const orangeStringProperty = new StringProperty( 'there are 2 oranges' );
-const strawberryStringProperty = new StringProperty( 'there are 4 strawberries' );
+const appleStringProperty = new StringProperty( '1 apple' );
+const orangeStringProperty = new StringProperty( '2 oranges' );
+const strawberryStringProperty = new StringProperty( '4 strawberries' );
 const strawberriesVisibleProperty = new BooleanProperty( true );
 
 const listTemplateProperty = AccessibleList.createTemplate( {
-  leadingParagraphStringProperty: new StringProperty( 'In the basket:' ),
+  leadingParagraphStringProperty: new StringProperty( 'Currently, the fruit basket has:' ),
   listItems: [
     appleStringProperty,
     orangeStringProperty,
