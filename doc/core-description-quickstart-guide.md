@@ -235,6 +235,7 @@ Guidelines:
 
 The design document often includes lists of description. Lists help simplify the strings and break up content into
 understandable parts. Use `AccessibleList.createTemplate` for this. They are most often used in the Screen Summary.
+`AccessibleList.createTemplate` simply returns a template with list markup abstracted for you.
 
 ```ts
 const appleStringProperty = new StringProperty( 'there is 1 apple' );
