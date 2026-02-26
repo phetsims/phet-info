@@ -963,7 +963,11 @@ phettest:
   responsibleDevs:
     - "@zepumph"
   responsibleDesigners: []
-
+photoelectric-effect:
+  responsibleDevs:
+    - "@marlitas"
+  responsibleDesigners:
+    - "@brettfiedler
 plinko-probability:
   responsibleDevs:
     - "@marlitas"
@@ -1194,6 +1198,11 @@ tappi:
 tasks:
   responsibleDevs:
     - "@zepumph"
+  responsibleDesigners: []
+
+totality:
+  responsibleDevs:
+    - "@samreid"
   responsibleDesigners: []
 
 trig-tour:

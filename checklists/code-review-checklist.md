@@ -224,7 +224,6 @@ the constructor, where `{{CLASS_NAME}}` should exactly match the class name. (b)
   density-buoyancy-common) should be GPL v3,
   see [other thread](https://github.com/phetsims/density-buoyancy-common/issues/45).
 - [ ] Does .gitignore match the one in simula-rasa?
-- [ ] In GitHub, verify that all non-release branches have an associated issue that describes their purpose.
 - [ ] Are there any GitHub branches that are no longer needed and should be deleted?
 - [ ] Sim-specific query parameters (if any) should be identified and documented in one .js file in js/common/ or js/ (
   if there is no common/). The .js file should be named `{{PREFIX}}QueryParameters.js`, for example

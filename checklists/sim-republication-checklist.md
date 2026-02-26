@@ -29,6 +29,7 @@
 ### Design (Pre-QA)
 
 - [ ] Update (or create) design doc(s) to reflect sim updates and feature additions, as needed
+- [ ] Create "Interview-Prep" issue in sim-specific repo ([Template](https://github.com/phetsims/phet-info/blob/main/checklists/interview-prep-issue-template))
 - **If applicable to your update:**
   - [ ] Core Description reviewed by external designer - [CORE REVIEW CHECKLIST](https://github.com/phetsims/phet-info/blob/main/checklists/core-description-review-checklist.md)
   - [ ] Verify [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0)
