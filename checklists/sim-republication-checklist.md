@@ -37,7 +37,7 @@
   - [ ] Carefully review `?showPointerAreas` for mouse and touch areas
   - [ ] Check strings using `?stringTest=dynamic` for layout changes and readability
   - [ ] PhET-iO
-    - [ ] Determine any custom PhET-iO needs
+    - [ ] (after wireframing) Determine any custom PhET-iO needs (schedule separate PhET-iO design meeting if needed)
     - [ ] PhET-iO tree review complete
     - [ ] `phetioFeatured` elements identified/updated
     - [ ] Create/update examples.md
@@ -46,11 +46,15 @@
 
 ### Publication Prep
 
-- [ ] Update teacher tips (query parameters, new features, model simplification changes, etc.)
-- [ ] Upload new screenshots to assets folder in github (including screen-specific screenshots)
-- [ ] Update release-notes.md with developer
-- [ ] Update responsible_dev.json, as appropriate
-- [ ] Verify updates to credits with team (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
+- [ ] When RC.1 is submitted to QA, complete the following sub-tasks (on average the publication date has been 3 weeks after submitting RC.1 to QA)
+  - [ ] Set a Target Publication Date
+  - [ ] Schedule Newsletter/Emails [here](https://docs.google.com/document/d/1LQYwDdGngcJkbOu2M4rP-Yr-dX-W5KQHavScRRluRHg/edit?usp=sharing)
+- [ ] After submitting RC.1 to QA and at least 2 week(s) prior to the Target Publication Date (to be used for marketing communications):
+  - [ ] Update teacher tips (query parameters, new features, model simplification changes, etc.)
+  - [ ] Upload new screenshots to assets folder in github (including screen-specific screenshots)
+  - [ ] Update release-notes.md with developer
+  - [ ] Update responsible_dev.json, as appropriate
+  - [ ] Verify updates to credits with team (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
 
 ### Post Publication
 
@@ -74,7 +78,7 @@
   - [ ] Memory leak testing
   - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks -
     see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
-  - [ ] Finalize release-notes.md with designer.
+  - [ ] Submit RC.1 to QA and Finalize release-notes.md with designer.
   - [ ] Add CT tests for public query parameters that need testing. See examples
     in [listContinuousTests.js](https://github.com/phetsims/perennial/blob/main/js/listContinuousTests.js)
 - [ ] Published (Date: //)
