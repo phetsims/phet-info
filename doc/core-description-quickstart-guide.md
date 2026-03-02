@@ -252,8 +252,7 @@ const listTemplateProperty = AccessibleList.createTemplate( {
       stringProperty: strawberryStringProperty,
       visibleProperty: strawberriesVisibleProperty
     }
-  ],
-  punctuationStyle: 'semicolon'
+  ]
 } );
 
 const fruitBasketNode = new Image( imageData, {
@@ -266,9 +265,9 @@ The above will produce the following list content in the PDOM:
 
 ```text
 Currently, the fruit basket has:
-- 1 apple;
-- 2 oranges;
-- 4 strawberries.
+- 1 apple
+- 2 oranges
+- 4 strawberries
 ```
 
 ## Accessible responses
