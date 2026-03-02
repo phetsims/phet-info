@@ -1,6 +1,6 @@
 # Core Description Options
 
-This document was written in response to https://github.com/phetsims/phet-info/issues/243 so designers and developers
+This document was written in response to <https://github.com/phetsims/phet-info/issues/243> so designers and developers
 could see all the options for specifying descriptive text in one place, with the exact option names. I do not know how
 to automatically keep this in sync with the code.
 
@@ -36,6 +36,7 @@ to automatically keep this in sync with the code.
 * accessibleHelpTextCollapsed
 
 ### AccessibleSlider
+
 * createAriaValueText (for object responses, to be renamed soon)
 * createContextResponseAlert (for context responses, to be renamed soon)
 * keyboardStep
@@ -74,6 +75,7 @@ to automatically keep this in sync with the code.
 * accessibleContextResponseOn
 
 ### RectangularToggleButton | RoundToggleButton
+
 * accessibleNameOn
 * accessibleNameOff
 
@@ -118,14 +120,18 @@ to automatically keep this in sync with the code.
 ## VEGAS
 
 ### ChallengeScreenNode
+
 * accessibleChallengePrompt - A leading prompt for the game challenge.
 * accessibleAnswerSummary - A summary of the revealed answer.
 
 ### InfiniteStatusBar
+
 * accessibleMessageStringProperty
 
 ### LevelSelectionScreenNode
+
 * accessibleIncludeOptionsDescription
 
 ### LevelSelectionButton
+
 * accessibleBriefLevelName
