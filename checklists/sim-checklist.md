@@ -43,7 +43,7 @@
 - [ ] Check strings using `?stringTest=dynamic` for layout changes and readability
 - [ ] Core Description reviewed by external designer - [CORE REVIEW CHECKLIST](https://github.com/phetsims/phet-info/blob/main/checklists/core-description-review-checklist.md)
 - [ ] PhET-iO
-  - [ ] Determine any custom PhET-iO needs
+  - [ ] (after wireframing) Determine any custom PhET-iO needs (schedule separate PhET-iO design meeting if needed)
   - [ ] PhET-iO tree review complete
   - [ ] `phetioFeatured` elements identified
   - [ ] Create examples.md
@@ -57,23 +57,29 @@
 
 ### Publication Prep
 
-- [ ] *If a Port:* If the legacy sim or project name differs from HTML5, notify the website team at least on month prior to publication ([example](https://github.com/phetsims/models-of-the-hydrogen-atom/issues/161))
-- [ ] Teacher Tips created, uploaded, and added to sim design folder on SharePoint
-- [ ] Verify credits with team (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
-- [ ] Create Main screenshot and Auxiliary screenshots (up to 3 additional) for sim assets folder (read [this](https://github.com/phetsims/QA/blob/main/documentation/qa-book.md#screenshots))
-- [ ] Create Screen-specific screenshots for metadata service (
+- [ ] When RC.1 is submitted to QA, complete the following sub-tasks (on average the publication date has been 3 weeks after submitting RC.1 to QA)
+  - [ ] Set a Target Publication Date
+  - [ ] *If a Port:* If the sim is being ported from JAVA or Flash to HTML5, notify the website team ([example](https://github.com/phetsims/models-of-the-hydrogen-atom/issues/161))
+  - [ ] The sim url will be https://phet.colorado.edu/sims/html/sim-name/latest/sim-name_all.html (for use in teacher tips, activities and marketing materials)
+  - [ ] Schedule Newsletter/Emails [here](https://docs.google.com/document/d/1LQYwDdGngcJkbOu2M4rP-Yr-dX-W5KQHavScRRluRHg/edit?usp=sharing)
+- [ ] After submitting RC.1 to QA and at least 2 week(s) prior to the Target Publication Date (to be used for marketing communications):
+  - [ ] Teacher Tips created, uploaded, and added to sim design folder on SharePoint
+  - [ ] Verify credits with team (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
+  - [ ] Create Main screenshot and Auxiliary screenshots (up to 3 additional) for sim assets folder (read [this](https://github.com/phetsims/QA/blob/main/documentation/qa-book.md#screenshots))
+  - [ ] Create Screen-specific screenshots for metadata service (
   see [naming convention](https://github.com/phetsims/website/issues/1322#issuecomment-1010320827))
-- [ ] Upload screenshots to Assets folder in Github
+  - [ ] Upload screenshots to Assets folder in Github
+  - [ ] Receive Release Notes from Developer(s)
+    - [ ] Draft newsletter entry
+
+### Post Publication
+
 - [ ] [Prepare and Update Sim Page Info](https://docs.google.com/document/d/1JtFR0paPJIU19ybn3SwkMO-ZvRCr2a_KRMPUe-OikAc/edit?tab=t.0#heading=h.94p3cgxenan4) (keywords, (filter) categories, description, learning goals, related sims, inclusive features)
 - [ ] **Make sim visible on website (Invisible -> Published)**
   - [ ] Clear "Metadata caches" on
   the [Basic Administration Caches](https://phet.colorado.edu/?wicket:bookmarkablePage=:edu.colorado.phet.website.admin.AdminCachesPage)
   page
-
-### Post Publication
-
 - [ ] *If a Port:* Review legacy gold star activities. For appropriate activities, tag the HTML5 version and UNTAG the deprecated version. Contact Diana for support.
-- [ ] Draft newsletter entry
 - [ ] Ask web devs to add to PhET Studio (#website-public Slack channel)
 - [ ] Create 2-3 example PhET Studio presets ([guidelines](https://docs.google.com/document/d/1gZmobd5h1VBZxjwT6ZuDhFIRWWQvQUKD_VgUDZW5-io/edit?tab=t.0))
 - [ ] Announce sim publication in #general Slack channel and celebrate!
@@ -100,6 +106,7 @@
 - [ ] Sim team sign-off (Date: //)
 - [ ] Code review completed (Date: //)
 - [ ] Sim dev test completed (Date: //)
+- [ ] Submit RC.1 to QA and create Release Notes
 - [ ] Sim RC tests completed (Date: //)
 - [ ] Pre-publication items
   - [ ] Add CT tests for public query parameters that need testing. See examples
