@@ -122,6 +122,14 @@ bending-light:
   responsibleDesigners:
     - "@arouinfar"
 
+beta-decay:
+  responsibleDevs:
+    - "@AgustinVallejo"
+    - "@jbphet"
+  responsibleDesigners:
+    - "@Nancy-Salpepi"
+    - "@DianaTavares"
+
 binder:
   responsibleDevs:
     - "@zepumph"
