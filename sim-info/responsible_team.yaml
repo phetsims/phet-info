@@ -769,6 +769,14 @@ normal-modes:
   responsibleDesigners:
     - "@DianaTavares"
 
+nuclear-decay-common:
+  responsibleDevs:
+    - "@AgustinVallejo"
+    - "@jbphet"
+  responsibleDesigners:
+    - "@Nancy-Salpepi"
+    - "@DianaTavares"
+
 number-compare:
   responsibleDevs:
     - "@marlitas"
