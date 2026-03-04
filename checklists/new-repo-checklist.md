@@ -118,4 +118,4 @@ Other:
   Use [this script to do so](https://github.com/phetsims/perennial/blob/main/js/scripts/protect-branches-for-repo.js).
 - [ ] If using IDEA/Webstorm (pre-2018), add the git source root for the repository.
 - [ ] Add the repo
-  to [responsible_dev.json](https://github.com/phetsims/phet-info/blob/main/sim-info/responsible_dev.json).
+  to [responsible_team.yaml](https://github.com/phetsims/phet-info/blob/main/sim-info/responsible_team.yaml).
