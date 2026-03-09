@@ -109,13 +109,16 @@ to automatically keep this in sync with the code.
 * currentDetailsContent
 * interactionHintContent
 
-### AccessibleListNode
+### AccesssibleList.createTemplateProperty
 
+* visibleProperty - visibility control for the entire list
 * leadingParagraphStringProperty
 * leadingParagraphVisibleProperty
 * listType ('ordered' or 'unordered')
-* punctuationStyle (`null`, 'comma', or 'semicolon') - prefer `null` unless you need punctuation to change with the number of items
-* Each item in the list can be a string or a string Property, with changing visibility.
+* listItems
+  * Each item has its own:
+    * stringProperty
+    * visibleProperty
 
 ## VEGAS
 
