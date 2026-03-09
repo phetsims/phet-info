@@ -231,11 +231,11 @@ Guidelines:
 - Do not include focusable elements in templates.
 - Dispose of the template Property when you are finished with it.
 
-### AccessibleList.createTemplate
+### AccessibleList.createTemplateProperty
 
 The design document often includes lists of description. Lists help simplify the strings and break up content into
-understandable parts. Use `AccessibleList.createTemplate` for this. They are most often used in the Screen Summary.
-`AccessibleList.createTemplate` simply returns a template with list markup abstracted for you.
+understandable parts. Use `AccessibleList.createTemplateProperty` for this. They are most often used in the Screen Summary.
+`AccessibleList.createTemplateProperty` simply returns a template with list markup abstracted for you.
 
 ```ts
 const appleStringProperty = new StringProperty( '1 apple' );
@@ -243,7 +243,7 @@ const orangeStringProperty = new StringProperty( '2 oranges' );
 const strawberryStringProperty = new StringProperty( '4 strawberries' );
 const strawberriesVisibleProperty = new BooleanProperty( true );
 
-const listTemplateProperty = AccessibleList.createTemplate( {
+const listTemplateProperty = AccessibleList.createTemplateProperty( {
   leadingParagraphStringProperty: new StringProperty( 'Currently, the fruit basket has:' ),
   listItems: [
     appleStringProperty,
