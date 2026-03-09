@@ -127,6 +127,7 @@ Use the following guidelines for naming and organization:
 - Nest `screenButtonsHelpText` under the screen name.
 - Prefer longer or duplicated strings over complex string patterns. This simplifies code and translation. Patterns often
   assume English-specific grammar.
+- Ideally, string keys and their values should match, especially before publication, since changing them afterwards is more difficult. If they must diverge (e.g. due to long sentences or overly verbose keys), ensure this is intentional.
 
 Here is a documented example:
 
