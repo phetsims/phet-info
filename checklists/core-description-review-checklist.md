@@ -145,7 +145,7 @@ If present, review responses given when pedagogically important events or state 
 - [ ] accessibleObjectResponse: generally, phrase fragments, requiring no sentence casing, and no period at end. Example: "4 billion kilograms"  
 - [ ] accessibleContextResponse: full phrases, sentence casing, with punctuation. Example: “Current parabola saved to grid.”  
 - [ ] accessibleParagraph: contains full sentences, with sentence case and punctuation  
-- [ ] accessibleListNode: Strive for consistency (stick with what sounds natural and either all phrases or all sentences with all the same punctuation)
+- [ ] accessibleTemplate (lists): Strive for consistency (stick with what sounds natural and either all phrases or all sentences with all the same punctuation)
 
 ### **Component-Specific Criteria (recent areas of concern/confusion)**
 
