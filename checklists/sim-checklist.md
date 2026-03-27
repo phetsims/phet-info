@@ -83,7 +83,9 @@
 - [ ] Ask web devs to add to PhET Studio (#website-public Slack channel)
 - [ ] Create 2-3 example PhET Studio presets ([guidelines](https://docs.google.com/document/d/1gZmobd5h1VBZxjwT6ZuDhFIRWWQvQUKD_VgUDZW5-io/edit?tab=t.0))
 - [ ] Announce sim publication in #general Slack channel and celebrate!
-- [ ] Create a GitHub issue for Oliver `@oliver-phet` to alert translators that a new sim is available for translation for new sim publications OR if there have been significant string changes (manual process since Nov 2024)
+- [ ] Create a GitHub issue for Oliver `@oliver-phet` to:
+  - [ ]  alert translators that a new sim is available for translation for new sim publications (manual process since Nov 2024)
+  - [ ]  update Use in Research form with new sim name
 - Legends of Learning (LoL) Partnership Tasks
   - [ ] [Icons](https://docs.google.com/document/d/1GmLNE31gs8hQYGze3xwmN9k7B6gu7lQ7wJe2phqdH9Y/edit) for each
   screen created and uploaded to Drive
