@@ -65,6 +65,10 @@ to automatically keep this in sync with the code.
 
 * accessibleContextResponse
 
+### Dialog
+
+* accessibleNameConfiguration: 'heading' | 'label' - Whether to create an h1 or create a more discrete label for the dialog.
+
 ### Carousel
 
 * buttonAccessibleContextResponsePatternProperty - accessible context response for arrow buttons
