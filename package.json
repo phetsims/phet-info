@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/phetsims/phet-info.git"
   },
+  "dependencies": {
+    "js-yaml": "~4.1.0"
+  },
   "devDependencies": {
     "octokit": "^3.1.2"
   }
