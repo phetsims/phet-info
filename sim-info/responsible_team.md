@@ -9,6 +9,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | a11y-research | @jessegreenberg |  |  | 
 | acid-base-solutions | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | alpenglow | @jonathanolson |  |  | 
+| alpha-decay | @jbphet,@AgustinVallejo | @nancy-salpepi,@DianaTavares |  | 
 | aqua | @zepumph |  |  | 
 | area-builder | @jbphet | @amanda-phet | Sound | 
 | area-model-algebra | @jonathanolson | @amanda-phet | Sound | 
@@ -28,6 +29,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | beaker | @samreid |  |  | 
 | beers-law-lab | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | bending-light | @samreid | @arouinfar |  | 
+| beta-decay | @AgustinVallejo,@jbphet | @Nancy-Salpepi,@DianaTavares |  | 
 | binder | @zepumph |  |  | 
 | blackbody-spectrum | @AgustinVallejo,@jbphet | @DianaTavares |  | 
 | blast | @samreid |  |  | 
@@ -135,6 +137,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | neuron | @jbphet | @arouinfar |  | 
 | nitroglycerin | @pixelzoom |  |  | 
 | normal-modes | @Hyodar,@tmildemberger | @DianaTavares |  | 
+| nuclear-decay-common | @AgustinVallejo,@jbphet | @Nancy-Salpepi,@DianaTavares |  | 
 | number-compare | @marlitas | @amanda-phet | Sound | 
 | number-line-common | @jbphet | @amanda-phet |  | 
 | number-line-distance | @jbphet | @amanda-phet |  | 
@@ -172,6 +175,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phetcommon | @zepumph |  |  | 
 | phetmarks | @zepumph |  |  | 
 | phettest | @zepumph |  |  | 
+| photoelectric-effect | @marlitas | @brettfiedler |  | 
 | plinko-probability | @marlitas | @amanda-phet |  | 
 | projectile-data-lab | @matthew-blackman,@samreid | @matthew-blackman,@catherinecarter,@arouinfar | Sound<br/>Interactive Description | 
 | projectile-motion | @matthew-blackman | @matthew-blackman,@catherinecarter,@arouinfar |  | 
@@ -182,13 +186,14 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | quadrilateral | @jessegreenberg | @brettfiedler | Sound<br/>Interactive Description<br/>Voicing | 
 | quantum-bound-states | @pixelzoom | @ariel-phet,@brettfiedler | Sound<br/>Interactive Description | 
 | quantum-measurement | @jbphet | @ariel-phet | Sound<br/>Interactive Description | 
+| quantum-wave-interference | @samreid,@matthew-blackman | @matthew-blackman | Sound<br/>Interactive Description<br/>Interactive Highlights | 
 | quake | @jbphet |  |  | 
 | query-string-machine | @samreid |  |  | 
 | ratio-and-proportion | @zepumph | @brettfiedler | Sound<br/>Interactive Description<br/>Voicing | 
 | reactants-products-and-leftovers | @pixelzoom | @arouinfar | Sound | 
 | resistance-in-a-wire | @jbphet | @DianaTavares | Sound<br/>Interactive Description | 
 | rosetta | @jbphet |  |  | 
-| rutherford-scattering | @jessegreenberg | @arouinfar | Sound | 
+| rutherford-scattering | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description | 
 | seasons | @samreid |  |  | 
 | scenery | @jonathanolson |  |  | 
 | scenery-phet | @jessegreenberg |  | Sound<br/>Interactive Description | 
@@ -211,6 +216,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | tangible | @zepumph |  |  | 
 | tappi | @jessegreenberg |  |  | 
 | tasks | @zepumph |  |  | 
+| totality | @samreid |  |  | 
 | trig-tour | @jessegreenberg | @amanda-phet | Sound<br/>Interactive Description<br/>Voicing | 
 | turing | @samreid,@AgustinVallejo |  |  | 
 | twixt | @jonathanolson |  |  | 
