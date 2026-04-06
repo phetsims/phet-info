@@ -37,4 +37,4 @@ Decide whether the repo is being (a) deleted (b) archived or (c) removed from ac
 - [ ] Remove from `responsible_dev.json`.
 
 We should explicitly state whether something needs to be done to delete the directory from aqua, build-server, and
-phettest, or whether these directories get automatically deleted, or just hang around forever with no consequences
+launchpad, or whether these directories get automatically deleted, or just hang around forever with no consequences

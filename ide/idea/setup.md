@@ -150,7 +150,6 @@ Use at your own risk!
   * phetmarks
   * phetsim
   * phetsims
-  * phettest
   * pickability
   * pickable
   * popupable
