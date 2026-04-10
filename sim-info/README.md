@@ -7,7 +7,7 @@ Sim Info
 should have a responsibleDev, someone in charge of maintaining the code/files inside that repo. This file should be
 maintained manually.
 
-[responsible_team.md](./responsible_team.md) is a generated markdown file of the json data.
+[responsible_team.md](./responsible_team.md) is a generated markdown file of the yaml data.
 see [./generateMarkdownOutput.mjs](./generateMarkdownOutput.mjs)
 
 ------------------
