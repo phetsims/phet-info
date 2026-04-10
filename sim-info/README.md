@@ -3,11 +3,11 @@ Sim Info
 
 ## Responsible Lists
 
-[responsible_dev.json](./responsible_dev.json) is the central location for all responsible actors for a repo. Every repo
+[responsible_team.json](./responsible_team.json) is the central location for all responsible actors for a repo. Every repo
 should have a responsibleDev, someone in charge of maintaining the code/files inside that repo. This file should be
 maintained manually.
 
-[responsible_dev.md](./responsible_dev.md) is a generated markdown file of the json data.
+[responsible_team.md](./responsible_team.md) is a generated markdown file of the json data.
 see [./generateMarkdownOutput.mjs](./generateMarkdownOutput.mjs)
 
 ------------------
