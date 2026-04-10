@@ -3,7 +3,7 @@ Sim Info
 
 ## Responsible Lists
 
-[responsible_team.json](./responsible_team.json) is the central location for all responsible actors for a repo. Every repo
+[responsible_team.json](./responsible_team.yaml) is the central location for all responsible actors for a repo. Every repo
 should have a responsibleDev, someone in charge of maintaining the code/files inside that repo. This file should be
 maintained manually.
 
