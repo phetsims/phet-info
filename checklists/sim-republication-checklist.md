@@ -59,7 +59,7 @@
 ### Post Publication
 
 - [ ] Update Sim Page Info, including tagging any new inclusive features on website
-- [ ] Update the [metadata spreadsheet](https://docs.google.com/spreadsheets/d/16lNL0-cR0BE5Deo4T9XE0pHFxibny8romv8ZW6RDiVU/edit?gid=256519964#gid=256519964) to reflect current inclusive features included in the sim (should match metadata on website)
+- [ ] Update the [metadata spreadsheet](https://o365coloradoedu.sharepoint.com/:x:/r/sites/PHYS-phet-pilot/PhET%20Files/PhET%20Files/PhET%20Accessibility/WCAG/Inclusive%20Features%20Tracking%20Spreadsheet.xlsx?d=w2727bf49194f4987ad94fab72fd43554&csf=1&web=1&e=VPaiH1) to reflect current inclusive features included in the sim (should match metadata on website)
 - [ ] Create a GitHub issue for @oliver-phet to alert translators if there have been significant string changes (manual process since Nov 2024)
 - [ ] Write newsletter announcement
 - [ ] Update website credits
