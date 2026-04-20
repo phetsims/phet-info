@@ -59,6 +59,7 @@
 ### Post Publication
 
 - [ ] Update Sim Page Info, including tagging any new inclusive features on website
+- [ ] Update the [metadata spreadsheet](https://docs.google.com/spreadsheets/d/16lNL0-cR0BE5Deo4T9XE0pHFxibny8romv8ZW6RDiVU/edit?gid=256519964#gid=256519964) to reflect current inclusive features included in the sim (should match metadata on website)
 - [ ] Create a GitHub issue for @oliver-phet to alert translators if there have been significant string changes (manual process since Nov 2024)
 - [ ] Write newsletter announcement
 - [ ] Update website credits
