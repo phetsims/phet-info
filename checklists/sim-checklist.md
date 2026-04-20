@@ -75,6 +75,7 @@
 ### Post Publication
 
 - [ ] [Prepare and Update Sim Page Info](https://docs.google.com/document/d/1JtFR0paPJIU19ybn3SwkMO-ZvRCr2a_KRMPUe-OikAc/edit?tab=t.0#heading=h.94p3cgxenan4) (keywords, (filter) categories, description, learning goals, related sims, inclusive features)
+- [ ] Update the [metadata spreadsheet](https://docs.google.com/spreadsheets/d/16lNL0-cR0BE5Deo4T9XE0pHFxibny8romv8ZW6RDiVU/edit?gid=256519964#gid=256519964) to reflect current inclusive features included in the sim (should match metadata on website)
 - [ ] **Make sim visible on website (Invisible -> Published)**
   - [ ] Clear "Metadata caches" on
   the [Basic Administration Caches](https://phet.colorado.edu/?wicket:bookmarkablePage=:edu.colorado.phet.website.admin.AdminCachesPage)
