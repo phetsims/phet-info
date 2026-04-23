@@ -32,7 +32,7 @@ Get started with adding alternative input to your PhET simulation.
 
 Follow these steps to add support for alternative input to a simulation.
 
-1. In your sim's package.json, add `"supportsInteractiveDescription": true` to the `phet.simFeatures.supportsInteractiveDescription`
+1. In your sim's package.json, add `"supportsInteractiveDescription": true` to the `phet.supportsInteractiveDescription`
    section, like this:
 
 ```
