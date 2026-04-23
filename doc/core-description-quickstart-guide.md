@@ -300,26 +300,30 @@ For custom Nodes, use the helper functions defined in scenery’s ParallelDOM.
 
 #### addAccessibleObjectResponse
 
-Should be spoken when the object receives focus and when its value or state changes.
+Should be spoken when the object receives focus and when its value or state changes. Use `accessibleFocusObjectResponse`
+to define the object response spoken on focus. Use `addAccessibleObjectResponse` to speak object responses during other
+interactions or state changes.
+
+Prefer `accessibleFocusObjectResponse` for focus-triggered announcements because it uses focus-specific queue behavior
+that reduces stale responses during rapid focus changes.
 
 ```ts
-const draggableCircle = new Circle( 25, combineOptions<CircleOptions>( {
-  accessibleName: 'Draggable Circle'
-}, AccessibleDraggableOptions ) );
-
 const positionStatementStringProperty = new PatternStringProperty( 'The circle is at {{x}}, {{y}}', {
   x: xProperty,
   y: yProperty
 } );
 
-draggableCircle.focusedProperty.link( focused => {
-  if ( focused ) {
-    draggableCircle.addAccessibleObjectResponse( positionStatementStringProperty );
-  }
-} );
+const draggableCircle = new Circle( 25, combineOptions<CircleOptions>( {
+  accessibleName: 'My Circle',
 
-draggableCircle.addInputListener( new DragListener( {
+  // This response is spoken when the circle receives focus.
+  accessibleFocusObjectResponse: positionStatementStringProperty
+}, AccessibleDraggableOptions ) );
+
+draggableCircle.addInputListener( new RichDragListener( {
   end: () => {
+
+    // This is spoken at the end of mouse and keyboard dragging.
     draggableCircle.addAccessibleObjectResponse( positionStatementStringProperty );
   }
 } ) );
