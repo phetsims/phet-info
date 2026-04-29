@@ -69,6 +69,7 @@ Other:
 - [ ] Add the sim
   to [responsible_team.yaml](https://github.com/phetsims/phet-info/blob/main/sim-info/responsible_team.yaml).
 - [ ] If applicable, add corresponding dependencies from `phetLibs` in package.json to "references" in tsconfig.json.
+- [ ] Add the repo to totality/
 
 ## Steps to create a different type of repo
 
