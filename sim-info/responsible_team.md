@@ -175,7 +175,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | phetcommon | @zepumph |  |  | 
 | phetmarks | @zepumph |  |  | 
 | phettest | @zepumph |  |  | 
-| photoelectric-effect | @marlitas | @brettfiedler |  | 
+| photoelectric-effect | @marlitas | @brettfiedler | Interactive Description | 
 | plinko-probability | @marlitas | @amanda-phet |  | 
 | projectile-data-lab | @matthew-blackman,@samreid | @matthew-blackman,@catherinecarter,@arouinfar | Sound<br/>Interactive Description | 
 | projectile-motion | @matthew-blackman | @matthew-blackman,@catherinecarter,@arouinfar |  | 
