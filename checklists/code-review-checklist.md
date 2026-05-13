@@ -327,8 +327,8 @@ various features, not all are always include. Ignore sections that do not apply.
 
 ### General
 
-- [ ] Are accessibility features integrated well into the code? They should be added in a maintainable way, even if that
-  requires upfront refactoring.
+- [ ] Are accessibility features integrated well into the code, using maintainable PhET software design patterns? For
+  Core Description, review and follow the conventions in [core-description-quickstart-guide.md](https://github.com/phetsims/phet-info/blob/main/doc/core-description-quickstart-guide.md).
 
 ### Alternative Input
 
@@ -345,8 +345,6 @@ various features, not all are always include. Ignore sections that do not apply.
 ### Interactive Description
 
 - [ ] Test the simulation using axe DevTools. See [axe DevTools documentation](https://github.com/phetsims/phet-info/blob/main/doc/axe-devtools-guide.md) for instructions.
-- [ ] If applicable, are good design patterns used for interactive description,
-  see [interactive-description-technical-guide.md](https://github.com/phetsims/phet-info/blob/main/doc/interactive-description-technical-guide.md)
 - [ ] Does resetting the simulation also reset the entire PDOM?
 - [ ] Make sure accessibility strings aren't being adjusted with ascii specific javascript methods like `toUpperCase()`.
   Remember that one day these strings will be translatable
