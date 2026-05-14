@@ -140,7 +140,9 @@ the constructor, where `{{CLASS_NAME}}` should exactly match the class name. (b)
   make sure any changes have a good reason and have been discussed with @jbphet (it is likely that an issue
   like https://github.com/phetsims/gravity-force-lab/issues/166 should be created). Changes and deletions are OK, it just
   means that translations will be lost.
-- [ ] Make sure PDOM strings are translated by testing with `?a11yStringTest=hello`, and inspecting the a11y view.
+- [ ] Make sure that strings in the a11y section of the .yaml file are translated by testing with `?a11yStringTest=hello`
+  and inspecting the A11y View. Note that visual strings are allowed to be shown in the a11y view. You can test both with
+  a combination like `?stringTest=hello&a11yStringTest=there`
 
 ## **Repository Structure**
 
@@ -327,8 +329,8 @@ various features, not all are always include. Ignore sections that do not apply.
 
 ### General
 
-- [ ] Are accessibility features integrated well into the code? They should be added in a maintainable way, even if that
-  requires upfront refactoring.
+- [ ] Are accessibility features integrated well into the code, using maintainable PhET software design patterns? For
+  Core Description, review and follow the conventions in [core-description-quickstart-guide.md](https://github.com/phetsims/phet-info/blob/main/doc/core-description-quickstart-guide.md).
 
 ### Alternative Input
 
@@ -345,8 +347,6 @@ various features, not all are always include. Ignore sections that do not apply.
 ### Interactive Description
 
 - [ ] Test the simulation using axe DevTools. See [axe DevTools documentation](https://github.com/phetsims/phet-info/blob/main/doc/axe-devtools-guide.md) for instructions.
-- [ ] If applicable, are good design patterns used for interactive description,
-  see [interactive-description-technical-guide.md](https://github.com/phetsims/phet-info/blob/main/doc/interactive-description-technical-guide.md)
 - [ ] Does resetting the simulation also reset the entire PDOM?
 - [ ] Make sure accessibility strings aren't being adjusted with ascii specific javascript methods like `toUpperCase()`.
   Remember that one day these strings will be translatable
