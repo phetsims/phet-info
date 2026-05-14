@@ -111,7 +111,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | hookes-law | @pixelzoom | @arouinfar | Sound<br/>Interactive Description | 
 | interaction-dashboard | @zepumph | @DianaTavares |  | 
 | inverse-square-law-common | @zepumph | @arouinfar |  | 
-| isotopes-and-atomic-mass | @jbphet | @arouinfar | Sound | 
+| isotopes-and-atomic-mass | @jbphet | @Nancy-Salpepi | Sound | 
 | john-travoltage | @jessegreenberg | @arouinfar | Sound<br/>Interactive Description<br/>Voicing | 
 | joist | @zepumph |  | Sound<br/>Interactive Description | 
 | keplers-laws | @AgustinVallejo,@jonathanolson | @DianaTavares | Sound<br/>Interactive Description | 
