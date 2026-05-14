@@ -28,8 +28,3 @@ single place where everyone can communicate about ideas, curiosities, and questi
 
 ### **Follow-up Questions and General Curiosities**
  - [ ] Note: This list is initial; many questions arise during the interview and are added to the notes doc in the moment
-
-**Common follow-up questions**
-- [ ] What you tell a friend what this sim is about?
-- [ ] What did you learn from using this sim?
-- [ ] Wat question do you wished I'd asked?

@@ -37,7 +37,7 @@
 - [ ] Create "Interview-Prep" issue in sim-specific repo ([Template](https://github.com/phetsims/phet-info/blob/main/checklists/interview-prep-issue-template))
 - [ ] Wireframes complete
 - [ ] Mockups complete
-  - [ ] Mockups checked for [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0) (review radio buttons due to this [issue](https://github.com/phetsims/sun/issues/977))
+  - [ ] Mockups checked for [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0)
   - [ ] [Essential Exceptions](https://docs.google.com/document/d/1buKmqjn9hiYrUpPjcEeAmgX0HDd-KO2G87aKBq5Gjjw/edit?usp=sharing) noted
 - [ ] Carefully review `?showPointerAreas` for mouse and touch areas
 - [ ] Check strings using `?stringTest=dynamic` for layout changes and readability
@@ -84,8 +84,9 @@
 - [ ] Ask web devs to add to PhET Studio (#website-public Slack channel)
 - [ ] Create 2-3 example PhET Studio presets ([guidelines](https://docs.google.com/document/d/1gZmobd5h1VBZxjwT6ZuDhFIRWWQvQUKD_VgUDZW5-io/edit?tab=t.0))
 - [ ] Announce sim publication in #general Slack channel and celebrate!
-- [ ] Alert translators that a new sim is available for translation [New Sim Admin](https://phet.colorado.edu/admin/simulation)
-  - [ ]  Select the sim, SEND NEW SIM EMAIL. This sends an email to _all_ trusted translators notifying the sim is available for translation
+- [ ] Create a GitHub issue for Oliver `@oliver-phet` to:
+  - [ ]  alert translators that a new sim is available for translation for new sim publications (manual process since Nov 2024)
+  - [ ]  update Use in Research form with new sim name
 - Legends of Learning (LoL) Partnership Tasks
   - [ ] [Icons](https://docs.google.com/document/d/1GmLNE31gs8hQYGze3xwmN9k7B6gu7lQ7wJe2phqdH9Y/edit) for each
   screen created and uploaded to Drive

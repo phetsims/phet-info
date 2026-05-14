@@ -4,7 +4,7 @@
 
 What links will make reviewing these code changes as straightforward as possible?
 
-- Resolves phetsims/{{repo}}#{{issueNumber}}
+- Resolves phetsims/{{repo}}/{{issueNumber}}
 - Deploy preview
 - User Story
 - Design doc

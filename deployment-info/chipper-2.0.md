@@ -2,29 +2,8 @@
 
 # Table of Contents
 
-* <!-- TOC -->
 * [Building simulation](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#building-simulations)
-* [Deployment Info for chipper 2.0](#deployment-info-for-chipper-20)
-* [Table of Contents](#table-of-contents)
-* [Building simulations](#building-simulations)
-* [Updating supported brands](#updating-supported-brands)
-* [Building standalone repositories](#building-standalone-repositories)
-* [Deploying simulations](#deploying-simulations)
-  * [Running commands in perennial](#running-commands-in-perennial)
-  * [If working off campus, install the VPN](#if-working-off-campus-install-the-vpn)
-  * [Configure build-local.json settings](#configure-build-localjson-settings)
-  * [Configure remote ~/.bashrc](#configure-remote-bashrc)
-  * [Configure an RSA key](#configure-an-rsa-key)
-  * [Dev deployments](#dev-deployments)
-  * [One-off deployments](#one-off-deployments)
-  * [RC/production deployments and release branches](#rcproduction-deployments-and-release-branches)
-    * [If the release branch does not yet exist](#if-the-release-branch-does-not-yet-exist)
-    * [RC/production deployment on an existing branch](#rcproduction-deployment-on-an-existing-branch)
-    * [Manual maintenance patching](#manual-maintenance-patching)
-  * [Prototype deployments](#prototype-deployments)
-* [Branch Protections](#branch-protections)
-* [Deploying pre-chipper-2.0 things](#deploying-pre-chipper-20-things)
-<!-- TOC -->[Updating supported brands](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#updating-supported-brands)
+* [Updating supported brands](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#updating-supported-brands)
 * [Building standalone repositories](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#building-standalone-repositories)
 * [Building wrapper repositories](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#building-standalone-repositories)
 * [Deploying simulations](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#deploying-simulations)
@@ -325,33 +304,6 @@ using `grunt prototype`, with the following differences:
     the [HTML5 Prototypes Google Doc](https://docs.google.com/document/d/1d9j8OGO7qPgdL2YvdMeSbztYt7hGXiAL7hAQLXnH-bU/edit)
   - Notify AP so that he can announce on social media.
   - Notify ON so that he can announce via email.
-
-## Redeploying Screenshots for a Sim
-
-If we do everything correctly, screenshots should be updated prior to a release branch being created for a sim, and
-they will be deployed as part of the normal deployment process. However, if that step was missed, or if you need to
-update screenshots for some other reason, you can do so by running the following command:
-
-```
-cd perennial-alias; grunt deploy-images --simulation=<sim-name>
-```
-
-It can take a while for the updates to show up on the main website due to caching, but you can check immediately using
-phet-origin.colorado.edu.  As a real world example, screenshots were updated in May 2026 for Isotopes and Atomic Mass
-using the command:
-
-```
-cd perennial-alias; grunt deploy-images --simulation=isotopes-and-atomic-mass
-```
-
-...and the images were then verified by checking:
-https://phet-origin.colorado.edu/sims/html/isotopes-and-atomic-mass/latest/isotopes-and-atomic-mass-900-alt2.png
-https://phet-origin.colorado.edu/sims/html/isotopes-and-atomic-mass/latest/isotopes-and-atomic-mass-900-alt1.png
-https://phet-origin.colorado.edu/sims/html/isotopes-and-atomic-mass/latest/isotopes-and-atomic-mass-900.png
-.
-.
-.
-
 
 # Branch Protections
 
