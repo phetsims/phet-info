@@ -76,7 +76,7 @@ to automatically keep this in sync with the code.
 ### RectangularMomentaryButton | RoundMomentaryButton | RectangularToggleButton | RoundToggleButton | RectangularStickyToggleButton | RoundStickyToggleButton
 
 * accessibleContextResponseOn
-* accessibleContextResponseOn
+* accessibleContextResponseOff
 
 ### RectangularToggleButton | RoundToggleButton
 
