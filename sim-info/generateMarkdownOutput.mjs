@@ -7,10 +7,8 @@ import yaml from 'js-yaml';
  * List repos per developer
  *
  * Usage:
- * cd totality/phet-info
- * npm ci
- * cd totality
- * ./perennial-alias/bin/sage run phet-info/sim-info/generateMarkdownOutput.mjs
+ * cd root
+ * sage run phet-info/sim-info/generateMarkdownOutput.mjs
  *
  * @author Michael Kauzmann (PhET Interactive Simulations)
  */

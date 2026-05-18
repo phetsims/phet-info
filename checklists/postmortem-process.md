@@ -35,6 +35,12 @@
 - [ ]  **6. Action items**
 - Note important items in the postmortem GitHub issue, and create issues for any tasks the require action, such as
   updating documents, leftover TODOs, etc.
+  - Record the following AI Efficiency Metrics in the postmortem Github issue
+    - AI Models Used (ChatGPT / Opus / Other - specify)
+    - AI Tools Used (Claude Code CLI/Codex/Cursor/GitHub CLI/GitHub Copilot IDE plugin/Other - specify)
+    - AI Technique Used (Ask/Agent/Plan)
+    - Level of Difficult (Easy/Medium/Hard)
+    - Lines of Coded Added  
 - Action Item Questions:
   - Suggest updates to project process at next retrospective? 
   - Modifications to sim checklist?

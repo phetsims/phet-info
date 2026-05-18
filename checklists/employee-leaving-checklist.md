@@ -6,7 +6,6 @@
 - [ ] Ensure your address is up to date in myCUinfo. This ensures you will receive your W-2 in a timely manner.
 - [ ] Inform committees/team you are working on of your resignation.
 - [ ] Submit final my.leave timesheet as soon as possible (once your last day is finalized)
-- [ ] Review [CU Digital Offboarding required actions](https://oit.colorado.edu/support/offboarding)
 
 ### Turn in all university property to Physics department or PhET:
 

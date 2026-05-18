@@ -37,7 +37,7 @@
 - [ ] Create "Interview-Prep" issue in sim-specific repo ([Template](https://github.com/phetsims/phet-info/blob/main/checklists/interview-prep-issue-template))
 - [ ] Wireframes complete
 - [ ] Mockups complete
-  - [ ] Mockups checked for [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0) (review radio buttons due to this [issue](https://github.com/phetsims/sun/issues/977))
+  - [ ] Mockups checked for [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0)
   - [ ] [Essential Exceptions](https://docs.google.com/document/d/1buKmqjn9hiYrUpPjcEeAmgX0HDd-KO2G87aKBq5Gjjw/edit?usp=sharing) noted
 - [ ] Carefully review `?showPointerAreas` for mouse and touch areas
 - [ ] Check strings using `?stringTest=dynamic` for layout changes and readability
@@ -75,7 +75,7 @@
 ### Post Publication
 
 - [ ] [Prepare and Update Sim Page Info](https://docs.google.com/document/d/1JtFR0paPJIU19ybn3SwkMO-ZvRCr2a_KRMPUe-OikAc/edit?tab=t.0#heading=h.94p3cgxenan4) (keywords, (filter) categories, description, learning goals, related sims, inclusive features)
-- [ ] Add sim to [Inclusive Features Tracking Spreadsheet](https://o365coloradoedu.sharepoint.com/:x:/r/sites/PHYS-phet-pilot/PhET%20Files/PhET%20Files/PhET%20Accessibility/WCAG/Inclusive%20Features%20Tracking%20Spreadsheet.xlsx?d=w2727bf49194f4987ad94fab72fd43554&csf=1&web=1&e=VPaiH1) and indicate current inclusive features. Republish (Share > Publish to Web > Republish) so changes are reflected in the [published version](https://o365coloradoedu.sharepoint.com/:x:/s/PHYS-phet-pilot/IQA_Q_ej54JpQpjv0-NCsQrsASNETpDFx28-XpeJUf8XXsQ?rtime=gtzW1NSb3kg&nav=cHVibGlzaFZpZXc).
+- [ ] Update the [metadata spreadsheet](https://o365coloradoedu.sharepoint.com/:x:/r/sites/PHYS-phet-pilot/PhET%20Files/PhET%20Files/PhET%20Accessibility/WCAG/Inclusive%20Features%20Tracking%20Spreadsheet.xlsx?d=w2727bf49194f4987ad94fab72fd43554&csf=1&web=1&e=VPaiH1) to reflect current inclusive features included in the sim (should match metadata on website)
 - [ ] **Make sim visible on website (Invisible -> Published)**
   - [ ] Clear "Metadata caches" on
   the [Basic Administration Caches](https://phet.colorado.edu/?wicket:bookmarkablePage=:edu.colorado.phet.website.admin.AdminCachesPage)
@@ -86,10 +86,13 @@
 - [ ] Announce sim publication in #general Slack channel and celebrate!
 - [ ] Alert translators that a new sim is available for translation [New Sim Admin](https://phet.colorado.edu/admin/simulation)
   - [ ]  Select the sim, SEND NEW SIM EMAIL. This sends an email to _all_ trusted translators notifying the sim is available for translation
-- Legends of Learning (LoL) Partnership Tasks, see [LoL Workflow](https://docs.google.com/document/d/1EFI_pCejffRFzVg7KZRSACJ6fpCH3lbEIH3DSD26xTs/edit?tab=t.0)
-  - [ ] Icons for each screen created and uploaded to SharePoint
-  - [ ] Metadata for each screen (description, vocab words, questions for before/after sim use)
-  - [ ] [Deliver](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=0) and notify LoL contact
+- Legends of Learning (LoL) Partnership Tasks
+  - [ ] [Icons](https://docs.google.com/document/d/1GmLNE31gs8hQYGze3xwmN9k7B6gu7lQ7wJe2phqdH9Y/edit) for each
+  screen created and uploaded to Drive
+  - [ ] [Metadata](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=562591429)
+  for each screen (description, vocab words, questions for before/after sim use)
+  - [ ] [Deliver](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=0)
+- ~~Send Simulation Notification from the Admin page (to alert translators)~~
 - [ ] Decide as a team if a postmortem is applicable, and schedule (Date: //)
 <!-- If this todo comes back into focus for new sims, leaving here for now: - [ ] Create "sim primer" issue~~ (out of scope for 2024 onward) -->
 

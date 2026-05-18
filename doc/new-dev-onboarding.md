@@ -101,6 +101,7 @@ push, and commit behaviors.
   - Sims should load, test, and lint without errors
   - Pre-Commit Hooks help catch errors, read more below.
 - Push code frequently (some devs push after every commit).
+  - Recommended to use the `push-all.sh` script in perennial
 
 ### Pre-Commit Hooks
 

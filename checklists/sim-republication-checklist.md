@@ -1,6 +1,6 @@
 # {{SIM_NAME}} {{VERSION}} Republication Checklist
 
-(see [Sim Checklist](https://github.com/phetsims/totality/blob/main/phet-info/checklists/sim-checklist.md#design-pre-qa) for any items missing from this checklist that are a part of your sim update (e.g., PhET-iO))
+(see [Sim Checklist](https://github.com/phetsims/phet-info/blob/main/checklists/sim-checklist.md#design-pre-qa) for any items missing from this checklist that are a part of your sim update (e.g., PhET-iO))
 
 ## Design
 
@@ -29,20 +29,20 @@
 ### Design (Pre-QA)
 
 - [ ] Update (or create) design doc(s) to reflect sim updates and feature additions, as needed
-- [ ] Create "Interview-Prep" issue in sim-specific repo ([Template](https://github.com/phetsims/totality/blob/main/phet-info/checklists/interview-prep-issue-template.md))
+- [ ] Create "Interview-Prep" issue in sim-specific repo ([Template](https://github.com/phetsims/phet-info/blob/main/checklists/interview-prep-issue-template))
 - **If applicable to your update:**
-  - [ ] Core Description reviewed by external designer - [CORE REVIEW CHECKLIST](https://github.com/phetsims/totality/blob/main/phet-info/checklists/core-description-review-checklist.md)
-  - [ ] Verify [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0) (review radio buttons due to this [issue](https://github.com/phetsims/sun/issues/977))
+  - [ ] Core Description reviewed by external designer - [CORE REVIEW CHECKLIST](https://github.com/phetsims/phet-info/blob/main/checklists/core-description-review-checklist.md)
+  - [ ] Verify [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0)
   - [ ] Add to Essential Exceptions doc ([guidelines](https://docs.google.com/document/d/1NjLGmGr2Oi9A9D9SCH5WAgOhpA7ysmuvv0Jn_batPVU/edit?tab=t.0#heading=h.c063kqhkkg))
   - [ ] Carefully review `?showPointerAreas` for mouse and touch areas
   - [ ] Check strings using `?stringTest=dynamic` for layout changes and readability
   - [ ] PhET-iO
-    - [ ] Determine any custom PhET-iO needs (schedule separate PhET-iO design meeting if needed)
+    - [ ] (after wireframing) Determine any custom PhET-iO needs (schedule separate PhET-iO design meeting if needed)
     - [ ] PhET-iO tree review complete
     - [ ] `phetioFeatured` elements identified/updated
     - [ ] Create/update examples.md
 - [ ] Lead designer final review before QA (Date: //)
-  - [ ] (if applicable) Obtain external design team/partner approval
+  - [ ] (if applicable) Obtain external design team/partners approval
 
 ### Publication Prep
 
@@ -51,17 +51,18 @@
   - [ ] Schedule Newsletter/Emails [here](https://docs.google.com/document/d/1LQYwDdGngcJkbOu2M4rP-Yr-dX-W5KQHavScRRluRHg/edit?usp=sharing)
 - [ ] After submitting RC.1 to QA and at least 2 week(s) prior to the Target Publication Date (to be used for marketing communications):
   - [ ] Update teacher tips (query parameters, new features, model simplification changes, etc.)
-  - [ ] Upload new screenshots to sim's assets folder in totality (including screen-specific screenshots, taken with `?screens`)
+  - [ ] Upload new screenshots to assets folder in github (including screen-specific screenshots)
   - [ ] Update release-notes.md with developer
-  - [ ] Update [responsible_team.yaml](https://github.com/phetsims/totality/blob/main/phet-info/sim-info/responsible_team.yaml), as appropriate
-  - [ ] Verify updates to credits with team (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/totality/blob/main/joist/js/CreditsNode.ts))
+  - [ ] Update responsible_dev.json, as appropriate
+  - [ ] Verify updates to credits with team (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
 
 ### Post Publication
 
 - [ ] Update Sim Page Info, including tagging any new inclusive features on website
-- [ ] Update the [Inclusive Features Tracking Spreadsheet](https://o365coloradoedu.sharepoint.com/:x:/r/sites/PHYS-phet-pilot/PhET%20Files/PhET%20Files/PhET%20Accessibility/WCAG/Inclusive%20Features%20Tracking%20Spreadsheet.xlsx?d=w2727bf49194f4987ad94fab72fd43554&csf=1&web=1&e=VPaiH1) and indicate current inclusive features. Republish (Share > Publish to Web > Republish) so changes are reflected in the [published version](https://o365coloradoedu.sharepoint.com/:x:/s/PHYS-phet-pilot/IQA_Q_ej54JpQpjv0-NCsQrsASNETpDFx28-XpeJUf8XXsQ?rtime=gtzW1NSb3kg&nav=cHVibGlzaFZpZXc).
+- [ ] Update the [metadata spreadsheet](https://o365coloradoedu.sharepoint.com/:x:/r/sites/PHYS-phet-pilot/PhET%20Files/PhET%20Files/PhET%20Accessibility/WCAG/Inclusive%20Features%20Tracking%20Spreadsheet.xlsx?d=w2727bf49194f4987ad94fab72fd43554&csf=1&web=1&e=VPaiH1) to reflect current inclusive features included in the sim (should match metadata on website)
 - [ ] Alert translators (if there have been significant string changes or additions) [New Sim Admin](https://phet.colorado.edu/admin/simulation)
   - [ ] Select the sim, SEND UPDATE SIM EMAIL. This sends an email to translators _who submitted a past translation of this sim_ notifying that new/changed strings are available.
+- [ ] Create a GitHub issue for @oliver-phet to alert translators if there have been significant string changes (manual process since Nov 2024)
 - [ ] Write newsletter announcement
 - [ ] Update website credits
 - [ ] Message #website-public to ask web devs to add the latest version to PhET Studio
@@ -79,7 +80,7 @@
 - [ ] Pre-publication items
   - [ ] Memory leak testing
   - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks -
-    see [conventions](https://github.com/phetsims/totality/blob/main/joist/js/CreditsNode.ts)
+    see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
   - [ ] Submit RC.1 to QA and Finalize release-notes.md with designer.
   - [ ] Add CT tests for public query parameters that need testing. See examples
     in [listContinuousTests.js](https://github.com/phetsims/perennial/blob/main/js/listContinuousTests.js)

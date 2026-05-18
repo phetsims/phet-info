@@ -253,54 +253,44 @@ Because the YAML branches are just normal key/value entries, auto-formatters kee
 
 #### Multiline Strings
 
-Use `>-` for strings that are long and need to be broken into multiple lines for readability in the YAML file. It folds
-line breaks into spaces and strips the final trailing newline. This keeps string content within the typical character
-limit we use in our style guidelines while preserving the intended single-line string.
+Use `|-` for multiline strings. In Fluent, subsequent lines of a single message must be indented.
 
 ```yaml
-longDescription: >-
-  This string is long enough that it is easier to read in the YAML file when it is broken across multiple lines,
-  but it will be processed as a single line of text.
+# Note the indentation on the second and third lines
+myMultilineString: |-
+  This is the first line.
+   This is the second line.
+   This is the third line.
 ```
-
-Use `|-` for strings that use Fluent syntax. It preserves line breaks in the YAML value and strips the final trailing
-newline. This is necessary for Fluent selector syntax. In Fluent, subsequent lines of a single message must be indented.
-
-```yaml
-soluteTypesOnOutside: |-
-  { $count ->
-    [one] { $count } solute type on outside
-   *[other] { $count } solute types on outside
-  }
-```
-
-Do not rely on YAML whitespace to force paragraphs, spacing, or other presentation structure in accessible descriptions.
-A11y View and parts of the core description implementation may normalize or strip whitespace.
 
 ##### Multiline Examples from membrane-transport
 
 ```yaml
-
 # Simple multiline descriptive text
-intro:              >-
-                    An observation window zooms in on a cross-section of a cell's membrane.
-                    The membrane consists of a wiggling phospholipid bilayer, a double-layered sheet
-                    that separates fluids inside and outside of cell. When added to outside or inside,
-                    solute particles are suspended in fluid and randomly move with Brownian motion.
+intro: |-
+  An observation window zooms in on a cross-section of a cell's membrane.
+    The membrane consists of a wiggling phospholipid bilayer, a double-layered sheet
+    that separates fluids inside and outside of cell. When added to outside or inside,
+    solute particles are suspended in fluid and randomly move with Brownian motion.
+
+# Multiline accessibility help text
+accessibleHelpText: |-
+  Add up to 7 proteins to membrane. Use keyboard shortcuts to grab, sort,
+    and release proteins into membrane.
 
 # Multiline with Fluent selectors
-accessibleName:     |-
-                    { $ligandType ->
-                      [starLigand]     Star Ligand
-                      *[triangleLigand] Triangle Ligand
-                    }
+accessibleName: |-
+  { $ligandType ->
+    [starLigand]     Star Ligand
+    *[triangleLigand] Triangle Ligand
+  }
 
 # Complex multiline with multiple conditional branches
 accessibleHelpText: |-
-                    Membrane potential is { a11y.membranePotentialValue }. Proteins in membrane, {$typeCount ->
-                      [one] { $typeCount } type
-                      *[other] { $typeCount } types
-                    }. Look for Solute Controls to add or remove solutes types.
+  Membrane potential is { a11y.membranePotentialValue }. Proteins in membrane, {$typeCount ->
+    [one] { $typeCount } type
+    *[other] { $typeCount } types
+  }. Look for Solute Controls to add or remove solutes types.
 ```
 
 #### Quoting
