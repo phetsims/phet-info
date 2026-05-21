@@ -341,7 +341,7 @@ various features, not all are always include. Ignore sections that do not apply.
       keyboard help dialog content should use the `HotkeyData`. This factors used keys into a single
       location and supports auto-generated documentation about used keys.
 - [ ] Does this sim use specific keyboard shortcuts (aka hotkeys) that overlap with global shortcuts? This includes the use of
-  modifier keys like in https://github.com/phetsims/ratio-and-proportion/issues/287. See https://phetsims.github.io/binder/#hotkeys 
+  modifier keys like in https://github.com/phetsims/ratio-and-proportion/issues/287. See https://phetsims.github.io/binder/#hotkeys
   for a list of all global shortcuts in common code.
 
 ### Interactive Description

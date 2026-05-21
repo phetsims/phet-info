@@ -37,7 +37,7 @@
 - [ ] Create "Interview-Prep" issue in sim-specific repo ([Template](https://github.com/phetsims/phet-info/blob/main/checklists/interview-prep-issue-template))
 - [ ] Wireframes complete
 - [ ] Mockups complete
-  - [ ] Mockups checked for [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0)
+  - [ ] Mockups checked for [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0) (review radio buttons due to this [issue](https://github.com/phetsims/sun/issues/977))
   - [ ] [Essential Exceptions](https://docs.google.com/document/d/1buKmqjn9hiYrUpPjcEeAmgX0HDd-KO2G87aKBq5Gjjw/edit?usp=sharing) noted
 - [ ] Carefully review `?showPointerAreas` for mouse and touch areas
 - [ ] Check strings using `?stringTest=dynamic` for layout changes and readability
