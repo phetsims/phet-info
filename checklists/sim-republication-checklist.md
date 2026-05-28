@@ -1,6 +1,6 @@
 # {{SIM_NAME}} {{VERSION}} Republication Checklist
 
-(see [Sim Checklist](https://github.com/phetsims/phet-info/blob/main/checklists/sim-checklist.md#design-pre-qa) for any items missing from this checklist that are a part of your sim update (e.g., PhET-iO))
+(see [Sim Checklist](https://github.com/phetsims/totality/blob/main/phet-info/checklists/sim-checklist.md#design-pre-qa) for any items missing from this checklist that are a part of your sim update (e.g., PhET-iO))
 
 ## Design
 
@@ -29,9 +29,9 @@
 ### Design (Pre-QA)
 
 - [ ] Update (or create) design doc(s) to reflect sim updates and feature additions, as needed
-- [ ] Create "Interview-Prep" issue in sim-specific repo ([Template](https://github.com/phetsims/phet-info/blob/main/checklists/interview-prep-issue-template))
+- [ ] Create "Interview-Prep" issue in sim-specific repo ([Template](https://github.com/phetsims/totality/blob/main/phet-info/checklists/interview-prep-issue-template.md)
 - **If applicable to your update:**
-  - [ ] Core Description reviewed by external designer - [CORE REVIEW CHECKLIST](https://github.com/phetsims/phet-info/blob/main/checklists/core-description-review-checklist.md)
+  - [ ] Core Description reviewed by external designer - [CORE REVIEW CHECKLIST](https://github.com/phetsims/totality/blob/main/phet-info/checklists/core-description-review-checklist.md)
   - [ ] Verify [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0) (review radio buttons due to this [issue](https://github.com/phetsims/sun/issues/977))
   - [ ] Add to Essential Exceptions doc ([guidelines](https://docs.google.com/document/d/1NjLGmGr2Oi9A9D9SCH5WAgOhpA7ysmuvv0Jn_batPVU/edit?tab=t.0#heading=h.c063kqhkkg))
   - [ ] Carefully review `?showPointerAreas` for mouse and touch areas
@@ -54,7 +54,7 @@
   - [ ] Upload new screenshots to assets folder in github (including screen-specific screenshots)
   - [ ] Update release-notes.md with developer
   - [ ] Update responsible_dev.json, as appropriate
-  - [ ] Verify updates to credits with team (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
+  - [ ] Verify updates to credits with team (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/totality/blob/main/joist/js/CreditsNode.ts))
 
 ### Post Publication
 
@@ -80,7 +80,7 @@
 - [ ] Pre-publication items
   - [ ] Memory leak testing
   - [ ] Verify credits with lead (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks -
-    see [conventions](https://github.com/phetsims/joist/blob/main/js/CreditsNode.js))
+    see [conventions](https://github.com/phetsims/totality/blob/main/joist/js/CreditsNode.ts)
   - [ ] Submit RC.1 to QA and Finalize release-notes.md with designer.
   - [ ] Add CT tests for public query parameters that need testing. See examples
     in [listContinuousTests.js](https://github.com/phetsims/perennial/blob/main/js/listContinuousTests.js)

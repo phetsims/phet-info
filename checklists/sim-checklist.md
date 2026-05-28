@@ -75,7 +75,7 @@
 ### Post Publication
 
 - [ ] [Prepare and Update Sim Page Info](https://docs.google.com/document/d/1JtFR0paPJIU19ybn3SwkMO-ZvRCr2a_KRMPUe-OikAc/edit?tab=t.0#heading=h.94p3cgxenan4) (keywords, (filter) categories, description, learning goals, related sims, inclusive features)
-- [ ] Update the [metadata spreadsheet](https://o365coloradoedu.sharepoint.com/:x:/r/sites/PHYS-phet-pilot/PhET%20Files/PhET%20Files/PhET%20Accessibility/WCAG/Inclusive%20Features%20Tracking%20Spreadsheet.xlsx?d=w2727bf49194f4987ad94fab72fd43554&csf=1&web=1&e=VPaiH1) to reflect current inclusive features included in the sim (should match metadata on website)
+- [ ] Add sim to [Inclusive Features Tracking Spreadsheet](https://o365coloradoedu.sharepoint.com/:x:/r/sites/PHYS-phet-pilot/PhET%20Files/PhET%20Files/PhET%20Accessibility/WCAG/Inclusive%20Features%20Tracking%20Spreadsheet.xlsx?d=w2727bf49194f4987ad94fab72fd43554&csf=1&web=1&e=VPaiH1) and indicate current inclusive features. Republish (Share > Publish to Web > Republish) so changes are reflected in the [published version](https://o365coloradoedu.sharepoint.com/:x:/s/PHYS-phet-pilot/IQA_Q_ej54JpQpjv0-NCsQrsASNETpDFx28-XpeJUf8XXsQ?rtime=gtzW1NSb3kg&nav=cHVibGlzaFZpZXc).
 - [ ] **Make sim visible on website (Invisible -> Published)**
   - [ ] Clear "Metadata caches" on
   the [Basic Administration Caches](https://phet.colorado.edu/?wicket:bookmarkablePage=:edu.colorado.phet.website.admin.AdminCachesPage)
