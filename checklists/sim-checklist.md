@@ -98,7 +98,7 @@
     - AI Models Used (ChatGPT / Opus / Other - specify)
     - AI Tools Used (Claude Code CLI/Codex/Cursor/GitHub CLI/GitHub Copilot IDE plugin/Other - specify)
     - AI Technique Used (Ask/Agent/Plan)
-    - Level of Difficult for Code Review (Easy/Medium/Hard)
+    - Level of Difficulty for Code Review (Easy/Medium/Hard)
     - Net Lines of Coded Added
 <!-- If this todo comes back into focus for new sims, leaving here for now: - [ ] Create "sim primer" issue~~ (out of scope for 2024 onward) -->
 
