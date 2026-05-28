@@ -94,6 +94,12 @@
   - [ ] [Deliver](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=0)
 - ~~Send Simulation Notification from the Admin page (to alert translators)~~
 - [ ] Decide as a team if a postmortem is applicable, and schedule (Date: //)
+- [ ] Create a Github issue in the Simulation repo titled "AI Efficiency Metrics", record the following and assign it to @brent-phet:
+    - AI Models Used (ChatGPT / Opus / Other - specify)
+    - AI Tools Used (Claude Code CLI/Codex/Cursor/GitHub CLI/GitHub Copilot IDE plugin/Other - specify)
+    - AI Technique Used (Ask/Agent/Plan)
+    - Level of Difficult (Easy/Medium/Hard)
+    - Lines of Coded Added
 <!-- If this todo comes back into focus for new sims, leaving here for now: - [ ] Create "sim primer" issue~~ (out of scope for 2024 onward) -->
 
 ## Developer Implementation
