@@ -69,7 +69,13 @@
 - [ ] Create 2-3 example presets ([guidelines](https://docs.google.com/document/d/1gZmobd5h1VBZxjwT6ZuDhFIRWWQvQUKD_VgUDZW5-io/edit?tab=t.0))
   - [ ] If already in PhET Studio, recreate the example presets on latest ([instructions](https://docs.google.com/document/d/1gZmobd5h1VBZxjwT6ZuDhFIRWWQvQUKD_VgUDZW5-io/edit?tab=t.0#heading=h.tk5tep7h8l7a))
 - [ ] Decide as a team if a postmortem is applicable, and schedule (Date: //)
-
+- [ ] Create a Github issue in the Simulation repo titled "AI Efficiency Metrics", record the following and assign it to @brent-phet:
+    - AI Models Used (ChatGPT / Opus / Other - specify)
+    - AI Tools Used (Claude Code CLI/Codex/Cursor/GitHub CLI/GitHub Copilot IDE plugin/Other - specify)
+    - AI Technique Used (Ask/Agent/Plan)
+    - Level of Difficult (Easy/Medium/Hard)
+    - Lines of Coded Added
+      
 ## Developer Implementation
 
 - [ ] Feature-complete (Date: //)
