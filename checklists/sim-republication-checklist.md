@@ -29,7 +29,7 @@
 ### Design (Pre-QA)
 
 - [ ] Update (or create) design doc(s) to reflect sim updates and feature additions, as needed
-- [ ] Create "Interview-Prep" issue in sim-specific repo ([Template](https://github.com/phetsims/totality/blob/main/phet-info/checklists/interview-prep-issue-template.md)
+- [ ] Create "Interview-Prep" issue in sim-specific repo ([Template](https://github.com/phetsims/totality/blob/main/phet-info/checklists/interview-prep-issue-template.md))
 - **If applicable to your update:**
   - [ ] Core Description reviewed by external designer - [CORE REVIEW CHECKLIST](https://github.com/phetsims/totality/blob/main/phet-info/checklists/core-description-review-checklist.md)
   - [ ] Verify [color contrast](https://docs.google.com/document/d/1rlVX9DHXclCtpcFV-5YAoA0uI0Ui_H1mzPJck7v8PcM/edit?tab=t.0) (review radio buttons due to this [issue](https://github.com/phetsims/sun/issues/977))
@@ -37,12 +37,12 @@
   - [ ] Carefully review `?showPointerAreas` for mouse and touch areas
   - [ ] Check strings using `?stringTest=dynamic` for layout changes and readability
   - [ ] PhET-iO
-    - [ ] (after wireframing) Determine any custom PhET-iO needs (schedule separate PhET-iO design meeting if needed)
+    - [ ] Determine any custom PhET-iO needs (schedule separate PhET-iO design meeting if needed)
     - [ ] PhET-iO tree review complete
     - [ ] `phetioFeatured` elements identified/updated
     - [ ] Create/update examples.md
 - [ ] Lead designer final review before QA (Date: //)
-  - [ ] (if applicable) Obtain external design team/partners approval
+  - [ ] (if applicable) Obtain external design team/partner approval
 
 ### Publication Prep
 
@@ -51,9 +51,9 @@
   - [ ] Schedule Newsletter/Emails [here](https://docs.google.com/document/d/1LQYwDdGngcJkbOu2M4rP-Yr-dX-W5KQHavScRRluRHg/edit?usp=sharing)
 - [ ] After submitting RC.1 to QA and at least 2 week(s) prior to the Target Publication Date (to be used for marketing communications):
   - [ ] Update teacher tips (query parameters, new features, model simplification changes, etc.)
-  - [ ] Upload new screenshots to assets folder in github (including screen-specific screenshots)
+  - [ ] Upload new screenshots to sim's assets folder in totality (including screen-specific screenshots, taken with `?screens`)
   - [ ] Update release-notes.md with developer
-  - [ ] Update responsible_dev.json, as appropriate
+  - [ ] Update [responsible_team.yaml](https://github.com/phetsims/totality/blob/main/phet-info/sim-info/responsible_team.yaml), as appropriate
   - [ ] Verify updates to credits with team (Team, Contributors, QA, Graphic Arts, Sound Design, any Thanks - see [conventions](https://github.com/phetsims/totality/blob/main/joist/js/CreditsNode.ts))
 
 ### Post Publication
@@ -62,7 +62,6 @@
 - [ ] Update the [Inclusive Features Tracking Spreadsheet](https://o365coloradoedu.sharepoint.com/:x:/r/sites/PHYS-phet-pilot/PhET%20Files/PhET%20Files/PhET%20Accessibility/WCAG/Inclusive%20Features%20Tracking%20Spreadsheet.xlsx?d=w2727bf49194f4987ad94fab72fd43554&csf=1&web=1&e=VPaiH1) and indicate current inclusive features. Republish (Share > Publish to Web > Republish) so changes are reflected in the [published version](https://o365coloradoedu.sharepoint.com/:x:/s/PHYS-phet-pilot/IQA_Q_ej54JpQpjv0-NCsQrsASNETpDFx28-XpeJUf8XXsQ?rtime=gtzW1NSb3kg&nav=cHVibGlzaFZpZXc).
 - [ ] Alert translators (if there have been significant string changes or additions) [New Sim Admin](https://phet.colorado.edu/admin/simulation)
   - [ ] Select the sim, SEND UPDATE SIM EMAIL. This sends an email to translators _who submitted a past translation of this sim_ notifying that new/changed strings are available.
-- [ ] Create a GitHub issue for @oliver-phet to alert translators if there have been significant string changes (manual process since Nov 2024)
 - [ ] Write newsletter announcement
 - [ ] Update website credits
 - [ ] Message #website-public to ask web devs to add the latest version to PhET Studio
