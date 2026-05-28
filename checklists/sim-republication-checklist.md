@@ -59,7 +59,7 @@
 ### Post Publication
 
 - [ ] Update Sim Page Info, including tagging any new inclusive features on website
-- [ ] Update the [metadata spreadsheet](https://o365coloradoedu.sharepoint.com/:x:/r/sites/PHYS-phet-pilot/PhET%20Files/PhET%20Files/PhET%20Accessibility/WCAG/Inclusive%20Features%20Tracking%20Spreadsheet.xlsx?d=w2727bf49194f4987ad94fab72fd43554&csf=1&web=1&e=VPaiH1) to reflect current inclusive features included in the sim (should match metadata on website)
+- [ ] Update the [Inclusive Features Tracking Spreadsheet](https://o365coloradoedu.sharepoint.com/:x:/r/sites/PHYS-phet-pilot/PhET%20Files/PhET%20Files/PhET%20Accessibility/WCAG/Inclusive%20Features%20Tracking%20Spreadsheet.xlsx?d=w2727bf49194f4987ad94fab72fd43554&csf=1&web=1&e=VPaiH1) and indicate current inclusive features. Republish (Share > Publish to Web > Republish) so changes are reflected in the [published version](https://o365coloradoedu.sharepoint.com/:x:/s/PHYS-phet-pilot/IQA_Q_ej54JpQpjv0-NCsQrsASNETpDFx28-XpeJUf8XXsQ?rtime=gtzW1NSb3kg&nav=cHVibGlzaFZpZXc).
 - [ ] Alert translators (if there have been significant string changes or additions) [New Sim Admin](https://phet.colorado.edu/admin/simulation)
   - [ ] Select the sim, SEND UPDATE SIM EMAIL. This sends an email to translators _who submitted a past translation of this sim_ notifying that new/changed strings are available.
 - [ ] Create a GitHub issue for @oliver-phet to alert translators if there have been significant string changes (manual process since Nov 2024)
