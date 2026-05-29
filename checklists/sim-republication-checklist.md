@@ -72,7 +72,7 @@
 - [ ] Create a Github issue in the Simulation repo titled "AI Efficiency Metrics", record the following and assign it to @brent-phet:
     - AI Models Used (ChatGPT / Opus / Other - specify)
     - AI Tools Used (Claude Code CLI/Codex/Cursor/GitHub CLI/GitHub Copilot IDE plugin/Other - specify)
-    - AI Technique Used (Ask/Agent/Plan)
+    - AI Technique Used (Ask/Agent/Harness/Plan)
     - Level of Difficulty for Code Review (Easy/Medium/Hard)
     - Net Lines of Coded Added
       
