@@ -86,13 +86,10 @@
 - [ ] Announce sim publication in #general Slack channel and celebrate!
 - [ ] Alert translators that a new sim is available for translation [New Sim Admin](https://phet.colorado.edu/admin/simulation)
   - [ ]  Select the sim, SEND NEW SIM EMAIL. This sends an email to _all_ trusted translators notifying the sim is available for translation
-- Legends of Learning (LoL) Partnership Tasks
-  - [ ] [Icons](https://docs.google.com/document/d/1GmLNE31gs8hQYGze3xwmN9k7B6gu7lQ7wJe2phqdH9Y/edit) for each
-  screen created and uploaded to Drive
-  - [ ] [Metadata](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=562591429)
-  for each screen (description, vocab words, questions for before/after sim use)
-  - [ ] [Deliver](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=0)
-- ~~Send Simulation Notification from the Admin page (to alert translators)~~
+- Legends of Learning (LoL) Partnership Tasks, see [LoL Workflow](https://docs.google.com/document/d/1EFI_pCejffRFzVg7KZRSACJ6fpCH3lbEIH3DSD26xTs/edit?tab=t.0)
+  - [ ] Icons for each screen created and uploaded to SharePoint
+  - [ ] Metadata for each screen (description, vocab words, questions for before/after sim use)
+  - [ ] [Deliver](https://docs.google.com/spreadsheets/d/1umIAmhn89WN1nzcHKhYJcv-n3Oj6ps1wITc-CjWYytE/edit#gid=0) and notify LoL contact
 - [ ] Decide as a team if a postmortem is applicable, and schedule (Date: //)
 <!-- If this todo comes back into focus for new sims, leaving here for now: - [ ] Create "sim primer" issue~~ (out of scope for 2024 onward) -->
 
