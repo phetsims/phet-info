@@ -312,7 +312,7 @@ cd {{repo}}/js ; wc -l `find . -name "*.ts" -print` | sort
 - [ ] Are there any constants that are duplicated in multiple files that should be factored out into
   a `{{REPO}}Constants.js` file?
 - [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify
-  constants that might be changed in the future. (Use your judgement about which constants are likely candidates.) Does
+  constants that might be changed in the future. (Use your judgment about which constants are likely candidates.) Does
   changing the values of these constants break the sim? For example,
   see https://github.com/phetsims/plinko-probability/issues/84.
 - [ ] Is [PhetColorScheme](https://github.com/phetsims/scenery-phet/blob/main/js/PhetColorScheme.ts) used where
