@@ -1329,6 +1329,11 @@ website-scenery:
   responsibleDevs:
     - "@chrisklus"
   responsibleDesigners: []
+  
+website-singularity:
+  responsibleDevs:
+    - "@mattpen"
+  responsibleDesigners: []
 
 weddell:
   responsibleDevs:
