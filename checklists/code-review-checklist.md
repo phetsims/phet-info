@@ -312,7 +312,7 @@ cd {{repo}}/js ; wc -l `find . -name "*.ts" -print` | sort
 - [ ] Are there any constants that are duplicated in multiple files that should be factored out into
   a `{{REPO}}Constants.js` file?
 - [ ] Does the implementation rely on any specific constant values that are likely to change in the future? Identify
-  constants that might be changed in the future. (Use your judgement about which constants are likely candidates.) Does
+  constants that might be changed in the future. (Use your judgment about which constants are likely candidates.) Does
   changing the values of these constants break the sim? For example,
   see https://github.com/phetsims/plinko-probability/issues/84.
 - [ ] Is [PhetColorScheme](https://github.com/phetsims/scenery-phet/blob/main/js/PhetColorScheme.ts) used where
@@ -340,9 +340,9 @@ various features, not all are always include. Ignore sections that do not apply.
 - [ ] Does this sim use KeyboardListener? If so, keys should be defined with `HotkeyData`. Both the KeyboardListener and
       keyboard help dialog content should use the `HotkeyData`. This factors used keys into a single
       location and supports auto-generated documentation about used keys.
-- [ ] Does this sim use specific keyboard shortcuts that overlap with global shortcuts? This includes the use of
-  modifier keys like in https://github.com/phetsims/ratio-and-proportion/issues/287. Review https://phetsims.github.io/binder/ 
-  to see a list of all global modifier keys in common code.
+- [ ] Does this sim use specific keyboard shortcuts (aka hotkeys) that overlap with global shortcuts? This includes the use of
+  modifier keys like in https://github.com/phetsims/ratio-and-proportion/issues/287. See https://phetsims.github.io/binder/#hotkeys
+  for a list of all global shortcuts in common code.
 
 ### Interactive Description
 
