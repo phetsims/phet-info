@@ -235,6 +235,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | website-direct | @mattpen |  |  | 
 | website-meteor | @mattpen |  |  | 
 | website-scenery | @chrisklus |  |  | 
+| website-singularity | @mattpen |  |  | 
 | weddell | @jbphet |  |  | 
 | wilder | @jonathanolson |  | Interactive Description | 
 | xray-diffraction | @heldentodd |  |  | 
