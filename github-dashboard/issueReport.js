@@ -14,7 +14,7 @@
  * @author Agustín Vallejo (PhET Interactive Simulations)
  */
 
-const buildLocal = require( '../../perennial-alias/js/common/buildLocal' );
+const { buildLocal } = require( '../../perennial-alias/js/common/buildLocal' );
 const { Octokit } = require( 'octokit' );
 const octokit = new Octokit( {
   auth: buildLocal.phetDevGitHubAccessToken
