@@ -227,9 +227,9 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | vector-addition-equations | @pixelzoom | @arouinfar,@matthew-blackman | Sound<br/>Interactive Description | 
 | vegas | @pixelzoom |  | Sound<br/>Interactive Description | 
 | vibe | @jbphet |  |  | 
-| wave-interference | @samreid | @arouinfar | Sound | 
+| wave-interference | @samreid | @arouinfar | Sound<br/>Interactive Description<br/>Interactive Highlights | 
 | wave-on-a-string | @jonathanolson | @arouinfar | Sound<br/>Interactive Description | 
-| waves-intro | @samreid | @arouinfar | Sound<br/>Interactive Description | 
+| waves-intro | @samreid | @arouinfar | Sound<br/>Interactive Description<br/>Interactive Highlights | 
 | website | @mattpen |  |  | 
 | website-docker | @mattpen |  |  | 
 | website-direct | @mattpen |  |  | 
