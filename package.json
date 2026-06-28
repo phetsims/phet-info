@@ -7,7 +7,7 @@
     "url": "https://github.com/phetsims/phet-info.git"
   },
   "dependencies": {
-    "js-yaml": "~4.1.0"
+    "js-yaml": "~4.2.0"
   },
   "devDependencies": {
     "octokit": "^3.1.2"
