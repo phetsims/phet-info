@@ -308,7 +308,7 @@ there are some variations. The details are described in the documents linked bel
 help if this comes up for a sim you're developing.
 
 For information on the details of how the various types of publications are initiated, please see
-[chipper-2.0](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#dev-deployments).
+[sim-deployment](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#dev-deployments).
 
 For templates that can be used to set up the various QA tests, see
 [templates](https://github.com/phetsims/qa/tree/main/issue-templates).
@@ -407,7 +407,7 @@ it's probably best to ask around.
 | [Coding Conventions](./coding-conventions.md)                                                                     | PhET's TypeScript coding conventions                                              |
 | [PhET Development Overview](./phet-development-overview.md)                                                       | A checklist for evaluating simulation code                                        |
 | [PhET Code Review Checklist](../checklists/code-review-checklist.md)                                              | Yet another checklist for evaluating simulation code                              |
-| [Deployment Info for chipper 2.0](../deployment-info/chipper-2.0.md)                                              | A guide to deploying simulations for testing and ultimately to the website        |
+| [Sim Deployment Info](../deployment-info/sim-deployment.md)                                       | A guide to deploying simulations for testing and ultimately to the website        |
 | [PhET Quarterly Goal Planning](https://github.com/orgs/phetsims/projects/41/views/1)                              | Goals for current quarter (not really a doc, but important)                       |
 | [Private Features for PhET Team Members](https://github.com/phetsims/special-ops/blob/main/doc/phetTeamMember.md) | Information on hidden features. This comes up most often during game development. |
 | [Responsible Devs](../sim-info/responsible_dev.md)                                                                | Associates repos with the developer who is responsible for maintenance            |

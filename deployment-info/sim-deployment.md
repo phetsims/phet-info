@@ -3,14 +3,14 @@
 # Table of Contents
 
 * <!-- TOC -->
-* [Building simulation](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#building-simulations)
+* [Building simulation](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#building-simulations)
 * [Deployment Info for chipper 2.0](#deployment-info-for-chipper-20)
 * [Table of Contents](#table-of-contents)
 * [Building simulations](#building-simulations)
 * [Updating supported brands](#updating-supported-brands)
 * [Building standalone repositories](#building-standalone-repositories)
 * [Deploying simulations](#deploying-simulations)
-  * [Running commands in perennial](#running-commands-in-perennial)
+  * [Running commands](#running-commands)
   * [If working off campus, install the VPN](#if-working-off-campus-install-the-vpn)
   * [Configure build-local.json settings](#configure-build-localjson-settings)
   * [Configure remote ~/.bashrc](#configure-remote-bashrc)
@@ -23,35 +23,36 @@
     * [Manual maintenance patching](#manual-maintenance-patching)
   * [Prototype deployments](#prototype-deployments)
 * [Branch Protections](#branch-protections)
-* [Deploying pre-chipper-2.0 things](#deploying-pre-chipper-20-things)
-<!-- TOC -->[Updating supported brands](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#updating-supported-brands)
-* [Building standalone repositories](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#building-standalone-repositories)
-* [Building wrapper repositories](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#building-standalone-repositories)
-* [Deploying simulations](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#deploying-simulations)
-  * [Running commands in perennial](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#running-commands-in-perennial)
-  * [If working off campus, install the VPN](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#if-working-off-campus-install-the-vpn)
-  * [Configure build-local.json settings](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#configure-remote-bashrc)
-  * [Configure remote ~/.bashrc](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#configure-remote-bashrc)
-  * [Configure an RSA key](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#configure-an-rsa-key)
-  * [Dev deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#dev-deployments)
-  * [One-off deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#one-off-deployments)
-  * [RC/production deployments and release branches](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches)
-    * [If the release branch does not yet exist](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#if-the-release-branch-does-not-yet-exist)
-    * [RC/production deployment on an existing branch](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#rcproduction-deployment-on-an-existing-branch)
-    * [Manual maintenance patching](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#manual-maintenance-patching)
-  * [Prototype deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#prototype-deployments)
-  * [PhET-iO Wrapper deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#phet-io-wrapper-deployments)
-* [Branch Protections](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#branch-protections)
-* [Deploying pre-chipper-2.0 things](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#deploying-pre-chipper-20-things)
+* [Deploying pre-sim-deployment things](#deploying-pre-chipper-20-things)
+<!-- TOC -->[Updating supported brands](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#updating-supported-brands)
+* [Building standalone repositories](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#building-standalone-repositories)
+* [Building wrapper repositories](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#building-standalone-repositories)
+* [Deploying simulations](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#deploying-simulations)
+  * [Running commands in perennial](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#running-commands-in-perennial)
+  * [If working off campus, install the VPN](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#if-working-off-campus-install-the-vpn)
+  * [Configure build-local.json settings](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#configure-remote-bashrc)
+  * [Configure remote ~/.bashrc](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#configure-remote-bashrc)
+  * [Configure an RSA key](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#configure-an-rsa-key)
+  * [Dev deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#dev-deployments)
+  * [One-off deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#one-off-deployments)
+  * [RC/production deployments and release branches](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#rcproduction-deployments-and-release-branches)
+    * [If the release branch does not yet exist](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#if-the-release-branch-does-not-yet-exist)
+    * [RC/production deployment on an existing branch](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#rcproduction-deployment-on-an-existing-branch)
+    * [Manual maintenance patching](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#manual-maintenance-patching)
+  * [Prototype deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#prototype-deployments)
+  * [PhET-iO Wrapper deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#phet-io-wrapper-deployments)
+* [Branch Protections](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#branch-protections)
+* [Deploying pre-sim-deployment things](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#deploying-pre-chipper-20-things)
 
 # Building simulations
 
-`grunt` (no arguments) in a sim directory will build whatever brands (listed in build-local.json) are supported by the
-simulation. If this doesn't exist, it will fall back to adapted-from-phet. It's highly recommended that, where there is
-a `brand: 'phet'` in your build-local.json, it should be augmented by a `brands: [ 'phet', 'phet-io' ]` (or whatever
-brands you would like to build by default).
+As a general prerequisite, `npm ci` should be done at the top level of `totality/` before doing any other actions.
 
-`grunt --brands=phet,phet-io` (using `--brands`) will override and build the desired brands. If any brand given like
+`bin/grunt --repo={{SIM}}` (or using `bin/use {{SIM}}` to set the active sim) will build the simulation for brands in your
+`build-local.json`'s brand list that are supported by the simulation. It will fall back to `adapted-from-phet`. It is highly
+recommended that `build-local.json` should have `brands: [ 'phet', 'phet-io' ]`.
+
+`bin/grunt --repo={{SIM}} --brands=phet,phet-io` (using `--brands`) will override and build the desired brands. If any brand given like
 this is not supported, the build will fail out.
 
 # Updating supported brands
@@ -63,34 +64,19 @@ support) will be automatically updated by a process running on bayes (grunt gene
 # Building standalone repositories
 
 Scenery/Kite/Dot/etc. can be built as a standalone file that can be included (e.g. that file is used for Scenery
-examples and documentation). Just `grunt` in the repository should do the trick, and note that there are no brands, so
-it does not create brand directories.
+examples and documentation). Just `bin/grunt --repo=${REPO}` in the repository should do the trick, and note that there
+are no brands, so it does not create brand directories.
 
 # Deploying simulations
 
-If you haven't run perennial commands in a while, `npm prune` and `npm update` under perennial, perennial-alias and
-chipper may be needed. I'll notify for any further module changes.
+As noted above, `npm ci` at the top level of `totality/` should be done before doing any other actions.
 
-## Running commands in perennial
+## Running commands
 
-Note that all perennial commands (including those for dev/rc/production deployments) can be run from the simulation
-directory (post 12/2017). For instance, `grunt checkout-shas` now lives in perennial, and so it will add a
-`--repo={{REPO}}` command line flag to the perennial command so that it knows which repository is the target.
-
-So, for example,
-
+Build commands are run from the bin/ directory. For example:
+```sh
+bin/dev --repo={{SIM}}
 ```
-chains# grunt dev --brands=phet,phet-io
-```
-
-will run
-
-```
-perennial# grunt dev --repo=chains --brands=phet,phet-io
-```
-
-You can always run these commands from perennial directly by just adding the `--repo={{REPO}}` option. Commands listed
-below that do not include the `--repo` option assume you are running from the simulation repo.
 
 ## If working off campus, install the VPN
 
@@ -152,16 +138,19 @@ Configure an RSA key, or you will be prompted multiple times for a password duri
 ** (with a clean working copy on the sim being deployed). To deploy a dev version, run:
 
 ```sh
-grunt dev --brands={{BRANDS}}
+bin/dev --repo={{SIM}}
 ```
 
-in the simulation repository. Typically you would have `--brands=phet` or `--brands=phet,phet-io` or some combination.
+in the simulation repository. It will publish with the normally-built brands.
 
 This will do the entirety of what the checklist did before (and may prompt about certain questions). Notably, it will
 increment the version test number (e.g. the 2 in 1.3-dev.2). For example, if the package.json specified a version of '
 1.2-dev.3' before deployment, then '1.2-dev.4' will be committed and deployed.
 
 ## One-off deployments
+
+TODO: Not yet finished with totality, see https://github.com/phetsims/totality/issues/140
+NOTE: DO NOT try one-off deployments yet
 
 These are like dev deployments, but are done from a named branch that is not "main" (where the branch name does not
 contain any `-` or `.` characters). One-offs are useful to keep track of shas for maintenance or reproducibility, but
@@ -176,6 +165,7 @@ one-off. You may want to run `grunt checkout-target` first to create the one-off
 `main`.
 
 ```sh
+# DEPRECATED, will be different
 grunt create-one-off --branch={{BRANCH}}
 ```
 
@@ -183,6 +173,7 @@ This will create the branch with the relevant name, and set up the package.json 
 will build with the one-off version from the branch. To deploy a one-off version:
 
 ```sh
+# DEPRECATED, will be different
 grunt one-off --brands={{BRANDS}} --branch={{BRANCH}}
 ```
 
@@ -190,9 +181,13 @@ This will checkout the branch and its dependencies, and deploy using the "dev" v
 
 ## RC/production deployments and release branches
 
-Chipper 2.0 release branches support building of all brands. The branch name will ONLY ever be of the format
-`{{MAJOR}}.{{MINOR}}`, e.g. `1.7`, and that branch will only support building/deploying versions that match that
-major/minor combination.
+Branch versions for new branches are exclusively in the format of `{{MAJOR}}.{{MINOR}}`, e.g. `1.7`.
+
+Totality will have a branch for each "release branch" with the name `releases/{{SIM}}/{{MAJOR}}.{{MINOR}}`, e.g. `releases/area-builder/1.7`.
+This branch in general should NOT be checked out in your main working copy, will live in a worktree under
+your worktree directory (by default `totality/worktrees/` unless overridden in build-local.json). It has minimal structure,
+so checking out in your primary copy may result in unexpected issues due to deleted directories and a .gitignore that is
+more minimal.
 
 NOTE: Release branches are created for RCs. If you need to make a change after the first RC (but before publication),
 you will still want to follow the process for maintenance patches.
@@ -202,11 +197,11 @@ you will still want to follow the process for maintenance patches.
 First, make sure you have checked out all of the repo SHAs that you intend to use for the release branch. If you want to
 also deploy an RC (which is typical when creating the release branch), just run the RC deployment command, and it will
 prompt you whether the release branch should be created. For example, if `1.6` was the latest release branch, and you
-want to create `1.7` and deploy an RC, just fire off `grunt rc --branch=1.7 --brands={{BRANDS}}`.
+want to create `1.7` and deploy an RC, just fire off `bin/rc --repo={{SIM}} --branch=1.7`.
 
 If you do not want to deploy an RC when creating the release branch, instead directly do
-`grunt create-release --branch=1.7 --brands={{BRANDS}}` (which will handle all steps to create the new branch). Release
-branches should be created using either `grunt rc` or `grunt create-release`, as this sets them up with the correct
+`bin/create-release --repo={{SIM}} --branch=1.7 --brands={{BRANDS}}` (which will handle all steps to create the new branch). Release
+branches should be created using either `bin/rc` or `bin/create-release`, as this sets them up with the correct
 package.json version and dependencies.json content.
 
 NOTE: The `--brands` you include in the command will be set as the only supported brands for the release branch in the
@@ -217,18 +212,19 @@ NOTE: The `--brands` you include in the command will be set as the only supporte
 For deploying a RC (Release Candidate), execute:
 
 ```sh
-grunt rc --brands={{BRANDS}} --branch={{BRANCH}}
+bin/rc --repo={{SIM}} --branch={{BRANCH}}
 ```
 
 For deploying a production version, execute either:
 
 ```sh
-grunt production --brands={{BRANDS}} --branch={{BRANCH}}
+bin/production --repo={{SIM}} --branch={{BRANCH}}
 ```
 
 for a full production (non-prototype) sim, or
 
 ```sh
+# DEPRECATED: TODO: Needs to be redone for totality, see https://github.com/phetsims/totality/issues/140
 grunt prototype --brands={{BRANDS}} --branch={{BRANCH}}
 ```
 
@@ -239,51 +235,21 @@ notify you about any additional tasks that you will need to take afterwards.
 
 ### Manual maintenance patching
 
-NOTE: Most of these steps can be avoided by using the automated maintenance process! See the "Maintenance patches for a
-suite of sims in RC" section in automated-maintenance-process.md.
+First ensure the release branch is checked out into your worktree with:
 
-If you want to make a change to the sim's own repo on the release branch (and no changes to other dependencies), then
-generally first do the following:
+```sh
+bin/update-release --repo={{SIM}} --branch={{BRANCH}}
+```
 
-- From perennial, `grunt checkout-target --repo={{REPO}} --target={{BRANCH}}`, e.g.
-  `grunt checkout-target --repo=chains --target=1.2`.
-- Apply the change to the sim's branch (either a usual commit, or by cherry-picking a change, e.g.
-  `git cherry-pick -x {{SHA}}` in the sim repo).
-- Test it. You can `grunt` in the sim repo (the `checkout-target` above did the NPM magic for it to work)
-- Push the change to the sim branch (e.g. `git push origin 1.2`).
-
-Otherwise if a dependency (e.g. scenery or any "common" repo) needs patching:
-
-- From perennial, `grunt checkout-target --repo={{SIM}} --target={{BRANCH}}`, e.g.
-  `grunt checkout-target --repo=chains --target=1.2`.
-- Check the common repo to see if it has a branch named `{{SIM}}-{{BRANCH}}`, e.g. does scenery have a branch named
-  chains-1.2
-  - If it HAS the branch, ensure that the branch's HEAD commit is the same as the currently-checked-out commit. THEN
-    checkout the branch (e.g. `git checkout chains-1.2`) in the common repo. If the commits don't match, INVESTIGATE as
-    something went wrong before. Talk to @jonathanolson?
-  - If there IS NO branch, create it in the common repo with `git checkout -b {{SIM}}-{{BRANCH}}`, e.g.
-    `git checkout -b chains-1.2`
-- Apply the change to the dependency's branch (it's almost always a cherry-pick, e.g. `git cherry-pick -x {{SHA}}` in
-  the common repo).
-- Test it. You can `grunt` in the sim repo (the `checkout-target` above did the NPM magic for it to work)
-- Push the change to the common branch (e.g. `git push origin chains-1.2`)
-- If you didn't build it before, run `grunt` in the sim repo.
-- Copy the dependencies.json from the build directory to the top-level directory in the sim.
-  - Newer sims (chipper 2.0): `cp build/phet/dependencies.json .`
-  - Older sims: `cp build/dependencies.json .`
-- `git add dependencies.json`
-- `git commit --no-verify -m {{MESSAGE}}`, where `{{MESSAGE}}` includes the GitHub issue URL(s) for the maintenance
-  release.
-- `git push origin {{BRANCH}}`.
-
-This will ensure that the top level dependencies.json will properly reference the common-code fixed SHA, and that we'll
-always have a consistent common code branch for the sim branch.
+Then you can visit the worktree (`cd totality/worktrees/releases/{{SIM}}/{{MAJOR}}.{{MINOR}}`) and make direct changes
+there, including cherry-picking in changes from main (assuming the changes only hit the top-level directories included
+in the release branch). After making changes, you can simply push the changes (`git push origin releases/{{SIM}}/{{MAJOR}}.{{MINOR}}`).
 
 This would usually be followed by 1+ RC deployments and then a production deployment.
 
-If you need to get back to main, use `cd perennial; grunt checkout-main --repo={{SIM}}`.
-
 ## Prototype deployments
+
+TODO: Prototype deployments are not yet fully implemented in totality, see https://github.com/phetsims/totality/issues/140
 
 A prototype is defined as a sim version that is deemed worthy of early release to the public before it has gone through
 the full production process. Prototypes will typically be published for legacy sims that are not yet available in HTML5.
@@ -306,7 +272,7 @@ How prototypes differ from production versions:
   new version of a prototype may require a new release branch.
 
 Prototypes will follow the process
-for [RC/production deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-2.0.md#rcproduction-deployments-and-release-branches)
+for [RC/production deployments](https://github.com/phetsims/phet-info/blob/main/deployment-info/sim-deployment.md#rcproduction-deployments-and-release-branches)
 using `grunt prototype`, with the following differences:
 
 - Use `grunt prototype` instead of `grunt production`. `grunt rc` works as normal. DO NOT use `grunt production`, as
@@ -333,7 +299,7 @@ they will be deployed as part of the normal deployment process. However, if that
 update screenshots for some other reason, you can do so by running the following command:
 
 ```
-cd perennial-alias; grunt deploy-images --simulation=<sim-name>
+bin/deploy-images --simulation={{SIM}}
 ```
 
 It can take a while for the updates to show up on the main website due to caching, but you can check immediately using
@@ -341,7 +307,7 @@ phet-origin.colorado.edu.  As a real world example, screenshots were updated in 
 using the command:
 
 ```
-cd perennial-alias; grunt deploy-images --simulation=isotopes-and-atomic-mass
+bin/deploy-images --simulation=isotopes-and-atomic-mass
 ```
 
 ...and the images were then verified by checking:
@@ -354,6 +320,8 @@ https://phet-origin.colorado.edu/sims/html/isotopes-and-atomic-mass/latest/isoto
 
 
 # Branch Protections
+
+TODO: unclear what the current status of this is, see https://github.com/phetsims/totality/issues/140
 
 Production branches are "protected" on github so that they cannot be deleted unless absolutely necessary. This includes
 all branches used in deployed sims in the simulation and common code repositories. Branches are protected by "rules"
@@ -372,10 +340,3 @@ steps for this are:
   ```
   sage run perennial/js/scripts/protect-branches-for-repo.js john-travoltage
   ```
-
-# Deploying pre-chipper-2.0 things
-
-If you get an error during the deploy command like ```chipper 0.0.0 cannot build multiple brands at a time``` try using
-chipper 2.0 steps but just building and deploying each brand separately before moving on to chipper-1.0.
-
-See https://github.com/phetsims/phet-info/blob/main/deployment-info/chipper-1.0.md
