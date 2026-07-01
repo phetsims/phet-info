@@ -103,7 +103,7 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | graphing-lines | @pixelzoom | @amanda-phet | Sound | 
 | graphing-quadratics | @pixelzoom | @amanda-phet | Sound<br/>Interactive Description | 
 | graphing-slope-intercept | @pixelzoom | @amanda-phet | Sound | 
-| gravity-and-orbits | @samreid | @arouinfar |  | 
+| gravity-and-orbits | @samreid | @arouinfar | Interactive Description | 
 | gravity-force-lab | @zepumph | @arouinfar | Sound<br/>Interactive Description | 
 | gravity-force-lab-basics | @zepumph | @arouinfar | Sound<br/>Interactive Description<br/>Voicing | 
 | greenhouse-effect | @jbphet | @arouinfar | Sound<br/>Interactive Description | 
