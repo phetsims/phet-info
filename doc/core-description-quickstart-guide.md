@@ -2,9 +2,6 @@
 
 @author Jesse Greenberg
 
-
-test content
-
 A quick guide for adding Core Description to a PhET simulation.
 
 Core Description implements critical screen reader accessibility features, including:
@@ -462,6 +459,82 @@ const diagram = new Node( {
   } )
 } );
 ```
+
+## Describer Classes
+
+When the accessible text for a screen becomes involved — it depends on how a value *changed*, or the logic grows past
+what reads cleanly inside a `DerivedProperty` callback — factor it into a *Describer* class. This is a widespread PhET
+convention (many sims have a `{Sim}Describer`), so following it keeps description code recognizable across the project.
+
+A Describer is a plain class dedicated to producing description strings for one screen or feature. It typically exposes
+a static factory that takes the model and returns a `Property<string | null>` you hand directly to an
+`accessibleParagraph`, or pass as a `listItems` entry to `AccessibleList.createTemplateProperty`.
+
+### When to prefer a Describer over an inline DerivedProperty
+
+- The wording depends on the *previous* value, not just the current one (for example "opened" vs "closed", or "increased
+  to" vs "decreased to"). A plain `DerivedProperty` only sees current dependency values, so it cannot describe a
+  transition.
+- The computation is large — many branches or string concatenation — and inlining it in a `DerivedProperty` callback
+  would hurt readability.
+- Several description `Property` instances share helper logic; the helpers live as static methods on the same Describer.
+
+If none of these apply, a `DerivedProperty` (or `DerivedProperty.fromRecord`, shown above) is simpler and preferred.
+
+### Code skeleton
+
+Use `lazyLink` (not `link`) on the model Property that drives the description: the returned Property is seeded with an
+explicit initial value (usually `null`), and the description only needs to change on a transition, where both the new and
+old values are available. Pass `{ disposer: descriptionStringProperty }` so the listener's lifetime is tied to the
+returned Property — when the owner disposes that Property, the listener is unlinked and nothing leaks.
+
+```ts
+export default class MyDescriber {
+
+  /**
+   * Creates a description string Property that reflects state transitions of the model.
+   * To dispose, dispose of the returned Property.
+   */
+  public static createDescriptionStringProperty( model: MyModel ): Property<string | null> {
+    const descriptionStringProperty = new Property<string | null>( null );
+
+    // The listener is unlinked when descriptionStringProperty is disposed, via the disposer option.
+    model.stateProperty.lazyLink( ( newState, oldState ) => {
+
+      // Read both newState and oldState when the wording depends on the direction of the change.
+      descriptionStringProperty.value = computeDescription( newState, oldState );
+    }, { disposer: descriptionStringProperty } );
+
+    return descriptionStringProperty;
+  }
+}
+```
+
+Consume the result like any other description `Property`:
+
+```ts
+const descriptionStringProperty = MyDescriber.createDescriptionStringProperty( model );
+const node = new Node( {
+  accessibleParagraph: descriptionStringProperty
+} );
+node.addDisposable( descriptionStringProperty );
+```
+
+### Exemplars
+
+- `membrane-transport/js/common/view/MembranePotentialDescriber.ts` — a concise example of exactly the skeleton above:
+  a static `createDescriptionStringProperty( model )` that `lazyLink`s the membrane potential and describes the
+  open/closed transition of voltage-gated channels, wired with `{ disposer: descriptionStringProperty }`.
+- `membrane-transport/js/common/view/MembraneTransportDescriber.ts` — a larger, step-driven Describer that batches
+  events over time and emits accessible context responses; a good look at how a Describer grows when it also owns timers
+  and static descriptor helpers.
+- `ratio-and-proportion/js/common/view/describers/RatioDescriber.ts` — an instance-based Describer whose methods return
+  formatted strings on demand (rather than a single `Property`), useful when many call sites need descriptions computed
+  from the current model state.
+
+Not every Describer looks identical — some return a `Property`, some expose string-returning methods, some run on the
+step loop — but they all centralize a screen's description logic in one class. Prefer the static
+`createDescriptionStringProperty` shape above for the common case of one description that tracks a state transition.
 
 ## Disposal
 
