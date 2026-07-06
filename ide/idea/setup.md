@@ -99,7 +99,7 @@ Use at your own risk!
       * Working Directory: GIT_REPOS\perennial
     * To add an external tool on Windows that supports full color, do something like this:
       * Program:  C:\Program Files\Git\bin\bash.exe
-      * Arguments: -c "export FORCE_COLOR=true; ./perennial/bin/sage run ./website-build/gitFlow/updateWebsiteRepos.ts
+      * Arguments: -c "export FORCE_COLOR=true; ./perennial/bin/sage run ./myTypescript.ts
         --sync"
       * Working Directory: GIT_REPOS
   * Mac:

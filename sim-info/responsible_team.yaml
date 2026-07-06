@@ -1305,31 +1305,6 @@ waves-intro:
   responsibleDesigners:
     - "@arouinfar"
 
-website:
-  responsibleDevs:
-    - "@mattpen"
-  responsibleDesigners: []
-
-website-docker:
-  responsibleDevs:
-    - "@mattpen"
-  responsibleDesigners: []
-
-website-direct:
-  responsibleDevs:
-    - "@mattpen"
-  responsibleDesigners: []
-
-website-meteor:
-  responsibleDevs:
-    - "@mattpen"
-  responsibleDesigners: []
-
-website-scenery:
-  responsibleDevs:
-    - "@chrisklus"
-  responsibleDesigners: []
-
 website-singularity:
   responsibleDevs:
     - "@mattpen"

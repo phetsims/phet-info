@@ -230,11 +230,6 @@ NOTE: This file is generated, do not edit directly. It is created from `responsi
 | wave-interference | @samreid | @arouinfar | Sound<br/>Interactive Description<br/>Interactive Highlights | 
 | wave-on-a-string | @jonathanolson | @arouinfar | Sound<br/>Interactive Description | 
 | waves-intro | @samreid | @arouinfar | Sound<br/>Interactive Description<br/>Interactive Highlights | 
-| website | @mattpen |  |  | 
-| website-docker | @mattpen |  |  | 
-| website-direct | @mattpen |  |  | 
-| website-meteor | @mattpen |  |  | 
-| website-scenery | @chrisklus |  |  | 
 | website-singularity | @mattpen |  |  | 
 | weddell | @jbphet |  |  | 
 | wilder | @jonathanolson |  | Interactive Description | 
