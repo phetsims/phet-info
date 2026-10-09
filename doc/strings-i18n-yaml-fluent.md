@@ -221,7 +221,9 @@ friendStatus: |-
 
 #### Custom `select_*` Syntax for UI Logic
 
-Fluent selectors like the ones above **must stay focused on linguistic logic** (pluralization, grammatical gender, noun cases, etc.). Translators should only have to reason about language, not about our UI/business rules. For UI- or simulation-specific branching—representation type, challenge state, screen layout, etc.—use PhET's custom YAML-driven `select_*` syntax instead of Fluent selectors.
+Fluent selectors like the ones above **must stay focused on linguistic logic** (pluralization, grammatical gender, noun cases, etc.). For UI- or simulation-specific branching—representation type, challenge state, screen layout, etc.—use PhET's custom YAML-driven `select_*` syntax instead of Fluent selectors.
+
+The motivation for `select_*` is developer-facing, not translator-facing: it provides type safety via string-literal unions, keeps a 1:1 match between code and YAML, and factors out the string-lookup maps we used to write in code. See [chipper#1687](https://github.com/phetsims/chipper/issues/1687) for history.
 
 This syntax is demonstrated throughout `number-pairs/number-pairs-strings_en.yaml`:
 
@@ -246,6 +248,11 @@ const interactionHintProperty = NumberPairsFluent.a11y.tenOrTwentyScreen.screenS
 ```
 
 Because the YAML branches are just normal key/value entries, auto-formatters keep each branch tidy without the indentation gymnastics required by Fluent's `{ $value -> ... }` syntax. You can also freely nest `select_*` blocks (e.g., `select_shownSides` containing another `select_representationType`) to compose UI logic. Reserve Fluent selectors for true linguistic needs, and reach for `select_*` whenever a string needs to describe different UI scenarios or simulation states.
+
+Two guidelines when using `select_*`:
+
+* **Each branch must hold a complete string, not a fragment.** Values produced by a `select_*` block should not be interpolated into other patterns. Full strings give translators the whole sentence in context, and it is fine to repeat similar text across branches (the W.E.T.—"Write Everything Twice"—i18n heuristic).
+* **Weigh logic against entry explosion.** The full-string rule means nested `select_*` blocks enumerate the cross-product of their branches (e.g., 3 shown sides × 4 representation types = 12 full strings, versus 3 + 4 = 7 composable fragments). When the combinations explode, consider handling some of the branching in code instead.
 
 > **IMPORTANT**: Currently, Fluent syntax (e.g., `{ $variable }`) should **only** be used for strings under the `a11y`
 > key. Rosetta, our translation tool, does not yet support Fluent syntax for visual strings. For any visual string that

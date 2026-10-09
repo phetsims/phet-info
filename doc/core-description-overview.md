@@ -17,7 +17,7 @@ Additionally, design and development of _Core Description_ of several simulation
 
 ### Definitions for Core Description Options
 
- Our high-level API has specific options for each node or interactive component, see [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md) for a complete list of current description options.
+ Our high-level API has specific options for each node or interactive component, see [Core Description Options](core-description-options.md) for a complete list of current description options.
 
  Core Description Design focuses on the following description options, allbeit that some interactive components have a more specific name for their "accessibleObjectResponse", "accessibleContextResponse," or even "accessibleHelpText."
 
@@ -64,7 +64,7 @@ For _Core Description_:
 
 - You always need to design an accessibleName.
 - You always need to consider designing accessibleHelpText.
-- You need to review the options for each component listed in [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md), then depending the interaction, determine if you have the resources to design and implement all listed options. Review the strategies above if/when you encounter design challenges.
+- You need to review the options for each component listed in [Core Description Options](core-description-options.md), then depending the interaction, determine if you have the resources to design and implement all listed options. Review the strategies above if/when you encounter design challenges.
 
 ## Punctuation in Description Options
 
@@ -138,6 +138,6 @@ From the description course: [Description Design for Interactive Learning Resour
 
 - [Descriptipn Design Guide: Core](https://docs.google.com/document/d/1kCivjmuXiMzrFkYUigZFgDkssoEWGW_-OaXDk9myV00/edit?tab=t.0#heading=h.rj5etgrq1nf7)
 - [PhET's Interactive Style Guide (Binder)](https://phetsims.github.io/binder/)
-- [Core Description Options](https://github.com/phetsims/phet-info/blob/main/doc/core-description-options.md)
-- [Core Description Quickstart Guide (Development)](https://github.com/phetsims/phet-info/blob/main/doc/core-description-quickstart-guide.md)
-- [Core Voicing Quickstart Guide (Development)](https://github.com/phetsims/phet-info/blob/main/doc/core-voicing-quickstart-guide.md)
+- [Core Description Options](core-description-options.md)
+- [Core Description Quickstart Guide (Development)](core-description-quickstart-guide.md)
+- [Core Voicing Quickstart Guide (Development)](core-voicing-quickstart-guide.md)

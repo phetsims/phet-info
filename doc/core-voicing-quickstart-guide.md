@@ -197,7 +197,7 @@ Voicing adds listeners that enable speech from input events. When a Node using V
 
 Voicing is closely integrated with alternative input. Refer to the Alternative Input quickstart guide for that
 implementation:
-[Alternative Input Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md).
+[Alternative Input Quickstart Guide](alternative-input-quickstart-guide.md).
 
 ### Core Description
 

@@ -442,6 +442,13 @@ Use pdomOrder to define the navigation order for both focusable and non-focusabl
 using `accessibleParagraph` or `accessibleHeading` appear in the correct reading sequence and follow a logical structure
 in the DOM.
 
+To add to an existing order without rewriting it, use `pdomOrderAppend`, `pdomOrderInsertBefore`, or
+`pdomOrderInsertAfter`.
+
+```ts
+this.pdomPlayAreaNode.pdomOrderInsertAfter( myDescriptionNode, someExistingNode );
+```
+
 ## String Properties
 
 Use a `LocalizedStringProperty` for all accessibility content so it’s ready for dynamic locales and future translation
@@ -696,7 +703,7 @@ The following resources contain information about how to use a screen reader:
 ### Alt Input
 
 Interactive Description includes alternative input. Refer to the Alternative Input quickstart guide for setup:
-[Alternative Input Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md).
+[Alternative Input Quickstart Guide](alternative-input-quickstart-guide.md).
 
 ### Core Voicing
 

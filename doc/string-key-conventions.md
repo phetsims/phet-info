@@ -109,7 +109,7 @@ unique translations or messaging later.
 It is recommended to use YAML files for accessibility strings. Using YAML allows for better organization, readability,
 and more complicated string patterns that will eventually support translations. For more information about YAML and
 Fluent, see
-the [YAML/Fluent documentation](https://github.com/phetsims/phet-info/blob/main/doc/strings-i18n-yaml-fluent.md).
+the [YAML/Fluent documentation](strings-i18n-yaml-fluent.md).
 
 Use the following guidelines for naming and organization:
 

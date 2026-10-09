@@ -2,36 +2,36 @@
 
 ## Table of Contents
 
-* [JavaScript](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#javaScript)
-* [Documentation](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#documentation)
-* [TypeScript](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#typeScript)
-  * [Access Modifiers](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#access-modifiers)
-  * [ESLint](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#eslint)
-  * [Philosophy](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#philosophy)
-  * [Leveraging Type Inference](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#leveraging-type-inference)
-  * [Enumerations](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#enumerations)
-  * [Parameter Types](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#parameter-types)
-  * [Prefer TReadOnlyProperty to DerivedProperty for type annotations](https://github.com/phetsims/phet-info/edit/main/doc/coding-conventions.md#prefer-treadonlyproperty-to-derivedproperty-for-type-annotations)
-  * [Options](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#options)
-  * [Instance Properties](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#instance-properties)
-  * [Class Properties (static)](https://github.com/phetsims/phet-info/edit/main/doc/coding-conventions.md#class-properties-static)
-  * [Multiple Exports](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#multiple-exports)
-  * [Multiple Imports](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#multiple-imports)
-  * [Assertions](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#assertions)
-  * [JSDoc and TSDoc](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#jsdoc-and-tsdoc)
-  * [Non-null assertion operator](https://github.com/phetsims/phet-info/edit/main/doc/coding-conventions.md#non-null-assertion-operator)
-  * [Leverage Excess Property Checking](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#leverage-excess-property-checking)
-  * [Read vs Write APIs](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#read-vs-write-apis)
-* [Further Reading](https://github.com/phetsims/phet-info/blob/main/doc/coding-conventions.md#further-reading)
+* [JavaScript](coding-conventions.md#javaScript)
+* [Documentation](coding-conventions.md#documentation)
+* [TypeScript](coding-conventions.md#typeScript)
+  * [Access Modifiers](coding-conventions.md#access-modifiers)
+  * [ESLint](coding-conventions.md#eslint)
+  * [Philosophy](coding-conventions.md#philosophy)
+  * [Leveraging Type Inference](coding-conventions.md#leveraging-type-inference)
+  * [Enumerations](coding-conventions.md#enumerations)
+  * [Parameter Types](coding-conventions.md#parameter-types)
+  * [Prefer TReadOnlyProperty to DerivedProperty for type annotations](coding-conventions.md#prefer-treadonlyproperty-to-derivedproperty-for-type-annotations)
+  * [Options](coding-conventions.md#options)
+  * [Instance Properties](coding-conventions.md#instance-properties)
+  * [Class Properties (static)](coding-conventions.md#class-properties-static)
+  * [Multiple Exports](coding-conventions.md#multiple-exports)
+  * [Multiple Imports](coding-conventions.md#multiple-imports)
+  * [Assertions](coding-conventions.md#assertions)
+  * [JSDoc and TSDoc](coding-conventions.md#jsdoc-and-tsdoc)
+  * [Non-null assertion operator](coding-conventions.md#non-null-assertion-operator)
+  * [Leverage Excess Property Checking](coding-conventions.md#leverage-excess-property-checking)
+  * [Read vs Write APIs](coding-conventions.md#read-vs-write-apis)
+* [Further Reading](coding-conventions.md#further-reading)
 
 ## JavaScript
 - [ ] Is the code formatted according to PhET conventions?
-  See [phet-idea-code-style.xml](https://github.com/phetsims/phet-info/blob/main/ide/idea/phet-idea-codestyle.xml) for
+  See [phet-idea-code-style.xml](../ide/idea/phet-idea-codestyle.xml) for
   IntelliJ IDEA code style.
 
-- [ ] Is the code structured in a way that follows [PhET Software Design Patterns](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md)?
+- [ ] Is the code structured in a way that follows [PhET Software Design Patterns](phet-software-design-patterns.md)?
 
-- [ ] Similarly, look through other convention files to check that the code complies with relevant conventions. See the [documentation folder](https://github.com/phetsims/phet-info/blob/main/doc).
+- [ ] Similarly, look through other convention files to check that the code complies with relevant conventions. See the [documentation folder](.).
 
 - [ ] Names (types, variables, properties, Properties, functions,...) should be sufficiently descriptive and specific,
   and should avoid non-standard abbreviations. For example:
@@ -99,7 +99,7 @@
   } );
   ```
 
-- [ ] When options are passed through one constructor to another, use the `optionize` pattern. See more [here](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#options-typescript).
+- [ ] When options are passed through one constructor to another, use the `optionize` pattern. See more [here](phet-software-design-patterns.md#options-typescript).
 
 - [ ] If references are needed to the enclosing object, such as for a closure, `self` should be defined, but it should
   only be used in closures. The `self` variable should not be defined unless it is needed in a closure. Example:
@@ -344,7 +344,7 @@ Additionally, TypeScript provides several other useful modifiers for refining yo
 ### ESLint
 
 Many of PhET's TypeScript conventions are embodied in TypeScript-specific lint rules. We use the `@typescript-eslint`
-plugin to add these rules and augment with our own under the phet plugin. Please see [perennial/eslint](https://github.com/phetsims/perennial/blob/main/js/eslint/)
+plugin to add these rules and augment with our own under the phet plugin. Please see [perennial/eslint](../../perennial-alias/js/eslint)
 for details and context about conventions based on lint rules.
 
 ### Philosophy
@@ -412,7 +412,7 @@ Again, in complex or volatile cases, at the developer preference, the redundant 
 * `EnumerationValue` adds rich methods on the instances. Use `EnumerationProperty` for this.
 * Careful!  If you change from string literal union to `EnumerationValue`, the casing convention is different and you
   will break the PhET-iO API.
-* Please see https://github.com/phetsims/wilder/blob/main/js/wilder/model/WilderEnumerationPatterns.ts for details and
+* Please see [WilderEnumerationPatterns.ts](../../wilder/js/wilder/model/WilderEnumerationPatterns.ts) for details and
   examples.
 
 ### Parameter Types
@@ -463,8 +463,8 @@ class HalfLifeInformationNode extends Node {
 
 ### Options
 
-See https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md#options-typescript and
-https://github.com/phetsims/wilder/blob/main/js/wilder/model/WilderOptionsPatterns.ts.
+See [phet-software-design-patterns.md](phet-software-design-patterns.md#options-typescript) and
+[WilderOptionsPatterns.ts](../../wilder/js/wilder/model/WilderOptionsPatterns.ts).
 
 **Use `optionize` instead of `merge`.** In the vast majority of cases, `optionize` should be used instead of `merge`.
 This provided extra type information on
@@ -768,6 +768,6 @@ class MyClass {
 
 ## Further Reading
 
-* [PhET Software Design Patterns](https://github.com/phetsims/phet-info/blob/main/doc/phet-software-design-patterns.md)
+* [PhET Software Design Patterns](phet-software-design-patterns.md)
 * Notes in https://github.com/phetsims/ratio-and-proportion/issues/405
-* Notes in https://github.com/phetsims/phet-info/blob/main/doc/typescript-quick-start.md 
+* Notes in [typescript-quick-start.md](typescript-quick-start.md) 

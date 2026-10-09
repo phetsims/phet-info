@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "axios": "~0.21.4",
-    "fs": "~0.0.1-security"
-  }
-}

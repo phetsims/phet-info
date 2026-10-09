@@ -30,7 +30,7 @@ These _accessible descriptions_ are in addition to and separate from the visual 
 Using Fluent requires a working development environment, basic knowledge of Fluent's syntax, and some familiarity with how we refer to and organize _accessible descriptions_ in the Fluent files. Review the following steps, and please reach out to the SceneryStack community if you have trouble with any of them. **Note:** At this time translating *accessible descriptions* requires working directly in Fluent files.
 
 ### PhET Development Environment Setup
-- Set up a development environment for the simulation you want to translate by following the [PhET Development Overview](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md).
+- Set up a development environment for the simulation you want to translate by following the [PhET Development Overview](phet-development-overview.md).
 Make sure you can run the simulation locally in your browser and access and edit the code. **Reach out to the community when you need help.**
 
 ### Fluent Syntax Knowledge

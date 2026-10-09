@@ -5,7 +5,7 @@
 A quick guide for adding Core Description to PhET game screens that use vegas components.
 
 This guide assumes you have already implemented the patterns in
-the [Core Description Quickstart Guide](https://github.com/phetsims/phet-info/blob/main/doc/core-description-quickstart-guide.md).
+the [Core Description Quickstart Guide](core-description-quickstart-guide.md).
 You should be comfortable with `accessibleName`, `accessibleHelpText`, `accessibleParagraph`, `pdomOrder`, and the
 strings organization described there. The focus here is on vegas-specific structure, components, and focus management.
 
@@ -121,7 +121,7 @@ Vegas buttons and controls include default labels, accessible names, accessible 
 match PhET game design language. Use them whenever the UI design aligns.
 
 - GameInfoButton, GameTimerToggleButton, TryAgainButton, etc.
-- Review [vegas/js/buttons/](https://github.com/phetsims/vegas/tree/main/js/buttons) for the full list.
+- Review [vegas/js/buttons/](../../vegas/js/buttons) for the full list.
 
 If you need to override defaults, supply string properties through the options, matching the naming conventions from the
 core guide.

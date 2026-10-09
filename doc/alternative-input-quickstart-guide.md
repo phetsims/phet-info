@@ -10,21 +10,21 @@ Get started with adding alternative input to your PhET simulation.
 ### Table of Contents
 
 <!--@formatter:off-->
-* **[package.json](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#packagejson)**
-* **[Make a Node focusable](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#make-a-node-focusable)**
-* **[Traversal Order](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#traversal-order)**
-* **[Keyboard listeners](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#keyboard-listeners)**
-* **[Drag using the KeyboardDragListener](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#drag-using-the-keyboarddraglistener)**
-* **[Drag using AccessibleSlider for 1D Motion](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#drag-using-accessibleslider-for-1d-motion)**
-* **[Hotkeys](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#hotkeys)**
-* **[Scenery Events](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#scenery-events)**
-* **[Focus Highlights](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#focus-highlights)**
-* **[Pan and Zoom](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#pan-and-zoom)**
-* **[Keyboard Shortcuts dialog](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#keyboard-shortcuts-dialog)**
-* **[Toolboxes](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#toolboxes)**
-* **[Pitfalls](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#pitfalls)**
-* **[Not supported? Create an issue!](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#not-supported-create-an-issue)**
-* **[Other Resources](https://github.com/phetsims/phet-info/blob/main/doc/alternative-input-quickstart-guide.md#other-resources)**
+* **[package.json](alternative-input-quickstart-guide.md#packagejson)**
+* **[Make a Node focusable](alternative-input-quickstart-guide.md#make-a-node-focusable)**
+* **[Traversal Order](alternative-input-quickstart-guide.md#traversal-order)**
+* **[Keyboard listeners](alternative-input-quickstart-guide.md#keyboard-listeners)**
+* **[Drag using the KeyboardDragListener](alternative-input-quickstart-guide.md#drag-using-the-keyboarddraglistener)**
+* **[Drag using AccessibleSlider for 1D Motion](alternative-input-quickstart-guide.md#drag-using-accessibleslider-for-1d-motion)**
+* **[Hotkeys](alternative-input-quickstart-guide.md#hotkeys)**
+* **[Scenery Events](alternative-input-quickstart-guide.md#scenery-events)**
+* **[Focus Highlights](alternative-input-quickstart-guide.md#focus-highlights)**
+* **[Pan and Zoom](alternative-input-quickstart-guide.md#pan-and-zoom)**
+* **[Keyboard Shortcuts dialog](alternative-input-quickstart-guide.md#keyboard-shortcuts-dialog)**
+* **[Toolboxes](alternative-input-quickstart-guide.md#toolboxes)**
+* **[Pitfalls](alternative-input-quickstart-guide.md#pitfalls)**
+* **[Not supported? Create an issue!](alternative-input-quickstart-guide.md#not-supported-create-an-issue)**
+* **[Other Resources](alternative-input-quickstart-guide.md#other-resources)**
 
 <!--@formatter:on-->
 
@@ -32,7 +32,8 @@ Get started with adding alternative input to your PhET simulation.
 
 Follow these steps to add support for alternative input to a simulation.
 
-1. In your sim's package.json, add `"supportsInteractiveDescription": true` to the `phet.simFeatures.supportsInteractiveDescription`
+1. In your sim's package.json, add `"supportsInteractiveDescription": true` to the
+   `phet.simFeatures.supportsInteractiveDescription`
    section, like this:
 
 ```
@@ -48,12 +49,12 @@ Follow these steps to add support for alternative input to a simulation.
 }
 ```
 
-2. In your sim's repository, run `grunt update`. This will modify `{{REPO}}_en.html`.
-3. In your sim's repository run `grunt generate-data`. This will add the sim to the appropriate lists in perennial which
+2. Run `bin/grunt update --repo={{REPO}}`. This will modify `{{REPO}}_en.html`.
+3. Run `bin/grunt generate-data --repo=chipper`. This will add the sim to the appropriate lists in perennial which
    enables access to the a11y view in phetmarks.
 4. Adding `"supportsInteractiveDescription": true` will by default also enable Interactive Highlights.
-   See https://github.com/phetsims/phet-info/blob/main/doc/interactive-highlights-quickstart-guide.md for more
-   information about this feature.
+   See [interactive-highlights-quickstart-guide.md](interactive-highlights-quickstart-guide.md) for more information
+   about this feature.
 
 ## Make a Node focusable
 
@@ -157,6 +158,10 @@ Using the design requirements from Step 2, here is the typical change that you'l
   `this.pdomOrder`. Note that most of the work here is typically done in `ScreenView` subclasses.
 
 * If you need to remove a Node from the traversal order, you can do so with the `focusable: false` option of Node.
+
+* To add to an existing order without rewriting it, use `pdomOrderAppend`, `pdomOrderInsertBefore`, or
+  `pdomOrderInsertAfter`. These are useful in a subclass that needs to splice a Node into an order that its superclass
+  set up.
 
 * See `ParallelDOM.setPDOMOrder` for more advanced features of this setter if needed.
 
@@ -308,6 +313,16 @@ ones, review the current set in the binder documentation at https://phetsims.git
 from HotkeyData and shows how hotkeys are used across the project. This supports consistency and discoverability as well
 as avoiding collisions. If an overlap does occur, Scenery will throw an assertion at runtime.
 
+* **Use `alt` with letter, number, and punctuation keys.** Letter keys on their own are consumed by screen readers
+  unless focus is in "forms" mode or on an element with `role="application"`, so a shortcut like `j+t` only works in
+  some contexts. `alt` was found to work globally with screen readers, and combining with `alt` also keeps the
+  shortcut out of WCAG 2.1.4 (Character Key Shortcuts), which requires plain character-key shortcuts to be
+  configurable.
+* **The browser default is prevented automatically.** Browsers claim many key combinations (Chrome uses
+  `alt+shift+r`, for example), so `KeyboardListener.createGlobal` prevents default for its keys whenever the listener
+  fires. For a global listener on keys that must keep their native behavior,
+  like arrow keys that a focused slider also uses, pass `preventDefault: false`.
+
 ## Scenery Events
 
 For more custom behavior you can add input listeners with Scenery's input system that are related to alternative input.
@@ -357,9 +372,9 @@ about the content language and layout.
 
 ## Toolboxes
 
-Toolboxes support alt input with a pattern described in https://github.com/phetsims/sun/blob/main/doc/ToolboxPattern.md,
-and can be viewed in [Binder](https://phetsims.github.io/binder/). Basically we treat toolbox icons as buttons, and
-selecting the button focuses the created tool. A simple KeyboardDragListener can support dragging on the tool, and
+Toolboxes support alt input with a pattern described in [ToolboxPattern.md](../../sun/doc/ToolboxPattern.md), and can be
+viewed in [Binder](https://phetsims.github.io/binder/). Basically we treat toolbox icons as buttons, and selecting the
+button focuses the created tool. A simple KeyboardDragListener can support dragging on the tool, and
 `GrabDragInteraction` is not needed for this
 case. ([Original paper trail](https://github.com/phetsims/a11y-research/issues/166))
 
@@ -378,4 +393,4 @@ and create GitHub issues.
 
 * [Interactive Description Technical Guide](https://github.com/phetsims/phet-info/blob/4839f03214bbba21b4621f80aea8e78a9519fb43/doc/interactive-description-technical-guide.md)
 * Description of "Play Area" and "Control
-  Area": https://github.com/phetsims/phet-info/blob/main/doc/interactive-description-technical-guide.md#pdom-order-for-phet-sims
+  Area": [interactive-description-technical-guide.md](interactive-description-technical-guide.md#pdom-order-for-phet-sims)

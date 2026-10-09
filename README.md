@@ -1,15 +1,24 @@
-phet-info
-=========
+# ⚠️ This Repository Is No Longer Maintained
 
-Welcome! This is a collection of information shared by PhET team members for the purpose of using GitHub effectively and
-for other process-related topics. If you're new to PhET Sims and would like to learn more about how we develop our
-resources, we recommend these two to get started:
+This repository is **out of date and no longer actively maintained.**
 
-+ [Development Overview](https://github.com/phetsims/phet-info/blob/main/doc/phet-development-overview.md): General
-  information on how to build and edit sims locally, as well as other content of interest.
-+ [Onboarding Documentation](https://github.com/phetsims/phet-info/blob/main/doc/new-dev-onboarding.md): This one is for
-  new developers at PhET, to help them in their journey. However, any developer might find useful information as well,
-  such as environment set up, or roadmaps to gain familiarity with our codebase.
+As part of our ongoing effort to better sustain the PhET project, we have restructured our library and consolidated our individual repositories into a single **monorepo**.
 
-To see a list of responsible developers based on each repo,
-see [here](https://github.com/phetsims/phet-info/blob/main/sim-info/responsible_dev.md).
+## Current status
+
+As part of this restructuring, we are currently reviewing what to make publicly available. The monorepo is **not publicly available at this time**, and we appreciate your patience while we work through this to keep the PhET project sustainable.
+
+In the meantime, please note that the code here is outdated. Issues and pull requests opened against this repository may not receive a response.
+
+## Why the change?
+
+Moving to a monorepo allows us to:
+
+- Coordinate changes across the library more easily
+- Simplify dependency management and versioning
+- Reduce maintenance overhead so we can focus on the project itself
+- Provide a more consistent experience for contributors and users
+
+## Thank you
+
+Thank you for your patience while we restructure our library to better sustain the PhET project. We appreciate your continued interest and support. You can access all of our free sims on our website: https://phet.colorado.edu/
